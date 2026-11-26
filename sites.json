@@ -151,5 +151,50 @@
   "Step-by-step pet appointment booking plus an emergency checker that tells owners when to call right away.",
   "",
   ""
+ ],
+ [
+  "architecture-studio-3d",
+  "Architecture studio with a scroll-built 3D house",
+  "High-end 3D",
+  "Architecture",
+  "A concrete-and-glass house assembles floor by floor, orbits and slides into golden-hour light as you scroll.",
+  "",
+  ""
+ ],
+ [
+  "solar-installer-3d",
+  "Solar installer with 3D panels and savings estimator",
+  "High-end 3D",
+  "Solar",
+  "Panels fly onto a 3D house as the sun crosses the sky, plus a savings estimator that shows its assumptions.",
+  "",
+  ""
+ ],
+ [
+  "auto-repair",
+  "Auto shop with repair tracking",
+  "Medium",
+  "Auto repair",
+  "Book a drop-off, then track the car by RO number and approve or decline each estimate line from your phone.",
+  "",
+  ""
+ ],
+ [
+  "hvac-emergency",
+  "24/7 HVAC with a troubleshooter",
+  "Medium",
+  "HVAC",
+  "Giant tap-to-call number and a What is wrong troubleshooter that walks through safe checks before booking an arrival window.",
+  "",
+  ""
+ ],
+ [
+  "plumbing-simple",
+  "Family plumber, one fast page",
+  "Simple",
+  "Plumbing",
+  "Fast one-page plumber site with a big call button and a short quote form with an optional photo preview.",
+  "",
+  ""
  ]
 ]

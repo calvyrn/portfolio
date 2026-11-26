@@ -11,6 +11,7 @@
 <style>
 :root{--paper:#EDEBE7;--ink:#1A1A1A;--stone:#8A8580;--sand:#C9C3BA;--rust:#B5532E;--line:#D3CEC6;--soft:#E4E1DC;--hh:68px;--d:"Syne",system-ui,sans-serif;--b:"Manrope",system-ui,sans-serif}
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html,body{margin:0}
 body{background:var(--paper);color:var(--ink);font:400 17px/1.65 var(--b);-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
@@ -63,7 +64,7 @@ a{color:inherit}
 .no-gl .hero-copy{background:rgba(237,235,231,.92);padding:28px}
 .static .words,.static .rail,.static .cue{display:none}
 .static .notes{position:static;width:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:32px;padding:56px 32px;max-width:1320px;margin:0 auto}
-.static .note{position:static;opacity:1}
+.static .note{position:static;opacity:1;background:none;backdrop-filter:none;padding:16px 0 0}
 @media(max-width:820px){
   .hero-copy{left:20px;right:20px;top:4.5vh}
   .hero-copy h1{font-size:clamp(34px,9.4vw,50px)}
@@ -395,6 +396,7 @@ let renderer = null;
 try { renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' }); } catch (e) { renderer = null; }
 if (!renderer) { document.body.classList.add('no-gl'); story.classList.add('static'); }
 else build();
+if (story.classList.contains('static')) story.appendChild(document.querySelector('.notes'));
 
 function build() {
   if (!animated) story.classList.add('static');
