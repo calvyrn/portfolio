@@ -10,9 +10,12 @@ Website, web app and AI concepts for small businesses, organised by industry. Ev
 | [Dental practice with online booking](sites/dental-booking/) | Dental | Medium | [Live demo](https://calvyrn.github.io/portfolio/sites/dental-booking/) |
 | [Home cleaning with instant price calculator](sites/cleaning-quote/) | Home cleaning | Medium | [Live demo](https://calvyrn.github.io/portfolio/sites/cleaning-quote/) |
 | [Law firm with 24/7 guided intake](sites/law-intake/) | Legal | Medium | [Live demo](https://calvyrn.github.io/portfolio/sites/law-intake/) |
+| [Med spa with a treatment finder](sites/med-spa/) | Med spa | Medium | [Live demo](https://calvyrn.github.io/portfolio/sites/med-spa/) |
+| [Physical therapy clinic with a body map](sites/physio-clinic/) | Physical therapy | Medium | [Live demo](https://calvyrn.github.io/portfolio/sites/physio-clinic/) |
 | [Agency site with its own property search](sites/real-estate-search/) | Real estate | Medium | [Live demo](https://calvyrn.github.io/portfolio/sites/real-estate-search/) |
 | [Taqueria with commission-free pickup ordering](sites/restaurant-ordering/) | Restaurant | Medium | [Live demo](https://calvyrn.github.io/portfolio/sites/restaurant-ordering/) |
 | [Hair studio: service, stylist, time](sites/salon-booking/) | Salon & spa | Medium | [Live demo](https://calvyrn.github.io/portfolio/sites/salon-booking/) |
+| [Independent insurance agency](sites/insurance-agency/) | Insurance | Simple | [Live demo](https://calvyrn.github.io/portfolio/sites/insurance-agency/) |
 | [Landscaper with project gallery and estimate form](sites/landscaping-simple/) | Landscaping | Simple | [Live demo](https://calvyrn.github.io/portfolio/sites/landscaping-simple/) |
 | [Wedding photography studio](sites/wedding-photographer/) | Photography | Simple | [Live demo](https://calvyrn.github.io/portfolio/sites/wedding-photographer/) |
 

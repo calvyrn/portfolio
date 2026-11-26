@@ -79,5 +79,32 @@
   "Cleaning company site where an instant price calculator flows into date, arrival window and booking confirmation.",
   "",
   ""
+ ],
+ [
+  "med-spa",
+  "Med spa with a treatment finder",
+  "Medium",
+  "Med spa",
+  "Pick a concern, see suggested treatments with time and from-prices, choose a provider, a day and time, and request a consultation.",
+  "",
+  ""
+ ],
+ [
+  "physio-clinic",
+  "Physical therapy clinic with a body map",
+  "Medium",
+  "Physical therapy",
+  "Tap an area on the animated body map to see conditions treated there, then book an evaluation with insurance or self-pay.",
+  "",
+  ""
+ ],
+ [
+  "insurance-agency",
+  "Independent insurance agency",
+  "Simple",
+  "Insurance",
+  "Compare-carriers promise, a tidy coverage list and a 3-step quote request with validation.",
+  "",
+  ""
  ]
 ]
