@@ -6,12 +6,15 @@ Website, web app and AI concepts for small businesses, organised by industry. Ev
 
 | Project | Industry | Tier | Demo |
 |---|---|---|---|
+| [Roofing company with a live 3D roof preview](sites/roofing-3d/) | Home services | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/roofing-3d/) |
 | [Dental practice with online booking](sites/dental-booking/) | Dental | Medium | [Live demo](https://calvyrn.github.io/portfolio/sites/dental-booking/) |
+| [Home cleaning with instant price calculator](sites/cleaning-quote/) | Home cleaning | Medium | [Live demo](https://calvyrn.github.io/portfolio/sites/cleaning-quote/) |
 | [Law firm with 24/7 guided intake](sites/law-intake/) | Legal | Medium | [Live demo](https://calvyrn.github.io/portfolio/sites/law-intake/) |
+| [Agency site with its own property search](sites/real-estate-search/) | Real estate | Medium | [Live demo](https://calvyrn.github.io/portfolio/sites/real-estate-search/) |
 | [Taqueria with commission-free pickup ordering](sites/restaurant-ordering/) | Restaurant | Medium | [Live demo](https://calvyrn.github.io/portfolio/sites/restaurant-ordering/) |
 | [Hair studio: service, stylist, time](sites/salon-booking/) | Salon & spa | Medium | [Live demo](https://calvyrn.github.io/portfolio/sites/salon-booking/) |
-| [Agency site with its own property search](sites/real-estate-search/) | Real estate | Medium | [Live demo](https://calvyrn.github.io/portfolio/sites/real-estate-search/) |
-| [Roofing company with a live 3D roof preview](sites/roofing-3d/) | Home services | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/roofing-3d/) |
+| [Landscaper with project gallery and estimate form](sites/landscaping-simple/) | Landscaping | Simple | [Live demo](https://calvyrn.github.io/portfolio/sites/landscaping-simple/) |
+| [Wedding photography studio](sites/wedding-photographer/) | Photography | Simple | [Live demo](https://calvyrn.github.io/portfolio/sites/wedding-photographer/) |
 
 **Tiers**
 - **Simple:** fast one- or two-page sites with click-to-call, a clear offer and a short form.

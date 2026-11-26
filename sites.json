@@ -52,5 +52,32 @@
   "Three.js scene with soft shadows, orbit controls, procedural textures for shingle, metal and tile, color swatches and a quote form. Auto-rotate is off for reduced motion.",
   "A visual preview makes it easier to choose before anyone climbs on the roof.",
   "Big Shoulders Display + Figtree; slate, copper, frost"
+ ],
+ [
+  "landscaping-simple",
+  "Landscaper with project gallery and estimate form",
+  "Simple",
+  "Landscaping",
+  "Image-led landscaper site with a captioned project gallery and a short free-estimate form with optional photos that stay on the device.",
+  "",
+  ""
+ ],
+ [
+  "wedding-photographer",
+  "Wedding photography studio",
+  "Simple",
+  "Photography",
+  "Editorial wedding studio site with a full-screen hero, masonry gallery with keyboard lightbox, three collections and an inquiry form.",
+  "",
+  ""
+ ],
+ [
+  "cleaning-quote",
+  "Home cleaning with instant price calculator",
+  "Medium",
+  "Home cleaning",
+  "Cleaning company site where an instant price calculator flows into date, arrival window and booking confirmation.",
+  "",
+  ""
  ]
 ]

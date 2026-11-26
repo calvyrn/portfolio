@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Juniper &amp; Light Studio | Wedding Photographers in Asheville, NC</title>
+<meta name="description" content="Unposed, documentary-style wedding and elopement photography in Asheville and the Blue Ridge. Two photographers, full galleries in six weeks. Collections from $2,400.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--paper:#FAF8F5;--taupe:#8E7F6F;--sand:#C9B8A6;--umber:#2E2A26;--line:#11111122;--muted:#6E655B;--display:"Cormorant",Georgia,serif;--body:"DM Sans",system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.7 var(--body)}
+img{max-width:100%;height:auto;display:block}a{color:inherit}
+:focus-visible{outline:2px solid var(--taupe);outline-offset:3px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 32px}
+h1,h2,h3{font-family:var(--display);font-weight:500;letter-spacing:-.005em}
+.concept{background:var(--ink);color:#CFC6BB;font-size:12.5px;text-align:center;padding:7px 16px}.concept a{color:#fff}
+header.top{position:sticky;top:0;z-index:40;background:#FAF8F5f2;backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:76px;gap:24px}
+nav.main{display:flex;gap:28px;font-size:14.5px}nav.main a{text-decoration:none;color:var(--umber)}nav.main a:hover{text-decoration:underline;text-underline-offset:5px}
+.brand{text-align:center;text-decoration:none;line-height:1}
+.brand b{display:block;font:500 29px/1 var(--display);letter-spacing:.01em}
+.brand small{display:block;font-size:11px;letter-spacing:.22em;color:var(--taupe);margin-top:5px}
+.hdr{display:flex;justify-content:flex-end;align-items:center;gap:22px;font-size:14.5px}
+.hdr .tel{text-decoration:none;color:var(--umber)}
+.btn{display:inline-flex;align-items:center;justify-content:center;font:500 15px/1 var(--body);padding:14px 22px;text-decoration:none;border:1px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer;letter-spacing:.01em;white-space:nowrap}
+.btn:hover{background:var(--umber)}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}.btn.ghost:hover{background:#ffffff1a}
+@media(max-width:1060px){nav.main{display:none}header.top .wrap{grid-template-columns:auto 1fr}.brand{text-align:left}}
+@media(max-width:560px){.hdr .tel{display:none}.brand b{font-size:24px}.hdr .btn{padding:11px 14px;font-size:14px}.wrap{padding:0 20px}}
+
+/* hero */
+.hero{position:relative;height:calc(100svh - 108px);min-height:560px;color:#fff;overflow:hidden;background:#2E2A26}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#11111100 35%,#111111a6 100%)}
+.hero .wrap{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:56px}
+.hero h1{font:italic 400 clamp(46px,7.4vw,116px)/.95 var(--display);margin:0 0 26px;max-width:15ch;letter-spacing:-.02em}
+.hero .row{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;border-top:1px solid #ffffff59;padding-top:22px}
+.hero p{margin:0;max-width:34em;font-size:17px;color:#EFE9E2}
+.hero .acts{display:flex;gap:12px;flex-wrap:wrap}
+.hero .btn{background:var(--paper);color:var(--ink);border-color:var(--paper)}.hero .btn:hover{background:#fff}
+.hero .btn.ghost{background:transparent;color:#fff;border-color:#fff}
+@media(max-width:700px){.hero::after{background:linear-gradient(180deg,#11111120 0%,#11111199 40%,#111111e0 100%)}}
+.plate{position:absolute;right:32px;top:26px;z-index:2;font-size:12.5px;color:#ffffffcc;letter-spacing:.04em}
+
+/* running head */
+.rh{display:flex;justify-content:space-between;font-size:13px;color:var(--taupe);border-top:1px solid var(--ink);padding-top:12px;margin-bottom:56px}
+section.band{padding:110px 0}
+h2.t{font-size:clamp(40px,5vw,72px);line-height:1;margin:0 0 20px;font-weight:500}
+.lede{font-size:18px;color:var(--muted);max-width:34em;margin:0}
+
+/* intro spread */
+.spread{display:grid;grid-template-columns:1.15fr .85fr;gap:80px;align-items:center}
+.spread .big{font:400 clamp(28px,2.8vw,40px)/1.28 var(--display);margin:0 0 30px;color:var(--umber)}
+.spread .cols{columns:2;column-gap:36px;color:var(--muted);font-size:15.5px}
+.spread .cols p{margin:0 0 14px}
+.spread .sig{display:flex;gap:28px;margin-top:30px;padding-top:22px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.spread .sig b{display:block;font:500 32px/1 var(--display);color:var(--ink)}
+.frame{border:1px solid var(--line);padding:14px;background:#fff}
+.frame img{width:100%;aspect-ratio:2/3;object-fit:cover}
+.frame figcaption{display:flex;justify-content:space-between;font-size:12.5px;color:var(--taupe);padding-top:12px}
+figure{margin:0}
+@media(max-width:900px){.spread{grid-template-columns:1fr;gap:48px}.spread .cols{columns:1}.frame{max-width:460px}}
+
+/* gallery */
+.work{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.work .top{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:48px}
+.masonry{columns:3 300px;column-gap:16px}
+.masonry button{all:unset;display:block;width:100%;margin:0 0 16px;cursor:zoom-in;break-inside:avoid;position:relative}
+.masonry button:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+.masonry img{width:100%;transition:opacity .3s}
+.masonry button:hover img{opacity:.88}
+.masonry span{display:block;font-size:12.5px;color:var(--taupe);padding:8px 0 0}
+@media(max-width:820px){.work .top{grid-template-columns:1fr;gap:16px}}
+@media(max-width:620px){.masonry{columns:2;column-gap:10px}.masonry button{margin-bottom:10px}.masonry span{display:none}}
+dialog.lb{border:0;padding:0;max-width:100vw;max-height:100vh;width:100vw;height:100vh;background:#111111f5;color:#EFE9E2}
+dialog.lb::backdrop{background:#111111e6}
+.lb .stage{height:100%;display:grid;grid-template-rows:auto 1fr auto;padding:18px 24px}
+.lb .bar{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#CFC6BB}
+.lb .imgwrap{display:flex;align-items:center;justify-content:center;min-height:0;position:relative}
+.lb img{max-width:100%;max-height:calc(100vh - 150px);object-fit:contain}
+.lb .cap{text-align:center;font:italic 400 22px/1.3 var(--display);padding:12px 0 4px;color:#EFE9E2;min-height:42px}
+.lb button{appearance:none;background:transparent;border:1px solid #ffffff4d;color:#fff;font:500 14px var(--body);padding:10px 16px;cursor:pointer}
+.lb button:hover{background:#ffffff14}
+.lb .nav{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;padding:0;font-size:22px;display:grid;place-items:center;background:#11111166}
+.lb .prev{left:0}.lb .next{right:0}
+@media(max-width:620px){.lb .stage{padding:12px}.lb .nav{top:auto;bottom:-6px;transform:none}}
+
+/* collections */
+.coll{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.coll article{padding:40px 36px 44px;border-left:1px solid var(--line);display:flex;flex-direction:column}
+.coll article:first-child{border-left:0;padding-left:0}
+.coll article:last-child{padding-right:0}
+.coll h3{font-size:38px;line-height:1;margin:0 0 6px}
+.coll .for{font-size:14px;color:var(--taupe);margin:0 0 26px}
+.coll .price{font:500 22px/1 var(--display);margin:0 0 24px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.coll .price b{font-size:46px;font-weight:500}
+.coll ul{list-style:none;margin:0 0 30px;padding:0;display:grid;gap:9px;font-size:15px;color:var(--muted)}
+.coll ul li{padding-left:18px;position:relative}.coll ul li::before{content:"";position:absolute;left:0;top:.8em;width:8px;height:1px;background:var(--taupe)}
+.coll .btn{margin-top:auto;align-self:flex-start}
+.coll .pick{background:#F2EDE6;margin:-1px 0;padding-left:36px;padding-right:36px;border-left:0;position:relative}
+.coll .pick .tag{position:absolute;top:14px;left:36px;font-size:12.5px;color:var(--taupe);margin:0}
+.fine{font-size:14px;color:var(--muted);margin:22px 0 0}
+@media(max-width:960px){.coll{grid-template-columns:1fr;border-bottom:0}.coll article,.coll article:first-child,.coll article:last-child{padding:34px 0;border-left:0;border-bottom:1px solid var(--ink)}.coll .pick{padding:34px 22px;margin:0}}
+
+/* process */
+.proc{display:grid;grid-template-columns:repeat(4,1fr);gap:0;list-style:none;margin:0;padding:0}
+.proc li{padding:0 28px 0 0;margin-right:28px;border-right:1px solid var(--line)}
+.proc li:last-child{border-right:0;margin-right:0}
+.proc .num{font:400 64px/1 var(--display);color:var(--sand);display:block;margin-bottom:18px}
+.proc b{display:block;font:500 26px/1.15 var(--display);margin-bottom:8px}
+.proc span{font-size:15px;color:var(--muted)}
+.procwrap .intro{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:56px}
+@media(max-width:820px){.procwrap .intro{grid-template-columns:1fr;gap:16px}}
+@media(max-width:760px){.proc{grid-template-columns:1fr 1fr;gap:40px 0}.proc li:nth-child(2){border-right:0;margin-right:0}}
+@media(max-width:480px){.proc{grid-template-columns:1fr}.proc li{border-right:0;margin-right:0;padding:0 0 26px;border-bottom:1px solid var(--line)}}
+
+/* words */
+.words{background:var(--umber);color:#EFE9E2}
+.words .rh{border-color:#EFE9E2;color:var(--sand)}
+.wgrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:center}
+.wgrid img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.pull{font:400 clamp(30px,3.3vw,46px)/1.22 var(--display);margin:0 0 20px;color:#fff}
+.who{font-size:14px;color:var(--sand);margin:0 0 44px}
+.small{display:grid;grid-template-columns:1fr 1fr;gap:32px;border-top:1px solid #EFE9E233;padding-top:30px}
+.small blockquote{margin:0 0 10px;font:400 21px/1.4 var(--display);color:#EFE9E2}
+.small figcaption{font-size:13px;color:var(--sand)}
+@media(max-width:900px){.wgrid{grid-template-columns:1fr;gap:40px}.wgrid img{aspect-ratio:4/3}.small{grid-template-columns:1fr}}
+
+/* inquiry */
+.inq{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:start}
+.inq aside p{color:var(--muted);margin:0 0 18px}
+.inq aside dl{margin:28px 0 0;border-top:1px solid var(--line)}
+.inq aside dl div{display:flex;justify-content:space-between;gap:20px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.inq aside dt{color:var(--taupe)}.inq aside dd{margin:0;text-align:right}
+form.f{border:1px solid var(--ink);padding:40px;background:#fff}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 22px}
+.fl{display:flex;flex-direction:column;margin-bottom:20px}
+.fl label{font-size:13.5px;color:var(--umber);margin-bottom:6px;font-weight:500}
+.fl .opt{color:var(--taupe);font-weight:400}
+.fl input,.fl select,.fl textarea{font:inherit;font-size:16px;border:0;border-bottom:1px solid #11111159;background:transparent;padding:10px 0;color:var(--ink);border-radius:0;width:100%}
+.fl select{appearance:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23111' stroke-width='1.3'/%3E%3C/svg%3E") no-repeat right 4px center}
+.fl textarea{resize:vertical;min-height:96px}
+.fl input:focus,.fl select:focus,.fl textarea:focus{outline:none;border-bottom:2px solid var(--ink);padding-bottom:9px}
+.fl [aria-invalid="true"]{border-bottom:2px solid #9A3B2C}
+.datehint{font-size:13px;color:var(--taupe);margin-top:6px;min-height:1.3em}
+.err{color:#9A3B2C;font-size:14px;min-height:1.3em;margin:0 0 12px}
+.f .btn{width:100%;padding:17px}
+.note{font-size:12.5px;color:var(--taupe);text-align:center;margin:12px 0 0}
+.done{text-align:center;padding:40px 10px}.done h3{font-size:44px;margin:0 0 14px;line-height:1.05}.done p{color:var(--muted);max-width:30em;margin:0 auto 10px}
+.linkbtn{appearance:none;border:0;background:none;text-decoration:underline;text-underline-offset:4px;font:inherit;cursor:pointer;color:var(--umber);margin-top:14px}
+@media(max-width:960px){.inq{grid-template-columns:1fr;gap:44px}form.f{padding:28px 22px}}
+@media(max-width:560px){.grid2{grid-template-columns:1fr}}
+
+/* faq + studio */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.faq details{border-bottom:1px solid var(--line);padding:18px 0}
+.faq details:first-of-type{border-top:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font:500 23px/1.3 var(--display)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:300 24px/1 var(--body);color:var(--taupe)}.faq details[open] summary::after{content:"\2212"}
+.faq p{margin:10px 0 0;color:var(--muted);font-size:15.5px}
+.map{display:block;border:1px solid var(--line);width:100%;height:330px;filter:grayscale(1) contrast(.95);background:#EEE9E2;margin:24px 0 18px}
+.studio dl{display:grid;grid-template-columns:auto 1fr;gap:6px 22px;margin:0;font-size:15px}.studio dt{color:var(--taupe)}.studio dd{margin:0}
+@media(max-width:900px){.two{grid-template-columns:1fr;gap:64px}}
+
+.cta{border-top:1px solid var(--line);text-align:center;padding:110px 0}
+.cta h2{font-size:clamp(40px,5.4vw,80px);line-height:1;margin:0 auto 18px;max-width:20ch}
+.cta .rule{width:64px;height:1px;background:var(--ink);margin:0 auto 34px}
+.cta p{color:var(--muted);margin:0 auto 30px;max-width:32em}
+footer{background:var(--ink);color:#A9A096;padding:72px 0 30px;font-size:14.5px}
+footer .cols{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px}
+footer .logo{font:500 32px/1 var(--display);color:#fff;margin:0 0 14px}
+footer h3{color:#fff;font:500 14px/1.2 var(--body);margin:0 0 14px;letter-spacing:.02em}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+footer a{text-decoration:none}footer a:hover{color:#fff;text-decoration:underline}
+footer .legal{border-top:1px solid #ffffff1f;margin-top:48px;padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12.5px}
+footer .legal a{color:#fff}
+@media(max-width:820px){footer .cols{grid-template-columns:1fr 1fr}}
+.mbar{display:none}
+.mbar{transition:transform .25s ease}.mbar.off{transform:translateY(140%)}
+@media(max-width:760px){.mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--paper);border-top:1px solid var(--ink)}.mbar a{flex:1;text-align:center;padding:16px;text-decoration:none;font-weight:500;font-size:15px}.mbar a+a{background:var(--ink);color:var(--paper)}body{padding-bottom:56px}}
+</style>
+</head>
+<body>
+<div class="concept">Example concept by <a href="https://calvyrn.com">Calvyrn</a>. Juniper &amp; Light Studio is fictional; names, reviews and 555 numbers are placeholders. Photos: Unsplash.</div>
+<header class="top"><div class="wrap">
+  <nav class="main" aria-label="Main"><a href="#work">Work</a><a href="#collections">Collections</a><a href="#booking">Booking</a><a href="#kind-words">Kind words</a><a href="#faq">FAQ</a></nav>
+  <a class="brand" href="#top" aria-label="Juniper and Light Studio, home"><b>Juniper &amp; Light</b><small>STUDIO · ASHEVILLE</small></a>
+  <div class="hdr"><a class="tel" href="tel:+18285550119">(828) 555-0119</a><a class="btn" href="#inquire">Check your date</a></div>
+</div></header>
+
+<main id="top">
+<section class="hero">
+  <img src="img/hero.jpg" alt="A couple walking hand in hand across a hillside meadow under a pale sky" fetchpriority="high" width="1800" height="1200">
+  <span class="plate">Plate I · Madison County, October</span>
+  <div class="wrap">
+    <h1>Unposed wedding photographs from the Blue Ridge.</h1>
+    <div class="row">
+      <p>Two photographers, one quiet approach. We document weddings and elopements across Western North Carolina and deliver your full gallery in six weeks.</p>
+      <div class="acts"><a class="btn" href="#inquire">Check your date</a><a class="btn ghost" href="#work">See the work</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="about"><div class="wrap">
+  <div class="rh"><span>The studio</span><span>02</span></div>
+  <div class="spread">
+    <div>
+      <p class="big">We stay out of the way until it matters, then we're right there. Most of what you'll treasure happens between the moments you planned.</p>
+      <div class="cols">
+        <p>Juniper &amp; Light is a husband-and-wife team working out of a small studio in the River Arts District. We take on about twenty weddings a year so every couple gets both of us, start to finish.</p>
+        <p>Expect very little posing. We'll guide family photos so they're done in fifteen minutes, then let the day unfold. Light, weather and whatever the mountains throw at us are part of the story.</p>
+        <p>We photograph mountaintop elopements, farm weddings in Madison County, downtown courthouse ceremonies, and travel to the coast a few times a year.</p>
+      </div>
+      <div class="sig"><span><b>20</b>weddings a year</span><span><b>6 wks</b>to your full gallery</span><span><b>2</b>photographers, always</span></div>
+    </div>
+    <figure class="frame"><img src="img/beach-veil.jpg" alt="Bride and groom embracing on a pebble beach, her long veil spread behind her" loading="lazy" width="1000" height="1500"><figcaption><span>Plate II</span><span>Outer Banks, June</span></figcaption></figure>
+  </div>
+</div></section>
+
+<section class="band work" id="work"><div class="wrap">
+  <div class="rh"><span>Selected work</span><span>03</span></div>
+  <div class="top"><h2 class="t" style="margin:0">Recent weddings</h2><p class="lede">A few frames from the last two seasons. Select any photo to view it larger; use the arrow keys to move through the set.</p></div>
+  <div class="masonry" id="masonry">
+    <button type="button" data-cap="Golden hour walk, Black Mountain"><img src="img/golden-walk.jpg" alt="Couple walking away through tall grass in golden evening light, framed by a palm leaf" loading="lazy" width="1000" height="1500"><span>Black Mountain</span></button>
+    <button type="button" data-cap="First touch, Weaverville"><img src="img/hands-shadow.jpg" alt="Close-up of a bride and groom holding hands, their shadows on the grass" loading="lazy" width="1000" height="666"><span>Weaverville</span></button>
+    <button type="button" data-cap="The exit, downtown Asheville"><img src="img/confetti.jpg" alt="Black and white photo of guests throwing confetti over a laughing bride and groom" loading="lazy" width="1000" height="666"><span>Downtown Asheville</span></button>
+    <button type="button" data-cap="Ridge-top elopement, Madison County"><img src="img/hills.jpg" alt="Couple walking hand in hand across a hillside at dusk" loading="lazy" width="1000" height="666"><span>Madison County</span></button>
+    <button type="button" data-cap="After the vows, Lake Lure"><img src="img/rings.jpg" alt="Close-up of a groom's hand holding the bride's hand, showing her ring" loading="lazy" width="1000" height="667"><span>Lake Lure</span></button>
+    <button type="button" data-cap="Last dance, Hendersonville"><img src="img/dance-floor.jpg" alt="Bride dancing with her wedding party outdoors at night" loading="lazy" width="1000" height="563"><span>Hendersonville</span></button>
+    <button type="button" data-cap="Sea veil, Outer Banks"><img src="img/beach-veil.jpg" alt="Bride and groom on a beach with a long veil trailing across the pebbles" loading="lazy" width="1000" height="1500"><span>Outer Banks</span></button>
+  </div>
+</div></section>
+
+<dialog class="lb" id="lb" aria-label="Photo viewer">
+  <div class="stage">
+    <div class="bar"><span id="lbCount" aria-live="polite"></span><button type="button" id="lbClose">Close <span aria-hidden="true">✕</span></button></div>
+    <div class="imgwrap">
+      <button type="button" class="nav prev" id="lbPrev" aria-label="Previous photo">‹</button>
+      <img id="lbImg" src="" alt="">
+      <button type="button" class="nav next" id="lbNext" aria-label="Next photo">›</button>
+    </div>
+    <p class="cap" id="lbCap"></p>
+  </div>
+</dialog>
+
+<section class="band" id="collections"><div class="wrap">
+  <div class="rh"><span>Collections</span><span>04</span></div>
+  <h2 class="t">Collections</h2>
+  <p class="lede" style="margin-bottom:52px">Every collection includes an online gallery to share and download, a print release, and travel within 60 miles of Asheville. Prices are starting points; we'll send an exact quote for your day.</p>
+  <div class="coll">
+    <article>
+      <h3>The Overlook</h3><p class="for">For elopements and courthouse weddings</p>
+      <p class="price">from <b>$2,400</b></p>
+      <ul><li>Up to 3 hours of coverage</li><li>One photographer</li><li>Help choosing a ridge or trail location</li><li>250+ edited images</li><li>Gallery in three weeks</li></ul>
+      <a class="btn ghost" href="#inquire" data-coll="The Overlook">Ask about The Overlook</a>
+    </article>
+    <article class="pick">
+      <p class="tag">Most couples choose this</p>
+      <h3>The Full Day</h3><p class="for">For weddings of up to 200 guests</p>
+      <p class="price">from <b>$4,900</b></p>
+      <ul><li>8 hours of coverage</li><li>Two photographers</li><li>Engagement session in the mountains</li><li>700+ edited images</li><li>Timeline planning call</li><li>Gallery in six weeks</li></ul>
+      <a class="btn" href="#inquire" data-coll="The Full Day">Ask about The Full Day</a>
+    </article>
+    <article>
+      <h3>The Weekend</h3><p class="for">For destination weekends</p>
+      <p class="price">from <b>$7,400</b></p>
+      <ul><li>Rehearsal dinner and full wedding day</li><li>Two photographers, 10 hours</li><li>Next-morning portrait session</li><li>Linen-bound 10×10 album</li><li>Gallery in six weeks</li></ul>
+      <a class="btn ghost" href="#inquire" data-coll="The Weekend">Ask about The Weekend</a>
+    </article>
+  </div>
+  <p class="fine">A 30% retainer reserves your date. The balance is due 30 days before the wedding. Payment plans are available.</p>
+</div></section>
+
+<section class="band" id="booking" style="padding-top:20px"><div class="wrap">
+  <div class="rh"><span>How booking works</span><span>05</span></div>
+  <div class="procwrap">
+    <div class="intro"><h2 class="t" style="margin:0">From hello to your gallery</h2><p class="lede">Simple and unhurried. Most couples book 9 to 14 months ahead; for elopements, a few weeks can be enough.</p></div>
+    <ol class="proc">
+      <li><span class="num" aria-hidden="true">i</span><b>Send an inquiry</b><span>Tell us your date and venue. We reply within two business days with availability and a quote.</span></li>
+      <li><span class="num" aria-hidden="true">ii</span><b>Coffee or a call</b><span>Thirty minutes to meet, in the studio or on video, and see if we're the right fit.</span></li>
+      <li><span class="num" aria-hidden="true">iii</span><b>Reserve your date</b><span>Sign the agreement online and pay the 30% retainer. Your date is held for you.</span></li>
+      <li><span class="num" aria-hidden="true">iv</span><b>Plan, then celebrate</b><span>A timeline call four weeks out, then we take it from there on the day.</span></li>
+    </ol>
+  </div>
+</div></section>
+
+<section class="band words" id="kind-words"><div class="wrap">
+  <div class="rh"><span>Kind words</span><span>06</span></div>
+  <div class="wgrid">
+    <img src="img/confetti.jpg" alt="Guests throwing confetti over the newlyweds, in black and white" loading="lazy" width="1000" height="666" style="filter:grayscale(1)">
+    <div>
+      <p class="pull">"We barely noticed them all day, and then the gallery came and we cried at every page. They caught my grandmother laughing at the exact second I walked in."</p>
+      <p class="who">Placeholder review · Married in Weaverville</p>
+      <div class="small">
+        <figure><blockquote>"Family photos took twelve minutes. Twelve. My mother still talks about it."</blockquote><figcaption>Placeholder review · Married in Asheville</figcaption></figure>
+        <figure><blockquote>"It poured on our elopement. They had us laughing under an umbrella and those are our favorites."</blockquote><figcaption>Placeholder review · Eloped near Black Mountain</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="band" id="inquire"><div class="wrap">
+  <div class="rh"><span>Inquire</span><span>07</span></div>
+  <div class="inq">
+    <aside>
+      <h2 class="t">Check your date</h2>
+      <p>Tell us a little about your plans. We'll reply within two business days with our availability and a quote.</p>
+      <p>Prefer to talk? Call or text <a href="tel:+18285550119">(828) 555-0119</a>.</p>
+      <dl><div><dt>Booking now</dt><dd>2027 and 2028 seasons</dd></div><div><dt>Busiest months</dt><dd>May, June, September, October</dd></div><div><dt>Studio hours</dt><dd>Tue–Fri, 10 am – 5 pm</dd></div></dl>
+    </aside>
+    <form class="f" id="inqForm" novalidate aria-label="Wedding inquiry">
+      <div id="fBody">
+        <div class="grid2">
+          <div class="fl"><label for="n1">Your name</label><input id="n1" autocomplete="name" required></div>
+          <div class="fl"><label for="n2">Partner's name <span class="opt">(optional)</span></label><input id="n2"></div>
+          <div class="fl"><label for="em">Email</label><input id="em" type="email" autocomplete="email" required></div>
+          <div class="fl"><label for="ph">Phone <span class="opt">(optional)</span></label><input id="ph" type="tel" autocomplete="tel"></div>
+          <div class="fl"><label for="date">Wedding date</label><input id="date" type="date" required aria-describedby="dateHint"><span class="datehint" id="dateHint">Not set yet? Pick your best guess.</span></div>
+          <div class="fl"><label for="venue">Venue or location</label><input id="venue" placeholder="Venue name, town, or 'still looking'" required></div>
+          <div class="fl"><label for="guests">Guest count</label><select id="guests" required><option value="">Choose one</option><option>Just us (elopement)</option><option>Under 50</option><option>50 to 100</option><option>100 to 150</option><option>150 to 200</option><option>Over 200</option></select></div>
+          <div class="fl"><label for="heard">How did you hear about us?</label><select id="heard" required><option value="">Choose one</option><option>Instagram</option><option>A friend or past couple</option><option>Our venue</option><option>Our planner</option><option>Google search</option><option>Other</option></select></div>
+        </div>
+        <div class="fl"><label for="coll">Collection <span class="opt">(optional)</span></label><select id="coll"><option value="">Not sure yet</option><option>The Overlook</option><option>The Full Day</option><option>The Weekend</option></select></div>
+        <div class="fl"><label for="msg">Tell us about your day <span class="opt">(optional)</span></label><textarea id="msg" placeholder="What matters most to you, who will be there, anything you're dreaming of"></textarea></div>
+        <p class="err" id="err" role="alert"></p>
+        <button class="btn" type="submit">Send inquiry</button>
+        <p class="note">We'll only use your details to reply to this inquiry.</p>
+      </div>
+      <div class="done" id="done" hidden tabindex="-1">
+        <h3>Thank you. Your note is with us.</h3>
+        <p id="doneText"></p>
+        <p class="note">Demo: nothing was sent.</p>
+        <button type="button" class="linkbtn" id="again">Send another inquiry</button>
+      </div>
+    </form>
+  </div>
+</div></section>
+
+<section class="band" id="faq" style="padding-top:20px"><div class="wrap">
+  <div class="rh"><span>Questions and the studio</span><span>08</span></div>
+  <div class="two">
+    <div>
+      <h2 class="t">Good questions</h2>
+      <div class="faq">
+        <details><summary>Do you travel outside Asheville?</summary><p>Yes. Travel within 60 miles is included. Beyond that we add mileage, or flights and a room for destination weddings, quoted up front.</p></details>
+        <details><summary>When will we see our photos?</summary><p>A sneak peek of 30 or so images within a week, and your full gallery in six weeks. Elopement galleries arrive in three.</p></details>
+        <details><summary>Do you give us the raw files?</summary><p>No. Every image you receive is edited by us. You get full-resolution files and a print release, so you can print anywhere.</p></details>
+        <details><summary>What if it rains?</summary><p>We bring clear umbrellas and know covered spots at most local venues. Some of our favorite photographs were made in the rain.</p></details>
+        <details><summary>Can we change the date after booking?</summary><p>Your retainer moves with you to any open date within 18 months.</p></details>
+      </div>
+    </div>
+    <div class="studio">
+      <h2 class="t">The studio</h2>
+      <p class="lede">Come by for coffee and to flip through printed albums. Visits are by appointment.</p>
+      <iframe class="map" title="Map showing the studio in Asheville's River Arts District" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-82.585%2C35.575%2C-82.545%2C35.595&amp;layer=mapnik&amp;marker=35.5848%2C-82.5662"></iframe>
+      <dl><dt>Address</dt><dd>122 Riverside Dr, Studio 4, Asheville, NC 28801</dd><dt>Hours</dt><dd>Tue–Fri 10 am – 5 pm, by appointment</dd><dt>Phone</dt><dd><a href="tel:+18285550119">(828) 555-0119</a></dd><dt>Area</dt><dd>Asheville, Black Mountain, Weaverville, Hendersonville, Lake Lure and the Blue Ridge Parkway</dd></dl>
+    </div>
+  </div>
+</div></section>
+
+<section class="cta"><div class="wrap">
+  <div class="rule"></div>
+  <h2>October Saturdays go first.</h2>
+  <p>We're booking the 2027 and 2028 seasons now. Send your date and we'll tell you within two days if it's open.</p>
+  <a class="btn" href="#inquire">Check your date</a>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div><p class="logo">Juniper &amp; Light</p><p style="margin:0;max-width:26em">Documentary wedding and elopement photography in Asheville and across Western North Carolina.</p></div>
+    <div><h3>Explore</h3><ul><li><a href="#work">Recent work</a></li><li><a href="#collections">Collections</a></li><li><a href="#booking">How booking works</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+    <div><h3>Studio</h3><ul><li>122 Riverside Dr, Studio 4</li><li>Asheville, NC 28801</li><li>Tue–Fri 10–5, by appointment</li></ul></div>
+    <div><h3>Contact</h3><ul><li><a href="tel:+18285550119">(828) 555-0119</a></li><li><a href="#inquire">Send an inquiry</a></li></ul></div>
+  </div>
+  <div class="legal"><span>Juniper &amp; Light Studio is a fictional business used to demonstrate a wedding photography website. Photos from Unsplash.</span><span>Concept, design and build: <a href="https://calvyrn.com">Calvyrn</a></span></div>
+</div></footer>
+<div class="mbar off" id="mbar"><a href="tel:+18285550119">Call</a><a href="#inquire">Check your date</a></div>
+
+<script>
+(() => {
+  const $ = s => document.querySelector(s);
+  // lightbox
+  const items = [...document.querySelectorAll('#masonry button')];
+  const lb = $('#lb'), img = $('#lbImg');
+  let idx = 0, opener = null;
+  function show(i) {
+    idx = (i + items.length) % items.length;
+    const src = items[idx].querySelector('img');
+    img.src = src.getAttribute('src'); img.alt = src.alt;
+    $('#lbCap').textContent = items[idx].dataset.cap;
+    $('#lbCount').textContent = `Photo ${idx + 1} of ${items.length}`;
+  }
+  items.forEach((b, i) => b.addEventListener('click', () => {
+    opener = b; show(i);
+    if (lb.showModal) lb.showModal(); else lb.setAttribute('open', '');
+    $('#lbClose').focus();
+  }));
+  $('#lbPrev').onclick = () => show(idx - 1);
+  $('#lbNext').onclick = () => show(idx + 1);
+  $('#lbClose').onclick = () => lb.close();
+  lb.addEventListener('close', () => { if (opener) opener.focus(); });
+  lb.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') { e.preventDefault(); show(idx + 1); }
+    else if (e.key === 'ArrowLeft') { e.preventDefault(); show(idx - 1); }
+  });
+  lb.addEventListener('click', e => { if (e.target === lb || e.target.classList.contains('imgwrap')) lb.close(); });
+
+  // collection buttons prefill
+  document.querySelectorAll('[data-coll]').forEach(a => a.addEventListener('click', () => { $('#coll').value = a.dataset.coll; }));
+
+  // date
+  const dateEl = $('#date'), hint = $('#dateHint');
+  const today = new Date(); today.setHours(0,0,0,0);
+  const iso = d => d.toISOString().slice(0, 10);
+  dateEl.min = iso(new Date(today.getTime() + 86400000));
+  dateEl.addEventListener('change', () => {
+    if (!dateEl.value) { hint.textContent = 'Not set yet? Pick your best guess.'; return; }
+    const d = new Date(dateEl.value + 'T12:00');
+    const wd = d.toLocaleDateString('en-US', { weekday: 'long' });
+    const m = d.getMonth();
+    hint.textContent = (wd === 'Saturday' && [4, 5, 8, 9].includes(m))
+      ? `A ${wd} in ${d.toLocaleDateString('en-US', { month: 'long' })}: our busiest time, so inquire soon.`
+      : `${wd}, ${d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}.`;
+  });
+
+  // form
+  const form = $('#inqForm');
+  const need = [['n1', 'Add your name.'], ['em', 'Add your email so we can reply.'], ['date', 'Pick your wedding date, or your best guess.'], ['venue', "Add your venue or town, or write 'still looking'."], ['guests', 'Choose an approximate guest count.'], ['heard', 'Let us know how you heard about us.']];
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    form.querySelectorAll('[aria-invalid]').forEach(x => x.removeAttribute('aria-invalid'));
+    for (const [id, msg] of need) {
+      const el = $('#' + id);
+      if (!el.value.trim()) { el.setAttribute('aria-invalid', 'true'); $('#err').textContent = msg; el.focus(); return; }
+    }
+    if (!/^\S+@\S+\.\S+$/.test($('#em').value.trim())) { $('#em').setAttribute('aria-invalid', 'true'); $('#err').textContent = 'Check the email address.'; $('#em').focus(); return; }
+    const d = new Date(dateEl.value + 'T12:00');
+    if (d < today) { dateEl.setAttribute('aria-invalid', 'true'); $('#err').textContent = 'That date has already passed. Choose a future date.'; dateEl.focus(); return; }
+    $('#err').textContent = '';
+    const names = [$('#n1').value.trim().split(' ')[0], $('#n2').value.trim().split(' ')[0]].filter(Boolean).join(' & ');
+    $('#doneText').textContent = `${names}, we've noted ${d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })} at ${$('#venue').value.trim()}. We'll check the calendar and email ${$('#em').value.trim()} within two business days.`;
+    $('#fBody').hidden = true; $('#done').hidden = false; $('#done').focus();
+  });
+  $('#again').onclick = () => { form.reset(); hint.textContent = 'Not set yet? Pick your best guess.'; $('#done').hidden = true; $('#fBody').hidden = false; $('#n1').focus(); };
+})();
+</script>
+<script>
+(() => { const bar = document.getElementById('mbar'), hero = document.querySelector('.hero');
+  if ('IntersectionObserver' in window) new IntersectionObserver(es => es.forEach(e => bar.classList.toggle('off', e.isIntersecting)), { threshold: 0.15 }).observe(hero);
+  else bar.classList.remove('off'); })();
+</script>
+</body>
+</html>
