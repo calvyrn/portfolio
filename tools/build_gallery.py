@@ -7,13 +7,13 @@ S = json.load(open(os.path.join(ROOT, 'sites.json')))
 ORDER = {"High-end 3D": 0, "Medium": 1, "Simple": 2}
 S.sort(key=lambda r: (ORDER.get(r[2], 9), r[3]))
 GROUPS = {
- 'home': ('Home services', {'HVAC','Plumbing','Home services','Home cleaning','Landscaping','Solar','Security','Auto repair'}),
+ 'home': ('Home services', {'HVAC','Plumbing','Home services','Home cleaning','Landscaping','Solar','Security','Auto repair','Automotive'}),
  'health': ('Health & beauty', {'Dental','Med spa','Physical therapy','Veterinary','Salon & spa','Beauty','Fitness'}),
  'food': ('Food & travel', {'Restaurant','Food & drink','Hospitality','Travel'}),
  'pro': ('Professional', {'Accounting','Legal','Insurance','Real estate','Architecture','Logistics'}),
- 'shops': ('Shops & brands', {'Fashion','Jewelry','Photography','Beauty'}),
+ 'shops': ('Shops & brands', {'Fashion','Jewelry','Photography','Beauty','Furniture'}),
 }
-FEATURED = ['freight-globe-3d','ring-builder-3d','eastern-wear-motion','lodge-360-tour']
+FEATURED = ['detailing-studio-3d','upholstery-3d','freight-globe-3d','ring-builder-3d']
 e = html.escape
 def groups(r):
     g = [k for k,(_,inds) in GROUPS.items() if r[3] in inds]

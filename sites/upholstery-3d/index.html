@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pell &amp; Hart · Sofas and chairs built by hand in Red Hook, Brooklyn</title>
+<meta name="description" content="Made-to-order sofas and chairs, hand-built in our Red Hook workshop. Choose the size, fabric and legs in 3D, order free fabric swatches, and visit the showroom.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--plaster:#E8E2D8;--paper:#F3EFE8;--ink:#1E1A17;--brown:#5A4A3E;--mute:#86796D;--line:#D6CDBF;--fab:#1F5A5C;--fabInk:#fff}
+*{box-sizing:border-box;margin:0}
+html.lenis{height:auto}.lenis.lenis-smooth{scroll-behavior:auto}
+body{font:400 17.5px/1.65 "Karla",system-ui,sans-serif;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}a{color:inherit}
+:focus-visible{outline:2px solid var(--fab);outline-offset:3px}
+.ser{font-family:"Libre Caslon Display",Georgia,serif;font-weight:400;letter-spacing:-.01em;line-height:1.02}
+.wrap{max-width:1320px;margin:0 auto;padding:0 36px}
+.ico{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+#pre{position:fixed;inset:0;z-index:100;background:var(--plaster);display:grid;place-items:center;transition:opacity .9s .2s,visibility .9s .2s}
+#pre.done{opacity:0;visibility:hidden}
+#pre .in{text-align:center}#pre .ser{font-size:44px}#pre p{color:var(--brown);font-size:14px;margin-top:8px}
+#pre .bar{width:220px;height:1px;background:var(--line);margin:22px auto 0;overflow:hidden}#pre .bar i{display:block;height:100%;width:0;background:var(--ink);transition:width .3s}
+.topbar{position:relative;z-index:30;background:var(--ink);color:#cbbfb2;font-size:12.5px;text-align:center;padding:6px 14px}.topbar a{color:#fff}
+header{position:fixed;left:0;right:0;top:var(--tb,31px);z-index:40;transition:top .4s,background .4s,box-shadow .4s}
+header.solid{top:0;background:rgba(243,239,232,.88);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.nav{display:flex;align-items:center;gap:34px;height:78px}
+.logo{text-decoration:none;font-size:24px;white-space:nowrap}
+.logo em{font-style:normal;color:var(--fab);transition:color .6s}
+.nav ul{display:flex;gap:28px;list-style:none;padding:0;margin-left:auto;font-weight:500;font-size:15.5px}
+.nav ul a{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .35s}
+.nav ul a:hover{background-size:100% 1px}
+.bag{display:flex;align-items:center;gap:8px;background:none;border:0;font:600 15px "Karla";cursor:pointer;color:var(--ink)}
+.bag b{min-width:22px;height:22px;border-radius:11px;background:var(--fab);color:var(--fabInk);font-size:12px;display:grid;place-items:center;transition:background .6s}
+.btn{display:inline-flex;align-items:center;gap:10px;border:0;cursor:pointer;background:var(--ink);color:#fff;font:600 15.5px "Karla";padding:15px 24px;border-radius:2px;text-decoration:none;transition:background .35s}
+.btn:hover{background:var(--fab);color:var(--fabInk)}
+.btn svg{width:18px;height:18px}
+.btn.line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}.btn.line:hover{background:var(--ink);color:#fff}
+
+/* 3D stage */
+#room{position:relative;height:500vh;background:var(--plaster)}
+.stage{position:sticky;top:0;height:100vh;overflow:hidden}
+#gl{position:absolute;inset:0}#gl canvas{display:block;width:100%!important;height:100%!important}
+.hero{position:absolute;left:0;right:0;top:calc(var(--tb,31px) + 108px);pointer-events:none}
+.hero h1{font-size:clamp(2.5rem,4.3vw,4.6rem);max-width:12.5ch}
+.hero h1 i{font-style:italic;color:var(--fab);transition:color .6s}
+.hero p{max-width:33ch;color:var(--brown);font-size:17.5px;margin:16px 0 0}
+.hero .acts{display:flex;gap:10px;pointer-events:auto;flex-wrap:wrap}
+.rail{position:absolute;left:max(36px,calc((100vw - 1320px)/2 + 36px));bottom:5vh;z-index:3;transition:opacity .5s,transform .5s;background:rgba(243,239,232,.78);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.7);padding:18px 20px;width:min(380px,calc(100% - 40px));box-shadow:0 30px 60px -30px rgba(30,26,23,.35)}
+.rail h2{font:600 13px "Karla";letter-spacing:.02em;color:var(--brown);display:flex;justify-content:space-between;margin-bottom:12px}
+.rail h2 b{color:var(--ink)}
+.fabs{display:flex;gap:10px;flex-wrap:wrap}
+.fabs button{width:44px;height:44px;border:0;cursor:pointer;border-radius:50%;position:relative;background-size:cover;box-shadow:inset 0 -10px 16px rgba(0,0,0,.28),inset 0 6px 10px rgba(255,255,255,.25)}
+.fabs button[aria-pressed=true]:after{content:"";position:absolute;inset:-5px;border-radius:50%;box-shadow:0 0 0 1.5px var(--ink)}
+.cfg{display:grid;gap:14px;margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
+.cfg .row{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:15px}
+.cfg .row>span{color:var(--brown)}
+.pill{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:#fff}
+.pill label{position:relative}.pill input{position:absolute;opacity:0}
+.pill span{display:block;padding:6px 12px;border-radius:999px;font-size:14px;cursor:pointer;font-weight:500}
+.pill input:checked+span{background:var(--ink);color:#fff}
+.pill input:focus-visible+span{outline:2px solid var(--fab)}
+.price{display:flex;justify-content:space-between;align-items:baseline;margin-top:4px}
+.price b{font-family:"Libre Caslon Display";font-size:34px;font-weight:400}
+.price span{font-size:13.5px;color:var(--brown)}
+.rail .btn{width:100%;justify-content:center;margin-top:14px}
+.chap{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);pointer-events:none}
+.chap .box{max-width:430px;background:rgba(243,239,232,.84);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:30px 32px;opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
+.chap.on .box{opacity:1;transform:none}
+.chap.r .box{margin-left:auto}
+.chap .n{font-family:"Libre Caslon Display";font-size:15px;color:var(--fab);display:block;margin-bottom:14px;transition:color .6s}
+.chap h2{font-size:clamp(2.1rem,3.6vw,3.4rem);margin-bottom:16px}
+.chap p{color:var(--brown);font-size:18px}
+.tick{display:flex;gap:10px;align-items:center;margin-top:14px;font-weight:500}
+.tick .ico{color:var(--fab);width:22px;height:22px;transition:color .6s}
+.dots{position:absolute;right:36px;bottom:5vh;display:flex;gap:8px}
+.rail.off{opacity:0;transform:translateY(24px);pointer-events:none}
+.dots i{width:28px;height:1.5px;background:rgba(30,26,23,.2)}.dots i.on{background:var(--ink)}
+
+/* editorial */
+section.s{padding:140px 0}
+.eyebrow{font-family:"Libre Caslon Display";font-size:18px;color:var(--fab);display:block;margin-bottom:16px}
+h2.h{font-size:clamp(2.4rem,5vw,4.8rem);max-width:15ch}
+.lede{font-size:20px;color:var(--brown);max-width:50ch;margin-top:22px}
+.full{position:relative;height:120vh;min-height:680px;overflow:hidden}
+.full img{position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover;will-change:transform}
+.full .cap{position:absolute;left:36px;bottom:36px;background:var(--paper);padding:20px 24px;max-width:380px;font-size:15.5px;color:var(--brown)}
+.full .cap b{display:block;font-family:"Libre Caslon Display";font-weight:400;font-size:24px;color:var(--ink);margin-bottom:6px}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.story .pics{display:grid;grid-template-columns:1.2fr 1fr;gap:16px;align-items:end}
+.story .pics img{width:100%;object-fit:cover}
+.story .pics img:first-child{aspect-ratio:3/4}.story .pics img:last-child{aspect-ratio:4/5;margin-bottom:60px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;padding-top:30px;border-top:1px solid var(--line)}
+.facts .ico{width:34px;height:34px;color:var(--fab);margin-bottom:12px;transition:color .6s}
+.facts b{display:block;font-weight:600}.facts span{font-size:15px;color:var(--brown)}
+.fab-lib{display:grid;grid-template-columns:1.1fr .9fr;gap:0;background:var(--ink);color:#efe7dc}
+.fab-lib figure{position:relative;min-height:640px}.fab-lib figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fab-lib .in{padding:100px 80px}
+.fab-lib .eyebrow{color:#d8c6b3}
+.fab-lib h2{font-size:clamp(2.2rem,3.8vw,3.6rem);margin-bottom:18px}
+.fab-lib p{color:#c9bcae}
+.swgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:30px 0 22px}
+.swgrid label{position:relative;cursor:pointer}.swgrid input{position:absolute;opacity:0}
+.swgrid span{display:block;aspect-ratio:1;border-radius:4px;box-shadow:inset 0 -12px 20px rgba(0,0,0,.25);position:relative;transition:transform .25s}
+.swgrid em{display:block;font-style:normal;font-size:12.5px;color:#c9bcae;margin-top:6px}
+.swgrid input:checked+span{transform:translateY(-3px);box-shadow:inset 0 -12px 20px rgba(0,0,0,.25),0 0 0 2px #efe7dc}
+.swgrid input:checked+span:after{content:"";position:absolute;right:6px;top:6px;width:18px;height:18px;border-radius:50%;background:#efe7dc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231E1A17' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/12px no-repeat}
+.swgrid input:focus-visible+span{outline:2px solid #efe7dc;outline-offset:2px}
+.fl-form{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fl-form input{font:inherit;font-size:16px;background:transparent;border:0;border-bottom:1px solid #6b5f55;padding:12px 2px;color:#fff}
+.fl-form input:focus{outline:none;border-color:#efe7dc}
+.fl-form .btn{grid-column:1/-1;background:#efe7dc;color:var(--ink);justify-content:center;margin-top:10px}.fl-form .btn:hover{background:#fff}
+.err{color:#ffb3a1;font-size:13.5px;min-height:1.1em;grid-column:1/-1}
+.okmsg{display:none;border-left:2px solid #efe7dc;padding:6px 0 6px 16px;margin-top:10px}
+.okmsg b{display:block;font-family:"Libre Caslon Display";font-weight:400;font-size:24px;color:#fff}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:50px;margin-top:60px}
+.quotes blockquote{font-family:"Libre Caslon Display";font-size:24px;line-height:1.3}
+.quotes footer{font:400 14.5px "Karla";color:var(--mute);margin-top:16px}.ph{font-size:11.5px;font-weight:700;letter-spacing:.05em;color:var(--fab)}
+.faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+.faq details{border-top:1px solid var(--line);padding:24px 0}.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font-family:"Libre Caslon Display";font-size:23px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary svg{width:22px;height:22px;stroke:currentColor;stroke-width:1.4;fill:none;flex:0 0 auto;transition:transform .35s}
+.faq details[open] summary svg{transform:rotate(45deg)}
+.faq p{color:var(--brown);margin-top:12px;max-width:62ch}
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:60px}
+.visit .card{background:#fff;padding:44px}
+.visit dl{display:grid;grid-template-columns:auto 1fr;gap:12px 30px;margin-top:24px}.visit dt{color:var(--mute)}.visit dd{margin:0}
+.visit figure{position:relative;min-height:460px}.visit figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.visit iframe{width:100%;height:230px;border:0;margin-top:26px;filter:sepia(.25) grayscale(.5)}
+footer.site{background:var(--ink);color:#c9bcae;padding:100px 0 40px;margin-top:140px}
+.fbig{font-family:"Libre Caslon Display";font-size:clamp(3.4rem,11vw,11rem);line-height:.9;color:#efe7dc}
+.fcols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px;margin-top:70px;font-size:15px}
+.fcols h4{font:600 13px "Karla";color:#8f8276;margin-bottom:12px}.fcols ul{list-style:none;padding:0;display:grid;gap:8px}.fcols a{text-decoration:none}.fcols a:hover{color:#fff}
+.legal{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:60px;font-size:13px;color:#8f8276}
+/* drawer */
+.scrim{position:fixed;inset:0;background:rgba(30,26,23,.4);z-index:80;opacity:0;pointer-events:none;transition:.35s}.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(460px,100%);background:var(--paper);z-index:90;transform:translateX(100%);transition:transform .5s cubic-bezier(.2,.7,.2,1);display:flex;flex-direction:column}
+.drawer.on{transform:none}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:22px 28px;border-bottom:1px solid var(--line)}
+.dh h3{font-family:"Libre Caslon Display";font-weight:400;font-size:28px}
+.x{background:none;border:0;cursor:pointer;color:var(--ink)}.x svg{width:24px;height:24px;stroke:currentColor;stroke-width:1.4;transform:rotate(45deg)}
+.items{list-style:none;padding:16px 28px;flex:1;overflow:auto;display:grid;gap:16px;align-content:start}
+.items li{display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:center;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.items .sw{width:64px;height:64px;border-radius:4px;box-shadow:inset 0 -10px 16px rgba(0,0,0,.25)}
+.items small{display:block;color:var(--brown)}.items .rm{background:none;border:0;color:var(--mute);text-decoration:underline;cursor:pointer;font:inherit;font-size:13px}
+.dfoot{padding:22px 28px;border-top:1px solid var(--line)}
+.dfoot .tot{display:flex;justify-content:space-between;font-family:"Libre Caslon Display";font-size:26px;margin-bottom:6px}
+.dfoot .btn{width:100%;justify-content:center;margin-top:12px}
+.empty{color:var(--brown)}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1.1s cubic-bezier(.2,.7,.2,1),transform 1.1s cubic-bezier(.2,.7,.2,1)}.reveal.in{opacity:1;transform:none}
+@media(max-width:1060px){.nav ul{display:none}.story,.faq,.visit,.fab-lib{grid-template-columns:1fr}.fab-lib figure{min-height:380px}.fab-lib .in{padding:70px 36px}.quotes{grid-template-columns:1fr}.fcols{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){
+ body{font-size:16.5px}.wrap{padding:0 20px}.topbar{font-size:11px}.nav{height:64px}.logo{font-size:20px}
+ #room{height:460vh}
+ .hero{top:10vh}.hero h1{font-size:2.3rem}.hero p{display:none}.hero .acts{display:none}
+ .rail{right:10px;left:10px;width:auto;bottom:10px;padding:12px 14px}.cfg .row{display:none}.cfg{margin-top:8px;padding-top:6px;gap:0}.rail h2{margin-bottom:8px}.fabs button{width:34px;height:34px}.cfg{gap:10px;margin-top:10px;padding-top:10px}.price b{font-size:26px}.rail .btn{margin-top:10px;padding:12px}
+ .chap{top:10vh;transform:none}.chap .box{padding:18px}.chap h2{font-size:1.7rem}.chap p{font-size:15.5px}
+ .dots{display:none}section.s{padding:90px 0}.full{height:80vh}.full .cap{left:16px;right:16px;bottom:16px}
+ .story .pics img:last-child{margin-bottom:30px}.facts{grid-template-columns:1fr}.swgrid{grid-template-columns:repeat(4,1fr)}.fl-form{grid-template-columns:1fr}.fcols{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="pre" role="status"><div class="in"><div class="ser">Pell &amp; Hart</div><p id="preTxt">Setting up the showroom · 0%</p><div class="bar"><i id="preBar"></i></div></div></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="i-hand" viewBox="0 0 32 32"><path d="M10 17V8.5a1.8 1.8 0 0 1 3.6 0V15M13.6 14V6.5a1.8 1.8 0 0 1 3.6 0V14M17.2 14V7.8a1.8 1.8 0 0 1 3.6 0V15M20.8 15v-4a1.8 1.8 0 0 1 3.6 0v8c0 5-3.4 9-8.4 9h-1.6c-3 0-5-1.5-6.6-4l-3-5a1.8 1.8 0 0 1 3-2l2.2 2.6"/></symbol>
+ <symbol id="i-frame" viewBox="0 0 32 32"><path d="M4 12h24v9H4zM7 21v6M25 21v6M7 12V7h18v5"/><path d="M11 12v9M16 12v9M21 12v9"/></symbol>
+ <symbol id="i-spool" viewBox="0 0 32 32"><path d="M8 6h16M8 26h16"/><path d="M10 6c0 3 1 4 1 10s-1 7-1 10M22 6c0 3-1 4-1 10s1 7 1 10"/><path d="M11 11h10M11 16h10M11 21h10"/></symbol>
+ <symbol id="i-truck" viewBox="0 0 32 32"><path d="M3 9h16v13H3zM19 13h5.5l4.5 5v4H19"/><circle cx="8.5" cy="23.5" r="2.5"/><circle cx="23.5" cy="23.5" r="2.5"/></symbol>
+ <symbol id="i-leaf" viewBox="0 0 32 32"><path d="M7 25c0-11 7-17 19-18-1 12-7 19-18 19"/><path d="M7 25c4-6 8-10 13-13"/></symbol>
+ <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+ <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></symbol>
+ <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+<div class="topbar">Example concept by <a href="https://calvyrn.com">Calvyrn</a>. Pell &amp; Hart is fictional; names, prices, reviews and 555 numbers are placeholders.</div>
+<header id="hdr"><div class="wrap nav">
+ <a class="logo ser" href="#top">Pell <em>&amp;</em> Hart</a>
+ <ul><li><a href="#room">Configure</a></li><li><a href="#workshop">Workshop</a></li><li><a href="#fabrics">Fabric library</a></li><li><a href="#visit">Showroom</a></li></ul>
+ <button class="bag" id="bagBtn" aria-label="Open your bag">Bag <b id="bagN">0</b></button>
+</div></header>
+
+<main id="top">
+<section id="room" aria-label="Your sofa in 3D">
+ <div class="stage">
+  <div id="gl" role="img" aria-label="Photoreal 3D living room with a curved velvet sofa, an armchair, a round coffee table and a plant. Choose a fabric to recolour the sofa."></div>
+  <div class="hero" id="heroTxt"><div class="wrap">
+   <h1 class="ser">Built by hand in Red Hook, in the fabric <i>you</i> choose.</h1>
+   <p>Made-to-order sofas and chairs with hardwood frames and eight-way hand-tied springs. See yours in the room before we cut a single panel.</p>
+  </div></div>
+  <div class="chap" data-c="1"><div class="wrap"><div class="box"><span class="n">i. The fabric</span><h2 class="ser">Velvet that gets better with use.</h2><p>Cotton velvet with a dense, short pile. It crushes a little where you sit, which is the point, and cleans with a damp cloth.</p><div class="tick"><svg class="ico"><use href="#i-check"/></svg>Rated 60,000 rubs, family and pet proof</div></div></div></div>
+  <div class="chap r" data-c="2"><div class="wrap"><div class="box"><span class="n">ii. The frame</span><h2 class="ser">Kiln-dried maple, joined, not stapled.</h2><p>Frames are corner-blocked, glued and screwed by hand, with eight-way hand-tied springs under feather-wrapped cushions.</p><div class="tick"><svg class="ico"><use href="#i-check"/></svg>Lifetime warranty on the frame</div></div></div></div>
+  <div class="chap" data-c="3"><div class="wrap"><div class="box"><span class="n">iii. The details</span><h2 class="ser">Brass feet, hand-sewn welts.</h2><p>Every seam is matched across the cushions. Legs come in brushed brass or blackened steel and screw off for tight stairwells.</p><div class="tick"><svg class="ico"><use href="#i-check"/></svg>White-glove delivery across NYC</div></div></div></div>
+  <aside class="rail" id="rail" aria-label="Configure your sofa">
+   <h2>Fabric <b id="fName">Peacock velvet</b></h2>
+   <div class="fabs" id="fabs" role="group" aria-label="Fabric"></div>
+   <div class="cfg" id="cfg">
+    <div class="row"><span>Size</span><div class="pill"><label><input type="radio" name="size" value="0"><span>72″</span></label><label><input type="radio" name="size" value="1" checked><span>86″</span></label><label><input type="radio" name="size" value="2"><span>98″</span></label></div></div>
+    <div class="row"><span>Legs</span><div class="pill"><label><input type="radio" name="legs" value="brass" checked><span>Brass</span></label><label><input type="radio" name="legs" value="black"><span>Black steel</span></label></div></div>
+    <div class="price"><b id="price">$4,280</b><span>Ships in 6–8 weeks</span></div>
+   </div>
+   <button class="btn" id="addSofa">Add the Arc sofa to bag<svg><use href="#i-arrow"/></svg></button>
+  </aside>
+  <div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
+ </div>
+</section>
+
+<section class="full" aria-label="Pell and Hart sofa in a sunny living room">
+ <img id="fullImg" src="img/living-1920.jpg" srcset="img/living-1280.jpg 1280w, img/living-1920.jpg 1920w, img/living-2560.jpg 2560w, img/living-3840.jpg 3840w" sizes="100vw" alt="Green velvet sofa with colourful cushions in a bright living room with plants and framed prints" loading="lazy">
+ <div class="cap reveal"><b>The Emerald Arc, at home</b>Delivered to a brownstone in Fort Greene, styled by the owner. Placeholder caption.</div>
+</section>
+
+<section class="s" id="workshop"><div class="wrap story">
+ <div>
+  <span class="eyebrow reveal">The workshop</span>
+  <h2 class="ser h reveal">Eleven people, one building on Van Brunt Street.</h2>
+  <p class="lede reveal">Every frame is cut, joined and upholstered under one roof. You're welcome to visit and see yours on the bench.</p>
+  <div class="facts reveal">
+   <div><svg class="ico"><use href="#i-frame"/></svg><b>Hardwood frames</b><span>Kiln-dried maple, guaranteed for life</span></div>
+   <div><svg class="ico"><use href="#i-hand"/></svg><b>Hand-tied springs</b><span>Eight-way, the old way</span></div>
+   <div><svg class="ico"><use href="#i-leaf"/></svg><b>No foam blocks</b><span>Feather and natural latex fill</span></div>
+  </div>
+ </div>
+ <div class="pics">
+  <img class="reveal" src="img/marking-1440.jpg" srcset="img/marking-960.jpg 960w, img/marking-1440.jpg 1440w, img/marking-2048.jpg 2048w" sizes="(max-width:1060px) 55vw, 28vw" alt="Hands marking a cut line on a pale wooden board with a pencil and square, wood shavings around" loading="lazy">
+  <img class="reveal" src="img/frames-1440.jpg" srcset="img/frames-960.jpg 960w, img/frames-1440.jpg 1440w, img/frames-2048.jpg 2048w" sizes="(max-width:1060px) 45vw, 22vw" alt="Upholstery workshop with a curved chair frame in front of stacked materials" loading="lazy">
+ </div>
+</div></section>
+
+<section class="fab-lib" id="fabrics" aria-label="Fabric library">
+ <figure><img src="img/swatches-1440.jpg" srcset="img/swatches-960.jpg 960w, img/swatches-1440.jpg 1440w, img/swatches-2048.jpg 2048w" sizes="(max-width:1060px) 100vw, 55vw" alt="Fan of fabric swatches in a rainbow of colours" loading="lazy"></figure>
+ <div class="in">
+  <span class="eyebrow">Fabric library</span>
+  <h2 class="ser">Hold it before you choose it.</h2>
+  <p>Pick up to five fabrics. We mail palm-sized swatches free, usually within two days.</p>
+  <form id="swForm" novalidate>
+   <div class="swgrid" id="swGrid"></div>
+   <div class="fl-form">
+    <input id="sName" placeholder="Name" autocomplete="name" aria-label="Name">
+    <input id="sZip" placeholder="ZIP code" inputmode="numeric" maxlength="5" aria-label="ZIP code" autocomplete="postal-code">
+    <input id="sAddr" placeholder="Street address" autocomplete="street-address" aria-label="Street address" style="grid-column:1/-1">
+    <div class="err" id="sErr" role="alert"></div>
+    <button class="btn" type="submit">Mail my swatches<svg><use href="#i-arrow"/></svg></button>
+   </div>
+  </form>
+  <div class="okmsg" id="sOk" tabindex="-1"></div>
+ </div>
+</section>
+
+<section class="s"><div class="wrap">
+ <span class="eyebrow reveal">Owners</span>
+ <h2 class="ser h reveal">Ten years in, still the first thing guests sit on.</h2>
+ <div class="quotes">
+  <blockquote class="reveal">“We stood in the workshop and watched them tie the springs. It's the best thing in our apartment.”<footer>Hana &amp; Joel, Carroll Gardens · <span class="ph">PLACEHOLDER REVIEW</span></footer></blockquote>
+  <blockquote class="reveal">“Picked the rust velvet on the website, ordered swatches, changed my mind to olive. No pressure at any point.”<footer>Mariela S., Jersey City · <span class="ph">PLACEHOLDER REVIEW</span></footer></blockquote>
+  <blockquote class="reveal">“They took the legs off to get it up a fourth-floor walk-up and had it set in ten minutes.”<footer>Theo R., Harlem · <span class="ph">PLACEHOLDER REVIEW</span></footer></blockquote>
+ </div>
+</div></section>
+
+<section class="s" style="padding-top:0"><div class="wrap faq">
+ <div><span class="eyebrow reveal">Questions</span><h2 class="ser reveal" style="font-size:clamp(2rem,3.6vw,3.4rem)">Before you order.</h2></div>
+ <div>
+  <details><summary>How long does a sofa take?<svg><use href="#i-plus"/></svg></summary><p>Six to eight weeks from the day you confirm fabric. We send a photo from the bench when the frame is done.</p></details>
+  <details><summary>Will it fit up my stairs?<svg><use href="#i-plus"/></svg></summary><p>Send us your doorway and stairwell measurements. Legs come off, and the 98″ can be built in two sections that bolt together.</p></details>
+  <details><summary>Can I use my own fabric?<svg><use href="#i-plus"/></svg></summary><p>Yes, customer's own material is welcome. You'll need about 14 yards for the 86″ sofa; we'll confirm after seeing a sample.</p></details>
+  <details><summary>What if I don't like the colour in person?<svg><use href="#i-plus"/></svg></summary><p>That's what free swatches are for. Once a sofa is cut it's made for you, so we can't take it back, but we'll reupholster at cost within a year.</p></details>
+ </div>
+</div></section>
+
+<section class="s" id="visit" style="padding-top:0"><div class="wrap">
+ <span class="eyebrow reveal">Showroom</span>
+ <h2 class="ser h reveal">Come sit on everything.</h2>
+ <div class="visit">
+  <div class="card reveal">
+   <p style="color:var(--brown);font-size:19px">The showroom is the front of the workshop. Bring a cushion from home and we'll match it to a fabric.</p>
+   <dl><dt>Address</dt><dd>342 Van Brunt Street<br>Brooklyn, NY 11231</dd><dt>Hours</dt><dd>Thu–Sun, 11 am – 6 pm</dd><dt>Phone</dt><dd><a href="tel:+17185550142">(718) 555-0142</a></dd><dt>Email</dt><dd>hello@pellhart.example</dd></dl>
+   <iframe title="Map of Red Hook, Brooklyn" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-74.0210%2C40.6700%2C-73.9990%2C40.6850&amp;layer=mapnik&amp;marker=40.6775%2C-74.0105"></iframe>
+  </div>
+  <figure class="reveal"><img src="img/loft-1920.jpg" srcset="img/loft-1280.jpg 1280w, img/loft-1920.jpg 1920w, img/loft-2560.jpg 2560w" sizes="(max-width:1060px) 100vw, 50vw" alt="Sunlit loft workshop with tall windows, workbenches and hanging lights" loading="lazy"></figure>
+ </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+ <div class="fbig">Pell &amp; Hart</div>
+ <div class="fcols">
+  <div><p>Sofas and chairs, built by hand in Red Hook since 2014.</p></div>
+  <div><h4>Shop</h4><ul><li><a href="#room">Arc sofa</a></li><li><a href="#fabrics">Fabric library</a></li></ul></div>
+  <div><h4>Studio</h4><ul><li><a href="#workshop">Workshop</a></li><li><a href="#visit">Showroom</a></li></ul></div>
+  <div><h4>Contact</h4><ul><li><a href="tel:+17185550142">(718) 555-0142</a></li><li>hello@pellhart.example</li></ul></div>
+ </div>
+ <div class="legal"><span>© 2026 Pell &amp; Hart (fictional). 3D sofa: Wayfair, CC BY 4.0; 3D chair: Wayfair, CC0 (Khronos glTF samples). Table, plant, books, textures and lighting: Poly Haven, CC0. Photos: Unsplash.</span><span>Concept, design and build: <a href="https://calvyrn.com" style="color:#efe7dc">Calvyrn</a></span></div>
+</div></footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="bagT">
+ <div class="dh"><h3 id="bagT">Your bag</h3><button class="x" id="bagX" aria-label="Close"><svg viewBox="0 0 24 24"><use href="#i-plus"/></svg></button></div>
+ <ul class="items" id="items"></ul>
+ <div class="dfoot"><div class="tot"><span>Total</span><span id="bagTot">$0</span></div><span style="font-size:14px;color:var(--brown)">Delivery and setup in NYC included. 50% deposit today, the rest before delivery.</span><button class="btn" id="checkout">Reserve a build slot<svg><use href="#i-arrow"/></svg></button><p id="coMsg" style="font-size:14px;color:var(--brown);margin-top:10px"></p></div>
+</aside>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.164.1/build/three.module.js","three/addons/":"https://unpkg.com/three@0.164.1/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {RGBELoader} from 'three/addons/loaders/RGBELoader.js';
+import {MeshoptDecoder} from 'three/addons/libs/meshopt_decoder.module.js';
+const $=id=>document.getElementById(id);const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;const mob=innerWidth<680;
+const FABRICS=[{n:'Peacock velvet',c:'#0a3b40',ui:'#1F5A5C'},{n:'Olive velvet',c:'#37421a',ui:'#5B6B2A'},{n:'Rust velvet',c:'#6a2812',ui:'#9A4524'},{n:'Ink velvet',c:'#11172c',ui:'#2A3557'},{n:'Blush velvet',c:'#a66e66',ui:'#A8685D'},{n:'Oat boucle',c:'#c2b59d',ui:'#8C7A5E'}];
+const LIB=[...FABRICS,{n:'Mustard velvet',c:'#b8860b'},{n:'Charcoal wool',c:'#45464a'}];
+const SIZES=[{n:'72″',p:3680},{n:'86″',p:4280},{n:'98″',p:4980}];
+let fab=0,sofaMats=[],chairMats=[],legMats=[];
+$('fabs').innerHTML=FABRICS.map((f,i)=>`<button style="background:${f.c}" aria-label="${f.n}" aria-pressed="${i===0}" data-i="${i}"></button>`).join('');
+const WHITE=new THREE.Color('#fff');function lerpMats(mats,hex){const t=new THREE.Color(hex);const ts=t.clone().lerp(WHITE,.12);mats.forEach(m=>{const from=m.color.clone(),fs=m.sheenColor?m.sheenColor.clone():null;const step=k=>{m.color.lerpColors(from,t,k);if(fs)m.sheenColor.lerpColors(fs,ts,k)};if(reduce){step(1);return}const t0=performance.now();(function f(n){const k=Math.min(1,(n-t0)/800);step(1-Math.pow(1-k,3));if(k<1)requestAnimationFrame(f)})(t0)})}
+function setFab(i){fab=i;const f=FABRICS[i];$('fName').textContent=f.n;document.documentElement.style.setProperty('--fab',f.ui);document.querySelectorAll('#fabs button').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.i===i));lerpMats(sofaMats,f.c);price()}
+$('fabs').addEventListener('click',e=>{const b=e.target.closest('button');if(b)setFab(+b.dataset.i)});
+const money=n=>'$'+n.toLocaleString('en-US');
+function cfg(){return{size:+document.querySelector('input[name=size]:checked').value,legs:document.querySelector('input[name=legs]:checked').value}}
+function price(){const c=cfg();const p=SIZES[c.size].p+(fab===5?160:0);$('price').textContent=money(p);return p}
+$('cfg').addEventListener('change',()=>{const c=cfg();legMats.forEach(m=>{m.color.set(c.legs==='brass'?'#c9a25a':'#1b1b1b');m.roughness=c.legs==='brass'?.32:.5});price()});
+/* bag */
+let bag=[];const drawer=$('drawer'),scrim=$('scrim');
+function openBag(){drawer.classList.add('on');scrim.classList.add('on');$('bagX').focus()}function closeBag(){drawer.classList.remove('on');scrim.classList.remove('on')}
+$('bagBtn').onclick=openBag;$('bagX').onclick=closeBag;scrim.onclick=closeBag;addEventListener('keydown',e=>{if(e.key==='Escape')closeBag()});
+function renderBag(){$('bagN').textContent=bag.length;$('items').innerHTML=bag.length?bag.map((b,i)=>`<li><span class="sw" style="background:${b.c}"></span><div>${b.n}<small>${b.d}</small></div><div style="text-align:right">${money(b.p)}<br><button class="rm" data-i="${i}">Remove</button></div></li>`).join(''):'<li class="empty">Your bag is empty.</li>';
+ $('bagTot').textContent=money(bag.reduce((s,b)=>s+b.p,0));$('items').querySelectorAll('.rm').forEach(r=>r.onclick=()=>{bag.splice(+r.dataset.i,1);renderBag()})}
+$('addSofa').onclick=()=>{const c=cfg();bag.push({n:'Arc sofa, '+SIZES[c.size].n,d:FABRICS[fab].n+' · '+(c.legs==='brass'?'brass legs':'black steel legs'),p:price(),c:FABRICS[fab].c});renderBag();openBag()};
+$('checkout').onclick=()=>{$('coMsg').textContent=bag.length?`Build slot held for ${bag.length} piece${bag.length>1?'s':''}. A maker would email you within a day to confirm fabric and delivery. Demo: nothing was charged.`:'Add the Arc sofa first.'};renderBag();
+/* swatches */
+$('swGrid').innerHTML=LIB.map((f,i)=>`<label><input type="checkbox" value="${f.n}"><span style="background:${f.c}"></span><em>${f.n.split(' ')[0]}</em></label>`).join('');
+$('swGrid').addEventListener('change',e=>{const on=$('swGrid').querySelectorAll('input:checked');if(on.length>5){e.target.checked=false;$('sErr').textContent='Five swatches at a time, so they arrive quickly.'}else $('sErr').textContent=''});
+$('swForm').addEventListener('submit',e=>{e.preventDefault();const picked=[...$('swGrid').querySelectorAll('input:checked')].map(i=>i.value);const n=$('sName').value.trim(),z=$('sZip').value.trim(),a=$('sAddr').value.trim();
+ const err=!picked.length?'Pick at least one fabric.':n.length<2?'Add your name.':a.length<5?'Add the street address.':!/^\d{5}$/.test(z)?'Enter a 5-digit ZIP code.':'';$('sErr').textContent=err;if(err)return;
+ $('swForm').style.display='none';const o=$('sOk');o.innerHTML=`<b>On their way, ${n.split(' ')[0].replace(/[<>]/g,'')}.</b>${picked.join(', ')} to ${a.replace(/[<>]/g,'')}, ${z}. Usually two days. Demo: nothing was sent.`;o.style.display='block';o.focus()});
+
+/* scroll */
+let lenis=null;if(!reduce&&window.Lenis){lenis=new Lenis({lerp:.085});(function raf(t){lenis.raf(t);requestAnimationFrame(raf)})(0)}
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(!t)return;e.preventDefault();lenis?lenis.scrollTo(t,{duration:1.4}):t.scrollIntoView()}));
+const tb=()=>document.documentElement.style.setProperty('--tb',document.querySelector('.topbar').offsetHeight+'px');tb();addEventListener('resize',tb);
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}}),{rootMargin:'0px 0px -10% 0px'});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3)*100+'ms';io.observe(el)});
+const room=$('room'),chaps=[...document.querySelectorAll('.chap')],dots=[...document.querySelectorAll('.dots i')],hdr=$('hdr');let P=0,ch=0;
+function onScroll(){hdr.classList.toggle('solid',scrollY>40);const r=room.getBoundingClientRect();P=Math.min(1,Math.max(0,-r.top/(room.offsetHeight-innerHeight)));
+ const c=Math.min(3,Math.floor(P*3+.45));if(c!==ch){ch=c;chaps.forEach(x=>x.classList.toggle('on',+x.dataset.c===c));dots.forEach((d,i)=>d.classList.toggle('on',i<=c))}
+ $('heroTxt').style.opacity=Math.max(0,1-P*7);$('rail').classList.toggle('off',P>.12);
+ const fi=$('fullImg');const fr=fi.parentElement.getBoundingClientRect();if(fr.top<innerHeight&&fr.bottom>0)fi.style.transform=`translateY(${(fr.top/innerHeight)*-7}%)`}
+addEventListener('scroll',onScroll,{passive:true});
+
+/* 3D */
+const pre=$('pre');let pv=0;const setPre=p=>{pv=Math.max(pv,p);$('preBar').style.width=Math.round(pv*100)+'%';$('preTxt').textContent='Setting up the showroom · '+Math.round(pv*100)+'%'};
+const done=()=>{setPre(1);setTimeout(()=>{pre.classList.add('done');intro()},300)};setTimeout(()=>{if(!pre.classList.contains('done'))done()},20000);
+const host=$('gl');let renderer;try{renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:'high-performance'})}catch(e){}
+// camera keys: position, target
+const KD=[[[0.85,1.5,5.7],[0.5,.5,.15]],[[-.2,.95,2.05],[-.55,.42,.0]],[[2.5,1.05,2.75],[1.55,.42,.8]],[[1.3,3.6,3.7],[0.5,.3,.45]]];
+const KM=[[[0.15,1.6,6.9],[0.15,.5,.3]],[[-.35,1.15,2.9],[-.5,.42,0]],[[2.75,1.25,3.6],[1.5,.42,.8]],[[1.3,4.6,4.7],[0.45,.3,.45]]];
+const OFFX=[-.16,-.17,.17,-.16],OFFYM=[-.02,-.1,-.1,-.08];let offX=OFFX[0],offY=OFFYM[0];
+const KEYS=mob?KM:KD;
+let introT=reduce?1:0;function intro(){if(reduce)return;const t0=performance.now();(function f(t){introT=Math.min(1,(t-t0)/2800);if(introT<1)requestAnimationFrame(f)})(t0);
+ document.querySelectorAll('.hero h1,.hero p,.rail').forEach((el,i)=>el.animate([{opacity:0,transform:'translateY(30px)'},{opacity:1,transform:'none'}],{duration:1100,delay:400+i*150,easing:'cubic-bezier(.2,.7,.2,1)',fill:'backwards'}))}
+if(renderer){
+ renderer.setPixelRatio(Math.min(devicePixelRatio,mob?1.6:1.8));renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;host.appendChild(renderer.domElement);
+ const scene=new THREE.Scene();scene.background=new THREE.Color('#E3DCD1');const camera=new THREE.PerspectiveCamera(mob?42:34,1,.05,60);
+ const mgr=new THREE.LoadingManager();mgr.onProgress=(u,l,t)=>setPre(.05+.9*l/t);mgr.onLoad=()=>{setFab(0);done()};
+ new RGBELoader(mgr).load('models/room.hdr',t=>{t.mapping=THREE.EquirectangularReflectionMapping;scene.environment=t;scene.environmentIntensity=.8});
+ const sun=new THREE.DirectionalLight(0xfff1df,2.4);sun.position.set(-4,5,3.5);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);Object.assign(sun.shadow.camera,{left:-4,right:4,top:4,bottom:-4,near:1,far:20});sun.shadow.radius=5;sun.shadow.bias=-.0003;scene.add(sun);
+ scene.add(new THREE.HemisphereLight(0xfff6ea,0x8a7766,.35));
+ const tl=new THREE.TextureLoader(mgr);const tex=(f,rep,srgb)=>{const t=tl.load('tex/'+f);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(rep[0],rep[1]);if(srgb)t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=8;return t};
+ const floor=new THREE.Mesh(new THREE.PlaneGeometry(14,10),new THREE.MeshStandardMaterial({map:tex('herringbone_parquet-diff.jpg',[5,3.6],1),normalMap:tex('herringbone_parquet-nor.jpg',[5,3.6]),roughnessMap:tex('herringbone_parquet-rough.jpg',[5,3.6]),roughness:1}));
+ floor.rotation.x=-Math.PI/2;floor.position.z=2;floor.receiveShadow=true;scene.add(floor);
+ const wall=new THREE.Mesh(new THREE.PlaneGeometry(14,6),new THREE.MeshStandardMaterial({map:tex('beige_wall_001-diff.jpg',[4,1.7],1),normalMap:tex('beige_wall_001-nor.jpg',[4,1.7]),roughness:.95,color:'#efe6da'}));
+ wall.position.set(0,3,-.72);wall.receiveShadow=true;scene.add(wall);
+ const base=new THREE.Mesh(new THREE.BoxGeometry(14,.12,.03),new THREE.MeshStandardMaterial({color:'#e9e1d5',roughness:.6}));base.position.set(0,.06,-.7);scene.add(base);
+ const rug=new THREE.Mesh(new THREE.PlaneGeometry(2.6,1.8),new THREE.MeshStandardMaterial({map:tex('curly_teddy_natural-diff.jpg',[3,2],1),normalMap:tex('curly_teddy_natural-nor.jpg',[3,2]),roughness:1,color:'#d8cbb6'}));
+ rug.rotation.x=-Math.PI/2;rug.position.set(.25,.004,1.05);rug.receiveShadow=true;scene.add(rug);
+ const ld=new GLTFLoader(mgr);ld.setMeshoptDecoder(MeshoptDecoder);
+ const place=(file,fn)=>ld.load('models/'+file,g=>{const o=g.scene;o.traverse(n=>{if(n.isMesh){n.castShadow=true;n.receiveShadow=true}});o.updateMatrixWorld(true);const b=new THREE.Box3().setFromObject(o);o.userData.box=b;scene.add(o);fn(o,b)});
+ place('sofa.glb',(o,b)=>{const c=b.getCenter(new THREE.Vector3());o.position.set(-c.x,-b.min.y,-b.min.z-.62);
+  o.traverse(n=>{if(n.isMesh&&n.material){const m=n.material;if(/fabric/i.test(m.name)&&!sofaMats.includes(m)){sofaMats.push(m);if('sheen' in m){m.sheen=.6;m.sheenRoughness=.5}m.roughness=Math.max(.8,m.roughness);m.envMapIntensity=.55}if(/legs|feet/i.test(m.name)){if(!legMats.includes(m))legMats.push(m)}}})});
+ place('chair.glb',(o,b)=>{const s=1;o.scale.setScalar(s);o.rotation.y=-.6;o.updateMatrixWorld(true);const bb=new THREE.Box3().setFromObject(o);const c=bb.getCenter(new THREE.Vector3());o.position.set(1.72-c.x,-bb.min.y,.7-c.z);
+  o.traverse(n=>{if(n.isMesh&&n.material){if(/label/i.test(n.material.name))n.visible=false;if(/fabric/i.test(n.material.name)){n.material.map=null;n.material.color.set('#d8cbb4');n.material.needsUpdate=true}}})});
+ place('coffee_table_round_01.glb',(o,b0)=>{o.scale.setScalar(.66);o.updateMatrixWorld(true);const b=new THREE.Box3().setFromObject(o);const c=b.getCenter(new THREE.Vector3());o.position.set(.05-c.x,-b.min.y,1.0-c.z);
+  const top=b.max.y-b.min.y;place('book_encyclopedia_set_01.glb',(k,kb)=>{const kc=kb.getCenter(new THREE.Vector3());k.rotation.y=.4;k.scale.setScalar(.55);k.updateMatrixWorld(true);const kb2=new THREE.Box3().setFromObject(k);const kc2=kb2.getCenter(new THREE.Vector3());k.position.set(.17-kc2.x,top-kb2.min.y,1.12-kc2.z)})});
+ place('potted_plant_02.glb',(o,b)=>{const c=b.getCenter(new THREE.Vector3());const h=b.max.y-b.min.y;const s=1.25/h;o.scale.setScalar(s);o.updateMatrixWorld(true);const bb=new THREE.Box3().setFromObject(o);const cc=bb.getCenter(new THREE.Vector3());o.position.set(2.35-cc.x,-bb.min.y,-.28-cc.z)});
+ function applyOffset(){const w=host.clientWidth,h=host.clientHeight;if(w>900)camera.setViewOffset(w,h,offX*w,h*.03,w,h);else camera.setViewOffset(w,h,0,offY*h,w,h);camera.updateProjectionMatrix()}
+ function resize(){const w=host.clientWidth,h=host.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;applyOffset()}
+ new ResizeObserver(resize).observe(host);resize();
+ const cp=new THREE.Vector3(...KEYS[0][0]).add(new THREE.Vector3(.9,.35,1.6)),ct=new THREE.Vector3(...KEYS[0][1]);const tp=new THREE.Vector3(),tt=new THREE.Vector3(),A=new THREE.Vector3(),B=new THREE.Vector3();
+ function sample(p){const n=KEYS.length-1;const x=Math.min(n-1e-6,p*n);const i=Math.floor(x);let t=x-i;t=t<.2?0:t>.8?1:(t-.2)/.6;t=t*t*(3-2*t);tp.lerpVectors(A.set(...KEYS[i][0]),B.set(...KEYS[i+1][0]),t);tt.lerpVectors(A.set(...KEYS[i][1]),B.set(...KEYS[i+1][1]),t)}
+ let vis=true;new IntersectionObserver(es=>vis=es[0].isIntersecting).observe(host);const clock=new THREE.Clock();let time=0;
+ renderer.setAnimationLoop(()=>{if(!vis||!pre.classList.contains('done'))return;const dt=Math.min(.05,clock.getDelta());time+=dt;sample(P);
+  const iE=1-Math.pow(1-introT,3);tp.x+=(1-iE)*.9;tp.y+=(1-iE)*.35;tp.z+=(1-iE)*1.6;if(!reduce){tp.x+=Math.sin(time*.25)*.04;tp.y+=Math.sin(time*.31)*.015}
+  const k=reduce?1:1-Math.pow(.002,dt);cp.lerp(tp,k);ct.lerp(tt,k);const ci=Math.min(3,Math.round(P*3));offX+=(OFFX[ci]-offX)*k;offY+=(OFFYM[ci]-offY)*k;applyOffset();camera.position.copy(cp);camera.lookAt(ct);renderer.render(scene,camera)});
+}else done();
+onScroll();
+</script>
+</body>
+</html>

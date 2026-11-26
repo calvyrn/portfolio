@@ -7,9 +7,11 @@ Website, web app and AI concepts for small businesses, organised by industry. Ev
 | Project | Industry | Tier | Demo |
 |---|---|---|---|
 | [Architecture studio with a scroll-built 3D house](sites/architecture-studio-3d/) | Architecture | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/architecture-studio-3d/) |
+| [Paint protection studio with a photoreal 3D car](sites/detailing-studio-3d/) | Automotive | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/detailing-studio-3d/) |
 | [Skincare brand with a 3D glass bottle and shop](sites/skincare-brand-3d/) | Beauty | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/skincare-brand-3d/) |
 | [Occasion-wear label with a motion hero and scroll lookbook](sites/eastern-wear-motion/) | Fashion | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/eastern-wear-motion/) |
 | [Coffee roastery with a 3D cup and subscriptions](sites/coffee-roastery-3d/) | Food & drink | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/coffee-roastery-3d/) |
+| [Made-to-order sofa studio with a photoreal 3D room](sites/upholstery-3d/) | Furniture | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/upholstery-3d/) |
 | [Heat pump installer with an exploded 3D unit](sites/heatpump-exploded-3d/) | HVAC | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/heatpump-exploded-3d/) |
 | [Roofing company with a live 3D roof preview](sites/roofing-3d/) | Home services | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/roofing-3d/) |
 | [Lake lodge with a walk-through 360° room tour](sites/lodge-360-tour/) | Hospitality | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/lodge-360-tour/) |
