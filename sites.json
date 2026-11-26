@@ -241,5 +241,32 @@
   "Live silk shader hero, pinned sideways lookbook, scroll zoom into the embroidery, and a working bag with try-on booking.",
   "For occasion wear, buyers want to see the handwork before they spend; motion and close-ups show the craft like a reel does.",
   "Bodoni Moda + Jost; plum, dusty rose, blush, gold · WebGL shader + GSAP ScrollTrigger"
+ ],
+ [
+  "ring-builder-3d",
+  "Engagement ring designer in real-time 3D",
+  "High-end 3D",
+  "Jewelry",
+  "Pick shape, carat, lab or natural, metal and band; the 3D ring and the price update instantly, and the design can be shared or sent to the bench.",
+  "Ring buyers research for weeks and worry about price; building and pricing it themselves brings them in already decided.",
+  "Marcellus + Manrope; porcelain, ink, champagne · Three.js physical diamond material"
+ ],
+ [
+  "security-viewshed-3d",
+  "Security installer with a 3D camera coverage planner",
+  "High-end 3D",
+  "Security",
+  "Place cameras on a 3D property, aim them and pick lenses; every viewshed is drawn with occlusion and blind spots turn red, with a live installed price.",
+  "Owners can't picture what a camera sees; showing blind spots on a lot with a price turns interest into a site visit.",
+  "Barlow Condensed + Barlow; concrete, coverage green, blind-spot red · Three.js line-of-sight grid"
+ ],
+ [
+  "heatpump-exploded-3d",
+  "Heat pump installer with an exploded 3D unit",
+  "High-end 3D",
+  "HVAC",
+  "Scroll takes a 3D heat pump apart part by part with tracked labels, then an honest running-cost calculator feeds the estimate booking.",
+  "Cold-state homeowners doubt heat pumps work in winter; seeing inside and getting straight numbers builds trust.",
+  "Unbounded + Rubik; frost, graphite, heat orange · Three.js scroll-staged explode"
  ]
 ]

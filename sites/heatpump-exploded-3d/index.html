@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Coldline Heat Pumps · Cold-climate heat pumps installed in Minneapolis–St. Paul</title>
+<meta name="description" content="See inside a cold-climate heat pump, work out what it would cost to run in your home, and book a free in-home estimate. Installers serving the Twin Cities since 2012.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700&family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--frost:#EEF3F5;--graph:#1E2328;--heat:#E8692E;--ice:#8EC5E0;--deep:#25404F;--mute:#5A6670;--line:#D2DCE1}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:400 17px/1.6 "Rubik",system-ui,sans-serif;color:var(--graph);background:var(--frost)}
+img{max-width:100%;display:block}a{color:inherit}
+h1,h2,h3{font-family:"Unbounded",sans-serif;font-weight:600;line-height:1.06;margin:0;letter-spacing:-.02em}
+h2{font-size:clamp(1.9rem,3.6vw,3rem)}
+:focus-visible{outline:2px solid var(--heat);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.topbar{background:var(--graph);color:#b9c3ca;font-size:13px;text-align:center;padding:7px 14px}.topbar a{color:#fff}
+header{position:sticky;top:0;z-index:40;background:rgba(238,243,245,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:28px;height:66px}
+.logo{display:flex;gap:10px;align-items:center;font:700 18px "Unbounded";text-decoration:none}
+.nav ul{display:flex;gap:24px;list-style:none;margin:0 0 0 auto;padding:0;font-weight:500;font-size:15.5px}
+.nav ul a{text-decoration:none}.nav ul a:hover{color:var(--heat)}
+.phone{font-weight:600;text-decoration:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;background:var(--heat);color:#fff;font:600 15.5px "Rubik";padding:14px 22px;border-radius:12px;text-decoration:none}
+.btn:hover{background:#cf5a22}.btn.dark{background:var(--graph)}.btn.dark:hover{background:#353c44}.btn.ghost{background:transparent;color:var(--graph);border:1.5px solid var(--graph)}
+
+/* pinned 3D */
+#inside{position:relative;height:520vh;background:linear-gradient(180deg,#f4f8fa 0%,#e2ebef 100%)}
+.stage{position:sticky;top:66px;height:calc(100vh - 66px);overflow:hidden}
+#gl{position:absolute;inset:0}#gl canvas{display:block;width:100%!important;height:100%!important}
+.panel{position:absolute;left:max(24px,calc((100vw - 1240px)/2 + 24px));top:50%;transform:translateY(-50%);width:min(450px,calc(100% - 48px));transition:opacity .5s,transform .5s}
+.panel.off{opacity:0;transform:translateY(-44%);pointer-events:none}
+.panel h1{font-size:clamp(2.2rem,4.4vw,3.9rem)}
+.panel h2{font-size:clamp(1.7rem,3vw,2.5rem)}
+.panel p{color:var(--mute);font-size:18px;margin:16px 0 22px;max-width:38ch}
+.kicker{display:inline-flex;gap:8px;align-items:center;font-weight:600;font-size:14px;color:var(--deep);background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px;margin-bottom:18px}
+.kicker i{width:8px;height:8px;border-radius:50%;background:var(--heat)}
+.temp{position:absolute;right:max(24px,calc((100vw - 1240px)/2 + 24px));top:22px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 14px;font-size:14px;color:var(--mute)}
+.temp b{display:block;font:600 22px "Unbounded";color:var(--deep)}
+.labels{position:absolute;inset:0;pointer-events:none}
+.lab{position:absolute;left:0;top:0;opacity:0;transition:opacity .4s}
+.lab.on{opacity:1}
+.lab span{position:absolute;white-space:nowrap;background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px 10px;font-size:14px;font-weight:500;box-shadow:0 6px 18px rgba(30,35,40,.08)}
+.lab span b{color:var(--heat);font-family:"Unbounded";font-size:12px;margin-right:6px}
+.lab i{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--heat);transform:translate(-50%,-50%);box-shadow:0 0 0 4px rgba(232,105,46,.25)}
+.lab svg{position:absolute;overflow:visible}
+.prog{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);display:flex;gap:6px}
+.prog i{width:26px;height:4px;border-radius:2px;background:#c8d4da}.prog i.on{background:var(--heat)}
+
+section.s{padding:100px 0}
+.lede{color:var(--mute);font-size:18.5px;max-width:58ch;margin:14px 0 0}
+/* calculator */
+.calc{background:var(--deep);color:#e9f1f4}
+.calc .lede{color:#b7cbd4}
+.cgrid{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;margin-top:40px;align-items:start}
+.cform{background:#fff;color:var(--graph);border-radius:20px;padding:26px;display:grid;gap:18px}
+.cform label{font-weight:600;font-size:14.5px;display:flex;justify-content:space-between}
+.cform label span{font-weight:500;color:var(--deep)}
+input[type=range]{width:100%;accent-color:var(--heat)}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:8px}.seg label{position:relative;display:block}.seg input{position:absolute;opacity:0}
+.seg span{display:block;border:1.5px solid var(--line);border-radius:12px;padding:11px 12px;font-weight:500;cursor:pointer;font-size:15px}
+.seg input:checked+span{border-color:var(--heat);background:#FDF1EB}
+.seg input:focus-visible+span{outline:2px solid var(--heat);outline-offset:2px}
+.res{display:grid;gap:14px}
+.big{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:24px}
+.big small{color:#b7cbd4;font-size:14px}
+.big b{display:block;font:600 clamp(2rem,4vw,3rem) "Unbounded";margin:4px 0}
+.cmpbars{display:grid;gap:10px;margin-top:14px}
+.cb{display:grid;grid-template-columns:120px 1fr 80px;gap:10px;align-items:center;font-size:14.5px}
+.cb div{height:12px;border-radius:6px;background:rgba(255,255,255,.12);overflow:hidden}.cb i{display:block;height:100%;border-radius:6px;transition:width .4s}
+.cb em{font-style:normal;text-align:right}
+.verdict{border-left:3px solid var(--ice);padding-left:14px;color:#dbe8ee}
+.mini{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mini .big b{font-size:1.6rem}
+.fine{font-size:13px;color:var(--mute)}.calc .fine{color:#a6bcc6}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.split img{border-radius:20px;width:100%;aspect-ratio:5/4;object-fit:cover}
+.ticks{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:12px}
+.ticks li{padding-left:30px;position:relative}.ticks li:before{content:"";position:absolute;left:0;top:5px;width:18px;height:18px;border-radius:50%;background:var(--ice);box-shadow:inset 0 0 0 5px #fff}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.card img{aspect-ratio:4/3;object-fit:cover;width:100%}.card div{padding:20px 22px 24px}.card h3{font-size:20px;margin-bottom:8px}.card p{margin:0;color:var(--mute);font-size:16px}
+.card .price{font-weight:600;color:var(--deep);margin-top:10px}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+blockquote{margin:0;background:#fff;border-radius:18px;padding:24px;border:1px solid var(--line)}blockquote p{margin:0 0 14px;font-size:18px}blockquote footer{font-size:14px;color:var(--mute)}
+.ph{font-size:11.5px;font-weight:600;color:var(--heat);letter-spacing:.05em}
+.faq details{border-bottom:1px solid var(--line);padding:18px 0}.faq summary{cursor:pointer;font-weight:600;font-size:18.5px}.faq p{color:var(--mute);margin:10px 0 0;max-width:72ch}
+.book{background:#fff}
+.bgrid{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:start}
+form.bk{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.f{display:flex;flex-direction:column;gap:5px}.f.full{grid-column:1/-1}.f label{font-weight:600;font-size:14.5px}
+.f input,.f select,.f textarea{font:inherit;font-size:16px;padding:11px 12px;border:1.5px solid var(--line);border-radius:10px;color:var(--graph);background:#fff}
+.f input:focus,.f select:focus{outline:none;border-color:var(--deep)}
+.err{color:#B4321F;font-size:13px;min-height:1em}
+.ok{grid-column:1/-1;display:none;background:#EEF6F2;border:1px solid #c7ded2;border-radius:14px;padding:18px}.ok b{font:600 19px "Unbounded";display:block;margin-bottom:4px}
+.hrs{display:grid;grid-template-columns:auto 1fr;gap:6px 22px;margin-top:18px}
+iframe.map{width:100%;height:260px;border:0;border-radius:16px;margin-top:22px}
+footer.site{background:var(--graph);color:#aeb8bf;padding:64px 0 28px;font-size:15px}
+.fcols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}footer.site h4{font:600 15px "Unbounded";color:#fff;margin:0 0 12px}
+footer.site ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}footer.site a{text-decoration:none}footer.site a:hover{color:#fff}
+.legal{border-top:1px solid #343b42;margin-top:40px;padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:13px}
+@media(max-width:1000px){.nav ul{display:none}.cgrid,.split,.bgrid{grid-template-columns:1fr}.cards,.reviews{grid-template-columns:1fr}.fcols{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.phone{display:none}#inside{height:480vh}.stage{height:calc(100svh - 66px)}
+ .panel{top:auto;bottom:22px;transform:none;left:16px;width:calc(100% - 32px)}.panel.off{transform:translateY(10px)}
+ .panel p{display:none}.panel h1{font-size:1.85rem}.panel h2{font-size:1.4rem}.kicker{margin-bottom:10px}.temp{display:none}.prog{display:none}
+ .lab span{font-size:12px;padding:4px 8px}
+ section.s{padding:72px 0}.mini{grid-template-columns:1fr}.cb{grid-template-columns:96px 1fr 64px;font-size:13px}form.bk{grid-template-columns:1fr}.fcols{grid-template-columns:1fr}.nav .btn{padding:10px 14px;font-size:14px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="topbar">Example concept by <a href="https://calvyrn.com">Calvyrn</a>. Coldline Heat Pumps is fictional; names, prices, reviews and 555 numbers are placeholders. Photos: Unsplash.</div>
+<header><div class="wrap nav">
+ <a class="logo" href="#top"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><rect x="1" y="1" width="28" height="28" rx="8" fill="#25404F"/><path d="M15 6v18M7 10.5l16 9M23 10.5l-16 9" stroke="#8EC5E0" stroke-width="2" stroke-linecap="round"/><circle cx="15" cy="15" r="4" fill="#E8692E"/></svg>COLDLINE</a>
+ <ul><li><a href="#inside">Inside the unit</a></li><li><a href="#calc">Running costs</a></li><li><a href="#systems">Systems &amp; prices</a></li><li><a href="#book">Free estimate</a></li></ul>
+ <a class="phone" href="tel:+16125550172">(612) 555-0172</a>
+ <a class="btn" href="#book">Free estimate</a>
+</div></header>
+
+<main id="top">
+<section id="inside" aria-label="Inside a cold-climate heat pump">
+ <div class="stage">
+  <div id="gl" role="img" aria-label="3D model of an outdoor heat pump unit that comes apart as you scroll"></div>
+  <div class="labels" id="labels"></div>
+  <div class="temp" aria-hidden="true">Still heating at<b>−15 °F</b></div>
+  <div class="panel" data-step="0">
+   <div class="kicker"><i></i>Twin Cities installer since 2012</div>
+   <h1>Heat that works at minus fifteen.</h1>
+   <p>Cold-climate heat pumps that heat and cool your home from one quiet unit. Scroll to see what's inside and why it keeps going in January.</p>
+   <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="#calc">Check my running costs</a><a class="btn ghost" href="#book">Book an estimate</a></div>
+  </div>
+  <div class="panel off" data-step="1"><div class="kicker"><i></i>Fan &amp; cabinet</div><h2>A fan that slows down instead of shutting off.</h2><p>The variable-speed fan runs at the speed the weather needs, so it's quieter than a fridge on most days.</p></div>
+  <div class="panel off" data-step="2"><div class="kicker"><i></i>Coil</div><h2>A big coil pulls heat out of cold air.</h2><p>Even at −15 °F, outdoor air holds heat. The oversized coil gives the refrigerant more surface to collect it.</p></div>
+  <div class="panel off" data-step="3"><div class="kicker"><i></i>Inverter compressor</div><h2>The compressor is the part that does the work.</h2><p>It ramps from 30% to 130% instead of slamming on and off, which saves power and keeps rooms even.</p></div>
+  <div class="panel off" data-step="4"><div class="kicker"><i></i>Controls &amp; lines</div><h2>Smart defrost, two thin pipes, no flame.</h2><p>The board melts frost only when it's there. Two copper lines carry heat into your home. Nothing burns, so there's no carbon monoxide.</p><a class="btn" href="#calc">See what it costs to run</a></div>
+  <div class="prog" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+ </div>
+</section>
+
+<section class="s calc" id="calc">
+ <div class="wrap">
+  <h2>What would it cost to heat your home?</h2>
+  <p class="lede">An honest estimate for a Minnesota winter. If a heat pump won't save you money, this will tell you, and we'll say so on the estimate too.</p>
+  <div class="cgrid">
+   <form class="cform" id="cf" onsubmit="return false">
+    <div><label for="sq">Home size <span id="sqV">2,000 sq ft</span></label><input type="range" id="sq" min="800" max="4500" step="100" value="2000"></div>
+    <div><label>How you heat now</label>
+     <div class="seg" role="radiogroup" aria-label="Current heating">
+      <label><input type="radio" name="fuel" value="gas" checked><span>Natural gas furnace</span></label>
+      <label><input type="radio" name="fuel" value="propane"><span>Propane furnace</span></label>
+      <label><input type="radio" name="fuel" value="elec"><span>Electric baseboard</span></label>
+      <label><input type="radio" name="fuel" value="oil"><span>Heating oil</span></label>
+     </div></div>
+    <div><label for="age">Age of home <span id="ageV">1960–1999</span></label><input type="range" id="age" min="0" max="2" step="1" value="1" aria-valuetext="1960 to 1999"></div>
+    <div><label>Keep a backup?</label>
+     <div class="seg" role="radiogroup" aria-label="Backup heat"><label><input type="radio" name="backup" value="no" checked><span>Heat pump only</span></label><label><input type="radio" name="backup" value="yes"><span>Keep furnace for the coldest days</span></label></div></div>
+    <p class="fine" style="margin:0">Uses Xcel-area prices: electricity $0.16/kWh, gas $1.10/therm, propane $2.40/gal, oil $3.80/gal. Your bills may differ.</p>
+   </form>
+   <div class="res" aria-live="polite">
+    <div class="big"><small>Heating cost per winter</small>
+     <div class="cmpbars"><div class="cb"><span>Now</span><div><i id="barNow" style="background:#c9d6dc"></i></div><em id="vNow"></em></div><div class="cb"><span>Heat pump</span><div><i id="barHp" style="background:var(--heat)"></i></div><em id="vHp"></em></div></div>
+    </div>
+    <div class="mini"><div class="big"><small>Difference per year</small><b id="diff">$0</b></div><div class="big"><small>Suggested size</small><b id="tons">3 ton</b></div></div>
+    <p class="verdict" id="verdict"></p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="s" id="systems">
+ <div class="wrap">
+  <h2>Systems we install</h2>
+  <p class="lede">Typical installed prices in the Twin Cities. Your written quote is fixed before we start.</p>
+  <div class="cards">
+   <article class="card"><img src="img/modern.jpg" alt="Grey outdoor heat pump unit beside a modern white house" loading="lazy"><div><h3>Whole-home ducted</h3><p>Replaces your AC and does most of the heating through your existing ducts.</p><p class="price">$14,000 – $22,000</p></div></article>
+   <article class="card"><img src="img/unit.jpg" alt="Outdoor heat pump on a pad next to a white wall and shrubs" loading="lazy"><div><h3>Ductless mini-split</h3><p>One to four wall units for homes with boilers or baseboard, additions and cold rooms.</p><p class="price">$5,500 – $16,000</p></div></article>
+   <article class="card"><img src="img/thermostat.jpg" alt="Hand adjusting a wall thermostat" loading="lazy"><div><h3>Hybrid with your furnace</h3><p>The heat pump runs most of the year; your gas furnace takes over below about 5 °F.</p><p class="price">$9,000 – $14,000</p></div></article>
+  </div>
+ </div>
+</section>
+
+<section class="s" style="padding-top:0">
+ <div class="wrap split">
+  <img src="img/tech.jpg" alt="Technician working on an electrical panel on the outside of a house" loading="lazy">
+  <div>
+   <h2>Installed by people who'll still be here in February</h2>
+   <ul class="ticks">
+    <li>Load calculation for every room, not a rule of thumb</li>
+    <li>Our own licensed techs, never subcontracted</li>
+    <li>We file every utility rebate you qualify for</li>
+    <li>12-year parts and labour warranty, and a first-winter check-up</li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<section class="s" style="padding-top:0">
+ <div class="wrap">
+  <h2>From last winter</h2>
+  <div class="reviews">
+   <blockquote><p>"It was −19 in Maple Grove on January 20th and the house stayed at 69. I checked twice."</p><footer>Denise K., Maple Grove · <span class="ph">PLACEHOLDER REVIEW</span></footer></blockquote>
+   <blockquote><p>"They told me my gas furnace was cheaper to run and recommended a hybrid instead. That's why I hired them."</p><footer>Tom R., St. Paul · <span class="ph">PLACEHOLDER REVIEW</span></footer></blockquote>
+   <blockquote><p>"Our propane bill went from $2,900 to under $1,500 for the season."</p><footer>Ana &amp; Luis, Stillwater · <span class="ph">PLACEHOLDER REVIEW</span></footer></blockquote>
+  </div>
+ </div>
+</section>
+
+<section class="s faq" style="padding-top:0">
+ <div class="wrap" style="max-width:880px">
+  <h2>Questions Minnesotans ask</h2>
+  <div style="margin-top:22px">
+   <details><summary>Will a heat pump really work in a Minnesota winter?</summary><p>Cold-climate models keep producing heat well below zero. On the coldest nights output drops, so we size the system for your design temperature and add backup heat where it makes sense.</p></details>
+   <details><summary>Should I get rid of my gas furnace?</summary><p>Not always. If gas is cheap where you are, a hybrid setup often gives the lowest bills. The calculator above shows the comparison for your home.</p></details>
+   <details><summary>How loud is the outdoor unit?</summary><p>Around 55 dB at full speed, about the level of a quiet conversation, and much lower most of the time.</p></details>
+   <details><summary>How long does an install take?</summary><p>One day for a single-zone mini-split, two to three days for a whole-home ducted system.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="s book" id="book">
+ <div class="wrap bgrid">
+  <div>
+   <h2>Book a free in-home estimate</h2>
+   <p class="lede">A comfort advisor measures your home, checks your ductwork and electrical panel, and leaves a fixed written quote.</p>
+   <div class="hrs"><b>Office</b><span>Mon–Fri, 7 am – 6 pm · Sat 8 am – 2 pm</span><b>No-heat calls</b><span>24/7 for existing customers</span><b>Phone</b><span><a href="tel:+16125550172">(612) 555-0172</a></span><b>Address</b><span>2201 Kennedy St NE, Minneapolis, MN 55413</span></div>
+   <iframe class="map" title="Map of northeast Minneapolis" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-93.2500%2C44.9900%2C-93.2100%2C45.0130&amp;layer=mapnik&amp;marker=45.0015%2C-93.2300"></iframe>
+  </div>
+  <form class="bk" id="bk" novalidate>
+   <div class="f"><label for="n">Name</label><input id="n" autocomplete="name"><span class="err" id="e1"></span></div>
+   <div class="f"><label for="ph">Phone</label><input id="ph" type="tel" autocomplete="tel"><span class="err" id="e2"></span></div>
+   <div class="f"><label for="zip">ZIP code</label><input id="zip" inputmode="numeric" maxlength="5" autocomplete="postal-code"><span class="err" id="e3"></span></div>
+   <div class="f"><label for="sys">Interested in</label><select id="sys"><option>Not sure yet</option><option>Whole-home ducted</option><option>Ductless mini-split</option><option>Hybrid with my furnace</option></select></div>
+   <div class="f"><label for="day">Preferred day</label><input id="day" type="date"><span class="err" id="e4"></span></div>
+   <div class="f"><label for="slot">Time</label><select id="slot"><option>Morning (8–11)</option><option>Midday (11–2)</option><option>Afternoon (2–5)</option></select></div>
+   <div class="f full"><input type="hidden" id="calcSum"><button class="btn" type="submit">Book my free estimate</button><span class="fine">Demo: nothing is sent. Your calculator result is attached to the request.</span></div>
+   <div class="ok" id="ok" tabindex="-1"></div>
+  </form>
+ </div>
+</section>
+</main>
+
+<footer class="site"><div class="wrap">
+ <div class="fcols">
+  <div><span class="logo" style="color:#fff">COLDLINE</span><p>Cold-climate heat pumps, installed and serviced across Minneapolis–St. Paul.</p></div>
+  <div><h4>Systems</h4><ul><li><a href="#systems">Ducted</a></li><li><a href="#systems">Mini-split</a></li><li><a href="#systems">Hybrid</a></li></ul></div>
+  <div><h4>Plan</h4><ul><li><a href="#inside">How it works</a></li><li><a href="#calc">Running costs</a></li><li><a href="#book">Free estimate</a></li></ul></div>
+  <div><h4>Contact</h4><ul><li><a href="tel:+16125550172">(612) 555-0172</a></li><li>hello@coldline.example</li><li>Minneapolis, MN</li></ul></div>
+ </div>
+ <div class="legal"><span>© 2026 Coldline Heat Pumps (fictional). Photos from Unsplash. Prices and savings are illustrative.</span><span>Concept, design and build: <a href="https://calvyrn.com">Calvyrn</a></span></div>
+</div></footer>
+
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.164.1/build/three.module.js","three/addons/":"https://unpkg.com/three@0.164.1/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import {RoundedBoxGeometry} from 'three/addons/geometries/RoundedBoxGeometry.js';
+import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
+const $=id=>document.getElementById(id);const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const money=n=>(n<0?'−':'')+'$'+Math.abs(Math.round(n)).toLocaleString('en-US');
+
+/* ---------- calculator ---------- */
+const AGE=['Before 1960','1960–1999','2000 or newer'],AGEF=[1.25,1,.75];
+const FUEL={gas:{n:'gas furnace',per:11/.95},propane:{n:'propane',per:(2.4/0.0915)/.9},elec:{n:'baseboard',per:(0.16*293.07)},oil:{n:'oil',per:(3.8/0.1385)/.85}};
+function calc(){const sq=+$('sq').value,age=+$('age').value,fuel=document.querySelector('input[name=fuel]:checked').value,backup=document.querySelector('input[name=backup]:checked').value==='yes';
+ $('sqV').textContent=sq.toLocaleString()+' sq ft';$('ageV').textContent=AGE[age];$('age').setAttribute('aria-valuetext',AGE[age]);
+ const load=sq*.045*AGEF[age];// MMBtu per winter
+ const now=load*FUEL[fuel].per;
+ const hpPer=0.16*293.07/2.6;
+ let hp=load*hpPer;
+ if(backup&&fuel!=='elec'){hp=load*.85*(0.16*293.07/2.9)+load*.15*FUEL[fuel].per}
+ const diff=now-hp;const tons=Math.max(1.5,Math.min(5,Math.round(sq*AGEF[age]/600*2)/2));
+ const mx=Math.max(now,hp);$('barNow').style.width=(now/mx*100)+'%';$('barHp').style.width=(hp/mx*100)+'%';
+ $('vNow').textContent=money(now);$('vHp').textContent=money(hp);$('diff').textContent=diff>=0?money(diff)+' less':money(-diff).replace('−','')+' more';$('tons').textContent=tons+' ton';
+ let v;if(fuel==='gas'&&!backup)v=diff<0?"With gas this cheap, a heat pump alone costs a little more to run in winter. A hybrid that keeps your furnace for the coldest days usually wins, and you get efficient air conditioning.":"Close to even with gas. The real gains are air conditioning and no combustion in the house.";
+ else if(fuel==='gas')v=diff>0?"Hybrid is the sweet spot for gas homes: the heat pump does most of the winter and the furnace covers the coldest nights.":"About even with gas. Ask us about time-of-use electric rates, which can tip it.";
+ else v=`Switching from ${FUEL[fuel].n} is where heat pumps pay off fastest. That's about ${money(Math.round(diff*10/100)*100)} over ten winters at today's prices.`;
+ $('verdict').textContent=v;$('calcSum').value=`${sq} sq ft, ${FUEL[fuel].n}, ${backup?'hybrid':'heat pump only'}: ${money(now)} now vs ${money(hp)} with heat pump, ${tons} ton`}
+$('cf').addEventListener('input',calc);calc();
+
+/* ---------- booking ---------- */
+const day=$('day');const tm=new Date();tm.setDate(tm.getDate()+1);day.min=tm.toISOString().slice(0,10);
+$('bk').addEventListener('submit',e=>{e.preventDefault();const set=(id,m)=>{$(id).textContent=m;return!m};const n=$('n').value.trim(),ph=$('ph').value.replace(/\D/g,''),z=$('zip').value.trim();const d=day.value?new Date(day.value+'T12:00'):null;
+ let ok=set('e1',n.length<2?'Add your name.':'');ok=set('e2',ph.length<10?'Enter a 10-digit phone number.':'')&&ok;
+ ok=set('e3',/^55\d{3}$/.test(z)?'':'We cover ZIP codes starting with 55 (Twin Cities metro).')&&ok;
+ ok=set('e4',!d?'Pick a day.':d.getDay()===0?"We don't do estimates on Sundays.":'')&&ok;if(!ok)return;
+ const o=$('ok');o.innerHTML=`<b>Estimate booked, ${n.split(' ')[0].replace(/[<>]/g,'')}.</b>${d.toLocaleDateString('en-US',{weekday:'long',month:'short',day:'numeric'})}, ${$('slot').value.toLowerCase()}. We'd text ${$('ph').value.replace(/[<>]/g,'')} when the advisor is on the way, and bring your numbers: ${$('calcSum').value}. <span class="fine">Demo: nothing was sent.</span>`;o.style.display='block';o.focus()});
+
+/* ---------- 3D unit ---------- */
+const host=$('gl');let renderer;try{renderer=new THREE.WebGLRenderer({antialias:true,alpha:true})}catch(e){host.innerHTML='<img src="img/unit.jpg" alt="" style="width:100%;height:100%;object-fit:cover">'}
+if(renderer){
+ renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.shadowMap.enabled=true;host.appendChild(renderer.domElement);
+ const scene=new THREE.Scene();const pm=new THREE.PMREMGenerator(renderer);scene.environment=pm.fromScene(new RoomEnvironment(),.04).texture;
+ const camera=new THREE.PerspectiveCamera(30,1,.1,50);camera.position.set(3.4,1.6,4.2);camera.lookAt(0,.45,0);
+ const sun=new THREE.DirectionalLight(0xffffff,2.2);sun.position.set(3,5,4);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);Object.assign(sun.shadow.camera,{left:-3,right:3,top:3,bottom:-3});scene.add(sun);
+ const floor=new THREE.Mesh(new THREE.CircleGeometry(4,64),new THREE.ShadowMaterial({opacity:.16}));floor.rotation.x=-Math.PI/2;floor.receiveShadow=true;scene.add(floor);
+ const unit=new THREE.Group();scene.add(unit);
+ const M={shell:new THREE.MeshStandardMaterial({color:0xE9ECEC,metalness:.35,roughness:.38}),dark:new THREE.MeshStandardMaterial({color:0x2a3036,metalness:.5,roughness:.45}),
+  grille:new THREE.MeshStandardMaterial({color:0x3a434b,metalness:.6,roughness:.4}),fin:new THREE.MeshStandardMaterial({color:0xb9c4ca,metalness:.85,roughness:.3}),
+  copper:new THREE.MeshStandardMaterial({color:0xC8784A,metalness:1,roughness:.28}),comp:new THREE.MeshStandardMaterial({color:0x1f2a33,metalness:.4,roughness:.5}),
+  pcb:new THREE.MeshStandardMaterial({color:0x1f6b52,roughness:.6}),chip:new THREE.MeshStandardMaterial({color:0x111418,roughness:.5}),
+  fan:new THREE.MeshStandardMaterial({color:0x22282d,roughness:.55,metalness:.2}),accent:new THREE.MeshStandardMaterial({color:0xE8692E,roughness:.4})};
+ const W=1.1,H=.86,D=.42,BY=.12;
+ const parts={};const add=(k,obj,home,ex)=>{obj.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});obj.position.copy(home);unit.add(obj);parts[k]={obj,home:home.clone(),ex}};
+ // base + feet
+ const base=new THREE.Group();const pan=new THREE.Mesh(new RoundedBoxGeometry(W+.02,.06,D+.04,2,.02),M.dark);base.add(pan);
+ [[-.42,.15],[.42,.15],[-.42,-.15],[.42,-.15]].forEach(([x,z])=>{const f=new THREE.Mesh(new THREE.BoxGeometry(.12,BY-.03,.12),M.dark);f.position.set(x,-(BY-.03)/2-.03,z);base.add(f)});
+ add('base',base,new THREE.Vector3(0,BY,0),new THREE.Vector3(0,0,0));
+ // shell: top, front, right side
+ const top=new THREE.Mesh(new RoundedBoxGeometry(W+.03,.05,D+.05,3,.02),M.shell);add('top',top,new THREE.Vector3(0,BY+H+.02,0),new THREE.Vector3(0,.55,0));
+ const front=new THREE.Group();const fp=new THREE.Mesh(new RoundedBoxGeometry(W,H,.03,3,.012),M.shell);front.add(fp);
+ // fan opening ring + spokes
+ const ring=new THREE.Mesh(new THREE.TorusGeometry(.3,.018,12,64),M.grille);ring.position.set(-.14,0,.02);front.add(ring);
+ for(let i=0;i<6;i++){const sp=new THREE.Mesh(new THREE.BoxGeometry(.6,.012,.012),M.grille);sp.position.set(-.14,0,.03);sp.rotation.z=i*Math.PI/6;front.add(sp)}
+ [.1,.2].forEach(r=>{const t=new THREE.Mesh(new THREE.TorusGeometry(r,.008,8,48),M.grille);t.position.set(-.14,0,.03);front.add(t)});
+ const holeMask=new THREE.Mesh(new THREE.CircleGeometry(.29,48),M.dark);holeMask.position.set(-.14,0,.016);front.add(holeMask);
+ // right louvres
+ for(let i=0;i<9;i++){const l=new THREE.Mesh(new THREE.BoxGeometry(.24,.012,.02),M.grille);l.position.set(.38,-.3+i*.075,.022);front.add(l)}
+ const badge=new THREE.Mesh(new THREE.BoxGeometry(.16,.03,.01),M.accent);badge.position.set(.38,.36,.02);front.add(badge);
+ add('front',front,new THREE.Vector3(0,BY+H/2+.01,D/2),new THREE.Vector3(0,.15,1.15));
+ const side=new THREE.Mesh(new RoundedBoxGeometry(.03,H,D,3,.012),M.shell);add('side',side,new THREE.Vector3(W/2-.015,BY+H/2+.01,0),new THREE.Vector3(.9,0,.2));
+ // fan
+ const fan=new THREE.Group();const hub=new THREE.Mesh(new THREE.CylinderGeometry(.06,.07,.08,24),M.fan);hub.rotation.x=Math.PI/2;fan.add(hub);
+ const bladeShape=new THREE.Shape();bladeShape.moveTo(0,0);bladeShape.bezierCurveTo(.08,.05,.22,.08,.27,.03);bladeShape.bezierCurveTo(.25,-.04,.12,-.06,0,0);
+ const bg=new THREE.ExtrudeGeometry(bladeShape,{depth:.008,bevelEnabled:false});
+ for(let i=0;i<3;i++){const b=new THREE.Mesh(bg,M.fan);b.rotation.z=i*Math.PI*2/3;b.rotation.y=.35;fan.add(b)}
+ const motor=new THREE.Mesh(new THREE.CylinderGeometry(.08,.08,.1,24),M.dark);motor.rotation.x=Math.PI/2;motor.position.z=-.08;fan.add(motor);
+ add('fan',fan,new THREE.Vector3(-.14,BY+H/2,.1),new THREE.Vector3(-.2,.05,.75));
+ // coil (back + left wrap)
+ const coil=new THREE.Group();const nF=70;const finG=new THREE.BoxGeometry(.006,H*.86,.05);const fins=new THREE.InstancedMesh(finG,M.fin,nF);const dd=new THREE.Object3D();
+ for(let i=0;i<nF;i++){dd.position.set(-W/2+.06+i*(W-.2)/nF,0,0);dd.updateMatrix();fins.setMatrixAt(i,dd.matrix)}coil.add(fins);
+ for(let r=0;r<7;r++){const t=new THREE.Mesh(new THREE.CylinderGeometry(.009,.009,W-.16,10),M.copper);t.rotation.z=Math.PI/2;t.position.set(-.04,-H*.38+r*H*.127,0);coil.add(t)}
+ add('coil',coil,new THREE.Vector3(0,BY+H/2+.01,-D/2+.05),new THREE.Vector3(0,.12,-.95));
+ // compressor
+ const comp=new THREE.Group();const body=new THREE.Mesh(new THREE.CylinderGeometry(.1,.1,.3,32),M.comp);comp.add(body);
+ const cap=new THREE.Mesh(new THREE.SphereGeometry(.1,32,16,0,Math.PI*2,0,Math.PI/2),M.comp);cap.position.y=.15;comp.add(cap);
+ const acc=new THREE.Mesh(new THREE.CylinderGeometry(.04,.04,.22,20),M.comp);acc.position.set(-.14,.03,0);comp.add(acc);
+ const lbl=new THREE.Mesh(new THREE.CylinderGeometry(.101,.101,.05,32,1,true),M.accent);lbl.position.y=.04;comp.add(lbl);
+ const pipe=new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3([new THREE.Vector3(0,.22,0),new THREE.Vector3(.05,.3,0),new THREE.Vector3(.12,.3,.05),new THREE.Vector3(.16,.2,.1)]),24,.012,8),M.copper);comp.add(pipe);
+ add('comp',comp,new THREE.Vector3(.33,BY+.2,-.02),new THREE.Vector3(.85,.05,.35));
+ // control board
+ const board=new THREE.Group();const pb=new THREE.Mesh(new THREE.BoxGeometry(.24,.17,.01),M.pcb);board.add(pb);
+ [[-.06,.03],[.04,.04],[.07,-.04],[-.05,-.05]].forEach(([x,y],i)=>{const c=new THREE.Mesh(new THREE.BoxGeometry(i?.04:.07,i?.03:.05,.02),M.chip);c.position.set(x,y,.012);board.add(c)});
+ const cap2=new THREE.Mesh(new THREE.CylinderGeometry(.015,.015,.04,12),M.accent);cap2.rotation.x=Math.PI/2;cap2.position.set(.08,.05,.02);board.add(cap2);
+ add('board',board,new THREE.Vector3(.36,BY+H-.16,.12),new THREE.Vector3(.45,.55,.5));
+ // line set
+ const lines=new THREE.Group();[0,.06].forEach((o,i)=>{const t=new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3([new THREE.Vector3(W/2-.02,.32+o,-.08),new THREE.Vector3(W/2+.2,.32+o,-.08),new THREE.Vector3(W/2+.35,.45+o,-.12),new THREE.Vector3(W/2+.4,1.1+o,-.15)]),40,i?.014:.01,10),M.copper);lines.add(t)});
+ add('lines',lines,new THREE.Vector3(0,0,0),new THREE.Vector3(.12,0,-.2));
+ // labels
+ const LAB=[{k:'fan',n:'Variable-speed fan',s:1,p:[0,.32,.05]},{k:'front',n:'Cabinet & grille',s:1,p:[.38,.3,.03]},{k:'coil',n:'Oversized coil',s:2,p:[.35,.38,0]},{k:'comp',n:'Inverter compressor',s:3,p:[0,.24,.1]},{k:'board',n:'Defrost control board',s:4,p:[.12,.1,0]},{k:'lines',n:'Copper line set to the house',s:4,p:[W/2+.4,1.15,-.15]}];
+ const labWrap=$('labels');LAB.forEach((l,i)=>{const d=document.createElement('div');d.className='lab';d.innerHTML=`<i></i><span><b>0${i+1}</b>${l.n}</span>`;labWrap.appendChild(d);l.el=d;l.v=new THREE.Vector3()});
+ /* scroll + render */
+ const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+ const sec=$('inside'),panels=[...document.querySelectorAll('.panel')],prog=[...document.querySelectorAll('.prog i')];let P=0,step=0,vis=true;
+ // stage windows: each part explodes during its window
+ const WIN={top:[.12,.3],front:[.12,.3],side:[.15,.32],fan:[.18,.36],coil:[.36,.52],comp:[.54,.7],board:[.72,.86],lines:[.72,.88],base:[0,0]};
+ function onScroll(){const r=sec.getBoundingClientRect();const span=sec.offsetHeight-innerHeight;P=Math.min(1,Math.max(0,-r.top/span));
+  const s=P<.1?0:P<.36?1:P<.54?2:P<.72?3:4;if(s!==step){step=s;panels.forEach(p=>p.classList.toggle('off',+p.dataset.step!==s));prog.forEach((b,i)=>b.classList.toggle('on',i<=s))}}
+ addEventListener('scroll',onScroll,{passive:true});
+ new IntersectionObserver(es=>vis=es[0].isIntersecting).observe(host);
+ function resize(){const w=host.clientWidth,h=host.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;
+  if(w>900)camera.setViewOffset(w,h,-w*.17,-h*.02,w,h);else camera.setViewOffset(w,h,0,h*.16,w,h);camera.updateProjectionMatrix()}
+ new ResizeObserver(resize).observe(host);resize();
+ const tmp=new THREE.Vector3();let t=0;let rotY=.42;
+ renderer.setAnimationLoop(()=>{if(!vis)return;t+=1/60;
+  for(const [k,p] of Object.entries(parts)){const w=WIN[k];const e=w[1]>w[0]?ease(Math.min(1,Math.max(0,(P-w[0])/(w[1]-w[0])))):0;p.obj.position.copy(p.home).addScaledVector(p.ex,e)}
+  parts.fan.obj.rotation.z-=reduce?0:(.06+P*.1);
+  const targetRot=.42-P*.55+(reduce?0:Math.sin(t*.3)*.04);rotY+=(targetRot-rotY)*.06;unit.rotation.y=rotY;
+  const dist=(camera.aspect<.8?6.3:4.9)+P*.9;const ang=.75;camera.position.set(Math.sin(ang)*dist,1.5+P*.5,Math.cos(ang)*dist);camera.lookAt(0,.5+P*.1,0);
+  renderer.render(scene,camera);
+  const w=host.clientWidth,h=host.clientHeight;
+  LAB.forEach(l=>{const on=step>=l.s&&step<=l.s+(l.s===1?0:0)||(step===4&&l.s===4)||(step===l.s);l.el.classList.toggle('on',on&&P>0.05);if(!on)return;
+   parts[l.k].obj.updateWorldMatrix(true,false);tmp.set(...l.p).applyMatrix4(parts[l.k].obj.matrixWorld).project(camera);const x=(tmp.x+1)/2*w,y=(1-tmp.y)/2*h;
+   l.el.style.transform=`translate(${x}px,${y}px)`;const sp=l.el.querySelector('span');const flip=x>w-230;sp.style.left=flip?'auto':'14px';sp.style.right=flip?'14px':'auto';sp.style.top='-40px'});
+ });
+ onScroll();
+}
+</script>
+</body>
+</html>

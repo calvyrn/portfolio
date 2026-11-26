@@ -10,9 +10,12 @@ Website, web app and AI concepts for small businesses, organised by industry. Ev
 | [Skincare brand with a 3D glass bottle and shop](sites/skincare-brand-3d/) | Beauty | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/skincare-brand-3d/) |
 | [Occasion-wear label with a motion hero and scroll lookbook](sites/eastern-wear-motion/) | Fashion | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/eastern-wear-motion/) |
 | [Coffee roastery with a 3D cup and subscriptions](sites/coffee-roastery-3d/) | Food & drink | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/coffee-roastery-3d/) |
+| [Heat pump installer with an exploded 3D unit](sites/heatpump-exploded-3d/) | HVAC | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/heatpump-exploded-3d/) |
 | [Roofing company with a live 3D roof preview](sites/roofing-3d/) | Home services | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/roofing-3d/) |
 | [Lake lodge with a walk-through 360° room tour](sites/lodge-360-tour/) | Hospitality | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/lodge-360-tour/) |
+| [Engagement ring designer in real-time 3D](sites/ring-builder-3d/) | Jewelry | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/ring-builder-3d/) |
 | [Freight forwarder with a live 3D shipment globe](sites/freight-globe-3d/) | Logistics | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/freight-globe-3d/) |
+| [Security installer with a 3D camera coverage planner](sites/security-viewshed-3d/) | Security | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/security-viewshed-3d/) |
 | [Solar installer with 3D panels and savings estimator](sites/solar-installer-3d/) | Solar | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/solar-installer-3d/) |
 | [Travel agency with a 3D flight globe](sites/travel-agency-3d/) | Travel | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/travel-agency-3d/) |
 | [CPA firm with a client portal](sites/accounting-portal/) | Accounting | Medium | [Live demo](https://calvyrn.github.io/portfolio/sites/accounting-portal/) |

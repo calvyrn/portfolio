@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Marlowe Street Jewelers · Design your engagement ring in 3D · Charleston, SC</title>
+<meta name="description" content="Choose the shape, stone, metal and band, turn the ring in 3D and see the price as you go. Made at our bench on King Street, Charleston, in four to six weeks.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--porc:#F1F3F2;--ink:#1B1D22;--champ:#C9A96E;--slate:#3E5266;--mute:#5E6670;--line:#D9DEDD;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:400 16.5px/1.6 "Manrope",system-ui,sans-serif;color:var(--ink);background:var(--porc)}
+img{max-width:100%;display:block}a{color:inherit}
+h1,h2,h3{font-family:"Marcellus",Georgia,serif;font-weight:400;line-height:1.08;margin:0}
+h2{font-size:clamp(2rem,4vw,3.1rem)}
+:focus-visible{outline:2px solid var(--slate);outline-offset:3px}
+.wrap{max-width:1260px;margin:0 auto;padding:0 24px}
+.topbar{background:var(--ink);color:#c9ced4;font-size:13px;text-align:center;padding:7px 14px}.topbar a{color:#fff}
+header{position:sticky;top:0;z-index:30;background:rgba(241,243,242,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:30px;height:66px}
+.logo{font:400 22px "Marcellus";text-decoration:none;letter-spacing:.04em}
+.nav ul{display:flex;gap:24px;list-style:none;margin:0 0 0 auto;padding:0;font-size:15px}
+.nav ul a{text-decoration:none}.nav ul a:hover{color:var(--slate)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;background:var(--ink);color:#fff;font:600 15px "Manrope";padding:14px 22px;border-radius:999px;text-decoration:none}
+.btn:hover{background:var(--slate)}.btn.line{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}.btn.line:hover{background:var(--ink);color:#fff}
+
+/* builder */
+.builder{display:grid;grid-template-columns:1fr 420px;height:calc(100vh - 66px - 33px);min-height:620px}
+.view{position:relative;background:radial-gradient(ellipse at 50% 45%,#ffffff 0%,#eef0f0 45%,#d9dedf 100%);overflow:hidden}
+#ring{position:absolute;inset:0;touch-action:none;cursor:grab}#ring:active{cursor:grabbing}
+#ring canvas{display:block;width:100%!important;height:100%!important}
+.vhead{position:absolute;left:32px;top:30px;max-width:460px;pointer-events:none}
+.vhead h1{font-size:clamp(2.2rem,4vw,3.6rem)}
+.vhead p{color:var(--mute);margin:12px 0 0;max-width:38ch}
+.vfoot{position:absolute;left:32px;right:32px;bottom:24px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-size:14px;color:var(--mute)}
+.vbtns{display:flex;gap:8px}
+.chipbtn{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px;font:500 14px "Manrope";cursor:pointer;color:var(--ink)}
+.chipbtn:hover{border-color:var(--ink)}
+.panel{background:#fff;border-left:1px solid var(--line);padding:24px 28px 26px;display:flex;flex-direction:column;gap:18px;overflow-y:auto}
+.grp h3{font:600 13px "Manrope";letter-spacing:.06em;color:var(--mute);margin-bottom:10px;display:flex;justify-content:space-between}
+.grp h3 span{color:var(--ink);letter-spacing:0;font-weight:600}
+.opts{display:flex;gap:8px;flex-wrap:wrap}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt span{display:flex;flex-direction:column;align-items:center;gap:6px;min-width:76px;padding:10px 10px;border:1.5px solid var(--line);border-radius:12px;cursor:pointer;font-size:13.5px;font-weight:500}
+.opt input:checked+span{border-color:var(--ink);background:#f6f7f7}
+.opt input:focus-visible+span{outline:2px solid var(--slate);outline-offset:2px}
+.opt svg{width:30px;height:30px}
+.sw{width:26px;height:26px;border-radius:50%;box-shadow:inset 0 -6px 10px rgba(0,0,0,.18),inset 0 4px 6px rgba(255,255,255,.7)}
+input[type=range]{width:100%;accent-color:var(--ink)}
+.ticks{display:flex;justify-content:space-between;font-size:12px;color:var(--mute)}
+.pill{display:flex;border:1.5px solid var(--line);border-radius:999px;padding:3px}
+.pill label{flex:1;text-align:center;position:relative}.pill input{position:absolute;opacity:0}
+.pill span{display:block;padding:8px 10px;border-radius:999px;cursor:pointer;font-size:14px;font-weight:500}
+.pill input:checked+span{background:var(--ink);color:#fff}
+.pill input:focus-visible+span{outline:2px solid var(--slate)}
+select,.f input,.f textarea{font:inherit;font-size:16px;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);width:100%}
+.price{border-top:1px solid var(--line);padding-top:18px;margin-top:auto}
+.price dl{display:grid;grid-template-columns:1fr auto;gap:6px 12px;margin:0 0 10px;font-size:14.5px}.price dt{color:var(--mute)}.price dd{margin:0;text-align:right}
+.total{display:flex;justify-content:space-between;align-items:baseline;font:400 30px "Marcellus"}
+.total small{font:500 13px "Manrope";color:var(--mute)}
+.actions{display:flex;gap:10px;margin-top:14px}.actions .btn{flex:1}
+.fine{font-size:12.5px;color:var(--mute);margin:10px 0 0}
+
+/* sections */
+section.s{padding:100px 0}
+.lede{color:var(--mute);font-size:18px;max-width:58ch;margin:14px 0 0}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:46px}
+.process div{border-top:1.5px solid var(--ink);padding-top:16px}
+.process b{font:400 15px "Marcellus";color:var(--champ);display:block;margin-bottom:8px}
+.process h3{font-size:22px;margin-bottom:6px}.process p{margin:0;color:var(--mute)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.split img{border-radius:18px;width:100%;aspect-ratio:4/5;object-fit:cover}
+table.cmp{width:100%;border-collapse:collapse;margin-top:26px;font-size:15.5px}
+.cmp th,.cmp td{padding:13px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.cmp th{font-weight:600;font-size:13px;color:var(--mute);letter-spacing:.04em}
+.band{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:16px}
+.band img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;border-radius:14px}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:40px}
+blockquote{margin:0;background:#fff;border-radius:18px;padding:26px;border:1px solid var(--line)}
+blockquote p{font:400 20px/1.4 "Marcellus";margin:0 0 14px}blockquote footer{font-size:14px;color:var(--mute)}
+.ph{font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--slate)}
+.faq details{border-bottom:1px solid var(--line);padding:18px 0}
+.faq summary{cursor:pointer;font-weight:600;font-size:18px}.faq p{color:var(--mute);margin:10px 0 0;max-width:70ch}
+.visit{display:grid;grid-template-columns:1fr 1.2fr;gap:40px}
+.visit iframe{width:100%;height:100%;min-height:360px;border:0;border-radius:18px}
+.hrs{display:grid;grid-template-columns:auto 1fr;gap:6px 22px;margin-top:20px}
+footer.site{background:var(--ink);color:#b7bec6;padding:64px 0 28px;font-size:15px}
+.fcols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}
+footer.site h4{font:400 18px "Marcellus";color:#fff;margin:0 0 12px}
+footer.site ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}footer.site a{text-decoration:none}footer.site a:hover{color:#fff}
+.legal{border-top:1px solid #33373e;margin-top:40px;padding-top:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:13px}
+dialog{border:0;border-radius:20px;padding:0;width:min(560px,94vw);box-shadow:0 30px 80px rgba(0,0,0,.25)}
+dialog::backdrop{background:rgba(27,29,34,.45)}
+.dlg{padding:28px}.dlg h3{font-size:28px;margin-bottom:6px}
+.summ{background:var(--porc);border-radius:12px;padding:12px 14px;font-size:14px;margin:14px 0}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.f{display:flex;flex-direction:column;gap:5px}.f.full{grid-column:1/-1}.f label{font-size:13.5px;font-weight:600}
+.err{color:#A3321F;font-size:13px;min-height:1em}
+.ok{display:none}.ok b{font:400 24px "Marcellus";display:block;margin-bottom:8px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,16px);background:var(--ink);color:#fff;padding:11px 18px;border-radius:999px;opacity:0;transition:.3s;pointer-events:none;z-index:99;font-size:14.5px}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media(max-width:1020px){.builder{grid-template-columns:1fr;height:auto}.panel{overflow:visible}.view{height:62vh;min-height:440px}.panel{border-left:0;border-top:1px solid var(--line)}
+ .nav ul{display:none}.process{grid-template-columns:1fr 1fr}.split,.visit{grid-template-columns:1fr}.reviews{grid-template-columns:1fr}.fcols{grid-template-columns:1fr 1fr}.band{grid-template-columns:1fr 1fr}.band img:first-child{grid-column:1/-1}}
+@media(max-width:600px){.view{height:56svh;min-height:380px}.vhead{left:18px;top:16px;right:18px}.vhead h1{font-size:1.9rem}.vhead p{display:none}
+ .vfoot{left:16px;right:16px;bottom:14px}.vfoot>span{display:none}.panel{padding:22px 18px}.opt span{min-width:68px}
+ section.s{padding:72px 0}.process{grid-template-columns:1fr}.fcols{grid-template-columns:1fr}.fgrid{grid-template-columns:1fr}.cmp{font-size:14px}.nav .btn{display:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="topbar">Example concept by <a href="https://calvyrn.com">Calvyrn</a>. Marlowe Street Jewelers is fictional; names, prices, reviews and 555 numbers are placeholders. Photos: Unsplash.</div>
+<header><div class="wrap nav">
+ <a class="logo" href="#top">MARLOWE STREET</a>
+ <ul><li><a href="#build">Design a ring</a></li><li><a href="#how">How it's made</a></li><li><a href="#stones">Lab or natural</a></li><li><a href="#visit">Visit</a></li></ul>
+ <a class="btn" href="#visit">Book an appointment</a>
+</div></header>
+
+<main id="top">
+<section class="builder" id="build" aria-label="Ring designer">
+ <div class="view">
+  <div id="ring" role="img" aria-label="3D preview of your ring. Drag to turn it."></div>
+  <div class="vhead"><h1>Design the ring. See it before we make it.</h1><p>Every choice updates the 3D ring and the price. When it looks right, send it to our bench on King Street.</p></div>
+  <div class="vfoot"><span>Drag to turn · scroll or pinch to zoom</span><div class="vbtns"><button class="chipbtn" id="viewTop">Top view</button><button class="chipbtn" id="viewSide">Side view</button><button class="chipbtn" id="share">Copy link</button></div></div>
+ </div>
+ <form class="panel" id="cfg" aria-label="Ring options">
+  <div class="grp"><h3>SHAPE <span id="lShape">Round</span></h3><div class="opts" id="shapes"></div></div>
+  <div class="grp"><h3>CARAT <span id="lCarat">1.00 ct</span></h3><input type="range" id="carat" min="0.5" max="3" step="0.25" value="1" aria-label="Carat weight"><div class="ticks"><span>0.5</span><span>1</span><span>1.5</span><span>2</span><span>2.5</span><span>3</span></div></div>
+  <div class="grp"><h3>STONE</h3><div class="pill" role="radiogroup" aria-label="Stone origin"><label><input type="radio" name="origin" value="lab" checked><span>Lab-grown</span></label><label><input type="radio" name="origin" value="natural"><span>Natural</span></label></div></div>
+  <div class="grp"><h3>METAL <span id="lMetal">Platinum</span></h3><div class="opts" id="metals"></div></div>
+  <div class="grp"><h3>BAND &amp; SETTING</h3>
+   <div class="pill" role="radiogroup" aria-label="Band" style="margin-bottom:8px"><label><input type="radio" name="band" value="plain" checked><span>Plain band</span></label><label><input type="radio" name="band" value="pave"><span>Pavé band</span></label></div>
+   <div class="pill" role="radiogroup" aria-label="Prongs"><label><input type="radio" name="prongs" value="4"><span>4 prongs</span></label><label><input type="radio" name="prongs" value="6" checked><span>6 prongs</span></label></div>
+  </div>
+  <div class="grp"><h3>RING SIZE</h3><select id="size" aria-label="Ring size"></select></div>
+  <div class="price" aria-live="polite">
+   <dl id="pList"></dl>
+   <div class="total"><span>Estimate</span><span id="pTot">$0</span></div>
+   <div class="actions"><button type="button" class="btn" id="req">Request this ring</button></div>
+   <p class="fine">Estimate for a G–H colour, VS clarity stone. We show you three real stones that fit before you pay anything.</p>
+  </div>
+ </form>
+</section>
+
+<section class="s" id="how">
+ <div class="wrap">
+  <h2>From your design to your hand</h2>
+  <p class="lede">Every ring is made to order by two goldsmiths at our bench above the shop. Most are ready in four to six weeks.</p>
+  <div class="process">
+   <div><b>Step one</b><h3>Pick the stone</h3><p>We send three stones that match your design, with their grading reports and close-up video.</p></div>
+   <div><b>Step two</b><h3>Approve the CAD</h3><p>You get a detailed render of your ring at true size and can ask for changes until it's right.</p></div>
+   <div><b>Step three</b><h3>Cast and set</h3><p>We cast the setting in recycled metal, set the stone by hand and polish it under the microscope.</p></div>
+   <div><b>Step four</b><h3>Collect or ship</h3><p>Pick it up on King Street or we ship it insured, with a free resizing in the first year.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="s" id="stones" style="background:#fff">
+ <div class="wrap split">
+  <img src="img/loupe.jpg" alt="Goldsmith at a cluttered workbench inspecting a piece through a loupe" loading="lazy">
+  <div>
+   <h2>Lab-grown or natural?</h2>
+   <p class="lede">Both are real diamonds with the same hardness and sparkle. The difference is where they come from and what they cost.</p>
+   <table class="cmp">
+    <thead><tr><th></th><th>LAB-GROWN</th><th>NATURAL</th></tr></thead>
+    <tbody>
+     <tr><td>What it is</td><td>Diamond grown in a lab in weeks</td><td>Diamond formed underground over a billion years</td></tr>
+     <tr><td>1 ct, G colour, VS</td><td>About $1,000</td><td>About $5,000</td></tr>
+     <tr><td>Looks and wears</td><td>Identical</td><td>Identical</td></tr>
+     <tr><td>Resale value</td><td>Low</td><td>Holds some value</td></tr>
+     <tr><td>Grading report</td><td>IGI or GIA</td><td>GIA</td></tr>
+    </tbody>
+   </table>
+  </div>
+ </div>
+</section>
+
+<section class="s" style="padding-bottom:0">
+ <div class="wrap band">
+  <img src="img/hands.jpg" alt="Two hands meeting at sunset, one wearing an engagement ring" loading="lazy">
+  <img src="img/bench.jpg" alt="Jeweler's hands filing a ring at a wooden bench" loading="lazy">
+  <img src="img/stones.jpg" alt="Several diamond rings resting on green succulent leaves" loading="lazy">
+ </div>
+</section>
+
+<section class="s">
+ <div class="wrap">
+  <h2>Said yes</h2>
+  <div class="reviews">
+   <blockquote><p>"I changed the band three times at midnight on my phone. They made exactly that ring."</p><footer>James, Mount Pleasant · <span class="ph">PLACEHOLDER REVIEW</span></footer></blockquote>
+   <blockquote><p>"Seeing the oval in 3D next to the round made the choice in about a minute."</p><footer>Lauren &amp; Priya, Charleston · <span class="ph">PLACEHOLDER REVIEW</span></footer></blockquote>
+   <blockquote><p>"The price on the site was within forty dollars of the final invoice."</p><footer>Marcus, Summerville · <span class="ph">PLACEHOLDER REVIEW</span></footer></blockquote>
+  </div>
+ </div>
+</section>
+
+<section class="s faq" style="padding-top:0">
+ <div class="wrap" style="max-width:880px">
+  <h2>Questions</h2>
+  <div style="margin-top:24px">
+   <details><summary>How close is the 3D ring to the real one?</summary><p>Proportions, shape and metal colour are accurate. The exact sparkle depends on the stone you choose, which is why we send you video of real stones before we set one.</p></details>
+   <details><summary>What if I don't know her ring size?</summary><p>Pick your best guess. Resizing is free for the first year, and we can make the band so it resizes easily.</p></details>
+   <details><summary>Do I pay anything up front?</summary><p>A 30% deposit once you approve the stone and the CAD render. The rest is due when the ring is ready.</p></details>
+   <details><summary>Is your gold and platinum recycled?</summary><p>Yes, all our metal is recycled and refined in the US.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="s" id="visit" style="padding-top:0">
+ <div class="wrap visit">
+  <div>
+   <h2>Visit the bench</h2>
+   <p class="lede">Marlowe Street Jewelers, 284 King Street, Charleston, SC 29401. Walk-ins welcome; appointments get a private room and coffee.</p>
+   <div class="hrs"><b>Tue–Fri</b><span>10 am – 6 pm</span><b>Saturday</b><span>10 am – 5 pm</span><b>Sun–Mon</b><span>By appointment</span><b>Phone</b><span><a href="tel:+18435550164">(843) 555-0164</a></span></div>
+   <p style="margin-top:26px"><button class="btn" id="req2">Book a design appointment</button></p>
+  </div>
+  <iframe title="Map of King Street, Charleston" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-79.9560%2C32.7750%2C-79.9160%2C32.7950&amp;layer=mapnik&amp;marker=32.7850%2C-79.9360"></iframe>
+ </div>
+</section>
+</main>
+
+<footer class="site"><div class="wrap">
+ <div class="fcols">
+  <div><span class="logo" style="color:#fff">MARLOWE STREET</span><p>Engagement rings and wedding bands, made to order in Charleston.</p></div>
+  <div><h4>Rings</h4><ul><li><a href="#build">Design a ring</a></li><li><a href="#stones">Lab or natural</a></li><li><a href="#how">How it's made</a></li></ul></div>
+  <div><h4>Help</h4><ul><li><a href="#top">Ring sizing</a></li><li><a href="#top">Care &amp; resizing</a></li><li><a href="#visit">Appointments</a></li></ul></div>
+  <div><h4>Visit</h4><ul><li><a href="tel:+18435550164">(843) 555-0164</a></li><li>hello@marlowestreet.example</li><li>284 King St, Charleston</li></ul></div>
+ </div>
+ <div class="legal"><span>© 2026 Marlowe Street Jewelers (fictional). Photos from Unsplash. Prices are illustrative.</span><span>Concept, design and build: <a href="https://calvyrn.com">Calvyrn</a></span></div>
+</div></footer>
+
+<dialog id="dlg" aria-labelledby="dlgT">
+ <form class="dlg" id="reqForm" method="dialog" novalidate>
+  <div id="reqBody">
+   <h3 id="dlgT">Send this design to the bench</h3>
+   <p style="color:var(--mute);margin:0">A goldsmith replies within one business day with three stones that fit.</p>
+   <div class="summ" id="summ"></div>
+   <div class="fgrid">
+    <div class="f"><label for="rName">Your name</label><input id="rName" autocomplete="name"><span class="err" id="eN"></span></div>
+    <div class="f"><label for="rEmail">Email</label><input id="rEmail" type="email" autocomplete="email"><span class="err" id="eE"></span></div>
+    <div class="f"><label for="rWhen">Need it by <span style="font-weight:400;color:var(--mute)">(optional)</span></label><input id="rWhen" type="date"><span class="err" id="eW"></span></div>
+    <div class="f"><label for="rHow">Talk it through</label><select id="rHow"><option>By email</option><option>Video call</option><option>At the shop</option></select></div>
+    <div class="f full"><label for="rNote">Anything else? <span style="font-weight:400;color:var(--mute)">(optional)</span></label><textarea id="rNote" rows="2" placeholder="She wears mostly yellow gold, size is a guess"></textarea></div>
+   </div>
+   <div class="actions"><button type="button" class="btn line" id="cancel">Back to the ring</button><button type="submit" class="btn" id="send">Send design</button></div>
+   <p class="fine">Demo: nothing is sent or charged.</p>
+  </div>
+  <div class="ok" id="ok" tabindex="-1"></div>
+ </form>
+</dialog>
+<div class="toast" id="toast" role="status"></div>
+
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.164.1/build/three.module.js","three/addons/":"https://unpkg.com/three@0.164.1/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+const $=id=>document.getElementById(id);const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const SHAPES={round:{n:'Round',seg:20,sx:1,rot:0,mul:1,icon:'<circle cx="15" cy="15" r="11"/>'},oval:{n:'Oval',seg:20,sx:1.38,rot:0,mul:.9,icon:'<ellipse cx="15" cy="15" rx="8" ry="12"/>'},
+ princess:{n:'Princess',seg:4,sx:1,rot:Math.PI/4,mul:.85,icon:'<rect x="5" y="5" width="20" height="20"/><path d="M5 5l20 20M25 5L5 25"/>'},emerald:{n:'Emerald',seg:8,sx:1.42,rot:Math.PI/8,mul:.85,icon:'<path d="M10 3h10l5 5v14l-5 5H10l-5-5V8z"/><rect x="9" y="8" width="12" height="14"/>'}};
+const METALS={platinum:{n:'Platinum',c:'#E3E4E5',r:.14,price:1890},white:{n:'14k white gold',c:'#D9DBDE',r:.16,price:1150},yellow:{n:'14k yellow gold',c:'#E6BE73',r:.17,price:1150},rose:{n:'14k rose gold',c:'#E8A88C',r:.17,price:1150}};
+const st={shape:'round',carat:1,origin:'lab',metal:'platinum',band:'plain',prongs:6,size:6};
+// read hash
+try{const h=new URLSearchParams(location.hash.slice(1));for(const k of Object.keys(st))if(h.has(k))st[k]=isNaN(+h.get(k))?h.get(k):+h.get(k);if(!SHAPES[st.shape])st.shape='round';if(!METALS[st.metal])st.metal='platinum'}catch(e){}
+/* controls UI */
+$('shapes').innerHTML=Object.entries(SHAPES).map(([k,s])=>`<label class="opt"><input type="radio" name="shape" value="${k}"${k===st.shape?' checked':''}><span><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.4">${s.icon}</svg>${s.n}</span></label>`).join('');
+$('metals').innerHTML=Object.entries(METALS).map(([k,m])=>`<label class="opt"><input type="radio" name="metal" value="${k}"${k===st.metal?' checked':''}><span><i class="sw" style="background:${m.c}"></i>${m.n.replace('14k ','14k<br>')}</span></label>`).join('');
+for(let s=3;s<=10;s+=.5)$('size').add(new Option('US '+s,s));$('size').value=st.size;$('carat').value=st.carat;
+document.querySelector(`input[name=origin][value=${st.origin}]`).checked=true;document.querySelector(`input[name=band][value=${st.band}]`).checked=true;document.querySelector(`input[name=prongs][value="${st.prongs}"]`).checked=true;
+const money=n=>'$'+Math.round(n).toLocaleString('en-US');
+function price(){const s=SHAPES[st.shape],m=METALS[st.metal],c=st.carat;
+ const stone=st.origin==='lab'?Math.round((320+640*Math.pow(c,1.7))*s.mul/10)*10:Math.round(4900*Math.pow(c,1.95)*s.mul/10)*10;
+ const pave=st.band==='pave'?780:0,pr=st.prongs===6?90:0;return{stone,setting:m.price,pave,pr,tot:stone+m.price+pave+pr}}
+function summary(){const p=price();return `${st.carat.toFixed(2)} ct ${SHAPES[st.shape].n.toLowerCase()} ${st.origin==='lab'?'lab-grown':'natural'} diamond · ${METALS[st.metal].n} · ${st.band==='pave'?'pavé':'plain'} band · ${st.prongs} prongs · size ${st.size} · <b>${money(p.tot)}</b> estimate`}
+function ui(){const p=price();$('lShape').textContent=SHAPES[st.shape].n;$('lCarat').textContent=st.carat.toFixed(2)+' ct';$('lMetal').textContent=METALS[st.metal].n;
+ $('pList').innerHTML=`<dt>${st.carat.toFixed(2)} ct ${st.origin==='lab'?'lab-grown':'natural'} ${SHAPES[st.shape].n.toLowerCase()}</dt><dd>${money(p.stone)}</dd><dt>${METALS[st.metal].n} setting</dt><dd>${money(p.setting)}</dd>${p.pave?`<dt>Pavé band, 26 stones</dt><dd>${money(p.pave)}</dd>`:''}${p.pr?`<dt>Six-prong head</dt><dd>${money(p.pr)}</dd>`:''}`;
+ $('pTot').textContent=money(p.tot);history.replaceState(null,'','#'+new URLSearchParams(Object.entries(st).map(([k,v])=>[k,String(v)])).toString())}
+$('cfg').addEventListener('input',e=>{const t=e.target;if(t.name==='shape')st.shape=t.value;if(t.name==='metal')st.metal=t.value;if(t.name==='origin')st.origin=t.value;if(t.name==='band')st.band=t.value;if(t.name==='prongs')st.prongs=+t.value;if(t.id==='carat')st.carat=+t.value;if(t.id==='size')st.size=+t.value;ui();build()});
+$('cfg').addEventListener('submit',e=>e.preventDefault());
+function toast(m){const t=$('toast');t.textContent=m;t.classList.add('on');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('on'),2200)}
+$('share').onclick=async()=>{try{await navigator.clipboard.writeText(location.href);toast('Link to this design copied')}catch(e){toast('Copy the address bar to share this design')}};
+/* dialog */
+const dlg=$('dlg');function openReq(){$('summ').innerHTML=summary();$('reqBody').style.display='';$('ok').style.display='none';dlg.showModal()}
+$('req').onclick=openReq;$('req2').onclick=openReq;$('cancel').onclick=()=>dlg.close();
+const wd=$('rWhen');const mn=new Date();mn.setDate(mn.getDate()+7);wd.min=mn.toISOString().slice(0,10);
+$('reqForm').addEventListener('submit',e=>{e.preventDefault();const set=(id,m)=>{$(id).textContent=m;return!m};const n=$('rName').value.trim(),em=$('rEmail').value.trim();
+ let ok=set('eN',n.length<2?'Add your name.':'');ok=set('eE',/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)?'':'Enter an email like you@example.com.')&&ok;
+ const soon=wd.value&&(new Date(wd.value+'T12:00')-new Date())/864e5<28;ok=set('eW',soon?'That is under four weeks. We can still try: call (843) 555-0164.':'')&&ok;
+ if(!ok)return;$('reqBody').style.display='none';const box=$('ok');box.innerHTML=`<b>Sent to the bench, ${n.split(' ')[0].replace(/[<>]/g,'')}.</b><p style="margin:0 0 12px;color:var(--mute)">${summary()}</p><p style="margin:0 0 16px">A goldsmith would reply to ${em.replace(/[<>]/g,'')} ${({'By email':'by email','Video call':'to set up a video call','At the shop':'to book a time at the shop'})[$('rHow').value]} within one business day. <span class="fine">Demo: nothing was sent.</span></p><button class="btn" type="button" onclick="this.closest('dialog').close()">Done</button>`;box.style.display='block';box.focus()});
+
+/* ---------- three ---------- */
+const host=$('ring');let renderer;
+try{renderer=new THREE.WebGLRenderer({antialias:true,alpha:true})}catch(e){host.innerHTML='<img src="img/held.jpg" alt="Engagement ring on a hand" style="width:100%;height:100%;object-fit:cover">'}
+let build=()=>{};
+if(renderer){
+ renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1;host.appendChild(renderer.domElement);
+ const scene=new THREE.Scene();const pm=new THREE.PMREMGenerator(renderer);
+ const env=new THREE.Scene();
+ env.add(new THREE.Mesh(new THREE.SphereGeometry(10,32,16),new THREE.ShaderMaterial({side:THREE.BackSide,vertexShader:'varying vec3 p;void main(){p=position;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',fragmentShader:'varying vec3 p;void main(){float h=normalize(p).y;vec3 c=mix(vec3(.08,.09,.1),vec3(.7,.72,.74),smoothstep(-.4,.9,h));c*=.6+.4*step(.0,sin(atan(p.z,p.x)*3.));gl_FragColor=vec4(c,1.);}'})));
+ const box=(w,h,x,y,z,i)=>{const m=new THREE.Mesh(new THREE.PlaneGeometry(w,h),new THREE.MeshBasicMaterial({color:new THREE.Color(i,i,i),side:THREE.DoubleSide}));m.position.set(x,y,z);m.lookAt(0,0,0);env.add(m)};
+ box(6,2.5,0,7,2,9);box(2,6,-7,2,2,6);box(2.5,6,7,1,-2,5);box(8,1,0,-1,-7,4);box(2,2,4,4,6,7);box(1,4,-3,0,7,6);
+ scene.environment=pm.fromScene(env,.02).texture;
+ const camera=new THREE.PerspectiveCamera(32,1,.1,50);camera.position.set(3.4,2.4,6.2);
+ const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.enablePan=false;controls.minDistance=2.6;controls.maxDistance=8;controls.target.set(0,.35,0);
+ controls.autoRotate=!reduce;controls.autoRotateSpeed=1.3;controls.addEventListener('start',()=>controls.autoRotate=false);
+ const key=new THREE.DirectionalLight(0xffffff,1.4);key.position.set(3,5,4);scene.add(key);
+ // shadow disc
+ const sh=new THREE.Mesh(new THREE.CircleGeometry(1.5,48),new THREE.ShaderMaterial({transparent:true,depthWrite:false,vertexShader:'varying vec2 u;void main(){u=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',fragmentShader:'varying vec2 u;void main(){float d=length(u-.5)*2.;gl_FragColor=vec4(0.,0.,0.,.22*smoothstep(1.,.1,d));}'}));
+ sh.rotation.x=-Math.PI/2;sh.position.y=-1.1;scene.add(sh);
+ const ring=new THREE.Group();scene.add(ring);
+ const metalMat=new THREE.MeshStandardMaterial({metalness:1,roughness:.15,envMapIntensity:1.25});
+ const gemMat=new THREE.MeshPhysicalMaterial({color:0xffffff,metalness:0,roughness:0,transmission:1,thickness:.6,ior:2.42,specularIntensity:1,envMapIntensity:2.2,flatShading:true,dispersion:4,iridescence:.15});
+ let parts=[];
+ function gemGeo(shape,g){const s=SHAPES[shape];const pts=[new THREE.Vector2(0,-.86*g),new THREE.Vector2(.42*g,-.42*g),new THREE.Vector2(g,0),new THREE.Vector2(g,.03*g),new THREE.Vector2(.78*g,.2*g),new THREE.Vector2(.57*g,.32*g),new THREE.Vector2(0,.32*g)];
+  if(shape==='princess'||shape==='emerald'){pts.splice(1,1,new THREE.Vector2(.6*g,-.35*g));pts[4]=new THREE.Vector2(.82*g,.16*g);pts[5]=new THREE.Vector2(.7*g,.3*g);pts[6]=new THREE.Vector2(0,.3*g)}
+  const geo=new THREE.LatheGeometry(pts,s.seg,s.rot);geo.scale(s.sx,1,1);return geo}
+ build=function(){parts.forEach(p=>{ring.remove(p);p.geometry.dispose()});parts=[];
+  const m=METALS[st.metal];metalMat.color.set(m.c);metalMat.roughness=m.r;
+  const R=1,tube=.072,W=1.0;
+  const band=new THREE.Mesh(new THREE.TorusGeometry(R,tube,40,220),metalMat);band.geometry.scale(1,1,1.7);parts.push(band);
+  const s=SHAPES[st.shape];const g=.33*Math.cbrt(st.carat);const top=R+tube;const gy=top+.05+.86*g;
+  const gem=new THREE.Mesh(gemGeo(st.shape,g),gemMat);gem.position.y=gy;parts.push(gem);
+  // basket ring under the girdle
+  const basket=new THREE.Mesh(new THREE.TorusGeometry(g*.55,.016,12,64),metalMat);basket.rotation.x=Math.PI/2;basket.scale.x=s.sx;basket.position.y=gy-.45*g;parts.push(basket);
+  // prongs
+  const n=st.prongs;const pg=new THREE.CylinderGeometry(.017,.022,1,10);
+  for(let i=0;i<n;i++){const a=(i/n)*Math.PI*2+(st.shape==='princess'?Math.PI/4:(n===4?Math.PI/4:0))+(st.shape==='emerald'?Math.PI/8:0);
+   const gr=(st.shape==='princess'?g*1.32:g)*1.0;const tip=new THREE.Vector3(Math.cos(a)*gr*s.sx*.98,gy+.06*g,Math.sin(a)*gr*.98);
+   const base=new THREE.Vector3(Math.cos(a)*.1*s.sx,top-.03,Math.sin(a)*.1);
+   const mid=base.clone().add(tip).multiplyScalar(.5);const len=tip.distanceTo(base);
+   const pr=new THREE.Mesh(pg.clone(),metalMat);pr.position.copy(mid);pr.scale.y=len;pr.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),tip.clone().sub(base).normalize());parts.push(pr);
+   const bead=new THREE.Mesh(new THREE.SphereGeometry(.026,12,10),metalMat);bead.position.copy(tip);parts.push(bead)}
+  // pave
+  if(st.band==='pave'){const count=26;const im=new THREE.InstancedMesh(new THREE.OctahedronGeometry(.032,0),gemMat,count);const d=new THREE.Object3D();let j=0;
+   for(let i=0;i<count;i++){const side=i<13?1:-1;const t=(i%13)/12;const ang=Math.PI/2+side*(.42+t*1.0);
+    const r=R+tube*.98;d.position.set(Math.cos(ang)*r,Math.sin(ang)*r,0);d.lookAt(Math.cos(ang)*3,Math.sin(ang)*3,0);d.rotateX(Math.PI/2);d.scale.set(1,.7,1);d.updateMatrix();im.setMatrixAt(j++,d.matrix)}
+   parts.push(im)}
+  parts.forEach(p=>ring.add(p))};
+ build();ring.rotation.x=-.12;
+ function resize(){const w=host.clientWidth,h=host.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;if(w>900)camera.setViewOffset(w,h,-w*.14,-h*.02,w,h);else camera.clearViewOffset();camera.updateProjectionMatrix()}
+ new ResizeObserver(resize).observe(host);resize();
+ const fly=(p)=>{controls.autoRotate=false;const from=camera.position.clone();const t0=performance.now();(function f(t){const k=Math.min(1,(t-t0)/700);const e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;camera.position.lerpVectors(from,p,reduce?1:e);if(k<1)requestAnimationFrame(f)})(t0)};
+ $('viewTop').onclick=()=>fly(new THREE.Vector3(0,7.4,.9));$('viewSide').onclick=()=>fly(new THREE.Vector3(6.9,1.1,0));
+ let vis=true;new IntersectionObserver(es=>vis=es[0].isIntersecting).observe(host);
+ renderer.setAnimationLoop(()=>{if(!vis)return;controls.update();renderer.render(scene,camera)});
+}
+ui();
+</script>
+</body>
+</html>
