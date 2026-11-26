@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Larkspur Lake Lodge · Lake Lure, NC · Walk every room in 360° before you book</title>
+<meta name="description" content="A six-room lake lodge above Lake Lure, North Carolina. Walk through every room in 360°, check the dates and book direct, with no booking-site fees.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#12302E;--lake:#1F4B47;--fog:#E8EEEB;--paper:#F7F9F8;--moss:#5E7A4A;--brass:#B8892E;--line:#C9D5D1;--muted:#4E6461}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:400 17px/1.6 "Hanken Grotesk",system-ui,sans-serif;color:var(--ink);background:var(--paper)}
+img{max-width:100%;display:block}a{color:inherit}
+h1,h2,h3{font-family:"Young Serif",Georgia,serif;font-weight:400;line-height:1.08;margin:0}
+h2{font-size:clamp(2rem,4vw,3.1rem);letter-spacing:-.01em}
+:focus-visible{outline:3px solid var(--brass);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.topbar{background:var(--ink);color:#cfe0dc;font-size:13px;text-align:center;padding:7px 16px}
+.topbar a{color:#fff}
+header{position:sticky;top:0;z-index:50;background:rgba(247,249,248,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:28px;height:68px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Young Serif",serif;font-size:21px}
+.nav ul{display:flex;gap:24px;list-style:none;margin:0 0 0 auto;padding:0}
+.nav ul a{text-decoration:none;font-weight:500;font-size:15px}
+.nav ul a:hover{color:var(--moss)}
+.phone{font-weight:600;text-decoration:none;font-size:15px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--lake);color:#fff;border:0;border-radius:999px;padding:12px 22px;font:600 15px/1 "Hanken Grotesk",sans-serif;text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--ink)}
+.btn.brass{background:var(--brass);color:#1b1407}.btn.brass:hover{background:#d19c36}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid currentColor}
+
+/* ---------- 360 hero ---------- */
+#tour{position:relative;height:calc(100vh - 68px - 33px);min-height:560px;background:#0d1f1d;overflow:hidden;touch-action:none;cursor:grab;user-select:none}
+#tour.dragging{cursor:grabbing}
+#tour canvas{position:absolute;inset:0;width:100%!important;height:100%!important}
+.fallback{position:absolute;inset:0;background:center/cover;display:none}
+.shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(8,22,20,.35) 0%,rgba(8,22,20,0) 26%,rgba(8,22,20,0) 52%,rgba(8,22,20,.78) 100%)}
+.hero-copy{position:absolute;left:0;right:0;bottom:116px;color:#fff;pointer-events:none}
+.hero-copy h1{font-size:clamp(2.4rem,6vw,5.2rem);max-width:12ch;text-shadow:0 2px 30px rgba(0,0,0,.35)}
+.hero-copy p{max-width:44ch;font-size:18px;margin:16px 0 22px;color:#e6efec}
+.hero-copy .btn{pointer-events:auto}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-actions .ghost{color:#fff}
+.roomnow{position:absolute;top:20px;left:24px;color:#fff;background:rgba(10,28,26,.55);backdrop-filter:blur(8px);border-radius:14px;padding:10px 14px;font-size:14px;pointer-events:none}
+.roomnow b{font-family:"Young Serif",serif;font-weight:400;font-size:18px;display:block}
+.tools{position:absolute;top:20px;right:24px;display:flex;gap:8px}
+.tool{width:42px;height:42px;border-radius:50%;border:0;background:rgba(10,28,26,.6);color:#fff;backdrop-filter:blur(8px);cursor:pointer;display:grid;place-items:center}
+.tool:hover{background:rgba(10,28,26,.85)}
+.hint{position:absolute;z-index:5;left:50%;top:30px;transform:translateX(-50%);color:#fff;background:rgba(10,28,26,.55);backdrop-filter:blur(6px);padding:10px 16px;border-radius:999px;font-size:14px;pointer-events:none;transition:opacity .6s}
+.strip{position:absolute;left:0;right:0;bottom:0;display:flex;gap:10px;padding:14px 24px 18px;overflow-x:auto;scrollbar-width:none}
+.strip::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;display:flex;align-items:center;gap:10px;padding:6px 14px 6px 6px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(10,28,26,.5);color:#fff;font:500 14px "Hanken Grotesk";cursor:pointer;backdrop-filter:blur(8px)}
+.chip img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.chip[aria-pressed=true]{background:#fff;color:var(--ink);border-color:#fff}
+.hs{position:absolute;left:0;top:0;transform:translate(-50%,-50%);z-index:3}
+.hs button{display:flex;align-items:center;gap:8px;border:0;cursor:pointer;font:600 13px "Hanken Grotesk";border-radius:999px;padding:0;background:none;color:#fff}
+.hs .dot{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--ink);display:grid;place-items:center;box-shadow:0 0 0 6px rgba(255,255,255,.25);animation:pulse 2.4s infinite}
+.hs.go .dot{background:var(--brass);color:#1b1407;box-shadow:0 0 0 6px rgba(184,137,46,.35)}
+.hs .lab{background:rgba(10,28,26,.72);padding:6px 10px;border-radius:999px;white-space:nowrap;opacity:0;transform:translateX(-6px);transition:.2s}
+.hs button:hover .lab,.hs button:focus-visible .lab,.hs.go .lab{opacity:1;transform:none}
+.tip{position:absolute;z-index:4;max-width:260px;background:#fff;color:var(--ink);border-radius:14px;padding:14px 16px;font-size:14px;box-shadow:0 18px 40px rgba(0,0,0,.25);display:none}
+.tip b{font-family:"Young Serif",serif;font-weight:400;font-size:17px;display:block;margin-bottom:4px}
+@keyframes pulse{50%{box-shadow:0 0 0 12px rgba(255,255,255,0)}}
+
+/* ---------- sections ---------- */
+section{padding:96px 0}
+.lede{color:var(--muted);max-width:58ch;font-size:18px;margin:14px 0 0}
+.facts{background:var(--ink);color:#dfe9e6;padding:30px 0}
+.facts .wrap{display:flex;gap:40px;flex-wrap:wrap;justify-content:space-between;font-size:15px}
+.facts b{display:block;color:#fff;font-family:"Young Serif",serif;font-weight:400;font-size:22px}
+.rooms{display:grid;grid-template-columns:repeat(2,1fr);gap:36px 32px;margin-top:48px}
+.room figure{margin:0;position:relative;border-radius:22px;overflow:hidden;aspect-ratio:11/7.6;background:#cfd9d6}
+.room img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.room:hover img{transform:scale(1.03)}
+.room figcaption{position:absolute;left:14px;bottom:14px}
+.room .open360{background:rgba(255,255,255,.94);color:var(--ink);border:0;border-radius:999px;padding:9px 14px;font:600 14px "Hanken Grotesk";cursor:pointer;display:flex;gap:8px;align-items:center}
+.room h3{font-size:28px;margin:18px 0 6px}
+.room .meta{display:flex;justify-content:space-between;gap:16px;color:var(--muted);font-size:15px;border-bottom:1px solid var(--line);padding-bottom:12px}
+.room .meta strong{color:var(--ink)}
+.room p{margin:12px 0 0;color:var(--muted)}
+.shared{background:var(--fog)}
+.split{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.duo figure{margin:0}.duo img{border-radius:18px;aspect-ratio:4/5;object-fit:cover;width:100%}
+.duo figcaption{font-size:14px;color:var(--muted);margin-top:8px}
+.ticks{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:14px}
+.ticks li{padding-left:30px;position:relative}
+.ticks li:before{content:"";position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--moss);box-shadow:inset 0 0 0 4px var(--fog)}
+
+/* booking */
+.book{background:var(--lake);color:#fff}
+.book .lede{color:#cfe0dc}
+.bookgrid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;margin-top:40px;align-items:start}
+form.bk{background:#fff;color:var(--ink);border-radius:24px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.f{display:flex;flex-direction:column;gap:6px}.f.full{grid-column:1/-1}
+label{font-weight:600;font-size:14px}
+input,select{font:inherit;font-size:16px;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--ink)}
+input:focus,select:focus{border-color:var(--lake);outline:none;box-shadow:0 0 0 3px rgba(31,75,71,.18)}
+.err{color:#A2361E;font-size:13px;min-height:1em}
+.summary{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:24px;padding:26px}
+.summary h3{font-size:24px;margin-bottom:12px}
+.summary dl{display:grid;grid-template-columns:1fr auto;gap:10px 16px;margin:0}
+.summary dt{color:#cfe0dc}.summary dd{margin:0;text-align:right}
+.summary .tot{border-top:1px solid rgba(255,255,255,.25);padding-top:12px;font-weight:700;font-size:20px}
+.summary small{display:block;color:#b9cfca;margin-top:14px;font-size:13px}
+.ok{grid-column:1/-1;background:#EEF4EA;border:1px solid #c8d8bd;border-radius:16px;padding:18px;display:none}
+.ok b{font-family:"Young Serif",serif;font-weight:400;font-size:20px;display:block}
+.demo{font-size:13px;color:var(--muted)}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:44px;counter-reset:s}
+.steps div{border-top:2px solid var(--ink);padding-top:18px}
+.steps div:before{counter-increment:s;content:counter(s);font-family:"Young Serif",serif;font-size:40px;color:var(--brass);display:block;line-height:1;margin-bottom:10px}
+.steps h3{font-size:22px;margin-bottom:6px}.steps p{margin:0;color:var(--muted)}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+blockquote{margin:0;background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px}
+blockquote p{margin:0 0 14px;font-family:"Young Serif",serif;font-size:19px;line-height:1.35}
+blockquote footer{font-size:14px;color:var(--muted)}
+.ph{font-size:12px;color:var(--moss);font-weight:700}
+.faq details{border-bottom:1px solid var(--line);padding:18px 0}
+.faq summary{cursor:pointer;font-weight:600;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:20px}
+.faq summary:after{content:"+";font-size:22px;color:var(--moss)}
+.faq details[open] summary:after{content:"–"}
+.faq p{margin:10px 0 0;color:var(--muted);max-width:70ch}
+.visit{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:stretch}
+.visit iframe{width:100%;height:100%;min-height:360px;border:0;border-radius:22px}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:6px 20px;margin-top:18px}
+.cta{background:var(--ink);color:#fff;text-align:center}
+.cta h2{max-width:18ch;margin:0 auto 20px}
+footer.site{background:#0b1f1d;color:#b8cbc6;padding:64px 0 30px;font-size:15px}
+.fcols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+footer.site h4{color:#fff;margin:0 0 12px;font-size:15px}
+footer.site ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+footer.site a{text-decoration:none}footer.site a:hover{color:#fff}
+.legal{border-top:1px solid #23403c;margin-top:40px;padding-top:20px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px}
+.mbar{display:none}
+@media (max-width:960px){
+ .nav ul{display:none}.rooms,.split,.bookgrid,.visit{grid-template-columns:1fr}
+ .steps,.reviews{grid-template-columns:1fr}.fcols{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+ .hint{top:auto;bottom:84px;font-size:13px;white-space:nowrap}
+ body{font-size:16px}section{padding:72px 0}
+ .nav{gap:12px}.phone{display:none}.nav .btn{padding:10px 16px}
+ #tour{height:calc(100svh - 68px - 66px - 70px);min-height:430px}
+ .topbar{font-size:11.5px;padding:6px 12px}.logo{font-size:17px;white-space:nowrap}.logo svg{width:28px;height:28px}
+ .shade{background:linear-gradient(180deg,rgba(8,22,20,.35) 0%,rgba(8,22,20,0) 22%,rgba(8,22,20,.25) 45%,rgba(8,22,20,.85) 100%)}
+ .hero-copy h1{font-size:2.15rem;margin-bottom:16px}.hero-copy p{display:none}.hero-copy .ghost{display:none}.hero-copy{bottom:80px}.roomnow span{display:none}.roomnow b{font-size:16px}.roomnow{padding:8px 12px}.tool{width:38px;height:38px}
+ .hero-copy{bottom:96px}.hero-copy p{font-size:16px}
+ .roomnow{left:14px;top:14px}.tools{right:14px;top:14px}
+ .strip{padding:10px 14px 14px}.chip{padding:4px 12px 4px 4px;font-size:13px}.chip img{width:36px;height:36px}
+ form.bk{grid-template-columns:1fr;padding:20px}
+ .fcols{grid-template-columns:1fr}
+ .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;gap:10px;padding:10px 14px;background:var(--paper);border-top:1px solid var(--line)}
+ .mbar a{flex:1}
+ footer.site{padding-bottom:90px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="topbar">Example concept by <a href="https://calvyrn.com">Calvyrn</a>. Larkspur Lake Lodge is fictional; names, reviews and 555 numbers are placeholders. Photos and 360° panoramas: Poly Haven (CC0).</div>
+<header>
+ <div class="wrap nav">
+  <a class="logo" href="#top" aria-label="Larkspur Lake Lodge home">
+   <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="16" fill="#1F4B47"/><path d="M6 22 L13 13 L17 18 L21 11 L28 22Z" fill="#E8EEEB"/><path d="M6 24h22" stroke="#B8892E" stroke-width="2"/></svg>
+   Larkspur Lake Lodge
+  </a>
+  <ul>
+   <li><a href="#tour">360° tour</a></li>
+   <li><a href="#rooms">Rooms</a></li>
+   <li><a href="#lodge">The lodge</a></li>
+   <li><a href="#book">Dates &amp; rates</a></li>
+   <li><a href="#visit">Getting here</a></li>
+  </ul>
+  <a class="phone" href="tel:+18285550147">(828) 555-0147</a>
+  <a class="btn" href="#book">Check dates</a>
+ </div>
+</header>
+
+<main id="top">
+<section id="tour" aria-label="360 degree tour of the lodge" style="padding:0">
+ <div class="fallback" id="fallback"></div>
+ <div class="shade"></div>
+ <div class="roomnow" aria-live="polite"><span>You're standing in</span><b id="roomName">The Lake Suite</b></div>
+ <div class="tools">
+  <button class="tool" id="zin" aria-label="Zoom in"><svg width="18" height="18" viewBox="0 0 18 18"><path d="M9 3v12M3 9h12" stroke="currentColor" stroke-width="2"/></svg></button>
+  <button class="tool" id="zout" aria-label="Zoom out"><svg width="18" height="18" viewBox="0 0 18 18"><path d="M3 9h12" stroke="currentColor" stroke-width="2"/></svg></button>
+  <button class="tool" id="spin" aria-label="Pause auto-rotate" aria-pressed="true"><svg width="18" height="18" viewBox="0 0 18 18"><path d="M6 4v10M12 4v10" stroke="currentColor" stroke-width="2.4"/></svg></button>
+  <button class="tool" id="fs" aria-label="Full screen"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6V2h4M12 2h4v4M16 12v4h-4M6 16H2v-4"/></svg></button>
+ </div>
+ <div class="hint" id="hint">Drag to look around · tap a dot for details</div>
+ <div id="hotspots"></div>
+ <div class="tip" id="tip" role="dialog" aria-live="polite"></div>
+ <div class="hero-copy"><div class="wrap">
+  <h1>Walk every room before you book it.</h1>
+  <p>Six rooms on a hillside above Lake Lure, North Carolina. Stand in each one, look out of the window, then pick your dates.</p>
+  <div class="hero-actions"><a class="btn brass" href="#book">See open dates</a><a class="btn ghost" href="#rooms">Compare rooms</a></div>
+ </div></div>
+ <div class="strip" id="strip" role="group" aria-label="Choose a room"></div>
+</section>
+
+<div class="facts"><div class="wrap">
+ <div><b>6 rooms</b>Sleeps 2 to 6</div>
+ <div><b>12 min</b>to Chimney Rock</div>
+ <div><b>Book direct</b>No booking-site fees</div>
+ <div><b>Check-in 3 pm</b>Self check-in after 8 pm</div>
+</div></div>
+
+<section id="rooms">
+ <div class="wrap">
+  <h2>Four rooms to sleep in</h2>
+  <p class="lede">Every room has its own bathroom, real coffee and a door that locks. Open any of them in 360° and look at the view yourself.</p>
+  <div class="rooms" id="roomGrid"></div>
+ </div>
+</section>
+
+<section class="shared" id="lodge">
+ <div class="wrap split">
+  <div>
+   <h2>Two rooms everyone shares</h2>
+   <p class="lede">The Timber Lounge is where people end up after dinner. The Grill Veranda looks over the lawn and down toward the water.</p>
+   <ul class="ticks">
+    <li>Gas fireplace and a sectional that fits ten</li>
+    <li>Wood-fired grill on the veranda, firewood included</li>
+    <li>Pool table, board games, fast Wi-Fi in every room</li>
+    <li>Kayaks and life jackets in the boathouse, May to October</li>
+   </ul>
+   <div class="hero-actions" style="margin-top:28px">
+    <button class="btn" data-goto="wooden_lounge">Stand in the lounge</button>
+    <button class="btn ghost" data-goto="veranda">Step onto the veranda</button>
+   </div>
+  </div>
+  <div class="duo">
+   <figure><img src="img/still-wooden_lounge.jpg" alt="Timber Lounge with a large sectional sofa, stone fireplace wall and slatted wood ceiling" loading="lazy"><figcaption>Timber Lounge</figcaption></figure>
+   <figure><img src="img/still-veranda.jpg" alt="Covered veranda with brick grill opening onto a lawn and trees" loading="lazy"><figcaption>Grill Veranda</figcaption></figure>
+  </div>
+ </div>
+</section>
+
+<section class="book" id="book">
+ <div class="wrap">
+  <h2>Pick a room and your dates</h2>
+  <p class="lede">Prices are per night for the whole room. You see the full total before anything is charged.</p>
+  <div class="bookgrid">
+   <form class="bk" id="bk" novalidate>
+    <div class="f full"><label for="bRoom">Room</label><select id="bRoom"></select></div>
+    <div class="f"><label for="bIn">Check-in</label><input type="date" id="bIn" required><span class="err" id="eIn"></span></div>
+    <div class="f"><label for="bOut">Check-out</label><input type="date" id="bOut" required><span class="err" id="eOut"></span></div>
+    <div class="f"><label for="bGuests">Guests</label><select id="bGuests"></select><span class="err" id="eG"></span></div>
+    <div class="f"><label for="bName">Your name</label><input id="bName" autocomplete="name" required><span class="err" id="eName"></span></div>
+    <div class="f full"><label for="bEmail">Email for the confirmation</label><input id="bEmail" type="email" autocomplete="email" required><span class="err" id="eEmail"></span></div>
+    <div class="f full"><button class="btn" type="submit">Request these dates</button><span class="demo">Demo: nothing is booked or charged.</span></div>
+    <div class="ok" id="ok" tabindex="-1"></div>
+   </form>
+   <aside class="summary" aria-live="polite">
+    <h3 id="sRoom">The Lake Suite</h3>
+    <dl id="sList"></dl>
+    <small>North Carolina and Rutherford County occupancy taxes are added at payment. Free cancellation up to 7 days before arrival.</small>
+   </aside>
+  </div>
+ </div>
+</section>
+
+<section id="how">
+ <div class="wrap">
+  <h2>How a stay works</h2>
+  <div class="steps">
+   <div><h3>Request your dates</h3><p>We answer within two hours, 8 am to 8 pm. Your card is held, not charged, until we confirm.</p></div>
+   <div><h3>Get your door code</h3><p>The day before arrival we text a code for the front door and your room, plus directions that work without signal.</p></div>
+   <div><h3>Breakfast is on us</h3><p>Biscuits, local eggs and fruit from 7:30 to 10. Tell us about allergies when you book.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="shared">
+ <div class="wrap">
+  <h2>What guests say</h2>
+  <div class="reviews">
+   <blockquote><p>"We booked the Lake Suite because of the 360 view from the balcony. It was exactly that, at six in the morning."</p><footer>Dana R., Charlotte · <span class="ph">Placeholder review</span></footer></blockquote>
+   <blockquote><p>"The kids took over the Attic Loft in about four seconds. We took over the lounge."</p><footer>Marcus T., Atlanta · <span class="ph">Placeholder review</span></footer></blockquote>
+   <blockquote><p>"Quiet, clean, and the grill on the veranda was the best dinner of the trip."</p><footer>Priya &amp; Sam, Raleigh · <span class="ph">Placeholder review</span></footer></blockquote>
+  </div>
+ </div>
+</section>
+
+<section class="faq" id="faq">
+ <div class="wrap" style="max-width:860px">
+  <h2>Before you come</h2>
+  <div style="margin-top:28px">
+   <details><summary>Are the 360° tours of the actual rooms?</summary><p>Yes. Each tour is shot from the middle of the room, so what you see is the furniture, the window and the view you get. We update them whenever we change a room.</p></details>
+   <details><summary>Is there a minimum stay?</summary><p>Two nights on Fridays and Saturdays, three nights on holiday weekends. Weeknights can be booked one at a time.</p></details>
+   <details><summary>Can we bring our dog?</summary><p>Dogs are welcome in the Garden Room, which opens onto the lawn. There is a $35 cleaning fee per stay.</p></details>
+   <details><summary>How far is the lake?</summary><p>A four-minute walk down a gravel path to our dock, or a two-minute drive to the public beach at Lake Lure.</p></details>
+   <details><summary>Do you have EV charging?</summary><p>One Level 2 charger by the parking area, free for guests. Let us know when you book and we'll keep it open.</p></details>
+  </div>
+ </div>
+</section>
+
+<section id="visit" style="padding-top:0">
+ <div class="wrap visit">
+  <div>
+   <h2>Getting here</h2>
+   <p class="lede">Larkspur Lake Lodge, 218 Hollow Ridge Road, Lake Lure, NC 28746. 45 minutes from Asheville Regional Airport.</p>
+   <div class="hours">
+    <b>Check-in</b><span>3 pm – 8 pm, self check-in later</span>
+    <b>Check-out</b><span>11 am</span>
+    <b>Front desk</b><span>8 am – 8 pm, every day</span>
+    <b>Phone</b><span><a href="tel:+18285550147">(828) 555-0147</a></span>
+   </div>
+  </div>
+  <iframe title="Map of Lake Lure, North Carolina" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-82.2451%2C35.4076%2C-82.1651%2C35.4476&amp;layer=mapnik&amp;marker=35.4276%2C-82.2051"></iframe>
+ </div>
+</section>
+
+<section class="cta">
+ <div class="wrap">
+  <h2>Found the room you want? The dates go fast in October.</h2>
+  <a class="btn brass" href="#book">Check open dates</a>
+ </div>
+</section>
+</main>
+
+<footer class="site">
+ <div class="wrap">
+  <div class="fcols">
+   <div><a class="logo" href="#top" style="color:#fff">Larkspur Lake Lodge</a><p>A six-room lodge above Lake Lure, North Carolina. Open all year.</p></div>
+   <div><h4>Stay</h4><ul><li><a href="#rooms">Rooms</a></li><li><a href="#tour">360° tour</a></li><li><a href="#book">Dates &amp; rates</a></li></ul></div>
+   <div><h4>Lodge</h4><ul><li><a href="#lodge">Shared spaces</a></li><li><a href="#how">How a stay works</a></li><li><a href="#faq">Questions</a></li></ul></div>
+   <div><h4>Contact</h4><ul><li><a href="tel:+18285550147">(828) 555-0147</a></li><li>stay@larkspurlodge.example</li><li>218 Hollow Ridge Rd, Lake Lure, NC</li></ul></div>
+  </div>
+  <div class="legal"><span>© 2026 Larkspur Lake Lodge (fictional). Photos and 360° panoramas from Poly Haven, CC0.</span><span>Concept, design and build: <a href="https://calvyrn.com">Calvyrn</a></span></div>
+ </div>
+</footer>
+<div class="mbar"><a class="btn ghost" href="tel:+18285550147">Call</a><a class="btn brass" href="#book">Check dates</a></div>
+
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.164.1/build/three.module.js"}}</script>
+<script type="module">
+import * as THREE from 'three';
+const ROOMS={
+ cayley_interior:{name:'The Lake Suite',short:'Lake Suite',sleeps:4,price:289,bed:'King bed + sofa bed',size:'520 sq ft',start:[.5,.52],
+  blurb:'Corner suite with a dining table for six and a balcony over the water. The sunrise comes straight in.',
+  spots:[{u:.5,v:.47,t:'Balcony',d:'Glass doors open onto a balcony facing east over the lake. Two chairs, a small table.'},
+         {u:.2,v:.62,t:'Dining table',d:'Seats six. Good for a long breakfast or a jigsaw that takes all weekend.'},
+         {u:.76,v:.52,t:'Wood stove',d:'Cast-iron stove with a basket of dry oak. We light it on check-in from November to March.'},
+         {u:.04,v:.52,go:'wooden_lounge',t:'Down to the Timber Lounge'}]},
+ hotel_room:{name:'The Linen Room',short:'Linen Room',sleeps:2,price:239,bed:'King bed',size:'340 sq ft',start:[.78,.52],
+  blurb:'Quiet room at the back of the lodge with blackout curtains, a proper desk and the deepest mattress we own.',
+  spots:[{u:.86,v:.62,t:'King bed',d:'Linen sheets, two pillow types and blackout curtains on both windows.'},
+         {u:.62,v:.6,t:'Work desk',d:'Wide desk, a chair you can sit in for a day, and outlets with USB-C.'},
+         {u:.465,v:.5,go:'cayley_interior',t:'Across to the Lake Suite'}]},
+ lythwood_room:{name:'The Garden Room',short:'Garden Room',sleeps:3,price:219,bed:'Two twins + daybed',size:'410 sq ft',start:[.62,.52],
+  blurb:'Ground floor, French windows to the lawn, a fireplace and room for a dog. Best for friends or a parent and kids.',
+  spots:[{u:.6,v:.43,t:'Garden window',d:'Opens onto the lawn and herb beds. Dogs welcome in this room.'},
+         {u:.9,v:.55,t:'Fireplace',d:'Gas fireplace on a wall switch. Safe to leave on while you read.'},
+         {u:.07,v:.6,t:'Twin beds',d:'Two twins that push together into a king if you ask before arrival.'},
+         {u:.36,v:.46,go:'veranda',t:'Out to the Grill Veranda'}]},
+ pine_attic:{name:'The Attic Loft',short:'Attic Loft',sleeps:6,price:259,bed:'Queen + 4 bunk beds',size:'690 sq ft',start:[.5,.5],
+  blurb:'The whole top floor under the pine roof. Skylights, a reading nook full of beanbags and bunks for four.',
+  spots:[{u:.5,v:.57,t:'Reading nook',d:'Beanbags under the eaves, a shelf of board games and lights on a dimmer.'},
+         {u:.73,v:.55,t:'Hanging chair',d:'A ring chair that every guest under twelve has fallen asleep in.'},
+         {u:.42,v:.3,t:'Skylights',d:'Blinds close with a pole if you want to sleep past six.'},
+         {u:.2,v:.52,go:'wooden_lounge',t:'Down to the Timber Lounge'}]},
+ wooden_lounge:{name:'Timber Lounge',short:'Timber Lounge',shared:true,start:[.5,.55],
+  spots:[{u:.5,v:.64,t:'The sectional',d:'Fits ten. Throws in the basket, movie night on Fridays.'},
+         {u:.93,v:.6,t:'Pool table',d:'Full-size table and a rack of cues. House rules on the wall.'},
+         {u:.27,v:.5,go:'pine_attic',t:'Up to the Attic Loft'},
+         {u:.7,v:.5,go:'veranda',t:'Out to the veranda'}]},
+ veranda:{name:'Grill Veranda',short:'Veranda',shared:true,start:[.5,.5],
+  spots:[{u:.38,v:.5,t:'Wood-fired grill',d:'Brick grill with firewood, tongs and a cast-iron grate. Bring your own steaks.'},
+         {u:.5,v:.46,t:'The lawn',d:'Slopes down to the path to our dock, four minutes away.'},
+         {u:.16,v:.5,go:'lythwood_room',t:'Into the Garden Room'},
+         {u:.85,v:.5,go:'wooden_lounge',t:'Into the Timber Lounge'}]}
+};
+const ORDER=['cayley_interior','hotel_room','lythwood_room','pine_attic','wooden_lounge','veranda'];
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const tour=document.getElementById('tour'),hsWrap=document.getElementById('hotspots'),tip=document.getElementById('tip');
+const roomName=document.getElementById('roomName'),hint=document.getElementById('hint');
+
+/* room strip + cards */
+const strip=document.getElementById('strip');
+ORDER.forEach(k=>{const b=document.createElement('button');b.className='chip';b.dataset.k=k;b.setAttribute('aria-pressed','false');
+ b.innerHTML=`<img src="img/still-${k}.jpg" alt="">${ROOMS[k].short}`;b.onclick=()=>go(k);strip.appendChild(b)});
+const grid=document.getElementById('roomGrid');
+ORDER.filter(k=>!ROOMS[k].shared).forEach(k=>{const r=ROOMS[k];const a=document.createElement('article');a.className='room';
+ a.innerHTML=`<figure><img src="img/still-${k}.jpg" alt="${r.name}: ${r.blurb}" loading="lazy"><figcaption><button class="open360" data-goto="${k}"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="8" cy="8" rx="7" ry="3"/><path d="M8 1v14"/></svg>Open in 360°</button></figcaption></figure>
+ <h3>${r.name}</h3><div class="meta"><span>${r.bed} · sleeps ${r.sleeps} · ${r.size}</span><strong>$${r.price}/night</strong></div><p>${r.blurb}</p>`;grid.appendChild(a)});
+document.addEventListener('click',e=>{const t=e.target.closest('[data-goto]');if(t){go(t.dataset.goto);tour.scrollIntoView({behavior:reduce?'auto':'smooth'})}});
+
+/* three.js viewer */
+let renderer,scene,camera,spheres=[],cur=0,texCache={},loader=new THREE.TextureLoader();
+let lon=0,lat=0,fov=innerWidth<innerHeight?92:75,auto=!reduce,current=null,visible=true;
+const uvToVec=(u,v,r=1)=>{const phi=u*Math.PI*2,th=v*Math.PI;return new THREE.Vector3(Math.cos(phi)*Math.sin(th)*r,Math.cos(th)*r,Math.sin(phi)*Math.sin(th)*r)};
+// convert u,v to lon/lat (degrees) for the camera
+const uvToLL=(u,v)=>[u*360,90-v*180];
+try{
+ renderer=new THREE.WebGLRenderer({antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+ renderer.outputColorSpace=THREE.SRGBColorSpace;tour.prepend(renderer.domElement);
+ scene=new THREE.Scene();camera=new THREE.PerspectiveCamera(fov,1,.1,100);
+ const geo=new THREE.SphereGeometry(10,96,64);geo.scale(-1,1,1);
+ for(let i=0;i<2;i++){const m=new THREE.Mesh(geo,new THREE.MeshBasicMaterial({transparent:true,opacity:0,depthWrite:false}));m.renderOrder=i;scene.add(m);spheres.push(m)}
+}catch(err){renderer=null;const fb=document.getElementById('fallback');fb.style.display='block';fb.style.backgroundImage='url(img/still-cayley_interior.jpg)'}
+
+function getTex(k){return texCache[k]||(texCache[k]=new Promise(res=>loader.load(`img/pano-${k}.jpg`,t=>{t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=8;res(t)})))}
+async function go(k){
+ if(current===k)return;current=k;const r=ROOMS[k];
+ roomName.textContent=r.name;strip.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c.dataset.k===k));
+ const chip=strip.querySelector(`[data-k="${k}"]`);chip&&strip.scrollTo({left:chip.offsetLeft-24,behavior:reduce?'auto':'smooth'});
+ tip.style.display='none';buildSpots(r);
+ if(!renderer){document.getElementById('fallback').style.backgroundImage=`url(img/still-${k}.jpg)`;return}
+ const tex=await getTex(k);if(current!==k)return;
+ const next=spheres[1-cur],prev=spheres[cur];next.material.map=tex;next.material.needsUpdate=true;next.renderOrder=2;prev.renderOrder=1;
+ [lon,lat]=uvToLL(...r.start);
+ const t0=performance.now(),dur=reduce?0:700;
+ (function fade(t){const p=dur?Math.min(1,(t-t0)/dur):1;next.material.opacity=p;if(p<1)requestAnimationFrame(fade);else{prev.material.opacity=0}})(t0);
+ cur=1-cur;
+ // preload linked rooms
+ r.spots.filter(s=>s.go).forEach(s=>getTex(s.go));
+}
+let spotEls=[];
+function buildSpots(r){
+ hsWrap.innerHTML='';spotEls=r.spots.map(s=>{const d=document.createElement('div');d.className='hs'+(s.go?' go':'');
+  d.innerHTML=`<button aria-label="${s.t}"><span class="dot">${s.go?'<svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 7h8M8 3l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2"/></svg>':'<svg width="12" height="12" viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="2"/></svg>'}</span><span class="lab">${s.t}</span></button>`;
+  d.querySelector('button').onclick=ev=>{ev.stopPropagation();if(s.go){go(s.go)}else{tip.innerHTML=`<b>${s.t}</b>${s.d}`;tip.style.display='block';tip._s=s}};
+  hsWrap.appendChild(d);return{el:d,v:uvToVec(s.u,s.v,9),s}});
+}
+/* controls */
+let down=null,moved=0;
+tour.addEventListener('pointerdown',e=>{if(e.target.closest('button,a'))return;down={x:e.clientX,y:e.clientY,lon,lat};moved=0;tour.classList.add('dragging');tour.setPointerCapture(e.pointerId);auto=false;setSpin();hint.style.opacity=0});
+tour.addEventListener('pointermove',e=>{if(!down)return;const k=fov/tour.clientHeight;moved+=Math.abs(e.movementX)+Math.abs(e.movementY);
+ lon=down.lon-(e.clientX-down.x)*k*1.1;lat=Math.max(-80,Math.min(80,down.lat+(e.clientY-down.y)*k*1.1))});
+const up=()=>{if(down&&moved<4)tip.style.display='none';down=null;tour.classList.remove('dragging')};
+tour.addEventListener('pointerup',up);tour.addEventListener('pointercancel',up);
+tour.addEventListener('wheel',e=>{if(!e.ctrlKey)return;e.preventDefault();zoom(e.deltaY*0.04)},{passive:false});
+const zoom=d=>{fov=Math.max(35,Math.min(100,fov+d))};
+document.getElementById('zin').onclick=()=>zoom(-10);document.getElementById('zout').onclick=()=>zoom(10);
+const spinBtn=document.getElementById('spin');
+function setSpin(){spinBtn.setAttribute('aria-pressed',auto);spinBtn.setAttribute('aria-label',auto?'Pause auto-rotate':'Start auto-rotate');
+ spinBtn.innerHTML=auto?'<svg width="18" height="18" viewBox="0 0 18 18"><path d="M6 4v10M12 4v10" stroke="currentColor" stroke-width="2.4"/></svg>':'<svg width="18" height="18" viewBox="0 0 18 18"><path d="M5 3l10 6-10 6z" fill="currentColor"/></svg>'}
+spinBtn.onclick=()=>{auto=!auto;setSpin()};setSpin();
+document.getElementById('fs').onclick=()=>{document.fullscreenElement?document.exitFullscreen():tour.requestFullscreen&&tour.requestFullscreen()};
+tour.tabIndex=0;tour.addEventListener('keydown',e=>{const m={ArrowLeft:[-6,0],ArrowRight:[6,0],ArrowUp:[0,5],ArrowDown:[0,-5]}[e.key];if(m){e.preventDefault();lon+=m[0];lat=Math.max(-80,Math.min(80,lat+m[1]));auto=false;setSpin()}});
+new IntersectionObserver(es=>{visible=es[0].isIntersecting}).observe(tour);
+const tmp=new THREE.Vector3();
+function resize(){if(!renderer)return;const w=tour.clientWidth,h=tour.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()}
+addEventListener('resize',resize);if(window.ResizeObserver)new ResizeObserver(resize).observe(tour);
+function loop(){requestAnimationFrame(loop);if(!renderer||!visible)return;
+ if(auto)lon+=0.025;
+ camera.fov+= (fov-camera.fov)*.15;camera.updateProjectionMatrix();
+ const phi=THREE.MathUtils.degToRad(90-lat),th=THREE.MathUtils.degToRad(lon);
+ const dir=uvToVec(th/(Math.PI*2),phi/Math.PI,1);camera.lookAt(dir);
+ renderer.render(scene,camera);
+ const w=tour.clientWidth,h=tour.clientHeight;
+ for(const p of spotEls){tmp.copy(p.v).project(camera);const vis=tmp.z<1&&Math.abs(tmp.x)<1.1&&Math.abs(tmp.y)<1.1;
+  p.el.style.display=vis?'block':'none';if(vis){const x=(tmp.x+1)/2*w,y=(1-tmp.y)/2*h;p.el.style.transform=`translate(${x-15}px,${y-15}px)`;
+   if(tip._s===p.s&&tip.style.display==='block'){tip.style.left=Math.min(w-280,x+24)+'px';tip.style.top=Math.max(70,y-30)+'px'}}}
+}
+resize();go('cayley_interior');loop();
+setTimeout(()=>hint.style.opacity=0,6000);
+
+/* booking */
+const sel=document.getElementById('bRoom'),gSel=document.getElementById('bGuests'),bIn=document.getElementById('bIn'),bOut=document.getElementById('bOut');
+ORDER.filter(k=>!ROOMS[k].shared).forEach(k=>sel.add(new Option(`${ROOMS[k].name} · $${ROOMS[k].price}/night`,k)));
+const iso=d=>d.toISOString().slice(0,10);
+const today=new Date();today.setHours(12,0,0,0);
+const addD=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x};
+bIn.min=iso(addD(today,1));bIn.value=iso(addD(today,14));bOut.value=iso(addD(today,16));
+function fillGuests(){const n=ROOMS[sel.value].sleeps,v=+gSel.value||2;gSel.innerHTML='';for(let i=1;i<=n;i++)gSel.add(new Option(i+(i>1?' guests':' guest'),i));gSel.value=Math.min(v,n)}
+const money=n=>'$'+n.toLocaleString('en-US');
+function calc(){const r=ROOMS[sel.value];document.getElementById('sRoom').textContent=r.name;
+ const a=new Date(bIn.value+'T12:00'),b=new Date(bOut.value+'T12:00');const n=Math.round((b-a)/864e5);
+ let rows='';if(!(n>0)){document.getElementById('sList').innerHTML='<dt>Choose a check-out after check-in</dt><dd></dd>';return null}
+ let sub=0,wk=0;for(let i=0;i<n;i++){const d=addD(a,i).getDay();const p=(d===5||d===6)?r.price+30:r.price;sub+=p;if(d===5||d===6)wk++}
+ const clean=45,dog=0,tot=sub+clean;
+ rows+=`<dt>${n} night${n>1?'s':''}${wk?` (${wk} weekend)`:''}</dt><dd>${money(sub)}</dd><dt>Cleaning</dt><dd>${money(clean)}</dd><dt>Booking-site fee</dt><dd>$0</dd><dt class="tot">Total before tax</dt><dd class="tot">${money(tot)}</dd>`;
+ document.getElementById('sList').innerHTML=rows;return{n,tot,wk}}
+sel.onchange=()=>{fillGuests();calc()};[bIn,bOut].forEach(i=>i.onchange=()=>{if(i===bIn&&bOut.value<=bIn.value)bOut.value=iso(addD(new Date(bIn.value+'T12:00'),2));calc()});
+fillGuests();calc();
+document.getElementById('bk').addEventListener('submit',e=>{e.preventDefault();
+ const set=(id,m)=>{document.getElementById(id).textContent=m;return !m};
+ const c=calc();const name=document.getElementById('bName').value.trim(),email=document.getElementById('bEmail').value.trim();
+ const a=new Date(bIn.value+'T12:00');
+ let ok=set('eIn',!bIn.value?'Pick a check-in date.':a<=today?'Check-in has to be tomorrow or later.':'');
+ ok=set('eOut',!c?'Check-out has to be after check-in.':(c.wk&&c.n<2&&[5,6].includes(a.getDay()))?'Friday and Saturday need a two-night stay.':'')&&ok;
+ ok=set('eName',name.length<2?'Add the name the booking is under.':'')&&ok;
+ ok=set('eEmail',/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)?'':'Enter an email like you@example.com.')&&ok;
+ if(!ok){document.querySelector('.err:not(:empty)')?.previousElementSibling?.focus();return}
+ const box=document.getElementById('ok');const r=ROOMS[sel.value];
+ const fmt=d=>new Date(d+'T12:00').toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
+ box.innerHTML=`<b>Request sent for ${r.name}, ${name.split(' ')[0]}.</b>${fmt(bIn.value)} to ${fmt(bOut.value)} · ${gSel.value} guest${gSel.value>1?'s':''} · ${money(c.tot)} before tax.<br>We'd confirm by email to ${email.replace(/</g,'')} within two hours. <span class="demo">Demo: nothing was booked or sent.</span>`;
+ box.style.display='block';box.focus()});
+</script>
+</body>
+</html>

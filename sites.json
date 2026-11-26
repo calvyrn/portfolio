@@ -214,5 +214,32 @@
   "A steaming 3D cup among coffee beans; on scroll beans pour, the camera dives into the cup and the roast darkens, then a subscription builder.",
   "",
   ""
+ ],
+ [
+  "lodge-360-tour",
+  "Lake lodge with a walk-through 360° room tour",
+  "High-end 3D",
+  "Hospitality",
+  "Drag to look around every room in 360°, follow arrows from room to room, then book direct with live nightly totals.",
+  "Guests see the actual bed, window and view before paying, so they book direct instead of through a fee-taking site.",
+  "Young Serif + Hanken Grotesk; lake ink, fog, moss, brass · Three.js panorama viewer"
+ ],
+ [
+  "freight-globe-3d",
+  "Freight forwarder with a live 3D shipment globe",
+  "High-end 3D",
+  "Logistics",
+  "Ops-room globe with ships, flights and trucks moving on real lanes; type a tracking number and the camera follows it.",
+  "Importers stop emailing for container updates when they can open a tracking map and forward it.",
+  "Chakra Petch + IBM Plex; harbor navy, sea cyan, signal amber · Three.js custom shaders"
+ ],
+ [
+  "eastern-wear-motion",
+  "Occasion-wear label with a motion hero and scroll lookbook",
+  "High-end 3D",
+  "Fashion",
+  "Live silk shader hero, pinned sideways lookbook, scroll zoom into the embroidery, and a working bag with try-on booking.",
+  "For occasion wear, buyers want to see the handwork before they spend; motion and close-ups show the craft like a reel does.",
+  "Bodoni Moda + Jost; plum, dusty rose, blush, gold · WebGL shader + GSAP ScrollTrigger"
  ]
 ]
