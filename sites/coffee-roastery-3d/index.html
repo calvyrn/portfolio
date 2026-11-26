@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ember Hill Coffee Roasters | Fresh-Roasted Coffee, Café &amp; Subscriptions in East Nashville</title>
+<meta name="description" content="Small-batch coffee roasted every Tuesday and Thursday in East Nashville. Build a coffee subscription, visit the café on Woodland St, or set up wholesale for your office.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1C1410">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..800,0..100;1,9..144,300..800,0..100&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--esp:#1C1410;--crema:#F3E9DC;--copper:#C8763A;--copper-d:#9A5426;--bark:#6B4F3A;--sand:#E8C39E;--ink:#2A1F18;--muted:#6E5E51;--line:rgba(42,31,24,.14);--hh:70px}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+html,body{margin:0}
+body{background:var(--crema);color:var(--ink);font:400 17px/1.6 "Instrument Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--copper);outline-offset:3px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-variation-settings:"SOFT" 100;font-optical-sizing:auto;font-weight:600;letter-spacing:-.02em;margin:0}
+.skip{position:absolute;left:-999px;top:0;background:var(--copper);color:#fff;padding:10px 14px;z-index:99}.skip:focus{left:10px}
+.concept{background:#0F0A08;color:#CBB9A6;text-align:center;font-size:13px;padding:7px 14px;line-height:1.4}
+.concept a{color:var(--sand)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 32px}
+
+/* header */
+header.top{position:sticky;top:0;z-index:40;background:rgba(28,20,16,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--crema);border-bottom:1px solid rgba(243,233,220,.1)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:var(--hh);gap:20px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:600 23px/1 Fraunces,serif;font-variation-settings:"SOFT" 100,"opsz" 40;letter-spacing:-.01em;white-space:nowrap}
+.logo small{display:block;font:500 10.5px/1 "Instrument Sans",sans-serif;letter-spacing:.2em;color:var(--sand);margin-top:4px}
+nav.main{display:flex;gap:26px;font-size:15px}
+nav.main a{text-decoration:none;opacity:.85}
+nav.main a:hover{opacity:1;text-decoration:underline;text-underline-offset:6px;text-decoration-color:var(--copper)}
+.hright{display:flex;align-items:center;gap:20px}
+.tel{text-decoration:none;font-size:15px;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;appearance:none;border:0;background:var(--copper);color:#1C1410;text-decoration:none;font:600 15px/1 "Instrument Sans",sans-serif;padding:16px 24px;border-radius:999px;cursor:pointer;transition:background .2s,transform .2s}
+.btn:hover{background:var(--sand)}
+.btn:active{transform:scale(.98)}
+.btn.dark{background:var(--esp);color:var(--crema)}
+.btn.dark:hover{background:var(--bark)}
+.btn.line{background:transparent;color:inherit;box-shadow:inset 0 0 0 1.5px currentColor}
+.btn.line:hover{background:rgba(243,233,220,.1)}
+.btn.sm{padding:12px 18px;font-size:14px}
+.btn .s{display:none}
+@media(max-width:640px){.btn .l{display:none}.btn .s{display:inline}}
+@media(max-width:1120px){nav.main{display:none}}
+@media(max-width:640px){.tel span{display:none}.hright .btn{padding:11px 15px;font-size:13.5px}.wrap{padding:0 20px}:root{--hh:62px}.logo{font-size:20px}.logo small{display:none}}
+
+/* launch */
+#launch{position:relative;height:560vh;background:var(--esp);color:var(--crema)}
+.stage{position:sticky;top:var(--hh);height:calc(100vh - var(--hh));height:calc(100svh - var(--hh));overflow:hidden;background:radial-gradient(90% 70% at 65% 55%,#2C1E16 0%,var(--esp) 70%)}
+#gl{position:absolute;inset:0}
+#gl canvas{display:block;width:100%!important;height:100%!important}
+.shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(28,20,16,.78) 0%,rgba(28,20,16,.45) 32%,rgba(28,20,16,0) 52%)}
+@media(max-width:900px){.shade{background:linear-gradient(180deg,rgba(28,20,16,.85) 0%,rgba(28,20,16,.35) 34%,rgba(28,20,16,0) 50%,rgba(28,20,16,0) 70%,rgba(28,20,16,.7) 100%)}}
+.fb{position:absolute;inset:0;display:none}
+.fb img{width:100%;height:100%;object-fit:cover;opacity:.55}
+.no-gl .fb{display:block}
+.chap{position:absolute;left:0;top:0;bottom:0;width:min(46%,600px);display:flex;flex-direction:column;justify-content:center;padding:0 0 60px max(32px,5vw);opacity:0;pointer-events:none}
+.chap.on{pointer-events:auto}
+.chap h1{font-size:clamp(54px,6.6vw,112px);line-height:.92;font-weight:600;font-variation-settings:"SOFT" 100,"opsz" 144}
+.chap h1 em,.chap h2 em{font-style:italic;font-weight:400;color:var(--sand)}
+.chap h2{font-size:clamp(46px,5.4vw,92px);line-height:.94;font-variation-settings:"SOFT" 100,"opsz" 144}
+.chap p{font-size:18px;max-width:27em;color:#DCCBB8;margin:22px 0 0}
+.chap .acts{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.chap .kick{font-size:15px;color:var(--sand);margin-bottom:14px;display:flex;gap:10px;align-items:center}
+.chap .kick::before{content:"";width:28px;height:1.5px;background:var(--copper)}
+.notes{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.notes span{border:1px solid rgba(232,195,158,.4);border-radius:999px;padding:7px 14px;font-size:14.5px;color:var(--crema)}
+.chap .meta{display:flex;gap:28px;margin-top:22px;font-size:14.5px;color:#CDB9A3}
+.chap .meta b{display:block;color:var(--crema);font-weight:500;font-size:16px}
+.meter{position:absolute;right:max(32px,4vw);bottom:26px;width:min(380px,40vw);z-index:3;font-size:13px;color:#CDB9A3;opacity:0;transition:opacity .4s;background:rgba(20,14,11,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:12px 18px 10px;border-radius:16px}
+.meter.show{opacity:1}
+.meter .bar{height:6px;border-radius:3px;background:linear-gradient(90deg,#B98A57,#7A4A2A,#2E1A10);position:relative;margin:10px 0 8px}
+.meter .bar i{position:absolute;top:50%;width:16px;height:16px;border-radius:50%;background:var(--crema);border:3px solid var(--copper);transform:translate(-50%,-50%);left:var(--m,0%)}
+.meter .lbl{display:flex;justify-content:space-between}
+.cue{position:absolute;left:max(32px,5vw);bottom:28px;font-size:13px;color:#BCA892;z-index:3;display:flex;gap:12px;align-items:center}
+.cue span{width:22px;height:34px;border:1.5px solid #8C7562;border-radius:12px;position:relative}
+.cue span::after{content:"";position:absolute;left:50%;top:7px;width:3px;height:7px;border-radius:2px;background:var(--copper);transform:translateX(-50%);animation:wh 1.8s ease-in-out infinite}
+@keyframes wh{0%{opacity:0;transform:translate(-50%,0)}30%{opacity:1}100%{opacity:0;transform:translate(-50%,10px)}}
+@media(max-width:900px){
+  #launch{height:520vh}
+  .chap{width:100%;justify-content:flex-start;padding:26px 22px 0}
+  .chap h1{font-size:clamp(40px,11vw,60px)}
+  .chap h2{font-size:clamp(38px,10.5vw,56px)}
+  .chap p{font-size:15.5px;margin-top:12px}
+  .chap .acts{position:absolute;left:22px;right:22px;bottom:26px;margin:0}
+  .chap .acts .btn{flex:1}
+  .chap .acts .btn.line{display:none}
+  .notes{position:absolute;left:22px;right:22px;bottom:118px;margin:0}
+  .notes span{font-size:13px;padding:6px 11px}
+  .chap .meta{display:none}
+  .meter{left:22px;right:22px;width:auto;bottom:18px}
+  .cue{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  #launch{height:auto}
+  .stage{position:relative;top:0;min-height:600px}
+  .chap.intro{opacity:1;pointer-events:auto}
+  .chap:not(.intro),.meter,.cue{display:none}
+}
+
+/* sections */
+section.sec{padding:120px 0}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px;flex-wrap:wrap}
+.sh h2{font-size:clamp(46px,6vw,96px);line-height:.92;max-width:11em;font-variation-settings:"SOFT" 100,"opsz" 144}
+.sh h2 em{font-style:italic;font-weight:400;color:var(--copper-d)}
+.sh p{margin:0;max-width:27em;color:var(--muted);font-size:18px}
+@media(max-width:800px){section.sec{padding:80px 0}.sh{margin-bottom:34px}}
+
+/* subscription builder */
+.sub{display:grid;grid-template-columns:1.35fr .9fr;gap:48px;align-items:start}
+.opt-group{border:0;margin:0 0 34px;padding:0}
+.opt-group legend{font:600 22px/1.2 Fraunces,serif;font-variation-settings:"SOFT" 100;padding:0;margin-bottom:14px;display:flex;gap:12px;align-items:baseline}
+.opt-group legend span{font:500 13px/1 "Instrument Sans";color:var(--copper-d);border:1px solid currentColor;border-radius:999px;padding:4px 8px}
+.cards{display:grid;gap:10px}
+.cards.c4{grid-template-columns:repeat(4,1fr)}
+.cards.c5{grid-template-columns:repeat(5,1fr)}
+.cards.c3{grid-template-columns:repeat(3,1fr)}
+.card{position:relative;cursor:pointer;display:block}
+.card input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer}
+.card > span{display:flex;flex-direction:column;height:100%;background:#FBF6EF;border:1.5px solid transparent;border-radius:16px;padding:16px;transition:border-color .2s,background .2s,transform .2s}
+.card:hover > span{transform:translateY(-2px)}
+.card b{font-weight:600;font-size:16px}
+.card small{color:var(--muted);font-size:13.5px;line-height:1.4;margin-top:4px}
+.card .pr{margin-top:auto;padding-top:10px;font-size:14px;color:var(--copper-d);font-weight:500}
+.card .sw{width:30px;height:30px;border-radius:50%;margin-bottom:10px;box-shadow:inset 0 -6px 10px rgba(0,0,0,.25)}
+.card input:checked + span{border-color:var(--esp);background:#fff}
+.card input:focus-visible + span{outline:2px solid var(--copper);outline-offset:2px}
+.stepper{display:inline-flex;align-items:center;background:#FBF6EF;border-radius:999px;padding:4px}
+.stepper button{appearance:none;border:0;background:#fff;width:42px;height:42px;border-radius:50%;cursor:pointer;font-size:20px}
+.stepper output{min-width:72px;text-align:center;font-weight:600}
+@media(max-width:1000px){.sub{grid-template-columns:1fr}.cards.c4,.cards.c5{grid-template-columns:repeat(2,1fr)}.cards.c3{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:480px){.cards.c3{grid-template-columns:1fr}}
+.summary{position:sticky;top:calc(var(--hh) + 24px);background:var(--esp);color:var(--crema);border-radius:28px;padding:34px;overflow:hidden}
+.summary::before{content:"";position:absolute;right:-80px;top:-80px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(200,118,58,.45),transparent 65%)}
+.summary h3{font-size:22px;font-weight:500;color:var(--sand)}
+.big{font:600 clamp(64px,7vw,96px)/1 Fraunces,serif;font-variation-settings:"SOFT" 100,"opsz" 144;letter-spacing:-.03em;margin:10px 0 2px}
+.big small{font:500 18px "Instrument Sans";letter-spacing:0;color:#CDB9A3;margin-left:6px}
+.summary ul{list-style:none;margin:18px 0 22px;padding:0;font-size:15px}
+.summary li{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-top:1px solid rgba(243,233,220,.12)}
+.summary li span:first-child{color:#CDB9A3}
+.summary label{display:block;font-size:14px;color:#CDB9A3;margin:12px 0 6px}
+.summary input[type=email],.summary input[type=text]{width:100%;background:#2A1E17;border:1.5px solid #4A3a2E;border-radius:12px;padding:13px 14px;color:var(--crema)}
+.summary input:focus{border-color:var(--copper);outline:none}
+.summary .row{display:grid;grid-template-columns:1.5fr 1fr;gap:10px}
+.summary .btn{width:100%;margin-top:18px}
+.ferr{color:#F2A97B;font-size:14px;min-height:1.3em;margin:10px 0 0}
+.demo{font-size:12.5px;color:#A89482;margin:12px 0 0;text-align:center}
+.conf h3{font-size:34px;color:var(--crema);font-weight:600;line-height:1.05;margin:8px 0 12px}
+.conf p{color:#DCCBB8;font-size:15.5px}
+.conf .tag{display:inline-block;background:var(--copper);color:var(--esp);font-weight:600;font-size:13px;padding:6px 12px;border-radius:999px}
+.conf dl{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;font-size:15px;margin:18px 0}
+.conf dt{color:#A89482}.conf dd{margin:0}
+.subfaq{margin-top:10px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;font-size:15px;color:var(--muted)}
+.subfaq b{display:block;color:var(--ink);font-weight:600;margin-bottom:4px}
+@media(max-width:800px){.subfaq{grid-template-columns:1fr}.summary{position:relative;top:0;padding:26px 22px;border-radius:22px}}
+
+/* menu */
+.menu{background:#EADBC8}
+.mgrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
+.mphoto{position:relative;border-radius:28px;overflow:hidden}
+.mphoto img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.mphoto figcaption{position:absolute;left:18px;bottom:18px;background:var(--esp);color:var(--crema);font-size:14px;padding:9px 14px;border-radius:999px}
+.mcols{display:grid;grid-template-columns:1fr 1fr;gap:40px 48px}
+.mcols h3{font-size:30px;font-weight:600;margin-bottom:10px;font-variation-settings:"SOFT" 100,"opsz" 60}
+.mcols ul{list-style:none;margin:0;padding:0}
+.mcols li{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding:12px 0;border-top:1px solid rgba(42,31,24,.16)}
+.mcols li b{font-weight:600}
+.mcols li span{font-variant-numeric:tabular-nums}
+.mcols li small{grid-column:1/-1;color:var(--muted);font-size:14px}
+.mnote{grid-column:1/-1;font-size:14.5px;color:var(--muted);margin:0}
+@media(max-width:1000px){.mgrid{grid-template-columns:1fr}.mphoto img{aspect-ratio:16/10}}
+@media(max-width:640px){.mcols{grid-template-columns:1fr}}
+
+/* story */
+.story{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.collage{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:1fr 1fr;gap:14px;height:640px}
+.collage img{width:100%;height:100%;object-fit:cover;border-radius:22px}
+.collage img:first-child{grid-row:span 2}
+.story h2{font-size:clamp(44px,5.4vw,84px);line-height:.94;font-variation-settings:"SOFT" 100,"opsz" 144}
+.story h2 em{font-style:italic;font-weight:400;color:var(--copper-d)}
+.story .lead{font-size:19px;color:#4A3B30;margin:22px 0 30px}
+.tl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:22px 28px}
+.tl li{border-top:2px solid var(--ink);padding-top:12px}
+.tl b{display:block;font:600 22px/1.2 Fraunces,serif;font-variation-settings:"SOFT" 100;margin-bottom:4px}
+.tl span{color:var(--muted);font-size:15px}
+@media(max-width:1000px){.story{grid-template-columns:1fr}.collage{height:460px}}
+@media(max-width:560px){.collage{height:360px}.tl{grid-template-columns:1fr}}
+
+/* wholesale */
+.whole{background:var(--esp);color:var(--crema);position:relative;overflow:hidden}
+.wgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+.whole h2{font-size:clamp(44px,5.4vw,84px);line-height:.94;font-variation-settings:"SOFT" 100,"opsz" 144}
+.whole h2 em{font-style:italic;font-weight:400;color:var(--sand)}
+.whole .lead{color:#DCCBB8;font-size:18px;margin:22px 0 28px;max-width:30em}
+.wlist{list-style:none;margin:0 0 34px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:16px 28px}
+.wlist li{padding-left:28px;position:relative;color:#E9DCCB}
+.wlist li::before{content:"";position:absolute;left:0;top:.55em;width:14px;height:8px;border-radius:50%;background:var(--copper);box-shadow:inset 0 -2px 0 rgba(0,0,0,.25)}
+.wlist b{display:block;color:var(--crema)}
+.wimg{position:relative}
+.wimg img{border-radius:28px;width:100%;aspect-ratio:9/10;object-fit:cover}
+.wimg .chip{position:absolute;left:-24px;bottom:34px;background:var(--crema);color:var(--esp);border-radius:18px;padding:16px 18px;font-size:14px;max-width:230px;box-shadow:0 20px 40px rgba(0,0,0,.35)}
+.wimg .chip b{display:block;font:600 30px/1 Fraunces,serif;font-variation-settings:"SOFT" 100;margin-bottom:4px}
+@media(max-width:1000px){.wgrid{grid-template-columns:1fr}.wimg .chip{left:14px}}
+@media(max-width:560px){.wlist{grid-template-columns:1fr}}
+
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.revs figure{margin:0;background:#FBF6EF;border-radius:24px;padding:30px;display:flex;flex-direction:column}
+.revs figure:nth-child(2){background:var(--sand)}
+.revs blockquote{margin:0 0 20px;font:500 23px/1.3 Fraunces,serif;font-variation-settings:"SOFT" 100,"opsz" 30;flex:1}
+.revs figcaption{font-size:14px;color:var(--muted)}
+.revs .lab{display:inline-block;font-size:12px;font-weight:600;background:var(--esp);color:var(--crema);border-radius:999px;padding:4px 10px;margin-bottom:8px}
+@media(max-width:900px){.revs{grid-template-columns:1fr}}
+
+/* visit */
+.visit{display:grid;grid-template-columns:.9fr 1.1fr;gap:20px}
+.vcard{background:var(--esp);color:var(--crema);border-radius:28px;padding:40px}
+.vcard h2{font-size:clamp(40px,4.4vw,64px);line-height:.95;font-variation-settings:"SOFT" 100,"opsz" 144}
+.hours{width:100%;border-collapse:collapse;margin:26px 0;font-size:15.5px}
+.hours td{padding:10px 0;border-top:1px solid rgba(243,233,220,.14)}
+.hours td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.hours tr.today td{color:var(--sand);font-weight:600}
+.vcard address{font-style:normal;line-height:1.6;color:#E9DCCB}
+.vcard a{color:var(--sand)}
+.map{border-radius:28px;overflow:hidden;min-height:440px;background:#EADBC8}
+.map iframe{width:100%;height:100%;min-height:440px;border:0;display:block;filter:sepia(.25) saturate(.85)}
+@media(max-width:900px){.visit{grid-template-columns:1fr}.vcard{padding:28px 22px}.map,.map iframe{min-height:320px}}
+
+/* faq */
+.faqg{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px}
+.faqg h2{font-size:clamp(44px,5vw,76px);line-height:.94;font-variation-settings:"SOFT" 100,"opsz" 144}
+details{border-top:1px solid var(--line)}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;padding:22px 44px 22px 0;font:600 21px/1.3 Fraunces,serif;font-variation-settings:"SOFT" 100,"opsz" 30;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:50%;background:#FBF6EF;display:grid;place-items:center;font:400 20px/1 "Instrument Sans";transition:transform .3s}
+details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+details p{margin:0 0 22px;color:#4A3B30;max-width:40em}
+@media(max-width:900px){.faqg{grid-template-columns:1fr;gap:24px}}
+
+/* band + footer */
+.band{background:var(--copper);color:var(--esp);padding:100px 0;overflow:hidden}
+.band .wrap{display:flex;justify-content:space-between;align-items:end;gap:40px;flex-wrap:wrap}
+.band h2{font-size:clamp(50px,7.4vw,124px);line-height:.88;font-variation-settings:"SOFT" 100,"opsz" 144;max-width:9em}
+.band h2 em{font-style:italic;font-weight:400}
+.band .acts{display:flex;gap:12px;flex-wrap:wrap}
+footer{background:#0F0A08;color:#BCA892;padding:80px 0 36px;font-size:15px}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px}
+footer h3{font:600 15px/1 "Instrument Sans";color:var(--crema);margin:0 0 16px;letter-spacing:0}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+footer a{color:#E9DCCB;text-decoration:none}
+footer a:hover{color:var(--sand);text-decoration:underline}
+footer .logo{color:var(--crema);margin-bottom:16px}
+.legal{margin-top:56px;padding-top:22px;border-top:1px solid rgba(243,233,220,.12);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13.5px;color:#8F7B69}
+.legal a{text-decoration:underline}
+@media(max-width:900px){footer .cols{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){footer .cols{grid-template-columns:1fr}}
+
+.mbar{display:none}
+@media(max-width:720px){
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:45;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(28,20,16,.96);transition:transform .35s ease}
+  .mbar a{flex:1;text-align:center;text-decoration:none;border-radius:999px;padding:13px 10px;font-weight:600;font-size:14.5px}
+  .mbar a.c{background:var(--copper);color:var(--esp)}
+  .mbar a.t{border:1.5px solid rgba(243,233,220,.45);color:var(--crema)}
+  body{padding-bottom:68px}
+  body.inlaunch .mbar{transform:translateY(110%)}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#subscribe">Skip to the subscription builder</a>
+<div class="concept">Example concept by <a href="https://calvyrn.com">Calvyrn</a>. Ember Hill Coffee Roasters is fictional; names, reviews and 555 numbers are placeholders. Photos: Unsplash.</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#launch" aria-label="Ember Hill Coffee Roasters, home">
+      <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="17" fill="#C8763A"/><path d="M4 25c5-6 9-9 14-9s9 3 14 9v3H4z" fill="#1C1410"/><path d="M18 7c3 3 4 5.5 2.5 8.5-.8 1.6-2.5 2.5-4 1.8-2-1-2-3.6-.3-6 .8-1.2 1.6-2.4 1.8-4.3z" fill="#F3E9DC"/></svg>
+      <span>Ember Hill<small>COFFEE ROASTERS</small></span>
+    </a>
+    <nav class="main" aria-label="Main"><a href="#subscribe">Subscriptions</a><a href="#menu">Café menu</a><a href="#story">Roastery</a><a href="#wholesale">Wholesale</a><a href="#visit">Hours &amp; map</a></nav>
+    <div class="hright">
+      <a class="tel" href="tel:+16155550157" aria-label="Call (615) 555-0157"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" style="vertical-align:-3px;margin-right:6px"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z" fill="none" stroke="#E8C39E" stroke-width="1.5"/></svg><span>(615) 555-0157</span></a>
+      <a class="btn sm" href="#subscribe"><span class="l">Build a subscription</span><span class="s">Subscribe</span></a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="launch" aria-label="From bean to cup: our three roasts">
+  <div class="stage" id="stage">
+    <div id="gl" aria-hidden="true"></div>
+    <div class="shade" aria-hidden="true"></div>
+    <div class="fb"><img src="img/latte.jpg" alt="Latte with leaf art surrounded by roasted coffee beans"></div>
+
+    <div class="chap intro on" data-a="0" data-b=".12">
+      <h1>Roasted Tuesday. In your cup <em>by Friday.</em></h1>
+      <p>Small-batch coffee from a 15-kilo drum roaster in East Nashville. Pick a roast and a schedule; we ship it the day it comes out of the cooling tray.</p>
+      <div class="acts"><a class="btn" href="#subscribe">Build a subscription</a><a class="btn line" href="#menu">See the café menu</a></div>
+    </div>
+    <div class="chap" data-a=".17" data-b=".34">
+      <span class="kick">Ground to order</span>
+      <h2>Whole bean, or ground for <em>your</em> brewer.</h2>
+      <p>Tell us how you brew and we grind each bag on the morning it ships: fine for espresso, coarse for French press and cold brew.</p>
+    </div>
+    <div class="chap" data-a=".5" data-b=".635" data-r="0">
+      <span class="kick">Light roast · Ethiopia Guji</span>
+      <h2>Bright, floral, <em>a little like tea.</em></h2>
+      <div class="notes"><span>Jasmine</span><span>White peach</span><span>Wildflower honey</span></div>
+      <div class="meta"><div><b>Pour-over, filter</b>Best brewed as</div><div><b>$19</b>12 oz bag</div></div>
+    </div>
+    <div class="chap" data-a=".665" data-b=".795" data-r="1">
+      <span class="kick">Medium roast · Colombia Huila</span>
+      <h2>Round and sweet, <em>every morning.</em></h2>
+      <div class="notes"><span>Milk chocolate</span><span>Red apple</span><span>Caramel</span></div>
+      <div class="meta"><div><b>Drip, AeroPress, espresso</b>Best brewed as</div><div><b>$18</b>12 oz bag</div></div>
+    </div>
+    <div class="chap" data-a=".825" data-b=".93" data-r="2">
+      <span class="kick">Dark roast · Hearth blend</span>
+      <h2>Deep, smoky, <em>made for milk.</em></h2>
+      <div class="notes"><span>Dark cocoa</span><span>Molasses</span><span>Cedar</span></div>
+      <div class="meta"><div><b>French press, cold brew</b>Best brewed as</div><div><b>$18</b>12 oz bag</div></div>
+    </div>
+    <div class="chap outro" data-a=".955" data-b="1.3">
+      <h2>Pick your roast. We'll handle <em>the Tuesdays.</em></h2>
+      <p>Subscriptions save 10%, ship free, and can be paused or skipped any time before Monday noon.</p>
+      <div class="acts"><a class="btn" href="#subscribe">Start my subscription</a></div>
+    </div>
+
+    <div class="meter" id="meter" aria-hidden="true"><div class="lbl"><span>Roast level</span><span id="mname">Light</span></div><div class="bar"><i></i></div><div class="lbl"><span>Light</span><span>Medium</span><span>Dark</span></div></div>
+    <div class="cue" aria-hidden="true"><span></span>Scroll: from green bean to cup</div>
+  </div>
+</section>
+
+<section class="sec" id="subscribe">
+  <div class="wrap">
+    <div class="sh"><h2>Build your <em>coffee</em> subscription</h2><p>Choose a roast, a grind and how often. Prices update as you go, subscriptions ship free, and you can skip, pause or cancel online.</p></div>
+    <div class="sub">
+      <form id="builder" novalidate>
+        <fieldset class="opt-group"><legend>Roast <span>Step 1</span></legend>
+          <div class="cards c4" id="roasts"></div></fieldset>
+        <fieldset class="opt-group"><legend>Grind <span>Step 2</span></legend>
+          <div class="cards c5" id="grinds"></div></fieldset>
+        <fieldset class="opt-group"><legend>Bag size <span>Step 3</span></legend>
+          <div class="cards c3" id="sizes"></div></fieldset>
+        <fieldset class="opt-group"><legend>How often <span>Step 4</span></legend>
+          <div class="cards c3" id="freqs"></div></fieldset>
+        <fieldset class="opt-group" style="margin-bottom:0"><legend>Bags per delivery <span>Step 5</span></legend>
+          <div class="stepper"><button type="button" id="qm" aria-label="One fewer bag">−</button><output id="qty" aria-live="polite">1 bag</output><button type="button" id="qp" aria-label="One more bag">+</button></div></fieldset>
+      </form>
+      <aside class="summary" id="summary" aria-live="polite">
+        <div id="sumBody">
+          <h3>Your plan</h3>
+          <div class="big"><span id="pm">$0</span><small>/ month</small></div>
+          <div style="font-size:14.5px;color:#CDB9A3" id="ptxt"></div>
+          <ul id="lines"></ul>
+          <form id="checkout" novalidate>
+            <div class="row"><div><label for="em">Email</label><input id="em" type="email" autocomplete="email" placeholder="you@example.com"></div><div><label for="zip">ZIP code</label><input id="zip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="37206"></div></div>
+            <button class="btn" type="submit">Start my subscription</button>
+            <p class="ferr" id="ferr" role="alert"></p>
+            <p class="demo">Demo: nothing is sent and no card is charged.</p>
+          </form>
+        </div>
+        <div class="conf" id="conf" hidden></div>
+      </aside>
+    </div>
+    <div class="subfaq" style="margin-top:56px">
+      <div><b>Roasted to ship</b>We roast Tuesdays and Thursdays and ship the same afternoon, so beans arrive 2 to 4 days off roast.</div>
+      <div><b>Skip or pause any time</b>Change roast, grind or date from your account until Monday noon before a roast day.</div>
+      <div><b>Free shipping, nationwide</b>Subscriptions ship free anywhere in the lower 48. One-off bags ship free over $40.</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec menu" id="menu">
+  <div class="wrap">
+    <div class="sh"><h2>The café <em>menu</em></h2><p>Espresso pulled on the roast of the week, pour-overs on any single origin on the shelf, and pastries baked a few blocks away every morning.</p></div>
+    <div class="mgrid">
+      <figure class="mphoto" style="margin:0"><img src="img/latte.jpg" alt="Latte with leaf art in a glass cup surrounded by roasted beans" loading="lazy"><figcaption>Honey oat latte, our most-ordered drink</figcaption></figure>
+      <div class="mcols">
+        <div><h3>Espresso bar</h3><ul>
+          <li><b>Espresso</b><span>$3.25</span><small>Double shot of the roast of the week</small></li>
+          <li><b>Cortado</b><span>$4.25</span></li>
+          <li><b>Cappuccino</b><span>$4.75</span></li>
+          <li><b>Latte</b><span>$5.25</span><small>Oat, almond or whole milk at no extra charge</small></li>
+          <li><b>Honey oat latte</b><span>$6.00</span><small>Tennessee wildflower honey, cinnamon</small></li>
+        </ul></div>
+        <div><h3>Brewed</h3><ul>
+          <li><b>Batch brew</b><span>$3.00</span><small>Free refills while you stay</small></li>
+          <li><b>Pour-over</b><span>$5.50</span><small>Any single origin on the shelf</small></li>
+          <li><b>Cold brew</b><span>$4.75</span><small>Steeped 18 hours, Hearth blend</small></li>
+          <li><b>Sorghum cold foam</b><span>$5.75</span></li>
+        </ul></div>
+        <div><h3>Not coffee</h3><ul>
+          <li><b>Chai latte</b><span>$5.00</span></li>
+          <li><b>Matcha latte</b><span>$5.50</span></li>
+          <li><b>Hot chocolate</b><span>$4.25</span></li>
+        </ul></div>
+        <div><h3>From the oven</h3><ul>
+          <li><b>Buttermilk biscuit</b><span>$4.50</span><small>With sorghum butter</small></li>
+          <li><b>Morning bun</b><span>$4.25</span></li>
+          <li><b>Brown butter banana bread</b><span>$3.75</span></li>
+        </ul></div>
+        <p class="mnote">Bags of every roast are on the shelf by the register. Order ahead for pickup: call (615) 555-0157.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="story">
+  <div class="wrap story">
+    <div class="collage">
+      <img src="img/roaster.jpg" alt="Roaster checking a sample from a vintage drum roaster as beans tumble into the cooling tray" loading="lazy">
+      <img src="img/drum.jpg" alt="Roasted coffee beans falling from a drum roaster into the cooling bin" loading="lazy">
+      <img src="img/cooling.jpg" alt="Freshly roasted beans turning in a steel cooling tray" loading="lazy">
+    </div>
+    <div>
+      <h2>A tire shop, a drum roaster and <em>a lot of Tuesdays.</em></h2>
+      <p class="lead">Ember Hill began on a tabletop roaster in a garage off Gallatin Pike. Today we roast on a restored 15-kilo drum in an old tire shop on Woodland Street, with the café in what used to be the waiting room.</p>
+      <ol class="tl">
+        <li><b>Sourced by the bag</b><span>Green coffee from importers who publish what farmers are paid.</span></li>
+        <li><b>Roasted twice a week</b><span>Tuesdays and Thursdays, in batches you can watch from the café.</span></li>
+        <li><b>Rested, then ground</b><span>Beans rest overnight; we grind to order the morning they ship.</span></li>
+        <li><b>Shipped the same day</b><span>Packed in compostable bags with a one-way valve and the roast date.</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="sec whole" id="wholesale">
+  <div class="wrap wgrid">
+    <div>
+      <h2>Office coffee people <em>actually</em> look forward to.</h2>
+      <p class="lead">We supply offices, studios and restaurants across Nashville with fresh-roasted coffee, the gear to brew it, and someone to call when it breaks.</p>
+      <ul class="wlist">
+        <li><b>Weekly delivery</b>Davidson and Williamson counties, from 5 lb a week</li>
+        <li><b>Brewer setup</b>We install, dial in and service batch brewers</li>
+        <li><b>Staff tastings</b>A quarterly cupping in your office, on us</li>
+        <li><b>Simple billing</b>Net-30 invoices, one line per roast</li>
+      </ul>
+      <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn" href="tel:+16155550157">Book a free office tasting</a><a class="btn line" href="#visit">Visit the roastery</a></div>
+    </div>
+    <div class="wimg"><img src="img/cups.jpg" alt="Three ceramic cups of brewed coffee on a green table in soft sunlight" loading="lazy"><div class="chip"><b>48 hrs</b>From your first call to coffee in the office kitchen.</div></div>
+  </div>
+</section>
+
+<section class="sec" id="reviews">
+  <div class="wrap">
+    <div class="sh"><h2>Regulars <em>say</em></h2><p>Placeholder reviews written for this concept, clearly not from real customers.</p></div>
+    <div class="revs">
+      <figure><blockquote>“The roast date is always two or three days before it lands on my porch. You can taste the difference in the first cup.”</blockquote><figcaption><span class="lab">Placeholder review</span><br>Subscriber, Medium roast · Franklin, TN</figcaption></figure>
+      <figure><blockquote>“Skipping a week takes ten seconds. I've been on the light roast every two weeks for a year.”</blockquote><figcaption><span class="lab">Placeholder review</span><br>Subscriber, Light roast · Chattanooga, TN</figcaption></figure>
+      <figure><blockquote>“They set up our brewer, trained the team, and our office actually stopped buying coffee on the way in.”</blockquote><figcaption><span class="lab">Placeholder review</span><br>Wholesale customer · The Gulch, Nashville</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="visit" style="padding-top:0">
+  <div class="wrap visit">
+    <div class="vcard">
+      <h2>Come smell a roast day.</h2>
+      <table class="hours" id="hours"><tbody>
+        <tr data-d="1"><td>Monday</td><td>6:30am – 4pm</td></tr>
+        <tr data-d="2"><td>Tuesday (roast day)</td><td>6:30am – 4pm</td></tr>
+        <tr data-d="3"><td>Wednesday</td><td>6:30am – 4pm</td></tr>
+        <tr data-d="4"><td>Thursday (roast day)</td><td>6:30am – 4pm</td></tr>
+        <tr data-d="5"><td>Friday</td><td>6:30am – 5pm</td></tr>
+        <tr data-d="6"><td>Saturday</td><td>7:30am – 5pm</td></tr>
+        <tr data-d="0"><td>Sunday</td><td>7:30am – 3pm</td></tr>
+      </tbody></table>
+      <address>1108 Woodland St<br>Nashville, TN 37206</address>
+      <p style="margin:14px 0 0"><a href="tel:+16155550157">(615) 555-0157</a> · Free roastery tour Saturdays at 10am</p>
+    </div>
+    <div class="map"><iframe title="Map of Ember Hill Coffee Roasters on Woodland St, East Nashville" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-86.7640%2C36.1690%2C-86.7380%2C36.1810&amp;layer=mapnik&amp;marker=36.1748%2C-86.7508"></iframe></div>
+  </div>
+</section>
+
+<section class="sec" id="faq" style="padding-top:20px">
+  <div class="wrap faqg">
+    <h2>Good questions</h2>
+    <div>
+      <details open><summary>When is my coffee roasted?</summary><p>Subscription orders are roasted on the Tuesday or Thursday before they ship and leave the same afternoon. Most of the US receives them within 2 to 4 days of roasting.</p></details>
+      <details><summary>Which grind should I choose?</summary><p>Whole bean keeps longest if you have a grinder. Otherwise pick the grind for your brewer: espresso is fine, drip and pour-over medium, French press and cold brew coarse. You can change it before any delivery.</p></details>
+      <details><summary>How do I skip, pause or cancel?</summary><p>From your account, any time before Monday noon of a roast week. There are no fees or minimum number of deliveries.</p></details>
+      <details><summary>Do you have decaf?</summary><p>Yes, a Swiss Water Process decaf from Colombia, roasted medium. It's on the café shelf now and can be added to subscriptions by calling the roastery.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>Fresh coffee, on <em>your</em> schedule.</h2>
+    <div class="acts"><a class="btn dark" href="#subscribe">Build a subscription</a><a class="btn line" href="tel:+16155550157" style="color:var(--esp)">Call (615) 555-0157</a></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div><a class="logo" href="#launch"><span>Ember Hill</span></a><p style="margin:0;max-width:22em">Small-batch coffee roasted in East Nashville. Café, subscriptions and wholesale.</p></div>
+      <div><h3>Coffee</h3><ul><li><a href="#subscribe">Subscriptions</a></li><li><a href="#launch">Our three roasts</a></li><li><a href="#wholesale">Wholesale &amp; offices</a></li></ul></div>
+      <div><h3>Café</h3><ul><li><a href="#menu">Menu</a></li><li><a href="#visit">Hours &amp; map</a></li><li><a href="#story">The roastery</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div><h3>Visit</h3><ul><li>1108 Woodland St<br>Nashville, TN 37206</li><li><a href="tel:+16155550157">(615) 555-0157</a></li><li>Open daily from 6:30am</li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Ember Hill Coffee Roasters (fictional business).</span><span>Concept, design and build: <a href="https://calvyrn.com">Calvyrn</a> · Photos from Unsplash</span></div>
+  </div>
+</footer>
+
+<div class="mbar"><a class="t" href="tel:+16155550157">Call</a><a class="c" href="#subscribe">Build a subscription</a></div>
+
+<script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script>
+// ---------- subscription builder ----------
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const ROASTS = [
+  { id: 'light', name: 'Light', d: 'Ethiopia Guji · jasmine, peach', p: 19, c: '#A8743F' },
+  { id: 'medium', name: 'Medium', d: 'Colombia Huila · chocolate, apple', p: 18, c: '#6A4026' },
+  { id: 'dark', name: 'Dark', d: 'Hearth blend · cocoa, molasses', p: 18, c: '#2E1B11' },
+  { id: 'pick', name: "Roaster's pick", d: 'A new single origin each delivery', p: 21, c: 'conic-gradient(#A8743F 0 33%,#6A4026 0 66%,#2E1B11 0)' }];
+const GRINDS = [['whole', 'Whole bean', 'Keeps longest'], ['espresso', 'Espresso', 'Fine'], ['drip', 'Drip & pour-over', 'Medium'], ['press', 'French press', 'Coarse'], ['cold', 'Cold brew', 'Extra coarse']];
+const SIZES = [['12', '12 oz', 'About 22 cups', 1, 22], ['32', '2 lb', 'About 60 cups', 2.35, 60], ['80', '5 lb', 'About 150 cups', 5.4, 150]];
+const FREQS = [['1', 'Every week', 52 / 12], ['2', 'Every 2 weeks', 26 / 12], ['4', 'Every 4 weeks', 13 / 12]];
+const card = (name, val, chk, inner) => `<label class="card"><input type="radio" name="${name}" value="${val}" ${chk ? 'checked' : ''}><span>${inner}</span></label>`;
+$('#roasts').innerHTML = ROASTS.map((r, i) => card('roast', r.id, i === 1, `<i class="sw" style="background:${r.c}"></i><b>${r.name}</b><small>${r.d}</small><em class="pr" style="font-style:normal">from $${(r.p * .9).toFixed(2)}</em>`)).join('');
+$('#grinds').innerHTML = GRINDS.map((g, i) => card('grind', g[0], i === 2, `<b>${g[1]}</b><small>${g[2]}</small>`)).join('');
+$('#sizes').innerHTML = SIZES.map((s, i) => card('size', s[0], i === 0, `<b>${s[1]}</b><small>${s[2]}</small><em class="pr" style="font-style:normal" data-size="${i}"></em>`)).join('');
+$('#freqs').innerHTML = FREQS.map((f, i) => card('freq', f[0], i === 1, `<b>${f[1]}</b><small>${f[0] === '1' ? 'For daily drinkers' : f[0] === '2' ? 'Most popular' : 'Weekend brewers'}</small>`)).join('');
+let qty = 1;
+const val = n => $(`#builder input[name="${n}"]:checked`).value;
+function plan() {
+  const r = ROASTS.find(x => x.id === val('roast')), si = SIZES.findIndex(x => x[0] === val('size')), s = SIZES[si], f = FREQS.find(x => x[0] === val('freq')), g = GRINDS.find(x => x[0] === val('grind'));
+  const bag = Math.round(r.p * s[3] * .9 * 100) / 100, per = bag * qty, month = per * f[2];
+  return { r, s, f, g, bag, per, month, cups: s[4] * qty * f[2] / 30.4 };
+}
+let shown = 0;
+function update() {
+  const p = plan();
+  $$('[data-size]').forEach(el => { const s = SIZES[+el.dataset.size]; el.textContent = '$' + (p.r.p * s[3] * .9).toFixed(2); });
+  $('#qty').textContent = qty + (qty === 1 ? ' bag' : ' bags');
+  $('#ptxt').textContent = `Billed per delivery, ${p.f[1].toLowerCase()}. About ${p.cups.toFixed(1)} cups a day.`;
+  $('#lines').innerHTML = `<li><span>Roast</span><span>${p.r.name}</span></li><li><span>Grind</span><span>${p.g[1]}</span></li><li><span>Each delivery</span><span>${qty} × ${p.s[1]} · $${p.per.toFixed(2)}</span></li><li><span>Subscriber saving</span><span>10% off shelf price</span></li><li><span>Shipping</span><span>Free</span></li>`;
+  const to = p.month, from = shown, t0 = performance.now(), el = $('#pm');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) { el.textContent = '$' + to.toFixed(2); shown = to; return; }
+  cancelAnimationFrame(update.raf);
+  const step = now => { const k = Math.min(1, (now - t0) / 450), e = 1 - Math.pow(1 - k, 3); shown = from + (to - from) * e; el.textContent = '$' + shown.toFixed(2); if (k < 1) update.raf = requestAnimationFrame(step); };
+  update.raf = requestAnimationFrame(step);
+}
+$('#builder').addEventListener('change', update);
+$('#qm').onclick = () => { qty = Math.max(1, qty - 1); update(); };
+$('#qp').onclick = () => { qty = Math.min(4, qty + 1); update(); };
+function nextRoastDay() { const d = new Date(); d.setHours(12, 0, 0, 0); do { d.setDate(d.getDate() + 1); } while (d.getDay() !== 2 && d.getDay() !== 4); return d; }
+$('#checkout').addEventListener('submit', e => {
+  e.preventDefault();
+  const em = $('#em').value.trim(), zip = $('#zip').value.trim();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)) { $('#ferr').textContent = 'Enter an email so we can send your receipt and tracking.'; $('#em').focus(); return; }
+  if (!/^\d{5}$/.test(zip)) { $('#ferr').textContent = 'Enter a 5-digit US ZIP code.'; $('#zip').focus(); return; }
+  $('#ferr').textContent = '';
+  const p = plan(), d = nextRoastDay(), fmt = d.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' });
+  $('#sumBody').hidden = true; const c = $('#conf'); c.hidden = false;
+  c.innerHTML = `<span class="tag">Demo: nothing was sent</span><h3 tabindex="-1">You're on the roast list.</h3><p>Your first bag roasts on ${fmt} and ships that afternoon to ${zip}. A confirmation would go to ${em.replace(/</g, '&lt;')}.</p>
+    <dl><dt>Plan</dt><dd>${qty} × ${p.s[1]} ${p.r.name}, ${p.g[1].toLowerCase()}</dd><dt>Schedule</dt><dd>${p.f[1]}</dd><dt>Per delivery</dt><dd>$${p.per.toFixed(2)}, free shipping</dd><dt>Per month</dt><dd>about $${p.month.toFixed(2)}</dd></dl>
+    <p style="font-size:13.5px;color:#A89482">No card was charged. In a live store this step would open secure checkout.</p><button class="btn line" type="button" id="edit" style="width:100%;color:var(--crema)">Change my plan</button>`;
+  c.querySelector('h3').focus();
+  $('#edit').onclick = () => { c.hidden = true; $('#sumBody').hidden = false; $('#em').focus(); };
+});
+update();
+// today's hours
+const td = $(`#hours tr[data-d="${new Date().getDay()}"]`); if (td) td.classList.add('today');
+new IntersectionObserver(([e]) => document.body.classList.toggle('inlaunch', e.isIntersecting), { rootMargin: '0px 0px -40% 0px' }).observe($('#launch'));
+</script>
+
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.164.1/build/three.module.js","three/addons/":"https://unpkg.com/three@0.164.1/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const stage = document.getElementById('stage'), host = document.getElementById('gl'), launch = document.getElementById('launch');
+let renderer;
+try { renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' }); if (!renderer.getContext()) throw 0; }
+catch (e) { renderer = null; document.documentElement.classList.add('no-gl'); }
+
+if (renderer) {
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.1;
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  host.appendChild(renderer.domElement);
+  const small = innerWidth < 760;
+
+  const scene = new THREE.Scene();
+  const BG = new THREE.Color('#1C1410');
+  scene.background = BG; scene.fog = new THREE.Fog(BG, 7, 17);
+  const pmrem = new THREE.PMREMGenerator(renderer);
+  scene.environment = pmrem.fromScene(new RoomEnvironment(renderer), .04).texture;
+  const cam = new THREE.PerspectiveCamera(35, 1, .05, 60);
+
+  // lights: warm window key with soft shadows + copper rim
+  const key = new THREE.SpotLight(0xffd9b0, 70, 22, .55, .7, 1.6); key.position.set(-3.2, 7, 3.2); key.target.position.set(0, .6, 0);
+  key.castShadow = true; key.shadow.mapSize.set(small ? 1024 : 2048, small ? 1024 : 2048); key.shadow.bias = -.0004; key.shadow.radius = 6;
+  scene.add(key, key.target);
+  const rim = new THREE.PointLight(0xff9a4d, 9, 12, 1.6); rim.position.set(3.5, 2.6, -2.5); scene.add(rim);
+  const fill = new THREE.HemisphereLight(0xffe6cc, 0x1c1410, .25); scene.add(fill);
+
+  // table: dark walnut
+  const tc = document.createElement('canvas'); tc.width = 1024; tc.height = 1024;
+  { const g = tc.getContext('2d'); g.fillStyle = '#4a3326'; g.fillRect(0, 0, 1024, 1024);
+    for (let i = 0; i < 900; i++) { const y = Math.random() * 1024, a = Math.random() * .12; g.strokeStyle = Math.random() < .5 ? `rgba(20,10,5,${a})` : `rgba(140,95,60,${a * .7})`; g.lineWidth = 1 + Math.random() * 3; g.beginPath(); g.moveTo(0, y); for (let x = 0; x <= 1024; x += 64) g.lineTo(x, y + Math.sin(x * .004 + i) * 6); g.stroke(); }
+    for (let i = 0; i < 9000; i++) { g.fillStyle = `rgba(0,0,0,${Math.random() * .08})`; g.fillRect(Math.random() * 1024, Math.random() * 1024, 2, 1); } }
+  const ttex = new THREE.CanvasTexture(tc); ttex.colorSpace = THREE.SRGBColorSpace; ttex.wrapS = ttex.wrapT = THREE.RepeatWrapping; ttex.repeat.set(3, 3); ttex.anisotropy = 8;
+  const table = new THREE.Mesh(new THREE.PlaneGeometry(40, 40), new THREE.MeshStandardMaterial({ map: ttex, color: '#9c7a64', roughness: .62, envMapIntensity: .25 }));
+  table.rotation.x = -Math.PI / 2; table.receiveShadow = true; scene.add(table);
+
+  // ceramic: speckled stoneware glaze
+  const cc = document.createElement('canvas'); cc.width = cc.height = 512;
+  { const g = cc.getContext('2d'); g.fillStyle = '#F3E9DC'; g.fillRect(0, 0, 512, 512); for (let i = 0; i < 2600; i++) { g.fillStyle = `rgba(${90 + Math.random() * 40},${60 + Math.random() * 30},${40},${.25 + Math.random() * .45})`; const r = Math.random() * 1.6 + .3; g.beginPath(); g.arc(Math.random() * 512, Math.random() * 512, r, 0, 7); g.fill(); } }
+  const ctex = new THREE.CanvasTexture(cc); ctex.colorSpace = THREE.SRGBColorSpace; ctex.wrapS = ctex.wrapT = THREE.RepeatWrapping; ctex.repeat.set(3, 1);
+  const ceramic = new THREE.MeshPhysicalMaterial({ map: ctex, color: '#ffffff', roughness: .32, clearcoat: .7, clearcoatRoughness: .2, envMapIntensity: .7, side: THREE.DoubleSide });
+  const V = a => a.map(([x, y]) => new THREE.Vector2(x, y));
+  const cupG = new THREE.Group(); scene.add(cupG);
+  const saucer = new THREE.Mesh(new THREE.LatheGeometry(V([[0, 0], [1.25, 0], [1.42, .05], [1.58, .16], [1.6, .19], [1.55, .2], [1.32, .11], [.78, .075], [0, .075]]), 96), ceramic);
+  saucer.castShadow = saucer.receiveShadow = true; cupG.add(saucer);
+  const cup = new THREE.Mesh(new THREE.LatheGeometry(V([[0, 0], [.5, 0], [.58, .03], [.62, .1], [.74, .45], [.86, .95], [.94, 1.3], [.95, 1.36], [.92, 1.38], [.885, 1.34], [.82, .97], [.7, .5], [.56, .16], [.4, .12], [0, .12]]), 96), ceramic);
+  cup.position.y = .075; cup.castShadow = cup.receiveShadow = true; cupG.add(cup);
+  const handle = new THREE.Mesh(new THREE.TorusGeometry(.3, .07, 16, 48, Math.PI * 1.25), ceramic);
+  handle.position.set(.97, .86, 0); handle.rotation.z = -Math.PI * .625; handle.castShadow = true; cupG.add(handle);
+  const SURF_Y = .075 + 1.2;
+
+  // coffee surface shader
+  const surfMat = new THREE.ShaderMaterial({
+    uniforms: { uTime: { value: 0 }, uCol: { value: new THREE.Color('#4B2914') }, uCrema: { value: new THREE.Color('#B07A48') }, uRip: { value: 0 } },
+    vertexShader: 'varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }',
+    fragmentShader: `varying vec2 vUv; uniform float uTime; uniform vec3 uCol; uniform vec3 uCrema; uniform float uRip;
+      float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+      float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}
+      float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<5;i++){v+=a*n(p);p*=2.07;a*=.5;}return v;}
+      void main(){ vec2 p=vUv-.5; float r=length(p)*2.;
+        float ang=uTime*.12+(1.-r)*1.8; float cs=cos(ang),sn=sin(ang);
+        vec2 q=mat2(cs,-sn,sn,cs)*p;
+        float w=fbm(q*5.+vec2(fbm(q*3.+uTime*.05),fbm(q*3.-uTime*.04))*1.6);
+        float marb=smoothstep(.42,.72,w);
+        float ring=sin(r*38.-uTime*3.)*uRip*(1.-r);
+        float bub=smoothstep(.9,.97,n(q*150.))*smoothstep(.6,.95,r)*.18;
+        float crema=smoothstep(.6,.99,r)*.8+marb*.42*(1.-r*.5)+ring*.12+bub;
+        vec3 col=mix(uCol,uCrema,clamp(crema,0.,1.));
+        col*=.82+.32*smoothstep(1.,.15,length(p-vec2(-.14,.18))*2.);
+        vec2 hp=(p-vec2(-.2,.2))*vec2(1.,1.8);
+        float spec=smoothstep(.07,.0,length(hp))*.28;
+        gl_FragColor=vec4(col+spec,1.);
+        #include <tonemapping_fragment>
+        #include <colorspace_fragment>
+      }`
+  });
+  const surface = new THREE.Mesh(new THREE.CircleGeometry(.872, 64), surfMat); surface.rotation.x = -Math.PI / 2; surface.position.y = SURF_Y; cupG.add(surface);
+
+  // steam wisps (billboarded shader planes)
+  const steamMats = [], steams = [];
+  const steamFrag = `varying vec2 vUv; uniform float uTime; uniform float uSeed; uniform float uAmt;
+    float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+    float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}
+    float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<4;i++){v+=a*n(p);p*=2.03;a*=.5;}return v;}
+    void main(){ vec2 uv=vUv; float t=uTime*.32;
+      float x=uv.x-.5; x+=(fbm(vec2(uv.y*1.6-t*.7,uSeed))-.5)*.75*uv.y;
+      float m=fbm(vec2(x*4.+uSeed*3.,uv.y*2.6-t*1.5));
+      float wisp=smoothstep(.42,.78,m);
+      float w=smoothstep(.34,.0,abs(x)*(1.25-uv.y*.55));
+      float fade=smoothstep(0.,.14,uv.y)*smoothstep(1.,.35,uv.y);
+      gl_FragColor=vec4(vec3(1.,.95,.88),wisp*w*fade*.5*uAmt); }`;
+  for (let i = 0; i < 3; i++) {
+    const m = new THREE.ShaderMaterial({ transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, uniforms: { uTime: { value: 0 }, uSeed: { value: i * 3.7 + 1 }, uAmt: { value: 1 } },
+      vertexShader: 'varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }', fragmentShader: steamFrag });
+    const s = new THREE.Mesh(new THREE.PlaneGeometry(1.5, 2.8), m); s.position.set((i - 1) * .18, SURF_Y + 1.38, (i - 1) * .1); steamMats.push(m); steams.push(s); scene.add(s);
+  }
+
+  // procedural coffee bean: flattened ellipsoid with an S-shaped centre crease
+  function beanGeo() {
+    const g = new THREE.SphereGeometry(1, 22, 16), pos = g.attributes.position, v = new THREE.Vector3();
+    for (let i = 0; i < pos.count; i++) {
+      v.fromBufferAttribute(pos, i);
+      let x = v.x * .7, y = v.y, z = v.z * .55;
+      if (v.z > 0) z *= .55;
+      const gx = x - Math.sin(y * 2.4) * .09;
+      const crease = Math.exp(-(gx * gx) / .01) * (1 - Math.pow(Math.abs(y), 5));
+      if (v.z > 0) z -= crease * .22 * Math.min(1, v.z * 4);
+      pos.setXYZ(i, x, y, z);
+    }
+    g.computeVertexNormals(); g.scale(.1, .1, .1); return g;
+  }
+  const bGeo = beanGeo();
+  const ROAST = [new THREE.Color('#7A4A26'), new THREE.Color('#4A2A16'), new THREE.Color('#1F120B')];
+  const SURF = [new THREE.Color('#5C2E0E'), new THREE.Color('#3A1E0C'), new THREE.Color('#1A0D06')];
+  const CREMA = [new THREE.Color('#B9824C'), new THREE.Color('#99613A'), new THREE.Color('#6A4127')];
+  const beanMat = new THREE.MeshPhysicalMaterial({ color: ROAST[1].clone(), roughness: .5, clearcoat: .2, clearcoatRoughness: .5, envMapIntensity: .5 });
+  const NT = small ? 110 : 190;
+  const tableBeans = new THREE.InstancedMesh(bGeo, beanMat, NT); tableBeans.castShadow = true; tableBeans.receiveShadow = true;
+  const dummy = new THREE.Object3D(), col = new THREE.Color();
+  for (let i = 0; i < NT; i++) {
+    let r, a;
+    if (i < NT * .55) { const cl = [[-2.3, -.9], [2.1, 1.5], [-1.4, 2.0], [2.6, -1.7]][i % 4]; a = Math.random() * 6.28; r = Math.random() * .8; dummy.position.set(cl[0] + Math.cos(a) * r, 0, cl[1] + Math.sin(a) * r); }
+    else { a = Math.random() * 6.28; r = 1.8 + Math.random() * 4.5; dummy.position.set(Math.cos(a) * r, 0, Math.sin(a) * r); }
+    const up = Math.random() < .5;
+    dummy.position.y = up ? .055 : .034;
+    dummy.rotation.set(up ? -Math.PI / 2 : Math.PI / 2, 0, Math.random() * 6.28);
+    dummy.scale.setScalar(.85 + Math.random() * .3);
+    dummy.updateMatrix(); tableBeans.setMatrixAt(i, dummy.matrix);
+    col.setScalar(.8 + Math.random() * .35); tableBeans.setColorAt(i, col);
+  }
+  scene.add(tableBeans);
+
+  // grinder hopper (copper funnel) + falling beans + ground stream
+  const copper = new THREE.MeshStandardMaterial({ color: '#C8763A', metalness: 1, roughness: .3, envMapIntensity: 1.1, side: THREE.DoubleSide });
+  const hopper = new THREE.Group();
+  const funnel = new THREE.Mesh(new THREE.LatheGeometry(V([[1.05, .95], [1.0, .9], [.24, -.15], [.17, -.25], [.16, -.62], [.2, -.66]]), 72), copper); funnel.castShadow = true; hopper.add(funnel);
+  const lip = new THREE.Mesh(new THREE.TorusGeometry(1.04, .035, 12, 72), copper); lip.rotation.x = Math.PI / 2; lip.position.y = .95; hopper.add(lip);
+  const burr = new THREE.Mesh(new THREE.CylinderGeometry(.32, .32, .3, 48), new THREE.MeshStandardMaterial({ color: '#2a201a', metalness: .6, roughness: .4 })); burr.position.y = -.4; hopper.add(burr);
+  scene.add(hopper);
+  const NF = small ? 50 : 90;
+  const fallBeans = new THREE.InstancedMesh(bGeo, beanMat, NF); scene.add(fallBeans);
+  const FB = Array.from({ length: NF }, () => ({ x: (Math.random() - .5) * 1.3, z: (Math.random() - .5) * 1.3, o: Math.random(), s: .9 + Math.random() * .3, rx: Math.random() * 6, ry: Math.random() * 6, sp: 2 + Math.random() * 3 }));
+  const NS = 260, sGeo = new THREE.BufferGeometry(), sPos = new Float32Array(NS * 3), SD = Array.from({ length: NS }, () => ({ o: Math.random(), a: Math.random() * 6.28, r: Math.random() * .05 }));
+  sGeo.setAttribute('position', new THREE.BufferAttribute(sPos, 3));
+  const stream = new THREE.Points(sGeo, new THREE.PointsMaterial({ color: '#7a5035', size: .028, transparent: true, opacity: 0, depthWrite: false })); scene.add(stream);
+
+  // sizing: on desktop, push the scene right so the copy has room on the left
+  let W = 1, H = 1, mobile = false;
+  function size() {
+    const r = stage.getBoundingClientRect(); W = Math.max(1, r.width); H = Math.max(1, r.height);
+    renderer.setSize(W, H, false); cam.aspect = W / H; mobile = W < 900;
+    if (!mobile) cam.setViewOffset(W, H, -W * .2, 0, W, H); else cam.setViewOffset(W, H, 0, -H * .1, W, H);
+    cam.fov = mobile ? 46 : 35;
+    cam.updateProjectionMatrix();
+  }
+  new ResizeObserver(size).observe(stage); size();
+
+  // camera keyframes [progress, position, look-at]
+  const K = [
+    [0, [0, 2.05, 6.3], [0, .85, 0]],
+    [.13, [-.9, 2.35, 5.7], [0, 1.0, 0]],
+    [.2, [0, 3.05, 6.9], [0, 2.55, 0]],
+    [.34, [.5, 3.2, 6.4], [0, 2.5, 0]],
+    [.445, [0, 2.55, .15], [0, SURF_Y, 0]],
+    [.5, [0, 4.5, .55], [0, 1.1, 0]],
+    [.62, [.35, 4.7, .95], [0, 1.1, 0]],
+    [.7, [2.3, 3.3, 2.7], [0, 1.0, 0]],
+    [.78, [2.7, 3.0, 2.2], [0, 1.0, 0]],
+    [.86, [-1.9, 1.75, 3.7], [0, .95, 0]],
+    [.93, [-2.2, 1.7, 3.5], [0, .95, 0]],
+    [1, [0, 2.4, 7.2], [0, .85, 0]]];
+  const ss = (a, b, x) => { const t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
+  const vA = new THREE.Vector3(), vB = new THREE.Vector3(), lA = new THREE.Vector3(), lB = new THREE.Vector3();
+  function camAt(p) {
+    let i = 0; while (i < K.length - 2 && p > K[i + 1][0]) i++;
+    const k = ss(K[i][0], K[i + 1][0], p);
+    vA.fromArray(K[i][1]).lerp(vB.fromArray(K[i + 1][1]), k); lA.fromArray(K[i][2]).lerp(lB.fromArray(K[i + 1][2]), k);
+    if (mobile) { vA.multiplyScalar(1); }
+    cam.position.copy(vA); cam.lookAt(lA);
+  }
+
+  // scroll progress via GSAP ScrollTrigger (manual fallback)
+  let target = 0, prog = 0;
+  const manual = () => { const r = launch.getBoundingClientRect(); return Math.min(1, Math.max(0, -r.top / Math.max(1, r.height - innerHeight))); };
+  if (!reduce && window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.create({ trigger: launch, start: 'top top', end: 'bottom bottom', scrub: true, onUpdate: s => { target = s.progress; } });
+  } else if (!reduce) addEventListener('scroll', () => { target = manual(); }, { passive: true });
+
+  const chaps = [...document.querySelectorAll('.chap')], meter = document.getElementById('meter'), mname = document.getElementById('mname');
+  const winOp = (x, a, b, f = .03) => Math.min(ss(a - f, a + f * .2, x), 1 - ss(b - f * .2, b + f, x));
+  let visible = true; new IntersectionObserver(([e]) => { visible = e.isIntersecting; }, { rootMargin: '80px' }).observe(stage);
+  const clock = new THREE.Clock();
+  const tc1 = new THREE.Color(), tc2 = new THREE.Color(), tc3 = new THREE.Color();
+
+  function frame(t, p) {
+    camAt(p);
+    // roast colour: medium in the intro, then light -> medium -> dark chapters
+    const toLight = ss(.43, .47, p), k1 = ss(.635, .665, p), k2 = ss(.795, .825, p);
+    tc1.copy(ROAST[1]).lerp(ROAST[0], toLight).lerp(ROAST[1], k1).lerp(ROAST[2], k2);
+    tc2.copy(SURF[1]).lerp(SURF[0], toLight).lerp(SURF[1], k1).lerp(SURF[2], k2);
+    tc3.copy(CREMA[1]).lerp(CREMA[0], toLight).lerp(CREMA[1], k1).lerp(CREMA[2], k2);
+    beanMat.color.copy(tc1); beanMat.roughness = .55 - k2 * .2; beanMat.clearcoat = .15 + k2 * .3;
+    surfMat.uniforms.uCol.value.copy(tc2); surfMat.uniforms.uCrema.value.copy(tc3);
+    surfMat.uniforms.uTime.value = reduce ? 2 : t;
+    surfMat.uniforms.uRip.value = ss(.33, .43, p) * (1 - ss(.47, .55, p));
+    rim.intensity = 9 + ss(.8, .9, p) * 6; rim.color.setHSL(.07 - k2 * .02, .9, .6);
+    key.intensity = 70 - k2 * 14;
+
+    // steam: full in the hero, fades for the pour and the dive, returns at the end
+    const steamAmt = (1 - ss(.15, .22, p)) + ss(.36, .44, p) * (1 - ss(.44, .48, p)) * .6 + ss(.86, .96, p);
+    steams.forEach((s, i) => { s.lookAt(cam.position.x, s.position.y, cam.position.z); steamMats[i].uniforms.uTime.value = reduce ? 4 : t + i * 2; steamMats[i].uniforms.uAmt.value = Math.min(1, steamAmt); s.visible = steamAmt > .01; });
+
+    // hopper drops in for the pour, then lifts away
+    const hin = ss(.13, .22, p), hout = ss(.36, .43, p);
+    hopper.position.y = 7.8 - hin * 4.6 + hout * 4.6; hopper.rotation.y = t * .05;
+    hopper.visible = hopper.position.y < 7.5;
+    const HY = hopper.position.y;
+    const pour = ss(.16, .22, p) * (1 - ss(.33, .38, p));
+    for (let i = 0; i < NF; i++) {
+      const b = FB[i], ph = (b.o + t * .55 * (reduce ? 0 : 1) + p * 6) % 1;
+      const y = HY + 4.2 - ph * 3.6;
+      const inside = y < HY + .7;
+      dummy.position.set(b.x * (inside ? .6 : 1), y, b.z * (inside ? .6 : 1));
+      dummy.rotation.set(b.rx + t * b.sp, b.ry + t, 0);
+      dummy.scale.setScalar(pour > .02 && !inside ? b.s * pour : 0);
+      dummy.updateMatrix(); fallBeans.setMatrixAt(i, dummy.matrix);
+    }
+    fallBeans.instanceMatrix.needsUpdate = true;
+    const sTop = HY - .66, sLen = Math.max(0, sTop - SURF_Y);
+    for (let i = 0; i < NS; i++) { const d = SD[i], ph = (d.o + t * 1.3) % 1; sPos[i * 3] = Math.cos(d.a) * d.r * (1 + ph); sPos[i * 3 + 1] = sTop - ph * sLen; sPos[i * 3 + 2] = Math.sin(d.a) * d.r * (1 + ph); }
+    sGeo.attributes.position.needsUpdate = true; stream.material.opacity = pour * .9;
+
+    // overlays
+    chaps.forEach(c => {
+      const o = c.classList.contains('intro') && p < .02 ? 1 : winOp(p, +c.dataset.a, +c.dataset.b);
+      c.style.opacity = o; c.style.transform = `translateY(${(1 - o) * 18}px)`; c.classList.toggle('on', o > .5); c.setAttribute('aria-hidden', o < .5);
+    });
+    const m = Math.min(1, Math.max(0, (p - .5) / .41));
+    meter.classList.toggle('show', p > .48 && p < .95);
+    meter.style.setProperty('--m', (m * 100).toFixed(1) + '%');
+    mname.textContent = p < .65 ? 'Light' : p < .81 ? 'Medium' : 'Dark';
+  }
+
+  if (reduce) { const draw = () => { frame(1.5, 0); renderer.render(scene, cam); }; draw(); new ResizeObserver(draw).observe(stage); }
+  else renderer.setAnimationLoop(() => {
+    if (!visible || document.hidden) return;
+    const dt = Math.min(.1, clock.getDelta()), t = clock.elapsedTime;
+    prog += (target - prog) * (1 - Math.exp(-dt * 6));
+    frame(t, prog);
+    renderer.render(scene, cam);
+  });
+}
+
+if (!reduce && window.gsap && window.ScrollTrigger) {
+  gsap.registerPlugin(ScrollTrigger);
+  document.querySelectorAll('.sh, .opt-group, .summary, .mphoto, .mcols > div, .collage img, .story > div:last-child, .wgrid > *, .revs figure, .visit > *, .faqg > *, .band h2').forEach(el => {
+    gsap.from(el, { y: 40, opacity: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 90%', once: true } });
+  });
+}
+</script>
+</body>
+</html>

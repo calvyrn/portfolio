@@ -7,6 +7,8 @@ Website, web app and AI concepts for small businesses, organised by industry. Ev
 | Project | Industry | Tier | Demo |
 |---|---|---|---|
 | [Architecture studio with a scroll-built 3D house](sites/architecture-studio-3d/) | Architecture | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/architecture-studio-3d/) |
+| [Skincare brand with a 3D glass bottle and shop](sites/skincare-brand-3d/) | Beauty | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/skincare-brand-3d/) |
+| [Coffee roastery with a 3D cup and subscriptions](sites/coffee-roastery-3d/) | Food & drink | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/coffee-roastery-3d/) |
 | [Roofing company with a live 3D roof preview](sites/roofing-3d/) | Home services | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/roofing-3d/) |
 | [Solar installer with 3D panels and savings estimator](sites/solar-installer-3d/) | Solar | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/solar-installer-3d/) |
 | [Travel agency with a 3D flight globe](sites/travel-agency-3d/) | Travel | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/travel-agency-3d/) |
