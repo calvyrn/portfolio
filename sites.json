@@ -124,5 +124,32 @@
   "A 22-room Savannah hotel with direct booking: dates, guests, room rates, a live total and a late-checkout perk.",
   "",
   ""
+ ],
+ [
+  "accounting-portal",
+  "CPA firm with a client portal",
+  "Medium",
+  "Accounting",
+  "Demo client portal: tax document checklist with in-browser uploads, a status tracker, CPA messages, e-sign and a 2027 deadline countdown.",
+  "",
+  ""
+ ],
+ [
+  "gym-studio",
+  "Strength gym with class booking",
+  "Medium",
+  "Fitness",
+  "Filterable weekly schedule where reserving lowers spots left, full classes take a waitlist and bookings show in an app mockup.",
+  "",
+  ""
+ ],
+ [
+  "vet-clinic",
+  "Animal hospital with pet booking",
+  "Medium",
+  "Veterinary",
+  "Step-by-step pet appointment booking plus an emergency checker that tells owners when to call right away.",
+  "",
+  ""
  ]
 ]
