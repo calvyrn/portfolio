@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mesa Ridge Realty — Search Phoenix homes (example concept)</title>
+<title>Mesa Ridge Realty | Phoenix, Scottsdale &amp; Paradise Valley Homes for Sale</title>
 <meta name="description" content="Example concept by Calvyrn: an independent agency website with its own property search, saved homes and a showing request.">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,6 +44,7 @@ a{color:inherit}
 .card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
 .pic{aspect-ratio:16/10;position:relative}
 .pic svg{width:100%;height:100%;display:block}
+.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .fav{position:absolute;top:10px;right:10px;appearance:none;border:0;background:#fffe;border-radius:50%;width:38px;height:38px;cursor:pointer;font-size:18px}
 .fav[aria-pressed="true"]{background:var(--sun)}
 .badge{position:absolute;left:10px;top:10px;background:var(--ink);color:#fff;font-size:12px;font-weight:600;padding:4px 8px;border-radius:6px}
@@ -64,27 +65,50 @@ dialog label{font-size:13px;font-weight:600;color:var(--muted)}
 .saved{position:fixed;right:16px;bottom:16px;background:var(--ink);color:#fff;border-radius:999px;padding:10px 16px;font-weight:600;font-size:14px}
 footer{background:var(--ink);color:#B9C4D0;font-size:14px;padding:28px 0}
 footer a{color:#fff}
+
+img{max-width:100%;display:block}
+.band{background:var(--sky2)}.band>img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42}
+.band .wrap{position:relative;z-index:1}
+header.sticky{position:sticky;top:0;z-index:30;background:#F6F8FAf2;backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hoods{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.hoods a{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:3/4;text-decoration:none;color:#fff}
+.hoods img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hoods span{position:absolute;left:0;right:0;bottom:0;padding:14px;background:linear-gradient(transparent,#17202bcc);font:600 20px "Source Serif 4"}
+.hoods small{display:block;font:400 13px Sora;color:#DDE6F0}
+@media(max-width:860px){.hoods{grid-template-columns:1fr 1fr}}
+.sec{padding:80px 0}.sec h2{font:600 clamp(30px,3.8vw,44px)/1.1 "Source Serif 4";margin:0 0 10px}.sec .intro{color:var(--muted);max-width:38em;margin:0 0 32px}
+.sell{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.sell img{border-radius:18px;aspect-ratio:4/3;object-fit:cover}
+.val{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;display:grid;grid-template-columns:1fr auto;gap:10px}
+.val input{font:inherit;padding:12px;border:1.5px solid var(--line);border-radius:10px}
+@media(max-width:860px){.sell{grid-template-columns:1fr}}
+.agents{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.agents div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
+.agents .ini{width:56px;height:56px;border-radius:50%;background:var(--sky);color:#fff;display:grid;place-items:center;font:600 20px "Source Serif 4";margin-bottom:10px}
+.agents h3{margin:0;font:600 20px "Source Serif 4"}.agents p{margin:4px 0 0;color:var(--muted);font-size:15px}
+@media(max-width:860px){.agents{grid-template-columns:1fr}}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px}footer h3{color:#fff;font:600 15px Sora;margin:0 0 8px}footer ul{list-style:none;padding:0;margin:0;display:grid;gap:6px}
 </style>
 </head>
 <body>
-<div class="concept">Example concept by <a href="https://calvyrn.com">Calvyrn</a>. Mesa Ridge Realty and every listing are fictional; in a real build the search reads live MLS data through the agency's IDX feed.</div>
-<div class="wrap">
-  <header class="top">
+<div class="concept">Example concept by <a href="https://calvyrn.com">Calvyrn</a>. Mesa Ridge Realty and every listing are fictional; in a real build the search reads live MLS data through the agency's IDX feed. Photos: Unsplash.</div>
+<header class="sticky"><div class="wrap">
+  <div class="top">
     <a class="brand" href="#"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1D4E89"/><path d="M4 24l8-10 5 6 4-4 7 8z" fill="#F4A259"/><circle cx="23" cy="9" r="3" fill="#fff"/></svg>Mesa Ridge Realty</a>
-    <nav aria-label="Main"><a href="#results">Buy</a><a href="#results">Sell</a><a href="tel:+16025550163">(602) 555-0163</a></nav>
-  </header>
-</div>
-<div class="band"><div class="wrap">
-  <h1>Search every Phoenix-area listing, then talk to an agent who knows the street.</h1>
+    <nav aria-label="Main"><a href="#results">Buy</a><a href="#sell">Sell</a><a href="#hoods">Neighborhoods</a><a href="#agents">Agents</a><a href="tel:+16025550163">(602) 555-0163</a></nav>
+  </div>
+</div></header>
+<div class="band"><img class="bg" src="img/hero.jpg" alt="" fetchpriority="high"><div class="wrap">
+  <h1>Luxury homes in Paradise Valley, Scottsdale and Arcadia.</h1>
   <p>Same listings as the big portals, updated every 15 minutes. Save homes, get alerts, and book a showing straight from the listing.</p>
 </div>
 <svg class="ridge" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 120V80l90-30 80 22 120-52 110 40 90-24 140 46 100-30 120 34 110-50 120 44 120-26v66z" fill="#163C6B"/><path d="M0 120V96l140-20 120 18 160-26 140 22 160-18 160 24 160-14 160 16v22z" fill="#F6F8FA"/></svg>
 </div>
 <div class="wrap">
   <form class="search" id="search" role="search">
-    <div class="q"><label for="q">City, ZIP or neighborhood</label><input id="q" placeholder="e.g. Arcadia, 85018, Tempe"></div>
-    <div><label for="min">Min price</label><select id="min"><option value="0">Any</option><option value="300000">$300k</option><option value="450000">$450k</option><option value="600000">$600k</option></select></div>
-    <div><label for="max">Max price</label><select id="max"><option value="99999999">Any</option><option value="400000">$400k</option><option value="600000">$600k</option><option value="900000">$900k</option></select></div>
+    <div class="q"><label for="q">City, ZIP or neighborhood</label><input id="q" placeholder="e.g. Paradise Valley, 85253, Arcadia"></div>
+    <div><label for="min">Min price</label><select id="min"><option value="0">Any</option><option value="1000000">$1M</option><option value="2000000">$2M</option><option value="3000000">$3M</option></select></div>
+    <div><label for="max">Max price</label><select id="max"><option value="99999999">Any</option><option value="1500000">$1.5M</option><option value="3000000">$3M</option><option value="5000000">$5M</option></select></div>
     <div><label for="beds">Beds</label><select id="beds"><option value="0">Any</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option></select></div>
     <button type="submit">Search homes</button>
   </form>
@@ -104,23 +128,37 @@ footer a{color:#fff}
   </form>
 </dialog>
 <div class="saved" id="saved" hidden></div>
-<footer><div class="wrap">Fictional agency and listings used to demonstrate a property search on an agent's own site. Concept and build: <a href="https://calvyrn.com">Calvyrn</a>.</div></footer>
+<section class="sec" id="hoods" style="background:#fff;border-top:1px solid var(--line)"><div class="wrap">
+  <h2>Neighborhoods we know street by street</h2><p class="intro">Our agents live in the areas they sell. Ask about schools, HOA rules or which side of the street gets the evening shade.</p>
+  <div class="hoods"><a href="#results"><img src="img/h2.jpg" alt="" loading="lazy"><span>Paradise Valley<small>Estates and mountain views</small></span></a><a href="#results"><img src="img/h4.jpg" alt="" loading="lazy"><span>North Scottsdale<small>Golf and desert living</small></span></a><a href="#results"><img src="img/h3.jpg" alt="" loading="lazy"><span>Arcadia<small>Citrus lots near Camelback</small></span></a><a href="#results"><img src="img/h8.jpg" alt="" loading="lazy"><span>Biltmore<small>Walkable and central</small></span></a></div>
+</div></section>
+<section class="sec" id="sell"><div class="wrap sell">
+  <img src="img/living.jpg" alt="Bright open living room and dining area" loading="lazy">
+  <div><h2>Thinking of selling?</h2><p class="intro">Get a written home value estimate based on recent sales on your street, then a plan for pricing, staging and photography.</p>
+  <form class="val" onsubmit="event.preventDefault();this.querySelector('button').textContent='Request sent (demo)'"><input aria-label="Home address" placeholder="Your home address"><button class="btn" type="submit">Get my home value</button></form></div>
+</div></section>
+<section class="sec" id="agents" style="background:#fff;border-top:1px solid var(--line)"><div class="wrap">
+  <h2>Your agents</h2><p class="intro">Placeholder profiles for this concept.</p>
+  <div class="agents"><div><span class="ini">CR</span><h3>Camila Reyes</h3><p>Paradise Valley and Arcadia estates</p></div><div><span class="ini">JT</span><h3>James Tolliver</h3><p>North Scottsdale and golf communities</p></div><div><span class="ini">PS</span><h3>Priya Shah</h3><p>Relocation and first luxury purchase</p></div></div>
+</div></section>
+<footer><div class="wrap"><div class="cols"><div><h3>Mesa Ridge Realty</h3><p>Fictional agency and listings used to demonstrate a property search on an agent's own site. Photos from Unsplash.</p></div><div><h3>Explore</h3><ul><li><a href="#results">Homes for sale</a></li><li><a href="#sell">Home value</a></li><li><a href="#hoods">Neighborhoods</a></li></ul></div><div><h3>Contact</h3><ul><li><a href="tel:+16025550163">(602) 555-0163</a></li><li>Concept and build: <a href="https://calvyrn.com">Calvyrn</a></li></ul></div></div></div></footer>
 <script>
 (() => {
   const L = [
-    ["4127 E Camelback Rd", "Arcadia", "85018", 865000, 4, 3, 2410, ["pool", "single"], "#E8B07A"],
-    ["2219 W Glenrosa Ave", "Alhambra", "85015", 349000, 3, 2, 1380, ["single", "new"], "#9CB8A4"],
-    ["760 S Mill Ave #412", "Tempe", "85281", 415000, 2, 2, 1105, ["new"], "#A9BCD9"],
-    ["9310 N 15th Pl", "Sunnyslope", "85020", 529000, 3, 2, 1690, ["pool", "single"], "#D9A6A0"],
-    ["1845 E Desert Ln", "Ahwatukee", "85048", 612000, 4, 3, 2265, ["pool"], "#C9B79C"],
-    ["3302 N 36th St", "Arcadia Lite", "85018", 739000, 3, 3, 1980, ["single", "new"], "#E6C88E"],
-    ["14502 N 39th Way", "Paradise Valley Village", "85032", 459000, 3, 2, 1540, ["pool", "single"], "#B5C7B0"],
-    ["601 W Roosevelt St", "Roosevelt Row", "85003", 382000, 2, 2, 990, [], "#C0B2D6"],
-    ["2711 E Sunnyside Dr", "Phoenix", "85028", 698000, 5, 3, 2780, ["pool"], "#E3A983"]
+    ["5320 E Lincoln Dr", "Paradise Valley", "85253", 4250000, 5, 6, 6120, ["pool", "new"], "h1"],
+    ["7114 N Ironwood Dr", "Paradise Valley", "85253", 3180000, 4, 5, 4870, ["pool"], "h2"],
+    ["4127 E Camelback Rd", "Arcadia", "85018", 1865000, 4, 4, 3410, ["single"], "h3"],
+    ["10450 E Desert Vista Dr", "Scottsdale", "85255", 2390000, 5, 5, 5280, ["pool", "single"], "h4"],
+    ["3302 N 36th St", "Arcadia Lite", "85018", 1495000, 4, 3, 3020, ["pool", "single", "new"], "h5"],
+    ["6602 E Cactus Rd", "Scottsdale", "85254", 1275000, 4, 3, 2980, ["new"], "h6"],
+    ["2711 E Sunnyside Dr", "North Phoenix", "85028", 985000, 3, 3, 2460, ["single"], "h7"],
+    ["9812 N 58th Pl", "Paradise Valley", "85253", 2890000, 5, 5, 5010, ["pool"], "h8"],
+    ["11250 E Mirabel Club Dr", "Scottsdale", "85262", 3650000, 6, 7, 6650, ["pool", "single"], "h9"]
   ];
   const saved = new Set(), act = new Set(); let curr = null;
   const $ = s => document.querySelector(s), fmt = n => '$' + n.toLocaleString('en-US');
-  const house = c => `<svg viewBox="0 0 320 200" aria-hidden="true"><rect width="320" height="200" fill="#DCE8F3"/><circle cx="262" cy="46" r="22" fill="#F4A259"/><rect y="150" width="320" height="50" fill="#C9B79C"/><path d="M60 150V96l70-42 70 42v54z" fill="${c}"/><path d="M50 100l80-52 80 52" stroke="#17202B" stroke-width="8" fill="none" stroke-linejoin="round"/><rect x="112" y="112" width="34" height="38" fill="#17202B"/><rect x="74" y="108" width="26" height="22" fill="#fff"/><rect x="160" y="108" width="26" height="22" fill="#fff"/><path d="M232 150v-46m0 0c-10 0-14-8-14-16m14 16c10 0 14-8 14-16" stroke="#3F6B4A" stroke-width="8" stroke-linecap="round" fill="none"/></svg>`;
+  const house = c => `<img src="img/${c}.jpg" alt="Exterior photo" loading="lazy" style="width:100%;height:100%;object-fit:cover">`;
+  const _old = c => `<svg viewBox="0 0 320 200" aria-hidden="true"><rect width="320" height="200" fill="#DCE8F3"/><circle cx="262" cy="46" r="22" fill="#F4A259"/><rect y="150" width="320" height="50" fill="#C9B79C"/><path d="M60 150V96l70-42 70 42v54z" fill="${c}"/><path d="M50 100l80-52 80 52" stroke="#17202B" stroke-width="8" fill="none" stroke-linejoin="round"/><rect x="112" y="112" width="34" height="38" fill="#17202B"/><rect x="74" y="108" width="26" height="22" fill="#fff"/><rect x="160" y="108" width="26" height="22" fill="#fff"/><path d="M232 150v-46m0 0c-10 0-14-8-14-16m14 16c10 0 14-8 14-16" stroke="#3F6B4A" stroke-width="8" stroke-linecap="round" fill="none"/></svg>`;
   function render() {
     const q = $('#q').value.trim().toLowerCase(), mn = +$('#min').value, mx = +$('#max').value, bd = +$('#beds').value;
     const r = L.filter(l => (!q || (l[0] + ' ' + l[1] + ' ' + l[2]).toLowerCase().includes(q)) && l[3] >= mn && l[3] <= mx && l[4] >= bd && [...act].every(f => l[7].includes(f)));

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Northline Roofing — See your new roof in 3D (example concept)</title>
+<title>Northline Roofing | Roof Replacement in Minneapolis · See It in 3D</title>
 <meta name="description" content="Example concept by Calvyrn: a roofing company website with a live 3D roof preview. Homeowners try materials and colors, then request a quote.">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,12 +55,40 @@ section{padding:70px 0}
 @media(max-width:800px){.three{grid-template-columns:1fr}}
 footer{background:var(--slate);color:#C3CFD8;padding:26px 0;font-size:14px}
 footer a{color:#fff}
+
+img{max-width:100%;display:block}
+header.nav{position:sticky;top:0;z-index:30;background:#EEF3F6f2;backdrop-filter:blur(8px)}
+header.nav .wrap{display:flex;justify-content:space-between;align-items:center;height:72px;gap:16px}
+header.nav nav{display:flex;gap:22px;font-weight:600;font-size:15px}header.nav nav a{text-decoration:none}
+@media(max-width:900px){header.nav nav{display:none}}
+.sec{padding:80px 0}.sec h2{font:900 clamp(36px,4.6vw,58px)/.95 "Big Shoulders Display";color:var(--slate);margin:0 0 12px}.sec .intro{color:var(--muted);max-width:38em;margin:0 0 32px;font-size:18px}
+.mats{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.mats article{background:#fff;border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+.mats img{aspect-ratio:3/2;object-fit:cover;width:100%}.mats .in{padding:18px 20px 22px}
+.mats h3{font:900 28px/1 "Big Shoulders Display";color:var(--slate);margin:0 0 6px}.mats p{margin:0 0 8px;color:var(--muted)}
+.mats dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:0;font-size:14px}.mats dt{font-weight:700}.mats dd{margin:0;color:var(--muted)}
+@media(max-width:900px){.mats{grid-template-columns:1fr}}
+.proc{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.proc img{border-radius:18px;aspect-ratio:4/3;object-fit:cover}
+.proc ol{margin:0;padding:0;list-style:none;counter-reset:s}.proc li{counter-increment:s;padding:14px 0 14px 56px;position:relative;border-top:1px solid var(--line)}
+.proc li::before{content:counter(s);position:absolute;left:0;top:12px;width:40px;height:40px;border-radius:10px;background:var(--slate);color:#fff;font:900 22px/40px "Big Shoulders Display";text-align:center}
+.proc b{display:block;font-size:18px}.proc span{color:var(--muted)}
+@media(max-width:900px){.proc{grid-template-columns:1fr}}
+.storm{background:var(--slate);color:#D6E0E8}.storm .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.storm h2{color:#fff}.storm .intro{color:#B9C7D2}
+.storm ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}.storm li{background:#ffffff14;border-radius:10px;padding:12px 14px;font-weight:600}
+@media(max-width:900px){.storm .wrap{grid-template-columns:1fr}}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.revs figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px}.revs blockquote{margin:0 0 10px;font-size:17px}.revs figcaption{font-size:14px;color:var(--muted)}
+@media(max-width:900px){.revs{grid-template-columns:1fr}}
+.areas{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}.areas li{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-weight:600}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px}footer h3{color:#fff;font:700 15px Figtree;margin:0 0 8px}footer ul{list-style:none;padding:0;margin:0;display:grid;gap:6px}
 </style>
 </head>
 <body>
-<div class="concept">Example concept by <a href="https://calvyrn.com">Calvyrn</a>. Northline Roofing is a fictional company; the 3D house is illustrative, not a measured model.</div>
+<div class="concept">Example concept by <a href="https://calvyrn.com">Calvyrn</a>. Northline Roofing is a fictional company; the 3D house is illustrative, not a measured model. Photos: Unsplash.</div>
+<header class="nav"><div class="wrap"><a class="logo" href="#">NORTHLINE ROOFING</a><nav aria-label="Main"><a href="#view">3D preview</a><a href="#materials">Materials</a><a href="#process">Process</a><a href="#storm">Storm damage</a><a href="#areas">Service area</a></nav><a class="call" href="tel:+16125550180">(612) 555-0180</a></div></header>
 <div class="wrap">
-  <header class="top"><a class="logo" href="#">NORTHLINE ROOFING</a><a class="call" href="tel:+16125550180">(612) 555-0180</a></header>
   <div class="stage">
     <div id="view" aria-label="3D preview of a house with the selected roof. Drag to turn it.">
       <div class="title"><h1>Try your new roof before a single shingle comes off.</h1><p>Pick a material and color, turn the house, then ask for a written quote.</p></div>
@@ -80,12 +108,40 @@ footer a{color:#fff}
     </form>
   </div>
 </div>
+<section class="sec" id="materials"><div class="wrap">
+  <h2>Three materials, honestly compared</h2><p class="intro">Every quote lists the material, warranty and tear-off separately, so you can compare like for like.</p>
+  <div class="mats">
+    <article><img src="img/shingle.jpg" alt="Close-up of architectural shingles" loading="lazy"><div class="in"><h3>Architectural shingle</h3><p>The most popular choice for Minnesota homes.</p><dl><dt>Life</dt><dd>25–30 years</dd><dt>Best for</dt><dd>Value and classic looks</dd></dl></div></article>
+    <article><img src="img/metal.jpg" alt="Grey standing-seam metal roof" loading="lazy"><div class="in"><h3>Standing-seam metal</h3><p>Sheds snow fast and handles ice dams better.</p><dl><dt>Life</dt><dd>40–70 years</dd><dt>Best for</dt><dd>Long-term owners, steep roofs</dd></dl></div></article>
+    <article><img src="img/tile.jpg" alt="Dark grey roof tiles" loading="lazy"><div class="in"><h3>Concrete tile</h3><p>Heavy and very durable; we check the structure first.</p><dl><dt>Life</dt><dd>50+ years</dd><dt>Best for</dt><dd>Statement homes</dd></dl></div></article>
+  </div>
+</div></section>
+<section class="sec" id="process" style="padding-top:0"><div class="wrap proc">
+  <img src="img/crew.jpg" alt="Roofer carrying shingles across a roof" loading="lazy">
+  <div><h2>From quote to clean-up</h2><ol>
+    <li><b>Satellite measurement</b><span>A first written quote within one business day, without a ladder.</span></li>
+    <li><b>Roof check on site</b><span>We confirm decking, venting and flashing before the final price.</span></li>
+    <li><b>Install in one to two days</b><span>Photo updates by text at the end of each work day.</span></li>
+    <li><b>Magnet sweep and walkthrough</b><span>Every nail picked up, warranty paperwork in your inbox.</span></li>
+  </ol></div>
+</div></section>
+<section class="sec storm" id="storm"><div class="wrap">
+  <div><h2>Hail or wind damage?</h2><p class="intro">We document the damage with photos and meet your insurance adjuster on site, so nothing gets missed.</p><a class="go" style="display:inline-block;text-decoration:none" href="#panel">Book a free storm inspection</a></div>
+  <ul><li>Free inspection within 48 hours</li><li>Photo report you can send to your insurer</li><li>Emergency tarping the same day</li></ul>
+</div></section>
+<section class="sec"><div class="wrap">
+  <h2>Homeowners say</h2><p class="intro">Placeholder reviews written for this concept.</p>
+  <div class="revs"><figure><blockquote>"Being able to see the metal roof on our house before signing made the decision easy."</blockquote><figcaption>Placeholder · Edina</figcaption></figure><figure><blockquote>"Quote was itemized line by line. Two other companies just gave us one number."</blockquote><figcaption>Placeholder · St. Paul</figcaption></figure><figure><blockquote>"Daily photo texts while we were at work. Yard was cleaner than before they came."</blockquote><figcaption>Placeholder · Minnetonka</figcaption></figure></div>
+</div></section>
+<section class="sec" id="areas" style="padding-top:0"><div class="wrap">
+  <h2>Service area</h2><ul class="areas"><li>Minneapolis</li><li>St. Paul</li><li>Edina</li><li>Bloomington</li><li>Minnetonka</li><li>Plymouth</li><li>Maple Grove</li><li>Eden Prairie</li><li>Roseville</li></ul>
+</div></section>
 <section><div class="wrap three">
   <div><h3>Measured from above</h3><p>Satellite measurements mean a first quote without anyone on your roof.</p></div>
   <div><h3>Written, line by line</h3><p>Materials, tear-off, flashing and cleanup listed separately, so quotes are easy to compare.</p></div>
   <div><h3>Photo updates</h3><p>A text with photos at the end of each work day, even if you're at the office.</p></div>
 </div></section>
-<footer><div class="wrap">Fictional company used to demonstrate an interactive 3D product preview. Concept and build: <a href="https://calvyrn.com">Calvyrn</a>.</div></footer>
+<footer><div class="wrap"><div class="cols"><div><h3>Northline Roofing</h3><p>Fictional company used to demonstrate an interactive 3D roof preview. Photos from Unsplash.</p></div><div><h3>Services</h3><ul><li><a href="#materials">Roof replacement</a></li><li><a href="#storm">Storm damage</a></li><li><a href="#view">3D preview</a></li></ul></div><div><h3>Contact</h3><ul><li><a href="tel:+16125550180">(612) 555-0180</a></li><li>Concept and build: <a href="https://calvyrn.com">Calvyrn</a></li></ul></div></div></div></footer>
 
 <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.164.1/build/three.module.js","three/addons/":"https://unpkg.com/three@0.164.1/examples/jsm/"}}</script>
 <script type="module">

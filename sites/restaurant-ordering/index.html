@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Masa y Lumbre — Order tacos for pickup (example concept)</title>
+<title>Masa y Lumbre | Tacos &amp; Tortillas in East Austin · Order Pickup</title>
 <meta name="description" content="Example concept by Calvyrn: a taqueria website with commission-free online ordering for pickup, built for phones.">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,22 +68,59 @@ a{color:inherit}
 footer{padding:26px 0;font-size:14px;color:var(--muted)}
 .mbar{display:none}
 @media(max-width:980px){.cart{position:static}.mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:10;background:var(--char);color:#fff;border-radius:12px;padding:12px 16px;justify-content:space-between;font-weight:700;text-decoration:none}body{padding-bottom:72px}}
+
+img{max-width:100%;display:block}
+header.nav{position:sticky;top:0;z-index:30;background:var(--plate);border-bottom:3px solid var(--char)}
+header.nav .wrap{display:flex;justify-content:space-between;align-items:center;height:70px;gap:16px}
+header.nav nav{display:flex;gap:22px;font-weight:600;font-size:15px}header.nav nav a{text-decoration:none}
+.obtn{background:var(--chili);color:#fff;font-weight:800;padding:11px 16px;border-radius:999px;text-decoration:none;white-space:nowrap}
+@media(max-width:860px){header.nav nav{display:none}}
+.photo-hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.photo-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.photo-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#1f1a1700 30%,#1f1a17e6 88%);z-index:1}
+.photo-hero .wrap{position:relative;z-index:2;padding-bottom:56px;width:100%}
+.photo-hero h1{font:800 clamp(56px,10vw,150px)/.84 Archivo;font-stretch:62%;margin:0 0 18px;color:#fff;max-width:11ch}
+.photo-hero p{font-size:20px;max-width:30em;margin:0 0 22px;color:#F3EBDD}
+.photo-hero .acts{display:flex;gap:12px;flex-wrap:wrap}
+.ghost{border:2px solid #fff;color:#fff;font-weight:800;padding:11px 16px;border-radius:999px;text-decoration:none}
+.strip{background:var(--masa);border-bottom:3px solid var(--char)}.strip .wrap{display:flex;flex-wrap:wrap;gap:10px 32px;justify-content:space-between;padding-top:14px;padding-bottom:14px;font-weight:700}
+.order-h{font:800 clamp(40px,6vw,72px)/.9 Archivo;font-stretch:62%;margin:56px 0 6px}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:80px 0}
+.story h2,.cater h2,.visitr h2{font:800 clamp(38px,5vw,64px)/.9 Archivo;font-stretch:62%;margin:0 0 16px}
+.story p{color:var(--muted);font-size:18px}
+.mosaic{display:grid;grid-template-columns:1fr 1fr;gap:12px}.mosaic img{border-radius:14px;object-fit:cover;width:100%;height:100%}
+.mosaic img:first-child{grid-row:span 2;aspect-ratio:3/4}.mosaic img:not(:first-child){aspect-ratio:4/3}
+@media(max-width:860px){.story{grid-template-columns:1fr}}
+.cater{background:var(--chili);color:#fff;padding:70px 0}.cater .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.cater p{color:#FFE3E6;font-size:18px}.cater ul{list-style:none;padding:0;margin:0;display:grid;gap:10px;font-weight:700}
+.cater li{background:#ffffff1f;border-radius:10px;padding:12px 14px}
+@media(max-width:860px){.cater .wrap{grid-template-columns:1fr}}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:70px 0}
+.revs figure{margin:0;border:3px solid var(--char);border-radius:14px;padding:22px;background:#fff;box-shadow:5px 5px 0 var(--masa)}
+.revs blockquote{margin:0 0 10px;font-size:18px;font-weight:600}.revs figcaption{font-size:14px;color:var(--muted)}
+@media(max-width:860px){.revs{grid-template-columns:1fr}}
+.visitr{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;padding:0 0 80px}
+.visitr dl{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:0;font-size:17px}.visitr dt{font-weight:800}.visitr dd{margin:0;color:var(--muted)}
+.map{border:3px solid var(--char);width:100%;min-height:320px;border-radius:14px}
+@media(max-width:860px){.visitr{grid-template-columns:1fr}}
+footer.big{background:var(--char);color:#D9CFBF;padding:40px 0}footer.big .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}footer.big a{color:#fff}
 </style>
 </head>
 <body>
-<div class="concept">Example concept by <a href="https://calvyrn.com">Calvyrn</a>. Masa y Lumbre is a fictional taqueria; menu, prices and address are placeholders.</div>
-<div class="wrap">
-  <header class="top">
-    <a class="logo" href="#">Masa y Lumbre<small>Tortillas pressed to order · East Austin</small></a>
-    <div class="status"><span class="dot" aria-hidden="true"></span><span>Open until 10 pm</span></div>
-  </header>
-  <div class="hero">
-    <h1>Hot tortillas. Order ahead, skip the line.</h1>
-    <div>
-      <p>Order on our site and pick up at the window in about 20 minutes. Same prices as at the counter, and every dollar stays with the kitchen.</p>
-      <div class="facts"><span>Pickup at 1219 E 6th St</span><span>Ready in ~20 min</span></div>
-    </div>
-  </div>
+<div class="concept">Example concept by <a href="https://calvyrn.com">Calvyrn</a>. Masa y Lumbre is a fictional taqueria; menu, prices and address are placeholders. Photos: Unsplash.</div>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="#">Masa y Lumbre<small>Tortillas pressed to order · East Austin</small></a>
+  <nav aria-label="Main"><a href="#order">Menu</a><a href="#story">Our story</a><a href="#catering">Catering</a><a href="#visit">Visit</a></nav>
+  <a class="obtn" href="#order">Order pickup</a>
+</div></header>
+<section class="photo-hero"><img src="img/hero.jpg" alt="Three beef tacos with onion and cilantro" fetchpriority="high"><div class="wrap">
+  <h1>Hot tortillas, straight off the comal.</h1>
+  <p>Nixtamal ground every morning, tortillas pressed when you order. Order on our site and skip the line: same prices as the counter, no delivery-app fees.</p>
+  <div class="acts"><a class="obtn" href="#order">Order for pickup</a><a class="ghost" href="#visit">Find us</a></div>
+</div></section>
+<div class="strip"><div class="wrap"><span>Open today 11 am – 10 pm</span><span>Pickup ready in ~20 min</span><span>1219 E 6th St, Austin</span><span>Vegetarian options marked</span></div></div>
+<div class="wrap" id="order">
+  <h2 class="order-h">Order for pickup</h2>
   <div class="layout">
     <div class="menu">
       <div class="tabs" role="tablist" id="tabs"></div>
@@ -103,11 +140,28 @@ footer{padding:26px 0;font-size:14px;color:var(--muted)}
     </aside>
   </div>
 </div>
+<div class="wrap story" id="story">
+  <div><h2>Corn first. Everything else after.</h2><p>We cook and grind our own masa from heirloom corn every morning, then press each tortilla when your order comes in. The salsas are made in small batches through the day, and the al pastor turns on the trompo from opening to close.</p><p>Masa y Lumbre started as a Saturday stand on East 6th. The window is still the heart of the place.</p></div>
+  <div class="mosaic"><img src="img/tacos4.jpg" alt="Tacos with lime wedges" loading="lazy"><img src="img/tacos3.jpg" alt="Four tacos with assorted toppings" loading="lazy"><img src="img/neon.jpg" alt="Neon sign on a dark wall" loading="lazy"></div>
+</div>
+<section class="cater" id="catering"><div class="wrap">
+  <div><h2>Taco bar catering</h2><p>Office lunches, birthdays and weddings across Austin. Tell us the date and headcount and get a written quote the same day.</p><a class="obtn" style="background:#fff;color:var(--chili)" href="#visit">Ask about a date</a></div>
+  <ul><li>Feeds 20 to 300 people</li><li>Tortillas pressed on site</li><li>Vegetarian and gluten-free friendly</li></ul>
+</div></section>
+<div class="wrap revs">
+  <figure><blockquote>"The tortillas alone are worth the trip. Ordered online, walked up, food was waiting."</blockquote><figcaption>Placeholder review</figcaption></figure>
+  <figure><blockquote>"Best al pastor on the east side. The habanero salsa is not a joke."</blockquote><figcaption>Placeholder review</figcaption></figure>
+  <figure><blockquote>"Catered our office lunch for 60 people. On time, hot, and everyone asked where it came from."</blockquote><figcaption>Placeholder review</figcaption></figure>
+</div>
 <section class="why"><div class="wrap">
   <h2>Why order here and not on a delivery app?</h2>
   <div><p>Delivery apps add their own fees and commission on every order. Ordering on our own site keeps prices the same as the counter.</p><p>You also get your order texted to you when it's ready, and your usual order saved for next time.</p></div>
 </div></section>
-<footer class="wrap">Fictional restaurant used to demonstrate commission-free online ordering. Concept and build: <a href="https://calvyrn.com">Calvyrn</a>.</footer>
+<div class="wrap visitr" id="visit" style="padding-top:70px">
+  <div><h2>Find the window</h2><dl><dt>Address</dt><dd>1219 E 6th St, Austin, TX 78702</dd><dt>Mon–Thu</dt><dd>11 am – 10 pm</dd><dt>Fri–Sat</dt><dd>11 am – midnight</dd><dt>Sunday</dt><dd>10 am – 9 pm (brunch tacos till 2)</dd><dt>Phone</dt><dd><a href="tel:+15125550136">(512) 555-0136</a></dd></dl></div>
+  <iframe class="map" title="Map" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-97.735%2C30.258%2C-97.72%2C30.268&amp;layer=mapnik&amp;marker=30.263%2C-97.727"></iframe>
+</div>
+<footer class="big"><div class="wrap"><span>Masa y Lumbre is a fictional taqueria used to demonstrate commission-free online ordering. Photos from Unsplash.</span><span>Concept, design and build: <a href="https://calvyrn.com">Calvyrn</a></span></div></footer>
 <a class="mbar" href="#cart" id="mbar"><span id="mcount">0 items</span><span id="mtot">View order · $0.00</span></a>
 <script>
 (() => {

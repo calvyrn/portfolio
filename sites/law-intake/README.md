@@ -14,7 +14,7 @@ Four-step case review (type, date, story, contact) with progress, validation and
 
 **Design:** Newsreader + Public Sans; navy, brass. Single HTML file, no framework, keyboard accessible, responsive down to 360 px.
 
-The business, people, reviews and phone numbers (555 numbers) are fictional placeholders.
+The business, people, reviews and phone numbers (555 numbers) are fictional placeholders. Photos are free-licence images from Unsplash.
 
 ---
 Want this for your business? **info@calvyrn.com** · [calvyrn.com/contact.html](https://calvyrn.com/contact.html)
