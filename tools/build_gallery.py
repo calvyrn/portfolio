@@ -10,10 +10,10 @@ GROUPS = {
  'home': ('Home services', {'HVAC','Plumbing','Home services','Home cleaning','Landscaping','Solar','Security','Auto repair','Automotive'}),
  'health': ('Health & beauty', {'Dental','Med spa','Physical therapy','Veterinary','Salon & spa','Beauty','Fitness'}),
  'food': ('Food & travel', {'Restaurant','Food & drink','Hospitality','Travel'}),
- 'pro': ('Professional', {'Accounting','Legal','Insurance','Real estate','Architecture','Logistics'}),
+ 'pro': ('Professional', {'Accounting','Legal','Insurance','Real estate','Architecture','Logistics','Events'}),
  'shops': ('Shops & brands', {'Fashion','Jewelry','Photography','Beauty','Furniture'}),
 }
-FEATURED = ['detailing-studio-3d','upholstery-3d','freight-globe-3d','ring-builder-3d']
+FEATURED = ['seaview-suite-360','grill-house-360','event-venue-360','climbing-gym-360']
 e = html.escape
 def groups(r):
     g = [k for k,(_,inds) in GROUPS.items() if r[3] in inds]

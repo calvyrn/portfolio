@@ -45,15 +45,6 @@
   "Source Serif 4 + Sora; sky, saguaro, sun"
  ],
  [
-  "roofing-3d",
-  "Roofing company with a live 3D roof preview",
-  "High-end 3D",
-  "Home services",
-  "Three.js scene with soft shadows, orbit controls, procedural textures for shingle, metal and tile, color swatches and a quote form. Auto-rotate is off for reduced motion.",
-  "A visual preview makes it easier to choose before anyone climbs on the roof.",
-  "Big Shoulders Display + Figtree; slate, copper, frost"
- ],
- [
   "landscaping-simple",
   "Landscaper with project gallery and estimate form",
   "Simple",
@@ -99,15 +90,6 @@
   ""
  ],
  [
-  "insurance-agency",
-  "Independent insurance agency",
-  "Simple",
-  "Insurance",
-  "Compare-carriers promise, a tidy coverage list and a 3-step quote request with validation.",
-  "",
-  ""
- ],
- [
   "travel-agency-3d",
   "Travel agency with a 3D flight globe",
   "High-end 3D",
@@ -135,15 +117,6 @@
   ""
  ],
  [
-  "gym-studio",
-  "Strength gym with class booking",
-  "Medium",
-  "Fitness",
-  "Filterable weekly schedule where reserving lowers spots left, full classes take a waitlist and bookings show in an app mockup.",
-  "",
-  ""
- ],
- [
   "vet-clinic",
   "Animal hospital with pet booking",
   "Medium",
@@ -162,15 +135,6 @@
   ""
  ],
  [
-  "solar-installer-3d",
-  "Solar installer with 3D panels and savings estimator",
-  "High-end 3D",
-  "Solar",
-  "Panels fly onto a 3D house as the sun crosses the sky, plus a savings estimator that shows its assumptions.",
-  "",
-  ""
- ],
- [
   "auto-repair",
   "Auto shop with repair tracking",
   "Medium",
@@ -185,15 +149,6 @@
   "Medium",
   "HVAC",
   "Giant tap-to-call number and a What is wrong troubleshooter that walks through safe checks before booking an arrival window.",
-  "",
-  ""
- ],
- [
-  "plumbing-simple",
-  "Family plumber, one fast page",
-  "Simple",
-  "Plumbing",
-  "Fast one-page plumber site with a big call button and a short quote form with an optional photo preview.",
   "",
   ""
  ],
@@ -286,5 +241,41 @@
   "A photoreal 3D living room with a curved velvet sofa. Pick a velvet and the sofa re-dyes with true sheen; size and legs update the price and add to bag. Scroll chapters on fabric, frame and details, then free swatch requests by post.",
   "A made-to-order sofa is a $4,000 decision. Seeing the exact piece in the exact colour, then getting swatches in the post, turns a browser into a deposit.",
   "Libre Caslon Display with Karla; plaster, paper and a live fabric accent. Three.js, KHR sheen velvet, PBR floor and wall, HDRI light, Lenis, 4K srcset photos, custom icons."
+ ],
+ [
+  "seaview-suite-360",
+  "Seaview rental suite you walk through in real 360°",
+  "High-end 3D",
+  "Hospitality",
+  "Scroll and you walk through the actual suite in real 360° photos: past the bed, through the sliding door and out onto the deck over the sea. Depth-3D photos, a full 360° tour with room hotspots, and a direct-booking card with live nightly totals.",
+  "Guests book what they can see. Walking the real room before paying removes the biggest doubt in a direct booking and cuts platform fees.",
+  "Bricolage Grotesque; sea-glass, kelp and sun. Real equirectangular 360 photos in Three.js, scroll-driven camera with crossfades between rooms, depth-estimated 3D photos, Lenis, srcset 4K images, custom icons."
+ ],
+ [
+  "grill-house-360",
+  "Grill house you can see by day and by night in 360°",
+  "High-end 3D",
+  "Restaurant",
+  "Scroll through a whole day in the real dining room: lunch light crossfades into the same room after dark, then into the bar. A lunch/dinner switch in the 360° tour, depth-3D food photos, a tabbed menu and a table booking with live time slots.",
+  "Diners pick restaurants on atmosphere. Showing the real room at the hour they'll eat, and letting them choose the fireside table, turns a browse into a booking.",
+  "Big Shoulders Display with Figtree; coal and ember. Real day and night 360 photos of the same room, scroll director with crossfades, depth-3D photos, Lenis, custom icons."
+ ],
+ [
+  "event-venue-360",
+  "Expo and convention centre with 360° site visits and a layout planner",
+  "High-end 3D",
+  "Events",
+  "Walk three real halls in 360° as you scroll, with live specs for each. A layout planner draws a to-scale floor plan for theatre, banquet, classroom or expo booths and checks the fit; then an instant estimate with hall recommendation.",
+  "Event planners can't visit every venue. A real 360° site visit, a plan that proves it fits and a price on the spot shortlist the venue before the first call.",
+  "Syne with Hanken Grotesk; concrete and safety yellow. Real 360 photos, scroll director, SVG floor-plan generator, depth-3D photos, quote calculator."
+ ],
+ [
+  "climbing-gym-360",
+  "Climbing and strength gym in real 360° with a free-session booking",
+  "High-end 3D",
+  "Fitness",
+  "Look up the real bouldering wall as you scroll, then cross into the strength floor, all in 360° photos. Colour-graded routes explained, a filterable class timetable, student pricing and a free first session picker.",
+  "First-timers are nervous about a climbing gym. Letting them look around the real walls and book a free coached session removes the fear of walking in.",
+  "Anybody (narrow) with Manrope; chalk, electric blue, hold pink and lime. Real 360 photos, scroll director with pitch moves, depth-3D photos, timetable filters."
  ]
 ]
