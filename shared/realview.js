@@ -189,7 +189,11 @@ export const panoCSS = `.rv-spot{position:absolute;left:0;top:0;margin:-22px 0 0
 .rv-spot:hover i:after,.rv-spot:focus-visible i:after{transform:scale(1.25)}
 .rv-spot:focus-visible{outline:none}.rv-spot:focus-visible span{outline:2px solid #fff}
 @keyframes rvp{0%{transform:scale(.8);opacity:1}100%{transform:scale(1.5);opacity:0}}
-@media (prefers-reduced-motion:reduce){.rv-spot i:before{animation:none}}`;
+@media (prefers-reduced-motion:reduce){.rv-spot i:before{animation:none}}
+[data-pano]{position:absolute;inset:0}[data-pano] canvas,.rv-depth canvas,.rv-hero canvas{display:block;width:100%!important;height:100%!important}
+[data-spots]{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+[data-load]{position:absolute;inset:0;display:grid;place-items:center;z-index:2;transition:opacity .6s}[data-load].gone{opacity:0;pointer-events:none}
+.rv-depth{position:absolute;inset:0;background-size:cover;background-position:center}.rv-hero{position:absolute;inset:0}`;
 
 // keyframes: [[progress, yaw, pitch, fov], ...] -> [yaw, pitch, fov] at progress p (smoothstep between keys)
 export function interpKeys(K, p) {
@@ -216,4 +220,48 @@ export function scrollDirector(pano, segs, fade = .07) {
     } else pano.unblend();
     return i;
   };
+}
+
+// ---------- small site kit shared by the realview portfolio sites ----------
+export function boot({ preLabel = 'Loading', lerp = .09 } = {}) {
+  const $ = id => document.getElementById(id);
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches; const mob = innerWidth < 680;
+  const tb = () => { const t = document.querySelector('.topbar'); if (t) document.documentElement.style.setProperty('--tb', t.offsetHeight + 'px') }; tb(); addEventListener('resize', tb);
+  let lenis = null; if (!reduce && window.Lenis) { lenis = new window.Lenis({ lerp }); (function raf(t) { lenis.raf(t); requestAnimationFrame(raf) })(0) }
+  document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => { const h = a.getAttribute('href'); if (h.length < 2) return; const t = document.querySelector(h); if (!t) return; e.preventDefault(); lenis ? lenis.scrollTo(t, { offset: -70, duration: 1.4 }) : t.scrollIntoView() }));
+  const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target) } }), { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  const lazy = (el, fn) => { const o = new IntersectionObserver(es => { if (es[0].isIntersecting) { o.disconnect(); fn() } }, { rootMargin: '400px' }); o.observe(el) };
+  let pv = 0; const setPre = p => { pv = Math.max(pv, p); const b = $('preBar'), t = $('preTxt'); if (b) b.style.width = Math.round(pv * 100) + '%'; if (t) t.textContent = preLabel + ' · ' + Math.round(pv * 100) + '%' };
+  const finish = () => { setPre(1); setTimeout(() => $('pre') && $('pre').classList.add('done'), 250) }; setTimeout(finish, 15000);
+  const scrollTo = sel => lenis ? lenis.scrollTo(sel, { offset: -70 }) : document.querySelector(sel).scrollIntoView();
+  return { $, reduce, mob, lenis, lazy, setPre, finish, scrollTo };
+}
+// progress (0..1) of a tall sticky section
+export function stickyProgress(el) { const r = el.getBoundingClientRect(); return Math.min(1, Math.max(0, -r.top / (el.offsetHeight - innerHeight))) }
+// progress (0..1) of an element passing through the viewport
+export function passProgress(el) { const r = el.getBoundingClientRect(); return Math.min(1, Math.max(0, (innerHeight - r.top) / (innerHeight + r.height))) }
+// depth photo created when near, driven by scroll: map(p) -> {x,y,z}
+export function depthOnScroll(el, opts, map, prog = passProgress) {
+  const o = new IntersectionObserver(es => {
+    if (!es[0].isIntersecting) return; o.disconnect();
+    const d = createDepthPhoto(el, opts); const f = () => d.set(map(prog(el.closest('[data-sticky]') || el))); addEventListener('scroll', f, { passive: true }); f();
+  }, { rootMargin: '400px' }); o.observe(el);
+}
+// interactive 360 tour with room buttons, zoom and fullscreen
+export function wireTour({ viewer, scenes, start, names = {}, fov = 75, onScene = () => {}, onInfo }) {
+  const q = s => viewer.querySelector(s); const mob = innerWidth < 680;
+  const rooms = viewer.parentElement.querySelector('[data-rooms]');
+  let tour = null;
+  const o = new IntersectionObserver(es => {
+    if (!es[0].isIntersecting) return; o.disconnect();
+    tour = createPano(q('[data-pano]'), { scenes, start, fov: mob ? fov + 10 : fov, hotspotLayer: q('[data-spots]'), auto: .02, onInfo,
+      onReady: () => q('[data-load]') && q('[data-load]').classList.add('gone'),
+      onScene: id => { if (rooms) rooms.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.dataset.r === id)); if (q('[data-name]') && names[id]) q('[data-name]').textContent = names[id]; onScene(id) } });
+  }, { rootMargin: '400px' }); o.observe(viewer);
+  if (rooms) rooms.addEventListener('click', e => { const b = e.target.closest('button'); if (b && tour) tour.go(b.dataset.r) });
+  const z = (s, d) => { const b = q(s); if (b) b.onclick = () => tour && tour.set({ fov: Math.max(35, Math.min(90, tour.state.tf + d)) }) };
+  z('[data-zin]', -12); z('[data-zout]', 12);
+  const f = q('[data-fs]'); if (f) f.onclick = () => { if (document.fullscreenElement) document.exitFullscreen(); else if (viewer.requestFullscreen) viewer.requestFullscreen() };
+  return { get tour() { return tour } };
 }

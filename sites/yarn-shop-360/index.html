@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wool &amp; Wheel · Yarn shop and knitting workshops · Browse the shop in 360°</title>
+<meta name="description" content="A yarn shop with local wool, spinning and knitting workshops. Browse the real shop in 360°, tap the shelves to shop, and book a class.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
+<style>
+:root{--lav:#F1EEF6;--ink:#2A1F33;--mari:#F2A900;--moss:#6C8A3C;--mute:#6E6578;--line:#DDD6E6;--rv-font:"Nunito Sans"}
+*{box-sizing:border-box;margin:0}
+html.lenis{height:auto}.lenis.lenis-smooth{scroll-behavior:auto}
+body{font:400 17px/1.65 "Nunito Sans",system-ui,sans-serif;color:var(--ink);background:var(--lav);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}a{color:inherit}
+:focus-visible{outline:2px solid var(--moss);outline-offset:3px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 32px}
+.y{font-family:"Young Serif",Georgia,serif;font-weight:400;letter-spacing:-.015em;line-height:1}
+.ico{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+.topbar{background:var(--ink);color:#c8bfd2;font-size:12.5px;text-align:center;padding:6px 14px;position:relative;z-index:30}.topbar a{color:#fff}
+#pre{position:fixed;inset:0;z-index:100;background:var(--lav);display:grid;place-items:center;transition:opacity .9s .2s,visibility .9s .2s}
+#pre.done{opacity:0;visibility:hidden}#pre .y{font-size:46px;text-align:center}#pre p{font-size:14px;color:var(--mute);margin-top:6px;text-align:center}
+#pre .bar{width:200px;height:3px;border-radius:2px;background:var(--line);margin:16px auto 0}#pre .bar i{display:block;height:100%;width:0;background:var(--moss);border-radius:2px;transition:width .3s}
+header{position:fixed;left:0;right:0;top:var(--tb,31px);z-index:40;color:#fff;transition:top .4s,background .4s,color .4s}
+header.solid{top:0;background:rgba(241,238,246,.92);backdrop-filter:blur(14px);color:var(--ink);box-shadow:0 1px 0 var(--line)}
+.nav{display:flex;align-items:center;gap:30px;height:74px}
+.logo{display:flex;gap:10px;align-items:center;text-decoration:none;font-family:"Young Serif";font-size:24px;white-space:nowrap}
+.logo svg{width:32px;height:32px}
+.nav ul{display:flex;gap:26px;list-style:none;padding:0;margin-left:auto;font-weight:700;font-size:15px}
+.nav ul a{text-decoration:none}.nav ul a:hover{color:var(--moss)}
+.bagb{display:flex;align-items:center;gap:8px;background:none;border:0;font:800 15px "Nunito Sans";cursor:pointer;color:inherit}
+.bagb b{min-width:24px;height:24px;border-radius:12px;background:var(--mari);color:var(--ink);font-size:12.5px;display:grid;place-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;cursor:pointer;background:var(--ink);color:#fff;font:800 15.5px "Nunito Sans";padding:15px 22px;border-radius:999px;text-decoration:none;transition:transform .2s,background .3s}
+.btn:hover{transform:translateY(-2px)}.btn.m{background:var(--mari);color:var(--ink)}.btn.g{background:var(--moss)}
+.btn svg{width:18px;height:18px}
+
+#hero{position:relative;height:400vh;background:#2a2a2a}
+.stage{position:sticky;top:0;height:100vh;overflow:hidden}
+.shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(30,20,38,.62),rgba(30,20,38,0) 55%),linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,0) 25%,rgba(0,0,0,0) 60%,rgba(0,0,0,.5))}
+.htxt{position:absolute;left:0;right:0;bottom:10vh;color:#fff;pointer-events:none}
+.htxt h1{font-size:clamp(3.4rem,7.4vw,7.6rem);max-width:10ch}
+.htxt p{max-width:36ch;font-size:18.5px;margin:20px 0 26px}.htxt .btn{pointer-events:auto}
+.shelf{position:absolute;right:32px;bottom:10vh;width:300px;background:#fff;color:var(--ink);border-radius:20px;padding:18px;box-shadow:0 30px 60px -20px rgba(0,0,0,.45);opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s}
+.shelf.on{opacity:1;transform:none}
+.shelf .tg{font-size:12.5px;font-weight:800;color:var(--moss)}
+.shelf h3{font-family:"Young Serif";font-weight:400;font-size:24px;margin:4px 0}
+.shelf p{font-size:14.5px;color:var(--mute)}
+.shelf .row{display:flex;justify-content:space-between;align-items:center;margin-top:12px}.shelf .row b{font-size:20px}
+.shelf .btn{padding:10px 16px;font-size:14px}
+.hint{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);color:#fff;font-size:13px;opacity:.85;transition:opacity .4s}
+
+section.s{padding:130px 0}
+.kick{font-weight:800;color:var(--moss);font-size:15px;display:block;margin-bottom:14px}
+h2.h{font-size:clamp(2.6rem,5.6vw,5.4rem);max-width:14ch}
+.lede{font-size:20px;color:var(--mute);max-width:46ch;margin-top:18px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.dbox{position:relative;aspect-ratio:3/2;border-radius:30px;overflow:hidden;background:#ddd}
+.tag3d{position:absolute;left:14px;top:14px;z-index:2;background:rgba(255,255,255,.9);font-size:12.5px;font-weight:800;padding:6px 11px;border-radius:999px;pointer-events:none}
+/* products */
+.ship{display:flex;align-items:center;gap:16px;margin-top:30px;background:#fff;border-radius:999px;padding:10px 18px;max-width:560px;font-weight:700;font-size:15px}
+.ship .bar{flex:1;height:8px;background:var(--line);border-radius:4px;overflow:hidden}.ship .bar i{display:block;height:100%;background:var(--moss);border-radius:4px;transition:width .4s}
+.prods{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}
+.prod{background:#fff;border-radius:24px;padding:20px;display:flex;flex-direction:column}
+.ball{aspect-ratio:1;border-radius:18px;display:grid;place-items:center;background:var(--lav);margin-bottom:16px}
+.ball i{width:62%;aspect-ratio:1;border-radius:50%;display:block;transition:background .4s;box-shadow:inset -14px -14px 30px rgba(0,0,0,.28),inset 10px 10px 24px rgba(255,255,255,.25),0 18px 26px -14px rgba(0,0,0,.4);background-image:repeating-linear-gradient(60deg,rgba(255,255,255,.12) 0 3px,rgba(0,0,0,.08) 3px 6px)}
+.prod .fb{font-size:13px;font-weight:800;color:var(--moss)}
+.prod h3{font-family:"Young Serif";font-weight:400;font-size:22px;margin:4px 0 2px}
+.prod p{font-size:14.5px;color:var(--mute);flex:1}
+.dots{display:flex;gap:6px;margin:14px 0}
+.dots button{width:24px;height:24px;border-radius:50%;border:0;cursor:pointer;box-shadow:inset 0 -4px 6px rgba(0,0,0,.25)}
+.dots button[aria-pressed=true]{outline:2px solid var(--ink);outline-offset:2px}
+.prod .row{display:flex;justify-content:space-between;align-items:center}
+.prod .row b{font-size:20px}
+.prod .add{border:0;background:var(--ink);color:#fff;font:800 14px "Nunito Sans";padding:10px 14px;border-radius:999px;cursor:pointer}
+/* fleece band */
+#fleece{position:relative;height:220vh}
+#fleece .stg{position:sticky;top:0;height:100vh;overflow:hidden;background:#222}
+#fleece .ov{position:absolute;inset:0;display:flex;align-items:flex-end;padding-bottom:10vh;color:#fff;pointer-events:none;background:linear-gradient(0deg,rgba(20,10,25,.72),rgba(0,0,0,0) 55%)}
+#fleece h2{font-size:clamp(3rem,6.6vw,6.6rem);max-width:12ch}
+/* workshops */
+.ws{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+.w{background:#fff;border-radius:24px;overflow:hidden;display:flex;flex-direction:column}
+.w img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.w .b{padding:22px;flex:1;display:flex;flex-direction:column}
+.w h3{font-family:"Young Serif";font-weight:400;font-size:26px}
+.w p{color:var(--mute);font-size:15.5px;margin:6px 0 14px;flex:1}
+.w .meta{display:flex;justify-content:space-between;align-items:center;font-weight:800}
+.w .seats{font-size:13.5px;color:var(--moss)}
+/* tour */
+#tour{background:var(--ink);color:#eee;padding:120px 0 0}
+#tour .lede{color:#c8bfd2}#tour .kick{color:var(--mari)}
+.viewer{position:relative;height:min(80vh,780px);margin-top:30px;overflow:hidden;border-radius:30px 30px 0 0;background:#000}
+.vctl{position:absolute;right:16px;bottom:16px;display:flex;gap:6px;z-index:3}.vctl button{width:46px;height:46px;border-radius:50%;border:0;background:#fff;cursor:pointer;display:grid;place-items:center}.vctl .ico{width:20px;height:20px}
+.vnote{position:absolute;left:16px;bottom:16px;z-index:3;background:var(--mari);color:var(--ink);font-weight:800;padding:10px 14px;border-radius:999px;font-size:14px}
+[data-load]{background:#111;color:#aaa}
+.rv-spot.rv-info i{background:rgba(242,169,0,.35)}
+/* bag drawer */
+.scrim{position:fixed;inset:0;background:rgba(42,31,51,.4);z-index:80;opacity:0;pointer-events:none;transition:.35s}.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:#fff;z-index:90;transform:translateX(100%);transition:transform .5s cubic-bezier(.2,.7,.2,1);display:flex;flex-direction:column}
+.drawer.on{transform:none}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:22px 26px;border-bottom:1px solid var(--line)}.dh h3{font-family:"Young Serif";font-weight:400;font-size:28px}
+.x{border:0;background:var(--lav);width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:20px}
+.items{list-style:none;padding:16px 26px;flex:1;overflow:auto;display:grid;gap:14px;align-content:start}
+.items li{display:grid;grid-template-columns:48px 1fr auto;gap:12px;align-items:center}
+.items .sw{width:48px;height:48px;border-radius:50%;box-shadow:inset -6px -6px 12px rgba(0,0,0,.25)}
+.items small{display:block;color:var(--mute)}
+.qty{display:flex;align-items:center;gap:8px}.qty button{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer}
+.dfoot{padding:22px 26px;border-top:1px solid var(--line)}
+.dfoot .tot{display:flex;justify-content:space-between;font-family:"Young Serif";font-size:24px}
+.dfoot .btn{width:100%;margin-top:12px}
+.ph{font-size:11px;font-weight:800;letter-spacing:.05em;color:var(--moss)}
+footer{background:var(--ink);color:#c8bfd2;padding:90px 0 36px}
+.fbig{font-size:clamp(3.4rem,12vw,12rem);color:var(--mari)}
+.fcols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px;margin-top:40px;font-size:15px}.fcols h4{color:#fff;font-size:14px;margin-bottom:10px}.fcols ul{list-style:none;padding:0;display:grid;gap:6px}.fcols a{text-decoration:none}
+.legal{margin-top:50px;font-size:13px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(36px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}.reveal.in{opacity:1;transform:none}
+@media(max-width:1100px){.prods{grid-template-columns:repeat(2,1fr)}.nav ul{display:none}}
+@media(max-width:900px){.split{grid-template-columns:1fr}.ws{grid-template-columns:1fr}}
+@media(max-width:680px){body{font-size:16px}.wrap{padding:0 18px}.topbar{font-size:11px}.nav{height:62px}.logo{font-size:20px}
+ .htxt h1{font-size:3.3rem}.htxt p{font-size:16px}.shelf{left:18px;right:18px;width:auto;bottom:auto;top:calc(var(--tb,31px) + 76px);padding:14px}.shelf p{display:none}section.s{padding:90px 0}.prods{gap:10px}.prod{padding:14px;border-radius:18px}.prod h3{font-size:18px}.prod p{display:none}.prod .row{flex-wrap:wrap;gap:8px}.prod .add{width:100%}.viewer{height:72vh}.fcols{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+</style>
+<style id="rvcss"></style>
+</head>
+<body>
+<div id="pre" role="status"><div><div class="y">Wool &amp; Wheel</div><p id="preTxt">Winding the skeins · 0%</p><div class="bar"><i id="preBar"></i></div></div></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="i-logo" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="var(--mari)"/><path d="M5 12c6 2 16 2 22 0M4 18c7 2 17 2 24 0M9 6c4 6 6 14 4 22M20 4c-3 7-3 17 1 24" fill="none" stroke="#2A1F33" stroke-width="1.6"/></symbol>
+ <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+ <symbol id="i-full" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+ <symbol id="i-zin" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+ <symbol id="i-zout" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+</svg>
+<div class="topbar">Example concept by <a href="https://calvyrn.com">Calvyrn</a>. Wool &amp; Wheel is fictional; products, prices and 555 numbers are placeholders. 360° photo is real.</div>
+<header id="hdr"><div class="wrap nav">
+ <a class="logo" href="#top"><svg><use href="#i-logo"/></svg>Wool &amp; Wheel</a>
+ <ul><li><a href="#yarn">Yarn</a></li><li><a href="#workshops">Workshops</a></li><li><a href="#tour">Browse the shop</a></li></ul>
+ <button class="bagb" id="bagBtn" aria-label="Open your bag">Bag <b id="bagN">0</b></button>
+</div></header>
+
+<main id="top">
+<section id="hero" aria-label="Scroll around the shop in a real 360 degree photo">
+ <div class="stage">
+  <div class="rv-hero" id="hpano" role="img" aria-label="Real 360 degree photo of a yarn shop: walls of yarn in every colour, a spinning wheel, and a long wooden table for workshops."></div>
+  <div class="shade"></div>
+  <div class="htxt" id="htxt"><div class="wrap">
+   <h1 class="y">Every colour on one wall.</h1>
+   <p>A yarn shop by the sea with local wool, a spinning wheel and Saturday workshops. Scroll to look around; this is a real 360° photo of the shop.</p>
+   <a class="btn m" href="#yarn">Shop the yarn<svg><use href="#i-arrow"/></svg></a>
+  </div></div>
+  <aside class="shelf" id="shelf" aria-live="polite"></aside>
+  <div class="hint" id="hint">Scroll to look around the shop</div>
+ </div>
+</section>
+
+<section class="s" id="yarn"><div class="wrap">
+ <div class="split">
+  <div><span class="kick reveal">The yarn</span><h2 class="y h reveal">Spun from sheep you can visit.</h2><p class="lede reveal">Half our shelves are wool from farms within 100 km, washed and dyed in small batches. The rest is the best we could find from further away.</p>
+   <div class="ship reveal" id="ship"><span id="shipT">Free delivery over R600</span><div class="bar"><i id="shipBar" style="width:0"></i></div></div></div>
+  <div class="dbox reveal"><div class="rv-depth" id="dBalls" style="background-image:url(img/balls-1440.jpg)"></div><span class="tag3d">3D photo · move your mouse</span></div>
+ </div>
+ <div class="prods" id="prods"></div>
+</div></section>
+
+<section id="fleece" data-sticky aria-label="Raw fleece">
+ <div class="stg"><div class="rv-depth" id="dFleece" style="background-image:url(img/fleece-1440.jpg)"></div>
+  <div class="ov"><div class="wrap"><h2 class="y">From the fleece, if you like.</h2><p style="max-width:40ch;font-size:18px;margin-top:14px">We sell raw and washed fleece by the kilo, and teach you to card and spin it on our wheels.</p></div></div>
+ </div>
+</section>
+
+<section class="s" id="workshops"><div class="wrap">
+ <span class="kick reveal">Workshops</span>
+ <h2 class="y h reveal">Saturdays at the long table.</h2>
+ <div class="ws" id="wsList"></div>
+</div></section>
+
+<section id="tour" aria-label="Browse the shop in 360">
+ <div class="wrap">
+  <span class="kick reveal">Browse the shop</span>
+  <h2 class="y h reveal" style="color:#fff">Tap a shelf to shop it.</h2>
+  <p class="lede reveal">A real 360° photo of the shop. Drag to look around; the yellow circles are products you can add to your bag.</p>
+  <div class="viewer rv-viewer" id="viewer"><div data-pano></div><div data-spots></div><div data-load>Opening the shop…</div>
+   <div class="vnote" id="vnote">Tap a yellow circle</div>
+   <div class="vctl"><button data-zin aria-label="Zoom in"><svg class="ico"><use href="#i-zin"/></svg></button><button data-zout aria-label="Zoom out"><svg class="ico"><use href="#i-zout"/></svg></button><button data-fs aria-label="Full screen"><svg class="ico"><use href="#i-full"/></svg></button></div></div>
+ </div>
+</section>
+</main>
+
+<footer><div class="wrap">
+ <div class="y fbig">Wool &amp; Wheel</div>
+ <div class="fcols"><div><p>Yarn, fleece and workshops on the west coast. Tue–Sat 9:00–17:00.</p></div>
+ <div><h4>Shop</h4><ul><li><a href="#yarn">Yarn</a></li><li><a href="#workshops">Workshops</a></li><li><a href="#tour">Browse in 360°</a></li></ul></div>
+ <div><h4>Contact</h4><ul><li>+27 (0)22 555 0114</li><li>knit@woolandwheel.example</li></ul></div></div>
+ <div class="legal"><span>© 2026 Wool &amp; Wheel (fictional). 360° photo: Poly Haven, CC0 (real photograph). Photos: Unsplash. 3D photo effect from depth estimated on the real photo.</span><span>Concept, design and build: <a href="https://calvyrn.com" style="color:#fff">Calvyrn</a></span></div>
+</div></footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="bagT">
+ <div class="dh"><h3 id="bagT">Your bag</h3><button class="x" id="bagX" aria-label="Close">×</button></div>
+ <ul class="items" id="items"></ul>
+ <div class="dfoot"><div class="tot"><span>Total</span><span id="bagTot">R0</span></div><p id="bagShip" style="font-size:14px;color:var(--mute);margin-top:4px"></p><button class="btn g" id="checkout">Checkout</button><p id="coMsg" style="font-size:14px;color:var(--mute);margin-top:8px"></p></div>
+</aside>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.164.1/build/three.module.js"}}</script>
+<script type="module">
+import {createPano,panoCSS,boot,stickyProgress,depthOnScroll,wireTour,interpKeys} from '../../shared/realview.js';
+document.getElementById('rvcss').textContent=panoCSS;
+const K=boot({preLabel:'Winding the skeins'});const {$,mob}=K;
+const S=n=>({src:`pano/${n}-6k.jpg`,srcMobile:`pano/${n}-3k.jpg`});const F=mob?14:0;const fmt=n=>n.toLocaleString('en-US');
+
+/* products */
+const P=[{id:'merino',n:'Coastal Merino DK',fb:'Local merino · 100 g',d:'Soft enough for baby clothes, tough enough for socks.',p:145,c:[['#2E5E8C','Atlantic'],['#C94F4F','Protea'],['#E9C46A','Fynbos gold'],['#6C8A3C','Moss']]},
+ {id:'mohair',n:'Karoo Kid Mohair',fb:'Kid mohair and silk · 25 g',d:'A halo you can hold together with anything.',p:120,c:[['#E8D5E8','Blush'],['#9AA9C9','Mist'],['#F3EDE2','Cream']]},
+ {id:'chunky',n:'Dune Chunky',fb:'Wool and alpaca · 100 g',d:'Knits up fast: a beanie in an evening.',p:165,c:[['#D99A6C','Sand'],['#57493F','Driftwood'],['#B7C4B0','Sea fog']]},
+ {id:'sock',n:'Tidepool Sock',fb:'Merino and nylon · 100 g',d:'Hand-dyed speckles for socks that last.',p:175,c:[['#3E8E8E','Tidepool'],['#8E3B6A','Sea urchin'],['#F2A900','Marigold']]},
+ {id:'cotton',n:'Harbour Cotton',fb:'Organic cotton · 50 g',d:'Crisp stitches for summer tops and dishcloths.',p:85,c:[['#F7F3EA','Shell'],['#87B7D9','Harbour'],['#E07A5F','Coral']]},
+ {id:'fleece',n:'Washed fleece',fb:'Local Dohne merino · 250 g',d:'Ready to card and spin.',p:110,c:[['#EFE6D2','Natural'],['#6B5B4B','Brown']]},
+ {id:'needles',n:'Birch needle set',fb:'Interchangeable · 9 sizes',d:'Smooth, warm and quiet. Our bestseller.',p:690,c:[['#D8B98C','Birch']]},
+ {id:'kit',n:'Beanie kit',fb:'Yarn, pattern, needles',d:'Everything for your first hat, with a video.',p:320,c:[['#C94F4F','Protea'],['#2E5E8C','Atlantic']]}];
+const sel={};P.forEach(p=>sel[p.id]=0);
+$('prods').innerHTML=P.map(p=>`<div class="prod reveal in" data-id="${p.id}"><div class="ball"><i style="background-color:${p.c[0][0]}"></i></div><span class="fb">${p.fb}</span><h3>${p.n}</h3><p>${p.d}</p>
+ <div class="dots" role="group" aria-label="Colour">${p.c.map((c,i)=>`<button style="background:${c[0]}" aria-label="${c[1]}" aria-pressed="${i===0}" data-c="${i}"></button>`).join('')}</div>
+ <div class="row"><b>R${p.p}</b><button class="add" data-add="${p.id}">Add to bag</button></div></div>`).join('');
+$('prods').addEventListener('click',e=>{const d=e.target.closest('.dots button');if(d){const card=d.closest('.prod');const p=P.find(x=>x.id===card.dataset.id);sel[p.id]=+d.dataset.c;card.querySelectorAll('.dots button').forEach(b=>b.setAttribute('aria-pressed',b===d));card.querySelector('.ball i').style.backgroundColor=p.c[sel[p.id]][0]}
+ const a=e.target.closest('[data-add]');if(a)add(a.dataset.add)});
+/* bag */
+let bag=[];const FREE=600;
+function add(id,ci){const p=P.find(x=>x.id===id);const c=ci??sel[id];const ex=bag.find(b=>b.id===id&&b.c===c);ex?ex.q++:bag.push({id,c,q:1});render();open()}
+function render(){const n=bag.reduce((a,b)=>a+b.q,0),tot=bag.reduce((a,b)=>a+P.find(p=>p.id===b.id).p*b.q,0);$('bagN').textContent=n;
+ $('items').innerHTML=bag.length?bag.map((b,i)=>{const p=P.find(x=>x.id===b.id);return `<li><span class="sw" style="background:${p.c[b.c][0]}"></span><div>${p.n}<small>${p.c[b.c][1]} · R${p.p}</small></div><div class="qty"><button data-q="${i}" data-d="-1" aria-label="One less">−</button>${b.q}<button data-q="${i}" data-d="1" aria-label="One more">+</button></div></li>`}).join(''):'<li style="color:var(--mute)">Your bag is empty. Tap a yarn to add it.</li>';
+ $('bagTot').textContent='R'+fmt(tot);const left=Math.max(0,FREE-tot);$('bagShip').textContent=left?`Add R${left} for free delivery (otherwise R80).`:'Free delivery.';
+ $('shipT').textContent=left?`R${left} away from free delivery`:'Free delivery unlocked';$('shipBar').style.width=Math.min(100,tot/FREE*100)+'%'}
+$('items').addEventListener('click',e=>{const b=e.target.closest('[data-q]');if(!b)return;const it=bag[+b.dataset.q];it.q+= +b.dataset.d;if(it.q<1)bag.splice(+b.dataset.q,1);render()});
+const open=()=>{$('drawer').classList.add('on');$('scrim').classList.add('on')},close=()=>{$('drawer').classList.remove('on');$('scrim').classList.remove('on')};
+$('bagBtn').onclick=open;$('bagX').onclick=close;$('scrim').onclick=close;addEventListener('keydown',e=>e.key==='Escape'&&close());
+$('checkout').onclick=()=>{$('coMsg').textContent=bag.length?'Order placed for collection or courier. Demo: nothing was charged.':'Add something first.'};render();
+
+/* hero: look around the real shop, products surface as you pass their shelves */
+const hero=createPano($('hpano'),{scenes:{shop:{...S('witsand_woolshop'),yaw:-150}},start:'shop',fov:76+F,auto:0,onProgress:(id,p)=>K.setPre(p*.95),onReady:K.finish});
+hero.interactive(false);
+const HK=[[0,-165,-6,78+F],[.25,-100,-2,70+F],[.5,-30,0,66+F],[.75,40,-4,70+F],[1,130,0,76+F]];
+const SH=[[.14,.36,'needles','On the blue wall'],[.38,.6,'merino','By the spinning wheel'],[.62,.82,'chunky','Next to the door'],[.84,1.01,'mohair','Under the hats']];
+let lastSh=null;
+function onScroll(){const HP=stickyProgress($('hero'));$('hdr').classList.toggle('solid',$('hero').getBoundingClientRect().bottom<90);
+ const [y,p,f]=interpKeys(HK,HP);hero.set({yaw:y,pitch:p,fov:f});$('htxt').style.opacity=Math.max(0,1-HP*12);$('hint').style.opacity=HP>.02?0:.85;
+ const s=SH.find(x=>HP>=x[0]&&HP<x[1]);if((s&&s[2])!==lastSh){lastSh=s&&s[2];if(s){const pr=P.find(x=>x.id===s[2]);$('shelf').innerHTML=`<span class="tg">${s[3]}</span><h3>${pr.n}</h3><p>${pr.d}</p><div class="row"><b>R${pr.p}</b><button class="btn m" data-add="${pr.id}">Add to bag</button></div>`}$('shelf').classList.toggle('on',!!s)}}
+$('shelf').addEventListener('click',e=>{const a=e.target.closest('[data-add]');if(a)add(a.dataset.add)});
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+depthOnScroll($('dBalls'),{src:mob?'img/balls-1440.jpg':'img/balls-2560.jpg',depth:'img/balls-depth.jpg',strength:.36},p=>({z:.05+p*.22,x:.05-p*.1}));
+depthOnScroll($('dFleece'),{src:mob?'img/fleece-1440.jpg':'img/fleece-2560.jpg',depth:'img/fleece-depth.jpg',strength:.45,overscan:1.22},p=>({z:p*.45,x:-.08+p*.16}),stickyProgress);
+
+/* workshops */
+const W=[['Learn to knit','Cast on, knit, purl and cast off. Leave with a cowl on the needles.',450,'img/knit-960.jpg',4],['Spinning for beginners','Card a fleece and spin your first skein on our wheels.',650,'img/bobbin-960.jpg',2],['Fix my knitting','Dropped stitches, wonky tension, mystery holes. Bring it in.',250,'img/knitblue-960.jpg',6]];
+const sat=k=>{const d=new Date();d.setDate(d.getDate()+((6-d.getDay()+7)%7||7)+k*7);return d.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'})};
+$('wsList').innerHTML=W.map((w,i)=>`<div class="w reveal in"><img src="${w[3]}" alt="" loading="lazy"><div class="b"><h3>${w[0]}</h3><p>${w[1]}</p><div class="meta"><span>${sat(i)} · 10:00</span><span class="seats">${w[4]} seats left</span></div><div class="meta" style="margin-top:14px"><b style="font-size:22px">R${w[2]}</b><button class="btn g" data-ws="${i}">Book a seat</button></div></div></div>`).join('');
+$('wsList').addEventListener('click',e=>{const b=e.target.closest('[data-ws]');if(!b)return;const w=W[+b.dataset.ws];if(w[4]<1)return;w[4]--;b.closest('.w').querySelector('.seats').textContent=w[4]?`${w[4]} seats left`:'Full';b.textContent='Booked ✓ (demo)';b.disabled=true});
+
+/* tour: product hotspots on the real shelves */
+const T=wireTour({viewer:$('viewer'),start:'shop',scenes:{shop:{...S('witsand_woolshop'),yaw:-30,hotspots:[
+ {yaw:-118,pitch:-2,label:'Birch needle set · R690',pid:'needles'},{yaw:-62,pitch:-14,label:'Washed fleece · R110',pid:'fleece'},{yaw:-22,pitch:0,label:'Coastal Merino DK · R145',pid:'merino'},
+ {yaw:14,pitch:-6,label:'Dune Chunky · R165',pid:'chunky'},{yaw:118,pitch:2,label:'Tidepool Sock · R175',pid:'sock'},{yaw:150,pitch:16,label:'Beanie kit · R320',pid:'kit'},{yaw:-168,pitch:-4,label:'Harbour Cotton · R85',pid:'cotton'}]}},onInfo:h=>{const p=P.find(x=>x.id===h.pid);if(p){add(p.id,0);$('vnote').textContent=`Added ${p.n}`}}});
+</script>
+</body>
+</html>

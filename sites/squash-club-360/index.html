@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Courtside Squash Club · Book a court, join the box league · Courts in 360°</title>
+<meta name="description" content="Three glass-back squash courts, a box league and a clubhouse with pool tables. Step onto the real court in 360°, book a court and join the league.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#14213D;--court:#F6F5F1;--red:#D7262E;--wood:#C9A273;--mute:#5F6878;--line:#DCDBD4;--rv-font:"Barlow"}
+*{box-sizing:border-box;margin:0}
+html.lenis{height:auto}.lenis.lenis-smooth{scroll-behavior:auto}
+body{font:400 17px/1.6 "Barlow",system-ui,sans-serif;color:var(--navy);background:var(--court);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}a{color:inherit}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.wrap{max-width:1300px;margin:0 auto;padding:0 32px}
+.c{font-family:"Barlow Condensed";font-weight:800;text-transform:uppercase;letter-spacing:-.005em;line-height:.88}
+.ico{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+.topbar{background:var(--navy);color:#a9b2c6;font-size:12.5px;text-align:center;padding:6px 14px;position:relative;z-index:30}.topbar a{color:#fff}
+#pre{position:fixed;inset:0;z-index:100;background:var(--court);display:grid;place-items:center;transition:opacity .9s .2s,visibility .9s .2s}
+#pre.done{opacity:0;visibility:hidden}#pre .c{font-size:64px}#pre p{font-size:14px;color:var(--mute);margin-top:4px;text-align:center}
+#pre .bar{width:200px;height:3px;background:var(--line);margin:16px auto 0}#pre .bar i{display:block;height:100%;width:0;background:var(--red);transition:width .3s}
+header{position:fixed;left:0;right:0;top:var(--tb,31px);z-index:40;color:var(--navy);transition:top .4s,background .4s}
+header.solid{top:0;background:rgba(246,245,241,.92);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.nav{display:flex;align-items:center;gap:30px;height:72px}
+.logo{display:flex;gap:10px;align-items:center;text-decoration:none;font-family:"Barlow Condensed";font-weight:800;font-size:26px;text-transform:uppercase}
+.logo svg{width:30px;height:30px}
+.nav ul{display:flex;gap:26px;list-style:none;padding:0;margin-left:auto;font-weight:600;font-size:15.5px}
+.nav ul a{text-decoration:none}.nav ul a:hover{color:var(--red)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;cursor:pointer;background:var(--red);color:#fff;font:700 15.5px "Barlow";padding:14px 22px;border-radius:2px;text-decoration:none;transition:transform .2s,background .3s;text-transform:uppercase;letter-spacing:.03em}
+.btn:hover{transform:translateY(-2px)}.btn.n{background:var(--navy)}
+.btn svg{width:18px;height:18px}header .btn{padding:10px 16px;font-size:14px}
+
+#hero{position:relative;height:380vh;background:#ddd}
+.stage{position:sticky;top:0;height:100vh;overflow:hidden}
+.htxt{position:absolute;left:0;right:0;top:calc(var(--tb,31px) + 120px);pointer-events:none}
+.htxt h1{font-size:clamp(4rem,10.5vw,11rem);max-width:9ch}
+.htxt h1 span{display:block}
+.htxt p{max-width:34ch;font-size:19px;margin:18px 0 24px;font-weight:500}.htxt .btn{pointer-events:auto}
+.score{position:absolute;right:32px;bottom:8vh;background:var(--navy);color:#fff;padding:16px 20px;min-width:240px}
+.score .t{font-size:12.5px;font-weight:700;letter-spacing:.08em;color:#a9b2c6;text-transform:uppercase}
+.score .r{display:grid;grid-template-columns:1fr auto auto auto;gap:4px 14px;margin-top:8px;font-family:"Barlow Condensed";font-weight:700;font-size:22px;font-variant-numeric:tabular-nums}
+.score .r b{color:var(--red)}
+.cap{position:absolute;left:0;right:0;bottom:9vh;pointer-events:none;color:#fff}
+.cap .in{max-width:560px;opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s cubic-bezier(.2,.7,.2,1)}.cap.on .in{opacity:1;transform:none}
+.cap h2{font-size:clamp(3.4rem,8vw,8rem);text-shadow:0 2px 30px rgba(0,0,0,.3)}.cap p{font-size:18px;margin-top:10px;max-width:34ch;text-shadow:0 1px 12px rgba(0,0,0,.5)}
+.shade{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .6s;background:linear-gradient(90deg,rgba(20,33,61,.7),rgba(20,33,61,0) 60%)}.shade.on{opacity:1}
+.hint{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);font-size:13px;color:var(--mute);transition:opacity .4s}
+
+section.s{padding:130px 0}
+.kick{font-weight:700;color:var(--red);font-size:14.5px;letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:12px}
+h2.h{font-size:clamp(3.4rem,8vw,8rem)}
+.lede{font-size:20px;color:var(--mute);max-width:46ch;margin-top:16px}
+/* booking grid */
+.bhead{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.days{display:flex;gap:6px;flex-wrap:wrap;margin-top:30px}
+.days button{border:1.5px solid var(--navy);background:none;font:700 14.5px "Barlow";padding:9px 14px;cursor:pointer;border-radius:2px}
+.days button[aria-pressed=true]{background:var(--navy);color:#fff}
+.grid{margin-top:20px;display:grid;grid-template-columns:90px repeat(3,1fr);border-top:2px solid var(--navy)}
+.grid .h{font-family:"Barlow Condensed";font-weight:800;font-size:22px;text-transform:uppercase;padding:12px 10px;border-bottom:1px solid var(--line)}
+.grid .tm{font-weight:700;padding:8px 10px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums;display:flex;flex-direction:column;justify-content:center}
+.grid .tm small{font-size:11.5px;color:var(--red);font-weight:700}
+.slot{border:0;border-bottom:1px solid var(--line);border-left:1px solid var(--line);background:#fff;font:600 14px "Barlow";cursor:pointer;padding:12px 8px;text-align:left;min-height:52px;transition:background .2s}
+.slot:hover:not(:disabled){background:#ffe9ea}
+.slot:disabled{background:repeating-linear-gradient(-45deg,#f0efea 0 8px,#e8e7e1 8px 16px);color:#8a8f99;cursor:not-allowed}
+.slot[aria-pressed=true]{background:var(--red);color:#fff}
+.bbar{position:sticky;bottom:0;background:var(--navy);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:16px 22px;margin-top:20px;flex-wrap:wrap}
+.bbar input{font:500 15px "Barlow";padding:10px 12px;border:0;border-radius:2px;min-width:220px}
+.bbar .msg{font-size:15px}
+/* league */
+.lg{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.boxes{display:flex;gap:6px;margin-top:24px}
+.boxes button{border:0;background:#e6e5df;font:800 15px "Barlow Condensed";padding:9px 14px;cursor:pointer;text-transform:uppercase;letter-spacing:.04em}
+.boxes button[aria-pressed=true]{background:var(--navy);color:#fff}
+table{width:100%;border-collapse:collapse;margin-top:16px;font-variant-numeric:tabular-nums}
+th{text-align:left;font-size:13px;color:var(--mute);font-weight:700;padding:8px;border-bottom:2px solid var(--navy);cursor:pointer;user-select:none}
+th[aria-sort]:after{content:" ↓";color:var(--red)}
+td{padding:12px 8px;border-bottom:1px solid var(--line);font-weight:500}
+td:first-child{font-family:"Barlow Condensed";font-weight:800;font-size:22px;width:40px}
+tr.up td:first-child{color:#1f8a4c}tr.down td:first-child{color:var(--red)}
+.dbox{position:relative;aspect-ratio:4/5;overflow:hidden;background:#ccc}
+.tag3d{position:absolute;left:12px;top:12px;z-index:2;background:var(--navy);color:#fff;font-size:12.5px;font-weight:700;padding:6px 10px;pointer-events:none}
+/* coaching band */
+#coach{position:relative;height:220vh}
+#coach .stg{position:sticky;top:0;height:100vh;overflow:hidden;background:#222}
+#coach .ov{position:absolute;inset:0;display:flex;align-items:flex-end;padding-bottom:10vh;color:#fff;pointer-events:none;background:linear-gradient(0deg,rgba(20,33,61,.8),rgba(0,0,0,0) 55%)}
+#coach h2{font-size:clamp(3.4rem,8vw,8rem);max-width:10ch}
+.cls{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.cls span{background:rgba(255,255,255,.14);backdrop-filter:blur(8px);padding:8px 14px;font-weight:600}
+/* plans */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
+.plan{background:#fff;padding:28px;border-top:4px solid var(--navy)}.plan.hot{border-top-color:var(--red)}
+.plan h3{font-family:"Barlow Condensed";font-weight:800;font-size:30px;text-transform:uppercase}
+.plan .p{font-family:"Barlow Condensed";font-weight:800;font-size:58px;line-height:1;margin:12px 0}.plan .p small{font:600 16px "Barlow";color:var(--mute)}
+.plan ul{list-style:none;padding:0;display:grid;gap:8px;margin-bottom:22px}.plan li{display:flex;gap:10px}.plan li .ico{width:20px;height:20px;color:var(--red)}
+.sw{display:inline-flex;align-items:center;gap:12px;margin-top:22px;font-weight:700;cursor:pointer}
+.sw input{appearance:none;width:50px;height:28px;border-radius:999px;background:var(--line);position:relative;cursor:pointer;transition:background .3s}
+.sw input:after{content:"";position:absolute;left:3px;top:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:transform .3s}
+.sw input:checked{background:var(--red)}.sw input:checked:after{transform:translateX(22px)}
+/* tour */
+#tour{background:var(--navy);color:#fff;padding:120px 0 0}
+#tour .lede{color:#a9b2c6}
+.rooms{display:flex;gap:6px;margin-top:30px}
+.rooms button{border:0;background:#24325a;color:#fff;font:800 16px "Barlow Condensed";padding:12px 18px;cursor:pointer;text-transform:uppercase;letter-spacing:.04em}
+.rooms button[aria-pressed=true]{background:var(--red)}
+.viewer{position:relative;height:min(80vh,780px);margin-top:16px;overflow:hidden;background:#000}
+.vctl{position:absolute;right:16px;bottom:16px;display:flex;gap:6px;z-index:3}.vctl button{width:46px;height:46px;border:0;background:#fff;cursor:pointer;display:grid;place-items:center}.vctl .ico{width:20px;height:20px}
+[data-load]{background:#111;color:#aaa}
+footer{background:var(--navy);color:#a9b2c6;padding:90px 0 36px;border-top:4px solid var(--red)}
+.fbig{font-size:clamp(4rem,14vw,14rem);color:#fff}
+.fcols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px;margin-top:30px;font-size:15px}.fcols h4{color:#fff;font-size:14px;margin-bottom:10px}.fcols ul{list-style:none;padding:0;display:grid;gap:6px}.fcols a{text-decoration:none}
+.legal{margin-top:50px;font-size:13px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(36px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}.reveal.in{opacity:1;transform:none}
+@media(max-width:1000px){.nav ul{display:none}.lg{grid-template-columns:1fr}.plans{grid-template-columns:1fr}.dbox{aspect-ratio:4/3}}
+@media(max-width:680px){body{font-size:16px}.wrap{padding:0 18px}.topbar{font-size:11px}.nav{height:62px}.logo{font-size:22px}header .btn{padding:9px 12px}
+ .htxt{top:calc(var(--tb,31px) + 90px)}.htxt h1{font-size:4.6rem}.htxt p{font-size:16px}.score{left:18px;right:18px;bottom:6vh}.cap h2{font-size:3.4rem}
+ section.s{padding:90px 0}h2.h{font-size:3.6rem}.grid{grid-template-columns:62px repeat(3,1fr)}.slot{font-size:12px;padding:10px 4px}.grid .h{font-size:17px}.bbar input{min-width:0;width:100%}.viewer{height:72vh}.fcols{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+</style>
+<style id="rvcss"></style>
+</head>
+<body>
+<div id="pre" role="status"><div><div class="c">Courtside</div><p id="preTxt">Warming up the ball · 0%</p><div class="bar"><i id="preBar"></i></div></div></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="i-logo" viewBox="0 0 32 32"><rect x="2" y="2" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M2 14h28M16 14v16M2 22h7" stroke="#D7262E" stroke-width="2.5" fill="none"/><circle cx="23" cy="8" r="2.5" fill="currentColor"/></symbol>
+ <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+ <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+ <symbol id="i-full" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+ <symbol id="i-zin" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+ <symbol id="i-zout" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+</svg>
+<div class="topbar">Example concept by <a href="https://calvyrn.com">Calvyrn</a>. Courtside is fictional; prices, players and 555 numbers are placeholders. 360° photos are real.</div>
+<header id="hdr"><div class="wrap nav">
+ <a class="logo" href="#top"><svg><use href="#i-logo"/></svg>Courtside</a>
+ <ul><li><a href="#book">Book a court</a></li><li><a href="#league">Box league</a></li><li><a href="#join">Membership</a></li><li><a href="#tour">360° club</a></li></ul>
+ <a class="btn" href="#book">Book a court</a>
+</div></header>
+
+<main id="top">
+<section id="hero" aria-label="Scroll onto the court in a real 360 degree photo">
+ <div class="stage">
+  <div class="rv-hero" id="hpano" role="img" aria-label="Real 360 degree photo standing on a squash court: white walls, red lines, timber floor and a spectator gallery above the back wall."></div>
+  <div class="shade" id="shade"></div>
+  <div class="htxt" id="htxt"><div class="wrap">
+   <h1 class="c"><span>Book a court.</span><span>Bring a rival.</span></h1>
+   <p>Three courts, a box league and a clubhouse bar. Scroll to step onto court one; it's a real 360° photo.</p>
+   <a class="btn n" href="#book">Find a free court<svg><use href="#i-arrow"/></svg></a>
+  </div></div>
+  <div class="score" id="score"><div class="t">Box 1 · Tonight</div><div class="r"><span>Naidoo</span><b>11</b><span>9</span><span>11</span><span>Okafor</span><span>7</span><b>11</b><span>8</span></div></div>
+  <div class="cap" data-c="1"><div class="wrap"><div class="in"><h2 class="c">Look up. That's the gallery.</h2><p>Members watch from above the glass back wall with a drink from the bar.</p></div></div></div>
+  <div class="cap" data-c="2"><div class="wrap"><div class="in"><h2 class="c">Then the clubhouse.</h2><p>Two pool tables, a bar and the league board. Losers buy the first round.</p></div></div></div>
+  <div class="hint" id="hint">Scroll to step onto the court</div>
+ </div>
+</section>
+
+<section class="s" id="book"><div class="wrap">
+ <div class="bhead"><div><span class="kick reveal">Book a court</span><h2 class="c h reveal">Pick a box. It's yours.</h2></div><p class="lede reveal">45-minute slots. Off-peak R90, peak R140. Members book 7 days ahead, guests 3.</p></div>
+ <div class="days" id="days" role="group" aria-label="Day"></div>
+ <div class="grid" id="grid" role="grid" aria-label="Court availability"></div>
+ <div class="bbar"><span class="msg" id="bmsg">Tap a free slot to book it.</span><div style="display:flex;gap:8px;flex-wrap:wrap"><input id="bname" placeholder="Name on the booking" aria-label="Name on the booking" autocomplete="name"><button class="btn" id="bgo">Book</button></div></div>
+</div></section>
+
+<section class="s" id="league" style="padding-top:0"><div class="wrap lg">
+ <div>
+  <span class="kick reveal">Box league</span>
+  <h2 class="c h reveal" style="font-size:clamp(3rem,6vw,6rem)">Five players a box. Play everyone.</h2>
+  <p class="lede reveal">Four-week rounds. Top two go up, bottom two go down. Tap a column to sort.</p>
+  <div class="boxes" role="group" aria-label="Box"><button data-b="0" aria-pressed="true">Box 1</button><button data-b="1" aria-pressed="false">Box 2</button><button data-b="2" aria-pressed="false">Box 3</button></div>
+  <table><thead><tr><th>#</th><th data-k="n">Player</th><th data-k="p">Played</th><th data-k="w">Won</th><th data-k="pts" aria-sort="descending">Points</th></tr></thead><tbody id="tb"></tbody></table>
+  <p class="ph" style="margin-top:10px;font-size:12px;color:var(--mute)">PLACEHOLDER PLAYERS</p>
+ </div>
+ <div class="dbox reveal"><div class="rv-depth" id="dPlayer" style="background-image:url(img/player-1440.jpg)"></div><span class="tag3d">3D PHOTO</span></div>
+</div></section>
+
+<section id="coach" data-sticky aria-label="Coaching">
+ <div class="stg"><div class="rv-depth" id="dGlass" style="background-image:url(img/glass-1440.jpg)"></div>
+  <div class="ov"><div class="wrap"><h2 class="c">Never played? Good.</h2><p style="max-width:40ch;font-size:18px;margin-top:12px">Our head coach runs beginner clinics every Monday and juniors on Saturday mornings. Racquets and goggles provided.</p>
+   <div class="cls"><span>Beginners · Mon 18:00</span><span>Juniors 8–16 · Sat 09:00</span><span>Ladies' night · Wed 19:00</span><span>1-to-1 · R380</span></div></div></div>
+ </div>
+</section>
+
+<section class="s" id="join"><div class="wrap">
+ <span class="kick reveal">Membership</span>
+ <h2 class="c h reveal">Join the club.</h2>
+ <label class="sw"><input type="checkbox" id="annual"> Pay yearly, get two months free</label>
+ <div class="plans" id="plans"></div>
+</div></section>
+
+<section id="tour" aria-label="360 degree club tour">
+ <div class="wrap">
+  <span class="kick reveal" style="color:#ff8f94">360° club</span>
+  <h2 class="c h reveal">Walk the club.</h2>
+  <p class="lede reveal">Real 360° photos of court one and the clubhouse. Drag to look around.</p>
+  <div class="rooms" data-rooms role="group" aria-label="Rooms"><button data-r="court" aria-pressed="true">Court one</button><button data-r="club" aria-pressed="false">Clubhouse</button></div>
+  <div class="viewer rv-viewer" id="viewer"><div data-pano></div><div data-spots></div><div data-load>Opening the doors…</div>
+   <div class="vctl"><button data-zin aria-label="Zoom in"><svg class="ico"><use href="#i-zin"/></svg></button><button data-zout aria-label="Zoom out"><svg class="ico"><use href="#i-zout"/></svg></button><button data-fs aria-label="Full screen"><svg class="ico"><use href="#i-full"/></svg></button></div></div>
+ </div>
+</section>
+</main>
+
+<footer><div class="wrap">
+ <div class="c fbig">Courtside</div>
+ <div class="fcols"><div><p>Squash club. Courts open 6:00–22:00, bar from 17:00.</p></div>
+ <div><h4>Play</h4><ul><li><a href="#book">Book a court</a></li><li><a href="#league">Box league</a></li><li><a href="#join">Membership</a></li></ul></div>
+ <div><h4>Contact</h4><ul><li>+27 (0)12 555 0177</li><li>play@courtside.example</li></ul></div></div>
+ <div class="legal"><span>© 2026 Courtside (fictional). 360° photos: Poly Haven, CC0 (real photographs). Photos: Unsplash. 3D photo effect from depth estimated on the real photo.</span><span>Concept, design and build: <a href="https://calvyrn.com" style="color:#fff">Calvyrn</a></span></div>
+</div></footer>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.164.1/build/three.module.js"}}</script>
+<script type="module">
+import {createPano,scrollDirector,panoCSS,boot,stickyProgress,depthOnScroll,wireTour} from '../../shared/realview.js';
+document.getElementById('rvcss').textContent=panoCSS;
+const K=boot({preLabel:'Warming up the ball'});const {$,mob}=K;
+const S=n=>({src:`pano/${n}-6k.jpg`,srcMobile:`pano/${n}-3k.jpg`});const F=mob?14:0;
+
+const hero=createPano($('hpano'),{scenes:{court:{...S('squash_court'),yaw:-10},club:{...S('billiard_hall'),yaw:40}},start:'court',fov:80+F,auto:0,onProgress:(id,p)=>id==='court'&&K.setPre(p*.95),onReady:K.finish});
+hero.interactive(false);
+const SEGS=[{id:'court',until:.6,K:[[0,-10,-8,84+F],[.22,60,-2,80+F],[.42,160,22,74+F],[.6,-150,8,76+F]]},{id:'club',K:[[.6,40,-6,74+F],[.8,-30,-4,72+F],[1,-160,-6,74+F]]}];
+const director=scrollDirector(hero,SEGS,.08);const caps=[...document.querySelectorAll('.cap')];
+function onScroll(){const HP=stickyProgress($('hero'));$('hdr').classList.toggle('solid',HP>.02);director(HP);
+ const c=HP<.25?0:HP<.6?1:2;caps.forEach(x=>x.classList.toggle('on',+x.dataset.c===c));$('shade').classList.toggle('on',c>0);
+ $('htxt').style.opacity=Math.max(0,1-HP*10);$('score').style.opacity=Math.max(0,1-HP*10);$('hint').style.opacity=HP>.02?0:1}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+depthOnScroll($('dPlayer'),{src:mob?'img/player-1440.jpg':'img/player-2560.jpg',depth:'img/player-depth.jpg',strength:.35,overscan:1.2},p=>({z:.05+p*.22,x:-.08+p*.16}));
+depthOnScroll($('dGlass'),{src:mob?'img/glass-1440.jpg':'img/glass-2560.jpg',depth:'img/glass-depth.jpg',strength:.42,overscan:1.22},p=>({z:p*.5,x:.06-p*.12}),stickyProgress);
+
+wireTour({viewer:$('viewer'),start:'court',scenes:{
+ court:{...S('squash_court'),yaw:-10,hotspots:[{to:'club',yaw:142,pitch:-4,label:'Clubhouse',arrive:40},{yaw:-170,pitch:26,label:'Spectator gallery'},{yaw:15,pitch:-8,label:'Front wall, 4.57 m'}]},
+ club:{...S('billiard_hall'),yaw:40,hotspots:[{to:'court',yaw:-150,pitch:-2,label:'Court one',arrive:-10},{yaw:40,pitch:-14,label:'Pool table'},{yaw:30,pitch:4,label:'Bar through here'}]}}});
+
+/* court booking grid */
+const dl=[];for(let i=0;i<7;i++){const d=new Date();d.setDate(d.getDate()+i);dl.push(d)}
+let day=new Date().getHours()>=20?1:0,pick=null;const booked=new Set();
+$('days').innerHTML=dl.map((d,i)=>`<button data-d="${i}" aria-pressed="${i===day}">${i===0?'Today':d.toLocaleDateString('en-GB',{weekday:'short',day:'numeric'})}</button>`).join('');
+const TIMES=[];for(let m=6*60;m<=21*60;m+=45)TIMES.push(m);
+const tl=m=>`${String(Math.floor(m/60)).padStart(2,'0')}:${String(m%60).padStart(2,'0')}`;const peak=m=>m>=17*60||(m>=6*60&&m<8*60);
+function taken(d,c,i){return booked.has(`${d}-${c}-${i}`)||((d*31+c*17+i*7)%5===0)||(peak(TIMES[i])&&(d+c+i)%3===0)}
+function grid(){let h='<div class="h">Time</div><div class="h">Court 1</div><div class="h">Court 2</div><div class="h">Court 3 · glass</div>';
+ const now=new Date();TIMES.forEach((m,i)=>{h+=`<div class="tm">${tl(m)}${peak(m)?'<small>PEAK</small>':''}</div>`;for(let c=0;c<3;c++){const past=day===0&&m<now.getHours()*60+now.getMinutes();const t=past||taken(day,c,i);const key=`${day}-${c}-${i}`;h+=`<button class="slot" data-k="${key}" ${t?'disabled':''} aria-pressed="${pick===key}" aria-label="Court ${c+1} ${tl(m)} ${t?'taken':'free'}">${t?(past?'':'Booked'):(peak(m)?'R140':'R90')}</button>`}});$('grid').innerHTML=h}
+$('days').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;day=+b.dataset.d;pick=null;document.querySelectorAll('#days button').forEach(x=>x.setAttribute('aria-pressed',x===b));grid();msg()});
+$('grid').addEventListener('click',e=>{const b=e.target.closest('.slot');if(!b||b.disabled)return;pick=pick===b.dataset.k?null:b.dataset.k;grid();msg()});
+function msg(){if(!pick){$('bmsg').textContent='Tap a free slot to book it.';return}const [d,c,i]=pick.split('-').map(Number);$('bmsg').textContent=`Court ${c+1}, ${dl[d].toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'short'})} at ${tl(TIMES[i])}: R${peak(TIMES[i])?140:90}`}
+$('bgo').onclick=()=>{if(!pick){$('bmsg').textContent='Pick a free slot first.';return}if($('bname').value.trim().length<2){$('bmsg').textContent='Add a name for the booking.';return}booked.add(pick);const t=$('bmsg').textContent;pick=null;grid();$('bmsg').textContent=`Booked: ${t.split(':')[0]}:${t.split(':')[1]}. Demo: nothing was charged.`};grid();
+
+/* box league */
+const BX=[[['Thandi Naidoo',4,4,20],['Chidi Okafor',4,3,16],['Ruan Botha',3,2,11],['Priya Pillay',4,1,8],['Mark Daniels',3,0,3]],
+ [['Lerato Khumalo',3,3,15],['Sam Patel',4,2,13],['Jess van Wyk',4,2,12],['Omar Hassan',3,1,7],['Kyle Smith',4,1,6]],
+ [['Ayesha Moosa',4,3,17],['Ben Jacobs',4,3,15],['Nomvula Dube',3,1,9],['Tom Fourie',4,1,7],['Zara Ali',3,1,5]]];
+let bx=0,sortK='pts';
+function table(){const rows=[...BX[bx]].map(r=>({n:r[0],p:r[1],w:r[2],pts:r[3]})).sort((a,b)=>sortK==='n'?a.n.localeCompare(b.n):b[sortK]-a[sortK]);
+ const rank=[...BX[bx]].sort((a,b)=>b[3]-a[3]).map(r=>r[0]);
+ $('tb').innerHTML=rows.map(r=>{const k=rank.indexOf(r.n);return `<tr class="${k<2&&bx>0?'up':k>2&&bx<2?'down':''}"><td>${k+1}</td><td>${r.n}</td><td>${r.p}</td><td>${r.w}</td><td><b>${r.pts}</b></td></tr>`}).join('');
+ document.querySelectorAll('th[data-k]').forEach(t=>t.toggleAttribute('aria-sort',t.dataset.k===sortK))}
+document.querySelector('.boxes').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;bx=+b.dataset.b;document.querySelectorAll('.boxes button').forEach(x=>x.setAttribute('aria-pressed',x===b));table()});
+document.querySelector('thead').addEventListener('click',e=>{const t=e.target.closest('th[data-k]');if(t){sortK=t.dataset.k;table()}});table();
+
+/* plans */
+const PL=[['Off-peak',290,['Courts before 17:00 weekdays','Box league entry','Guest passes R60'],0],['Full',490,['Any time, 7-day booking','Box league and club nights','2 free guest passes a month'],1],['Junior',150,['Under 18, any off-peak time','Saturday coaching R60','Racquet loan'],0]];
+function plans(){const a=$('annual').checked;$('plans').innerHTML=PL.map(p=>`<div class="plan ${p[3]?'hot':''}"><h3>${p[0]}</h3><div class="p">R${a?(p[1]*10).toLocaleString('en-US'):p[1]}<small> /${a?'year':'month'}</small></div><ul>${p[2].map(l=>`<li><svg class="ico"><use href="#i-check"/></svg>${l}</li>`).join('')}</ul><a class="btn ${p[3]?'':'n'}" href="#book">Join and book</a></div>`).join('')}
+$('annual').addEventListener('change',plans);plans();
+</script>
+</body>
+</html>

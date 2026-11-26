@@ -10,8 +10,8 @@ GROUPS = {
  'home': ('Home services', {'HVAC','Plumbing','Home services','Home cleaning','Landscaping','Solar','Security','Auto repair','Automotive'}),
  'health': ('Health & beauty', {'Dental','Med spa','Physical therapy','Veterinary','Salon & spa','Beauty','Fitness'}),
  'food': ('Food & travel', {'Restaurant','Food & drink','Hospitality','Travel'}),
- 'pro': ('Professional', {'Accounting','Legal','Insurance','Real estate','Architecture','Logistics','Events'}),
- 'shops': ('Shops & brands', {'Fashion','Jewelry','Photography','Beauty','Furniture'}),
+ 'pro': ('Professional', {'Accounting','Legal','Insurance','Real estate','Architecture','Logistics','Events','Weddings','Education'}),
+ 'shops': ('Shops & brands', {'Fashion','Jewelry','Photography','Beauty','Furniture','Retail'}),
 }
 FEATURED = ['seaview-suite-360','grill-house-360','event-venue-360','climbing-gym-360']
 e = html.escape

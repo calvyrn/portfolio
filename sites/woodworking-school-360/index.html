@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Offcut Workshop · Woodworking courses and a shared workshop · Walk the bench room in 360°</title>
+<meta name="description" content="Weekend woodworking courses and a members' workshop with full-size machines. Walk the shop and the mill loft in real 360° photos and book a course.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--birch:#ECE6DB;--ink:#1D1F22;--green:#2F6F4F;--tape:#F2C200;--mute:#666A6E;--line:#D3CBBD;--rv-font:"IBM Plex Sans"}
+*{box-sizing:border-box;margin:0}
+html.lenis{height:auto}.lenis.lenis-smooth{scroll-behavior:auto}
+body{font:400 17px/1.6 "IBM Plex Sans",system-ui,sans-serif;color:var(--ink);background:var(--birch);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}a{color:inherit}
+:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 34px}
+.z{font-family:"Zilla Slab",Georgia,serif;font-weight:700;letter-spacing:-.015em;line-height:.95}
+.ico{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+.topbar{background:var(--ink);color:#aaa;font-size:12.5px;text-align:center;padding:6px 14px;position:relative;z-index:30}.topbar a{color:#fff}
+#pre{position:fixed;inset:0;z-index:100;background:var(--birch);display:grid;place-items:center;transition:opacity .9s .2s,visibility .9s .2s}
+#pre.done{opacity:0;visibility:hidden}#pre .z{font-size:50px}#pre p{font-size:14px;color:var(--mute);margin-top:6px;text-align:center}
+#pre .bar{width:200px;height:3px;background:var(--line);margin:16px auto 0}#pre .bar i{display:block;height:100%;width:0;background:var(--green);transition:width .3s}
+header{position:fixed;left:0;right:0;top:var(--tb,31px);z-index:40;color:#fff;transition:top .4s,background .4s,color .4s}
+header.solid{top:0;background:rgba(236,230,219,.92);backdrop-filter:blur(14px);color:var(--ink);box-shadow:0 1px 0 var(--line)}
+.nav{display:flex;align-items:center;gap:30px;height:74px}
+.logo{display:flex;gap:10px;align-items:center;text-decoration:none;font-family:"Zilla Slab";font-weight:700;font-size:24px}
+.logo svg{width:32px;height:32px}
+.nav ul{display:flex;gap:26px;list-style:none;padding:0;margin-left:auto;font-weight:600;font-size:15px}
+.nav ul a{text-decoration:none}.nav ul a:hover{text-decoration:underline;text-decoration-color:var(--tape);text-decoration-thickness:3px;text-underline-offset:5px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;cursor:pointer;background:var(--green);color:#fff;font:600 15.5px "IBM Plex Sans";padding:15px 22px;border-radius:3px;text-decoration:none;transition:background .3s,transform .2s}
+.btn:hover{background:#255a40}.btn.tape{background:var(--tape);color:var(--ink)}.btn.dk{background:var(--ink)}
+.btn svg{width:18px;height:18px}header .btn{padding:10px 16px;font-size:14.5px}
+
+#hero{position:relative;height:420vh;background:#444}
+.stage{position:sticky;top:0;height:100vh;overflow:hidden}
+.shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(20,20,20,.6),rgba(20,20,20,0) 55%),linear-gradient(180deg,rgba(0,0,0,.4),rgba(0,0,0,0) 25%,rgba(0,0,0,0) 60%,rgba(0,0,0,.55))}
+.htxt{position:absolute;left:0;right:0;bottom:9vh;color:#fff;pointer-events:none}
+.htxt h1{font-size:clamp(3.4rem,8vw,8.2rem);max-width:10ch}
+.htxt p{max-width:38ch;font-size:18.5px;margin:20px 0 26px}.htxt .btn{pointer-events:auto}
+.tape-strip{position:absolute;left:0;right:0;top:calc(var(--tb,31px) + 74px);height:10px;background:repeating-linear-gradient(-45deg,var(--tape) 0 18px,var(--ink) 18px 36px);opacity:.9}
+.cap{position:absolute;left:0;right:0;bottom:10vh;color:#fff;pointer-events:none}
+.cap .in{max-width:540px;opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s cubic-bezier(.2,.7,.2,1)}.cap.on .in{opacity:1;transform:none}
+.cap .k{display:inline-block;background:var(--tape);color:var(--ink);font-weight:700;font-size:13.5px;padding:4px 10px;margin-bottom:12px}
+.cap h2{font-size:clamp(2.8rem,6vw,6rem)}.cap p{font-size:18px;margin-top:12px;max-width:34ch}
+.hint{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);color:#fff;font-size:13px;opacity:.85;transition:opacity .4s}
+
+section.s{padding:130px 0}
+.kick{font-weight:700;color:var(--green);font-size:15px;display:block;margin-bottom:14px}
+h2.h{font-size:clamp(2.8rem,6vw,6rem);max-width:14ch}
+.lede{font-size:20px;color:var(--mute);max-width:48ch;margin-top:18px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.dbox{position:relative;aspect-ratio:3/2;overflow:hidden;background:#333;border:10px solid #fff;box-shadow:0 30px 60px -30px rgba(0,0,0,.4)}
+.tag3d{position:absolute;right:10px;top:10px;z-index:2;background:var(--tape);color:var(--ink);font-size:12.5px;font-weight:700;padding:5px 10px;pointer-events:none}
+.mach{display:grid;grid-template-columns:repeat(2,1fr);gap:16px 26px;margin-top:34px}
+.mach div{display:flex;gap:14px;align-items:center;font-weight:600}.mach .ico{width:34px;height:34px;color:var(--green)}
+.mach small{display:block;font-weight:400;color:var(--mute);font-size:14px}
+/* courses */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-top:34px}
+.filters button{border:1.5px solid var(--ink);background:none;font:600 15px "IBM Plex Sans";padding:9px 16px;cursor:pointer;border-radius:3px}
+.filters button[aria-pressed=true]{background:var(--ink);color:#fff}
+.courses{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+.course{background:#fff;display:flex;flex-direction:column;border-top:6px solid var(--green)}
+.course[hidden]{display:none}
+.course img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.course .b{padding:22px;display:flex;flex-direction:column;flex:1}
+.course .lvl{font-size:13px;font-weight:700;color:var(--green)}
+.course h3{font-family:"Zilla Slab";font-size:28px;line-height:1;margin:6px 0 8px}
+.course p{color:var(--mute);font-size:15.5px;flex:1}
+.course .dates{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0}
+.course .dates button{border:1.5px solid var(--line);background:none;font:600 13.5px "IBM Plex Sans";padding:7px 10px;cursor:pointer;border-radius:3px}
+.course .dates button[aria-pressed=true]{border-color:var(--ink);background:var(--ink);color:#fff}
+.course .dates button:disabled{opacity:.4;text-decoration:line-through;cursor:not-allowed}
+.course .foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:14px}
+.course .pr{font-family:"Zilla Slab";font-size:28px;font-weight:700}
+.course .seats{font-size:13.5px;font-weight:600}
+.course .seats.low{color:#b3401a}
+/* lathe band */
+#lathe{position:relative;height:220vh}
+#lathe .stg{position:sticky;top:0;height:100vh;overflow:hidden;background:#111}
+#lathe .ov{position:absolute;inset:0;display:flex;align-items:flex-end;padding-bottom:10vh;color:#fff;pointer-events:none;background:linear-gradient(0deg,rgba(0,0,0,.72),rgba(0,0,0,0) 55%)}
+#lathe h2{font-size:clamp(3rem,7vw,7rem);max-width:12ch}
+/* membership */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+.plan{background:#fff;padding:30px;display:flex;flex-direction:column}
+.plan.hot{background:var(--green);color:#fff}
+.plan h3{font-family:"Zilla Slab";font-size:30px}
+.plan .p{font-family:"Zilla Slab";font-size:56px;font-weight:700;line-height:1;margin:14px 0}.plan .p small{font:500 16px "IBM Plex Sans";opacity:.75}
+.plan ul{list-style:none;padding:0;display:grid;gap:10px;margin-bottom:24px;flex:1}.plan li{display:flex;gap:10px}.plan li .ico{width:20px;height:20px}
+.plan.hot .btn{background:var(--tape);color:var(--ink)}
+/* tour */
+#tour{background:var(--ink);color:#eee;padding:120px 0 0}
+#tour .lede{color:#aaa}#tour .kick{color:var(--tape)}
+.rooms{display:flex;gap:8px;margin-top:30px}
+.rooms button{border:0;background:#2c2e31;color:#eee;font:600 15px "IBM Plex Sans";padding:12px 18px;cursor:pointer;border-radius:3px}
+.rooms button[aria-pressed=true]{background:var(--tape);color:var(--ink)}
+.viewer{position:relative;height:min(80vh,780px);margin-top:16px;overflow:hidden;background:#000;border:10px solid #2c2e31;border-bottom:0}
+.vctl{position:absolute;right:16px;bottom:16px;display:flex;gap:6px;z-index:3}.vctl button{width:46px;height:46px;border:0;background:#fff;cursor:pointer;display:grid;place-items:center;border-radius:3px}.vctl .ico{width:20px;height:20px}
+[data-load]{background:#111;color:#aaa}
+/* book */
+.bk{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.form{background:#fff;padding:34px;border-top:6px solid var(--tape)}
+.form label{display:block;font-weight:600;font-size:14.5px;margin-bottom:16px}
+.form input,.form select{display:block;width:100%;margin-top:6px;font:400 16px "IBM Plex Sans";border:1.5px solid var(--line);padding:12px;background:var(--birch);border-radius:3px}
+.form input:focus,.form select:focus{outline:none;border-color:var(--ink);background:#fff}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form .btn{width:100%;padding:17px}
+.err{color:#b3401a;font-size:14px;min-height:1.2em;margin-top:10px}
+.ok{display:none;background:#fff;padding:34px;border-top:6px solid var(--green)}.ok b{display:block;font-family:"Zilla Slab";font-size:34px;line-height:1}.ok p{color:var(--mute);margin-top:10px}
+.faq details{border-top:1.5px solid var(--ink);padding:18px 0}.faq details:last-child{border-bottom:1.5px solid var(--ink)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font-size:18px;font-weight:700}
+.faq summary::-webkit-details-marker{display:none}.faq summary svg{width:22px;height:22px;stroke:currentColor;stroke-width:2;fill:none;flex:0 0 auto;transition:transform .35s}
+.faq details[open] summary svg{transform:rotate(45deg)}.faq p{color:var(--mute);margin-top:10px}
+footer{background:var(--ink);color:#aaa;padding:90px 0 36px}
+.fbig{font-size:clamp(4rem,14vw,14rem);color:var(--tape)}
+.fcols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px;margin-top:40px;font-size:15px}.fcols h4{color:#fff;font-size:14px;margin-bottom:10px}.fcols ul{list-style:none;padding:0;display:grid;gap:6px}.fcols a{text-decoration:none}
+.legal{margin-top:50px;font-size:13px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(36px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}.reveal.in{opacity:1;transform:none}
+@media(max-width:1000px){.nav ul{display:none}.split,.bk{grid-template-columns:1fr}.courses,.plans{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){body{font-size:16px}.wrap{padding:0 18px}.topbar{font-size:11px}.nav{height:62px}.logo{font-size:20px}header .btn{padding:9px 14px}.tape-strip{top:calc(var(--tb,31px) + 62px)}
+ .htxt h1{font-size:3.3rem}.htxt p{font-size:16px}.cap h2{font-size:2.8rem}section.s{padding:90px 0}.courses,.plans{grid-template-columns:1fr}.mach{grid-template-columns:1fr}.two{grid-template-columns:1fr}.form{padding:22px}.viewer{height:72vh;border-width:6px}.fcols{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+</style>
+<style id="rvcss"></style>
+</head>
+<body>
+<div id="pre" role="status"><div><div class="z">Offcut</div><p id="preTxt">Sharpening the chisels · 0%</p><div class="bar"><i id="preBar"></i></div></div></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="i-logo" viewBox="0 0 32 32"><rect x="2" y="2" width="28" height="28" rx="3" fill="var(--tape)"/><path d="M8 22l10-12 6 6-10 6z" fill="none" stroke="#1D1F22" stroke-width="2"/><path d="M8 22l-1 3 3-1" fill="none" stroke="#1D1F22" stroke-width="2"/></symbol>
+ <symbol id="i-saw" viewBox="0 0 32 32"><rect x="5" y="4" width="14" height="24" rx="2"/><path d="M12 4v24M19 14h8v8h-8"/></symbol>
+ <symbol id="i-lathe" viewBox="0 0 32 32"><path d="M3 22h26M6 22V12h5v10M21 22V14h6v8M11 17h10"/></symbol>
+ <symbol id="i-plane" viewBox="0 0 32 32"><path d="M4 22h24l-3-6H9z"/><path d="M13 16c0-4 2-6 5-6s4 2 4 4"/></symbol>
+ <symbol id="i-chisel" viewBox="0 0 32 32"><path d="M8 28l3-3 12-12-3-3-12 12z"/><path d="M20 10l3-5 4 4-5 3"/></symbol>
+ <symbol id="i-drill" viewBox="0 0 32 32"><path d="M8 4h14v6H8zM15 10v10M12 20h6l-1 4h-4zM15 24v4"/></symbol>
+ <symbol id="i-dust" viewBox="0 0 32 32"><path d="M5 26h22M9 26V12a7 7 0 0 1 14 0v14"/><path d="M13 16h6M13 20h6"/></symbol>
+ <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+ <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></symbol>
+ <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+ <symbol id="i-full" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+ <symbol id="i-zin" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+ <symbol id="i-zout" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+</svg>
+<div class="topbar">Example concept by <a href="https://calvyrn.com">Calvyrn</a>. Offcut Workshop is fictional; courses, prices and 555 numbers are placeholders. 360° photos are real.</div>
+<header id="hdr"><div class="wrap nav">
+ <a class="logo" href="#top"><svg><use href="#i-logo"/></svg>Offcut</a>
+ <ul><li><a href="#courses">Courses</a></li><li><a href="#members">Membership</a></li><li><a href="#tour">360° workshop</a></li><li><a href="#book">Book</a></li></ul>
+ <a class="btn tape" href="#courses">Find a course</a>
+</div></header>
+
+<main id="top">
+<section id="hero" aria-label="Scroll through the workshop in real 360 degree photos">
+ <div class="stage">
+  <div class="rv-hero" id="hpano" role="img" aria-label="Real 360 degree photos of a woodworking shop with bandsaws, workbenches and timber racks, and an old timber-roofed mill loft."></div>
+  <div class="shade"></div><div class="tape-strip"></div>
+  <div class="htxt" id="htxt"><div class="wrap">
+   <h1 class="z">Make it yourself. Properly.</h1>
+   <p>Weekend woodworking courses and a members' workshop with full-size machines. Scroll to walk in; these are real 360° photos.</p>
+   <a class="btn tape" href="#courses">See this month's courses<svg><use href="#i-arrow"/></svg></a>
+  </div></div>
+  <div class="cap" data-c="1"><div class="wrap"><div class="in"><span class="k">The machine shop</span><h2 class="z">Twelve benches, real machines.</h2><p>Bandsaws, a table saw with flesh-sensing brake, planer-thicknessers and dust extraction on every machine.</p></div></div></div>
+  <div class="cap" data-c="2"><div class="wrap"><div class="in"><span class="k">The mill loft</span><h2 class="z">Upstairs, hand tools only.</h2><p>The old grain-mill loft is our quiet room: hand planes, chisels and Japanese saws, and no machines running.</p></div></div></div>
+  <div class="hint" id="hint">Scroll to walk in</div>
+ </div>
+</section>
+
+<section class="s"><div class="wrap split">
+ <div class="dbox reveal"><div class="rv-depth" id="dPlane" style="background-image:url(img/plane-1440.jpg)"></div><span class="tag3d">3D PHOTO</span></div>
+ <div>
+  <span class="kick reveal">How we teach</span>
+  <h2 class="z h reveal">Six people per instructor. Never more.</h2>
+  <p class="lede reveal">You'll leave every course with something you made and the confidence to use the machines that made it. Everything below is included.</p>
+  <div class="mach reveal">
+   <div><svg class="ico"><use href="#i-saw"/></svg><p>Bandsaws<small>Two 18-inch, resaw-ready</small></p></div>
+   <div><svg class="ico"><use href="#i-plane"/></svg><p>Planer-thicknesser<small>310 mm, helical head</small></p></div>
+   <div><svg class="ico"><use href="#i-lathe"/></svg><p>Lathes<small>Four, with bowl tools</small></p></div>
+   <div><svg class="ico"><use href="#i-drill"/></svg><p>Pillar drills<small>And a hollow-chisel mortiser</small></p></div>
+   <div><svg class="ico"><use href="#i-chisel"/></svg><p>Hand-tool wall<small>Planes, chisels, saws, sharpened weekly</small></p></div>
+   <div><svg class="ico"><use href="#i-dust"/></svg><p>Dust extraction<small>On every machine, plus air filters</small></p></div>
+  </div>
+ </div>
+</div></section>
+
+<section class="s" id="courses" style="padding-top:0"><div class="wrap">
+ <span class="kick reveal">Courses</span>
+ <h2 class="z h reveal">Pick a weekend.</h2>
+ <div class="filters" role="group" aria-label="Filter by level"><button aria-pressed="true" data-f="all">All</button><button aria-pressed="false" data-f="Beginner">Beginner</button><button aria-pressed="false" data-f="Improver">Improver</button><button aria-pressed="false" data-f="Turning">Turning</button></div>
+ <div class="courses" id="courseList"></div>
+</div></section>
+
+<section id="lathe" data-sticky aria-label="Woodturning">
+ <div class="stg"><div class="rv-depth" id="dLathe" style="background-image:url(img/lathe-1440.jpg)"></div>
+  <div class="ov"><div class="wrap"><h2 class="z">Your first bowl, by Sunday.</h2><p style="max-width:40ch;font-size:18px;margin-top:14px">Our turning weekend starts with a spindle and ends with a bowl from a local log. Chips everywhere. Goggles on.</p></div></div>
+ </div>
+</section>
+
+<section class="s" id="members"><div class="wrap">
+ <span class="kick reveal">Membership</span>
+ <h2 class="z h reveal">Done a course? Keep a bench.</h2>
+ <div class="plans">
+  <div class="plan reveal"><h3>Evening</h3><div class="p">R950<small> /month</small></div><ul><li><svg class="ico"><use href="#i-check"/></svg>Tue and Thu, 17:30–21:30</li><li><svg class="ico"><use href="#i-check"/></svg>All machines you're inducted on</li><li><svg class="ico"><use href="#i-check"/></svg>Small locker</li></ul><a class="btn dk" href="#book">Book an induction</a></div>
+  <div class="plan hot reveal"><h3>Weekender</h3><div class="p">R1,450<small> /month</small></div><ul><li><svg class="ico"><use href="#i-check"/></svg>Evenings plus Sat and Sun</li><li><svg class="ico"><use href="#i-check"/></svg>Timber at trade price</li><li><svg class="ico"><use href="#i-check"/></svg>Large locker and project rack</li></ul><a class="btn" href="#book">Book an induction</a></div>
+  <div class="plan reveal"><h3>Resident</h3><div class="p">R3,200<small> /month</small></div><ul><li><svg class="ico"><use href="#i-check"/></svg>Your own bench, 24/7 access</li><li><svg class="ico"><use href="#i-check"/></svg>Storage cage</li><li><svg class="ico"><use href="#i-check"/></svg>Sell through our shop</li></ul><a class="btn dk" href="#book">Ask about a bench</a></div>
+ </div>
+</div></section>
+
+<section id="tour" aria-label="360 degree workshop tour">
+ <div class="wrap">
+  <span class="kick reveal">360° workshop</span>
+  <h2 class="z h reveal" style="color:#fff">Find your bench before you arrive.</h2>
+  <p class="lede reveal">Real 360° photos of the machine shop and the mill loft. Drag to look around, tap the circles to move.</p>
+  <div class="rooms" data-rooms role="group" aria-label="Rooms"><button data-r="shop" aria-pressed="true">Machine shop</button><button data-r="loft" aria-pressed="false">Mill loft</button></div>
+  <div class="viewer rv-viewer" id="viewer"><div data-pano></div><div data-spots></div><div data-load>Opening the shop…</div>
+   <div class="vctl"><button data-zin aria-label="Zoom in"><svg class="ico"><use href="#i-zin"/></svg></button><button data-zout aria-label="Zoom out"><svg class="ico"><use href="#i-zout"/></svg></button><button data-fs aria-label="Full screen"><svg class="ico"><use href="#i-full"/></svg></button></div></div>
+ </div>
+</section>
+
+<section class="s" id="book"><div class="wrap bk">
+ <div>
+  <span class="kick reveal">Book</span>
+  <h2 class="z h reveal" style="font-size:clamp(2.6rem,4.6vw,4.4rem)">Save your place.</h2>
+  <div class="faq reveal" style="margin-top:34px">
+   <details><summary>Do I need any experience?<svg><use href="#i-plus"/></svg></summary><p>Not for Beginner courses. Wear closed shoes and clothes you don't mind getting dusty.</p></details>
+   <details><summary>What age can come?<svg><use href="#i-plus"/></svg></summary><p>16 and up on courses; 12 to 15 with a parent on our family days.</p></details>
+   <details><summary>Can I cancel?<svg><use href="#i-plus"/></svg></summary><p>Full refund up to 14 days before, or move to another date any time.</p></details>
+  </div>
+ </div>
+ <div>
+ <form class="form reveal" id="bform" novalidate>
+  <label>Course<select id="bc"></select></label>
+  <label>Date<select id="bd"></select></label>
+  <div class="two"><label>Name<input id="bn" autocomplete="name"></label><label>Email<input id="be" type="email" autocomplete="email"></label></div>
+  <label>Places<select id="bp"><option>1</option><option>2</option></select></label>
+  <button class="btn" type="submit">Book my place<svg><use href="#i-arrow"/></svg></button><p class="err" id="berr" role="alert"></p>
+ </form>
+ <div class="ok" id="bok" tabindex="-1"></div>
+ </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+ <div class="z fbig">Offcut.</div>
+ <div class="fcols"><div><p>Woodworking courses and a shared workshop. Open Tue–Sun.</p></div>
+ <div><h4>Workshop</h4><ul><li><a href="#courses">Courses</a></li><li><a href="#members">Membership</a></li><li><a href="#tour">360° tour</a></li></ul></div>
+ <div><h4>Contact</h4><ul><li>+27 (0)21 555 0129</li><li>bench@offcut.example</li></ul></div></div>
+ <div class="legal"><span>© 2026 Offcut Workshop (fictional). 360° photos: Poly Haven, CC0 (real photographs). Photos: Unsplash. 3D photo effect from depth estimated on the real photo.</span><span>Concept, design and build: <a href="https://calvyrn.com" style="color:#fff">Calvyrn</a></span></div>
+</div></footer>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.164.1/build/three.module.js"}}</script>
+<script type="module">
+import {createPano,scrollDirector,panoCSS,boot,stickyProgress,depthOnScroll,wireTour} from '../../shared/realview.js';
+document.getElementById('rvcss').textContent=panoCSS;
+const K=boot({preLabel:'Sharpening the chisels'});const {$,mob}=K;
+const S=n=>({src:`pano/${n}-6k.jpg`,srcMobile:`pano/${n}-3k.jpg`});const F=mob?14:0;const fmt=n=>n.toLocaleString('en-US');
+
+const hero=createPano($('hpano'),{scenes:{shop:{...S('university_workshop'),yaw:-140},loft:{...S('industrial_wooden_attic'),yaw:30}},start:'shop',fov:78+F,auto:0,onProgress:(id,p)=>id==='shop'&&K.setPre(p*.95),onReady:K.finish});
+hero.interactive(false);
+const SEGS=[{id:'shop',until:.55,K:[[0,-145,-6,80+F],[.28,-60,4,72+F],[.55,25,-2,66+F]]},{id:'loft',K:[[.55,40,-2,72+F],[.78,100,10,74+F],[1,-160,-4,76+F]]}];
+const director=scrollDirector(hero,SEGS,.08);const caps=[...document.querySelectorAll('.cap')];
+function onScroll(){const HP=stickyProgress($('hero'));$('hdr').classList.toggle('solid',$('hero').getBoundingClientRect().bottom<90);director(HP);
+ const c=HP<.07?0:HP<.55?1:2;caps.forEach(x=>x.classList.toggle('on',+x.dataset.c===c));$('htxt').style.opacity=Math.max(0,1-HP*13);$('hint').style.opacity=HP>.02?0:.85}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+depthOnScroll($('dPlane'),{src:mob?'img/plane-1440.jpg':'img/plane-2560.jpg',depth:'img/plane-depth.jpg',strength:.38},p=>({z:.05+p*.2,x:-.05+p*.1}));
+depthOnScroll($('dLathe'),{src:mob?'img/lathe-1440.jpg':'img/lathe-2560.jpg',depth:'img/lathe-depth.jpg',strength:.48,overscan:1.22},p=>({z:p*.5,x:.1-p*.2,y:-.04+p*.08}),stickyProgress);
+
+wireTour({viewer:$('viewer'),start:'shop',scenes:{
+ shop:{...S('university_workshop'),yaw:-140,hotspots:[{to:'loft',yaw:120,pitch:-2,label:'Up to the mill loft',arrive:30},{yaw:-140,pitch:-8,label:'Bandsaws'},{yaw:-45,pitch:-2,label:'Timber rack'},{yaw:-170,pitch:-14,label:'Your bench'}]},
+ loft:{...S('industrial_wooden_attic'),yaw:30,hotspots:[{to:'shop',yaw:-75,pitch:-10,label:'Down to the shop',arrive:-140},{yaw:40,pitch:-4,label:'Hand-tool benches'},{yaw:140,pitch:6,label:'Original mill machinery'}]}}});
+
+/* courses */
+const C=[['Beginner','Make a stool','Saws, chisels and the bandsaw, and you go home with a three-legged stool in oak.',2950,'img/carve-960.jpg',[6,2,0,5]],
+['Beginner','Cutting board weekend','Glue-up, planer and finish. Two boards: one to keep, one to give.',1650,'img/shavings-960.jpg',[3,0,4]],
+['Improver','Hand-cut joinery','Dovetails, mortise and tenon, by hand. Build a small wall cabinet.',4200,'img/joint-960.jpg',[2,5,1]],
+['Improver','Build a side table','Machine milling, mortiser and a hand-plane finish. Two weekends.',6800,'img/mortise-960.jpg',[4,0]],
+['Turning','Bowl turning','Spindle work Saturday, a bowl from a green log on Sunday.',2650,'img/maker-960.jpg',[1,6,3]],
+['Beginner','Family day','A birdhouse with a parent or grandparent. Ages 12 and up.',1200,'img/plane-1440.jpg',[8,7]]];
+const sat=k=>{const d=new Date();d.setDate(d.getDate()+((6-d.getDay()+7)%7||7)+k*7);return d};
+const dlab=d=>d.toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+$('courseList').innerHTML=C.map((c,i)=>`<article class="course reveal in" data-l="${c[0]}"><img src="${c[4]}" alt="" loading="lazy"><div class="b"><span class="lvl">${c[0]} · weekend</span><h3>${c[1]}</h3><p>${c[2]}</p>
+ <div class="dates">${c[5].map((seats,k)=>`<button type="button" data-i="${i}" data-k="${k}" ${seats===0?'disabled':''} aria-pressed="false">${dlab(sat(k*2+i%2))}${seats>0&&seats<3?' · '+seats+' left':''}</button>`).join('')}</div>
+ <div class="foot"><span class="pr">R${fmt(c[3])}</span><a class="btn" href="#book" data-book="${i}">Book</a></div></div></article>`).join('');
+document.querySelector('.filters').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;document.querySelectorAll('.filters button').forEach(x=>x.setAttribute('aria-pressed',x===b));document.querySelectorAll('.course').forEach(c=>c.hidden=b.dataset.f!=='all'&&c.dataset.l!==b.dataset.f)});
+$('bc').innerHTML=C.map((c,i)=>`<option value="${i}">${c[1]} · R${fmt(c[3])}</option>`).join('');
+function fillDates(i,k){$('bd').innerHTML=C[i][5].map((s,kk)=>`<option value="${kk}" ${s===0?'disabled':''} ${kk===k?'selected':''}>${dlab(sat(kk*2+i%2))} ${s===0?'(full)':`(${s} place${s>1?'s':''} left)`}</option>`).join('');if(k==null){const f=C[i][5].findIndex(s=>s>0);$('bd').value=f}}
+$('bc').addEventListener('change',()=>fillDates(+$('bc').value));fillDates(0);
+$('courseList').addEventListener('click',e=>{const d=e.target.closest('.dates button');if(d){d.parentElement.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===d));$('bc').value=d.dataset.i;fillDates(+d.dataset.i,+d.dataset.k)}
+ const b=e.target.closest('[data-book]');if(b){$('bc').value=b.dataset.book;const sel=b.closest('.course').querySelector('.dates [aria-pressed=true]');fillDates(+b.dataset.book,sel?+sel.dataset.k:null)}});
+$('bform').addEventListener('submit',e=>{e.preventDefault();const i=+$('bc').value,k=+$('bd').value,n=$('bn').value.trim(),m=$('be').value.trim(),p=+$('bp').value;const left=C[i][5][k];
+ const err=n.length<2?'Add your name.':!/^\S+@\S+\.\S+$/.test(m)?'Add your email for the joining notes.':p>left?`Only ${left} place left on that date.`:'';$('berr').textContent=err;if(err)return;
+ $('bform').style.display='none';$('bok').innerHTML=`<b>Bench ${3+i*2} is yours.</b><p>${C[i][1]}, ${dlab(sat(k*2+i%2))}, ${p} place${p>1?'s':''}: R${fmt(C[i][3]*p)}. Joining notes to ${m.replace(/[<>]/g,'')}. Demo: nothing was charged.</p>`;$('bok').style.display='block';$('bok').focus()});
+</script>
+</body>
+</html>

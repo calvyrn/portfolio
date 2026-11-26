@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kareeberg · A farm wedding venue in the Karoo · Walk the chapel in 360°</title>
+<meta name="description" content="A thatched chapel with a round window onto the Karoo, a vine chapel and a glass bridal suite. Walk the whole day in real 360° photos, check dates and price your wedding.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Albert+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F1F2EC;--ink:#23261F;--olive:#5F6B3F;--rose:#B97F7A;--mute:#6B6F63;--line:#D8DACF;--rv-font:"Albert Sans"}
+*{box-sizing:border-box;margin:0}
+html.lenis{height:auto}.lenis.lenis-smooth{scroll-behavior:auto}
+body{font:400 17.5px/1.65 "Albert Sans",system-ui,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}a{color:inherit}
+:focus-visible{outline:2px solid var(--olive);outline-offset:3px}
+.wrap{max-width:1260px;margin:0 auto;padding:0 34px}
+.s-f{font-family:"Gloock",Georgia,serif;font-weight:400;letter-spacing:-.01em;line-height:1}
+.ico{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+.topbar{background:var(--ink);color:#b9bcb0;font-size:12.5px;text-align:center;padding:6px 14px;position:relative;z-index:30}.topbar a{color:#fff}
+#pre{position:fixed;inset:0;z-index:100;background:var(--bg);display:grid;place-items:center;transition:opacity .9s .2s,visibility .9s .2s}
+#pre.done{opacity:0;visibility:hidden}#pre .s-f{font-size:46px;text-align:center}#pre p{color:var(--mute);font-size:14px;margin-top:8px;text-align:center}
+#pre .bar{width:200px;height:1px;background:var(--line);margin:18px auto 0}#pre .bar i{display:block;height:100%;width:0;background:var(--ink);transition:width .3s}
+header{position:fixed;left:0;right:0;top:var(--tb,31px);z-index:40;color:#fff;transition:top .4s,background .4s,color .4s}
+header.solid{top:0;background:rgba(241,242,236,.9);backdrop-filter:blur(14px);color:var(--ink);box-shadow:0 1px 0 var(--line)}
+.nav{display:flex;align-items:center;gap:30px;height:76px}
+.logo{text-decoration:none;font-family:"Gloock";font-size:26px}
+.nav ul{display:flex;gap:28px;list-style:none;padding:0;margin-left:auto;font-weight:500;font-size:15.5px}
+.nav ul a{text-decoration:none}.nav ul a:hover{text-decoration:underline;text-underline-offset:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;cursor:pointer;background:var(--ink);color:#fff;font:600 15.5px "Albert Sans";padding:15px 24px;border-radius:999px;text-decoration:none;transition:background .3s}
+.btn:hover{background:var(--olive)}.btn.light{background:#fff;color:var(--ink)}.btn.light:hover{background:#e9eadf}
+.btn svg{width:18px;height:18px}header .btn{padding:11px 18px;font-size:14.5px}header:not(.solid) .btn{background:#fff;color:var(--ink)}
+
+#hero{position:relative;height:460vh;background:#222}
+.stage{position:sticky;top:0;height:100vh;overflow:hidden}
+.shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(20,22,18,.55),rgba(20,22,18,0) 55%),linear-gradient(180deg,rgba(20,22,18,.4),rgba(20,22,18,0) 25%,rgba(20,22,18,0) 60%,rgba(20,22,18,.6))}
+.htxt{position:absolute;left:0;right:0;bottom:10vh;color:#fff;pointer-events:none}
+.htxt h1{font-size:clamp(3.4rem,7.6vw,7.8rem);max-width:10ch}
+.htxt p{max-width:36ch;font-size:18.5px;margin:20px 0 26px;opacity:.92}
+.htxt .btn{pointer-events:auto}
+.time{position:absolute;right:34px;bottom:10vh;color:#fff;text-align:right;pointer-events:none}
+.time b{display:block;font-family:"Gloock";font-size:clamp(3rem,6vw,5.6rem);line-height:1;font-variant-numeric:tabular-nums}
+.time span{font-size:15px;font-weight:600;opacity:.9}
+.cap{position:absolute;left:0;right:0;bottom:10vh;color:#fff;pointer-events:none}
+.cap .in{max-width:520px;opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s cubic-bezier(.2,.7,.2,1)}
+.cap.on .in{opacity:1;transform:none}
+.cap h2{font-size:clamp(2.8rem,5.6vw,5.4rem)}
+.cap p{font-size:18px;margin-top:14px;max-width:34ch}
+.hint{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);color:#fff;font-size:13px;opacity:.85;transition:opacity .4s}
+
+section.s{padding:130px 0}
+.kick{font-weight:600;color:var(--olive);font-size:15px;display:block;margin-bottom:14px}
+h2.h{font-size:clamp(2.6rem,5.4vw,5.2rem);max-width:15ch}
+.lede{font-size:20px;color:var(--mute);max-width:46ch;margin-top:20px}
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.dbox{position:relative;aspect-ratio:3/2;border-radius:200px 200px 16px 16px;overflow:hidden;background:#ccc}
+.tag3d{position:absolute;left:50%;transform:translateX(-50%);bottom:16px;z-index:2;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:999px;pointer-events:none}
+.faiths{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.faiths span{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font-size:15px;display:flex;gap:8px;align-items:center}.faiths .ico{width:18px;height:18px;color:var(--olive)}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:240px;gap:12px;margin-top:50px}
+.gal figure{position:relative;overflow:hidden;border-radius:12px}.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}.gal figure:hover img{transform:scale(1.05)}
+.gal .t{grid-row:span 2}.gal .w{grid-column:span 2}
+.gal figcaption{position:absolute;left:12px;bottom:12px;background:rgba(255,255,255,.9);font-size:13px;font-weight:600;padding:5px 10px;border-radius:999px}
+/* price builder */
+#price{background:#E6E8DD}
+.pb{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;margin-top:50px;align-items:start}
+.pb fieldset{border:0;padding:0;margin:0 0 30px}.pb legend{font-weight:700;margin-bottom:12px}
+.seasons{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.opt{position:relative}.opt input{position:absolute;opacity:0}
+.opt span{display:block;background:#fff;border:1.5px solid transparent;border-radius:14px;padding:16px;cursor:pointer;height:100%}
+.opt span b{display:block;font-size:17px}.opt span small{color:var(--mute);font-size:14px}
+.opt input:checked+span{border-color:var(--ink)}.opt input:focus-visible+span{outline:2px solid var(--olive)}
+.range{display:flex;align-items:center;gap:16px}.range input{flex:1;accent-color:var(--olive)}.range output{font-family:"Gloock";font-size:40px;min-width:3ch;text-align:right}
+.extras{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.extras label{display:flex;gap:12px;align-items:center;background:#fff;border-radius:14px;padding:14px;cursor:pointer;font-weight:500}
+.extras input{width:20px;height:20px;accent-color:var(--olive)}.extras small{margin-left:auto;color:var(--mute)}
+.sum{position:sticky;top:100px;background:var(--ink);color:#eceee4;border-radius:24px;padding:32px}
+.sum h3{font-family:"Gloock";font-weight:400;font-size:30px}
+.sum dl{display:grid;grid-template-columns:1fr auto;gap:10px;margin:22px 0;padding:20px 0;border-top:1px solid rgba(255,255,255,.15);border-bottom:1px solid rgba(255,255,255,.15);font-size:15.5px}.sum dd{margin:0}
+.sum .tot{font-family:"Gloock";font-size:52px;line-height:1}
+.sum .pp{color:#b9bcb0;font-size:14px;margin-top:6px}
+.sum .btn{width:100%;margin-top:22px;background:#fff;color:var(--ink)}
+/* calendar */
+.cal{margin-top:24px;background:#fff;border-radius:16px;padding:18px}
+.calh{display:flex;justify-content:space-between;align-items:center;font-weight:700;margin-bottom:10px}
+.calh button{border:0;background:var(--bg);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:18px}
+.grid7{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center;font-size:14px}
+.grid7 .dn{color:var(--mute);font-size:12px;font-weight:700;padding:4px 0}
+.grid7 button{border:0;background:none;aspect-ratio:1;border-radius:50%;cursor:pointer;font:500 14px "Albert Sans";color:var(--ink)}
+.grid7 button:disabled{color:#bbb;text-decoration:line-through;cursor:not-allowed}
+.grid7 button.sat:not(:disabled){font-weight:700}
+.grid7 button[aria-pressed=true]{background:var(--ink);color:#fff}
+.calk{display:flex;gap:16px;font-size:13px;color:var(--mute);margin-top:10px}
+/* tour */
+#tour{background:var(--ink);color:#eceee4;padding:120px 0 0}
+#tour .lede{color:#b9bcb0}#tour .kick{color:#c9d0a8}
+.rooms{display:flex;gap:8px;margin-top:30px;flex-wrap:wrap}
+.rooms button{border:1px solid rgba(255,255,255,.25);background:none;color:#eceee4;font:600 15px "Albert Sans";padding:11px 18px;border-radius:999px;cursor:pointer}
+.rooms button[aria-pressed=true]{background:#fff;color:var(--ink)}
+.viewer{position:relative;height:min(80vh,780px);margin-top:18px;overflow:hidden;border-radius:200px 200px 0 0;background:#000}
+.vctl{position:absolute;right:18px;bottom:18px;display:flex;gap:6px;z-index:3}.vctl button{width:46px;height:46px;border-radius:50%;border:0;background:#fff;cursor:pointer;display:grid;place-items:center}.vctl .ico{width:20px;height:20px}
+[data-load]{background:#111;color:#aaa}
+/* viewing */
+.vw{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.form{background:#fff;border-radius:24px;padding:34px}
+.form label{display:block;font-weight:600;font-size:14.5px;margin-bottom:16px}
+.form input,.form select,.form textarea{display:block;width:100%;margin-top:6px;font:400 16px "Albert Sans";border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--bg);color:var(--ink)}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--ink);background:#fff}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form .btn{width:100%;padding:17px}
+.err{color:#a8322d;font-size:14px;min-height:1.2em;margin-top:10px}
+.ok{display:none;background:#fff;border-radius:24px;padding:34px}.ok b{display:block;font-family:"Gloock";font-weight:400;font-size:36px}.ok p{color:var(--mute);margin-top:10px}
+.quote{font-family:"Gloock";font-size:28px;line-height:1.3;margin-top:40px}.quote footer{font:500 14px "Albert Sans";color:var(--mute);margin-top:12px}
+.ph{font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--rose)}
+footer.site{background:var(--ink);color:#b9bcb0;padding:90px 0 36px;margin-top:130px}
+.fbig{font-size:clamp(4rem,13vw,13rem);color:#eceee4}
+.fcols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px;margin-top:40px;font-size:15px}.fcols h4{color:#fff;font-size:14px;margin-bottom:10px}.fcols ul{list-style:none;padding:0;display:grid;gap:6px}.fcols a{text-decoration:none}
+.legal{margin-top:50px;font-size:13px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(36px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}.reveal.in{opacity:1;transform:none}
+@media(max-width:1000px){.nav ul{display:none}.intro,.pb,.vw{grid-template-columns:1fr}.sum{position:static}.gal{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){body{font-size:16px}.wrap{padding:0 18px}.topbar{font-size:11px}.nav{height:62px}.logo{font-size:22px}header .btn{padding:9px 14px}
+ .htxt h1{font-size:3.2rem}.htxt p{font-size:16px}.time{top:calc(var(--tb,31px) + 80px);bottom:auto;right:18px}.time b{font-size:2.6rem}.cap h2{font-size:2.6rem}.cap{bottom:8vh}
+ section.s{padding:90px 0}.seasons{grid-template-columns:1fr}.extras{grid-template-columns:1fr}.gal{grid-auto-rows:170px}.viewer{height:72vh;border-radius:120px 120px 0 0}.two{grid-template-columns:1fr}.form{padding:22px}.fcols{grid-template-columns:1fr}.dbox{border-radius:120px 120px 14px 14px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+</style>
+<style id="rvcss"></style>
+</head>
+<body>
+<div id="pre" role="status"><div><div class="s-f">Kareeberg</div><p id="preTxt">Opening the chapel doors · 0%</p><div class="bar"><i id="preBar"></i></div></div></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="i-ring" viewBox="0 0 32 32"><circle cx="16" cy="19" r="9"/><path d="M12 6l4-3 4 3-4 4z"/></symbol>
+ <symbol id="i-sun" viewBox="0 0 32 32"><circle cx="16" cy="16" r="5"/><path d="M16 3v4M16 25v4M3 16h4M25 16h4M7 7l3 3M22 22l3 3M7 25l3-3M22 10l3-3"/></symbol>
+ <symbol id="i-leaf" viewBox="0 0 32 32"><path d="M7 25c0-11 7-17 19-18-1 12-7 19-18 19"/><path d="M7 25c4-6 8-10 13-13"/></symbol>
+ <symbol id="i-snow" viewBox="0 0 32 32"><path d="M16 3v26M5 9.5l22 13M5 22.5l22-13"/></symbol>
+ <symbol id="i-moon" viewBox="0 0 32 32"><path d="M24 20A10 10 0 0 1 12 8a10 10 0 1 0 12 12z"/></symbol>
+ <symbol id="i-hand" viewBox="0 0 32 32"><path d="M10 17V8.5a1.8 1.8 0 0 1 3.6 0V15M13.6 14V6.5a1.8 1.8 0 0 1 3.6 0V14M17.2 14V7.8a1.8 1.8 0 0 1 3.6 0V15M20.8 15v-4a1.8 1.8 0 0 1 3.6 0v8c0 5-3.4 9-8.4 9h-1.6c-3 0-5-1.5-6.6-4l-3-5a1.8 1.8 0 0 1 3-2l2.2 2.6"/></symbol>
+ <symbol id="i-dove" viewBox="0 0 32 32"><path d="M4 18c5 0 8-3 10-8 2 6 7 9 14 8-3 5-8 8-14 8-5 0-8-3-10-8z"/><path d="M14 10c-1-3 0-6 3-7"/></symbol>
+ <symbol id="i-cross" viewBox="0 0 32 32"><path d="M16 4v24M10 11h12"/></symbol>
+ <symbol id="i-crescent" viewBox="0 0 32 32"><path d="M20 5a11 11 0 1 0 7 17A9 9 0 1 1 20 5z"/><path d="M24 9l1 2.5 2.5.5-2 1.6.6 2.6-2.1-1.4-2.2 1.4.6-2.6-2-1.6 2.6-.5z"/></symbol>
+ <symbol id="i-cake" viewBox="0 0 32 32"><path d="M6 28h20V20H6zM9 20v-6h14v6M12 14V9h8v5M16 9V5"/></symbol>
+ <symbol id="i-bed" viewBox="0 0 32 32"><path d="M3 24V9M29 24v-6a4 4 0 0 0-4-4H13v8"/><path d="M3 18h26"/><circle cx="8" cy="14" r="2.5"/></symbol>
+ <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+ <symbol id="i-full" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+ <symbol id="i-zin" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+ <symbol id="i-zout" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+</svg>
+<div class="topbar">Example concept by <a href="https://calvyrn.com">Calvyrn</a>. Kareeberg is fictional; prices, dates and 555 numbers are placeholders. 360° photos are real.</div>
+<header id="hdr"><div class="wrap nav">
+ <a class="logo" href="#top">Kareeberg</a>
+ <ul><li><a href="#venue">The venue</a></li><li><a href="#tour">360° walk-through</a></li><li><a href="#price">Price your day</a></li><li><a href="#visit">Visit</a></li></ul>
+ <a class="btn" href="#price">Check your date</a>
+</div></header>
+
+<main id="top">
+<section id="hero" aria-label="Scroll through a wedding day in real 360 degree photos">
+ <div class="stage">
+  <div class="rv-hero" id="hpano" role="img" aria-label="Real 360 degree photos: a glass-walled bridal suite above the Karoo, a thatched white chapel with a round window, and an open-air vine chapel."></div>
+  <div class="shade"></div>
+  <div class="time" id="time"><b id="clock">13:30</b><span id="clockL">Getting ready</span></div>
+  <div class="htxt" id="htxt"><div class="wrap">
+   <h1 class="s-f">Say it with the whole Karoo watching.</h1>
+   <p>A farm wedding venue with a thatched chapel, a vine chapel and a glass bridal suite. Scroll through the day; these are real 360° photos.</p>
+   <a class="btn light" href="#price">Price your wedding<svg><use href="#i-arrow"/></svg></a>
+  </div></div>
+  <div class="cap" data-c="1"><div class="wrap"><div class="in"><h2 class="s-f">Get ready with a view.</h2><p>The glass suite is yours from 9 am: two beds, a long table for the bridal party, and the valley on three sides.</p></div></div></div>
+  <div class="cap" data-c="2"><div class="wrap"><div class="in"><h2 class="s-f">Then the long walk.</h2><p>Up the aisle of the thatched chapel to the round window. Seats 120.</p></div></div></div>
+  <div class="cap" data-c="3"><div class="wrap"><div class="in"><h2 class="s-f">Or say it outside.</h2><p>The vine chapel: stone walls, a pergola roof and the arch where most couples choose to stand.</p></div></div></div>
+  <div class="hint" id="hint">Scroll through the day</div>
+ </div>
+</section>
+
+<section class="s" id="venue"><div class="wrap intro">
+ <div class="dbox reveal"><div class="rv-depth" id="dBouquet" style="background-image:url(img/bouquet-1440.jpg)"></div><span class="tag3d">3D photo · move your mouse</span></div>
+ <div>
+  <span class="kick reveal">The venue</span>
+  <h2 class="s-f h reveal">One couple per weekend.</h2>
+  <p class="lede reveal">We only host one wedding at a time, from the Friday rehearsal to Sunday brunch. Ceremonies of every faith, or none, and a kitchen that can cook halal, kosher or vegetarian for everyone.</p>
+  <div class="faiths reveal"><span><svg class="ico"><use href="#i-cross"/></svg>Church</span><span><svg class="ico"><use href="#i-crescent"/></svg>Nikah and mehndi</span><span><svg class="ico"><use href="#i-ring"/></svg>Civil</span><span><svg class="ico"><use href="#i-dove"/></svg>Hindu and Sikh</span><span><svg class="ico"><use href="#i-leaf"/></svg>Humanist</span></div>
+ </div>
+</div></section>
+
+<section class="s" style="padding-top:0"><div class="wrap">
+ <span class="kick reveal">Real weddings</span>
+ <h2 class="s-f h reveal">Every one looks different.</h2>
+ <div class="gal">
+  <figure class="t reveal"><img src="img/aisle-960.jpg" srcset="img/aisle-960.jpg 960w, img/aisle-1440.jpg 1440w" sizes="(max-width:1000px) 50vw, 25vw" alt="Aisle lined with candles and fairy lights at night" loading="lazy"><figcaption>Candle aisle</figcaption></figure>
+  <figure class="w reveal"><img src="img/dance-960.jpg" srcset="img/dance-960.jpg 960w, img/dance-1440.jpg 1440w" sizes="(max-width:1000px) 100vw, 50vw" alt="Guests dancing under festoon lights with sparklers" loading="lazy"><figcaption>First dance</figcaption></figure>
+  <figure class="t reveal"><img src="img/mehndi-960.jpg" srcset="img/mehndi-960.jpg 960w, img/mehndi-1440.jpg 1440w" sizes="(max-width:1000px) 50vw, 25vw" alt="Bride's hands with henna and gold bangles" loading="lazy"><figcaption>Mehndi night</figcaption></figure>
+  <figure class="reveal"><img src="img/rings-960.jpg" srcset="img/rings-960.jpg 960w, img/rings-1440.jpg 1440w" sizes="(max-width:1000px) 50vw, 25vw" alt="Couple's hands with wedding rings and flowers" loading="lazy"></figure>
+  <figure class="reveal"><img src="img/tables-960.jpg" srcset="img/tables-960.jpg 960w, img/tables-1440.jpg 1440w" sizes="(max-width:1000px) 50vw, 25vw" alt="Reception tables under strings of lights" loading="lazy"><figcaption>Reception</figcaption></figure>
+ </div>
+</div></section>
+
+<section id="tour" aria-label="360 degree walk-through">
+ <div class="wrap">
+  <span class="kick reveal">Before your viewing</span>
+  <h2 class="s-f h reveal">Stand where you'll say it.</h2>
+  <p class="lede reveal">Real 360° photos of all three spaces. Drag to look around, tap the circles to walk between them.</p>
+  <div class="rooms" data-rooms role="group" aria-label="Spaces"><button data-r="chapel" aria-pressed="true">Thatched chapel</button><button data-r="vine" aria-pressed="false">Vine chapel</button><button data-r="suite" aria-pressed="false">Bridal suite</button></div>
+  <div class="viewer rv-viewer" id="viewer"><div data-pano></div><div data-spots></div><div data-load>Opening the chapel…</div>
+   <div class="vctl"><button data-zin aria-label="Zoom in"><svg class="ico"><use href="#i-zin"/></svg></button><button data-zout aria-label="Zoom out"><svg class="ico"><use href="#i-zout"/></svg></button><button data-fs aria-label="Full screen"><svg class="ico"><use href="#i-full"/></svg></button></div></div>
+ </div>
+</section>
+
+<section class="s" id="price"><div class="wrap">
+ <span class="kick reveal">Price your day</span>
+ <h2 class="s-f h reveal">An honest number before the first call.</h2>
+ <div class="pb">
+  <form id="pform" onsubmit="return false">
+   <fieldset><legend>Season</legend><div class="seasons">
+    <label class="opt"><input type="radio" name="season" value="peak" checked><span><b>Spring</b><small>Sep–Nov · R780 pp</small></span></label>
+    <label class="opt"><input type="radio" name="season" value="summer"><span><b>Summer</b><small>Dec–Mar · R690 pp</small></span></label>
+    <label class="opt"><input type="radio" name="season" value="winter"><span><b>Winter</b><small>Apr–Aug · R560 pp</small></span></label>
+   </div></fieldset>
+   <fieldset><legend id="gl">Guests</legend><div class="range"><input type="range" id="guests" min="30" max="160" step="5" value="90" aria-labelledby="gl"><output id="gOut">90</output></div></fieldset>
+   <fieldset><legend>Add to the weekend</legend><div class="extras">
+    <label><input type="checkbox" name="x" value="suite" checked><svg class="ico"><use href="#i-bed"/></svg>Bridal suite, 2 nights<small>R6,800</small></label>
+    <label><input type="checkbox" name="x" value="rehearsal"><svg class="ico"><use href="#i-sun"/></svg>Friday rehearsal dinner<small>R290 pp</small></label>
+    <label><input type="checkbox" name="x" value="mehndi"><svg class="ico"><use href="#i-hand"/></svg>Mehndi or sangeet night<small>R18,500</small></label>
+    <label><input type="checkbox" name="x" value="brunch"><svg class="ico"><use href="#i-cake"/></svg>Sunday brunch<small>R180 pp</small></label>
+   </div></fieldset>
+   <div class="cal"><div class="calh"><button type="button" id="prev" aria-label="Previous month">‹</button><span id="mlabel"></span><button type="button" id="next" aria-label="Next month">›</button></div>
+    <div class="grid7" id="grid"></div><div class="calk"><span><b>Bold</b> = Saturday</span><span><s>Struck</s> = already booked</span></div></div>
+  </form>
+  <aside class="sum" aria-live="polite"><h3 id="sumT">Your wedding</h3><dl id="sumL"></dl><div class="tot" id="tot"></div><div class="pp" id="pp"></div><a class="btn" href="#visit" id="toVisit">Book a viewing for this date<svg><use href="#i-arrow"/></svg></a></aside>
+ </div>
+</div></section>
+
+<section class="s" id="visit" style="padding-bottom:0"><div class="wrap vw">
+ <div class="dbox reveal" style="aspect-ratio:4/3"><div class="rv-depth" id="dCouple" style="background-image:url(img/couple-1440.jpg)"></div><span class="tag3d">3D photo</span></div>
+ <div>
+  <span class="kick reveal">Visit the farm</span>
+  <h2 class="s-f h reveal" style="font-size:clamp(2.4rem,4.4vw,4rem)">Come for a walk and a glass of wine.</h2>
+  <form class="form reveal" id="vform" novalidate style="margin-top:30px">
+   <div class="two"><label>Your names<input id="vn" autocomplete="name" placeholder="Amira & Daniel"></label><label>Email<input id="ve" type="email" autocomplete="email"></label></div>
+   <div class="two"><label>Wedding date<input id="vd" readonly placeholder="Pick a date above"></label><label>Viewing<select id="vs"><option>Saturday 10:00</option><option>Saturday 14:00</option><option>Weekday, any time</option><option>Video call</option></select></label></div>
+   <label>Anything we should know?<textarea id="vt" rows="3" placeholder="Ceremony type, food, family traditions"></textarea></label>
+   <button class="btn" type="submit">Request a viewing<svg><use href="#i-arrow"/></svg></button><p class="err" id="verr" role="alert"></p>
+  </form>
+  <div class="ok" id="vok" tabindex="-1"></div>
+  <blockquote class="quote reveal">“We booked from Dubai after walking the chapel in 360. On the day it was exactly that window.”<footer>Amira &amp; Daniel · <span class="ph">PLACEHOLDER REVIEW</span></footer></blockquote>
+ </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+ <div class="s-f fbig">Kareeberg</div>
+ <div class="fcols"><div><p>A farm wedding venue in the Karoo, South Africa. One couple per weekend.</p></div>
+ <div><h4>Plan</h4><ul><li><a href="#tour">360° walk-through</a></li><li><a href="#price">Price your day</a></li><li><a href="#visit">Visit</a></li></ul></div>
+ <div><h4>Contact</h4><ul><li>+27 (0)23 555 0161</li><li>hello@kareeberg.example</li></ul></div></div>
+ <div class="legal"><span>© 2026 Kareeberg (fictional). 360° photos: Poly Haven, CC0 (real photographs). Photos: Unsplash. 3D photo effect from depth estimated on the real photo.</span><span>Concept, design and build: <a href="https://calvyrn.com" style="color:#fff">Calvyrn</a></span></div>
+</div></footer>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.164.1/build/three.module.js"}}</script>
+<script type="module">
+import {createPano,scrollDirector,panoCSS,boot,stickyProgress,depthOnScroll,wireTour} from '../../shared/realview.js';
+document.getElementById('rvcss').textContent=panoCSS;
+const K=boot({preLabel:'Opening the chapel doors'});const {$,mob}=K;
+const S=n=>({src:`pano/${n}-6k.jpg`,srcMobile:`pano/${n}-3k.jpg`});const F=mob?14:0;
+const fmt=n=>n.toLocaleString('en-US');
+
+/* hero: the day, in real 360 photos */
+const hero=createPano($('hpano'),{scenes:{suite:{...S('glasshouse_interior'),yaw:-100},chapel:{...S('white_chapel'),yaw:-160},vine:{...S('outdoor_chapel'),yaw:-140}},start:'suite',fov:76+F,auto:0,onProgress:(id,p)=>id==='suite'&&K.setPre(p*.95),onReady:K.finish});
+hero.interactive(false);
+const SEGS=[{id:'suite',until:.34,K:[[0,-110,-6,78+F],[.34,-30,-4,72+F]]},
+ {id:'chapel',until:.7,K:[[.34,-165,-6,74+F],[.46,-70,-2,72+F],[.58,40,2,62+F],[.7,45,2,50+F]]},
+ {id:'vine',K:[[.7,-130,-6,74+F],[.86,-30,0,72+F],[1,96,-2,60+F]]}];
+const director=scrollDirector(hero,SEGS,.08);
+const T=[[0,'13:30','Getting ready'],[.2,'14:45','Photos in the suite'],[.34,'15:30','Guests arrive'],[.55,'16:00','The ceremony'],[.7,'17:15','Sunset at the vine chapel']];
+const caps=[...document.querySelectorAll('.cap')];
+function onScroll(){const HP=stickyProgress($('hero'));$('hdr').classList.toggle('solid',$('hero').getBoundingClientRect().bottom<90);director(HP);
+ const c=HP<.07?0:HP<.34?1:HP<.7?2:3;caps.forEach(x=>x.classList.toggle('on',+x.dataset.c===c));
+ $('htxt').style.opacity=Math.max(0,1-HP*13);$('hint').style.opacity=HP>.02?0:.85;
+ const t=[...T].reverse().find(x=>HP>=x[0]);$('clock').textContent=t[1];$('clockL').textContent=t[2]}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+/* depth photos */
+depthOnScroll($('dBouquet'),{src:mob?'img/bouquet-1440.jpg':'img/bouquet-2560.jpg',depth:'img/bouquet-depth.jpg',strength:.4},p=>({z:.05+p*.22,y:.04-p*.08}));
+depthOnScroll($('dCouple'),{src:mob?'img/couple-1440.jpg':'img/couple-2560.jpg',depth:'img/couple-depth.jpg',strength:.38},p=>({z:.04+p*.2,x:-.06+p*.12}));
+
+/* tour */
+wireTour({viewer:$('viewer'),start:'chapel',scenes:{
+ chapel:{...S('white_chapel'),yaw:-150,hotspots:[{to:'vine',yaw:-162,pitch:-4,label:'Out to the vine chapel',arrive:-140},{to:'suite',yaw:110,pitch:-4,label:'Bridal suite',arrive:-60},{yaw:45,pitch:2,label:'The round window'},{yaw:-115,pitch:-14,label:'Seats 120'}]},
+ vine:{...S('outdoor_chapel'),yaw:-140,hotspots:[{to:'chapel',yaw:-95,pitch:-4,label:'Thatched chapel',arrive:-150},{yaw:96,pitch:-4,label:'The arch'},{yaw:-150,pitch:-14,label:'Benches for 90'}]},
+ suite:{...S('glasshouse_interior'),yaw:-60,hotspots:[{to:'chapel',yaw:160,pitch:-4,label:'To the chapel',arrive:45},{yaw:-75,pitch:-12,label:'Two queen beds'},{yaw:115,pitch:-14,label:'Table for 10'}]}}});
+
+/* price builder + availability */
+const PP={peak:780,summer:690,winter:560};const XT={suite:[6800,0],rehearsal:[0,290],mehndi:[18500,0],brunch:[0,180]};
+let sel=null;const today=new Date();let view=new Date(today.getFullYear(),today.getMonth()+2,1);
+function booked(d){const k=d.getFullYear()*400+d.getMonth()*31+d.getDate();return d.getDay()===6&&((k*2654435761)>>>0)%3!==0}
+function cal(){const y=view.getFullYear(),m=view.getMonth();$('mlabel').textContent=view.toLocaleDateString('en-GB',{month:'long',year:'numeric'});
+ const first=(new Date(y,m,1).getDay()+6)%7,days=new Date(y,m+1,0).getDate();let h=['Mo','Tu','We','Th','Fr','Sa','Su'].map(d=>`<span class="dn">${d}</span>`).join('')+'<span></span>'.repeat(first);
+ for(let d=1;d<=days;d++){const dt=new Date(y,m,d);const past=dt<today;const b=booked(dt);const iso=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+  h+=`<button type="button" class="${dt.getDay()===6?'sat':''}" data-d="${iso}" ${past||b?'disabled':''} aria-pressed="${sel===iso}" aria-label="${dt.toDateString()}${b?', booked':''}">${d}</button>`}
+ $('grid').innerHTML=h}
+$('grid').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;sel=b.dataset.d;const mo=new Date(sel+'T12:00').getMonth();document.querySelector(`input[name=season][value=${mo>=8&&mo<=10?'peak':mo>=11||mo<=2?'summer':'winter'}]`).checked=true;cal();price()});
+$('prev').onclick=()=>{view=new Date(view.getFullYear(),view.getMonth()-1,1);if(view<new Date(today.getFullYear(),today.getMonth(),1))view=new Date(today.getFullYear(),today.getMonth(),1);cal()};$('next').onclick=()=>{view=new Date(view.getFullYear(),view.getMonth()+1,1);cal()};
+function price(){const s=document.querySelector('input[name=season]:checked').value,g=+$('guests').value;$('gOut').textContent=g;
+ const base=Math.max(g,50)*PP[s],venue=s==='winter'?28000:42000;let lines=[[`Venue hire, ${s==='peak'?'spring':s}`,venue],[`Food and drink, ${g} guests`,base]];
+ document.querySelectorAll('input[name=x]:checked').forEach(x=>{const [f,pp]=XT[x.value];lines.push([x.parentElement.textContent.replace(/R[\d,]+( pp)?$/,'').trim(),f+pp*g])});
+ const tot=lines.reduce((a,l)=>a+l[1],0);
+ $('sumT').textContent=sel?new Date(sel+'T12:00').toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'}):'Your wedding';
+ $('sumL').innerHTML=lines.map(l=>`<dt>${l[0]}</dt><dd>R ${fmt(l[1])}</dd>`).join('');$('tot').textContent='R '+fmt(tot);$('pp').textContent=`About R ${fmt(Math.round(tot/g))} per guest, incl. VAT. ${sel?'':'Pick a date to check it\'s free.'}`;
+ $('vd').value=sel?new Date(sel+'T12:00').toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}):''}
+$('pform').addEventListener('input',price);cal();price();
+$('vform').addEventListener('submit',e=>{e.preventDefault();const n=$('vn').value.trim(),m=$('ve').value.trim();
+ const err=n.length<2?'Add your names.':!/^\S+@\S+\.\S+$/.test(m)?'Add an email so we can confirm the viewing.':'';$('verr').textContent=err;if(err)return;
+ $('vform').style.display='none';$('vok').innerHTML=`<b>See you at the farm.</b><p>${$('vs').value} viewing for ${n.replace(/[<>]/g,'')}${sel?`, holding ${$('vd').value} for 7 days`:''}. We'll email ${m.replace(/[<>]/g,'')} directions. Demo: nothing was sent.</p>`;$('vok').style.display='block';$('vok').focus()});
+</script>
+</body>
+</html>
