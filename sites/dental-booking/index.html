@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bayshore Family Dental — Book online (example concept)</title>
+<meta name="description" content="Example concept by Calvyrn: a dental practice website where new patients can book a visit in under a minute, day or night.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --lagoon:#0F4C5C; --lagoon-2:#0B3A47; --enamel:#E6F2EE; --sun:#F2C14E; --ink:#14213D; --paper:#FBFCFD; --muted:#5B6478; --line:#D5E3DE;
+  --display:"Bricolage Grotesque",system-ui,sans-serif; --body:"Atkinson Hyperlegible",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.concept{background:var(--ink);color:#fff;font-size:14px;text-align:center;padding:8px 16px}
+.concept a{color:var(--sun)}
+header.top{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.brand{display:flex;align-items:center;gap:10px;font:800 21px/1 var(--display);text-decoration:none;color:var(--lagoon)}
+.brand svg{width:34px;height:34px}
+.top nav{display:flex;gap:26px;align-items:center;font-size:16px}
+.top nav a{text-decoration:none}
+.top nav a:hover{text-decoration:underline}
+.call{white-space:nowrap;display:inline-flex;align-items:center;gap:8px;background:var(--enamel);color:var(--lagoon);font-weight:700;padding:10px 16px;border-radius:999px;text-decoration:none}
+@media (max-width:820px){.top nav .hide-s{display:none}}
+@media (max-width:520px){.call .num{display:none}.call::after{content:"Call"}.brand{font-size:18px}.concept{font-size:12px}}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start;padding:36px 0 72px}
+.hero h1{font:800 clamp(40px,6vw,68px)/1.02 var(--display);letter-spacing:-.02em;margin:10px 0 20px;color:var(--lagoon-2)}
+.hero p.lede{font-size:20px;max-width:30em;color:var(--muted);margin:0 0 26px}
+.facts{display:flex;flex-wrap:wrap;gap:10px 22px;padding:0;margin:0;list-style:none;font-size:16px}
+.facts li{display:flex;gap:8px;align-items:center}
+.facts li::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--sun);box-shadow:0 0 0 3px #f2c14e40}
+.open-now{display:inline-flex;gap:8px;align-items:center;font-size:15px;color:var(--lagoon);font-weight:700}
+.open-now i{width:9px;height:9px;border-radius:50%;background:#2a9d6f;display:inline-block}
+@media (max-width:900px){.hero{grid-template-columns:1fr;gap:32px;padding-top:16px}}
+
+/* booking — the one loud thing */
+.book{background:var(--lagoon);color:#fff;border-radius:28px;padding:26px;position:relative;box-shadow:0 30px 60px -30px #0f4c5c99}
+.book::after{content:"";position:absolute;right:-14px;top:40px;width:28px;height:120px;border-radius:14px;background:var(--sun);z-index:-1}
+.book h2{font:700 24px/1.2 var(--display);margin:0 0 4px}
+.book .sub{color:#cfe5df;font-size:15px;margin:0 0 18px}
+.step{display:none}
+.step.on{display:block}
+fieldset{border:0;padding:0;margin:0 0 18px}
+legend{font-weight:700;margin-bottom:10px;font-size:16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{appearance:none;border:1.5px solid #ffffff55;background:transparent;color:#fff;font:inherit;font-size:15px;padding:9px 14px;border-radius:999px;cursor:pointer}
+.chip[aria-pressed="true"]{background:#fff;color:var(--lagoon);border-color:#fff;font-weight:700}
+.days{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.day{appearance:none;border:1.5px solid #ffffff40;background:#ffffff10;color:#fff;border-radius:14px;padding:10px 4px;font:inherit;cursor:pointer;line-height:1.2}
+.day b{display:block;font:700 20px/1.1 var(--display)}
+.day small{font-size:13px;color:#cfe5df}
+.day[aria-pressed="true"]{background:var(--sun);color:var(--ink);border-color:var(--sun)}
+.day[aria-pressed="true"] small{color:var(--ink)}
+.slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.slot{appearance:none;border:1.5px solid #ffffff40;background:transparent;color:#fff;border-radius:10px;padding:10px 4px;font:inherit;font-size:15px;cursor:pointer}
+.slot[aria-pressed="true"]{background:#fff;color:var(--lagoon);font-weight:700}
+.slot:disabled{opacity:.35;text-decoration:line-through;cursor:not-allowed}
+.go{width:100%;appearance:none;border:0;background:var(--sun);color:var(--ink);font:700 18px/1 var(--body);padding:16px;border-radius:14px;cursor:pointer;margin-top:6px}
+.go:disabled{background:#ffffff30;color:#ffffffa0;cursor:not-allowed}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px;font-size:15px}
+.field input,.field select{font:inherit;padding:12px 14px;border-radius:10px;border:1.5px solid #ffffff55;background:#ffffff12;color:#fff}
+.field select option{color:var(--ink)}
+.summary{background:#ffffff14;border-radius:14px;padding:12px 14px;margin-bottom:14px;font-size:15px}
+.back{appearance:none;background:none;border:0;color:#cfe5df;font:inherit;font-size:15px;text-decoration:underline;cursor:pointer;padding:0;margin-top:12px}
+.done{text-align:center;padding:16px 4px}
+.done svg{width:64px;height:64px}
+.done h3{font:800 28px/1.15 var(--display);margin:10px 0}
+.err{color:var(--sun);font-size:14px;min-height:1.2em;margin:4px 0 0}
+
+/* sections */
+section.band{padding:72px 0}
+.band h2{font:800 clamp(30px,4vw,44px)/1.08 var(--display);letter-spacing:-.01em;margin:0 0 14px;color:var(--lagoon-2);max-width:18em}
+.band .intro{color:var(--muted);max-width:36em;margin:0 0 36px;font-size:18px}
+.care{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--ink)}
+.care div{padding:22px 22px 26px 0;border-bottom:1px solid var(--line)}
+.care div + div{padding-left:22px;border-left:1px solid var(--line)}
+.care h3{font:700 22px/1.2 var(--display);margin:0 0 6px}
+.care p{margin:0;color:var(--muted);font-size:16px}
+@media (max-width:820px){.care{grid-template-columns:1fr}.care div + div{border-left:0;padding-left:0}}
+
+.night{background:var(--enamel)}
+.night .grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+@media (max-width:860px){.night .grid{grid-template-columns:1fr}}
+.chat{background:#fff;border-radius:24px;padding:20px;box-shadow:0 20px 40px -28px #14213d55;max-width:420px}
+.chat .head{display:flex;justify-content:space-between;font-size:14px;color:var(--muted);margin-bottom:12px}
+.msg{max-width:85%;padding:11px 14px;border-radius:18px;margin:8px 0;font-size:15px;line-height:1.45}
+.msg.them{background:var(--enamel);border-bottom-left-radius:6px}
+.msg.me{background:var(--lagoon);color:#fff;margin-left:auto;border-bottom-right-radius:6px}
+.chat .note{font-size:13px;color:var(--muted);margin-top:10px}
+
+.insure{display:flex;flex-wrap:wrap;gap:10px 14px;margin:0;padding:0;list-style:none}
+.insure li{border:1.5px solid var(--line);border-radius:999px;padding:8px 16px;font-size:15px;background:#fff}
+
+.voices{display:grid;grid-template-columns:1.3fr 1fr;gap:28px}
+.voices blockquote{margin:0;font:500 clamp(22px,2.6vw,30px)/1.3 var(--display);color:var(--lagoon-2)}
+.voices cite{display:block;font:400 15px/1.4 var(--body);color:var(--muted);margin-top:12px;font-style:normal}
+.voices .small blockquote{font-size:20px}
+@media (max-width:820px){.voices{grid-template-columns:1fr}}
+
+.visit{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;border-top:2px solid var(--ink);padding-top:24px}
+.visit h3{font:700 19px/1.2 var(--display);margin:0 0 8px}
+.visit p,.visit dl{margin:0;color:var(--muted);font-size:16px}
+.visit dl{display:grid;grid-template-columns:auto 1fr;gap:2px 14px}
+.visit dt{color:var(--ink)}
+@media (max-width:820px){.visit{grid-template-columns:1fr}}
+footer{background:var(--ink);color:#c9cfdc;padding:36px 0;font-size:15px;margin-top:72px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+footer a{color:#fff}
+
+.sticky-book{display:none}
+@media (max-width:900px){
+  .sticky-book{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:20;gap:10px}
+  .sticky-book a{flex:1;text-align:center;padding:14px;border-radius:14px;font-weight:700;text-decoration:none}
+  .sticky-book .b1{background:var(--sun);color:var(--ink)}
+  .sticky-book .b2{background:var(--lagoon);color:#fff}
+  body{padding-bottom:76px}
+}
+</style>
+</head>
+<body>
+<div class="concept">Example concept by <a href="https://calvyrn.com">Calvyrn</a>. Bayshore Family Dental is a fictional practice; names, reviews and phone numbers are placeholders.</div>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="12" fill="#0F4C5C"/><path d="M12 14c0-3 3-5 6-4 1 .4 3 .4 4 0 3-1 6 1 6 4 0 4-2 6-3 11-.4 2-2 2-2.4 0l-1-4c-.3-1.2-2-1.2-2.2 0l-1 4c-.5 2-2 2-2.4 0C14 20 12 18 12 14z" fill="#E6F2EE"/><circle cx="29" cy="11" r="3" fill="#F2C14E"/></svg>
+      Bayshore Family Dental
+    </a>
+    <nav aria-label="Main">
+      <a class="hide-s" href="#care">Care</a>
+      <a class="hide-s" href="#insurance">Insurance</a>
+      <a class="hide-s" href="#visit">Visit</a>
+      <a class="call" href="tel:+18135550142" aria-label="Call (813) 555-0142"><span class="num">(813) 555-0142</span></a>
+    </nav>
+  </header>
+
+  <main>
+  <div class="hero">
+    <div>
+      <span class="open-now" id="openNow"><i></i> Online booking is open now</span>
+      <h1>Book your cleaning tonight. We'll see you this week.</h1>
+      <p class="lede">Pick a time that suits you in under a minute, any hour of the day. New patients welcome, most PPO plans accepted, and evening visits on Tuesdays and Thursdays.</p>
+      <ul class="facts">
+        <li>Same-week new patient visits</li>
+        <li>Emergency slots held every morning</li>
+        <li>Text reminders, easy rescheduling</li>
+      </ul>
+    </div>
+
+    <form class="book" id="book" aria-labelledby="bookTitle" novalidate>
+      <h2 id="bookTitle">Book a visit</h2>
+      <p class="sub">Real-time openings. No phone call needed.</p>
+
+      <div class="step on" data-step="1">
+        <fieldset>
+          <legend>What do you need?</legend>
+          <div class="chips" role="group" id="reason">
+            <button type="button" class="chip" aria-pressed="false" data-v="Cleaning and exam">Cleaning and exam</button>
+            <button type="button" class="chip" aria-pressed="false" data-v="New patient visit">New patient visit</button>
+            <button type="button" class="chip" aria-pressed="false" data-v="Tooth pain">Tooth pain</button>
+            <button type="button" class="chip" aria-pressed="false" data-v="Whitening consult">Whitening consult</button>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Day</legend>
+          <div class="days" id="days" role="group"></div>
+        </fieldset>
+        <fieldset>
+          <legend>Time</legend>
+          <div class="slots" id="slots" role="group"></div>
+        </fieldset>
+        <button type="button" class="go" id="toDetails" disabled>Continue</button>
+      </div>
+
+      <div class="step" data-step="2">
+        <div class="summary" id="summary" aria-live="polite"></div>
+        <div class="field"><label for="name">Full name</label><input id="name" autocomplete="name" required></div>
+        <div class="field"><label for="phone">Mobile number</label><input id="phone" type="tel" autocomplete="tel" required placeholder="For your text reminder"></div>
+        <div class="field"><label for="plan">Insurance</label>
+          <select id="plan"><option>Delta Dental PPO</option><option>Cigna DPPO</option><option>MetLife PDP</option><option>Aetna PPO</option><option>Guardian</option><option>I'll pay myself</option><option>Not sure yet</option></select></div>
+        <p class="err" id="err" role="alert"></p>
+        <button type="submit" class="go">Confirm booking</button>
+        <button type="button" class="back" id="back">Change time</button>
+      </div>
+
+      <div class="step done" data-step="3" tabindex="-1">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#F2C14E"/><path d="M19 33l9 9 17-19" stroke="#14213D" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>You're booked.</h3>
+        <p id="doneText"></p>
+        <button type="button" class="back" id="again">Book another visit</button>
+      </div>
+    </form>
+  </div>
+  </main>
+</div>
+
+<section class="band" id="care">
+  <div class="wrap">
+    <h2>Everyday dentistry for the whole family</h2>
+    <p class="intro">From a child's first visit to crowns and night guards, everything happens in one office on Bayshore Boulevard.</p>
+    <div class="care">
+      <div><h3>Cleanings and checkups</h3><p>Gentle cleanings, digital X-rays and a clear plan before anything is done.</p></div>
+      <div><h3>Same-day relief</h3><p>Tooth pain, a broken filling or a lost crown: we hold emergency openings every morning.</p></div>
+      <div><h3>Cosmetic care</h3><p>Whitening, bonding and clear aligners, with the cost explained in writing first.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band night">
+  <div class="wrap grid">
+    <div>
+      <h2>Questions at 11 pm get answered at 11 pm</h2>
+      <p class="intro">An assistant trained on the practice's own information answers common questions, checks which plans are accepted and offers open times. Anything clinical is passed to the team for the morning.</p>
+    </div>
+    <div class="chat" aria-label="Example of the after-hours assistant">
+      <div class="head"><span>Bayshore assistant</span><span>11:07 pm</span></div>
+      <p class="msg me">Do you take Cigna? My son chipped a tooth at soccer.</p>
+      <p class="msg them">Yes, we accept Cigna DPPO. Sorry about the chipped tooth. If he's in pain or the tooth is loose, call our emergency line. Otherwise I can hold the first opening tomorrow at 8:00 am.</p>
+      <p class="msg me">8 works.</p>
+      <p class="msg them">Done. You'll get a text confirmation now and a reminder at 7 am.</p>
+      <p class="note">Example conversation for this concept.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="insurance">
+  <div class="wrap">
+    <h2>Plans we're in network with</h2>
+    <p class="intro">Not on the list? Book anyway and we'll check your benefits before your visit.</p>
+    <ul class="insure">
+      <li>Delta Dental PPO</li><li>Cigna DPPO</li><li>MetLife PDP</li><li>Aetna PPO</li><li>Guardian</li><li>United Concordia</li><li>Humana</li>
+    </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap voices">
+    <div><blockquote>“I booked at midnight after putting the kids to bed. Got a reminder text, walked in, and was out in forty minutes.”</blockquote><cite>Placeholder review for this concept</cite></div>
+    <div class="small"><blockquote>“They told me the cost before they started. No surprises.”</blockquote><cite>Placeholder review for this concept</cite></div>
+  </div>
+</section>
+
+<section class="band" id="visit">
+  <div class="wrap">
+    <h2>Find us</h2>
+    <div class="visit">
+      <div><h3>Address</h3><p>2400 Bayshore Blvd, Suite 210<br>Tampa, FL 33629<br>Free parking behind the building</p></div>
+      <div><h3>Hours</h3><dl><dt>Mon, Wed, Fri</dt><dd>8 am – 5 pm</dd><dt>Tue, Thu</dt><dd>10 am – 7 pm</dd><dt>Sat</dt><dd>8 am – 1 pm, twice a month</dd></dl></div>
+      <div><h3>Contact</h3><p><a href="tel:+18135550142">(813) 555-0142</a><br>Online booking: any time</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Bayshore Family Dental is a fictional practice used to demonstrate a booking-first dental website.</span>
+    <span>Concept, design and build: <a href="https://calvyrn.com">Calvyrn</a></span>
+  </div>
+</footer>
+
+<div class="sticky-book"><a class="b1" href="#book">Book online</a><a class="b2" href="tel:+18135550142">Call</a></div>
+
+<script>
+(() => {
+  const state = { reason: null, day: null, time: null };
+  const $ = s => document.querySelector(s);
+  const steps = [...document.querySelectorAll('.step')];
+  const show = n => { steps.forEach(s => s.classList.toggle('on', s.dataset.step == n)); };
+  const pressOne = (group, btn) => { group.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b === btn)); };
+  const ready = () => { $('#toDetails').disabled = !(state.reason && state.day && state.time); };
+
+  // reason
+  $('#reason').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; pressOne($('#reason'), b); state.reason = b.dataset.v; ready(); });
+
+  // next five open days (skip Sundays)
+  const days = []; const d = new Date(); d.setHours(0,0,0,0);
+  while (days.length < 5) { d.setDate(d.getDate() + 1); if (d.getDay() !== 0) days.push(new Date(d)); }
+  const fmtDay = x => x.toLocaleDateString('en-US', { weekday: 'short' });
+  days.forEach((x, i) => {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'day'; b.setAttribute('aria-pressed', 'false');
+    b.innerHTML = `<small>${fmtDay(x)}</small><b>${x.getDate()}</b><small>${x.toLocaleDateString('en-US',{month:'short'})}</small>`;
+    b.setAttribute('aria-label', x.toDateString());
+    b.onclick = () => { pressOne($('#days'), b); state.day = x; state.time = null; drawSlots(x, i); ready(); };
+    $('#days').appendChild(b);
+  });
+
+  function drawSlots(x, seed) {
+    const late = [2, 4].includes(x.getDay());
+    const base = late ? ['10:00 am','11:30 am','1:00 pm','3:30 pm','5:00 pm','6:15 pm'] : ['8:00 am','9:15 am','10:30 am','12:45 pm','2:00 pm','3:30 pm'];
+    $('#slots').innerHTML = '';
+    base.forEach((t, j) => {
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'slot'; b.textContent = t; b.setAttribute('aria-pressed', 'false');
+      if ((j + seed) % 4 === 1) { b.disabled = true; b.setAttribute('aria-label', t + ', taken'); }
+      b.onclick = () => { pressOne($('#slots'), b); state.time = t; ready(); };
+      $('#slots').appendChild(b);
+    });
+  }
+  $('#slots').innerHTML = '<p style="margin:0;color:#cfe5df;font-size:15px;grid-column:1/-1">Choose a day to see open times.</p>';
+
+  $('#toDetails').onclick = () => {
+    $('#summary').textContent = `${state.reason} · ${state.day.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})} at ${state.time}`;
+    show(2); $('#name').focus();
+  };
+  $('#back').onclick = () => show(1);
+  $('#book').addEventListener('submit', e => {
+    e.preventDefault();
+    const name = $('#name').value.trim(), phone = $('#phone').value.replace(/\D/g, '');
+    if (!name) { $('#err').textContent = 'Add your name so we know who is coming.'; $('#name').focus(); return; }
+    if (phone.length < 10) { $('#err').textContent = 'Add a 10-digit mobile number for your text reminder.'; $('#phone').focus(); return; }
+    $('#err').textContent = '';
+    $('#doneText').textContent = `${name.split(' ')[0]}, your ${state.reason.toLowerCase()} is on ${state.day.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})} at ${state.time}. A confirmation text is on its way. (This is a demo, so nothing was sent.)`;
+    show(3); document.querySelector('.done').focus();
+  });
+  $('#again').onclick = () => { $('#book').reset(); Object.keys(state).forEach(k => state[k] = null); document.querySelectorAll('[aria-pressed="true"]').forEach(b => b.setAttribute('aria-pressed','false')); $('#slots').innerHTML=''; ready(); show(1); };
+})();
+</script>
+</body>
+</html>

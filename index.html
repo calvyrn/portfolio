@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calvyrn portfolio: websites, web apps and 3D concepts by industry</title>
+<meta name="description" content="Working website and web app concepts for dental practices, law firms, restaurants, salons, real estate agencies and home service companies, built by Calvyrn.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#0071E3;--ink:#1D1D1F;--muted:#6E6E73;--line:#E3E3E8;--bg:#FFFFFF;--alt:#F5F5F7}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif}
+a{color:inherit}:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.brand{font:800 22px "Inter Tight";text-decoration:none;letter-spacing:-.01em}
+.cta{background:var(--blue);color:#fff;text-decoration:none;font-weight:600;padding:10px 16px;border-radius:999px}
+.intro{padding:40px 0 30px;max-width:760px}
+h1{font:800 clamp(36px,5vw,58px)/1.04 "Inter Tight";letter-spacing:-.025em;margin:0 0 14px}
+.intro p{font-size:19px;color:var(--muted);margin:0}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 26px}
+.filters button{appearance:none;border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font:600 14px Inter;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:34px 26px;padding-bottom:80px}
+@media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){.grid{grid-template-columns:1fr}}
+.shot{display:block;border-radius:14px;overflow:hidden;border:1px solid var(--line);aspect-ratio:1366/860;background:var(--alt)}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .4s}
+.shot:hover img{transform:scale(1.03)}
+@media (prefers-reduced-motion:reduce){.shot img{transition:none}}
+.meta{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin:14px 0 4px}
+.tier{font-weight:600;color:var(--blue)}
+.card h2{font:700 20px/1.25 "Inter Tight";margin:0 0 6px}.card h2 a{text-decoration:none}
+.card p{margin:0 0 8px;color:var(--muted);font-size:15px}
+.code{font-size:14px;font-weight:600;color:var(--blue)}
+.note{background:var(--alt);padding:40px 0}.note p{margin:0;color:var(--muted);max-width:760px}
+footer{padding:26px 0;font-size:14px;color:var(--muted)}
+</style></head><body>
+<div class="wrap">
+<header><a class="brand" href="https://calvyrn.com">Calvyrn</a><a class="cta" href="https://calvyrn.com/contact.html">Get a free concept</a></header>
+<section class="intro"><h1>Websites and web apps that do a job for the business.</h1>
+<p>Working concepts by industry: booking, ordering, intake, property search and interactive 3D. Open any of them on your phone and try it.</p></section>
+<div class="filters" role="group" aria-label="Filter by tier"><button aria-pressed="true" data-f="all">All</button><button aria-pressed="false" data-f="Simple">Simple</button><button aria-pressed="false" data-f="Medium">Medium</button><button aria-pressed="false" data-f="High-end 3D">High-end 3D</button></div>
+<div class="grid" id="grid">
+<article class="card" data-tier="Medium">
+  <a class="shot" href="sites/dental-booking/"><img src="sites/dental-booking/screenshots/desktop.png" alt="Dental practice with online booking: desktop screenshot" loading="lazy" width="1366" height="860"></a>
+  <div class="meta"><span class="ind">Dental</span><span class="tier">Medium</span></div>
+  <h2><a href="sites/dental-booking/">Dental practice with online booking</a></h2>
+  <p>Booking-first site: reason, day and live time slots, details and confirmation in under a minute, plus an after-hours assistant example.</p>
+  <a class="code" href="https://github.com/calvyrn/portfolio/tree/main/sites/dental-booking">View the code</a>
+</article>
+<article class="card" data-tier="Medium">
+  <a class="shot" href="sites/law-intake/"><img src="sites/law-intake/screenshots/desktop.png" alt="Law firm with 24/7 guided intake: desktop screenshot" loading="lazy" width="1366" height="860"></a>
+  <div class="meta"><span class="ind">Legal</span><span class="tier">Medium</span></div>
+  <h2><a href="sites/law-intake/">Law firm with 24/7 guided intake</a></h2>
+  <p>Four-step case review (type, date, story, contact) with progress, validation and a clear what-happens-next section; after-hours assistant that never gives legal advice.</p>
+  <a class="code" href="https://github.com/calvyrn/portfolio/tree/main/sites/law-intake">View the code</a>
+</article>
+<article class="card" data-tier="Medium">
+  <a class="shot" href="sites/restaurant-ordering/"><img src="sites/restaurant-ordering/screenshots/desktop.png" alt="Taqueria with commission-free pickup ordering: desktop screenshot" loading="lazy" width="1366" height="860"></a>
+  <div class="meta"><span class="ind">Restaurant</span><span class="tier">Medium</span></div>
+  <h2><a href="sites/restaurant-ordering/">Taqueria with commission-free pickup ordering</a></h2>
+  <p>Sticky category tabs, add-to-order, quantity steppers, tax, live pickup time slots and a mobile order bar.</p>
+  <a class="code" href="https://github.com/calvyrn/portfolio/tree/main/sites/restaurant-ordering">View the code</a>
+</article>
+<article class="card" data-tier="Medium">
+  <a class="shot" href="sites/salon-booking/"><img src="sites/salon-booking/screenshots/desktop.png" alt="Hair studio: service, stylist, time: desktop screenshot" loading="lazy" width="1366" height="860"></a>
+  <div class="meta"><span class="ind">Salon &amp; spa</span><span class="tier">Medium</span></div>
+  <h2><a href="sites/salon-booking/">Hair studio: service, stylist, time</a></h2>
+  <p>Four-step booking with stylist choice, studio days only, open times, details and confirmation; prices and self-service policies.</p>
+  <a class="code" href="https://github.com/calvyrn/portfolio/tree/main/sites/salon-booking">View the code</a>
+</article>
+<article class="card" data-tier="Medium">
+  <a class="shot" href="sites/real-estate-search/"><img src="sites/real-estate-search/screenshots/desktop.png" alt="Agency site with its own property search: desktop screenshot" loading="lazy" width="1366" height="860"></a>
+  <div class="meta"><span class="ind">Real estate</span><span class="tier">Medium</span></div>
+  <h2><a href="sites/real-estate-search/">Agency site with its own property search</a></h2>
+  <p>Search by place, price and beds, filter chips, saved homes and a showing request dialog. Built to plug into an IDX/MLS feed.</p>
+  <a class="code" href="https://github.com/calvyrn/portfolio/tree/main/sites/real-estate-search">View the code</a>
+</article>
+<article class="card" data-tier="High-end 3D">
+  <a class="shot" href="sites/roofing-3d/"><img src="sites/roofing-3d/screenshots/desktop.png" alt="Roofing company with a live 3D roof preview: desktop screenshot" loading="lazy" width="1366" height="860"></a>
+  <div class="meta"><span class="ind">Home services</span><span class="tier">High-end 3D</span></div>
+  <h2><a href="sites/roofing-3d/">Roofing company with a live 3D roof preview</a></h2>
+  <p>Three.js scene with soft shadows, orbit controls, procedural textures for shingle, metal and tile, color swatches and a quote form. Auto-rotate is off for reduced motion.</p>
+  <a class="code" href="https://github.com/calvyrn/portfolio/tree/main/sites/roofing-3d">View the code</a>
+</article>
+</div></div>
+<section class="note"><div class="wrap"><p>Every business shown here is fictional and labelled as an example concept. For your own business we start with a free homepage concept or a one-page plan, then a fixed written quote.</p></div></section>
+<footer class="wrap">© Calvyrn · <a href="mailto:info@calvyrn.com">info@calvyrn.com</a> · <a href="https://calvyrn.com">calvyrn.com</a></footer>
+<script>
+document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filters button').forEach(x=>x.setAttribute('aria-pressed',x===b));document.querySelectorAll('.card').forEach(c=>c.hidden=!(b.dataset.f==='all'||c.dataset.tier===b.dataset.f));});
+</script></body></html>

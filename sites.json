@@ -1,0 +1,56 @@
+[
+ [
+  "dental-booking",
+  "Dental practice with online booking",
+  "Medium",
+  "Dental",
+  "Booking-first site: reason, day and live time slots, details and confirmation in under a minute, plus an after-hours assistant example.",
+  "Zocdoc's data shows 48% of dental patients prefer to book between 5 p.m. and 9 a.m., when the office is closed.",
+  "Bricolage Grotesque + Atkinson Hyperlegible; lagoon, enamel, sun"
+ ],
+ [
+  "law-intake",
+  "Law firm with 24/7 guided intake",
+  "Medium",
+  "Legal",
+  "Four-step case review (type, date, story, contact) with progress, validation and a clear what-happens-next section; after-hours assistant that never gives legal advice.",
+  "Clio's 2024 Legal Trends Report found only 40% of law firms answered calls from prospective clients.",
+  "Newsreader + Public Sans; navy, brass"
+ ],
+ [
+  "restaurant-ordering",
+  "Taqueria with commission-free pickup ordering",
+  "Medium",
+  "Restaurant",
+  "Sticky category tabs, add-to-order, quantity steppers, tax, live pickup time slots and a mobile order bar.",
+  "NCR Voyix's 2025 report found 58% of customers prefer ordering through a restaurant's own app or website.",
+  "Archivo (condensed widths); chili, masa, charcoal"
+ ],
+ [
+  "salon-booking",
+  "Hair studio: service, stylist, time",
+  "Medium",
+  "Salon & spa",
+  "Four-step booking with stylist choice, studio days only, open times, details and confirmation; prices and self-service policies.",
+  "Phorest's data found 46% of salon and spa appointments are booked while the salon is closed.",
+  "DM Serif Display + Manrope; plum, sage, blush"
+ ],
+ [
+  "real-estate-search",
+  "Agency site with its own property search",
+  "Medium",
+  "Real estate",
+  "Search by place, price and beds, filter chips, saved homes and a showing request dialog. Built to plug into an IDX/MLS feed.",
+  "NAR's 2025 Profile found 52% of buyers found the home they bought online.",
+  "Source Serif 4 + Sora; sky, saguaro, sun"
+ ],
+ [
+  "roofing-3d",
+  "Roofing company with a live 3D roof preview",
+  "High-end 3D",
+  "Home services",
+  "Three.js scene with soft shadows, orbit controls, procedural textures for shingle, metal and tile, color swatches and a quote form. Auto-rotate is off for reduced motion.",
+  "A visual preview makes it easier to choose before anyone climbs on the roof.",
+  "Big Shoulders Display + Figtree; slate, copper, frost"
+ ]
+]

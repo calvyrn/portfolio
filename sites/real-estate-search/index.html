@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mesa Ridge Realty — Search Phoenix homes (example concept)</title>
+<meta name="description" content="Example concept by Calvyrn: an independent agency website with its own property search, saved homes and a showing request.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{--sky:#1D4E89;--sky2:#163C6B;--saguaro:#3F6B4A;--sun:#F4A259;--clay:#E8E1D7;--white:#fff;--ink:#17202B;--muted:#5D6876;--line:#DCE2E9}
+*{box-sizing:border-box}
+body{margin:0;background:#F6F8FA;color:var(--ink);font:400 16px/1.6 Sora,system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.concept{background:var(--ink);color:#DDE6F0;font-size:13px;text-align:center;padding:7px 12px}
+.concept a{color:var(--sun)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 22px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+.brand{font:700 20px Sora;text-decoration:none;display:flex;gap:10px;align-items:center}
+.brand svg{width:30px;height:30px}
+.top nav{display:flex;gap:20px;font-size:15px}
+.top nav a{text-decoration:none}
+@media(max-width:700px){.top nav a:not(:last-child){display:none}}
+.band{background:var(--sky);color:#fff;padding:44px 0 90px;position:relative;overflow:hidden}
+.band svg.ridge{position:absolute;left:0;right:0;bottom:0;width:100%;height:120px}
+.band h1{font:600 clamp(34px,5vw,58px)/1.08 "Source Serif 4",serif;margin:0 0 10px;max-width:16em}
+.band p{margin:0;color:#CFE0F3;max-width:36em;font-size:17px}
+.search{position:relative;z-index:2;margin-top:-56px;background:#fff;border-radius:16px;box-shadow:0 20px 40px -24px #17202b55;padding:16px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr auto;gap:10px;align-items:end}
+.search label{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-bottom:4px}
+.search input,.search select{width:100%;font:inherit;padding:11px 12px;border:1.5px solid var(--line);border-radius:10px;background:#fff}
+.search button{appearance:none;border:0;background:var(--sun);color:var(--ink);font:700 15px Sora;padding:13px 18px;border-radius:10px;cursor:pointer;height:46px}
+@media(max-width:900px){.search{grid-template-columns:1fr 1fr}.search .q{grid-column:1/-1}.search button{grid-column:1/-1}}
+.bar{display:flex;justify-content:space-between;align-items:center;margin:28px 0 14px;gap:12px;flex-wrap:wrap}
+.bar h2{margin:0;font:600 22px Sora}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{appearance:none;border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font:600 13px Sora;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--saguaro);border-color:var(--saguaro);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding-bottom:70px}
+@media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.grid{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.pic{aspect-ratio:16/10;position:relative}
+.pic svg{width:100%;height:100%;display:block}
+.fav{position:absolute;top:10px;right:10px;appearance:none;border:0;background:#fffe;border-radius:50%;width:38px;height:38px;cursor:pointer;font-size:18px}
+.fav[aria-pressed="true"]{background:var(--sun)}
+.badge{position:absolute;left:10px;top:10px;background:var(--ink);color:#fff;font-size:12px;font-weight:600;padding:4px 8px;border-radius:6px}
+.body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:4px;flex:1}
+.price{font:700 22px Sora}
+.meta{color:var(--muted);font-size:14px}
+.addr{font-size:15px}
+.req{margin-top:auto;appearance:none;border:1.5px solid var(--sky);background:none;color:var(--sky);font:600 14px Sora;padding:9px;border-radius:10px;cursor:pointer;margin-top:12px}
+.none{grid-column:1/-1;background:#fff;border:1px dashed var(--line);border-radius:14px;padding:30px;text-align:center;color:var(--muted)}
+dialog{border:0;border-radius:18px;padding:24px;max-width:420px;width:92vw}
+dialog::backdrop{background:#17202b88}
+dialog h3{font:600 24px "Source Serif 4";margin:0 0 4px}
+dialog input,dialog select{width:100%;font:inherit;padding:11px;border:1.5px solid var(--line);border-radius:10px;margin:4px 0 10px}
+dialog label{font-size:13px;font-weight:600;color:var(--muted)}
+.row2{display:flex;gap:10px;justify-content:flex-end;margin-top:6px}
+.btn{appearance:none;border:0;background:var(--sky);color:#fff;font:700 15px Sora;padding:12px 16px;border-radius:10px;cursor:pointer}
+.ghost{appearance:none;border:0;background:none;font:600 15px Sora;cursor:pointer;color:var(--muted)}
+.saved{position:fixed;right:16px;bottom:16px;background:var(--ink);color:#fff;border-radius:999px;padding:10px 16px;font-weight:600;font-size:14px}
+footer{background:var(--ink);color:#B9C4D0;font-size:14px;padding:28px 0}
+footer a{color:#fff}
+</style>
+</head>
+<body>
+<div class="concept">Example concept by <a href="https://calvyrn.com">Calvyrn</a>. Mesa Ridge Realty and every listing are fictional; in a real build the search reads live MLS data through the agency's IDX feed.</div>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1D4E89"/><path d="M4 24l8-10 5 6 4-4 7 8z" fill="#F4A259"/><circle cx="23" cy="9" r="3" fill="#fff"/></svg>Mesa Ridge Realty</a>
+    <nav aria-label="Main"><a href="#results">Buy</a><a href="#results">Sell</a><a href="tel:+16025550163">(602) 555-0163</a></nav>
+  </header>
+</div>
+<div class="band"><div class="wrap">
+  <h1>Search every Phoenix-area listing, then talk to an agent who knows the street.</h1>
+  <p>Same listings as the big portals, updated every 15 minutes. Save homes, get alerts, and book a showing straight from the listing.</p>
+</div>
+<svg class="ridge" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 120V80l90-30 80 22 120-52 110 40 90-24 140 46 100-30 120 34 110-50 120 44 120-26v66z" fill="#163C6B"/><path d="M0 120V96l140-20 120 18 160-26 140 22 160-18 160 24 160-14 160 16v22z" fill="#F6F8FA"/></svg>
+</div>
+<div class="wrap">
+  <form class="search" id="search" role="search">
+    <div class="q"><label for="q">City, ZIP or neighborhood</label><input id="q" placeholder="e.g. Arcadia, 85018, Tempe"></div>
+    <div><label for="min">Min price</label><select id="min"><option value="0">Any</option><option value="300000">$300k</option><option value="450000">$450k</option><option value="600000">$600k</option></select></div>
+    <div><label for="max">Max price</label><select id="max"><option value="99999999">Any</option><option value="400000">$400k</option><option value="600000">$600k</option><option value="900000">$900k</option></select></div>
+    <div><label for="beds">Beds</label><select id="beds"><option value="0">Any</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option></select></div>
+    <button type="submit">Search homes</button>
+  </form>
+  <div class="bar" id="results"><h2 id="count" aria-live="polite"></h2>
+    <div class="chips" role="group" aria-label="Filters"><button class="chip" aria-pressed="false" data-f="pool">Pool</button><button class="chip" aria-pressed="false" data-f="new">New this week</button><button class="chip" aria-pressed="false" data-f="single">Single story</button></div>
+  </div>
+  <div class="grid" id="grid"></div>
+</div>
+<dialog id="dlg" aria-labelledby="dt">
+  <form method="dialog" id="showForm">
+    <h3 id="dt">Request a showing</h3><p id="dAddr" style="margin:0 0 12px;color:var(--muted)"></p>
+    <label for="sn">Name</label><input id="sn" autocomplete="name" required>
+    <label for="sp">Phone</label><input id="sp" type="tel" autocomplete="tel" required>
+    <label for="sd">Preferred time</label><select id="sd"><option>This evening</option><option>Tomorrow morning</option><option>Tomorrow afternoon</option><option>This weekend</option></select>
+    <p id="sOk" role="status" style="font-weight:600;color:var(--saguaro);margin:0"></p>
+    <div class="row2"><button class="ghost" value="cancel" formnovalidate>Close</button><button class="btn" id="sSend" value="default">Send request</button></div>
+  </form>
+</dialog>
+<div class="saved" id="saved" hidden></div>
+<footer><div class="wrap">Fictional agency and listings used to demonstrate a property search on an agent's own site. Concept and build: <a href="https://calvyrn.com">Calvyrn</a>.</div></footer>
+<script>
+(() => {
+  const L = [
+    ["4127 E Camelback Rd", "Arcadia", "85018", 865000, 4, 3, 2410, ["pool", "single"], "#E8B07A"],
+    ["2219 W Glenrosa Ave", "Alhambra", "85015", 349000, 3, 2, 1380, ["single", "new"], "#9CB8A4"],
+    ["760 S Mill Ave #412", "Tempe", "85281", 415000, 2, 2, 1105, ["new"], "#A9BCD9"],
+    ["9310 N 15th Pl", "Sunnyslope", "85020", 529000, 3, 2, 1690, ["pool", "single"], "#D9A6A0"],
+    ["1845 E Desert Ln", "Ahwatukee", "85048", 612000, 4, 3, 2265, ["pool"], "#C9B79C"],
+    ["3302 N 36th St", "Arcadia Lite", "85018", 739000, 3, 3, 1980, ["single", "new"], "#E6C88E"],
+    ["14502 N 39th Way", "Paradise Valley Village", "85032", 459000, 3, 2, 1540, ["pool", "single"], "#B5C7B0"],
+    ["601 W Roosevelt St", "Roosevelt Row", "85003", 382000, 2, 2, 990, [], "#C0B2D6"],
+    ["2711 E Sunnyside Dr", "Phoenix", "85028", 698000, 5, 3, 2780, ["pool"], "#E3A983"]
+  ];
+  const saved = new Set(), act = new Set(); let curr = null;
+  const $ = s => document.querySelector(s), fmt = n => '$' + n.toLocaleString('en-US');
+  const house = c => `<svg viewBox="0 0 320 200" aria-hidden="true"><rect width="320" height="200" fill="#DCE8F3"/><circle cx="262" cy="46" r="22" fill="#F4A259"/><rect y="150" width="320" height="50" fill="#C9B79C"/><path d="M60 150V96l70-42 70 42v54z" fill="${c}"/><path d="M50 100l80-52 80 52" stroke="#17202B" stroke-width="8" fill="none" stroke-linejoin="round"/><rect x="112" y="112" width="34" height="38" fill="#17202B"/><rect x="74" y="108" width="26" height="22" fill="#fff"/><rect x="160" y="108" width="26" height="22" fill="#fff"/><path d="M232 150v-46m0 0c-10 0-14-8-14-16m14 16c10 0 14-8 14-16" stroke="#3F6B4A" stroke-width="8" stroke-linecap="round" fill="none"/></svg>`;
+  function render() {
+    const q = $('#q').value.trim().toLowerCase(), mn = +$('#min').value, mx = +$('#max').value, bd = +$('#beds').value;
+    const r = L.filter(l => (!q || (l[0] + ' ' + l[1] + ' ' + l[2]).toLowerCase().includes(q)) && l[3] >= mn && l[3] <= mx && l[4] >= bd && [...act].every(f => l[7].includes(f)));
+    $('#count').textContent = `${r.length} home${r.length === 1 ? '' : 's'} for sale`;
+    const g = $('#grid'); g.innerHTML = '';
+    if (!r.length) { g.innerHTML = '<div class="none">No homes match yet. Widen the price range or remove a filter, or save this search and we\'ll text you when one lists.</div>'; return; }
+    r.forEach(l => {
+      const c = document.createElement('article'); c.className = 'card';
+      c.innerHTML = `<div class="pic">${house(l[8])}${l[7].includes('new') ? '<span class="badge">New this week</span>' : ''}<button class="fav" aria-pressed="${saved.has(l[0])}" aria-label="Save ${l[0]}">♥</button></div><div class="body"><span class="price">${fmt(l[3])}</span><span class="meta">${l[4]} bd · ${l[5]} ba · ${l[6].toLocaleString()} sq ft${l[7].includes('pool') ? ' · Pool' : ''}</span><span class="addr">${l[0]}, ${l[1]} ${l[2]}</span><button class="req">Request a showing</button></div>`;
+      c.querySelector('.fav').onclick = e => { saved.has(l[0]) ? saved.delete(l[0]) : saved.add(l[0]); e.currentTarget.setAttribute('aria-pressed', saved.has(l[0])); const s = $('#saved'); s.hidden = !saved.size; s.textContent = `${saved.size} saved home${saved.size === 1 ? '' : 's'}`; };
+      c.querySelector('.req').onclick = () => { curr = l; $('#dAddr').textContent = `${l[0]}, ${l[1]} · ${fmt(l[3])}`; $('#sOk').textContent = ''; $('#dlg').showModal(); };
+      g.appendChild(c);
+    });
+  }
+  $('#search').addEventListener('submit', e => { e.preventDefault(); render(); });
+  ['#min', '#max', '#beds'].forEach(s => $(s).addEventListener('change', render));
+  document.querySelectorAll('.chip').forEach(c => c.onclick = () => { act.has(c.dataset.f) ? act.delete(c.dataset.f) : act.add(c.dataset.f); c.setAttribute('aria-pressed', act.has(c.dataset.f)); render(); });
+  $('#sSend').onclick = e => { e.preventDefault(); if (!$('#sn').value.trim() || $('#sp').value.replace(/\D/g, '').length < 10) { $('#sOk').style.color = '#A23B2A'; $('#sOk').textContent = 'Add your name and a 10-digit phone number.'; return; } $('#sOk').style.color = ''; $('#sOk').textContent = `Sent. An agent will text you to confirm a time for ${curr[0]}. (Demo only.)`; };
+  render();
+})();
+</script>
+</body>
+</html>

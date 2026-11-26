@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Northline Roofing — See your new roof in 3D (example concept)</title>
+<meta name="description" content="Example concept by Calvyrn: a roofing company website with a live 3D roof preview. Homeowners try materials and colors, then request a quote.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--slate:#22303C;--slate2:#2E3F4D;--copper:#B87333;--frost:#EEF3F6;--sky:#CFE3F0;--ink:#121A21;--muted:#5C6B78;--line:#D5DFE6}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--frost);color:var(--ink);font:16px/1.6 Figtree,system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--copper);outline-offset:3px}
+.concept{background:var(--ink);color:#CFD9E1;text-align:center;font-size:13px;padding:7px 12px}
+.concept a{color:#F0B27A}
+.wrap{max-width:1240px;margin:0 auto;padding:0 22px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+.logo{font:900 28px/1 "Big Shoulders Display";letter-spacing:.02em;text-decoration:none;color:var(--slate)}
+.call{background:var(--slate);color:#fff;text-decoration:none;font-weight:700;padding:10px 16px;border-radius:8px;white-space:nowrap}
+.stage{display:grid;grid-template-columns:1fr 380px;gap:0;border-radius:22px;overflow:hidden;background:linear-gradient(180deg,var(--sky),#E8F1F7 70%);min-height:620px;position:relative}
+@media(max-width:960px){.stage{grid-template-columns:1fr;min-height:0}}
+#view{position:relative;min-height:420px}
+#gl{position:absolute;inset:0}
+#gl canvas{display:block;width:100%;height:100%;outline:none}
+.hint{position:absolute;left:18px;bottom:16px;font-size:13px;color:var(--slate2);background:#ffffffc0;padding:6px 10px;border-radius:8px}
+.title{position:absolute;left:24px;top:22px;max-width:430px;pointer-events:none;z-index:2}
+.title h1{font:900 clamp(36px,4.4vw,62px)/.94 "Big Shoulders Display";margin:0;color:var(--slate);letter-spacing:.005em}
+.title p{margin:10px 0 0;color:var(--slate2);font-size:17px;max-width:26em}
+@media(max-width:960px){.title{position:static;padding:22px 22px 0}#view{min-height:0}#gl{position:relative;height:340px}}
+.panel{background:#fff;padding:24px;display:flex;flex-direction:column;gap:18px;border-left:1px solid var(--line)}
+.panel h2{font:900 30px/1 "Big Shoulders Display";margin:0;color:var(--slate)}
+.group b{display:block;font-size:14px;margin-bottom:8px}
+.seg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
+.seg button{appearance:none;border:1.5px solid var(--line);background:var(--frost);border-radius:10px;padding:10px 6px;font:600 14px Figtree;cursor:pointer}
+.seg button[aria-pressed="true"]{border-color:var(--slate);background:var(--slate);color:#fff}
+.sw{display:flex;gap:10px;flex-wrap:wrap}
+.sw button{appearance:none;width:42px;height:42px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 1.5px var(--line);cursor:pointer}
+.sw button[aria-pressed="true"]{box-shadow:0 0 0 3px var(--copper)}
+.swname{font-size:14px;color:var(--muted);margin-top:6px}
+.est{background:var(--frost);border-radius:12px;padding:12px 14px;font-size:14px;color:var(--muted)}
+.est strong{display:block;font-size:15px;color:var(--ink)}
+.panel label{font-size:13px;font-weight:600}
+.panel input{width:100%;font:inherit;padding:11px;border:1.5px solid var(--line);border-radius:10px;margin-top:4px}
+.go{appearance:none;border:0;background:var(--copper);color:#fff;font:700 16px Figtree;padding:14px;border-radius:12px;cursor:pointer}
+.msg{font-size:14px;min-height:1.2em;margin:0;color:var(--slate2)}
+.fallback{position:absolute;inset:0;display:none;place-items:center;text-align:center;padding:30px;color:var(--slate2)}
+section{padding:70px 0}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.three h3{font:900 26px/1 "Big Shoulders Display";margin:0 0 8px;color:var(--slate)}
+.three p{margin:0;color:var(--muted)}
+@media(max-width:800px){.three{grid-template-columns:1fr}}
+footer{background:var(--slate);color:#C3CFD8;padding:26px 0;font-size:14px}
+footer a{color:#fff}
+</style>
+</head>
+<body>
+<div class="concept">Example concept by <a href="https://calvyrn.com">Calvyrn</a>. Northline Roofing is a fictional company; the 3D house is illustrative, not a measured model.</div>
+<div class="wrap">
+  <header class="top"><a class="logo" href="#">NORTHLINE ROOFING</a><a class="call" href="tel:+16125550180">(612) 555-0180</a></header>
+  <div class="stage">
+    <div id="view" aria-label="3D preview of a house with the selected roof. Drag to turn it.">
+      <div class="title"><h1>Try your new roof before a single shingle comes off.</h1><p>Pick a material and color, turn the house, then ask for a written quote.</p></div>
+      <div id="gl"></div>
+      <div class="fallback" id="fb">The 3D preview needs WebGL. You can still choose a roof on the right and request a quote.</div>
+      <span class="hint" id="hint">Drag to turn · scroll or pinch to zoom</span>
+    </div>
+    <form class="panel" id="panel" novalidate>
+      <h2>Build your roof</h2>
+      <div class="group"><b>Material</b><div class="seg" id="mat" role="group" aria-label="Material"><button type="button" aria-pressed="true" data-m="shingle">Shingle</button><button type="button" aria-pressed="false" data-m="metal">Metal</button><button type="button" aria-pressed="false" data-m="tile">Tile</button></div></div>
+      <div class="group"><b>Color</b><div class="sw" id="sw" role="group" aria-label="Color"></div><div class="swname" id="swname"></div></div>
+      <div class="est" id="est"></div>
+      <div><label for="addr">Home address</label><input id="addr" autocomplete="street-address" placeholder="So we can measure from satellite"></div>
+      <div><label for="ph">Mobile</label><input id="ph" type="tel" autocomplete="tel"></div>
+      <button class="go" type="submit">Get my written quote</button>
+      <p class="msg" id="msg" role="status"></p>
+    </form>
+  </div>
+</div>
+<section><div class="wrap three">
+  <div><h3>Measured from above</h3><p>Satellite measurements mean a first quote without anyone on your roof.</p></div>
+  <div><h3>Written, line by line</h3><p>Materials, tear-off, flashing and cleanup listed separately, so quotes are easy to compare.</p></div>
+  <div><h3>Photo updates</h3><p>A text with photos at the end of each work day, even if you're at the office.</p></div>
+</div></section>
+<footer><div class="wrap">Fictional company used to demonstrate an interactive 3D product preview. Concept and build: <a href="https://calvyrn.com">Calvyrn</a>.</div></footer>
+
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.164.1/build/three.module.js","three/addons/":"https://unpkg.com/three@0.164.1/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+const COLORS = { shingle: [["Charcoal", "#3B3F44"], ["Weathered wood", "#6E5B4B"], ["Slate blue", "#4A5D73"], ["Desert tan", "#A58B6C"]],
+                 metal: [["Matte black", "#1F2326"], ["Galvalume", "#A9B4BC"], ["Forest green", "#2F5240"], ["Copper", "#B87333"]],
+                 tile: [["Terra cotta", "#B5562F"], ["Sandstone", "#C9A27A"], ["Espresso", "#4B342A"], ["Clay red", "#9A3B2C"]] };
+const EST = { shingle: ["Architectural shingle", "25–30 year rated, the most common choice"], metal: ["Standing-seam metal", "40–70 year rated, sheds snow fast"], tile: ["Concrete tile", "50+ year rated, heaviest; needs a structure check"] };
+let mat = 'shingle', col = 0, roofMat, paint = () => {};
+const $ = s => document.querySelector(s);
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+function swatches() {
+  const box = $('#sw'); box.innerHTML = '';
+  COLORS[mat].forEach(([n, h], i) => { const b = document.createElement('button'); b.type = 'button'; b.style.background = h; b.setAttribute('aria-label', n); b.setAttribute('aria-pressed', i === col); b.onclick = () => { col = i; swatches(); paint(); }; box.appendChild(b); });
+  $('#swname').textContent = COLORS[mat][col][0];
+  $('#est').innerHTML = `<strong>${EST[mat][0]} · ${COLORS[mat][col][0]}</strong>${EST[mat][1]}`;
+}
+$('#mat').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; mat = b.dataset.m; col = 0; $('#mat').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)); swatches(); paint(); });
+$('#panel').addEventListener('submit', e => { e.preventDefault(); if (!$('#addr').value.trim()) { $('#msg').textContent = 'Add your address so we can measure the roof.'; return; } if ($('#ph').value.replace(/\D/g, '').length < 10) { $('#msg').textContent = 'Add a 10-digit mobile number.'; return; } $('#msg').textContent = `Thanks. A written quote for ${EST[mat][0].toLowerCase()} in ${COLORS[mat][col][0].toLowerCase()} will arrive by text within one business day. (Demo only.)`; });
+swatches();
+
+// --- 3D scene
+const view = $('#gl');
+let renderer;
+try { renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true }); } catch (e) { $('#fb').style.display = 'grid'; $('#hint').hidden = true; }
+if (renderer) {
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2)); renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  view.appendChild(renderer.domElement);
+  const scene = new THREE.Scene();
+  const cam = new THREE.PerspectiveCamera(35, 1, 0.1, 200); cam.position.set(17, 9.5, 22);
+  const ctl = new OrbitControls(cam, renderer.domElement); ctl.enableDamping = true; ctl.target.set(0, 2.4, 0); ctl.minDistance = 14; ctl.maxDistance = 40; ctl.maxPolarAngle = Math.PI * 0.47; ctl.autoRotate = !reduce; ctl.autoRotateSpeed = 0.7;
+  renderer.domElement.addEventListener('pointerdown', () => { ctl.autoRotate = false; }, { once: true });
+  scene.add(new THREE.HemisphereLight(0xdfefff, 0x8a7a66, 1.1));
+  const sun = new THREE.DirectionalLight(0xfff1dd, 2.2); sun.position.set(10, 16, 8); sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048); Object.assign(sun.shadow.camera, { left: -14, right: 14, top: 14, bottom: -14 }); scene.add(sun);
+  const ground = new THREE.Mesh(new THREE.CircleGeometry(16, 64), new THREE.MeshStandardMaterial({ color: 0x8fae7a, roughness: 1 })); ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; scene.add(ground);
+  const drive = new THREE.Mesh(new THREE.PlaneGeometry(3, 9), new THREE.MeshStandardMaterial({ color: 0xb9b2a6, roughness: 1 })); drive.rotation.x = -Math.PI / 2; drive.position.set(3.4, 0.01, 7.5); drive.receiveShadow = true; scene.add(drive);
+  const wallM = new THREE.MeshStandardMaterial({ color: 0xf2efe9, roughness: .9 }), trimM = new THREE.MeshStandardMaterial({ color: 0x22303c, roughness: .6 }), glassM = new THREE.MeshStandardMaterial({ color: 0x9fc3dc, roughness: .15, metalness: .2 });
+  const house = new THREE.Group(); scene.add(house);
+  const W = 8, D = 6, H = 3.2;
+  const body = new THREE.Mesh(new THREE.BoxGeometry(W, H, D), wallM); body.position.y = H / 2; body.castShadow = body.receiveShadow = true; house.add(body);
+  const gar = new THREE.Mesh(new THREE.BoxGeometry(3.6, 2.6, 4.6), wallM); gar.position.set(W / 2 + 1.6, 1.3, .7); gar.castShadow = gar.receiveShadow = true; house.add(gar);
+  const door = new THREE.Mesh(new THREE.BoxGeometry(1, 2, .08), trimM); door.position.set(-1, 1, D / 2 + .04); house.add(door);
+  const gdoor = new THREE.Mesh(new THREE.BoxGeometry(2.8, 2, .08), new THREE.MeshStandardMaterial({ color: 0xd9dee2, roughness: .7 })); gdoor.position.set(W / 2 + 1.6, 1, 3.04); house.add(gdoor);
+  [[-3, 1.8], [1.4, 1.8]].forEach(([x, y]) => { const w = new THREE.Mesh(new THREE.BoxGeometry(1.4, 1.1, .06), glassM); w.position.set(x, y, D / 2 + .04); house.add(w); const f = new THREE.Mesh(new THREE.BoxGeometry(1.56, 1.26, .04), trimM); f.position.set(x, y, D / 2 + .02); house.add(f); });
+  // gable roof as an extruded triangle
+  const pitch = 2.2, over = .45;
+  const tri = new THREE.Shape(); tri.moveTo(-D / 2 - over, 0); tri.lineTo(0, pitch); tri.lineTo(D / 2 + over, 0); tri.lineTo(D / 2 + over, -.18); tri.lineTo(0, pitch - .18); tri.lineTo(-D / 2 - over, -.18);
+  roofMat = new THREE.MeshStandardMaterial({ color: 0x3b3f44, roughness: .85, metalness: 0 });
+  const roof = new THREE.Mesh(new THREE.ExtrudeGeometry(tri, { depth: W + over * 2, bevelEnabled: false }), roofMat); roof.rotation.y = Math.PI / 2; roof.position.set(-W / 2 - over, H, 0); roof.castShadow = true; house.add(roof);
+  const gable = new THREE.Shape(); gable.moveTo(-D / 2, 0); gable.lineTo(0, pitch - .1); gable.lineTo(D / 2, 0);
+  [-W / 2, W / 2].forEach(x => { const g = new THREE.Mesh(new THREE.ShapeGeometry(gable), wallM); g.rotation.y = Math.PI / 2; g.position.set(x + (x > 0 ? .001 : -.001), H, 0); g.material.side = THREE.DoubleSide; house.add(g); });
+  const garRoof = new THREE.Mesh(new THREE.BoxGeometry(4, .2, 5.2), roofMat); garRoof.position.set(W / 2 + 1.6, 2.7, .7); garRoof.castShadow = true; house.add(garRoof);
+  const chim = new THREE.Mesh(new THREE.BoxGeometry(.7, 1.6, .7), new THREE.MeshStandardMaterial({ color: 0x8c4a32, roughness: .9 })); chim.position.set(2.4, H + 1.6, -1); chim.castShadow = true; house.add(chim);
+  // stripe texture for metal seams / tile courses
+  function tex(kind) {
+    const c = document.createElement('canvas'); c.width = c.height = 256; const g = c.getContext('2d'); g.fillStyle = '#fff'; g.fillRect(0, 0, 256, 256);
+    if (kind === 'metal') { g.fillStyle = '#c9c9c9'; for (let x = 0; x < 256; x += 32) g.fillRect(x, 0, 4, 256); }
+    else if (kind === 'tile') { g.fillStyle = '#bdbdbd'; for (let y = 0; y < 256; y += 32) { g.fillRect(0, y, 256, 5); for (let x = (y / 32 % 2) * 16; x < 256; x += 32) g.fillRect(x, y, 3, 32); } }
+    else { for (let i = 0; i < 2200; i++) { const v = 200 + Math.random() * 55 | 0; g.fillStyle = `rgb(${v},${v},${v})`; g.fillRect(Math.random() * 256, Math.random() * 256, 3, 2); } g.fillStyle = '#cfcfcf'; for (let y = 0; y < 256; y += 21) g.fillRect(0, y, 256, 2); }
+    const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(.6, .6); t.colorSpace = THREE.SRGBColorSpace; return t;
+  }
+  paint = function () {
+    roofMat.color.set(COLORS[mat][col][1]);
+    roofMat.metalness = mat === 'metal' ? .65 : 0; roofMat.roughness = mat === 'metal' ? .38 : mat === 'tile' ? .7 : .9;
+    roofMat.map = tex(mat); roofMat.needsUpdate = true;
+  };
+  paint();
+  function size() { const r = view.getBoundingClientRect(); renderer.setSize(r.width, r.height, false); cam.aspect = r.width / r.height; if (r.width > 700) cam.setViewOffset(r.width, r.height, -r.width * 0.12, -r.height * 0.04, r.width, r.height); else cam.clearViewOffset(); cam.updateProjectionMatrix(); }
+  new ResizeObserver(size).observe(view); size();
+  renderer.setAnimationLoop(() => { ctl.update(); renderer.render(scene, cam); });
+}
+</script>
+</body>
+</html>

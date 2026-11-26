@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fern & Fade — Hair studio, book online (example concept)</title>
+<meta name="description" content="Example concept by Calvyrn: a hair studio website where clients pick a service, a stylist and a time, any hour of the day.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--plum:#4A2C40;--sage:#9CAF88;--blush:#F3D7D3;--milk:#FFFDFB;--ink:#2A1F27;--muted:#76656F;--line:#EBDDDD}
+*{box-sizing:border-box}
+body{margin:0;background:var(--milk);color:var(--ink);font:16px/1.6 Manrope,system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sage);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.concept{background:var(--plum);color:var(--blush);text-align:center;font-size:13px;padding:7px 12px}
+.concept a{color:#fff}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{font:400 30px/1 "DM Serif Display",serif;text-decoration:none;color:var(--plum)}
+.top a.ig{font-size:14px;font-weight:600}
+.hero{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:start;padding:20px 0 70px}
+@media(max-width:920px){.hero{grid-template-columns:1fr}}
+.hero h1{font:400 clamp(44px,6vw,76px)/1.02 "DM Serif Display",serif;margin:0 0 18px;color:var(--plum)}
+.hero p{font-size:18px;color:var(--muted);margin:0 0 20px;max-width:28em}
+.arch{width:100%;max-width:360px;aspect-ratio:3/4;border-radius:200px 200px 16px 16px;background:radial-gradient(circle at 30% 25%,#fff8 0 18%,transparent 19%),linear-gradient(170deg,var(--sage),#6F8A63);position:relative;overflow:hidden}
+.arch svg{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:80%}
+.book{background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:0 24px 50px -36px #4a2c4080}
+.book h2{font:400 30px/1.1 "DM Serif Display",serif;margin:0 0 4px;color:var(--plum)}
+.book .hint{margin:0 0 18px;color:var(--muted);font-size:14px}
+.stepper{display:flex;gap:16px;font-size:13px;font-weight:700;color:var(--muted);margin-bottom:16px}
+.stepper span.on{color:var(--plum)}
+.pane{display:none}.pane.on{display:block}
+.svc{display:grid;gap:8px}
+.svc button,.sty button{appearance:none;width:100%;text-align:left;border:1.5px solid var(--line);background:var(--milk);border-radius:14px;padding:12px 14px;cursor:pointer;font:inherit;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.svc button[aria-pressed="true"],.sty button[aria-pressed="true"]{border-color:var(--plum);background:var(--blush)}
+.svc small,.sty small{color:var(--muted)}
+.sty{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.sty button{flex-direction:column;align-items:center;text-align:center}
+.av{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font:400 22px "DM Serif Display";color:#fff}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin:6px 0 12px}
+.cal button{appearance:none;border:1.5px solid var(--line);background:#fff;border-radius:10px;padding:8px 0;font:600 14px Manrope;cursor:pointer;line-height:1.2}
+.cal button small{display:block;font-weight:400;color:var(--muted);font-size:11px}
+.cal button[aria-pressed="true"]{background:var(--plum);color:#fff;border-color:var(--plum)}
+.cal button[aria-pressed="true"] small{color:var(--blush)}
+.times{display:flex;flex-wrap:wrap;gap:6px}
+.times button{appearance:none;border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:7px 13px;font:600 14px Manrope;cursor:pointer}
+.times button[aria-pressed="true"]{background:var(--sage);border-color:var(--sage);color:#fff}
+.go{margin-top:18px;width:100%;appearance:none;border:0;background:var(--plum);color:#fff;font:800 16px Manrope;padding:15px;border-radius:14px;cursor:pointer}
+.go:disabled{opacity:.35;cursor:not-allowed}
+.back{appearance:none;background:none;border:0;color:var(--muted);text-decoration:underline;cursor:pointer;font:inherit;font-size:14px;margin-top:10px}
+.sum{background:var(--blush);border-radius:14px;padding:12px 14px;font-size:15px;margin-bottom:12px}
+input{width:100%;font:inherit;padding:12px;border:1.5px solid var(--line);border-radius:12px;margin:4px 0 10px}
+label{font-size:14px;font-weight:600}
+.err{color:#A23B4F;font-size:14px;min-height:1.2em;margin:0}
+section{padding:70px 0}
+section h2.t{font:400 clamp(32px,4vw,46px)/1.05 "DM Serif Display",serif;color:var(--plum);margin:0 0 30px}
+.menu{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
+.menu div{display:flex;justify-content:space-between;border-bottom:1px dotted #CDB9BF;padding:12px 0;gap:12px}
+.menu div span:last-child{font-weight:700;white-space:nowrap}
+@media(max-width:700px){.menu{grid-template-columns:1fr}}
+.policy{background:var(--plum);color:var(--blush)}
+.policy .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.policy h3{font:400 24px "DM Serif Display";color:#fff;margin:0 0 6px}
+.policy p{margin:0;font-size:15px}
+@media(max-width:760px){.policy .wrap{grid-template-columns:1fr}}
+footer{padding:26px 0;color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<div class="concept">Example concept by <a href="https://calvyrn.com">Calvyrn</a>. Fern &amp; Fade is a fictional studio; stylists, prices and times are placeholders.</div>
+<div class="wrap">
+  <header class="top"><a class="logo" href="#">Fern &amp; Fade</a><a class="ig" href="#prices">Prices</a></header>
+  <main class="hero">
+    <div>
+      <h1>Your next cut, booked before you put the phone down.</h1>
+      <p>Choose the service, your stylist and a time that suits you. Reminders by text, and you can move your appointment yourself up to 24 hours before.</p>
+      <div class="arch" aria-hidden="true">
+        <svg viewBox="0 0 200 220"><path d="M100 30c-38 0-58 30-56 66 2 30 14 52 20 72 6 20 6 40 6 52h60c0-12 0-32 6-52s18-42 20-72c2-36-18-66-56-66z" fill="#4A2C40"/><ellipse cx="100" cy="98" rx="34" ry="42" fill="#E7B8A8"/><path d="M62 86c8-34 70-44 82-4-14-12-46-18-82 4z" fill="#4A2C40"/><path d="M60 220c4-30 18-44 40-44s36 14 40 44z" fill="#F3D7D3"/></svg>
+      </div>
+    </div>
+    <form class="book" id="book" novalidate aria-labelledby="bh">
+      <h2 id="bh">Book an appointment</h2>
+      <p class="hint">Open 24/7 online. Studio hours Tue–Sat.</p>
+      <div class="stepper" aria-hidden="true"><span class="on">1 Service</span><span>2 Stylist</span><span>3 Time</span><span>4 Details</span></div>
+      <div class="pane on" data-p="0"><div class="svc" id="svc" role="group" aria-label="Service"></div></div>
+      <div class="pane" data-p="1"><div class="sty" id="sty" role="group" aria-label="Stylist"></div></div>
+      <div class="pane" data-p="2"><div class="cal" id="cal" role="group" aria-label="Day"></div><div class="times" id="times" role="group" aria-label="Time"></div></div>
+      <div class="pane" data-p="3">
+        <div class="sum" id="sum"></div>
+        <label for="n">Name</label><input id="n" autocomplete="name">
+        <label for="m">Mobile</label><input id="m" type="tel" autocomplete="tel" placeholder="For your text reminder">
+        <p class="err" id="err" role="alert"></p>
+      </div>
+      <div class="pane" data-p="4" tabindex="-1"><h2 style="margin-top:6px">See you soon.</h2><p id="done"></p><p class="hint">Demo only: nothing was booked or sent.</p></div>
+      <button type="button" class="go" id="go" disabled>Continue</button>
+      <button type="button" class="back" id="back" hidden>Back</button>
+    </form>
+  </main>
+</div>
+<section id="prices"><div class="wrap">
+  <h2 class="t">Prices</h2>
+  <div class="menu">
+    <div><span>Women's cut and style</span><span>from $68</span></div>
+    <div><span>Men's cut</span><span>from $42</span></div>
+    <div><span>Skin fade</span><span>from $46</span></div>
+    <div><span>Single process color</span><span>from $95</span></div>
+    <div><span>Balayage</span><span>from $210</span></div>
+    <div><span>Blowout</span><span>from $45</span></div>
+  </div>
+</div></section>
+<section class="policy"><div class="wrap">
+  <div><h3>Move it yourself</h3><p>Change or cancel from the link in your text, up to 24 hours before.</p></div>
+  <div><h3>Waitlist</h3><p>Fully booked? Join the waitlist and get a text the moment a spot opens.</p></div>
+  <div><h3>First visit</h3><p>Color clients get a free 10-minute consult before the first appointment.</p></div>
+</div></section>
+<footer class="wrap">Fictional studio used to demonstrate online booking for salons. Concept and build: <a href="https://calvyrn.com">Calvyrn</a>.</footer>
+<script>
+(() => {
+  const SVC = [["Women's cut and style", "60 min", 68], ["Men's cut", "30 min", 42], ["Skin fade", "45 min", 46], ["Single process color", "90 min", 95], ["Blowout", "40 min", 45]];
+  const STY = [["Ari", "Cuts & fades", "#9CAF88"], ["Noor", "Color", "#4A2C40"], ["Dee", "Curly hair", "#C08497"], ["Any", "First available", "#76656F"]];
+  const s = {svc: null, sty: null, day: null, time: null}; let p = 0;
+  const $ = q => document.querySelector(q), panes = [...document.querySelectorAll('.pane')], steps = [...document.querySelectorAll('.stepper span')];
+  const pick = (box, btn) => box.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b === btn));
+  SVC.forEach(([n, d, pr]) => { const b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-pressed', 'false'); b.innerHTML = `<span><b>${n}</b><br><small>${d}</small></span><span>from $${pr}</span>`; b.onclick = () => { pick($('#svc'), b); s.svc = n; upd(); }; $('#svc').appendChild(b); });
+  STY.forEach(([n, d, c], i) => { const b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-pressed', 'false'); b.innerHTML = `<span class="av" style="background:${c}">${n[0]}</span><b>${n}</b><small>${d}</small>`; b.onclick = () => { pick($('#sty'), b); s.sty = n; upd(); }; $('#sty').appendChild(b); });
+  const d0 = new Date(); d0.setHours(0, 0, 0, 0); let added = 0;
+  for (let k = 1; added < 7; k++) { const d = new Date(d0); d.setDate(d.getDate() + k); if (d.getDay() === 0 || d.getDay() === 1) continue; added++;
+    const b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-pressed', 'false'); b.innerHTML = `<small>${d.toLocaleDateString('en-US', {weekday: 'short'})}</small>${d.getDate()}`; b.setAttribute('aria-label', d.toDateString());
+    b.onclick = () => { pick($('#cal'), b); s.day = d; s.time = null; times(k); upd(); }; $('#cal').appendChild(b); }
+  function times(seed) { $('#times').innerHTML = ''; ['10:00 am', '11:15 am', '12:30 pm', '2:00 pm', '3:45 pm', '5:15 pm', '6:30 pm'].forEach((t, j) => { if ((j + seed) % 3 === 0) return; const b = document.createElement('button'); b.type = 'button'; b.textContent = t; b.setAttribute('aria-pressed', 'false'); b.onclick = () => { pick($('#times'), b); s.time = t; upd(); }; $('#times').appendChild(b); }); }
+  const ok = () => [s.svc, s.sty, s.day && s.time, true][p];
+  function upd() { $('#go').disabled = !ok(); }
+  function show() { panes.forEach((x, i) => x.classList.toggle('on', i === p)); steps.forEach((x, i) => x.classList.toggle('on', i <= p)); $('#back').hidden = p === 0 || p === 4; $('#go').hidden = p === 4; $('#go').textContent = p === 3 ? 'Confirm booking' : 'Continue'; upd(); }
+  $('#back').onclick = () => { p--; show(); };
+  $('#go').onclick = () => {
+    if (p === 2) $('#sum').textContent = `${s.svc} with ${s.sty === 'Any' ? 'the first available stylist' : s.sty}, ${s.day.toLocaleDateString('en-US', {weekday: 'long', month: 'short', day: 'numeric'})} at ${s.time}`;
+    if (p === 3) { const n = $('#n').value.trim(), m = $('#m').value.replace(/\D/g, ''); if (!n) { $('#err').textContent = 'Add your name.'; return; } if (m.length < 10) { $('#err').textContent = 'Add a 10-digit mobile number for your reminder.'; return; } $('#err').textContent = ''; $('#done').textContent = `${n.split(' ')[0]}, you're booked: ${$('#sum').textContent}. A confirmation text is on its way.`; }
+    p++; show(); if (p === 4) panes[4].focus();
+  };
+  show();
+})();
+</script>
+</body>
+</html>
