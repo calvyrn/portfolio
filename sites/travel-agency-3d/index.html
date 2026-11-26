@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Northstar Journeys | Custom Trip Planning from Denver, CO</title>
+<meta name="description" content="Boutique travel agency in Denver planning custom trips to Iceland, Bali, Kyoto, the Amalfi Coast and Patagonia. One planner, a written day-by-day proposal and on-trip support.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--space:#050816;--space2:#0B1230;--paper:#F5F3EE;--glow:#7DD3FC;--sun:#F59E0B;--slate:#1E293B;--muted:#5A6577;--line:#DCD8CE;--display:"Bricolage Grotesque",system-ui,sans-serif;--body:"Albert Sans",system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--slate);font:17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}a{color:inherit}
+:focus-visible{outline:3px solid var(--glow);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.concept{background:#000;color:#B8C2D6;font-size:13px;text-align:center;padding:7px 16px}.concept a{color:var(--glow)}
+/* header */
+header.top{position:sticky;top:0;z-index:50;background:#050816d9;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #ffffff14;color:#E6EAF2}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:#fff;font:700 20px/1 var(--display);letter-spacing:-.01em;white-space:nowrap}
+.brand svg{width:34px;height:34px;flex:none}
+nav.main{display:flex;gap:28px;font-size:15px}nav.main a{text-decoration:none;color:#C9D2E3}nav.main a:hover{color:#fff}
+.hdr{display:flex;align-items:center;gap:18px}
+.tel{color:#E6EAF2;text-decoration:none;font-weight:600;font-size:15px;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 16px/1 var(--body);padding:14px 20px;border-radius:999px;text-decoration:none;border:0;cursor:pointer;white-space:nowrap}
+.btn.glow{background:var(--glow);color:var(--space)}.btn.glow:hover{background:#A5E2FD}
+.btn.ghost{color:#E6EAF2;box-shadow:inset 0 0 0 1.5px #ffffff40}.btn.ghost:hover{box-shadow:inset 0 0 0 1.5px #fff}
+.btn.dark{background:var(--space);color:#fff}.btn.sun{background:var(--sun);color:var(--space)}
+@media(max-width:1060px){nav.main{display:none}}
+@media(max-width:560px){.tel{display:none}.hdr .btn{padding:11px 15px;font-size:15px}.brand span{font-size:17px}}
+/* stage */
+.stage{position:relative;height:100vh;height:100svh;min-height:600px;background:radial-gradient(120% 90% at 70% 40%,#0B1636 0%,var(--space) 60%);color:#E6EAF2;overflow:hidden}
+#gl{position:absolute;inset:0}#gl canvas{display:block;width:100%;height:100%}
+.intro{position:absolute;left:0;right:0;top:0;bottom:0;pointer-events:none;z-index:3}
+.intro .wrap{height:100%;display:flex;flex-direction:column;justify-content:center;padding-bottom:40px}
+.intro .in{max-width:560px;pointer-events:auto}
+.intro h1{font:700 clamp(42px,5.4vw,76px)/.98 var(--display);letter-spacing:-.035em;margin:0 0 22px;color:#fff}
+.intro p{font-size:19px;color:#AEB9CF;max-width:30em;margin:0 0 30px}
+.intro .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.meta{display:flex;gap:28px;margin-top:40px;font-size:14px;color:#8F9BB4;flex-wrap:wrap}.meta b{display:block;color:#fff;font:600 17px/1.3 var(--display)}
+.scrollhint{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);font-size:13px;color:#8F9BB4;z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px}
+.scrollhint i{width:1px;height:38px;background:linear-gradient(var(--glow),transparent);animation:drip 2.2s infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+/* destination cards */
+.dests{position:absolute;right:max(28px,calc((100vw - 1240px)/2 + 28px));top:50%;transform:translateY(-46%);width:430px;z-index:4;height:0}
+.dest{position:absolute;left:0;top:0;transform:translate(48px,-50%);opacity:0;visibility:hidden;width:100%;background:#F5F3EEf7;color:var(--slate);border-radius:22px;overflow:hidden;transition:opacity .55s ease,transform .7s cubic-bezier(.2,.8,.2,1),visibility .55s;box-shadow:0 40px 90px -30px #000c}
+.dest.on{opacity:1;transform:translate(0,-50%);visibility:visible}
+.dest .ph{position:relative;height:170px}.dest .ph img{width:100%;height:100%;object-fit:cover}
+.dest .ph span{position:absolute;left:14px;bottom:12px;background:#050816cc;color:#fff;font-size:13px;padding:5px 10px;border-radius:999px}
+.dest .bd{padding:18px 22px 20px}
+.dest h2{font:700 30px/1 var(--display);letter-spacing:-.02em;margin:0 0 4px}
+.dest .when{font-size:14px;color:var(--muted);margin:0 0 12px}.dest .when b{color:var(--slate)}
+.dest ol{list-style:none;margin:0 0 14px;padding:0;font-size:14px;line-height:1.35;border-top:1px solid var(--line)}
+.dest li{display:grid;grid-template-columns:44px 1fr;padding:5px 0;border-bottom:1px solid var(--line)}
+.dest li b{font:600 13px/1.35 var(--display);color:#0C7FB0}
+.dest .foot{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.dest .price{font-size:14px;color:var(--muted);line-height:1.3}.dest .price b{display:block;font:700 20px/1.1 var(--display);color:var(--slate)}
+.dest .btn{padding:11px 16px;font-size:15px}
+.rail{position:absolute;left:max(28px,calc((100vw - 1240px)/2 + 28px));bottom:34px;z-index:4;display:flex;gap:6px;list-style:none;margin:0;padding:0;opacity:0;transition:opacity .4s}
+.rail.on{opacity:1}
+.rail button{appearance:none;background:#050816d0;border:1px solid #ffffff1f;color:#AEB9CF;font:500 14px/1 var(--body);padding:9px 13px;border-radius:999px;cursor:pointer}
+.rail button[aria-current="true"]{background:var(--glow);border-color:var(--glow);color:var(--space);font-weight:600}
+.tag{position:absolute;z-index:3;left:0;top:0;pointer-events:none;font-size:13px;color:#fff;background:#050816b3;border:1px solid #7DD3FC66;padding:6px 10px;border-radius:999px;white-space:nowrap;opacity:0;transition:opacity .3s;transform:translate(14px,-50%)}
+.fallback{display:none;position:absolute;right:28px;bottom:90px;max-width:340px;color:#AEB9CF;font-size:15px;z-index:3}
+@media(max-width:900px){
+  .intro .wrap{justify-content:flex-start;padding-top:96px}
+  .intro h1{font-size:clamp(36px,10vw,52px)}.intro p{font-size:17px;margin-bottom:22px}.meta{display:none}
+  .scrollhint{display:none}
+  .dests{left:14px;right:14px;width:auto;top:auto;bottom:16px;transform:none;height:auto}
+  .dest{top:auto;bottom:0;transform:translateY(40px)}.dest.on{transform:translateY(0)}
+  .dest .ph{height:auto;display:none}
+  .dest .bd{padding:16px 16px 16px}.dest h2{font-size:25px}.dest .when{margin-bottom:8px;font-size:13px}
+  .dest ol{font-size:13px;margin-bottom:10px}.dest li{grid-template-columns:38px 1fr;padding:3px 0}
+  .rail{top:84px;bottom:auto;left:14px;right:14px;overflow-x:auto;flex-wrap:nowrap}
+  .rail{gap:4px}.rail button{padding:6px 8px;font-size:12.5px}
+  .intro::before{content:"";position:absolute;left:0;right:0;top:0;height:78%;background:linear-gradient(#050816 50%,#05081600);z-index:-1}
+}
+@media(max-width:900px) and (min-height:760px){.dest .ph{display:block;height:110px}}
+/* reduced motion / static */
+body.static .stage{height:auto;min-height:0;overflow:visible}
+body.static #gl{position:absolute;top:0;left:0;right:0;bottom:auto;height:min(80vh,720px)}
+body.static .intro{position:relative;height:auto}body.static .intro .wrap{min-height:min(80vh,720px);padding-top:60px;padding-bottom:40px}
+body.static .scrollhint,body.static .rail{display:none}
+body.static .dests{position:relative;left:auto;right:auto;top:auto;bottom:auto;transform:none;width:auto;height:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;max-width:1240px;margin:0 auto;padding:30px 28px 70px}
+body.static .dest{position:relative;transform:none;opacity:1;visibility:visible;top:auto;bottom:auto}
+body.static .dest .ph{display:block;height:170px}
+/* light sections */
+section.band{padding:110px 0;scroll-margin-top:70px}
+.h2{font:700 clamp(34px,4.4vw,58px)/1.02 var(--display);letter-spacing:-.03em;margin:0 0 18px;color:var(--space);max-width:16em}
+.lead{font-size:19px;color:var(--muted);max-width:36em;margin:0 0 48px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;list-style:none;padding:0;margin:0;border-top:1px solid var(--slate)}
+.steps li{padding:26px 26px 0 0}
+.steps li+li{padding-left:26px;border-left:1px solid var(--line)}
+.steps .n{font:600 15px/1 var(--display);color:#0C7FB0;display:block;margin-bottom:28px}
+.steps h3{font:700 23px/1.15 var(--display);margin:0 0 10px;color:var(--space);letter-spacing:-.01em}
+.steps p{margin:0;color:var(--muted);font-size:16px}
+@media(max-width:900px){.steps{grid-template-columns:1fr 1fr}.steps li:nth-child(3){padding-left:0;border-left:0}.steps li{padding-bottom:26px}}
+@media(max-width:560px){.steps{grid-template-columns:1fr}.steps li,.steps li+li{padding:22px 0;border-left:0;border-bottom:1px solid var(--line)}.steps .n{margin-bottom:12px}}
+/* planner */
+.planner{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pgrid{display:grid;grid-template-columns:.85fr 1.15fr;gap:72px;align-items:start}
+.pside img{border-radius:20px;aspect-ratio:5/4;object-fit:cover;width:100%;margin-top:8px}
+.pside figcaption{font-size:14px;color:var(--muted);margin-top:10px}
+.pside ul{list-style:none;padding:0;margin:0 0 28px;display:grid;gap:10px}
+.pside li{padding-left:26px;position:relative}.pside li::before{content:"";position:absolute;left:0;top:10px;width:12px;height:2px;background:var(--sun)}
+form.plan{background:var(--paper);border-radius:24px;padding:34px;border:1px solid var(--line)}
+form.plan h3{font:700 28px/1.1 var(--display);margin:0 0 4px;color:var(--space);letter-spacing:-.02em}
+form.plan .sub{color:var(--muted);margin:0 0 26px;font-size:16px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.f{display:flex;flex-direction:column;gap:7px;margin-bottom:18px;font-size:15px;font-weight:600}
+.f input,.f select{font:400 16px var(--body);padding:13px 14px;border-radius:12px;border:1.5px solid #CFCABD;background:#fff;color:var(--slate);width:100%}
+.f input:focus,.f select:focus{border-color:#0C7FB0;outline:none;box-shadow:0 0 0 3px #7DD3FC66}
+fieldset{border:0;padding:0;margin:0 0 18px}legend{font-weight:600;font-size:15px;margin-bottom:9px;padding:0}
+.stepper{display:flex;align-items:center;border:1.5px solid #CFCABD;border-radius:12px;background:#fff;overflow:hidden;height:50px}
+.stepper button{appearance:none;border:0;background:none;width:50px;height:100%;font:600 22px/1 var(--body);cursor:pointer;color:var(--slate)}
+.stepper button:hover{background:#F0EEE8}.stepper output{flex:1;text-align:center;font:600 16px var(--body)}
+.range{display:flex;justify-content:space-between;align-items:baseline;font-weight:600;font-size:15px;margin-bottom:8px}
+.range output{font:700 20px var(--display);color:var(--space)}
+input[type=range]{width:100%;accent-color:#0C7FB0;margin:0}
+.rlab{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-top:4px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{appearance:none;font:500 15px var(--body);padding:9px 14px;border-radius:999px;border:1.5px solid #CFCABD;background:#fff;color:var(--slate);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--space);border-color:var(--space);color:#fff}
+.err{color:#B42318;font-size:14px;min-height:1.3em;margin:0 0 10px}
+.submit{width:100%;padding:17px;font-size:17px;border-radius:14px}
+.note{font-size:13px;color:var(--muted);margin:12px 0 0;text-align:center}
+.done{display:none}.done.on{display:block}
+.done .badge{display:inline-flex;align-items:center;gap:8px;background:#E3F5FD;color:#075E83;font-weight:600;font-size:14px;padding:7px 12px;border-radius:999px;margin-bottom:14px}
+.done h3{font-size:30px}
+.done dl{display:grid;grid-template-columns:140px 1fr;gap:0;margin:18px 0;border-top:1px solid var(--line)}
+.done dt,.done dd{padding:10px 0;border-bottom:1px solid var(--line);margin:0;font-size:15px}.done dt{color:var(--muted)}.done dd{font-weight:600}
+.done .next{background:#fff;border-radius:14px;padding:16px 18px;border:1px solid var(--line);font-size:15px}
+.link{appearance:none;background:none;border:0;padding:0;margin-top:16px;font:600 15px var(--body);text-decoration:underline;color:var(--slate);cursor:pointer}
+@media(max-width:960px){.pgrid{grid-template-columns:1fr;gap:40px}.pside img{aspect-ratio:16/10}}
+@media(max-width:560px){form.plan{padding:22px 18px}.row{grid-template-columns:1fr;gap:0}.done dl{grid-template-columns:110px 1fr}}
+/* why */
+.why{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px}
+.why dl{margin:0;display:grid;grid-template-columns:1fr 1fr;gap:0}
+.why dl>div{padding:26px 26px 26px 0;border-top:1px solid var(--line)}
+.why dl>div:nth-child(even){padding-left:26px;padding-right:0;border-left:1px solid var(--line)}
+.why dt{font:700 22px/1.2 var(--display);color:var(--space);margin-bottom:8px;letter-spacing:-.01em}.why dd{margin:0;color:var(--muted);font-size:16px}
+.mosaic{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:64px}
+.mosaic figure{margin:0}.mosaic img{aspect-ratio:3/4;object-fit:cover;border-radius:14px;width:100%}
+.mosaic figcaption{font-size:14px;margin-top:8px;color:var(--muted)}
+@media(max-width:960px){.why{grid-template-columns:1fr;gap:20px}.mosaic{grid-template-columns:repeat(3,1fr)}.mosaic figure:nth-child(n+4){display:none}}
+@media(max-width:560px){.why dl{grid-template-columns:1fr}.why dl>div,.why dl>div:nth-child(even){padding:20px 0;border-left:0}}
+/* reviews */
+.dark{background:var(--space);color:#C9D2E3}
+.dark .h2{color:#fff}.dark .lead{color:#8F9BB4}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid #ffffff24}
+.revs figure{margin:0;padding:30px 30px 0 0}.revs figure+figure{padding-left:30px;border-left:1px solid #ffffff1a}
+.revs blockquote{margin:0 0 18px;font:500 22px/1.38 var(--display);color:#fff;letter-spacing:-.01em}
+.revs figcaption{font-size:14px;color:#8F9BB4}.revs figcaption b{color:var(--glow);font-weight:600}
+@media(max-width:900px){.revs{grid-template-columns:1fr}.revs figure,.revs figure+figure{padding:26px 0;border-left:0;border-bottom:1px solid #ffffff1a}}
+/* faq */
+.faqgrid{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px}
+.faq details{border-top:1px solid var(--line);padding:20px 0}.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;font:600 20px/1.3 var(--display);color:var(--space);display:flex;justify-content:space-between;gap:20px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:400 26px/1 var(--body);color:#0C7FB0;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq p{margin:12px 0 0;color:var(--muted);max-width:40em}
+@media(max-width:900px){.faqgrid{grid-template-columns:1fr;gap:16px}}
+/* visit */
+.visit{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:stretch}
+.visit dl{display:grid;grid-template-columns:auto 1fr;gap:10px 22px;margin:0 0 28px}.visit dt{font-weight:600}.visit dd{margin:0;color:var(--muted)}
+.map{border:0;width:100%;min-height:400px;height:100%;border-radius:22px;filter:saturate(.75);background:#E4E1D8}
+@media(max-width:900px){.visit{grid-template-columns:1fr}.map{min-height:320px}}
+.cta{background:linear-gradient(100deg,var(--space) 0%,#0B1636 70%,#1a1d3a 100%);color:#fff;position:relative;overflow:hidden}
+.cta::after{content:"";position:absolute;right:-160px;top:-160px;width:420px;height:420px;border-radius:50%;box-shadow:inset -30px 20px 80px #7DD3FC55,0 0 120px #7DD3FC22;border:1px solid #7DD3FC33}
+.cta .wrap{display:flex;justify-content:space-between;align-items:center;gap:28px;padding-top:70px;padding-bottom:70px;flex-wrap:wrap;position:relative;z-index:1}
+.cta h2{font:700 clamp(30px,3.6vw,46px)/1.05 var(--display);letter-spacing:-.03em;margin:0;max-width:15em}
+footer{background:#03050F;color:#8F9BB4;padding:64px 0 30px;font-size:15px}
+footer .cols{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px}
+footer h3{color:#fff;font:600 16px var(--display);margin:0 0 12px}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+footer a{text-decoration:none;color:#C9D2E3}footer a:hover{color:#fff;text-decoration:underline}
+footer .legal{border-top:1px solid #ffffff1a;margin-top:44px;padding-top:20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px}
+@media(max-width:800px){footer .cols{grid-template-columns:1fr 1fr}}
+.mbar{display:none}
+@media(max-width:700px){.mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;gap:10px;transition:transform .3s}.mbar a{flex:1}.mbar.hide,.mbar.pinhide{transform:translateY(140%)}body{padding-bottom:76px}section.band{padding:76px 0}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="concept">Example concept by <a href="https://calvyrn.com">Calvyrn</a>. Northstar Journeys is fictional; names, reviews and 555 numbers are placeholders. Photos: Unsplash.</div>
+<header class="top"><div class="wrap">
+  <a class="brand" href="#top" aria-label="Northstar Journeys home"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18.5" fill="none" stroke="#7DD3FC" stroke-opacity=".45"/><path d="M20 5l3 12 12 3-12 3-3 12-3-12-12-3 12-3z" fill="#F5F3EE"/><circle cx="20" cy="20" r="2.2" fill="#F59E0B"/></svg><span>Northstar Journeys</span></a>
+  <nav class="main" aria-label="Main"><a href="#journeys">Journeys</a><a href="#how">How it works</a><a href="#plan">Trip planner</a><a href="#why">Why us</a><a href="#faq">FAQ</a></nav>
+  <div class="hdr"><a class="tel" href="tel:+17205550148">(720) 555-0148</a><a class="btn glow" href="#plan">Start planning</a></div>
+</div></header>
+
+<main id="top">
+<section class="stage" id="journeys" aria-label="Five sample journeys from Denver">
+  <div id="gl" aria-hidden="true"></div>
+  <div class="intro" id="intro"><div class="wrap"><div class="in">
+    <h1>Custom trips from Denver, planned down to the last transfer.</h1>
+    <p>Tell us where you want to wake up. Your Northstar planner designs the route, books every stay, guide and driver, and stays on call until you're home.</p>
+    <div class="ctas"><a class="btn glow" href="#plan">Plan my trip</a><a class="btn ghost" href="#journeys" id="toJourneys">See five sample journeys</a></div>
+    <div class="meta"><span><b>One planner</b>from first call to flight home</span><span><b>Written proposal</b>day by day, before you commit</span><span><b>24/7 line</b>while you travel</span></div>
+  </div></div></div>
+  <div class="scrollhint" id="hint"><span>Scroll to fly</span><i></i></div>
+  <p class="fallback" id="fb">The 3D globe needs WebGL, so it is hidden on this device. The five sample journeys still appear as you scroll.</p>
+  <div class="tag" id="tag"></div>
+  <ol class="rail" id="rail" aria-label="Sample journeys">
+    <li><button type="button" data-k="1">Iceland</button></li><li><button type="button" data-k="2">Bali</button></li><li><button type="button" data-k="3">Kyoto</button></li><li><button type="button" data-k="4">Amalfi</button></li><li><button type="button" data-k="5">Patagonia</button></li>
+  </ol>
+  <div class="dests" id="dests">
+    <article class="dest" data-k="1" aria-label="Iceland sample journey">
+      <div class="ph"><img src="img/iceland.jpg" alt="Aerial view of a road crossing a bare, volcanic-looking plain" loading="lazy"><span>Representative photo</span></div>
+      <div class="bd"><h2>Iceland</h2><p class="when">Best in <b>Jun to Aug</b> for midnight sun, <b>Feb to Mar</b> for northern lights</p>
+      <ol><li><b>Day 1</b>Land at Keflavík, geothermal lagoon soak, Reykjavík</li><li><b>Day 2</b>Golden Circle: Þingvellir, Geysir and Gullfoss</li><li><b>Day 3</b>South coast waterfalls to Vík</li><li><b>Day 4</b>Guided glacier walk with crampons</li><li><b>Day 5</b>Jökulsárlón lagoon and Diamond Beach</li><li><b>Day 6</b>Snæfellsnes peninsula by private driver</li><li><b>Day 7</b>Reykjavík food walk, evening flight home</li></ol>
+      <div class="foot"><p class="price">Sample 7 days<b>from $3,950 pp</b></p><a class="btn dark" href="#plan" data-pick="Iceland">Plan this trip</a></div></div>
+    </article>
+    <article class="dest" data-k="2" aria-label="Bali sample journey">
+      <div class="ph"><img src="img/bali.jpg" alt="Aerial view of a palm-lined beach with surf rolling in" loading="lazy"><span>Representative photo</span></div>
+      <div class="bd"><h2>Bali</h2><p class="when">Best in <b>Apr to Oct</b>, the dry season</p>
+      <ol><li><b>Day 1</b>Arrive Denpasar, private transfer to Ubud</li><li><b>Day 2</b>Rice terraces and a family cooking class</li><li><b>Day 3</b>Optional Mount Batur sunrise, hot springs</li><li><b>Day 4</b>Water temples and the Sidemen valley</li><li><b>Day 5</b>Move to a cliff-top villa in Uluwatu</li><li><b>Day 6</b>Beach day, seafood dinner on Jimbaran sand</li><li><b>Day 7</b>Spa morning, overnight flight home</li></ol>
+      <div class="foot"><p class="price">Sample 7 days<b>from $3,400 pp</b></p><a class="btn dark" href="#plan" data-pick="Bali">Plan this trip</a></div></div>
+    </article>
+    <article class="dest" data-k="3" aria-label="Kyoto sample journey">
+      <div class="ph"><img src="img/kyoto.jpg" alt="Aerial view of a small pine-covered island joined to the shore by a long footbridge" loading="lazy"><span>Representative photo</span></div>
+      <div class="bd"><h2>Kyoto</h2><p class="when">Best in <b>late Mar to Apr</b> for blossom, <b>Nov</b> for autumn color</p>
+      <ol><li><b>Day 1</b>Land in Osaka, express train to Kyoto</li><li><b>Day 2</b>Fushimi Inari at dawn, Gion after dark</li><li><b>Day 3</b>Arashiyama bamboo grove and river boat</li><li><b>Day 4</b>Day trip to Nara's temples and deer park</li><li><b>Day 5</b>Private tea ceremony, Nishiki Market lunch</li><li><b>Day 6</b>Mountain ryokan night with kaiseki dinner</li><li><b>Day 7</b>Bullet train to Tokyo or fly home</li></ol>
+      <div class="foot"><p class="price">Sample 7 days<b>from $4,600 pp</b></p><a class="btn dark" href="#plan" data-pick="Kyoto">Plan this trip</a></div></div>
+    </article>
+    <article class="dest" data-k="4" aria-label="Amalfi Coast sample journey">
+      <div class="ph"><img src="img/amalfi.jpg" alt="Aerial view of small green islands in turquoise water" loading="lazy"><span>Representative photo</span></div>
+      <div class="bd"><h2>Amalfi Coast</h2><p class="when">Best in <b>May to Jun</b> and <b>Sep</b>, before and after the crowds</p>
+      <ol><li><b>Day 1</b>Arrive Naples, driver to Positano</li><li><b>Day 2</b>Path of the Gods hike with a local guide</li><li><b>Day 3</b>Private boat day to Capri's grottoes</li><li><b>Day 4</b>Ravello gardens and an evening concert</li><li><b>Day 5</b>Lunch in a lemon grove above Amalfi town</li><li><b>Day 6</b>Pompeii with an archaeologist guide</li><li><b>Day 7</b>Breakfast on the terrace, fly home from Naples</li></ol>
+      <div class="foot"><p class="price">Sample 7 days<b>from $4,950 pp</b></p><a class="btn dark" href="#plan" data-pick="Amalfi Coast">Plan this trip</a></div></div>
+    </article>
+    <article class="dest" data-k="5" aria-label="Patagonia sample journey">
+      <div class="ph"><img src="img/patagonia.jpg" alt="Aerial view of a wide lake under low clouds with green hills" loading="lazy"><span>Representative photo</span></div>
+      <div class="bd"><h2>Patagonia</h2><p class="when">Best in <b>Nov to Mar</b>, the southern summer</p>
+      <ol><li><b>Day 1</b>Fly to Punta Arenas, transfer to Puerto Natales</li><li><b>Day 2</b>Torres del Paine: hike to the base of the towers</li><li><b>Day 3</b>Boat to the face of Grey Glacier</li><li><b>Day 4</b>Puma tracking with a park-licensed guide</li><li><b>Day 5</b>Cross the border to El Calafate</li><li><b>Day 6</b>Perito Moreno glacier walkways</li><li><b>Day 7</b>Fly home via Buenos Aires</li></ol>
+      <div class="foot"><p class="price">Sample 7 days<b>from $5,600 pp</b></p><a class="btn dark" href="#plan" data-pick="Patagonia">Plan this trip</a></div></div>
+    </article>
+  </div>
+</section>
+
+<section class="band" id="how"><div class="wrap">
+  <h2 class="h2">How a Northstar trip comes together</h2>
+  <p class="lead">Most trips take two to three weeks from first brief to final documents. You approve every step in writing.</p>
+  <ol class="steps">
+    <li><span class="n">Step 01</span><h3>Send a four-minute brief</h3><p>Where, when, who's coming and what you love. The planner below takes about four minutes.</p></li>
+    <li><span class="n">Step 02</span><h3>A 30-minute call</h3><p>Your planner asks the questions that shape a trip: pace, hotels you've loved, how early you like to start.</p></li>
+    <li><span class="n">Step 03</span><h3>Your written proposal</h3><p>A day-by-day plan with hotels, guides, drivers and the full price, usually within five business days.</p></li>
+    <li><span class="n">Step 04</span><h3>Travel with a safety net</h3><p>Documents in one app, a local contact at every stop and our 24/7 line if a flight changes.</p></li>
+  </ol>
+</div></section>
+
+<section class="band planner" id="plan"><div class="wrap pgrid">
+  <div class="pside">
+    <h2 class="h2">Start your trip brief</h2>
+    <p class="lead" style="margin-bottom:28px">No commitment. A planner reads every brief personally and replies within one business day.</p>
+    <ul><li>Honeymoons, milestone birthdays and family trips</li><li>Flights from DEN routed with sensible connections</li><li>Small hotels and local guides we know by name</li></ul>
+    <figure style="margin:0"><img src="img/window.jpg" alt="Aerial view over farmland and a small town at sunrise" loading="lazy"><figcaption>Every proposal includes the routing from Denver.</figcaption></figure>
+  </div>
+  <div>
+    <form class="plan" id="planForm" novalidate aria-labelledby="planTitle">
+      <div id="formBody">
+        <h3 id="planTitle">Trip planner</h3>
+        <p class="sub">Five quick answers, then where to send your proposal.</p>
+        <div class="row">
+          <div class="f"><label for="dest">Destination</label><select id="dest"><option value="">Choose one</option><option>Iceland</option><option>Bali</option><option>Kyoto</option><option>Amalfi Coast</option><option>Patagonia</option><option>Somewhere else</option><option>Help me choose</option></select></div>
+          <div class="f"><label for="month">Month you'd like to go</label><select id="month"><option value="">Choose a month</option></select></div>
+        </div>
+        <div class="row">
+          <div class="f"><span id="travLab">Travellers</span><div class="stepper" role="group" aria-labelledby="travLab"><button type="button" id="tMinus" aria-label="One fewer traveller">−</button><output id="trav" aria-live="polite">2 travellers</output><button type="button" id="tPlus" aria-label="One more traveller">+</button></div></div>
+          <div class="f" style="font-weight:400"><div class="range"><label for="budget">Budget per person</label><output id="budgetOut" for="budget">$6,000</output></div><input type="range" id="budget" min="2500" max="15000" step="500" value="6000"><div class="rlab"><span>$2,500</span><span>$15,000+</span></div></div>
+        </div>
+        <fieldset><legend>What should the trip be about? <span style="font-weight:400;color:var(--muted)">Pick any</span></legend>
+          <div class="chips" id="interests">
+            <button type="button" class="chip" aria-pressed="false">Hiking</button><button type="button" class="chip" aria-pressed="false">Food and wine</button><button type="button" class="chip" aria-pressed="false">Culture and history</button><button type="button" class="chip" aria-pressed="false">Beaches</button><button type="button" class="chip" aria-pressed="false">Wildlife</button><button type="button" class="chip" aria-pressed="false">Photography</button><button type="button" class="chip" aria-pressed="false">Slow mornings</button><button type="button" class="chip" aria-pressed="false">Traveling with kids</button>
+          </div></fieldset>
+        <div class="row">
+          <div class="f"><label for="nm">Your name</label><input id="nm" autocomplete="name"></div>
+          <div class="f"><label for="em">Email</label><input id="em" type="email" autocomplete="email" placeholder="Where we send the proposal"></div>
+        </div>
+        <p class="err" id="perr" role="alert"></p>
+        <button class="btn glow submit" type="submit">Send my trip brief</button>
+        <p class="note">Demo form: nothing is sent or stored.</p>
+      </div>
+      <div class="done" id="done" tabindex="-1">
+        <span class="badge">✓ Brief received</span>
+        <h3 id="doneTitle">Thanks, we have your brief.</h3>
+        <dl id="sumList"></dl>
+        <p class="next"><b>A planner replies within one business day</b>, usually with two or three questions and a time for your 30-minute call. Pricing is shown in your written proposal.</p>
+        <p class="note" style="text-align:left">Demo: nothing was sent.</p>
+        <button type="button" class="link" id="edit">Edit my brief</button>
+      </div>
+    </form>
+  </div>
+</div></section>
+
+<section class="band" id="why"><div class="wrap">
+  <div class="why">
+    <div><h2 class="h2">Why travelers plan with us</h2><p class="lead">A small Denver team that designs fewer trips, more carefully. You'll talk to the same person from the first call to the last transfer.</p></div>
+    <dl>
+      <div><dt>One planner, start to finish</dt><dd>No call centers or hand-offs. Your planner knows your trip and your preferences.</dd></div>
+      <div><dt>Everything in writing</dt><dd>A day-by-day proposal with every hotel, guide and transfer listed before you commit.</dd></div>
+      <div><dt>Local people on the ground</dt><dd>Guides and drivers we work with repeatedly, briefed on your interests before you land.</dd></div>
+      <div><dt>A real person at 3 am</dt><dd>Missed connection in Frankfurt? Call our 24/7 line and we rebook while you queue.</dd></div>
+    </dl>
+  </div>
+  <div class="mosaic" aria-label="Sample journeys">
+    <figure><img src="img/iceland.jpg" alt="" loading="lazy"><figcaption>Iceland</figcaption></figure>
+    <figure><img src="img/bali.jpg" alt="" loading="lazy"><figcaption>Bali</figcaption></figure>
+    <figure><img src="img/kyoto.jpg" alt="" loading="lazy"><figcaption>Kyoto</figcaption></figure>
+    <figure><img src="img/amalfi.jpg" alt="" loading="lazy"><figcaption>Amalfi Coast</figcaption></figure>
+    <figure><img src="img/patagonia.jpg" alt="" loading="lazy"><figcaption>Patagonia</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="band dark" id="reviews"><div class="wrap">
+  <h2 class="h2">Back from the trip</h2>
+  <p class="lead">Placeholder reviews written for this concept.</p>
+  <div class="revs">
+    <figure><blockquote>"Our flight to Reykjavík was cancelled at midnight. By the time we reached the desk, our planner had us on the morning flight and the first hotel moved."</blockquote><figcaption><b>Placeholder review</b> · Iceland, couple from Littleton</figcaption></figure>
+    <figure><blockquote>"Three generations, one villa, zero arguments about the schedule. Every afternoon had a slow option for my parents."</blockquote><figcaption><b>Placeholder review</b> · Bali, family of seven from Boulder</figcaption></figure>
+    <figure><blockquote>"The proposal read like a short book. We changed two days, signed off, and never thought about logistics again."</blockquote><figcaption><b>Placeholder review</b> · Kyoto, honeymoon from Denver</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="band" id="faq"><div class="wrap faqgrid">
+  <div><h2 class="h2">Questions before you start</h2><p class="lead">Can't see yours? Call <a href="tel:+17205550148">(720) 555-0148</a>.</p></div>
+  <div class="faq">
+    <details><summary>How much does a custom trip cost?</summary><p>It depends on the route, season and hotels you choose. The sample prices above are per person for seven days, without international flights. Your full pricing, including our planning fee, is shown in your written proposal before you commit to anything.</p></details>
+    <details><summary>Do you book flights from Denver?</summary><p>Yes, if you'd like us to. We route from DEN with sensible connection times, or we can plan around flights you book with your own miles.</p></details>
+    <details><summary>How far ahead should I start planning?</summary><p>Four to six months is ideal, and nine to twelve for peak dates like cherry blossom in Kyoto or June on the Amalfi Coast. We can often do shorter notice outside peak season.</p></details>
+    <details><summary>Can you plan honeymoons, family trips or group trips?</summary><p>All three. Tell us about ages, mobility and the pace you like in the brief and we'll design around it.</p></details>
+    <details><summary>What happens if something goes wrong while I'm away?</summary><p>Call our 24/7 line. We handle missed connections, hotel issues and changes with our local partners so you don't have to.</p></details>
+    <details><summary>Should I buy travel insurance?</summary><p>We strongly recommend it for every international trip. We'll explain what to look for in a policy, and you choose the insurer.</p></details>
+  </div>
+</div></section>
+
+<section class="band" id="visit" style="padding-top:0"><div class="wrap visit">
+  <div>
+    <h2 class="h2">Visit the studio</h2>
+    <p class="lead" style="margin-bottom:28px">Coffee, maps on the table and a planner who has time for your questions. Video calls work just as well.</p>
+    <dl><dt>Address</dt><dd>1550 Wynkoop St, Suite 300<br>Denver, CO 80202</dd><dt>Mon to Fri</dt><dd>9 am to 6 pm</dd><dt>Saturday</dt><dd>By appointment</dd><dt>Phone</dt><dd><a href="tel:+17205550148">(720) 555-0148</a></dd><dt>On-trip line</dt><dd>24/7 for travelers on a Northstar trip</dd></dl>
+    <a class="btn dark" href="#plan">Book a planning call</a>
+  </div>
+  <iframe class="map" title="Map showing the Northstar Journeys studio in Lower Downtown Denver" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-105.0125%2C39.7465%2C-104.9885%2C39.7585&amp;layer=mapnik&amp;marker=39.7525%2C-105.0005"></iframe>
+</div></section>
+
+<div class="cta"><div class="wrap"><h2>Where do you want to wake up next year?</h2><a class="btn sun" href="#plan">Send a trip brief</a></div></div>
+</main>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div><h3>Northstar Journeys</h3><p>Custom international trips planned from Lower Downtown Denver.</p></div>
+    <div><h3>Journeys</h3><ul><li><a href="#journeys">Iceland</a></li><li><a href="#journeys">Bali</a></li><li><a href="#journeys">Kyoto</a></li><li><a href="#journeys">Amalfi Coast</a></li><li><a href="#journeys">Patagonia</a></li></ul></div>
+    <div><h3>Planning</h3><ul><li><a href="#how">How it works</a></li><li><a href="#plan">Trip planner</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+    <div><h3>Contact</h3><ul><li><a href="tel:+17205550148">(720) 555-0148</a></li><li>1550 Wynkoop St, Suite 300</li><li>Denver, CO 80202</li></ul></div>
+  </div>
+  <div class="legal"><span>Fictional agency used to demonstrate a 3D travel website. Prices are illustrative. Photos from Unsplash.</span><span>Concept, design and build: <a href="https://calvyrn.com">Calvyrn</a></span></div>
+</div></footer>
+<div class="mbar" id="mbar"><a class="btn glow" href="#plan">Plan my trip</a><a class="btn dark" href="tel:+17205550148" style="box-shadow:inset 0 0 0 1.5px #ffffff40">Call</a></div>
+
+<script>
+// ---------- Trip planner (works without WebGL) ----------
+(() => {
+  const $ = s => document.querySelector(s);
+  const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const now = new Date();
+  const msel = $('#month');
+  for (let i = 1; i <= 12; i++) { const d = new Date(now.getFullYear(), now.getMonth() + i, 1); const o = document.createElement('option'); o.textContent = `${months[d.getMonth()]} ${d.getFullYear()}`; msel.appendChild(o); }
+  const flex = document.createElement('option'); flex.textContent = "I'm flexible"; msel.appendChild(flex);
+  let trav = 2;
+  const drawTrav = () => { $('#trav').textContent = `${trav} traveller${trav > 1 ? 's' : ''}`; $('#tMinus').disabled = trav <= 1; $('#tPlus').disabled = trav >= 16; };
+  $('#tMinus').onclick = () => { trav = Math.max(1, trav - 1); drawTrav(); };
+  $('#tPlus').onclick = () => { trav = Math.min(16, trav + 1); drawTrav(); };
+  drawTrav();
+  const fmt = n => '$' + n.toLocaleString('en-US');
+  const b = $('#budget'); const bOut = () => { const v = +b.value; $('#budgetOut').textContent = v >= 15000 ? '$15,000+' : fmt(v); };
+  b.addEventListener('input', bOut); bOut();
+  $('#interests').addEventListener('click', e => { const c = e.target.closest('.chip'); if (!c) return; c.setAttribute('aria-pressed', c.getAttribute('aria-pressed') !== 'true'); });
+  document.querySelectorAll('[data-pick]').forEach(a => a.addEventListener('click', () => { $('#dest').value = a.dataset.pick; }));
+  $('#planForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const err = $('#perr'); const fail = (m, el) => { err.textContent = m; el && el.focus(); };
+    const ints = [...document.querySelectorAll('#interests [aria-pressed="true"]')].map(c => c.textContent);
+    if (!$('#dest').value) return fail('Choose a destination, or pick "Help me choose".', $('#dest'));
+    if (!msel.value) return fail('Choose a month, or "I\'m flexible".', msel);
+    if (!ints.length) return fail('Pick at least one thing the trip should be about.', document.querySelector('#interests .chip'));
+    const nm = $('#nm').value.trim(), em = $('#em').value.trim();
+    if (nm.length < 2) return fail('Add your name so your planner knows who to write to.', $('#nm'));
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)) return fail('Add a valid email address for your proposal.', $('#em'));
+    err.textContent = '';
+    const v = +b.value, per = v >= 15000 ? '$15,000+' : fmt(v);
+    const rows = [['Destination', $('#dest').value], ['When', msel.value], ['Travellers', `${trav}`], ['Budget', `${per} per person` + (v < 15000 ? ` (about ${fmt(v * trav)} in total)` : '')], ['Interests', ints.join(', ')], ['Reply to', em]];
+    const dl = $('#sumList'); dl.innerHTML = '';
+    rows.forEach(([k, val]) => { const dt = document.createElement('dt'); dt.textContent = k; const dd = document.createElement('dd'); dd.textContent = val; dl.append(dt, dd); });
+    $('#doneTitle').textContent = `Thanks, ${nm.split(' ')[0]}. Your brief is with a planner.`;
+    $('#formBody').hidden = true; $('#done').classList.add('on'); $('#done').focus();
+  });
+  $('#edit').onclick = () => { $('#done').classList.remove('on'); $('#formBody').hidden = false; $('#dest').focus(); };
+  // hide mobile bar while planner is visible
+  const mbar = $('#mbar');
+  new IntersectionObserver(es => es.forEach(x => mbar.classList.toggle('hide', x.isIntersecting)), { threshold: .15 }).observe($('#plan'));
+  new IntersectionObserver(es => es.forEach(x => mbar.classList.toggle('pinhide', x.isIntersecting)), { threshold: 0 }).observe($('#journeys'));
+})();
+</script>
+<script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.164.1/build/three.module.js","three/addons/":"https://unpkg.com/three@0.164.1/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+const $ = s => document.querySelector(s);
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const D2R = Math.PI / 180;
+// Denver + five destinations: [name, lat, lon]
+const STOPS = [['Denver', 39.74, -104.99], ['Reykjavík', 64.15, -21.94], ['Bali', -8.5, 115.26], ['Kyoto', 35.01, 135.77], ['Amalfi', 40.63, 14.6], ['Torres del Paine', -50.94, -73.4]];
+const MAXS = 5.45; // scroll value range: 0 = intro, 1..5 = destinations
+const cards = [...document.querySelectorAll('.dest')], railBtns = [...document.querySelectorAll('#rail button')];
+const toVec = (lat, lon, r = 1) => { const la = lat * D2R, lo = lon * D2R; return new THREE.Vector3(r * Math.cos(la) * Math.cos(lo), r * Math.sin(la), -r * Math.cos(la) * Math.sin(lo)); };
+const miles = (a, b) => { const v1 = toVec(a[1], a[2]), v2 = toVec(b[1], b[2]); return Math.round(v1.angleTo(v2) * 3958.8 / 10) * 10; };
+
+// ---------- scroll state (works with or without WebGL) ----------
+let target = 0, cur = 0, st = null;
+if (reduce || !window.gsap || !window.ScrollTrigger) {
+  document.body.classList.add('static');
+} else {
+  gsap.registerPlugin(ScrollTrigger);
+  st = ScrollTrigger.create({ trigger: '#journeys', start: 'top top', end: () => '+=' + innerHeight * 5.2, pin: true, scrub: true, anticipatePin: 1, onUpdate: s => { target = s.progress * MAXS; } });
+  const go = k => { const y = st.start + (st.end - st.start) * (k / MAXS); scrollTo({ top: y, behavior: 'smooth' }); };
+  railBtns.forEach(b => b.addEventListener('click', () => go(+b.dataset.k)));
+  $('#toJourneys').addEventListener('click', e => { e.preventDefault(); go(1); });
+  // keyboard users tabbing into a hidden card: jump to it
+  cards.forEach(c => c.addEventListener('focusin', () => { if (!c.classList.contains('on')) go(+c.dataset.k); }));
+}
+let active = -1;
+function updateUI(s) {
+  const k = s < 0.5 ? 0 : Math.min(5, Math.round(s));
+  if (k !== active) {
+    active = k;
+    cards.forEach(c => c.classList.toggle('on', +c.dataset.k === k));
+    railBtns.forEach(b => b.setAttribute('aria-current', +b.dataset.k === k));
+    $('#rail').classList.toggle('on', s > 0.35);
+  }
+  const io = Math.max(0, 1 - s * 2.4);
+  $('#intro').style.opacity = io; $('#intro').style.visibility = io < 0.02 ? 'hidden' : 'visible';
+  $('#intro').style.transform = `translateY(${-s * 60}px)`;
+  $('#hint').style.opacity = Math.max(0, 1 - s * 6);
+}
+if (!document.body.classList.contains('static')) updateUI(0);
+
+// ---------- WebGL globe ----------
+const host = $('#gl');
+let renderer;
+try { renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false, powerPreference: 'high-performance' }); if (!renderer.getContext()) throw 0; }
+catch (e) { renderer = null; $('#fb').style.display = 'block'; const loop = () => { cur += (target - cur) * 0.12; updateUI(cur); requestAnimationFrame(loop); }; if (st) loop(); }
+if (renderer) {
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.15;
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.setClearColor(0x050816, 1);
+  host.appendChild(renderer.domElement);
+  const scene = new THREE.Scene();
+  const cam = new THREE.PerspectiveCamera(35, 1, 0.1, 200);
+  const SUN = new THREE.Vector3(-0.85, 0.42, 0.55).normalize();
+  const C = h => new THREE.Color(h);
+
+  // Rig: outer = layout position + latitude tilt, inner = longitude spin
+  const rig = new THREE.Group(), tilt = new THREE.Group(), spin = new THREE.Group();
+  scene.add(rig); rig.add(tilt); tilt.add(spin);
+
+  // Ocean sphere with day/night + sunrise band + rim
+  const globeMat = new THREE.ShaderMaterial({
+    uniforms: { uSun: { value: SUN }, uDay: { value: C('#0E2A4A') }, uNight: { value: C('#03060F') }, uRise: { value: C('#F59E0B') }, uGlow: { value: C('#7DD3FC') } },
+    vertexShader: `varying vec3 vN; varying vec3 vV; void main(){ vec4 wp = modelMatrix*vec4(position,1.); vN = normalize(mat3(modelMatrix)*normal); vV = normalize(cameraPosition - wp.xyz); gl_Position = projectionMatrix*viewMatrix*wp; }`,
+    fragmentShader: `uniform vec3 uSun,uDay,uNight,uRise,uGlow; varying vec3 vN; varying vec3 vV;
+      void main(){ vec3 n = normalize(vN); float d = dot(n,uSun); float day = smoothstep(-.18,.35,d);
+        vec3 col = mix(uNight,uDay,day);
+        col += uRise*exp(-pow((d+.03)*13.,2.))*.07;
+        float fr = pow(1.-max(dot(n,normalize(vV)),0.),3.);
+        col += uGlow*fr*(.08+.32*day);
+        gl_FragColor = vec4(col,1.);
+        #include <tonemapping_fragment>
+        #include <colorspace_fragment>
+      }`
+  });
+  spin.add(new THREE.Mesh(new THREE.SphereGeometry(1, 96, 64), globeMat));
+
+  // Land mask from coarse continent outlines [lon, lat]
+  const LAND = [
+    [[-168,65],[-162,70],[-140,70],[-125,70],[-110,73],[-95,72],[-85,70],[-80,63],[-90,57],[-82,52],[-78,62],[-65,60],[-60,55],[-56,52],[-66,45],[-70,42],[-75,38],[-76,35],[-81,31],[-80,25],[-83,29],[-90,30],[-97,27],[-97,22],[-94,18],[-90,21],[-87,21],[-88,16],[-83,15],[-83,10],[-80,8],[-78,9],[-80,7],[-85,10],[-87,13],[-92,14],[-96,16],[-105,20],[-110,24],[-115,30],[-118,34],[-121,36],[-124,40],[-124,46],[-125,50],[-130,55],[-135,58],[-145,60],[-152,59],[-158,57],[-165,55],[-162,60],[-166,62]],
+    [[-73,78],[-60,82],[-30,83],[-20,80],[-20,72],[-25,68],[-40,65],[-44,60],[-50,64],[-55,68],[-60,75]],
+    [[-120,72],[-100,76],[-85,80],[-75,78],[-80,72],[-95,70],[-115,68]],
+    [[-80,9],[-75,11],[-72,12],[-62,11],[-55,6],[-50,2],[-45,-2],[-35,-5],[-35,-9],[-39,-15],[-41,-22],[-48,-26],[-53,-33],[-58,-38],[-62,-41],[-65,-45],[-68,-50],[-69,-55],[-73,-53],[-75,-48],[-74,-42],[-73,-37],[-71,-30],[-70,-18],[-76,-14],[-81,-6],[-80,-2],[-78,2],[-77,7]],
+    [[-9,37],[-9,43],[-2,43.5],[-4,48],[2,51],[5,53],[8,54],[8,57],[10,59],[5,62],[12,66],[18,70],[25,71],[30,70],[40,67],[44,68],[60,69],[70,73],[80,73],[100,78],[115,74],[130,72],[140,72],[160,70],[180,68],[180,65],[175,62],[163,60],[160,54],[156,51],[156,57],[163,62],[155,60],[143,59],[137,54],[141,52],[140,48],[135,43],[130,42],[129,35],[126,35],[126,38],[122,40],[121,37],[122,31],[120,26],[113,22],[108,21],[106,18],[109,12],[105,9],[104,10],[101,13],[100,8],[103,1.5],[100,4],[98,9],[98,16],[94,17],[92,22],[89,22],[86,20],[80,15],[80,10],[77,8],[73,17],[72,21],[67,24],[62,25],[57,26],[56,24],[59,22],[55,17],[44,12],[43,15],[39,21],[35,28],[34,31],[35,33],[36,36],[30,36],[27,37],[26,40],[29,41],[23,40],[23,37],[21,38],[19,42],[13,45.5],[16,41.5],[18,40],[16,38],[15.6,38],[16,40],[14.5,40.6],[12,42],[10,44],[7,43.5],[3,43],[3,41],[0,39],[-1,37],[-5,36]],
+    [[-17,21],[-16,28],[-10,30],[-6,36],[10,37],[11,33],[20,31],[30,31],[32,31],[34,28],[38,18],[43,12],[51,12],[51,10],[48,5],[41,-2],[40,-10],[40,-15],[35,-24],[33,-28],[27,-34],[20,-35],[18,-32],[12,-18],[13,-12],[9,-1],[9,4],[5,6],[-4,5],[-8,4],[-13,8],[-17,14]],
+    [[44,-25],[47,-25],[50,-15],[49,-12],[44,-16]],
+    [[114,-22],[114,-34],[118,-35],[124,-33],[131,-31],[138,-35],[141,-38],[147,-38],[150,-37],[153,-28],[153,-25],[146,-19],[142,-11],[141,-17],[136,-12],[131,-11],[126,-14],[122,-18]],
+    [[95,5],[98,4],[104,-2],[106,-6],[102,-4],[96,2]],
+    [[105,-6],[114,-7],[116,-8],[115.8,-8.9],[106,-7.6]],
+    [[109,1],[110,-3],[116,-4],[119,1],[117,7],[113,3]],
+    [[119,-5.5],[121,-1],[124.5,1.5],[121,0],[123,-5]],
+    [[131,-1],[138,-2],[147,-6],[150,-10],[142,-9],[138,-8],[132,-4]],
+    [[130,31],[131,34],[135,34],[140,35],[141,38],[142,42],[145,44],[142,45.5],[140,42],[139,38],[136,36],[133,35.5],[130,33.5]],
+    [[-5.5,50],[1.5,51],[2,53],[-1,55],[-2,58],[-5,58.6],[-6,56],[-4,54],[-5,52]],
+    [[-10,51.6],[-6,52],[-6,55],[-8,55.3],[-10,54]],
+    [[-24,65.5],[-22,66.5],[-15,66.5],[-13,65],[-18,63.4],[-22.5,63.8]],
+    [[120,18.5],[122,18.5],[126,7],[125,5.8],[122,7],[120,14]],
+    [[172,-34],[178,-37.5],[175,-41.5],[171,-44],[166.5,-46],[170,-41]],
+    [[-85,22],[-80,23.2],[-74,20],[-78,19.8]],
+    [[80,9.8],[82,7],[81,6],[79.8,7]],
+    [[-180,-72],[-120,-73],[-75,-73],[-62,-64],[-58,-64],[-60,-75],[-30,-77],[0,-70],[40,-69],[90,-66],[140,-66],[180,-72],[180,-90],[-180,-90]]
+  ];
+  const inPoly = (x, y, p) => { let c = false; for (let i = 0, j = p.length - 1; i < p.length; j = i++) { const [xi, yi] = p[i], [xj, yj] = p[j]; if ((yi > y) !== (yj > y) && x < (xj - xi) * (y - yi) / (yj - yi) + xi) c = !c; } return c; };
+  const isLand = (lon, lat) => LAND.some(p => inPoly(lon, lat, p));
+  const N = innerWidth < 700 ? 22000 : 38000, pos = [], city = [];
+  const GA = Math.PI * (3 - Math.sqrt(5));
+  let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  for (let i = 0; i < N; i++) {
+    const y = 1 - 2 * (i + .5) / N, r = Math.sqrt(1 - y * y), ph = i * GA;
+    const x = Math.cos(ph) * r, z = Math.sin(ph) * r;
+    const lat = Math.asin(y) / D2R, lon = Math.atan2(-z, x) / D2R;
+    if (!isLand(lon, lat)) continue;
+    pos.push(x * 1.004, y * 1.004, z * 1.004);
+    city.push(lat < 62 && lat > -48 && rnd() < 0.2 ? 1 : 0);
+  }
+  const pg = new THREE.BufferGeometry();
+  pg.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  pg.setAttribute('aCity', new THREE.Float32BufferAttribute(city, 1));
+  const dotMat = new THREE.ShaderMaterial({
+    transparent: true, depthWrite: false,
+    uniforms: { uSun: { value: SUN }, uDay: { value: C('#F5F3EE') }, uNight: { value: C('#1E3A5F') }, uCity: { value: C('#FBBF5A') }, uSize: { value: 2.6 }, uPR: { value: renderer.getPixelRatio() } },
+    vertexShader: `uniform vec3 uSun,uDay,uNight,uCity; uniform float uSize,uPR; attribute float aCity; varying vec3 vC; varying float vA;
+      void main(){ vec3 wn = normalize(mat3(modelMatrix)*position); float d = dot(wn,uSun); float day = smoothstep(-.12,.25,d);
+        vec4 mv = modelViewMatrix*vec4(position,1.);
+        vec3 night = mix(uNight, uCity*1.6, aCity);
+        vC = mix(night, uDay*.92, day);
+        vA = mix(aCity>.5 ? 1. : .5, .95, day);
+        vec3 vn = normalize(normalMatrix*position); float facing = dot(vn, normalize(-mv.xyz));
+        vA *= smoothstep(-.02,.3,facing);
+        gl_PointSize = uSize*uPR*(1. + aCity*(1.-day)*.35)*(3.6/-mv.z);
+        gl_Position = projectionMatrix*mv; }`,
+    fragmentShader: `varying vec3 vC; varying float vA; void main(){ float r = length(gl_PointCoord-.5); if(r>.5) discard; gl_FragColor = vec4(vC, vA*smoothstep(.5,.22,r));
+        #include <tonemapping_fragment>
+        #include <colorspace_fragment>
+      }`
+  });
+  spin.add(new THREE.Points(pg, dotMat));
+
+  // Atmosphere: back-face fresnel shell
+  const atm = new THREE.Mesh(new THREE.SphereGeometry(1.14, 64, 48), new THREE.ShaderMaterial({
+    side: THREE.BackSide, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+    uniforms: { uGlow: { value: C('#7DD3FC') }, uRise: { value: C('#F59E0B') }, uSun: { value: SUN } },
+    vertexShader: `varying vec3 vN; varying vec3 vP; varying vec3 vW; void main(){ vec4 mv = modelViewMatrix*vec4(position,1.); vN = normalize(normalMatrix*normal); vP = mv.xyz; vW = normalize(mat3(modelMatrix)*normal); gl_Position = projectionMatrix*mv; }`,
+    fragmentShader: `uniform vec3 uGlow,uRise,uSun; varying vec3 vN; varying vec3 vP; varying vec3 vW;
+      void main(){ float rim = dot(normalize(vN), normalize(-vP)); float a = smoothstep(0.,.55,-rim); a = pow(a,3.6);
+        float d = dot(normalize(vW),uSun); vec3 col = mix(uGlow*.35, uGlow, smoothstep(-.4,.5,d)) + uRise*exp(-pow(d*5.,2.))*.18;
+        gl_FragColor = vec4(col*a*.8, 1.);
+        #include <tonemapping_fragment>
+        #include <colorspace_fragment>
+      }`
+  }));
+  rig.add(atm);
+
+  // Stars
+  const sp = []; for (let i = 0; i < 1600; i++) { const v = new THREE.Vector3(rnd() * 2 - 1, rnd() * 2 - 1, rnd() * 2 - 1).normalize().multiplyScalar(40 + rnd() * 30); sp.push(v.x, v.y, v.z); }
+  const sg = new THREE.BufferGeometry(); sg.setAttribute('position', new THREE.Float32BufferAttribute(sp, 3));
+  const stars = new THREE.Points(sg, new THREE.PointsMaterial({ color: 0xB8C6E0, size: 1.3, sizeAttenuation: false, transparent: true, opacity: .75, depthWrite: false }));
+  scene.add(stars);
+
+  // Glow sprite texture
+  const gc = document.createElement('canvas'); gc.width = gc.height = 64; const gx = gc.getContext('2d');
+  const grd = gx.createRadialGradient(32, 32, 0, 32, 32, 32); grd.addColorStop(0, 'rgba(255,255,255,1)'); grd.addColorStop(.25, 'rgba(255,255,255,.55)'); grd.addColorStop(1, 'rgba(255,255,255,0)');
+  gx.fillStyle = grd; gx.fillRect(0, 0, 64, 64); const glowTex = new THREE.CanvasTexture(gc);
+  const sprite = (col, s) => { const m = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTex, color: col, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending })); m.scale.setScalar(s); return m; };
+
+  // Markers
+  const markers = STOPS.map((s, i) => {
+    const g = new THREE.Group(); const p = toVec(s[1], s[2], 1.006); g.position.copy(p); g.lookAt(p.clone().multiplyScalar(2));
+    const col = i === 0 ? C('#F59E0B') : C('#7DD3FC');
+    const ring = new THREE.Mesh(new THREE.RingGeometry(.022, .03, 40), new THREE.MeshBasicMaterial({ color: col, transparent: true, side: THREE.DoubleSide, depthWrite: false, blending: THREE.AdditiveBlending }));
+    const core = new THREE.Mesh(new THREE.CircleGeometry(.011, 20), new THREE.MeshBasicMaterial({ color: col }));
+    g.add(ring, core); const halo = sprite(col, .12); g.add(halo);
+    spin.add(g); return { g, ring, halo, world: new THREE.Vector3() };
+  });
+
+  // Flight arcs: great-circle curves lifted off the surface, drawn with a comet shader
+  const arcMat = () => new THREE.ShaderMaterial({
+    transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+    uniforms: { uDraw: { value: 0 }, uT: { value: 0 }, uOn: { value: .55 }, uGlow: { value: C('#7DD3FC') }, uRise: { value: C('#F59E0B') } },
+    vertexShader: `varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix*modelViewMatrix*vec4(position,1.); }`,
+    fragmentShader: `uniform float uDraw,uT,uOn; uniform vec3 uGlow,uRise; varying vec2 vUv;
+      void main(){ if(vUv.x > uDraw) discard;
+        float tail = pow(1.-fract(vUv.x - uT), 5.);
+        float edge = smoothstep(0.,.05,vUv.x)*smoothstep(1.,.95,vUv.x);
+        vec3 col = mix(uGlow, mix(uGlow, uRise, .35), tail);
+        float a = (.22 + tail*1.1)*uOn*edge;
+        gl_FragColor = vec4(col*a, 1.);
+        #include <tonemapping_fragment>
+        #include <colorspace_fragment>
+      }`
+  });
+  const den = toVec(STOPS[0][1], STOPS[0][2]);
+  const arcs = STOPS.slice(1).map((s, i) => {
+    const b = toVec(s[1], s[2]); const ang = den.angleTo(b); const pts = [];
+    for (let j = 0; j <= 64; j++) { const t = j / 64;
+      const q = new THREE.Quaternion().setFromUnitVectors(den, b); const qt = new THREE.Quaternion().slerp(q, t); const p = den.clone().applyQuaternion(qt);
+      p.multiplyScalar(1.006 + Math.sin(Math.PI * t) * (0.04 + ang * 0.085)); pts.push(p); }
+    const curve = new THREE.CatmullRomCurve3(pts);
+    const m = arcMat(); const mesh = new THREE.Mesh(new THREE.TubeGeometry(curve, 160, .0042, 8, false), m); spin.add(mesh);
+    const dot = new THREE.Group(); dot.add(new THREE.Mesh(new THREE.SphereGeometry(.009, 12, 8), new THREE.MeshBasicMaterial({ color: 0xffffff }))); dot.add(sprite(C('#7DD3FC'), .09)); spin.add(dot);
+    return { curve, m, dot, speed: .16 + i * .015, off: i * .21 };
+  });
+
+  // Rotation targets for each stop (continuous, shortest path)
+  const rotY = [], rotX = [];
+  STOPS.forEach((s, i) => { let y = -Math.PI / 2 - s[2] * D2R; if (i) { const prev = rotY[i - 1]; y = prev + (((y - prev) % (2 * Math.PI)) + 3 * Math.PI) % (2 * Math.PI) - Math.PI; } rotY.push(y); rotX.push(s[1] * D2R * 0.72); });
+  const ss = (a, b, x) => { const t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
+  const lerp = (a, b, t) => a + (b - a) * t;
+
+  let W = 1, H = 1, mobile = false;
+  function size() { const r = host.getBoundingClientRect(); W = r.width || 1; H = r.height || 1; mobile = W / H < .85; renderer.setSize(W, H, false); cam.aspect = W / H; cam.updateProjectionMatrix(); }
+  new ResizeObserver(size).observe(host); size();
+
+  let visible = true; new IntersectionObserver(e => { visible = e[0].isIntersecting; }).observe(host);
+  const tag = $('#tag'); const tmp = new THREE.Vector3();
+  const t0 = performance.now(); let lastTag = -1;
+  function frame(now) {
+    const t = Math.max(0, (now - t0) / 1000);
+    if (!document.body.classList.contains('static')) { cur += (target - cur) * 0.085; if (Math.abs(target - cur) < 1e-4) cur = target; updateUI(cur); }
+    if (!visible) return;
+    const s = cur, i = Math.min(4, Math.floor(s)), f = s - i, e = ss(.28, .72, f);
+    const sway = reduce ? 0 : Math.sin(t * .25) * .22 * (1 - ss(0, .5, s));
+    spin.rotation.y = lerp(rotY[i], rotY[i + 1], e) + sway;
+    tilt.rotation.x = lerp(rotX[i], rotX[i + 1], e);
+    const u = ss(0, .7, s);
+    if (mobile) { rig.position.set(0, lerp(-1.15, .5, u), 0); cam.position.set(0, 0, lerp(6.2, 6.4, u)); }
+    else { rig.position.set(lerp(1.05, -.55, u), lerp(-.05, 0, u), 0); cam.position.set(0, 0, lerp(4.5, 4.05, u)); }
+    cam.lookAt(0, 0, 0); stars.rotation.y = t * .004;
+    const k = s < .5 ? 0 : Math.min(5, Math.round(s));
+    arcs.forEach((a, j) => {
+      const draw = reduce ? 1 : Math.min(1, Math.max(0, (t - .4 - j * .25) / 1.8)); a.m.uniforms.uDraw.value = 1 - Math.pow(1 - draw, 3);
+      const want = k === 0 ? .6 : (k === j + 1 ? 1.25 : .22); a.m.uniforms.uOn.value += (want - a.m.uniforms.uOn.value) * .08;
+      const p = reduce ? .6 : (t * a.speed + a.off) % 1; a.m.uniforms.uT.value = p;
+      a.dot.visible = draw >= 1; a.curve.getPointAt(p, a.dot.position);
+    });
+    markers.forEach((m, j) => { const pulse = reduce ? 1 : 1 + ((t * .8 + j * .3) % 1) * 1.6; const hi = j === k || j === 0; m.ring.scale.setScalar(hi ? pulse : 1); m.ring.material.opacity = hi ? (reduce ? .9 : 1 - ((t * .8 + j * .3) % 1)) : .5; m.halo.material.opacity = hi ? 1 : .45; });
+    renderer.render(scene, cam);
+    // HTML tag for the active destination
+    if (k > 0 && Math.abs(s - k) < .3) {
+      markers[k].g.getWorldPosition(tmp); const facing = tmp.clone().sub(rig.position).normalize().dot(cam.position.clone().sub(tmp).normalize());
+      tmp.project(cam);
+      if (lastTag !== k) { tag.textContent = `${STOPS[k][0]} · ${miles(STOPS[0], STOPS[k]).toLocaleString('en-US')} mi from DEN`; lastTag = k; }
+      tag.style.left = Math.min((tmp.x + 1) / 2 * W, W - tag.offsetWidth - 24) + 'px'; tag.style.top = ((1 - tmp.y) / 2 * H) + 'px'; tag.style.opacity = facing > .2 ? 1 : 0;
+    } else tag.style.opacity = 0;
+  }
+  renderer.setAnimationLoop(frame);
+  if (st) ScrollTrigger.refresh();
+}
+</script>
+</body>
+</html>

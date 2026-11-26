@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brightfield Solar | Home Solar and Batteries in Phoenix, AZ · Free Savings Estimate</title>
+<meta name="description" content="Brightfield Solar designs, permits and installs home solar panels and batteries across the Phoenix Valley. Estimate your system size and yearly savings in 30 seconds.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--night:#0B2545;--sun:#F9C80E;--white:#F7F9FB;--deep:#13315C;--mist:#8DA9C4;--ink:#0B2545;--muted:#4A5F78;--line:#D9E2EC;--hh:70px;--d:"Unbounded",system-ui,sans-serif;--b:"Figtree",system-ui,sans-serif}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--white);color:var(--ink);font:400 17px/1.6 var(--b);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 32px}
+.concept{background:#061629;color:#9fb3c9;font-size:12.5px;text-align:center;padding:7px 14px}
+.concept a{color:var(--sun)}
+/* header */
+.hdr{position:sticky;top:0;z-index:50;background:rgba(11,37,69,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#fff;border-bottom:1px solid rgba(141,169,196,.18)}
+.hdr .wrap{height:var(--hh);display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 17px/1 var(--d);letter-spacing:-.01em;white-space:nowrap}
+.logo svg{width:32px;height:32px}
+.nav{display:flex;gap:28px;font-size:15px;font-weight:500}
+.nav a{text-decoration:none;color:#C9D7E6}.nav a:hover{color:#fff}
+.hdr-r{display:flex;align-items:center;gap:20px}
+.tel{font-weight:600;text-decoration:none;font-size:15px;white-space:nowrap;color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--sun);color:var(--night);font:700 15.5px/1 var(--b);padding:15px 22px;border-radius:999px;text-decoration:none;border:0;cursor:pointer;white-space:nowrap;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 10px 30px -10px rgba(249,200,14,.7)}
+.btn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.45)}
+.btn.navy{background:var(--night);color:#fff}
+@media(max-width:1080px){.nav{display:none}}
+@media(max-width:640px){:root{--hh:60px}.hdr .btn,.tel{display:none}.wrap{padding:0 20px}.logo{font-size:15px}}
+/* hero story */
+.story{position:relative;background:var(--night)}
+.stage{position:relative;height:calc(100vh - var(--hh));height:calc(100svh - var(--hh));min-height:540px;overflow:hidden;color:#fff;background:linear-gradient(#0B2545,#13315C 60%,#2b3f5c)}
+#gl{position:absolute;inset:0;z-index:1}
+#gl canvas{display:block;width:100%;height:100%}
+.hero-copy{position:absolute;z-index:3;left:max(32px,calc((100vw - 1280px)/2 + 32px));top:8vh;max-width:560px}
+.hero-copy .k{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:#C9D7E6;margin:0 0 22px;background:rgba(255,255,255,.07);padding:7px 14px 7px 8px;border-radius:999px}
+.hero-copy .k i{width:18px;height:18px;border-radius:50%;background:var(--sun);box-shadow:0 0 14px var(--sun)}
+.hero-copy h1{font:800 clamp(36px,4.3vw,64px)/1.02 var(--d);letter-spacing:-.035em;margin:0 0 22px}
+.hero-copy .lede{font-size:18.5px;color:#C9D7E6;max-width:29em;margin:0 0 30px}
+.acts{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.hint{margin-top:34px;font-size:14px;color:#9fb3c9;display:flex;align-items:center;gap:10px}
+.hint b{display:inline-block;width:22px;height:34px;border:1.5px solid #9fb3c9;border-radius:12px;position:relative}
+.hint b::after{content:"";position:absolute;left:50%;top:6px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:var(--sun);animation:wh 1.8s infinite}
+@keyframes wh{0%{transform:translateY(0);opacity:1}80%{transform:translateY(10px);opacity:0}100%{opacity:0}}
+.hud{position:absolute;z-index:3;right:max(32px,calc((100vw - 1280px)/2 + 32px));bottom:6vh;width:330px;background:rgba(6,22,41,.58);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(141,169,196,.25);border-radius:22px;padding:20px 22px 18px}
+.hud-top{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;color:#9fb3c9}
+.hud-top b{font:600 15px/1 var(--d);color:#fff;font-variant-numeric:tabular-nums}
+.hud-big{margin:14px 0 4px;display:flex;align-items:baseline;gap:10px}
+.hud-big b{font:700 64px/.9 var(--d);letter-spacing:-.04em;color:var(--sun);font-variant-numeric:tabular-nums}
+.hud-big span{font-size:14px;color:#C9D7E6;line-height:1.25}
+.hud-row{display:flex;justify-content:space-between;font-size:14px;color:#C9D7E6;margin-top:12px}
+.hud-row b{color:#fff;font-variant-numeric:tabular-nums}
+.bar{height:5px;background:rgba(141,169,196,.25);border-radius:9px;margin-top:8px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--sun);border-radius:9px}
+.hud-note{margin:12px 0 0;font-size:12px;line-height:1.45;color:#8DA9C4}
+.cap{position:absolute;z-index:3;left:max(32px,calc((100vw - 1280px)/2 + 32px));bottom:7vh;max-width:430px;opacity:0}
+.cap small{display:inline-block;font:600 12.5px/1 var(--d);color:var(--night);background:var(--sun);padding:7px 11px;border-radius:999px;margin-bottom:14px}
+.cap h2{font:700 clamp(28px,3vw,44px)/1.05 var(--d);letter-spacing:-.03em;margin:0 0 10px}
+.cap p{margin:0;color:#C9D7E6;font-size:16.5px}
+.fallback{display:none;position:absolute;inset:0;z-index:1;background:linear-gradient(rgba(11,37,69,.55),rgba(11,37,69,.85)),url(img/panels-golden.jpg) center/cover}
+.no-gl .fallback{display:block}.no-gl .cap,.no-gl .hint{display:none}
+.static .cap,.static .hint{display:none}
+@media(max-width:860px){
+  .hero-copy{left:20px;right:20px;top:4vh}
+  .hero-copy h1{font-size:clamp(30px,8.4vw,44px)}
+  .hero-copy .lede{font-size:16px;margin-bottom:20px}
+  .hero-copy .k{margin-bottom:14px}
+  .hint{display:none}
+  .hud{left:16px;right:16px;width:auto;bottom:calc(14px + 58px);padding:14px 16px;border-radius:18px}
+  .hud-big{margin:8px 0 0}.hud-big b{font-size:44px}
+  .hud-note{font-size:11px;margin-top:8px}
+  .cap{left:20px;right:20px;top:5vh;bottom:auto}
+  .cap h2{font-size:28px}.cap p{font-size:15px}
+}
+/* sections */
+section.s{padding:120px 0}
+.h2{font:800 clamp(34px,4.2vw,60px)/1.02 var(--d);letter-spacing:-.04em;margin:0 0 18px}
+.intro{font-size:18.5px;color:var(--muted);max-width:36em;margin:0 0 56px}
+@media(max-width:860px){section.s{padding:84px 0}.intro{margin-bottom:36px}}
+/* estimator */
+.est{display:grid;grid-template-columns:5fr 7fr;gap:0;background:#fff;border-radius:32px;overflow:hidden;box-shadow:0 40px 80px -50px rgba(11,37,69,.45);border:1px solid var(--line)}
+.ctl{padding:40px;display:flex;flex-direction:column;gap:30px;border-right:1px solid var(--line)}
+.ctl label,.ctl legend{display:block;font-weight:700;font-size:15px;margin-bottom:12px;padding:0}
+.billrow{display:flex;justify-content:space-between;align-items:baseline}
+.billrow output{font:700 34px/1 var(--d);letter-spacing:-.03em}
+input[type=range]{width:100%;appearance:none;-webkit-appearance:none;height:8px;border-radius:9px;background:linear-gradient(90deg,var(--sun) var(--pct,30%),#E3E9F0 var(--pct,30%));outline:none;margin:14px 0 6px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;border-radius:50%;background:var(--night);border:5px solid var(--sun);cursor:pointer}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--night);border:5px solid var(--sun);cursor:pointer}
+input[type=range]:focus-visible{outline:3px solid var(--night);outline-offset:6px}
+.scale{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+fieldset{border:0;margin:0;padding:0}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.opts label{position:relative;margin:0;font-weight:500;font-size:15px;cursor:pointer}
+.opts input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.opts span{display:block;padding:12px 14px;border:1.5px solid var(--line);border-radius:14px;transition:border-color .2s,background .2s}
+.opts span em{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:2px}
+.opts input:checked+span{border-color:var(--night);background:#EEF3F8;box-shadow:inset 0 0 0 1px var(--night)}
+.opts input:focus-visible+span{outline:3px solid var(--sun);outline-offset:2px}
+.opts.three{grid-template-columns:1fr}
+.res{padding:40px 44px;background:var(--night);color:#fff;position:relative;overflow:hidden}
+.res::before{content:"";position:absolute;right:-140px;top:-140px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(249,200,14,.35),rgba(249,200,14,0) 65%)}
+.chip{display:inline-block;font:600 12px/1 var(--d);background:var(--sun);color:var(--night);padding:7px 12px;border-radius:999px;margin-bottom:24px;position:relative}
+.nums{display:grid;grid-template-columns:1fr 1fr;gap:34px 30px;position:relative}
+.num small{display:block;font-size:14px;color:#9fb3c9;margin-bottom:8px}
+.num b{display:block;font:700 clamp(40px,4.6vw,68px)/.95 var(--d);letter-spacing:-.045em;font-variant-numeric:tabular-nums}
+.num b sup{font-size:.4em;vertical-align:top;margin-left:4px;letter-spacing:0;position:relative;top:.2em}
+.num.wide{grid-column:1/-1}
+.num.wide b{color:var(--sun);font-size:clamp(40px,5.4vw,80px)}
+.num span{display:block;font-size:14px;color:#C9D7E6;margin-top:8px}
+.warn{margin:20px 0 0;background:rgba(249,200,14,.12);border:1px solid rgba(249,200,14,.4);color:#FBE7A0;border-radius:12px;padding:10px 14px;font-size:14px;position:relative}
+.fine{font-size:12.5px;line-height:1.55;color:#8DA9C4;margin:28px 0 0;border-top:1px solid rgba(141,169,196,.25);padding-top:18px;position:relative}
+.send{grid-column:1/-1;border-top:1px solid var(--line);padding:30px 40px;display:grid;grid-template-columns:1.1fr 1fr 1fr .8fr auto;gap:14px;align-items:start}
+.send h3{font:700 19px/1.2 var(--d);letter-spacing:-.02em;margin:0}
+.send h3 small{display:block;font:400 14px/1.4 var(--b);color:var(--muted);margin-top:6px;letter-spacing:0}
+.fl{display:flex;flex-direction:column;gap:6px}
+.fl label{font-size:13px;font-weight:700}
+.fl input{font:inherit;font-size:16px;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--white);color:var(--ink)}
+.fl input:focus{border-color:var(--night);outline:none}
+.fl input:focus-visible{outline:3px solid var(--sun);outline-offset:1px}
+.fl .e{font-size:12.5px;color:#B42318;min-height:1em;margin:0}
+[aria-invalid="true"]{border-color:#B42318!important}
+.send .btn{margin-top:23px}
+.sent{grid-column:1/-1;border-top:1px solid var(--line);padding:30px 40px;display:flex;gap:22px;align-items:flex-start}
+.sent svg{flex:none;width:46px;height:46px}
+.sent h3{font:700 22px/1.2 var(--d);margin:0 0 6px}
+.sent p{margin:0 0 6px;color:var(--muted)}
+.demo{display:inline-block;margin-top:8px;font-size:13px;background:#FFF6D1;color:#6b5600;padding:6px 10px;border-radius:8px}
+@media(max-width:1000px){.est{grid-template-columns:1fr}.ctl{border-right:0;border-bottom:1px solid var(--line)}.send{grid-template-columns:1fr 1fr}.send h3,.send .btn{grid-column:1/-1}.send .btn{margin-top:0}}
+@media(max-width:560px){.ctl,.res{padding:28px 22px}.send,.sent{padding:26px 22px}.send{grid-template-columns:1fr}.nums{gap:26px 18px}.opts{grid-template-columns:1fr}}
+/* how */
+.how{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.how .ph{border-radius:28px;overflow:hidden;aspect-ratio:4/5;position:relative}
+.how .ph img{width:100%;height:100%;object-fit:cover}
+.how .ph figcaption{position:absolute;left:18px;bottom:18px;background:var(--night);color:#fff;font-size:14px;padding:9px 14px;border-radius:999px}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:64px 1fr;gap:20px;padding:24px 0;border-top:1px solid var(--line)}
+.steps li::before{content:counter(s);width:52px;height:52px;border-radius:50%;background:var(--night);color:var(--sun);font:700 20px/52px var(--d);text-align:center}
+.steps h3{font:700 21px/1.2 var(--d);letter-spacing:-.02em;margin:4px 0 6px}
+.steps p{margin:0;color:var(--muted)}
+.steps .t{display:inline-block;margin-top:8px;font-size:13.5px;font-weight:700;color:var(--deep)}
+@media(max-width:900px){.how{grid-template-columns:1fr;gap:40px}.how .ph{aspect-ratio:4/3}}
+/* options */
+.opts-grid{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:22px}
+.card{background:#fff;border:1px solid var(--line);border-radius:28px;overflow:hidden;display:flex;flex-direction:column}
+.card img{aspect-ratio:16/10;object-fit:cover;width:100%}
+.card .in{padding:26px 28px 30px;display:flex;flex-direction:column;flex:1}
+.card h3{font:700 23px/1.15 var(--d);letter-spacing:-.025em;margin:0 0 10px}
+.card p{margin:0 0 18px;color:var(--muted)}
+.card .price{margin-top:auto;font:700 26px/1.1 var(--d);letter-spacing:-.03em}
+.card .price small{display:block;font:500 13.5px/1.4 var(--b);color:var(--muted);letter-spacing:0;margin-top:4px}
+.card.dark{background:var(--night);color:#fff;border-color:var(--night)}
+.card.dark p,.card.dark .price small{color:#B7C8DA}
+.card ul{margin:0 0 22px;padding:0;list-style:none;font-size:15px}
+.card li{padding:7px 0 7px 26px;position:relative}
+.card li::before{content:"";position:absolute;left:0;top:13px;width:12px;height:12px;border-radius:50%;background:var(--sun)}
+@media(max-width:1000px){.opts-grid{grid-template-columns:1fr}}
+/* band */
+.band{position:relative;color:#fff;overflow:hidden;border-radius:36px;margin:0 32px}
+.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,37,69,.94),rgba(11,37,69,.7) 55%,rgba(11,37,69,.25))}
+.band .in{position:relative;z-index:1;padding:110px 72px;max-width:760px}
+.band h2{font:800 clamp(32px,4vw,56px)/1.03 var(--d);letter-spacing:-.04em;margin:0 0 20px}
+.band p{color:#C9D7E6;font-size:18px;margin:0 0 30px}
+.band ul{list-style:none;margin:0 0 34px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px 28px;font-weight:600}
+.band li{display:flex;gap:10px;align-items:flex-start}
+.band li::before{content:"";flex:none;width:18px;height:18px;margin-top:4px;border-radius:50%;background:var(--sun) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.5l2.6 2.5L13 6.5' fill='none' stroke='%230B2545' stroke-width='2'/%3E%3C/svg%3E")}
+@media(max-width:860px){.band{margin:0 12px;border-radius:26px}.band .in{padding:64px 26px}.band ul{grid-template-columns:1fr}}
+/* faq */
+.faq{display:grid;grid-template-columns:4fr 7fr;gap:64px}
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;padding:22px 48px 22px 0;font:600 18.5px/1.35 var(--d);letter-spacing:-.02em;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:#E8EEF5;font:600 20px/34px var(--b);text-align:center;transition:transform .25s,background .25s}
+details[open] summary::after{transform:translateY(-50%) rotate(45deg);background:var(--sun)}
+details p{margin:0 0 24px;color:var(--muted);max-width:44em}
+@media(max-width:900px){.faq{grid-template-columns:1fr;gap:20px}}
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.revs figure{margin:0;padding:30px;border-radius:26px;background:#EAF0F6}
+.revs figure:nth-child(2){background:var(--sun)}
+.revs .kwh{font:700 15px/1 var(--d);color:var(--deep);margin-bottom:18px;display:block}
+.revs blockquote{margin:0 0 22px;font-size:18.5px;line-height:1.5}
+.revs figcaption{display:flex;align-items:center;gap:12px;font-size:14.5px;color:var(--muted)}
+.revs figure:nth-child(2) figcaption{color:#3d4b5c}
+.av{width:42px;height:42px;border-radius:50%;background:var(--night);color:var(--sun);display:grid;place-items:center;font:700 14px/1 var(--d)}
+.ph-tag{display:block;font-size:12px;font-weight:700;color:var(--deep);opacity:.8}
+@media(max-width:900px){.revs{grid-template-columns:1fr}}
+/* area */
+.area{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:start}
+.towns{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0 0 34px;padding:0}
+.towns li{padding:9px 16px;border-radius:999px;background:#fff;border:1px solid var(--line);font-weight:600;font-size:15px}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:6px 24px;font-size:16px;margin:0}
+.hours dt{font-weight:700}.hours dd{margin:0;color:var(--muted)}
+.map{width:100%;aspect-ratio:4/3;border:0;border-radius:28px;background:#DCE5EE;display:block}
+@media(max-width:900px){.area{grid-template-columns:1fr}}
+/* footer */
+footer{background:var(--night);color:#9fb3c9;padding:88px 0 36px;font-size:15px;margin-top:40px}
+.fcta{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;border-bottom:1px solid rgba(141,169,196,.2);padding-bottom:56px;margin-bottom:56px}
+.fcta h2{font:800 clamp(30px,4vw,56px)/1.03 var(--d);letter-spacing:-.04em;color:#fff;margin:0;max-width:14em}
+.fcols{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.4fr;gap:32px}
+footer h3{font:600 14px/1 var(--d);color:#fff;margin:0 0 16px}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+footer a{color:#D5E0EC;text-decoration:none}footer a:hover{color:var(--sun)}
+.fbase{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:56px;padding-top:22px;border-top:1px solid rgba(141,169,196,.2);font-size:13.5px}
+@media(max-width:900px){.fcols{grid-template-columns:1fr 1fr}}
+/* mobile bar */
+.mbar{display:none}
+@media(max-width:640px){
+  .mbar{display:grid;grid-template-columns:1fr 1.5fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:8px;background:rgba(6,22,41,.94);backdrop-filter:blur(8px)}
+  .mbar a{text-decoration:none;text-align:center;padding:13px 8px;border-radius:999px;font-weight:700;font-size:15px;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.35)}
+  .mbar a+a{background:var(--sun);color:var(--night);box-shadow:none}
+  body{padding-bottom:62px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="concept">Example concept by <a href="https://calvyrn.com">Calvyrn</a>. Brightfield Solar is fictional; names, reviews and 555 numbers are placeholders. Photos: Unsplash.</div>
+
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Brightfield Solar, home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="7" fill="#F9C80E"/><g stroke="#F9C80E" stroke-width="2.4" stroke-linecap="round"><path d="M16 2.5v3.5M16 26v3.5M2.5 16H6M26 16h3.5M6.5 6.5l2.4 2.4M23.1 23.1l2.4 2.4M6.5 25.5l2.4-2.4M23.1 8.9l2.4-2.4"/></g><path d="M9 20h14l-2.5-5h-9z" fill="#0B2545" stroke="#8DA9C4" stroke-width="1.2"/></svg>
+      Brightfield Solar
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#estimate">Savings estimate</a><a href="#how">How it works</a><a href="#options">Panels &amp; batteries</a><a href="#financing">Financing</a><a href="#area">Service area</a>
+    </nav>
+    <div class="hdr-r">
+      <a class="tel" href="tel:+16025550191">(602) 555-0191</a>
+      <a class="btn" href="#estimate">Free estimate</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="story" id="story" aria-label="Scroll story: solar panels are installed on a house while the sun crosses the sky">
+  <div class="stage" id="stage">
+    <div id="gl" role="img" aria-label="3D model of a Phoenix house on a floating island; solar panels fly onto the roof as the sun moves across the sky"></div>
+    <div class="fallback"></div>
+    <div class="hero-copy" id="heroCopy">
+      <p class="k"><i></i>Home solar and batteries · Phoenix Valley</p>
+      <h1>Put the Phoenix sun on your power bill.</h1>
+      <p class="lede">We design, permit and install home solar and battery systems across the Valley, with our own crews from the first roof check to the day you switch on.</p>
+      <div class="acts"><a class="btn" href="#estimate">Estimate my savings</a><a class="btn ghost" href="tel:+16025550191">Call (602) 555-0191</a></div>
+      <p class="hint"><b></b>Scroll to install the panels</p>
+    </div>
+    <div class="cap" id="cap0"><small>Install day</small><h2>21 panels, one crew, one day.</h2><p>Racking, panels and wiring usually go up between sunrise and mid-afternoon, before the roof gets too hot to work on.</p></div>
+    <div class="cap" id="cap1"><small>Sunrise to sunset</small><h2>Output follows the sun.</h2><p>Production climbs through the morning, peaks around midday and tapers off toward sunset. Watch the counter.</p></div>
+    <div class="hud" id="hud" aria-hidden="true">
+      <div class="hud-top"><span>Illustrative day</span><b id="clock">6:00 AM</b></div>
+      <div class="hud-big"><b id="kwh">0.0</b><span>estimated kWh<br>this hour</span></div>
+      <div class="hud-row"><span>Panels on roof</span><b id="pc">0 / 21</b></div>
+      <div class="bar"><i id="pbar"></i></div>
+      <p class="hud-note">Illustrative only: an 8.6 kW array at this sun height on a clear day. Not a measurement or a quote.</p>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="estimate">
+  <div class="wrap">
+    <h2 class="h2">What would solar save you?</h2>
+    <p class="intro">Move the slider to your average monthly electric bill and tell us about your roof. You'll get a system size and a yearly savings range in seconds.</p>
+    <div class="est">
+      <form class="ctl" id="calc" onsubmit="return false">
+        <div>
+          <div class="billrow"><label for="bill" style="margin:0">Average monthly electric bill</label><output id="billOut" for="bill">$185</output></div>
+          <input type="range" id="bill" min="50" max="500" step="5" value="185" aria-describedby="billHelp">
+          <div class="scale" id="billHelp"><span>$50</span><span>Summer and winter averaged</span><span>$500</span></div>
+        </div>
+        <fieldset><legend>Which way does your best roof face?</legend>
+          <div class="opts" id="dir">
+            <label><input type="radio" name="dir" value="1" checked><span>South<em>Best output</em></span></label>
+            <label><input type="radio" name="dir" value="0.9"><span>West or southwest<em>Good, strong afternoons</em></span></label>
+            <label><input type="radio" name="dir" value="0.86"><span>East or southeast<em>Good, strong mornings</em></span></label>
+            <label><input type="radio" name="dir" value="0.93"><span>Flat roof<em>Panels tilted on racks</em></span></label>
+          </div>
+        </fieldset>
+        <fieldset><legend>How much shade does it get?</legend>
+          <div class="opts three" id="shade">
+            <label><input type="radio" name="shade" value="1" checked><span>None, full sun all day</span></label>
+            <label><input type="radio" name="shade" value="0.85"><span>Some, a tree or wall for a few hours</span></label>
+            <label><input type="radio" name="shade" value="0.68"><span>Heavy, big trees or a taller house next door</span></label>
+          </div>
+        </fieldset>
+      </form>
+      <div class="res" aria-live="polite">
+        <span class="chip">Estimate, not a quote</span>
+        <div class="nums">
+          <div class="num"><small>System size</small><b id="rKw">8.2<sup>kW</sup></b><span id="rPanels">20 panels</span></div>
+          <div class="num"><small>Covers about</small><b id="rOff">94<sup>%</sup></b><span>of your yearly use</span></div>
+          <div class="num wide"><small>Estimated yearly savings</small><b id="rSave">$1,290–$1,980</b><span id="rLife">Roughly $32,000–$49,000 over 25 years at today's rates</span></div>
+        </div>
+        <p class="warn" id="warn" hidden>Heavy shade cuts output a lot. We'll check on a site visit whether solar still makes sense for your roof, and tell you if it doesn't.</p>
+        <p class="fine">How we estimate: average rate of 14.5¢ per kWh; 1,750 kWh per year from each kW of panels on an unshaded south-facing Phoenix roof, adjusted for direction and shade; 410-watt panels; sized to cover about 90% of your use. The low end of the range assumes more of your power is sent to the grid at lower credit rates; the high end assumes you use most of it at home. Incentives are not included. Your real numbers depend on your usage history, utility plan and roof, which we confirm before any quote.</p>
+      </div>
+      <form class="send" id="send" novalidate>
+        <h3>Get this estimate by email<small>Plus a free roof check, no obligation.</small></h3>
+        <div class="fl"><label for="sn">Name</label><input id="sn" autocomplete="name" aria-describedby="sn-e"><p class="e" id="sn-e"></p></div>
+        <div class="fl"><label for="se">Email</label><input id="se" type="email" autocomplete="email" aria-describedby="se-e"><p class="e" id="se-e"></p></div>
+        <div class="fl"><label for="sz">ZIP code</label><input id="sz" inputmode="numeric" autocomplete="postal-code" maxlength="5" aria-describedby="sz-e"><p class="e" id="sz-e"></p></div>
+        <button class="btn navy" type="submit">Send it</button>
+      </form>
+      <div class="sent" id="sent" hidden tabindex="-1"></div>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="how" style="padding-top:0">
+  <div class="wrap how">
+    <figure class="ph" style="margin:0"><img src="img/installer.jpg" alt="Installer setting a black solar panel onto a shingle roof under a blue sky" loading="lazy"><figcaption>Our crews, not subcontractors</figcaption></figure>
+    <div>
+      <h2 class="h2">From first call to switch-on</h2>
+      <p class="intro" style="margin-bottom:30px">Most Valley homes go from signed design to producing power in six to ten weeks. Here's what happens in between.</p>
+      <ol class="steps">
+        <li><div><h3>Free roof check</h3><p>We measure your roof from satellite images, then spend 30 minutes on site checking the structure, the electrical panel and shade.</p><span class="t">Week 1</span></div></li>
+        <li><div><h3>Design and permits</h3><p>You approve the panel layout. We file the city permit and the utility interconnection application for you.</p><span class="t">Weeks 2–5</span></div></li>
+        <li><div><h3>Install day</h3><p>One crew, usually one day for the panels and a second day if you add a battery. We start early to beat the heat.</p><span class="t">Weeks 5–8</span></div></li>
+        <li><div><h3>Inspection and switch-on</h3><p>After the city inspection and utility approval, we turn the system on and set up monitoring on your phone.</p><span class="t">Weeks 6–10</span></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="options" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="h2">Panels, batteries, or both</h2>
+    <p class="intro">Three ways to go solar. Prices are typical ranges for Valley homes before any incentives; your written quote is itemized line by line.</p>
+    <div class="opts-grid">
+      <article class="card dark"><img src="img/panels-close.jpg" alt="Close-up of black solar panels against a blue sky" loading="lazy"><div class="in"><h3>Solar panels</h3><p>The quickest payback. Your panels cover daytime use, and the surplus goes to the grid for bill credits.</p><ul><li>All-black 410 W panels</li><li>Panel-level monitoring on your phone</li><li>25-year workmanship warranty</li></ul><p class="price">$19,000–$25,000<small>typical 7–9 kW system, installed</small></p></div></article>
+      <article class="card"><img src="img/house-battery.jpg" alt="House with a row of solar panels on its tiled roof" loading="lazy"><div class="in"><h3>Panels + home battery</h3><p>Store the afternoon sun for the expensive evening hours and keep the fridge and Wi-Fi on in an outage.</p><p class="price">$31,000–$40,000<small>panels plus a 13–15 kWh battery</small></p></div></article>
+      <article class="card"><img src="img/cottages.jpg" alt="Two houses with dark solar panels covering their roofs" loading="lazy"><div class="in"><h3>Battery for existing solar</h3><p>Already have panels? We add a battery to most systems, including ones another company installed.</p><p class="price">$11,000–$16,000<small>battery, installed and connected</small></p></div></article>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <img src="img/panels-golden.jpg" alt="" loading="lazy">
+  <div class="in">
+    <h2>No "free solar." No door knockers. Just a clear quote.</h2>
+    <p>We're a local installer, not a call center. You'll talk to the same project lead from the first estimate to switch-on.</p>
+    <ul><li>Itemized written quote</li><li>Our own install crews</li><li>Roof penetrations warrantied</li><li>Monitoring set up before we leave</li></ul>
+    <a class="btn" href="#estimate">Start with the estimate</a>
+  </div>
+</div>
+
+<section class="s" id="financing">
+  <div class="wrap faq">
+    <div><h2 class="h2">Paying for it</h2><p class="intro" style="margin:0">Cash, loan or lease all work. We'll show you each side by side with your real numbers, and we never pressure you toward one.</p></div>
+    <div>
+      <details><summary>Is it better to pay cash or finance?</summary><p>Cash gives the biggest lifetime savings. A solar loan lets you start with little or nothing down, and in many cases the monthly payment is close to what you save on your bill. We'll show both on your quote.</p></details>
+      <details><summary>How do solar loans work?</summary><p>We work with several third-party lenders that offer fixed-rate loans from 10 to 25 years. You own the system from day one. Rates depend on your credit and the lender's current terms, and we show the APR and total cost before you sign anything.</p></details>
+      <details><summary>What about leases and power purchase agreements?</summary><p>With a lease or PPA, a third party owns the panels and you pay a monthly fee or a rate per kWh. There's no upfront cost, but your savings are smaller and selling the house needs a transfer. We'll tell you honestly when it makes sense.</p></details>
+      <details><summary>Are there tax credits or rebates?</summary><p>Incentives change often. We don't price in incentives you may not qualify for. Your quote shows the cost with no incentives, and we point you to a tax professional for anything that depends on your situation.</p></details>
+      <details><summary>What if I sell my house?</summary><p>Owned systems transfer with the house. Loans can usually be paid off at closing or, with some lenders, transferred. We send the buyer's agent the system paperwork and monitoring access.</p></details>
+      <details><summary>Will solar work with my HOA?</summary><p>Arizona law limits how far HOAs can block solar, but many still review panel placement. We prepare the drawings for your HOA and handle the back and forth.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="s" aria-label="Customer reviews" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="h2">Neighbors who switched</h2>
+    <p class="intro">Placeholder reviews written for this concept site.</p>
+    <div class="revs">
+      <figure><span class="kwh">8.2 kW · Chandler</span><blockquote>"The estimate online was within a few hundred dollars of the written quote. Panels went up on a Tuesday and we were done by 2 p.m."</blockquote><figcaption><span class="av" aria-hidden="true">MR</span><span><span class="ph-tag">Placeholder review</span>Homeowner, Chandler</span></figcaption></figure>
+      <figure><span class="kwh">10.7 kW + battery · Mesa</span><blockquote>"We added the battery for monsoon outages. Last August the power went out for three hours and we didn't even notice."</blockquote><figcaption><span class="av" aria-hidden="true">TS</span><span><span class="ph-tag">Placeholder review</span>Homeowner, Mesa</span></figcaption></figure>
+      <figure><span class="kwh">6.6 kW · Glendale</span><blockquote>"They told us our east roof would make less than the salesperson before them claimed. That honesty is why we signed."</blockquote><figcaption><span class="av" aria-hidden="true">AL</span><span><span class="ph-tag">Placeholder review</span>Homeowner, Glendale</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="area" style="padding-top:0">
+  <div class="wrap area">
+    <div>
+      <h2 class="h2">Where we install</h2>
+      <p class="intro" style="margin-bottom:28px">Our crews cover the Phoenix metro. If your town isn't listed, call and ask; we often say yes.</p>
+      <ul class="towns"><li>Phoenix</li><li>Scottsdale</li><li>Tempe</li><li>Mesa</li><li>Chandler</li><li>Gilbert</li><li>Glendale</li><li>Peoria</li><li>Surprise</li><li>Goodyear</li><li>Avondale</li><li>Queen Creek</li></ul>
+      <dl class="hours"><dt>Phone</dt><dd><a href="tel:+16025550191">(602) 555-0191</a></dd><dt>Office</dt><dd>Mon–Fri 7:00–6:00, Sat 8:00–2:00</dd><dt>Installs</dt><dd>Start at 6:00 in summer to beat the heat</dd></dl>
+    </div>
+    <iframe class="map" title="Map of the Phoenix metro service area" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-112.42%2C33.24%2C-111.62%2C33.72&amp;layer=mapnik&amp;marker=33.4484%2C-112.0740"></iframe>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fcta"><h2>Find out what your roof could make this year.</h2><a class="btn" href="#estimate">Get my free estimate</a></div>
+    <div class="fcols">
+      <div><h3>Brightfield Solar</h3><p style="margin:0 0 12px">Home solar and batteries for the Phoenix Valley.</p><p style="margin:0"><a href="tel:+16025550191">(602) 555-0191</a><br>Mon–Fri 7–6, Sat 8–2</p></div>
+      <div><h3>Solar</h3><ul><li><a href="#options">Solar panels</a></li><li><a href="#options">Home batteries</a></li><li><a href="#estimate">Savings estimate</a></li></ul></div>
+      <div><h3>Company</h3><ul><li><a href="#how">How it works</a></li><li><a href="#financing">Financing</a></li><li><a href="#area">Service area</a></li></ul></div>
+      <div><h3>About this site</h3><p style="margin:0">Brightfield Solar is a fictional company. Reviews, prices and the 555 number are placeholders. Photos from Unsplash.</p></div>
+    </div>
+    <div class="fbase"><span>Concept, design and build: <a href="https://calvyrn.com">Calvyrn</a></span><span>Photos from Unsplash</span></div>
+  </div>
+</footer>
+
+<div class="mbar"><a href="tel:+16025550191">Call</a><a href="#estimate">Free estimate</a></div>
+
+<script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+// ---- savings estimator
+(function(){
+  const RATE=.145, PER_KW=1750, PANEL=.41, OFFSET=.9;
+  const $=id=>document.getElementById(id), bill=$('bill');
+  const money=n=>'$'+(Math.round(n/10)*10).toLocaleString('en-US');
+  let last={};
+  function calc(){
+    const b=+bill.value, dir=+document.querySelector('input[name=dir]:checked').value, sh=+document.querySelector('input[name=shade]:checked').value;
+    bill.style.setProperty('--pct',((b-50)/450*100)+'%');
+    $('billOut').textContent='$'+b;
+    const use=b/RATE*12, perKw=PER_KW*dir*sh;
+    let kw=Math.min(16,Math.max(2.5,use*OFFSET/perKw));
+    const panels=Math.ceil(kw/PANEL); kw=panels*PANEL;
+    const prod=kw*perKw, off=Math.min(100,Math.round(prod/use*100));
+    const lo=prod*RATE*.62, hi=Math.min(prod*RATE*.95,b*12*.97);
+    $('rKw').innerHTML=kw.toFixed(1)+'<sup>kW</sup>'; $('rPanels').textContent=panels+' panels, about '+Math.round(prod).toLocaleString('en-US')+' kWh a year';
+    $('rOff').innerHTML=off+'<sup>%</sup>';
+    $('rSave').textContent=money(lo)+'–'+money(hi);
+    $('rLife').textContent='Roughly '+money(Math.round(lo*25/1000)*1000)+' to '+money(Math.round(hi*25/1000)*1000)+' over 25 years at today\'s rates';
+    $('warn').hidden=sh>.7;
+    last={b,kw:kw.toFixed(1),panels,save:money(lo)+'–'+money(hi)};
+  }
+  document.getElementById('calc').addEventListener('input',calc); calc();
+  const f=$('send'), sent=$('sent');
+  const set=(id,msg)=>{$(id+'-e').textContent=msg||'';$(id).setAttribute('aria-invalid',msg?'true':'false');return !msg};
+  f.addEventListener('submit',e=>{
+    e.preventDefault();
+    const n=$('sn').value.trim(), em=$('se').value.trim(), z=$('sz').value.trim();
+    let ok=set('sn',n.length<2?'Please add your name.':'');
+    ok=set('se',/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)?'':'Enter a valid email.')&&ok;
+    ok=set('sz',!/^\d{5}$/.test(z)?'Enter a 5-digit ZIP.':!/^85/.test(z)?'We install in the Phoenix metro (ZIPs starting 85).':'')&&ok;
+    if(!ok){f.querySelector('[aria-invalid=true]').focus();return}
+    const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+    sent.innerHTML=`<svg viewBox="0 0 46 46" aria-hidden="true"><circle cx="23" cy="23" r="23" fill="#F9C80E"/><path d="M14 23.5l6 6 12-13" fill="none" stroke="#0B2545" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div><h3>Thanks, ${esc(n.split(' ')[0])}. Your estimate is on its way.</h3><p>${last.kw} kW, ${last.panels} panels, estimated ${last.save} a year on a $${last.b} monthly bill. A project lead will email ${esc(em)} within one business day to book your free roof check in ${esc(z)}.</p><span class="demo">Demo: nothing was sent. This is a concept site.</span></div>`;
+    f.hidden=true; sent.hidden=false; sent.focus();
+  });
+})();
+</script>
+
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.164.1/build/three.module.js","three/addons/":"https://unpkg.com/three@0.164.1/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const story = document.getElementById('story'), stage = document.getElementById('stage'), holder = document.getElementById('gl');
+const heroCopy = document.getElementById('heroCopy'), caps = [document.getElementById('cap0'), document.getElementById('cap1')];
+const elClock = document.getElementById('clock'), elKwh = document.getElementById('kwh'), elPc = document.getElementById('pc'), elBar = document.getElementById('pbar');
+const animated = !reduce && !!(window.gsap && window.ScrollTrigger);
+
+let renderer = null;
+try { renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' }); } catch (e) { renderer = null; }
+if (!renderer) { document.body.classList.add('no-gl'); story.classList.add('static'); }
+else build();
+
+function build() {
+  if (!animated) story.classList.add('static');
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
+  renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.setClearColor(0, 0);
+  holder.appendChild(renderer.domElement);
+  const scene = new THREE.Scene();
+  const pmrem = new THREE.PMREMGenerator(renderer);
+  scene.environment = pmrem.fromScene(new RoomEnvironment(renderer), 0.04).texture;
+  scene.environmentIntensity = .35;
+  const cam = new THREE.PerspectiveCamera(32, 1, .5, 400);
+
+  const cl = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const sm = (a, b, v) => { const t = cl((v - a) / (b - a)); return t * t * (3 - 2 * t); };
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const eo = t => 1 - Math.pow(1 - t, 3);
+  const M = (o) => new THREE.MeshStandardMaterial(o);
+  function add(parent, geo, mat, x, y, z, cast = true) { const m = new THREE.Mesh(geo, mat); m.position.set(x, y, z); m.castShadow = cast; m.receiveShadow = true; parent.add(m); return m; }
+
+  // --- textures
+  function panelTex() {
+    const c = document.createElement('canvas'); c.width = 128; c.height = 160; const g = c.getContext('2d');
+    g.fillStyle = '#c9d2dc'; g.fillRect(0, 0, 128, 160);
+    g.fillStyle = '#0d1d36'; g.fillRect(5, 5, 118, 150);
+    g.strokeStyle = '#2c4b78'; g.lineWidth = 1.2;
+    for (let x = 5; x <= 123; x += 118 / 6) { g.beginPath(); g.moveTo(x, 5); g.lineTo(x, 155); g.stroke(); }
+    for (let y = 5; y <= 155; y += 150 / 10) { g.beginPath(); g.moveTo(5, y); g.lineTo(123, y); g.stroke(); }
+    const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; return t;
+  }
+  function glowTex() {
+    const c = document.createElement('canvas'); c.width = c.height = 128; const g = c.getContext('2d');
+    const gr = g.createRadialGradient(64, 64, 0, 64, 64, 64); gr.addColorStop(0, 'rgba(255,236,170,1)'); gr.addColorStop(.18, 'rgba(249,200,14,.75)'); gr.addColorStop(.5, 'rgba(249,160,40,.18)'); gr.addColorStop(1, 'rgba(249,160,40,0)');
+    g.fillStyle = gr; g.fillRect(0, 0, 128, 128); return new THREE.CanvasTexture(c);
+  }
+
+  // --- world group (bobs gently)
+  const world = new THREE.Group(); scene.add(world);
+  // island: gravel top + faceted rock underside
+  const top = add(world, new THREE.CylinderGeometry(9.6, 9.6, .5, 64), M({ color: 0xd9c49b, roughness: 1 }), 0, -.25, 0, false);
+  const prof = [[9.6, -.5], [9.4, -1.3], [8.4, -2.2], [7.1, -3.3], [5.4, -4.7], [3.6, -6.1], [1.8, -7.5], [.4, -8.6], [0, -8.9]].map(([r, y]) => new THREE.Vector2(r, y));
+  const lg = new THREE.LatheGeometry(prof, 15); const pos = lg.attributes.position, jit = new Map();
+  for (let i = 0; i < pos.count; i++) {
+    const x = pos.getX(i), y = pos.getY(i), z = pos.getZ(i); if (y > -.6) continue;
+    const k = `${x.toFixed(2)}|${y.toFixed(2)}|${z.toFixed(2)}`; if (!jit.has(k)) jit.set(k, [(Math.random() - .5) * .9, (Math.random() - .5) * .5, (Math.random() - .5) * .9]);
+    const j = jit.get(k); pos.setXYZ(i, x + j[0], y + j[1], z + j[2]);
+  }
+  lg.computeVertexNormals();
+  add(world, lg, M({ color: 0x9a6a47, roughness: 1, flatShading: true }), 0, 0, 0, false);
+  add(world, new THREE.CylinderGeometry(9.62, 9.62, .14, 64), M({ color: 0xb08a5f, roughness: 1 }), 0, -.5, 0, false);
+
+  // yard
+  const concreteM = M({ color: 0xcfcac1, roughness: .95 });
+  add(world, new THREE.BoxGeometry(3.4, .06, 6.4), concreteM, 3.4, .03, 5.9, false);
+  add(world, new THREE.BoxGeometry(1.2, .06, 5.6), concreteM, -2.2, .03, 6.2, false);
+  const lawn = add(world, new THREE.BoxGeometry(9, .08, 3.4), M({ color: 0x7f9a5a, roughness: 1 }), -1, .04, -6.6, false);
+  const pool = add(world, new THREE.BoxGeometry(3.4, .1, 2), M({ color: 0x3fa7c9, roughness: .05, metalness: .2, emissive: 0x0d4f6e, emissiveIntensity: .25 }), 3.4, .06, -6.7, false);
+  const cactusM = M({ color: 0x5f7f4f, roughness: .9 }), shrubM = M({ color: 0x8a9a5b, roughness: 1, flatShading: true });
+  function saguaro(x, z, s) {
+    const g = new THREE.Group(); g.position.set(x, 0, z); g.scale.setScalar(s); world.add(g);
+    add(g, new THREE.CapsuleGeometry(.32, 3, 4, 10), cactusM, 0, 1.8, 0);
+    const a = add(g, new THREE.CapsuleGeometry(.22, 1, 4, 8), cactusM, .62, 2.1, 0); const b = add(g, new THREE.CapsuleGeometry(.22, .5, 4, 8), cactusM, .4, 1.55, 0); b.rotation.z = Math.PI / 2;
+    const c = add(g, new THREE.CapsuleGeometry(.2, .8, 4, 8), cactusM, -.58, 2.5, 0); const d = add(g, new THREE.CapsuleGeometry(.2, .4, 4, 8), cactusM, -.38, 2.05, 0); d.rotation.z = Math.PI / 2;
+  }
+  saguaro(-7.4, 3.6, 1); saguaro(7.6, 3.2, .8);
+  [[-5.6, 4.6, .55], [-4.6, 5.2, .4], [6.2, 5.6, .5], [1.2, 5.2, .45], [-7.6, -2.4, .6], [7.9, -1.2, .5]].forEach(([x, z, s]) => add(world, new THREE.IcosahedronGeometry(s, 0), shrubM, x, s * .7, z));
+  // palo verde tree
+  const tree = new THREE.Group(); tree.position.set(-6.6, 0, -4.6); world.add(tree);
+  const trunkM = M({ color: 0x9aa65a, roughness: .9 });
+  add(tree, new THREE.CylinderGeometry(.12, .18, 2.2, 8), trunkM, 0, 1.1, 0);
+  [[0, 2.6, 0, 1.4], [.9, 2.3, .3, 1], [-.8, 2.4, -.2, 1.1]].forEach(([x, y, z, r]) => { const m = add(tree, new THREE.IcosahedronGeometry(r, 1), M({ color: 0xa8b45c, roughness: 1, flatShading: true }), x, y, z); m.scale.y = .62; });
+
+  // house
+  const HW = 11, HD = 7, HH = 2.8, ZC = -1.2, PITCH = 2.1, OVER = .5;
+  const stucco = M({ color: 0xf2ede4, roughness: .92 }), trim = M({ color: 0x13315c, roughness: .6 });
+  const winM = M({ color: 0x24384f, roughness: .1, metalness: .6, emissive: 0xffc46b, emissiveIntensity: 0 });
+  add(world, new THREE.BoxGeometry(HW, HH, HD), stucco, 0, HH / 2, ZC);
+  const fz = ZC + HD / 2 + .03;
+  add(world, new THREE.BoxGeometry(3.2, 2.2, .08), M({ color: 0xe4e8ee, roughness: .6 }), 3.4, 1.1, fz, false);
+  add(world, new THREE.BoxGeometry(.95, 2.1, .08), trim, -2.2, 1.05, fz, false);
+  [[-4.1, 1.55, 1.7, 1.2], [-.6, 1.55, 1.4, 1.2]].forEach(([x, y, w, h]) => add(world, new THREE.BoxGeometry(w, h, .08), winM, x, y, fz, false));
+  [[-3.2, 1.5, 2.4], [1.6, 1.5, 1.6]].forEach(([x, y, w]) => add(world, new THREE.BoxGeometry(w, 1.2, .08), winM, x, y, ZC - HD / 2 - .03, false));
+  // gable roof prism
+  const rs = new THREE.Shape(); const R = HD / 2 + OVER;
+  rs.moveTo(-R, 0); rs.lineTo(0, PITCH); rs.lineTo(R, 0); rs.lineTo(R, -.16); rs.lineTo(0, PITCH - .16); rs.lineTo(-R, -.16);
+  const roofM = M({ color: 0x9a6a50, roughness: .85 });
+  const roof = add(world, new THREE.ExtrudeGeometry(rs, { depth: HW + OVER * 2, bevelEnabled: false }), roofM, -HW / 2 - OVER, HH, ZC); roof.rotation.y = Math.PI / 2;
+  const gs = new THREE.Shape(); gs.moveTo(-HD / 2, 0); gs.lineTo(0, PITCH - .12); gs.lineTo(HD / 2, 0);
+  [-HW / 2, HW / 2].forEach(x => { const g = add(world, new THREE.ShapeGeometry(gs), stucco, x + (x > 0 ? .002 : -.002), HH, ZC, false); g.rotation.y = Math.PI / 2; g.material = stucco.clone(); g.material.side = THREE.DoubleSide; });
+  add(world, new THREE.BoxGeometry(.7, 1.2, .7), M({ color: 0xd9d2c6, roughness: .9 }), 3.6, HH + PITCH - .1, ZC - 1.2);
+
+  // panels on the south (front) slope
+  const run = HD / 2 + OVER, alpha = Math.atan2(PITCH, run), L = Math.hypot(PITCH, run);
+  const plane = new THREE.Group(); plane.position.set(0, HH + PITCH, ZC); plane.rotation.x = alpha; world.add(plane);
+  const ptex = panelTex(); const panels = [];
+  const COLS = 7, ROWS = 3, PW = 1.0, PL = 1.24, GAP = .07, X0 = -1.4 - ((COLS - 1) * (PW + GAP)) / 2;
+  for (let r = 0; r < ROWS; r++) for (let c = 0; c < COLS; c++) {
+    const mat = M({ map: ptex, roughness: .28, metalness: .35, emissive: 0xf9c80e, emissiveIntensity: 0, envMapIntensity: 1.4 });
+    const m = new THREE.Mesh(new THREE.BoxGeometry(PW, .06, PL), mat); m.castShadow = true; m.receiveShadow = true;
+    const tx = X0 + c * (PW + GAP), tz = .42 + PL / 2 + r * (PL + GAP), ty = .1;
+    m.userData = { t: new THREE.Vector3(tx, ty, tz), o: new THREE.Vector3((c - 3) * 1.6 + (Math.random() - .5) * 2, 11 + Math.random() * 4 + r * 1.5, -6 - Math.random() * 4), rot: [(Math.random() - .5) * 2.4, (Math.random() - .5) * 2.4, (Math.random() - .5) * 1.6], s: .08 + (ROWS - 1 - r) * .13 + c * .013 };
+    plane.add(m); panels.push(m);
+  }
+  // rows fill from the eave (bottom) up: reverse order handled by s above (row 2 = eave first)
+
+  // sun, glow and stars
+  const sunMesh = new THREE.Mesh(new THREE.SphereGeometry(1.3, 32, 16), new THREE.MeshBasicMaterial({ color: 0xffe27a, toneMapped: false })); scene.add(sunMesh);
+  const glow = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTex(), blending: THREE.AdditiveBlending, depthWrite: false, transparent: true, toneMapped: false })); glow.scale.setScalar(18); sunMesh.add(glow);
+  const sg = new THREE.BufferGeometry(), sp = [];
+  for (let i = 0; i < 520; i++) { const th = Math.random() * Math.PI * 2, ph = Math.random() * Math.PI * .45; const r = 140; sp.push(Math.cos(th) * Math.sin(ph + .25) * r, Math.cos(ph) * r * .8 + 5, Math.sin(th) * Math.sin(ph + .25) * r - 30); }
+  sg.setAttribute('position', new THREE.Float32BufferAttribute(sp, 3));
+  const stars = new THREE.Points(sg, new THREE.PointsMaterial({ color: 0xdde8f5, size: 1.6, sizeAttenuation: false, transparent: true, depthWrite: false })); scene.add(stars);
+
+  // lights
+  const hemi = new THREE.HemisphereLight(0x3b5a85, 0x2a2018, .5); scene.add(hemi);
+  const dl = new THREE.DirectionalLight(0xffffff, 2); dl.castShadow = true; dl.shadow.mapSize.set(2048, 2048);
+  Object.assign(dl.shadow.camera, { left: -14, right: 14, top: 14, bottom: -14, near: 1, far: 120 }); dl.shadow.bias = -.0004; dl.shadow.normalBias = .03;
+  scene.add(dl); scene.add(dl.target);
+
+  const C = h => new THREE.Color(h);
+  const cTopLo = C('#0B2545'), cTopHi = C('#1d4f88'), cHorLo = C('#e98a3d'), cHorHi = C('#8DA9C4'), cMidLo = C('#13315C'), cMidHi = C('#3f6fa3');
+  const dlLo = C('#ff9442'), dlHi = C('#fff3da'), hsLo = C('#3b5a85'), hsHi = C('#cfe0f2'), hgLo = C('#2a2018'), hgHi = C('#8a6d55');
+  const t1 = new THREE.Color(), t2 = new THREE.Color(), t3 = new THREE.Color();
+  const K = [{ p: 0, th: -.62, r: 38, h: 12.5, ty: 1.4 }, { p: .5, th: -.22, r: 29, h: 9.5, ty: 1.6 }, { p: 1, th: .5, r: 32, h: 7.5, ty: 1.8 }];
+  function camAt(p) { const i = p < K[1].p ? 0 : 1, a = K[i], b = K[i + 1], t = sm(a.p, b.p, p); return { th: lerp(a.th, b.th, t), r: lerp(a.r, b.r, t), h: lerp(a.h, b.h, t), ty: lerp(a.ty, b.ty, t) }; }
+  let W = 1, H = 1, wide = true;
+  function size() { const r = stage.getBoundingClientRect(); W = Math.max(1, r.width); H = Math.max(1, r.height); wide = W > 860; renderer.setSize(W, H, false); cam.aspect = W / H; cam.updateProjectionMatrix(); draw(cur, performance.now() / 1000); }
+  const fmtTime = h => { const hh = Math.floor(h), mm = Math.floor((h - hh) * 60 / 5) * 5; const ap = hh >= 12 ? 'PM' : 'AM'; return `${((hh + 11) % 12) + 1}:${String(mm).padStart(2, '0')} ${ap}`; };
+
+  function apply(p, t) {
+    // panels
+    let placed = 0;
+    panels.forEach(m => {
+      const u = m.userData, e = eo(cl((p - u.s) / .11)), k = 1 - e;
+      m.position.set(u.t.x + u.o.x * k, u.t.y + u.o.y * k, u.t.z + u.o.z * k);
+      m.rotation.set(u.rot[0] * k, u.rot[1] * k, u.rot[2] * k);
+      const since = p - (u.s + .11); m.material.emissiveIntensity = since > 0 ? Math.max(0, .9 - since * 22) : 0;
+      if (e > .985) placed++;
+    });
+    const frac = placed / panels.length;
+    // sun along an arc behind the house, from east horizon to west horizon
+    const a = lerp(.07, .96, cl((p - .0) / 1)) * Math.PI, el = Math.sin(a);
+    sunMesh.position.set(-Math.cos(a) * 34, -8 + el * 15.5, -30);
+    dl.position.set(-Math.cos(a) * 30, 3 + el * 34, 24);
+    const lo = 1 - sm(0, .5, el);
+    dl.color.lerpColors(dlHi, dlLo, lo); dl.intensity = .5 + 2.1 * sm(.02, .6, el);
+    hemi.color.lerpColors(hsLo, hsHi, sm(0, .8, el)); hemi.groundColor.lerpColors(hgLo, hgHi, sm(0, .8, el)); hemi.intensity = lerp(.55, .82, sm(0, .8, el));
+    scene.environmentIntensity = lerp(.15, .45, sm(0, .7, el));
+    sunMesh.material.color.setHSL(.13 - lo * .06, 1, .62 + .12 * (1 - lo)); glow.scale.setScalar(16 + lo * 10);
+    winM.emissiveIntensity = lo * 1.3; stars.material.opacity = .9 * (1 - sm(.05, .35, el));
+    t1.lerpColors(cTopLo, cTopHi, sm(0, .9, el)); t2.lerpColors(cMidLo, cMidHi, sm(0, .9, el)); t3.lerpColors(cHorLo, cHorHi, sm(.05, .6, el));
+    stage.style.background = `linear-gradient(180deg,#${t1.getHexString()} 0%,#${t2.getHexString()} 52%,#${t3.getHexString()} 100%)`;
+    world.position.y = animated ? Math.sin(t * .7) * .18 : 0; world.rotation.y = animated ? Math.sin(t * .35) * .015 : 0;
+    // camera
+    const c = camAt(p), fit = wide ? 1 : cl(.9 / cam.aspect, 1, 1.75);
+    cam.position.set(Math.sin(c.th) * c.r * fit, c.h * (wide ? 1 : 1 + (fit - 1) * .35), Math.cos(c.th) * c.r * fit);
+    cam.lookAt(0, c.ty, 0);
+    if (wide) cam.setViewOffset(W, H, -W * .19, H * .03, W, H); else cam.setViewOffset(W, H, 0, H * lerp(animated ? -.2 : -.12, -.02, sm(0, .07, p)), W, H);
+    // HUD
+    const hour = 6 + 13.5 * a / Math.PI;
+    elClock.textContent = fmtTime(hour);
+    const kwh = 8.61 * frac * .8 * Math.pow(Math.max(0, el), 1.3);
+    elKwh.textContent = kwh.toFixed(1); elPc.textContent = `${placed} / ${panels.length}`; elBar.style.width = (frac * 100) + '%';
+    if (animated) {
+      const hc = sm(0, .05, p); heroCopy.style.opacity = 1 - hc; heroCopy.style.transform = `translateY(${-hc * 30}px)`; heroCopy.style.visibility = p > .06 ? 'hidden' : 'visible';
+      [[.07, .47], [.53, 1.2]].forEach(([s, e], i) => { const o = sm(s, s + .04, p) * (1 - sm(e - .04, e, p)); caps[i].style.opacity = o; caps[i].style.transform = `translateY(${(1 - o) * 18}px)`; });
+    }
+  }
+  function draw(p, t) { apply(p, t); renderer.render(scene, cam); }
+
+  let cur = animated ? 0 : .55, target = cur;
+  new ResizeObserver(size).observe(stage);
+  if (animated) {
+    gsap.registerPlugin(ScrollTrigger);
+    const hdr = document.getElementById('hdr');
+    ScrollTrigger.create({ trigger: story, start: () => `top ${hdr.offsetHeight}px`, end: () => '+=' + Math.round(innerHeight * 3), pin: true, anticipatePin: 1, invalidateOnRefresh: true, onUpdate: s => { target = s.progress; } });
+    if (window.Lenis) {
+      const lenis = new Lenis({ lerp: .1 }); lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add(tt => lenis.raf(tt * 1000)); gsap.ticker.lagSmoothing(0);
+      document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => { const id = a.getAttribute('href'); if (id.length < 2) return; const el = document.querySelector(id); if (!el) return; e.preventDefault(); lenis.scrollTo(el, { offset: -hdr.offsetHeight }); }));
+    }
+    let running = false;
+    const loop = () => { cur += (target - cur) * .09; if (Math.abs(target - cur) < 1e-4) cur = target; draw(cur, performance.now() / 1000); };
+    new IntersectionObserver(([en]) => { if (en.isIntersecting && !running) { renderer.setAnimationLoop(loop); running = true; } else if (!en.isIntersecting && running) { renderer.setAnimationLoop(null); running = false; } }).observe(stage);
+  } else draw(cur, 0);
+  size();
+}
+</script>
+</body>
+</html>

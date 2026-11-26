@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Willow Creek Animal Hospital | Veterinarian in Boise's North End</title>
+<meta name="description" content="Calm, unhurried vet care for dogs, cats and small pets in Boise, ID. Wellness exams, vaccines, dental care and same-day sick visits. Book online or call (208) 555-0127.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,100;1,9..144,400..700,100&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
+<style>
+:root{--willow:#2F5D50;--willow-2:#234A3F;--cream:#FFF8F0;--gold:#F2A541;--bark:#3B2F2F;--mint:#CFE3D7;--sand:#F6EADB;--muted:#6E605C;--line:#EADFD2;
+--display:"Fraunces",Georgia,serif;--body:"Nunito Sans",system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--cream);color:var(--bark);font:400 17px/1.62 var(--body)}
+img{max-width:100%;display:block}a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:10px}
+h1,h2,h3{font-family:var(--display);font-variation-settings:"SOFT" 100;font-weight:600;letter-spacing:-.015em}
+.wrap{max-width:1220px;margin:0 auto;padding:0 26px}
+.concept{background:var(--bark);color:#F1E6DA;font-size:13px;text-align:center;padding:7px 16px}.concept a{color:var(--gold)}
+.util{background:var(--willow);color:#E4EFE8;font-size:14.5px}
+.util .wrap{display:flex;justify-content:space-between;gap:12px 24px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap}
+.util a{color:#fff;font-weight:700}
+.util .em{display:inline-flex;align-items:center;gap:8px}
+.util .em i{width:8px;height:8px;border-radius:50%;background:var(--gold);display:inline-block}
+header.top{position:sticky;top:0;z-index:40;background:#FFF8F0f0;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+.brand svg{width:44px;height:44px;flex:none}
+.brand b{display:block;font:600 21px/1.05 var(--display);font-variation-settings:"SOFT" 100;color:var(--willow)}
+.brand small{display:block;font-size:12.5px;color:var(--muted);font-weight:600}
+nav.main{display:flex;gap:26px;font-weight:700;font-size:15.5px}
+nav.main a{text-decoration:none;padding:6px 2px;border-radius:8px}nav.main a:hover{color:var(--willow);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
+.hdr{display:flex;align-items:center;gap:16px}
+.tel{font-weight:800;text-decoration:none;color:var(--willow);white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:800 16px/1 var(--body);padding:15px 22px;border-radius:999px;text-decoration:none;border:0;cursor:pointer;white-space:nowrap;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.g{background:var(--willow);color:#fff}.btn.g:hover{background:var(--willow-2)}
+.btn.y{background:var(--gold);color:var(--bark)}.btn.y:hover{background:#eb9a2f}
+.btn.o{background:transparent;color:var(--willow);box-shadow:inset 0 0 0 2px var(--willow)}
+.btn:disabled{background:#E9E1D7;color:#A39791;cursor:not-allowed;transform:none}
+@media(max-width:1040px){nav.main{display:none}}
+@media(max-width:620px){.tel{display:none}.brand small{display:none}.brand b{font-size:19px}.hdr .btn{padding:12px 16px;font-size:15px}.util .hrs{display:none}}
+/* hero */
+.hero{position:relative;overflow:hidden;padding:56px 0 80px}
+.hero .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(44px,5.6vw,76px);line-height:1.02;margin:0 0 22px;color:var(--willow-2)}
+.hero h1 em{font-style:italic;font-weight:500}
+.hero .lede{font-size:20px;max-width:30em;margin:0 0 30px;color:#5A4B47}
+.hero .acts{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.hero .acts .em-link{font-weight:800;color:var(--bark);display:inline-flex;gap:8px;align-items:center;padding:10px 6px;text-underline-offset:4px}
+.hero .acts .em-link svg{width:20px;height:20px}
+.ticks{display:flex;flex-wrap:wrap;gap:10px;margin:34px 0 0;padding:0;list-style:none}
+.ticks li{background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:8px 14px 8px 12px;font-weight:700;font-size:14.5px;display:flex;align-items:center;gap:8px}
+.ticks li::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--willow);box-shadow:0 0 0 3px var(--mint)}
+.art{position:relative;aspect-ratio:1/1;max-width:600px;justify-self:end;width:100%}
+.art .shape1{position:absolute;inset:6% -4% -2% 8%;background:var(--gold);border-radius:58% 42% 47% 53% / 46% 55% 45% 54%;transform:rotate(-8deg)}
+.art .shape2{position:absolute;width:30%;aspect-ratio:1;left:-6%;bottom:2%;background:var(--mint);border-radius:63% 37% 54% 46% / 55% 48% 52% 45%}
+.art .photo{position:absolute;inset:0 6% 6% 0;clip-path:url(#blobA);-webkit-clip-path:url(#blobA)}
+.art .photo img{width:100%;height:100%;object-fit:cover;object-position:35% 50%}
+.badge{position:absolute;background:#fff;border-radius:20px;padding:12px 16px;box-shadow:0 18px 40px -18px #3b2f2f55;font-size:14px;line-height:1.35;display:flex;gap:12px;align-items:center}
+.badge b{display:block;font:600 18px/1.15 var(--display);font-variation-settings:"SOFT" 100;color:var(--willow)}
+.badge .ic{width:40px;height:40px;border-radius:14px;background:var(--mint);display:grid;place-items:center;flex:none}
+.badge .ic svg{width:22px;height:22px}
+.badge.b1{left:-4%;top:12%}
+.badge.b2{right:0;bottom:12%}
+@media(max-width:940px){.hero .wrap{grid-template-columns:1fr}.art{justify-self:center;max-width:520px}.hero{padding-top:36px}}
+@media(max-width:520px){.badge.b1{left:0;top:4%}.badge{padding:10px 12px;font-size:13px}.badge b{font-size:16px}.hero .lede{font-size:18px}}
+/* wave */
+.wave{display:block;width:100%;height:70px}
+/* services */
+section.band{padding:96px 0}
+.sh{max-width:720px;margin:0 0 52px}
+.sh h2{font-size:clamp(34px,4.2vw,54px);line-height:1.06;margin:0 0 14px;color:var(--willow-2)}
+.sh p{font-size:18.5px;color:#5A4B47;margin:0}
+.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.svc article{display:flex;flex-direction:column}
+.svc .ph{aspect-ratio:1/1;margin-bottom:22px;position:relative;min-height:0}
+.svc .ph::before{content:"";position:absolute;inset:8% -4% -4% 8%;border-radius:50%;background:var(--mint);z-index:0}
+.svc article:nth-child(2) .ph::before{background:#F9DDB4}
+.svc article:nth-child(4) .ph::before{background:#F9DDB4}
+.svc .ph img{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover}
+.svc article:nth-child(1) img{clip-path:url(#blobB)}
+.svc article:nth-child(2) img{clip-path:url(#blobC)}
+.svc article:nth-child(3) img{clip-path:url(#blobD)}
+.svc article:nth-child(4) img{clip-path:url(#blobE)}
+.svc h3{font-size:25px;margin:0 0 8px;color:var(--willow-2);line-height:1.15}
+.svc p{margin:0 0 12px;color:#5A4B47;font-size:16px}
+.svc .from{font-weight:800;font-size:14.5px;color:var(--willow);margin-top:auto}
+@media(max-width:1000px){.svc{grid-template-columns:1fr 1fr;gap:40px 28px}}
+@media(max-width:520px){.svc{grid-template-columns:1fr}.svc .ph{max-width:320px}}
+/* booking */
+.bookband{background:var(--mint);position:relative}
+.bookband .wrap{display:grid;grid-template-columns:1.45fr 1fr;gap:32px;align-items:start;padding-top:40px;padding-bottom:40px}
+.bookband .sh{grid-column:1/-1;margin-bottom:10px}
+.card{background:#fff;border-radius:32px;padding:30px;box-shadow:0 30px 60px -40px #234a3f66}
+.prog{display:flex;gap:6px;list-style:none;padding:0;margin:0 0 26px;counter-reset:p}
+.prog li{flex:1;counter-increment:p;font-size:13px;font-weight:800;color:#A39791}
+.prog li::before{content:"";display:block;height:6px;border-radius:6px;background:#EEE6DC;margin-bottom:8px}
+.prog li.on{color:var(--willow)}.prog li.on::before{background:var(--willow)}
+.prog li.done::before{background:var(--gold)}
+.step{display:none}.step.on{display:block}
+.step h3{font-size:28px;margin:0 0 4px;color:var(--willow-2)}
+.step .sub{color:var(--muted);margin:0 0 20px;font-size:15.5px}
+fieldset{border:0;padding:0;margin:0 0 20px}legend{font-weight:800;font-size:15px;margin-bottom:10px;padding:0}
+.pets{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pet{appearance:none;border:2px solid var(--line);background:var(--cream);border-radius:22px;padding:16px 10px 12px;cursor:pointer;font:800 16px var(--body);color:var(--bark);display:flex;flex-direction:column;align-items:center;gap:6px}
+.pet svg{width:46px;height:46px}
+.pet[aria-pressed="true"]{border-color:var(--willow);background:#EAF3EE;box-shadow:inset 0 0 0 1px var(--willow)}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;font-weight:700;font-size:15px}
+.field input,.field textarea,.field select{font:400 16.5px var(--body);padding:13px 16px;border-radius:16px;border:2px solid var(--line);background:var(--cream);color:var(--bark)}
+.field input:focus,.field textarea:focus{border-color:var(--willow);outline:none;box-shadow:0 0 0 4px #2f5d5026}
+.field textarea{min-height:84px;resize:vertical}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{appearance:none;border:2px solid var(--line);background:var(--cream);color:var(--bark);border-radius:999px;padding:9px 15px;font:700 15px var(--body);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--willow);border-color:var(--willow);color:#fff}
+.reasons{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.reason{appearance:none;text-align:left;border:2px solid var(--line);background:var(--cream);border-radius:22px;padding:16px 18px;cursor:pointer;font:inherit;color:var(--bark)}
+.reason b{display:block;font:600 19px/1.2 var(--display);font-variation-settings:"SOFT" 100;color:var(--willow-2);margin-bottom:4px}
+.reason span{font-size:14.5px;color:var(--muted);display:block}
+.reason small{display:inline-block;margin-top:8px;font-weight:800;font-size:13px;color:var(--willow)}
+.reason[aria-pressed="true"]{border-color:var(--willow);background:#EAF3EE;box-shadow:inset 0 0 0 1px var(--willow)}
+.sicknote{display:none;margin:14px 0 0;background:#FDF0DC;border-radius:18px;padding:12px 16px;font-size:15px}
+.sicknote.on{display:block}
+.sicknote a{font-weight:800}
+.days{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.day{appearance:none;border:2px solid var(--line);background:var(--cream);border-radius:20px;padding:10px 4px;cursor:pointer;font:inherit;color:var(--bark);line-height:1.2}
+.day small{display:block;font-size:12.5px;font-weight:700;color:var(--muted)}
+.day b{display:block;font:600 24px/1.1 var(--display);font-variation-settings:"SOFT" 100}
+.day[aria-pressed="true"]{background:var(--gold);border-color:var(--gold)}
+.day[aria-pressed="true"] small{color:var(--bark)}
+.times{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.time{appearance:none;border:2px solid var(--line);background:#fff;border-radius:14px;padding:10px 4px;font:700 15px var(--body);color:var(--bark);cursor:pointer}
+.time[aria-pressed="true"]{background:var(--willow);color:#fff;border-color:var(--willow)}
+.time:disabled{opacity:.4;text-decoration:line-through;cursor:not-allowed}
+.hint{color:var(--muted);font-size:15px;margin:0;grid-column:1/-1}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:22px}
+.back{appearance:none;border:0;background:none;font:700 15px var(--body);color:var(--muted);text-decoration:underline;cursor:pointer;padding:6px}
+.err{color:#B0361C;font-weight:700;font-size:14.5px;min-height:1.3em;margin:6px 0 0}
+.summary{background:var(--cream);border-radius:20px;padding:14px 18px;margin-bottom:18px;font-size:15.5px;display:grid;grid-template-columns:auto 1fr;gap:4px 14px}
+.summary dt{font-weight:800}.summary dd{margin:0}
+.done{text-align:center;padding:10px 0}
+.done .seal{width:96px;height:96px;margin:0 auto 10px;background:var(--gold);border-radius:58% 42% 47% 53% / 46% 55% 45% 54%;display:grid;place-items:center}
+.done h3{font-size:34px}
+.done p{max-width:30em;margin:0 auto 10px}
+.done .demo{font-size:14px;color:var(--muted)}
+@media(max-width:560px){.card{padding:22px 18px;border-radius:26px}.reasons,.two{grid-template-columns:1fr}.days{grid-template-columns:repeat(3,1fr)}.times{grid-template-columns:repeat(3,1fr)}.pet svg{width:38px;height:38px}}
+/* triage */
+.triage{background:var(--bark);color:#F4EAE0;border-radius:32px;padding:30px;position:sticky;top:100px}
+.triage h3{font-size:30px;margin:0 0 6px;color:#fff}
+.triage .sub{margin:0 0 16px;color:#D8CABF;font-size:15.5px}
+.signs{list-style:none;margin:0 0 18px;padding:0;display:grid;gap:6px}
+.signs label{display:flex;gap:12px;align-items:flex-start;padding:9px 12px;border-radius:14px;cursor:pointer;font-size:15px;line-height:1.4}
+.signs label:hover{background:#ffffff10}
+.signs input{appearance:none;width:22px;height:22px;border:2px solid #CDB9AB;border-radius:8px;flex:none;margin:0;display:grid;place-items:center;cursor:pointer}
+.signs input:checked{background:var(--gold);border-color:var(--gold)}
+.signs input:checked::after{content:"";width:9px;height:5px;border-left:2.5px solid var(--bark);border-bottom:2.5px solid var(--bark);transform:rotate(-45deg) translate(1px,-1px)}
+.verdict{border-radius:22px;padding:18px 20px;background:#4A3C3B;font-size:15.5px}
+.verdict b{display:block;font:600 22px/1.2 var(--display);font-variation-settings:"SOFT" 100;color:#fff;margin-bottom:6px}
+.verdict.urgent{background:var(--gold);color:var(--bark)}
+.verdict.urgent b{color:var(--bark)}
+.verdict .btn{margin-top:12px}
+.triage .fine{font-size:13px;color:#BFAFA4;margin:14px 0 0}
+@media(max-width:980px){.bookband .wrap{grid-template-columns:1fr}.triage{position:static}}
+@media(max-width:560px){.triage{padding:24px 18px;border-radius:26px}}
+/* new clients */
+.newc{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s;display:grid;gap:22px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:62px 1fr;gap:16px;align-items:start}
+.steps li::before{content:counter(s);width:56px;height:56px;display:grid;place-items:center;background:var(--mint);color:var(--willow-2);font:600 26px/1 var(--display);font-variation-settings:"SOFT" 100;border-radius:58% 42% 47% 53% / 46% 55% 45% 54%}
+.steps li:nth-child(even)::before{background:#F9DDB4;border-radius:42% 58% 53% 47% / 55% 46% 54% 45%}
+.steps b{display:block;font:600 21px/1.25 var(--display);font-variation-settings:"SOFT" 100;color:var(--willow-2);margin:4px 0 4px}
+.steps span{color:#5A4B47}
+.bring{background:var(--sand);border-radius:32px;padding:32px}
+.bring h3{font-size:26px;margin:0 0 14px;color:var(--willow-2)}
+.bring ul{margin:0 0 20px;padding:0;list-style:none;display:grid;gap:10px}
+.bring li{display:flex;gap:12px}
+.bring li::before{content:"";width:18px;height:18px;flex:none;margin-top:4px;border-radius:50%;background:var(--willow) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.5l2.2 2.2L11.5 6' stroke='%23fff' stroke-width='2' fill='none'/%3E%3C/svg%3E") center/14px no-repeat}
+.bring .price{display:flex;justify-content:space-between;align-items:baseline;border-top:2px dashed #E2D2BF;padding-top:16px;font-weight:700}
+.bring .price b{font:600 30px var(--display);font-variation-settings:"SOFT" 100;color:var(--willow)}
+@media(max-width:900px){.newc{grid-template-columns:1fr;gap:36px}}
+/* plans */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+.plan{background:#fff;border-radius:36px;padding:34px 30px;display:flex;flex-direction:column;border:2px solid var(--line)}
+.plan.mid{background:var(--willow);color:#EAF3EE;border-color:var(--willow);transform:translateY(-14px)}
+.plan .for{font-weight:800;font-size:14px;color:var(--willow);background:var(--mint);border-radius:999px;padding:5px 12px;align-self:flex-start;margin-bottom:16px}
+.plan.mid .for{background:var(--gold);color:var(--bark)}
+.plan h3{font-size:30px;margin:0 0 8px;color:var(--willow-2)}
+.plan.mid h3{color:#fff}
+.plan .pr{font:600 54px/1 var(--display);font-variation-settings:"SOFT" 100;margin:8px 0 4px;color:var(--willow-2)}
+.plan.mid .pr{color:#fff}
+.plan .pr small{font:700 16px var(--body);color:var(--muted)}
+.plan.mid .pr small{color:#CFE3D7}
+.plan .note{font-size:14px;color:var(--muted);margin:0 0 18px}
+.plan.mid .note{color:#CFE3D7}
+.plan ul{list-style:none;padding:0;margin:0 0 26px;display:grid;gap:9px;font-size:16px}
+.plan li{display:flex;gap:10px}.plan li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold);flex:none;margin-top:9px}
+.plan .btn{margin-top:auto}
+.plan.mid .btn{background:var(--gold);color:var(--bark)}
+.plans-note{color:var(--muted);font-size:14.5px;margin:26px 0 0}
+@media(max-width:940px){.plans{grid-template-columns:1fr}.plan.mid{transform:none}}
+/* team */
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.member .av{width:132px;height:132px;display:grid;place-items:center;font:600 44px/1 var(--display);font-variation-settings:"SOFT" 100;color:var(--willow-2);background:var(--mint);border-radius:58% 42% 47% 53% / 46% 55% 45% 54%;margin-bottom:18px}
+.member:nth-child(2) .av{background:#F9DDB4;border-radius:42% 58% 53% 47% / 55% 46% 54% 45%}
+.member:nth-child(3) .av{background:var(--willow);color:#fff;border-radius:50% 50% 44% 56% / 60% 40% 60% 40%}
+.member:nth-child(4) .av{background:var(--gold);color:var(--bark);border-radius:62% 38% 46% 54% / 50% 58% 42% 50%}
+.member h3{font-size:23px;margin:0 0 2px;color:var(--willow-2)}
+.member .role{font-weight:800;color:var(--willow);font-size:14.5px;margin:0 0 8px}
+.member p{margin:0;color:#5A4B47;font-size:15.5px}
+.member .pets{display:block;margin-top:10px;font-size:14px;color:var(--muted);font-style:italic}
+@media(max-width:940px){.team{grid-template-columns:1fr 1fr;gap:36px 26px}}
+@media(max-width:480px){.team{grid-template-columns:1fr}}
+/* reviews */
+.revband{background:var(--sand)}
+.revs{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:22px}
+.revs figure{margin:0;background:#fff;border-radius:30px;padding:28px}
+.revs figure:first-child{background:var(--willow);color:#EAF3EE}
+.revs figure:first-child blockquote{color:#fff;font-size:24px}
+.revs blockquote{margin:0 0 16px;font:500 20px/1.4 var(--display);font-variation-settings:"SOFT" 100;color:var(--willow-2)}
+.revs figcaption{font-size:14px;font-weight:700}
+.revs figcaption span{font-weight:400;opacity:.8}
+.stars{color:var(--gold);font-size:18px;letter-spacing:2px;margin-bottom:10px}
+@media(max-width:900px){.revs{grid-template-columns:1fr}}
+/* faq */
+.faq-wrap{display:grid;grid-template-columns:1fr 1.5fr;gap:56px}
+.faq details{background:#fff;border-radius:22px;margin-bottom:10px;padding:0 22px;border:2px solid transparent}
+.faq details[open]{border-color:var(--mint)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding:18px 0;font:600 19px/1.3 var(--display);font-variation-settings:"SOFT" 100;color:var(--willow-2)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;width:30px;height:30px;border-radius:50%;background:var(--mint);display:grid;place-items:center;font:700 20px/1 var(--body);color:var(--willow-2)}
+.faq details[open] summary::after{content:"–";background:var(--gold)}
+.faq p{margin:0 0 20px;color:#5A4B47}
+@media(max-width:900px){.faq-wrap{grid-template-columns:1fr;gap:10px}}
+/* visit */
+.visit{display:grid;grid-template-columns:1fr 1.25fr;gap:40px;align-items:stretch}
+.hours{width:100%;border-collapse:collapse;font-size:16.5px;margin:0 0 20px}
+.hours th,.hours td{text-align:left;padding:11px 0;border-bottom:2px dotted var(--line)}
+.hours td{text-align:right;font-weight:700}
+.hours tr.today th,.hours tr.today td{color:var(--willow)}
+.hours tr.today th::after{content:"Today";font:800 11.5px var(--body);background:var(--gold);color:var(--bark);border-radius:999px;padding:2px 8px;margin-left:8px;vertical-align:2px}
+.visit .addr{font:600 22px/1.3 var(--display);font-variation-settings:"SOFT" 100;color:var(--willow-2);margin:0 0 6px}
+.visit .after{background:#fff;border-radius:22px;padding:16px 18px;font-size:15.5px;margin-top:6px}
+.mapbox{border-radius:40px;overflow:hidden;min-height:440px;background:var(--mint);border:6px solid #fff;box-shadow:0 30px 60px -40px #234a3f66}
+.map{width:100%;height:100%;min-height:440px;border:0;display:block}
+@media(max-width:900px){.visit{grid-template-columns:1fr}.mapbox,.map{min-height:320px}}
+.cta{background:var(--willow);color:#EAF3EE;position:relative}
+.cta .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-top:40px;padding-bottom:60px;flex-wrap:wrap}
+.cta h2{font-size:clamp(30px,3.6vw,46px);margin:0 0 6px;color:#fff;line-height:1.1}
+.cta p{margin:0}
+.cta .acts{display:flex;gap:12px;flex-wrap:wrap}
+.cta .btn.o{color:#fff;box-shadow:inset 0 0 0 2px #fff}
+footer{background:var(--bark);color:#D8CABF;padding:64px 0 30px;font-size:15px}
+footer .cols{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:32px}
+footer h3{font:800 15px var(--body);color:#fff;margin:0 0 12px;letter-spacing:0}
+footer .fb b{font:600 24px/1.2 var(--display);font-variation-settings:"SOFT" 100;color:#fff;display:block;margin-bottom:10px}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+footer a{text-decoration:none}footer a:hover{color:#fff;text-decoration:underline}
+footer .legal{border-top:1px solid #ffffff22;margin-top:44px;padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px}
+footer .legal a{color:var(--gold)}
+@media(max-width:800px){footer .cols{grid-template-columns:1fr 1fr}footer .cols > div:first-child{grid-column:1/-1}}
+.mbar{display:none}
+@media(max-width:760px){.mbar{display:grid;grid-template-columns:1.3fr 1fr;gap:8px;position:fixed;left:10px;right:10px;bottom:10px;z-index:50}.mbar .btn{box-shadow:0 10px 30px -10px #0006}body{padding-bottom:76px}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <clipPath id="blobA" clipPathUnits="objectBoundingBox"><path d="M0.51,0.02 C0.69,0.01,0.86,0.09,0.94,0.25 C1.02,0.41,0.99,0.6,0.92,0.75 C0.84,0.91,0.68,0.99,0.5,0.99 C0.32,0.99,0.15,0.92,0.07,0.77 C-0.01,0.62,0,0.43,0.06,0.28 C0.13,0.12,0.32,0.03,0.51,0.02 Z"/></clipPath>
+    <clipPath id="blobB" clipPathUnits="objectBoundingBox"><path d="M0.47,0.03 C0.66,0,0.85,0.08,0.94,0.25 C1.02,0.42,0.98,0.63,0.88,0.79 C0.78,0.94,0.6,1,0.42,0.97 C0.24,0.94,0.08,0.83,0.03,0.66 C-0.02,0.48,0.03,0.29,0.15,0.16 C0.23,0.08,0.34,0.05,0.47,0.03 Z"/></clipPath>
+    <clipPath id="blobC" clipPathUnits="objectBoundingBox"><path d="M0.55,0.02 C0.74,0.04,0.92,0.16,0.97,0.35 C1.02,0.54,0.94,0.74,0.79,0.87 C0.64,0.99,0.42,1.01,0.25,0.92 C0.09,0.84,0,0.66,0.01,0.48 C0.02,0.3,0.12,0.13,0.28,0.06 C0.36,0.02,0.45,0.01,0.55,0.02 Z"/></clipPath>
+    <clipPath id="blobD" clipPathUnits="objectBoundingBox"><path d="M0.5,0.01 C0.7,0.02,0.88,0.13,0.96,0.31 C1.03,0.49,0.97,0.7,0.84,0.84 C0.71,0.97,0.51,1.01,0.33,0.95 C0.15,0.89,0.02,0.73,0.01,0.54 C0,0.35,0.09,0.16,0.25,0.07 C0.33,0.03,0.41,0.01,0.5,0.01 Z"/></clipPath>
+    <clipPath id="blobE" clipPathUnits="objectBoundingBox"><path d="M0.44,0.02 C0.63,-0.01,0.83,0.06,0.93,0.22 C1.03,0.38,1,0.6,0.9,0.77 C0.8,0.93,0.61,1,0.43,0.98 C0.25,0.96,0.08,0.85,0.03,0.68 C-0.02,0.51,0.04,0.31,0.15,0.18 C0.23,0.09,0.33,0.04,0.44,0.02 Z"/></clipPath>
+  </defs>
+</svg>
+<div class="concept">Example concept by <a href="https://calvyrn.com">Calvyrn</a>. Willow Creek Animal Hospital is fictional; names, reviews and 555 numbers are placeholders. Photos: Unsplash.</div>
+<div class="util"><div class="wrap"><span class="hrs">1814 N 13th St, Boise · Mon–Fri 7:30–6 · Sat 8–2</span><span class="em"><i></i>Urgent problem? Call <a href="tel:+12085550127">(208) 555-0127</a></span></div></div>
+<header class="top"><div class="wrap">
+  <a class="brand" href="#" aria-label="Willow Creek Animal Hospital, home">
+    <svg viewBox="0 0 44 44" aria-hidden="true"><path d="M22 2c11 0 20 8 20 19 0 12-9 21-20 21S2 33 2 22C2 10 11 2 22 2z" fill="#2F5D50"/><path d="M22 34V14" stroke="#FFF8F0" stroke-width="2.4" stroke-linecap="round"/><path d="M22 18c-3-4-8-4-10-2 2 3 6 4 10 2zM22 24c3-4 8-4 10-2-2 3-6 4-10 2zM22 30c-3-3-7-3-9-1 2 2 6 3 9 1z" fill="#CFE3D7"/><circle cx="32" cy="12" r="3.4" fill="#F2A541"/></svg>
+    <span><b>Willow Creek</b><small>Animal Hospital · Boise, Idaho</small></span>
+  </a>
+  <nav class="main" aria-label="Main"><a href="#services">Services</a><a href="#new-clients">New clients</a><a href="#plans">Wellness plans</a><a href="#team">Our team</a><a href="#visit">Hours</a></nav>
+  <div class="hdr"><a class="tel" href="tel:+12085550127">(208) 555-0127</a><a class="btn g" href="#book">Book a visit</a></div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <div>
+    <h1>Calm vet visits your pet <em>won't dread</em> next time.</h1>
+    <p class="lede">A neighborhood animal hospital in Boise's North End for dogs, cats and small pets. Low-stress handling, a separate cat waiting room and same-day sick visits, with vets who explain everything before they do it.</p>
+    <div class="acts"><a class="btn g" href="#book">Book an appointment</a><a class="em-link" href="#triage"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#F2A541"/><path d="M10 5.5v5.2M10 13.6v.9" stroke="#3B2F2F" stroke-width="2" stroke-linecap="round"/></svg>Is this an emergency?</a></div>
+    <ul class="ticks"><li>Same-day sick visits</li><li>Cat-only waiting room</li><li>Open Saturdays</li><li>In-house lab &amp; X-ray</li></ul>
+  </div>
+  <div class="art">
+    <div class="shape1" aria-hidden="true"></div>
+    <div class="shape2" aria-hidden="true"></div>
+    <div class="photo"><img src="img/v1.jpg" alt="Merle puppy lying on the floor, taking a treat from a hand" fetchpriority="high"></div>
+    <div class="badge b1"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#2F5D50" stroke-width="2"/><path d="M12 7v5l3 2" stroke="#2F5D50" stroke-width="2" fill="none" stroke-linecap="round"/></svg></span><span><b>Today</b>Sick-visit slots held every morning</span></div>
+    <div class="badge b2"><span class="ic" style="background:#F9DDB4"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="#F2A541"/></svg></span><span><b>Treat-first exams</b>No rushing, no scruffing</span></div>
+  </div>
+</div></section>
+
+<section class="band" id="services" style="padding-top:40px"><div class="wrap">
+  <div class="sh"><h2>Everyday care, from first shots to senior years</h2><p>We see dogs, cats, rabbits, guinea pigs and ferrets. Every visit starts with time for your questions and ends with a written plan and price.</p></div>
+  <div class="svc">
+    <article><div class="ph"><img src="img/v6.jpg" alt="Small dog standing on an exam table while a vet steadies it" loading="lazy"></div><h3>Wellness exams &amp; vaccines</h3><p>Nose-to-tail exams, core and lifestyle vaccines, and parasite prevention matched to Boise foothill trails.</p><span class="from">Exams from $68</span></article>
+    <article><div class="ph"><img src="img/v3.jpg" alt="White kitten being examined with a stethoscope" loading="lazy"></div><h3>Sick visits &amp; diagnostics</h3><p>Vomiting, limping, itchy skin, not eating. Same-day appointments, in-house bloodwork and digital X-rays.</p><span class="from">Same-day slots daily</span></article>
+    <article><div class="ph"><img src="img/v7.jpg" alt="Fluffy white cat being gently held during a mouth check" loading="lazy"></div><h3>Dental care</h3><p>Cleanings under anesthesia with dental X-rays, extractions when needed, and a home-care plan that's realistic.</p><span class="from">Estimate before every cleaning</span></article>
+    <article><div class="ph"><img src="img/v5.jpg" alt="Tabby kitten relaxed in its owner's arms" loading="lazy"></div><h3>Puppy &amp; kitten care</h3><p>Vaccine series, microchips, spay and neuter, and plenty of treats so the first visits are happy ones.</p><span class="from">Covered by wellness plans</span></article>
+  </div>
+</div></section>
+
+<section class="bookband" id="book" aria-labelledby="bookT">
+  <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true" style="background:var(--cream)"><path d="M0,40 C240,80 480,0 720,28 C960,56 1200,10 1440,34 L1440,70 L0,70 Z" fill="#CFE3D7"/></svg>
+  <div class="wrap">
+    <div class="sh"><h2 id="bookT">Book a visit in about a minute</h2><p>Real openings for the next week. You'll get a text confirmation and a reminder the day before.</p></div>
+    <form class="card" id="bk" novalidate>
+      <ol class="prog" id="prog"><li class="on">Your pet</li><li>Reason</li><li>Day &amp; time</li><li>Your details</li></ol>
+      <div class="step on" data-step="1">
+        <h3>Who's coming in?</h3><p class="sub">New and returning clients can book online.</p>
+        <fieldset><legend>Pet</legend><div class="pets" id="petType">
+          <button type="button" class="pet" aria-pressed="false" data-v="Dog"><svg viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="24" cy="28" rx="14" ry="13" fill="#F9DDB4"/><path d="M9 14c3-5 8-4 9 1l-2 12c-4 0-9-6-7-13zM39 14c-3-5-8-4-9 1l2 12c4 0 9-6 7-13z" fill="#3B2F2F"/><circle cx="19" cy="26" r="2" fill="#3B2F2F"/><circle cx="29" cy="26" r="2" fill="#3B2F2F"/><ellipse cx="24" cy="33" rx="3.4" ry="2.4" fill="#3B2F2F"/></svg>Dog</button>
+          <button type="button" class="pet" aria-pressed="false" data-v="Cat"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 10l8 8h12l8-8v18c0 8-6 13-14 13S10 36 10 28z" fill="#F2A541"/><circle cx="19" cy="27" r="2" fill="#3B2F2F"/><circle cx="29" cy="27" r="2" fill="#3B2F2F"/><path d="M22 32h4l-2 2z" fill="#3B2F2F"/><path d="M8 31h8M8 34h8M32 31h8M32 34h8" stroke="#3B2F2F" stroke-width="1.2"/></svg>Cat</button>
+          <button type="button" class="pet" aria-pressed="false" data-v="Other"><svg viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="18" cy="12" rx="4" ry="9" fill="#CFE3D7" stroke="#2F5D50" stroke-width="1.5"/><ellipse cx="30" cy="12" rx="4" ry="9" fill="#CFE3D7" stroke="#2F5D50" stroke-width="1.5"/><circle cx="24" cy="30" r="13" fill="#CFE3D7" stroke="#2F5D50" stroke-width="1.5"/><circle cx="19.5" cy="28" r="1.8" fill="#3B2F2F"/><circle cx="28.5" cy="28" r="1.8" fill="#3B2F2F"/><ellipse cx="24" cy="33" rx="2" ry="1.4" fill="#3B2F2F"/></svg>Other</button>
+        </div></fieldset>
+        <div class="field" id="otherWrap" hidden><label for="species">What kind of pet?</label><input id="species" placeholder="Rabbit, guinea pig, ferret…"></div>
+        <div class="field"><label for="petName">Pet's name</label><input id="petName" autocomplete="off" placeholder="e.g. Biscuit"></div>
+        <fieldset style="margin-bottom:0"><legend>Have you been here before?</legend><div class="chips" id="client"><button type="button" class="chip" aria-pressed="true" data-v="new">First visit</button><button type="button" class="chip" aria-pressed="false" data-v="ret">Returning client</button></div></fieldset>
+        <p class="err" id="e1" role="alert"></p>
+        <div class="nav"><span></span><button type="button" class="btn g" id="n1">Continue</button></div>
+      </div>
+      <div class="step" data-step="2">
+        <h3 id="h2t">What's the visit for?</h3><p class="sub">Pick the closest match. You can add details later.</p>
+        <div class="reasons" id="reasons" role="group" aria-label="Reason for visit">
+          <button type="button" class="reason" aria-pressed="false" data-v="Wellness exam" data-min="30"><b>Wellness exam</b><span>Yearly checkup, weight, teeth, questions.</span><small>30 min</small></button>
+          <button type="button" class="reason" aria-pressed="false" data-v="Vaccines" data-min="20"><b>Vaccines</b><span>Boosters, puppy or kitten series, rabies.</span><small>20 min</small></button>
+          <button type="button" class="reason" aria-pressed="false" data-v="Sick visit" data-min="30"><b>Sick visit</b><span>Vomiting, limping, itching, not eating.</span><small>Same-day slots</small></button>
+          <button type="button" class="reason" aria-pressed="false" data-v="Dental check" data-min="30"><b>Dental</b><span>Bad breath, broken tooth, cleaning consult.</span><small>30 min</small></button>
+        </div>
+        <p class="sicknote" id="sicknote">If your pet is struggling to breathe, has collapsed, or may have eaten something toxic, don't book online. <a href="tel:+12085550127">Call (208) 555-0127 now</a> or check the <a href="#triage">emergency signs</a>.</p>
+        <p class="err" id="e2" role="alert"></p>
+        <div class="nav"><button type="button" class="back" data-back="1">Back</button><button type="button" class="btn g" id="n2">Continue</button></div>
+      </div>
+      <div class="step" data-step="3">
+        <h3>Pick a day and time</h3><p class="sub" id="durNote">Times shown in Mountain Time.</p>
+        <fieldset><legend>Day</legend><div class="days" id="days" role="group" aria-label="Day"></div></fieldset>
+        <fieldset><legend>Time</legend><div class="times" id="times" role="group" aria-label="Time"><p class="hint">Choose a day to see open times.</p></div></fieldset>
+        <p class="err" id="e3" role="alert"></p>
+        <div class="nav"><button type="button" class="back" data-back="2">Back</button><button type="button" class="btn g" id="n3">Continue</button></div>
+      </div>
+      <div class="step" data-step="4">
+        <h3>Almost done</h3><p class="sub">We'll text a confirmation and a reminder the day before.</p>
+        <dl class="summary" id="summary"></dl>
+        <div class="two"><div class="field"><label for="oName">Your name</label><input id="oName" autocomplete="name"></div><div class="field"><label for="oPhone">Mobile number</label><input id="oPhone" type="tel" autocomplete="tel"></div></div>
+        <div class="field"><label for="oEmail">Email <span style="font-weight:400;color:var(--muted)">(for new-client forms)</span></label><input id="oEmail" type="email" autocomplete="email"></div>
+        <div class="field"><label for="oNotes">Anything we should know? <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="oNotes" placeholder="Symptoms, nervous around other dogs, needs a muzzle, prefers a female vet…"></textarea></div>
+        <p class="err" id="e4" role="alert"></p>
+        <div class="nav"><button type="button" class="back" data-back="3">Back</button><button type="submit" class="btn g">Confirm appointment</button></div>
+      </div>
+      <div class="step done" data-step="5" tabindex="-1">
+        <div class="seal" aria-hidden="true"><svg viewBox="0 0 40 40" width="46" height="46"><path d="M10 21l7 7 14-15" stroke="#3B2F2F" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3 id="doneT">See you soon</h3>
+        <p id="doneText"></p>
+        <p class="demo">Demo: nothing was sent and no appointment was booked.</p>
+        <button type="button" class="back" id="again">Book another pet</button>
+      </div>
+    </form>
+
+    <aside class="triage" id="triage" aria-labelledby="triT">
+      <h3 id="triT">Is this an emergency?</h3>
+      <p class="sub">Check anything you're seeing right now.</p>
+      <ul class="signs" id="signs">
+        <li><label><input type="checkbox">Trouble breathing, or pale, blue or gray gums</label></li>
+        <li><label><input type="checkbox">Collapsed, had a seizure, or can't stand</label></li>
+        <li><label><input type="checkbox">May have eaten something toxic (chocolate, xylitol gum, antifreeze, lilies, human medicine)</label></li>
+        <li><label><input type="checkbox">Bleeding that won't stop, or a deep wound</label></li>
+        <li><label><input type="checkbox">Straining to pee with little or nothing coming out</label></li>
+        <li><label><input type="checkbox">Swollen, tight belly or retching without bringing anything up</label></li>
+        <li><label><input type="checkbox">Hit by a car, fell from a height, or attacked by another animal</label></li>
+        <li><label><input type="checkbox">Eye injury or sudden blindness</label></li>
+      </ul>
+      <div class="verdict" id="verdict" aria-live="polite"><b>None of these?</b>Book a sick visit online. We hold same-day slots every morning. If anything gets worse while you wait, call us.</div>
+      <p class="fine">This list is a guide for when to call, not medical advice. When in doubt, call.</p>
+    </aside>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true" style="background:var(--cream)"><path d="M0,0 L1440,0 L1440,30 C1200,62 960,14 720,40 C480,66 240,10 0,36 Z" fill="#CFE3D7"/></svg>
+</section>
+
+<section class="band" id="new-clients"><div class="wrap">
+  <div class="sh"><h2>New to Willow Creek?</h2><p>Your first visit takes about 45 minutes. Here's how to make it easy on you and your pet.</p></div>
+  <div class="newc">
+    <ol class="steps">
+      <li><div><b>Book online or call</b><span>Choose "First visit" and we'll allow extra time for introductions and history.</span></div></li>
+      <li><div><b>Send past records</b><span>Give us your old clinic's name and we'll request vaccine and medical records for you.</span></div></li>
+      <li><div><b>Fill in a short form</b><span>A link arrives by email. It takes five minutes and saves time at the front desk.</span></div></li>
+      <li><div><b>Come in a little hungry</b><span>We use lots of treats. If your pet might need bloodwork, skip breakfast that morning.</span></div></li>
+    </ol>
+    <div class="bring">
+      <h3>What to bring</h3>
+      <ul>
+        <li>Cats in a carrier, dogs on a leash (we have spare leashes)</li>
+        <li>Any medications or supplements, or a photo of the labels</li>
+        <li>A fresh stool sample for puppies, kittens and sick visits</li>
+        <li>A list of questions; there are no silly ones</li>
+      </ul>
+      <div class="price"><span>New-patient exam</span><b>$68</b></div>
+      <p style="margin:8px 0 0;font-size:14.5px;color:var(--muted)">Vaccines and tests are priced separately and always quoted before we start. Pet insurance claim forms filled in free.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="band" id="plans" style="background:#fff"><div class="wrap">
+  <div class="sh"><h2>Wellness plans that spread the cost</h2><p>Routine care paid monthly, with no enrollment fee. Plans run for 12 months and cover one pet each.</p></div>
+  <div class="plans">
+    <article class="plan"><span class="for">Puppies &amp; kittens</span><h3>First Year</h3><div class="pr">$42<small> / month</small></div><p class="note">For pets under 6 months</p><ul><li>Up to 4 wellness exams</li><li>Full vaccine series</li><li>Deworming and fecal tests</li><li>Microchip</li><li>15% off spay or neuter</li></ul><a class="btn o" href="#book">Book a first visit</a></article>
+    <article class="plan mid"><span class="for">Most popular</span><h3>Adult</h3><div class="pr">$34<small> / month</small></div><p class="note">Dogs and cats 1–7 years</p><ul><li>2 wellness exams a year</li><li>All core vaccines</li><li>Annual heartworm and tick test (dogs)</li><li>Yearly fecal test</li><li>10% off dental cleaning</li></ul><a class="btn" href="#book">Book a visit</a></article>
+    <article class="plan"><span class="for">Ages 7 and up</span><h3>Senior</h3><div class="pr">$52<small> / month</small></div><p class="note">Catch changes early</p><ul><li>2 exams with senior screening</li><li>Bloodwork and urinalysis twice a year</li><li>Blood pressure check</li><li>All core vaccines</li><li>10% off dental and X-rays</li></ul><a class="btn o" href="#book">Book a visit</a></article>
+  </div>
+  <p class="plans-note">Rabbits and small pets: ask about our exotic wellness plan. Plans don't cover sick visits or emergencies, but members get 10% off them.</p>
+</div></section>
+
+<section class="band" id="team"><div class="wrap">
+  <div class="sh"><h2>The people who'll know your pet by name</h2><p>A small team, so you'll usually see the same vet each visit.</p></div>
+  <div class="team">
+    <div class="member"><div class="av" aria-hidden="true">HB</div><h3>Dr. Hannah Brooks</h3><p class="role">DVM · Medical director</p><p>Founded Willow Creek after 12 years in Boise general practice. Special interest in senior pets and cats.</p><span class="pets">Lives with two old tabbies and a lab mix.</span></div>
+    <div class="member"><div class="av" aria-hidden="true">LO</div><h3>Dr. Luis Ortega</h3><p class="role">DVM · Dentistry &amp; surgery</p><p>Does most of our dental work and soft-tissue surgery. Known for very clear before-and-after photos.</p><span class="pets">Foster dad to a rotating cast of beagles.</span></div>
+    <div class="member"><div class="av" aria-hidden="true">MC</div><h3>Megan Cho</h3><p class="role">Credentialed vet tech · Lead</p><p>Runs our low-stress handling training. If your cat hates the vet, Megan is who you want.</p><span class="pets">Has a three-legged cat named Tripod.</span></div>
+    <div class="member"><div class="av" aria-hidden="true">TW</div><h3>Tess Whitaker</h3><p class="role">Client care</p><p>Answers the phone, sorts out records and insurance, and knows every dog in the North End by sight.</p><span class="pets">Corgi mom. Ask about Waffles.</span></div>
+  </div>
+</div></section>
+
+<section class="band revband"><div class="wrap">
+  <div class="sh"><h2>Kind words from Boise pet owners</h2><p>Placeholder reviews written for this concept.</p></div>
+  <div class="revs">
+    <figure><div class="stars" aria-label="5 out of 5">★★★★★</div><blockquote>"Our rescue used to shake in the parking lot. Megan sat on the floor with him for ten minutes before anyone touched him. Now he pulls me to the door."</blockquote><figcaption>Placeholder review <span>· Hyde Park</span></figcaption></figure>
+    <figure><div class="stars" aria-label="5 out of 5">★★★★★</div><blockquote>"Booked a sick visit at 7 am, seen by 10. They called the next day just to check on her."</blockquote><figcaption>Placeholder review <span>· East End</span></figcaption></figure>
+    <figure><div class="stars" aria-label="5 out of 5">★★★★★</div><blockquote>"The dental estimate was exactly what we paid. They even sent photos of the teeth."</blockquote><figcaption>Placeholder review <span>· Collister</span></figcaption></figure>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap faq-wrap">
+  <div class="sh" style="margin:0"><h2>Questions pet owners ask us</h2><p>Can't find yours? Call <a href="tel:+12085550127">(208) 555-0127</a>. We're happy to talk it through.</p></div>
+  <div class="faq">
+    <details><summary>Do you take walk-ins?</summary><p>We hold same-day sick-visit slots every weekday morning, so call or book online first and we'll give you the soonest time. For true emergencies, call us right away.</p></details>
+    <details><summary>What should I do after hours?</summary><p>If we're closed and your pet needs urgent care, go to the nearest 24-hour emergency veterinary hospital. Our phone message lists the closest ones. We'll get their records the next morning.</p></details>
+    <details><summary>Do you accept pet insurance?</summary><p>Yes. Most pet insurance reimburses you directly, and we'll fill in claim forms and send records at no charge.</p></details>
+    <details><summary>Do you see rabbits and other small pets?</summary><p>Yes: rabbits, guinea pigs, ferrets and rats. Book "Other" online and tell us the species. We don't treat birds or reptiles.</p></details>
+    <details><summary>How much is a dental cleaning?</summary><p>It depends on your pet's age, size and what the X-rays show. You'll get a written estimate with a low and high range before the day, and we call you before doing anything outside it.</p></details>
+    <details><summary>Can I stay with my pet during the exam?</summary><p>Almost always. Most exams and vaccines happen with you in the room. For X-rays or blood draws we may step into the treatment area for a few minutes.</p></details>
+  </div>
+</div></section>
+
+<section class="band" id="visit" style="padding-top:20px"><div class="wrap visit">
+  <div>
+    <div class="sh" style="margin-bottom:22px"><h2>Hours &amp; directions</h2></div>
+    <p class="addr">1814 N 13th St, Boise, ID 83702</p>
+    <p style="margin:0 0 20px;color:var(--muted)">In Hyde Park. Free parking behind the building; the cat entrance is on the left.</p>
+    <table class="hours" id="hours">
+      <tr data-d="1"><th>Monday</th><td>7:30 am – 6 pm</td></tr>
+      <tr data-d="2"><th>Tuesday</th><td>7:30 am – 6 pm</td></tr>
+      <tr data-d="3"><th>Wednesday</th><td>7:30 am – 6 pm</td></tr>
+      <tr data-d="4"><th>Thursday</th><td>7:30 am – 6 pm</td></tr>
+      <tr data-d="5"><th>Friday</th><td>7:30 am – 6 pm</td></tr>
+      <tr data-d="6"><th>Saturday</th><td>8 am – 2 pm</td></tr>
+      <tr data-d="0"><th>Sunday</th><td>Closed</td></tr>
+    </table>
+    <div class="after"><b>After hours:</b> for urgent problems, go to the nearest 24-hour emergency vet. Call <a href="tel:+12085550127">(208) 555-0127</a> and our message will list the closest ones.</div>
+  </div>
+  <div class="mapbox"><iframe class="map" title="Map of Willow Creek Animal Hospital in Boise" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-116.2125%2C43.6255%2C-116.1975%2C43.6335&amp;layer=mapnik&amp;marker=43.6295%2C-116.205"></iframe></div>
+</div></section>
+
+<section class="cta">
+  <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true" style="background:var(--cream)"><path d="M0,40 C240,80 480,0 720,28 C960,56 1200,10 1440,34 L1440,70 L0,70 Z" fill="#2F5D50"/></svg>
+  <div class="wrap"><div><h2>Due for a checkup? We'll make it an easy one.</h2><p>Book online in about a minute, or call and talk to Tess.</p></div><div class="acts"><a class="btn y" href="#book">Book an appointment</a><a class="btn o" href="tel:+12085550127">(208) 555-0127</a></div></div>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div class="fb"><b>Willow Creek Animal Hospital</b><p>Calm, full-service veterinary care for dogs, cats and small pets in Boise's North End.</p></div>
+    <div><h3>Care</h3><ul><li><a href="#services">Wellness &amp; vaccines</a></li><li><a href="#services">Sick visits</a></li><li><a href="#services">Dental care</a></li><li><a href="#plans">Wellness plans</a></li></ul></div>
+    <div><h3>Clients</h3><ul><li><a href="#book">Book online</a></li><li><a href="#new-clients">New clients</a></li><li><a href="#triage">Emergency signs</a></li><li><a href="#team">Our team</a></li></ul></div>
+    <div><h3>Visit</h3><ul><li>1814 N 13th St</li><li>Boise, ID 83702</li><li><a href="tel:+12085550127">(208) 555-0127</a></li><li>Mon–Fri 7:30–6 · Sat 8–2</li></ul></div>
+  </div>
+  <div class="legal"><span>Willow Creek Animal Hospital is a fictional practice used to demonstrate a veterinary booking website. Photos from Unsplash.</span><span>Concept, design and build: <a href="https://calvyrn.com">Calvyrn</a></span></div>
+</div></footer>
+<div class="mbar"><a class="btn g" href="#book">Book a visit</a><a class="btn y" href="tel:+12085550127">Call now</a></div>
+
+<script>
+(() => {
+  const $ = s => document.querySelector(s);
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const S = {pet: null, species: '', name: '', client: 'new', reason: null, min: 30, day: null, time: null};
+  const steps = [...document.querySelectorAll('#bk .step')], prog = [...document.querySelectorAll('#prog li')];
+  function go(n) {
+    steps.forEach(s => s.classList.toggle('on', +s.dataset.step === n));
+    prog.forEach((li, i) => { li.classList.toggle('on', i === n - 1 || (n === 5)); li.classList.toggle('done', i < n - 1); });
+    const card = $('#bk'); const r = card.getBoundingClientRect();
+    if (r.top < 70) window.scrollTo({top: window.scrollY + r.top - 100, behavior: reduce ? 'auto' : 'smooth'});
+    const h = steps.find(s => +s.dataset.step === n).querySelector('h3'); if (h) { h.setAttribute('tabindex', '-1'); h.focus({preventScroll: true}); }
+  }
+  const pressOne = (group, b) => group.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
+  // step 1
+  $('#petType').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; pressOne($('#petType'), b); S.pet = b.dataset.v; $('#otherWrap').hidden = S.pet !== 'Other'; if (S.pet === 'Other') $('#species').focus(); });
+  $('#client').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; pressOne($('#client'), b); S.client = b.dataset.v; });
+  $('#n1').onclick = () => {
+    S.name = $('#petName').value.trim(); S.species = $('#species').value.trim();
+    if (!S.pet) return $('#e1').textContent = 'Choose dog, cat or other.';
+    if (S.pet === 'Other' && !S.species) { $('#species').focus(); return $('#e1').textContent = 'Tell us what kind of pet so we book the right vet.'; }
+    if (!S.name) { $('#petName').focus(); return $('#e1').textContent = "Add your pet's name."; }
+    $('#e1').textContent = ''; $('#h2t').textContent = `What's ${S.name}'s visit for?`; go(2);
+  };
+  // step 2
+  $('#reasons').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; pressOne($('#reasons'), b); S.reason = b.dataset.v; S.min = +b.dataset.min; $('#sicknote').classList.toggle('on', S.reason === 'Sick visit'); $('#e2').textContent = ''; });
+  $('#n2').onclick = () => { if (!S.reason) return $('#e2').textContent = 'Choose a reason for the visit.'; $('#e2').textContent = ''; S.day = null; S.time = null; drawDays(); go(3); };
+  // step 3
+  const now = new Date();
+  function openDays() {
+    const out = []; const d = new Date(now); d.setHours(0,0,0,0);
+    while (out.length < 6) { if (d.getDay() !== 0) out.push(new Date(d)); d.setDate(d.getDate() + 1); }
+    return out;
+  }
+  function slotsFor(d, idx) {
+    const sat = d.getDay() === 6;
+    const all = sat ? ['8:00 am','8:30 am','9:15 am','10:00 am','10:45 am','11:30 am','12:15 pm','1:00 pm'] : ['8:00 am','8:30 am','9:15 am','10:00 am','11:00 am','1:30 pm','2:15 pm','3:00 pm','3:45 pm','4:30 pm','5:15 pm'];
+    const toMin = t => { const [hm, ap] = t.split(' '); let [h, m] = hm.split(':').map(Number); if (ap === 'pm' && h !== 12) h += 12; return h * 60 + m; };
+    const isToday = d.toDateString() === now.toDateString(); const nowMin = now.getHours() * 60 + now.getMinutes() + 60;
+    return all.map((t, j) => {
+      let taken = (j * 7 + idx * 3) % 5 === 0 || (j + idx) % 6 === 2;
+      if (isToday && S.reason !== 'Sick visit') taken = true; // same-day slots held for sick visits
+      if (isToday && toMin(t) < nowMin) taken = true;
+      return {t, taken};
+    });
+  }
+  function drawDays() {
+    const host = $('#days'); host.innerHTML = '';
+    $('#times').innerHTML = '<p class="hint">Choose a day to see open times.</p>';
+    $('#durNote').textContent = `${S.reason} · about ${S.min} minutes. Times are Mountain Time.` + (S.reason === 'Sick visit' ? ' Same-day slots are held for sick visits.' : '');
+    openDays().forEach((d, i) => {
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'day'; b.setAttribute('aria-pressed', 'false');
+      const today = d.toDateString() === now.toDateString();
+      b.innerHTML = `<small>${today ? 'Today' : d.toLocaleDateString('en-US',{weekday:'short'})}</small><b>${d.getDate()}</b><small>${d.toLocaleDateString('en-US',{month:'short'})}</small>`;
+      b.setAttribute('aria-label', d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'}));
+      b.onclick = () => { pressOne(host, b); S.day = d; S.time = null; drawTimes(d, i); };
+      host.appendChild(b);
+    });
+  }
+  function drawTimes(d, i) {
+    const host = $('#times'); host.innerHTML = '';
+    const sl = slotsFor(d, i);
+    if (sl.every(s => s.taken)) { host.innerHTML = `<p class="hint">No openings left ${d.toDateString() === now.toDateString() ? 'today' : 'this day'} for this visit type. Try the next day${S.reason === 'Sick visit' ? ', or call us if it can\'t wait' : ''}.</p>`; return; }
+    sl.forEach(s => {
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'time'; b.textContent = s.t; b.setAttribute('aria-pressed', 'false');
+      if (s.taken) { b.disabled = true; b.setAttribute('aria-label', s.t + ', taken'); }
+      b.onclick = () => { pressOne(host, b); S.time = s.t; $('#e3').textContent = ''; };
+      host.appendChild(b);
+    });
+  }
+  $('#n3').onclick = () => {
+    if (!S.day) return $('#e3').textContent = 'Choose a day.';
+    if (!S.time) return $('#e3').textContent = 'Choose a time.';
+    $('#e3').textContent = '';
+    const petLabel = S.pet === 'Other' ? S.species : S.pet.toLowerCase();
+    $('#summary').innerHTML = '';
+    [['Pet', `${S.name} (${petLabel})`], ['Visit', S.reason + (S.client === 'new' ? ' · first visit' : '')], ['When', `${S.day.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})} at ${S.time}`]].forEach(([k, v]) => { const dt = document.createElement('dt'); dt.textContent = k; const dd = document.createElement('dd'); dd.textContent = v; $('#summary').append(dt, dd); });
+    go(4);
+  };
+  document.querySelectorAll('[data-back]').forEach(b => b.onclick = () => go(+b.dataset.back));
+  $('#bk').addEventListener('submit', e => {
+    e.preventDefault();
+    const n = $('#oName').value.trim(), p = $('#oPhone').value.replace(/\D/g, ''), em = $('#oEmail').value.trim();
+    if (!n) { $('#oName').focus(); return $('#e4').textContent = 'Add your name.'; }
+    if (p.length < 10) { $('#oPhone').focus(); return $('#e4').textContent = 'Add a 10-digit mobile number for your text confirmation.'; }
+    if (S.client === 'new' && !/^\S+@\S+\.\S+$/.test(em)) { $('#oEmail').focus(); return $('#e4').textContent = 'Add an email so we can send new-client forms.'; }
+    $('#e4').textContent = '';
+    $('#doneT').textContent = `See you soon, ${S.name}!`;
+    $('#doneText').textContent = `${n.split(' ')[0]}, ${S.name}'s ${S.reason.toLowerCase()} is booked for ${S.day.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})} at ${S.time}. A confirmation text is on its way` + (S.client === 'new' ? ', and new-client forms will arrive by email.' : '.');
+    go(5);
+  });
+  $('#again').onclick = () => { $('#bk').reset(); Object.assign(S, {pet: null, species: '', name: '', reason: null, day: null, time: null}); document.querySelectorAll('#petType [aria-pressed], #reasons [aria-pressed]').forEach(b => b.setAttribute('aria-pressed', 'false')); $('#otherWrap').hidden = true; $('#sicknote').classList.remove('on'); go(1); };
+
+  // triage
+  const v = $('#verdict');
+  $('#signs').addEventListener('change', () => {
+    const n = $('#signs').querySelectorAll('input:checked').length;
+    if (n) {
+      v.className = 'verdict urgent';
+      v.innerHTML = '<b>Please call us now.</b>These signs need a vet right away. Don\'t wait for an online appointment. If we\'re closed, go straight to the nearest 24-hour emergency vet.<br><a class="btn g" href="tel:+12085550127">Call (208) 555-0127</a>';
+    } else {
+      v.className = 'verdict';
+      v.innerHTML = '<b>None of these?</b>Book a sick visit online. We hold same-day slots every morning. If anything gets worse while you wait, call us.';
+    }
+  });
+  // today in hours
+  const tr = document.querySelector(`#hours tr[data-d="${now.getDay()}"]`); if (tr) tr.classList.add('today');
+})();
+</script>
+</body>
+</html>

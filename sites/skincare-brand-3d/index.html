@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lumen &amp; Leaf | Small-Batch Serums from San Diego: Vitamin C, Hyaluronic, Retinol</title>
+<meta name="description" content="Small-batch face serums blended in San Diego in runs of 300 bottles. Vitamin C for mornings, hyaluronic for all day, retinol for nights. Free US shipping over $60.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F6F1EE">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--porcelain:#F6F1EE;--ink:#2B2A33;--clay:#D9A38F;--clay-d:#9C5E49;--sage:#A7B7A1;--mist:#E9DED6;--muted:#66626D;--line:rgba(43,42,51,.16);--hh:68px}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+html,body{margin:0}
+body{background:var(--porcelain);color:var(--ink);font:300 17px/1.65 Jost,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--clay-d);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:10px 14px;z-index:99}.skip:focus{left:10px}
+.concept{background:var(--ink);color:#DCD5D0;text-align:center;font-size:13px;padding:7px 14px;line-height:1.4}
+.concept a{color:#F0C7B7}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;letter-spacing:-.01em;margin:0}
+.serif{font-family:"Cormorant Garamond",Georgia,serif}
+
+/* header */
+header.top{position:sticky;top:0;z-index:40;background:rgba(246,241,238,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:var(--hh);gap:20px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:500 26px/1 "Cormorant Garamond",serif;letter-spacing:.01em;white-space:nowrap}
+.logo em{font-style:italic;color:var(--clay-d)}
+.logo svg{flex:none}
+nav.main{display:flex;gap:28px;font-size:15px;font-weight:400}
+nav.main a{text-decoration:none;padding:4px 0;border-bottom:1px solid transparent}
+nav.main a:hover{border-color:var(--ink)}
+.hright{display:flex;align-items:center;gap:18px}
+.tel{font-size:15px;text-decoration:none;white-space:nowrap}
+.bagbtn{appearance:none;background:none;border:1px solid var(--ink);border-radius:999px;padding:8px 16px;cursor:pointer;font-size:14px;font-weight:400;display:flex;gap:8px;align-items:center}
+.bagbtn .n{display:inline-grid;place-items:center;min-width:20px;height:20px;border-radius:10px;background:var(--ink);color:var(--porcelain);font-size:12px;padding:0 6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;appearance:none;border:1px solid var(--ink);background:var(--ink);color:var(--porcelain);text-decoration:none;font:400 14px/1 Jost,sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:16px 26px;border-radius:2px;cursor:pointer;transition:background .25s,color .25s}
+.btn:hover{background:transparent;color:var(--ink)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--porcelain)}
+.btn.sm{padding:12px 18px;font-size:12.5px}
+@media(max-width:1080px){nav.main{display:none}}
+@media(max-width:640px){.tel span{display:none}.hright .btn{display:none}.logo{font-size:22px}:root{--hh:60px}.wrap{padding:0 20px}}
+
+/* launch / 3D */
+#launch{position:relative;height:520vh}
+.stage{position:sticky;top:var(--hh);height:calc(100vh - var(--hh));height:calc(100svh - var(--hh));overflow:hidden;background:radial-gradient(120% 80% at 50% 40%,#FBF8F6 0%,var(--porcelain) 55%,#EFE6E0 100%)}
+#gl{position:absolute;inset:0}
+#gl canvas{display:block;width:100%!important;height:100%!important}
+.fb{position:absolute;inset:0;display:none}
+.fb img{width:100%;height:100%;object-fit:cover;opacity:.9}
+.no-gl .fb{display:block}
+.chap{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,34vw) minmax(0,1fr);align-items:center;padding:0 max(28px,4.5vw) 40px;opacity:0;pointer-events:none;transition:none}
+.chap.on{pointer-events:auto}
+.chap .L{grid-column:1}
+.chap .R{grid-column:3;justify-self:end;max-width:330px}
+.chap h1{font-size:clamp(46px,5.4vw,84px);line-height:.98;font-weight:500}
+.chap h1 i,.chap h2 i{font-weight:400}
+.chap .lede{font-size:18px;max-width:25em;margin:22px 0 0;color:#47434F}
+.chap .num{font:italic 400 22px/1 "Cormorant Garamond",serif;color:var(--clay-d);display:block;margin-bottom:12px}
+.chap h2{font-size:clamp(44px,5vw,78px);line-height:.95}
+.chap .tag{margin:14px 0 0;font-size:17px;color:#47434F}
+.specs{list-style:none;margin:22px 0 0;padding:0;font-size:15px}
+.specs li{padding:10px 0;border-top:1px solid var(--line)}
+.specs li:last-child{border-bottom:1px solid var(--line)}
+.chap dl{margin:0;font-size:15px}
+.chap dt{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:14px}
+.chap dt:first-child{margin-top:0}
+.chap dd{margin:3px 0 0;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.chap .R .btn{margin-top:20px}
+.rail{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);display:flex;gap:6px;z-index:3}
+.rail button{appearance:none;background:none;border:0;border-top:1px solid var(--line);padding:10px 4px 0;width:120px;text-align:left;font-size:12.5px;color:var(--muted);cursor:pointer;position:relative}
+.rail button::before{content:"";position:absolute;left:0;top:-1px;height:1px;width:var(--f,0%);background:var(--ink)}
+.rail button.on{color:var(--ink)}
+.cue{position:absolute;left:max(28px,4.5vw);bottom:26px;font-size:13px;color:var(--muted);display:flex;gap:10px;align-items:center;z-index:3}
+.cue::before{content:"";width:1px;height:34px;background:linear-gradient(var(--ink),transparent);animation:cue 2.2s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:scaleY(.4);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}}
+@media(max-width:900px){
+  #launch{height:480vh}
+  .chap{grid-template-columns:1fr;grid-template-rows:auto 1fr auto;padding:22px 20px 64px;align-items:start}
+  .chap .L{grid-row:1}
+  .chap .R{grid-row:3;grid-column:1;justify-self:stretch;max-width:none;align-self:end}
+  .chap h1{font-size:clamp(34px,9.2vw,52px)}
+  .chap h2{font-size:clamp(38px,10vw,56px)}
+  .chap .lede{font-size:15.5px;margin-top:10px;max-width:22em}
+  .chap .tag{margin-top:6px;font-size:15px}
+  .chap dl{font-size:14px}
+  .chap dt,.chap dd:not(:first-of-type){display:none}
+  .chap dd{padding-bottom:10px;border-bottom:0;color:#47434F;max-width:24em}
+  .chap .R .btn{margin-top:10px;width:100%}
+  .intro .specs{display:none}
+  .intro .R .btn{width:100%}
+  .rail{bottom:14px;width:calc(100% - 40px)}.rail button{flex:1;width:auto;font-size:11.5px}
+  .cue{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  #launch{height:auto}
+  .stage{position:relative;top:0;height:calc(100svh - var(--hh));min-height:560px}
+  .chap.intro{opacity:1;pointer-events:auto}
+  .chap:not(.intro),.rail,.cue{display:none}
+}
+
+/* sections */
+section.sec{padding:120px 0}
+.head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:56px}
+.head h2{font-size:clamp(42px,5vw,72px);line-height:1}
+.head p{margin:0;color:var(--muted);max-width:30em;justify-self:end}
+@media(max-width:800px){section.sec{padding:80px 0}.head{grid-template-columns:1fr;gap:16px;margin-bottom:36px}.head p{justify-self:start}}
+hr.hair{border:0;border-top:1px solid var(--line);margin:0}
+
+/* shop */
+.prods{display:grid;grid-template-columns:repeat(3,1fr);gap:56px;padding:30px 0 36px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.prod{display:flex;flex-direction:column;position:relative}
+.prod+.prod::before{content:"";position:absolute;left:-28px;top:-30px;bottom:-36px;width:1px;background:var(--line)}
+.ph{aspect-ratio:4/5;background:var(--mist);position:relative;overflow:hidden;display:grid;place-items:center}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph svg{width:46%;height:auto}
+.ph .badge{position:absolute;left:14px;top:14px;font-size:12px;background:var(--porcelain);padding:5px 10px;border-radius:999px}
+.prod h3{font-size:38px;line-height:1;margin:24px 0 4px}
+.prod .tag{margin:0;color:var(--clay-d);font-size:15px}
+.prod .desc{margin:14px 0 18px;color:#4D4955;font-size:15.5px;flex:1}
+.sizes{border:0;margin:0 0 16px;padding:0}
+.sizes legend{font-size:13px;color:var(--muted);margin-bottom:8px;padding:0}
+.sizes .opts{display:flex;gap:8px;flex-wrap:wrap}
+.sizes label{position:relative;cursor:pointer}
+.sizes input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.sizes span{display:block;border:1px solid var(--line);padding:9px 14px;font-size:14px;border-radius:2px;transition:border-color .2s}
+.sizes input:checked+span{border-color:var(--ink);background:#fff}
+.sizes input:focus-visible+span{outline:2px solid var(--clay-d);outline-offset:2px}
+.prod .btn{width:100%}
+.shipnote{display:flex;flex-wrap:wrap;gap:10px 34px;margin-top:22px;font-size:14px;color:var(--muted)}
+@media(max-width:900px){.prods{grid-template-columns:1fr;gap:0;padding:0}.prod{padding:28px 0 34px}.prod+.prod{border-top:1px solid var(--line)}.prod+.prod::before{display:none}}
+
+/* ingredients */
+.ingr{display:grid;grid-template-columns:1.05fr 1fr;gap:72px;align-items:center}
+.ifig{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--mist)}
+.ifig img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s ease,transform 1.2s ease;transform:scale(1.04)}
+.ifig img.on{opacity:1;transform:scale(1)}
+.ilist{list-style:none;margin:28px 0 0;padding:0;border-top:1px solid var(--line)}
+.ilist button{appearance:none;background:none;border:0;border-bottom:1px solid var(--line);width:100%;text-align:left;padding:22px 0;cursor:pointer;display:grid;grid-template-columns:44px 1fr;gap:4px 10px}
+.ilist .k{font:italic 400 20px/1.2 "Cormorant Garamond",serif;color:var(--muted);grid-row:span 2}
+.ilist b{font:500 30px/1.1 "Cormorant Garamond",serif}
+.ilist .d{grid-column:2;color:#4D4955;font-size:15.5px;max-height:0;overflow:hidden;transition:max-height .5s ease,margin .5s;margin:0}
+.ilist button[aria-expanded="true"] .d{max-height:220px;margin-top:6px}
+.ilist button[aria-expanded="true"] .k{color:var(--clay-d)}
+.ilist small{display:block;margin-top:10px;font-size:13px;color:var(--muted)}
+.ingr h2{font-size:clamp(42px,5vw,70px);line-height:1}
+.ingr .intro{color:var(--muted);margin:16px 0 0;max-width:30em}
+@media(max-width:900px){.ingr{grid-template-columns:1fr;gap:36px}.ifig{aspect-ratio:1/1}}
+
+/* routine quiz */
+.routine{background:var(--mist)}
+.rt{display:grid;grid-template-columns:.85fr 1.15fr;gap:72px;align-items:start}
+.rt h2{font-size:clamp(42px,5vw,70px);line-height:1}
+.rt .intro{color:#55515D;margin:16px 0 0;max-width:26em}
+.rt .fine{font-size:13.5px;color:var(--muted);margin-top:22px;max-width:26em}
+.quiz{background:var(--porcelain);padding:40px;border:1px solid var(--line);min-height:460px;display:flex;flex-direction:column}
+.qprog{display:flex;gap:6px;margin-bottom:28px}
+.qprog i{flex:1;height:1px;background:var(--line)}
+.qprog i.on{background:var(--ink)}
+.quiz fieldset{border:0;padding:0;margin:0}
+.quiz legend{font:500 32px/1.15 "Cormorant Garamond",serif;padding:0;margin-bottom:22px}
+.quiz .step small{display:block;color:var(--muted);font-size:13px;margin-bottom:6px}
+.choices{display:grid;gap:10px}
+.choice{position:relative;display:block;cursor:pointer}
+.choice input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.choice span{display:block;border:1px solid var(--line);padding:16px 18px;transition:border-color .2s,background .2s}
+.choice span b{display:block;font-weight:400}
+.choice span em{font-style:normal;font-size:14px;color:var(--muted)}
+.choice input:checked+span{border-color:var(--ink);background:#fff}
+.choice input:focus-visible+span{outline:2px solid var(--clay-d);outline-offset:2px}
+.qnav{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:26px;gap:12px}
+.qerr{color:#9C3B2E;font-size:14px;min-height:1.4em;margin:12px 0 0}
+.linkbtn{appearance:none;background:none;border:0;padding:6px 0;cursor:pointer;text-decoration:underline;text-underline-offset:4px;font-size:15px}
+.result h3{font-size:36px;line-height:1.05}
+.result .why{color:#55515D;margin:10px 0 20px;font-size:15.5px}
+.rcols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.rcols h4{font-weight:400;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.rcols ol{margin:0;padding:0;list-style:none;counter-reset:r}
+.rcols li{counter-increment:r;padding:9px 0 9px 30px;border-top:1px solid var(--line);position:relative;font-size:15px}
+.rcols li::before{content:counter(r);position:absolute;left:0;font:italic 18px/1.3 "Cormorant Garamond",serif;color:var(--clay-d)}
+.rcols li.ours{font-weight:500}
+.rcols li span{display:block;font-weight:300;font-size:13.5px;color:var(--muted)}
+.rtotal{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:22px;flex-wrap:wrap}
+@media(max-width:900px){.rt{grid-template-columns:1fr;gap:36px}.quiz{padding:26px 20px;min-height:0}.rcols{grid-template-columns:1fr}}
+
+/* studio */
+.studio{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.studio figure{margin:0;position:relative}
+.studio figure img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.studio figcaption{font-size:13px;color:var(--muted);margin-top:10px}
+.studio h2{font-size:clamp(42px,5vw,70px);line-height:1}
+.studio .intro{color:#55515D;margin:18px 0 30px;max-width:30em}
+.steps{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.steps li{display:grid;grid-template-columns:70px 1fr;padding:20px 0;border-bottom:1px solid var(--line)}
+.steps .n{font:italic 400 34px/1 "Cormorant Garamond",serif;color:var(--clay-d)}
+.steps b{display:block;font-weight:500;font-size:16px}
+.steps span{color:var(--muted);font-size:15px}
+@media(max-width:900px){.studio{grid-template-columns:1fr;gap:36px}.studio figure img{aspect-ratio:1/1}}
+
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.revs figure{margin:0;padding:34px 34px 10px 0}
+.revs figure+figure{padding-left:34px;border-left:1px solid var(--line)}
+.revs blockquote{margin:0;font:italic 400 27px/1.25 "Cormorant Garamond",serif}
+.revs figcaption{margin-top:20px;font-size:14px;color:var(--muted)}
+.revs .stars{color:var(--clay-d);letter-spacing:3px;font-size:14px;display:block;margin-bottom:14px}
+.ph-label{display:inline-block;font-size:12px;border:1px solid var(--line);border-radius:999px;padding:3px 10px;margin-bottom:6px}
+@media(max-width:900px){.revs{grid-template-columns:1fr}.revs figure,.revs figure+figure{padding:28px 0;border-left:0;border-bottom:1px solid var(--line)}}
+
+/* faq */
+.faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px}
+.faq h2{font-size:clamp(42px,5vw,70px);line-height:1}
+.faq .intro{color:var(--muted);margin-top:16px}
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:22px 40px 22px 0;font:500 24px/1.25 "Cormorant Garamond",serif;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";position:absolute;right:6px;top:50%;width:14px;height:1px;background:var(--ink);box-shadow:none}
+summary::before{content:"";position:absolute;right:12.5px;top:calc(50% - 6.5px);width:1px;height:14px;background:var(--ink);transition:transform .3s}
+details[open] summary::before{transform:scaleY(0)}
+details p{margin:0 0 22px;color:#4D4955;max-width:40em}
+@media(max-width:900px){.faq{grid-template-columns:1fr;gap:28px}}
+
+/* visit */
+.visit{display:grid;grid-template-columns:1fr 1.3fr;gap:0;border:1px solid var(--line)}
+.visit .info{padding:44px}
+.visit h2{font-size:clamp(38px,4vw,56px);line-height:1}
+.visit dl{margin:26px 0 0;display:grid;grid-template-columns:110px 1fr;gap:12px 16px;font-size:15.5px}
+.visit dt{color:var(--muted)}
+.visit dd{margin:0}
+.visit iframe{width:100%;height:100%;min-height:380px;border:0;display:block;filter:grayscale(.65) sepia(.12)}
+@media(max-width:900px){.visit{grid-template-columns:1fr}.visit .info{padding:28px 22px}.visit iframe{min-height:300px}}
+
+/* cta band */
+.band{background:var(--sage);padding:110px 0;text-align:center}
+.band h2{font-size:clamp(44px,6vw,92px);line-height:.98;max-width:13em;margin:0 auto}
+.band p{margin:20px auto 34px;max-width:32em;color:#2F3A2E}
+.band .acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* footer */
+footer{background:var(--ink);color:#CFC8C3;padding:80px 0 40px;font-size:15px}
+footer .cols{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px}
+footer h3{font:400 13px/1 Jost,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#fff;margin:0 0 18px}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+footer a{color:#F2ECE8;text-decoration:none}
+footer a:hover{text-decoration:underline}
+footer .logo{color:#fff;margin-bottom:16px}
+footer .logo em{color:var(--clay)}
+footer .legal{margin-top:60px;padding-top:24px;border-top:1px solid rgba(255,255,255,.14);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13.5px;color:#A9A2AD}
+footer .legal a{text-decoration:underline}
+@media(max-width:900px){footer .cols{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){footer .cols{grid-template-columns:1fr}}
+
+/* bag drawer */
+.scrim{position:fixed;inset:0;background:rgba(43,42,51,.35);z-index:60;opacity:0;transition:opacity .3s}
+.scrim.show{opacity:1}
+.bag{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--porcelain);z-index:61;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .4s cubic-bezier(.2,.7,.2,1);box-shadow:-30px 0 60px rgba(43,42,51,.12)}
+.bag.show{transform:none}
+.bag header{display:flex;justify-content:space-between;align-items:center;padding:22px 26px;border-bottom:1px solid var(--line)}
+.bag h2{font-size:32px}
+.x{appearance:none;background:none;border:0;width:40px;height:40px;cursor:pointer;font-size:26px;line-height:1}
+.blist{flex:1;overflow:auto;padding:6px 26px}
+.bitem{display:grid;grid-template-columns:64px 1fr auto;gap:14px;padding:18px 0;border-bottom:1px solid var(--line);align-items:center}
+.bitem .sw{width:64px;height:80px;background:var(--mist);display:grid;place-items:center;overflow:hidden}
+.bitem .sw img{width:100%;height:100%;object-fit:cover}
+.bitem .sw svg{width:60%}
+.bitem b{font:500 22px/1.1 "Cormorant Garamond",serif;display:block}
+.bitem small{color:var(--muted);font-size:13.5px}
+.qty{display:flex;align-items:center;border:1px solid var(--line);margin-top:8px;width:max-content}
+.qty button{appearance:none;background:none;border:0;width:32px;height:30px;cursor:pointer;font-size:16px}
+.qty span{min-width:24px;text-align:center;font-size:14px}
+.bitem .r{text-align:right;font-size:15px}
+.bitem .rm{appearance:none;background:none;border:0;color:var(--muted);text-decoration:underline;cursor:pointer;font-size:13px;margin-top:8px;padding:0}
+.empty{padding:40px 0;color:var(--muted)}
+.bfoot{padding:20px 26px 26px;border-top:1px solid var(--line);background:#FBF8F6}
+.ship{font-size:13.5px;color:var(--muted)}
+.ship .bar{height:2px;background:var(--line);margin-top:8px;position:relative}
+.ship .bar i{position:absolute;left:0;top:0;bottom:0;background:var(--sage);width:0;transition:width .4s}
+.sub{display:flex;justify-content:space-between;margin:16px 0;font-size:17px}
+.sub b{font-weight:500}
+.bfoot .btn{width:100%}
+.bfoot .demo{font-size:12.5px;color:var(--muted);margin:10px 0 0;text-align:center}
+.done{padding:40px 26px;flex:1;overflow:auto}
+.done h3{font-size:40px;line-height:1}
+.done p{color:#4D4955}
+.done .tagd{display:inline-block;border:1px solid var(--ink);padding:6px 12px;font-size:13px;letter-spacing:.06em;margin-bottom:18px}
+
+/* toast + mobile bar */
+.mbar{display:none}
+@media(max-width:720px){
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:45;background:var(--ink);color:var(--porcelain);padding:10px 14px calc(10px + env(safe-area-inset-bottom));gap:10px;align-items:center;justify-content:space-between}
+  .mbar a{color:var(--porcelain);text-decoration:none;font-size:14px;letter-spacing:.06em;text-transform:uppercase;border:1px solid rgba(255,255,255,.5);padding:11px 16px;flex:1;text-align:center}
+  .mbar button{appearance:none;background:var(--porcelain);color:var(--ink);border:0;padding:12px 16px;font-size:14px;cursor:pointer}
+  body{padding-bottom:66px}
+  .mbar{transition:transform .35s ease}
+  body.inlaunch .mbar{transform:translateY(110%)}
+}
+.reveal{opacity:1}
+</style>
+</head>
+<body>
+<a class="skip" href="#shop">Skip to the shop</a>
+<div class="concept">Example concept by <a href="https://calvyrn.com">Calvyrn</a>. Lumen &amp; Leaf is fictional; names, reviews and 555 numbers are placeholders. Photos: Unsplash.</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#launch" aria-label="Lumen and Leaf, home">
+      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="13.5" fill="none" stroke="#2B2A33" stroke-width="1"/><path d="M15 25c0-7 2.5-12 8-15-1 6-3.5 10.5-8 15Z" fill="#D9A38F"/><path d="M15 25c0-6-2-10-7-12.5 .5 5.5 3 9.5 7 12.5Z" fill="#A7B7A1"/><path d="M15 25V12" stroke="#2B2A33" stroke-width="1"/></svg>
+      <span>Lumen <em>&amp;</em> Leaf</span>
+    </a>
+    <nav class="main" aria-label="Main">
+      <a href="#shop">Serums</a><a href="#ingredients">Ingredients</a><a href="#routine">Routine finder</a><a href="#studio">Our studio</a><a href="#faq">FAQ</a>
+    </nav>
+    <div class="hright">
+      <a class="tel" href="tel:+16195550143" aria-label="Call (619) 555-0143"><span>(619) 555-0143</span><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style="vertical-align:-3px;margin-left:6px"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z" fill="none" stroke="#2B2A33" stroke-width="1.3"/></svg></a>
+      <button class="bagbtn" id="openBag" type="button" aria-haspopup="dialog">Bag <span class="n" id="bagN">0</span></button>
+      <a class="btn sm" href="#shop">Shop serums</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="launch" aria-label="Meet the three serums">
+  <div class="stage" id="stage">
+    <div id="gl" aria-hidden="true"></div>
+    <div class="fb"><img src="img/clear-drop.jpg" alt="A drop of clear serum falling from a glass pipette into a bottle"></div>
+
+    <div class="chap intro on" data-a="0" data-b=".15">
+      <div class="L">
+        <h1>Skin that looks rested, three drops at a time.</h1>
+        <p class="lede">Small-batch serums blended in San Diego in runs of 300 bottles. Vitamin C for mornings, hyaluronic for all day, retinol for nights.</p>
+      </div>
+      <div class="R">
+        <a class="btn" href="#shop">Shop the serums</a>
+        <ul class="specs"><li>Blended and dated in batches of 300</li><li>Fragrance-free, made for daily use</li><li>Glass bottles with refill pouches</li></ul>
+      </div>
+    </div>
+
+    <div class="chap" data-a=".19" data-b=".385" data-i="0">
+      <div class="L"><span class="num">01 · Morning</span><h2>Vitamin C <i>15</i></h2><p class="tag">A brighter, more even-looking tone</p></div>
+      <div class="R"><dl><dt>Key ingredients</dt><dd>15% stabilised vitamin C, ferulic acid, vitamin E</dd><dt>Texture</dt><dd>Silky, sinks in within a minute</dd><dt class="opt">When</dt><dd class="opt">Mornings, before sunscreen</dd></dl><button class="btn quick" type="button" data-id="vitc" data-s="1">Add 30 ml · $46</button></div>
+    </div>
+    <div class="chap" data-a=".445" data-b=".635" data-i="1">
+      <div class="L"><span class="num">02 · All day</span><h2>Hyaluronic <i>Water</i></h2><p class="tag">Skin that feels bouncy and comfortable</p></div>
+      <div class="R"><dl><dt>Key ingredients</dt><dd>Five weights of hyaluronic acid, panthenol</dd><dt>Texture</dt><dd>Water-light, no tack</dd><dt class="opt">When</dt><dd class="opt">Morning and night, on damp skin</dd></dl><button class="btn quick" type="button" data-id="ha" data-s="1">Add 30 ml · $38</button></div>
+    </div>
+    <div class="chap" data-a=".695" data-b=".87" data-i="2">
+      <div class="L"><span class="num">03 · Night</span><h2>Retinol <i>0.3</i></h2><p class="tag">Smoother-looking texture by morning</p></div>
+      <div class="R"><dl><dt>Key ingredients</dt><dd>0.3% encapsulated retinol in plant squalane</dd><dt>Texture</dt><dd>Light oil-serum, velvety finish</dd><dt class="opt">When</dt><dd class="opt">Two nights a week to start</dd></dl><button class="btn quick" type="button" data-id="ret" data-s="1">Add 30 ml · $54</button></div>
+    </div>
+    <div class="chap outro" data-a=".91" data-b="1.2">
+      <div class="L"><h2>Bright by day, <i>quiet</i> by night.</h2><p class="tag">Start with one bottle, or let the routine finder choose.</p></div>
+      <div class="R"><a class="btn" href="#shop">Shop the collection</a><p style="margin:14px 0 0"><a href="#routine" style="font-size:15px">Find my routine</a></p></div>
+    </div>
+
+    <div class="rail" role="group" aria-label="Jump to a serum">
+      <button type="button" data-go=".29">01 Vitamin C</button><button type="button" data-go=".54">02 Hyaluronic</button><button type="button" data-go=".79">03 Retinol</button>
+    </div>
+    <div class="cue" aria-hidden="true">Scroll to meet the serums</div>
+  </div>
+</section>
+
+<section class="sec" id="shop">
+  <div class="wrap">
+    <div class="head">
+      <h2>The collection</h2>
+      <p>Three serums that layer with anything you already use. Each bottle is stamped with its batch date, and refill pouches cut glass waste by about two thirds.</p>
+    </div>
+    <div class="prods" id="prods"></div>
+    <div class="shipnote"><span>Free US shipping over $60</span><span>Ships from San Diego in 1 to 2 business days</span><span>30-day returns, even if opened</span></div>
+  </div>
+</section>
+
+<section class="sec" id="ingredients" style="padding-top:20px">
+  <div class="wrap ingr">
+    <div class="ifig" id="ifig">
+      <img class="on" src="img/dropper-amber.jpg" alt="Golden serum inside a glass pipette" loading="lazy">
+      <img src="img/clear-drop.jpg" alt="A clear drop falling from a pipette into a glass bottle" loading="lazy">
+      <img src="img/texture-gold.jpg" alt="Close-up of golden oil droplets and bubbles" loading="lazy">
+    </div>
+    <div>
+      <h2>Fewer ingredients, chosen carefully</h2>
+      <p class="intro">Every formula lists its full ingredient list on the box, in order. Here is what does the heavy lifting.</p>
+      <ul class="ilist" id="ilist">
+        <li><button type="button" aria-expanded="true" data-img="0"><span class="k">i.</span><b>Stabilised vitamin C</b><span class="d">A gentle, oil-soluble form of vitamin C paired with ferulic acid and vitamin E, so the serum stays its true amber colour longer. Layer it under sunscreen in the morning.<small>Found in Vitamin C 15</small></span></button></li>
+        <li><button type="button" aria-expanded="false" data-img="1"><span class="k">ii.</span><b>Multi-weight hyaluronic acid</b><span class="d">Five sizes of hyaluronic acid sit at different depths of the skin's surface layers to hold water where you can feel it. Apply on damp skin for the best slip.<small>Found in Hyaluronic Water</small></span></button></li>
+        <li><button type="button" aria-expanded="false" data-img="2"><span class="k">iii.</span><b>Encapsulated retinol in squalane</b><span class="d">Retinol wrapped in a slow-release capsule and carried in plant squalane, for a softer start than a plain retinol. Use at night and wear sunscreen the next day.<small>Found in Retinol 0.3</small></span></button></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec routine" id="routine">
+  <div class="wrap rt">
+    <div>
+      <h2>Your routine in three questions</h2>
+      <p class="intro">Tell us how your skin behaves and what you want to see. We'll put together a morning and evening order of use with the right sizes.</p>
+      <p class="fine">This is a product guide, not medical advice. If you have a skin condition, are pregnant or breastfeeding, speak to a dermatologist before starting retinol. Patch test anything new on your inner arm for 48 hours.</p>
+    </div>
+    <form class="quiz" id="quiz" novalidate aria-live="polite">
+      <div class="qprog" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+      <div class="step" data-q="0">
+        <fieldset><small>Question 1 of 3</small><legend>By midday, your skin usually feels…</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="q0" value="dry"><span><b>Tight or a little dry</b><em>Especially around the cheeks</em></span></label>
+            <label class="choice"><input type="radio" name="q0" value="balanced"><span><b>Comfortable, mostly balanced</b><em>No real complaints</em></span></label>
+            <label class="choice"><input type="radio" name="q0" value="oily"><span><b>Shiny in the T-zone</b><em>Forehead, nose and chin</em></span></label>
+          </div></fieldset>
+      </div>
+      <div class="step" data-q="1" hidden>
+        <fieldset><small>Question 2 of 3</small><legend>What would you most like to see?</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="q1" value="bright"><span><b>A brighter, more even-looking tone</b><em>Less dull by the afternoon</em></span></label>
+            <label class="choice"><input type="radio" name="q1" value="hydrate"><span><b>Bouncier, more hydrated-feeling skin</b><em>Comfort that lasts all day</em></span></label>
+            <label class="choice"><input type="radio" name="q1" value="smooth"><span><b>Smoother-looking texture</b><em>A softer surface by morning</em></span></label>
+          </div></fieldset>
+      </div>
+      <div class="step" data-q="2" hidden>
+        <fieldset><small>Question 3 of 3</small><legend>How familiar are you with retinol?</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="q2" value="new"><span><b>I've never used it</b><em>Or tried once and stopped</em></span></label>
+            <label class="choice"><input type="radio" name="q2" value="some"><span><b>A few nights a week</b><em>My skin is used to it</em></span></label>
+            <label class="choice"><input type="radio" name="q2" value="regular"><span><b>Most nights</b><em>I've used retinol for months</em></span></label>
+          </div></fieldset>
+      </div>
+      <div class="result" id="qres" hidden></div>
+      <p class="qerr" id="qerr" role="alert"></p>
+      <div class="qnav" id="qnav">
+        <button type="button" class="linkbtn" id="qback" hidden>Back</button>
+        <span></span>
+        <button type="submit" class="btn" id="qnext">Next question</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="sec" id="studio">
+  <div class="wrap studio">
+    <figure><img src="img/ritual.jpg" alt="Hands holding a small glass serum bottle and dropper against soft linen" loading="lazy"><figcaption>Three drops is enough for face and neck.</figcaption></figure>
+    <div>
+      <h2>Made in small batches in North Park</h2>
+      <p class="intro">Lumen &amp; Leaf started at a kitchen table and now runs from a two-room studio off University Avenue. We blend 300 bottles at a time so nothing sits in a warehouse for months.</p>
+      <ol class="steps">
+        <li><span class="n">1</span><div><b>Blended on Mondays</b><span>Each batch is mixed, checked for colour and pH, then rested for a day.</span></div></li>
+        <li><span class="n">2</span><div><b>Filled and dated by hand</b><span>Every bottle carries its batch number and best-before month on the label.</span></div></li>
+        <li><span class="n">3</span><div><b>Shipped within two business days</b><span>Packed in paper and moulded pulp. No plastic fill, ever.</span></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="reviews" style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><h2>What people notice first</h2><p>Placeholder reviews written for this concept. A live store would pull verified reviews here.</p></div>
+    <div class="revs">
+      <figure><span class="stars" aria-label="5 out of 5">★★★★★</span><blockquote>“The vitamin C doesn't pill under my sunscreen, which is the reason I gave up on every other one.”</blockquote><figcaption><span class="ph-label">Placeholder review</span><br>Vitamin C 15 · Oakland, CA</figcaption></figure>
+      <figure><span class="stars" aria-label="5 out of 5">★★★★★</span><blockquote>“I keep the hyaluronic on my desk. It's the only thing that helps my skin feel comfortable on long flights.”</blockquote><figcaption><span class="ph-label">Placeholder review</span><br>Hyaluronic Water · Denver, CO</figcaption></figure>
+      <figure><span class="stars" aria-label="4 out of 5">★★★★☆</span><blockquote>“First retinol I've stuck with. Two nights a week for a month, like the card said, and no flaking.”</blockquote><figcaption><span class="ph-label">Placeholder review</span><br>Retinol 0.3 · Austin, TX</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="faq" style="padding-top:20px">
+  <div class="wrap faq">
+    <div><h2>Questions, answered</h2><p class="intro">Still unsure? Call the studio at <a href="tel:+16195550143">(619) 555-0143</a>, Tuesday to Saturday.</p></div>
+    <div>
+      <details open><summary>How fast does shipping take?</summary><p>Orders placed before noon Pacific ship the same day from San Diego; everything else ships within two business days. Standard US delivery takes 3 to 5 business days and is free over $60, otherwise $6. Express (1 to 2 days) is $14. We ship to all 50 states but not internationally yet.</p></details>
+      <details><summary>Can I return a serum I've opened?</summary><p>Yes. If a serum isn't right for you, send it back within 30 days of delivery, opened or not, and we refund the full price to your original payment method. We email you a prepaid label; there is no restocking fee.</p></details>
+      <details><summary>I have sensitive skin. Where should I start?</summary><p>Start with Hyaluronic Water, which is fragrance-free and has the shortest ingredient list. Patch test on your inner arm for 48 hours before using anything new on your face. Introduce one serum at a time, two weeks apart. If you have a diagnosed skin condition, ask your dermatologist first.</p></details>
+      <details><summary>Can I use vitamin C and retinol together?</summary><p>We suggest splitting them: vitamin C in the morning under sunscreen, retinol at night. Hyaluronic Water layers with both. If you're pregnant or breastfeeding, skip retinol and check with your doctor.</p></details>
+      <details><summary>How long does a bottle last?</summary><p>At three to four drops a day, a 30 ml bottle lasts about two months and a 15 ml about one. Each label shows a best-before month; vitamin C is freshest within 4 months of opening.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="visit" style="padding-top:0">
+  <div class="wrap">
+    <div class="visit">
+      <div class="info">
+        <h2>Studio pickup in North Park</h2>
+        <p style="color:var(--muted);margin:14px 0 0">Order online and choose pickup, or drop by to test textures on the back of your hand.</p>
+        <dl>
+          <dt>Address</dt><dd>3015 Upas St, Studio 4<br>San Diego, CA 92104</dd>
+          <dt>Hours</dt><dd>Thu &amp; Fri 11am – 6pm<br>Sat 10am – 4pm</dd>
+          <dt>Phone</dt><dd><a href="tel:+16195550143">(619) 555-0143</a></dd>
+          <dt>Pickup</dt><dd>Ready in 2 hours on open days</dd>
+        </dl>
+      </div>
+      <iframe title="Map of the Lumen &amp; Leaf studio in North Park, San Diego" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-117.1420%2C32.7330%2C-117.1180%2C32.7470&amp;layer=mapnik&amp;marker=32.7397%2C-117.1296"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>Start with one bottle. Keep the ones you love.</h2>
+    <p>Free US shipping over $60 and 30-day returns on opened serums, so the first bottle is a low-risk try.</p>
+    <div class="acts"><a class="btn" href="#shop">Shop serums</a><a class="btn ghost" href="#routine">Take the routine quiz</a></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="logo" href="#launch"><span>Lumen <em>&amp;</em> Leaf</span></a>
+        <p style="margin:0;max-width:22em">Small-batch serums blended in San Diego. Fragrance-free, dated by batch, shipped in paper.</p>
+      </div>
+      <div><h3>Shop</h3><ul><li><a href="#shop">Vitamin C 15</a></li><li><a href="#shop">Hyaluronic Water</a></li><li><a href="#shop">Retinol 0.3</a></li><li><a href="#routine">Routine finder</a></li></ul></div>
+      <div><h3>Help</h3><ul><li><a href="#faq">Shipping</a></li><li><a href="#faq">Returns</a></li><li><a href="#faq">Sensitive skin</a></li><li><a href="#ingredients">Ingredients</a></li></ul></div>
+      <div><h3>Studio</h3><ul><li>3015 Upas St, Studio 4<br>San Diego, CA 92104</li><li><a href="tel:+16195550143">(619) 555-0143</a></li><li>Thu–Fri 11–6 · Sat 10–4</li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Lumen &amp; Leaf (fictional brand). Cosmetic products; not intended to diagnose or treat any condition.</span><span>Concept, design and build: <a href="https://calvyrn.com">Calvyrn</a> · Photos from Unsplash</span></div>
+  </div>
+</footer>
+
+<div class="mbar"><a href="#shop">Shop serums · from $24</a><button type="button" id="openBag2">Bag (<span id="bagN2">0</span>)</button></div>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="bag" id="bag" role="dialog" aria-modal="true" aria-labelledby="bagT" hidden>
+  <header><h2 id="bagT">Your bag</h2><button class="x" id="closeBag" type="button" aria-label="Close bag">×</button></header>
+  <div class="blist" id="blist"></div>
+  <div class="bfoot" id="bfoot">
+    <div class="ship" id="ship"></div>
+    <div class="sub"><span>Subtotal</span><b id="subt">$0.00</b></div>
+    <button class="btn" type="button" id="checkout">Checkout</button>
+    <p class="demo">Demo store: no payment is taken.</p>
+  </div>
+  <div class="done" id="done" hidden></div>
+</aside>
+
+<script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script>
+// ---------- shop, bag, quiz, ingredients (no WebGL needed) ----------
+const PRODUCTS = {
+  vitc: { name: 'Vitamin C 15', tag: 'Morning brightening serum', color: '#E3A048', desc: '15% stabilised vitamin C with ferulic acid and vitamin E for a brighter, more even-looking complexion. Wear under sunscreen.', sizes: [['15 ml', 28], ['30 ml', 46]] },
+  ha:   { name: 'Hyaluronic Water', tag: 'All-day hydration serum', color: '#8FC0D6', desc: 'Five weights of hyaluronic acid and panthenol so skin feels plump and comfortable. Layers under everything, morning and night.', sizes: [['15 ml', 24], ['30 ml', 38], ['60 ml refill', 62]] },
+  ret:  { name: 'Retinol 0.3', tag: 'Night smoothing serum', color: '#7A64B0', desc: '0.3% encapsulated retinol in plant squalane for smoother-looking texture by morning. Start two nights a week.', sizes: [['15 ml', 32], ['30 ml', 54]] }
+};
+const ORDER = ['vitc', 'ha', 'ret'];
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const money = n => '$' + n.toFixed(2);
+const shots = {};
+const svgBottle = c => `<svg viewBox="0 0 100 170" aria-hidden="true"><rect x="40" y="2" width="20" height="30" rx="9" fill="#2B2A33"/><rect x="34" y="30" width="32" height="14" fill="#D8B89C"/><path d="M38 44h24v8c14 4 22 12 22 24v80c0 6-4 10-10 10H26c-6 0-10-4-10-10V76c0-12 8-20 22-24z" fill="#fff" fill-opacity=".55" stroke="#2B2A33" stroke-opacity=".25"/><path d="M20 92h60v64c0 5-3 8-8 8H28c-5 0-8-3-8-8z" fill="${c}" fill-opacity=".85"/><rect x="22" y="98" width="56" height="40" fill="#F7F2EE"/></svg>`;
+function thumb(id) { return shots[id] ? `<img src="${shots[id]}" alt="">` : svgBottle(PRODUCTS[id].color); }
+
+// product grid
+$('#prods').innerHTML = ORDER.map(id => {
+  const p = PRODUCTS[id], def = 1;
+  return `<article class="prod" data-id="${id}">
+    <div class="ph" data-ph="${id}">${svgBottle(p.color)}${id === 'ha' ? '<span class="badge">Best for sensitive skin</span>' : ''}</div>
+    <h3>${p.name}</h3><p class="tag">${p.tag}</p><p class="desc">${p.desc}</p>
+    <fieldset class="sizes"><legend>Size</legend><div class="opts">${p.sizes.map((s, i) => `<label><input type="radio" name="sz-${id}" value="${i}" ${i === def ? 'checked' : ''}><span>${s[0]} · $${s[1]}</span></label>`).join('')}</div></fieldset>
+    <button class="btn add" type="button">Add to bag · <span class="pr">$${p.sizes[def][1]}</span></button>
+  </article>`;
+}).join('');
+$('#prods').addEventListener('change', e => { const art = e.target.closest('.prod'); if (!art) return; const p = PRODUCTS[art.dataset.id]; art.querySelector('.pr').textContent = '$' + p.sizes[+e.target.value][1]; });
+$('#prods').addEventListener('click', e => { const b = e.target.closest('.add'); if (!b) return; const art = b.closest('.prod'); const s = +art.querySelector('input:checked').value; addToBag(art.dataset.id, s, 1, b); });
+$$('.quick').forEach(b => b.addEventListener('click', () => addToBag(b.dataset.id, +b.dataset.s, 1, b)));
+
+// bag
+let bag = [];
+let lastFocus = null;
+function addToBag(id, s, q = 1, from) { const it = bag.find(x => x.id === id && x.s === s); if (it) it.q += q; else bag.push({ id, s, q }); renderBag(); openBag(from); }
+function renderBag() {
+  const n = bag.reduce((a, x) => a + x.q, 0), sub = bag.reduce((a, x) => a + x.q * PRODUCTS[x.id].sizes[x.s][1], 0);
+  $('#bagN').textContent = n; $('#bagN2').textContent = n;
+  $('#blist').innerHTML = bag.length ? bag.map((x, i) => { const p = PRODUCTS[x.id], sz = p.sizes[x.s]; return `<div class="bitem"><div class="sw">${thumb(x.id)}</div><div><b>${p.name}</b><small>${sz[0]} · $${sz[1]} each</small><div class="qty" role="group" aria-label="Quantity of ${p.name} ${sz[0]}"><button type="button" data-i="${i}" data-d="-1" aria-label="One less">−</button><span>${x.q}</span><button type="button" data-i="${i}" data-d="1" aria-label="One more">+</button></div></div><div class="r">${money(x.q * sz[1])}<br><button class="rm" type="button" data-rm="${i}">Remove</button></div></div>`; }).join('') : '<p class="empty">Your bag is empty. The serums are a scroll away.</p>';
+  const left = 60 - sub;
+  $('#ship').innerHTML = (sub === 0 ? 'Free US shipping on orders over $60.' : left > 0 ? `You're ${money(left)} away from free shipping.` : 'Your order ships free.') + `<div class="bar"><i style="width:${Math.min(100, sub / 60 * 100)}%"></i></div>`;
+  $('#subt').textContent = money(sub);
+  $('#checkout').disabled = !bag.length; $('#checkout').style.opacity = bag.length ? 1 : .4;
+}
+$('#blist').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  if (b.dataset.rm) { bag.splice(+b.dataset.rm, 1); }
+  else { const it = bag[+b.dataset.i]; it.q += +b.dataset.d; if (it.q < 1) bag.splice(+b.dataset.i, 1); }
+  renderBag(); const f = $('#blist button'); (f || $('#closeBag')).focus();
+});
+function openBag(from) {
+  lastFocus = from || document.activeElement;
+  $('#done').hidden = true; $('#bfoot').hidden = false; $('#blist').hidden = false;
+  $('#scrim').hidden = false; $('#bag').hidden = false;
+  requestAnimationFrame(() => { $('#scrim').classList.add('show'); $('#bag').classList.add('show'); });
+  setTimeout(() => $('#closeBag').focus(), 60);
+}
+function closeBag() {
+  $('#scrim').classList.remove('show'); $('#bag').classList.remove('show');
+  setTimeout(() => { $('#scrim').hidden = true; $('#bag').hidden = true; }, 380);
+  if (lastFocus && lastFocus.focus) lastFocus.focus();
+}
+$('#openBag').onclick = e => openBag(e.currentTarget); $('#openBag2').onclick = e => openBag(e.currentTarget);
+$('#closeBag').onclick = closeBag; $('#scrim').onclick = closeBag;
+document.addEventListener('keydown', e => {
+  if ($('#bag').hidden) return;
+  if (e.key === 'Escape') closeBag();
+  if (e.key === 'Tab') { const f = $$('#bag button:not([disabled]):not([hidden]), #bag a').filter(x => x.offsetParent); if (!f.length) return; const a = f[0], z = f[f.length - 1]; if (e.shiftKey && document.activeElement === a) { e.preventDefault(); z.focus(); } else if (!e.shiftKey && document.activeElement === z) { e.preventDefault(); a.focus(); } }
+});
+$('#checkout').onclick = () => {
+  if (!bag.length) return;
+  const sub = bag.reduce((a, x) => a + x.q * PRODUCTS[x.id].sizes[x.s][1], 0), ship = sub >= 60 ? 0 : 6, no = 'LL-' + (10400 + Math.floor(Math.random() * 500));
+  $('#done').innerHTML = `<span class="tagd">Demo: no payment taken</span><h3>Thank you. Order ${no} is confirmed.</h3><p>In the live store, you would now see a secure payment step. Nothing was charged and nothing will ship.</p>
+    <div class="sub" style="border-top:1px solid var(--line);padding-top:14px"><span>Items</span><b>${money(sub)}</b></div><div class="sub" style="margin-top:0"><span>Shipping</span><b>${ship ? money(ship) : 'Free'}</b></div><div class="sub" style="margin-top:0;font-size:20px"><span>Total</span><b>${money(sub + ship)}</b></div>
+    <p style="font-size:14px">A real order would ship from San Diego within two business days.</p><button class="btn" type="button" id="doneBtn" style="width:100%">Keep browsing</button>`;
+  $('#blist').hidden = true; $('#bfoot').hidden = true; $('#done').hidden = false;
+  bag = []; renderBag();
+  $('#doneBtn').onclick = closeBag; $('#doneBtn').focus();
+};
+renderBag();
+
+// ingredients
+$('#ilist').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  $$('#ilist button').forEach(x => x.setAttribute('aria-expanded', x === b));
+  $$('#ifig img').forEach((im, i) => im.classList.toggle('on', i === +b.dataset.img));
+});
+
+// routine quiz
+let qStep = 0; const answers = [];
+const quiz = $('#quiz');
+function showStep() {
+  $$('#quiz .step').forEach((s, i) => s.hidden = i !== qStep);
+  $$('.qprog i').forEach((s, i) => s.classList.toggle('on', i <= qStep));
+  $('#qback').hidden = qStep === 0 || qStep > 2;
+  $('#qnext').textContent = qStep === 2 ? 'See my routine' : 'Next question';
+  $('#qerr').textContent = '';
+}
+quiz.addEventListener('submit', e => {
+  e.preventDefault();
+  if (qStep > 2) return;
+  const c = quiz.querySelector(`input[name="q${qStep}"]:checked`);
+  if (!c) { $('#qerr').textContent = 'Choose one answer to continue.'; return; }
+  answers[qStep] = c.value;
+  if (qStep < 2) { qStep++; showStep(); quiz.querySelector(`.step[data-q="${qStep}"] input`).focus(); return; }
+  qStep = 3; result();
+});
+$('#qback').onclick = () => { qStep = Math.max(0, qStep - 1); showStep(); };
+function result() {
+  const [feel, goal, ret] = answers;
+  const am = ['Gentle cleanser'], pm = ['Gentle cleanser'], picks = [];
+  const useC = goal === 'bright' || (goal === 'smooth' && feel !== 'dry');
+  const useHA = feel === 'dry' || goal === 'hydrate' || !useC;
+  const useR = goal === 'smooth' || ret !== 'new';
+  if (useC) { am.push({ id: 'vitc', note: '3 to 4 drops on dry skin' }); picks.push(['vitc', 1]); }
+  if (useHA) { am.push({ id: 'ha', note: 'Press into damp skin' }); picks.push(['ha', 1]); }
+  am.push('Moisturiser'); am.push('Sunscreen, SPF 30 or higher');
+  if (useR) { const f = { new: 'Two nights a week for the first month', some: 'Every other night', regular: 'Nightly if your skin stays comfortable' }[ret]; pm.push({ id: 'ret', note: f }); picks.push(['ret', ret === 'new' ? 0 : 1]); }
+  if (useHA) pm.push({ id: 'ha', note: useR ? 'On retinol-off nights, or 20 minutes after' : '3 to 4 drops, morning and night' });
+  pm.push('Moisturiser');
+  const title = { bright: 'Your brightening routine', hydrate: 'Your comfort routine', smooth: 'Your smoothing routine' }[goal];
+  const why = [feel === 'dry' ? 'Your skin runs dry, so Hyaluronic Water anchors both ends of the day.' : feel === 'oily' ? 'Your skin makes its own oil, so we kept textures light and skipped anything heavy.' : 'Your skin is balanced, so we kept it to the essentials.',
+    useR ? (ret === 'new' ? 'Retinol starts slowly in a 15 ml size, so you can see how your skin likes it.' : 'You know retinol already, so the 30 ml bottle lasts longer.') : 'No retinol for now; add it later once the basics feel easy.'].join(' ');
+  const li = x => typeof x === 'string' ? `<li>${x}</li>` : `<li class="ours">${PRODUCTS[x.id].name}<span>${x.note}</span></li>`;
+  const total = picks.reduce((a, [id, s]) => a + PRODUCTS[id].sizes[s][1], 0);
+  $$('#quiz .step').forEach(s => s.hidden = true); $('#qnav').hidden = true; $('#qerr').textContent = '';
+  const r = $('#qres'); r.hidden = false;
+  r.innerHTML = `<h3 tabindex="-1">${title}</h3><p class="why">${why}</p>
+    <div class="rcols"><div><h4>Morning</h4><ol>${am.map(li).join('')}</ol></div><div><h4>Evening</h4><ol>${pm.map(li).join('')}</ol></div></div>
+    <div class="rtotal"><span>${picks.map(([id, s]) => `${PRODUCTS[id].name} ${PRODUCTS[id].sizes[s][0]}`).join(' + ')} · <b style="font-weight:500">$${total}</b></span>
+    <span style="display:flex;gap:14px;align-items:center"><button type="button" class="linkbtn" id="qagain">Start over</button><button type="button" class="btn" id="qadd">Add routine to bag</button></span></div>`;
+  r.querySelector('h3').focus();
+  $('#qadd').onclick = e => { picks.forEach(([id, s]) => { const it = bag.find(x => x.id === id && x.s === s); if (it) it.q++; else bag.push({ id, s, q: 1 }); }); renderBag(); openBag(e.currentTarget); };
+  $('#qagain').onclick = () => { qStep = 0; answers.length = 0; quiz.reset(); r.hidden = true; $('#qnav').hidden = false; showStep(); quiz.querySelector('input').focus(); };
+}
+showStep();
+new IntersectionObserver(([e]) => document.body.classList.toggle('inlaunch', e.isIntersecting), { rootMargin: '0px 0px -40% 0px' }).observe(document.getElementById('launch'));
+window.__ll = { PRODUCTS, shots, thumb, renderBag };
+</script>
+
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.164.1/build/three.module.js","three/addons/":"https://unpkg.com/three@0.164.1/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const stage = document.getElementById('stage'), host = document.getElementById('gl'), launch = document.getElementById('launch');
+const { PRODUCTS, shots, thumb, renderBag } = window.__ll;
+const KEYS = ['vitc', 'ha', 'ret'];
+const LIQ = [new THREE.Color('#D27A1E'), new THREE.Color('#6FB0D4'), new THREE.Color('#5A3C9E')];
+const ARCH = [new THREE.Color('#EED3BF'), new THREE.Color('#D6E3E7'), new THREE.Color('#DDD3E8')];
+const ARCH0 = new THREE.Color('#EADFD7');
+const LABEL = [['Vitamin C 15', 'brightening serum'], ['Hyaluronic Water', 'hydration serum'], ['Retinol 0.3', 'night serum']];
+
+let renderer;
+try {
+  renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
+  if (!renderer.getContext()) throw new Error('no gl');
+} catch (e) { document.documentElement.classList.add('no-gl'); renderer = null; }
+
+if (renderer) {
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  host.appendChild(renderer.domElement);
+
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color('#F4EEEA');
+  const pmrem = new THREE.PMREMGenerator(renderer);
+  scene.environment = pmrem.fromScene(new RoomEnvironment(renderer), 0.04).texture;
+
+  const cam = new THREE.PerspectiveCamera(30, 1, .1, 100);
+  const key = new THREE.DirectionalLight(0xfff3e8, 1.4); key.position.set(-5, 7, 6); scene.add(key);
+  const rim = new THREE.DirectionalLight(0xffe9dc, 2.4); rim.position.set(4, 5, -6); scene.add(rim);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0xd9c6ba, .35));
+
+  // --- backdrop: arch + sun disc + pedestal
+  const archMat = new THREE.MeshStandardMaterial({ color: ARCH0.clone(), roughness: 1 });
+  const aw = 2.45, ah = 1.0, ab = -3.3;
+  const arch = new THREE.Shape(); arch.moveTo(-aw, ab); arch.lineTo(-aw, ah); arch.absarc(0, ah, aw, Math.PI, 0, true); arch.lineTo(aw, ab); arch.lineTo(-aw, ab);
+  const archMesh = new THREE.Mesh(new THREE.ShapeGeometry(arch, 48), archMat); archMesh.position.z = -2.8; scene.add(archMesh);
+  const sun = new THREE.Mesh(new THREE.CircleGeometry(.75, 64), new THREE.MeshBasicMaterial({ color: '#D9A38F', toneMapped: false }));
+  sun.position.set(1.05, 1.95, -2.7); scene.add(sun);
+  const pedMat = new THREE.MeshStandardMaterial({ color: '#EFE7E1', roughness: .8 });
+  const ped = new THREE.Mesh(new THREE.CylinderGeometry(2.3, 2.3, .7, 96), pedMat); ped.position.y = -2.95; scene.add(ped);
+  const ped2 = new THREE.Mesh(new THREE.CylinderGeometry(3.1, 3.1, .5, 96), new THREE.MeshStandardMaterial({ color: '#E6DAD1', roughness: .9 })); ped2.position.y = -3.55; scene.add(ped2);
+  const topY = -2.6;
+
+  // contact shadow
+  const sc = document.createElement('canvas'); sc.width = sc.height = 128; { const g = sc.getContext('2d'), gr = g.createRadialGradient(64, 64, 0, 64, 64, 64); gr.addColorStop(0, 'rgba(60,40,40,.55)'); gr.addColorStop(.45, 'rgba(60,40,40,.18)'); gr.addColorStop(1, 'rgba(60,40,40,0)'); g.fillStyle = gr; g.fillRect(0, 0, 128, 128); }
+  const shadowMat = new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(sc), transparent: true, depthWrite: false, toneMapped: false });
+  const shadow = new THREE.Mesh(new THREE.PlaneGeometry(2.8, 2.8), shadowMat); shadow.rotation.x = -Math.PI / 2; shadow.position.y = topY + .004; scene.add(shadow);
+
+  // caustic light pool
+  const causticMat = new THREE.ShaderMaterial({
+    transparent: true, depthWrite: false, toneMapped: false,
+    uniforms: { uTime: { value: 0 }, uColor: { value: LIQ[0].clone() }, uAmt: { value: 1 } },
+    vertexShader: 'varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }',
+    fragmentShader: `varying vec2 vUv; uniform float uTime; uniform vec3 uColor; uniform float uAmt;
+      void main(){ vec2 uv=vUv; vec2 p=mod(uv*6.2831*1.2,6.2831)-250.; vec2 i=p; float c=1.; float inten=.006;
+        for(int n=0;n<4;n++){ float t=uTime*(1.-(3.5/float(n+1))); i=p+vec2(cos(t-i.x)+sin(t+i.y),sin(t-i.y)+cos(t+i.x)); c+=1./length(vec2(p.x/(sin(i.x+t)/inten),p.y/(cos(i.y+t)/inten))); }
+        c/=4.; c=1.17-pow(c,1.4); float v=pow(abs(c),7.);
+        float d=length((uv-.5)*vec2(1.,1.7)); float fall=smoothstep(.5,.05,d);
+        vec3 col=mix(uColor,vec3(1.),.35);
+        gl_FragColor=vec4(col*(1.1+v*.8), clamp((v*.55+.22)*fall*uAmt,0.,1.)); }`
+  });
+  const caustic = new THREE.Mesh(new THREE.PlaneGeometry(3.4, 2.4), causticMat); caustic.rotation.x = -Math.PI / 2; caustic.position.set(.75, topY + .006, .9); caustic.rotation.z = -.5; scene.add(caustic);
+
+  // --- bottle
+  const pivot = new THREE.Group(); scene.add(pivot);
+  const bottle = new THREE.Group(); bottle.position.y = -2.05; pivot.add(bottle);
+  const V = a => a.map(([x, y]) => new THREE.Vector2(x, y));
+  const glassMat = new THREE.MeshPhysicalMaterial({ color: 0xffffff, roughness: .03, metalness: 0, transmission: 1, thickness: .8, ior: 1.47, clearcoat: 1, clearcoatRoughness: .04, specularIntensity: 1, envMapIntensity: 1.4, attenuationColor: new THREE.Color('#f4ede6'), attenuationDistance: 4 });
+  const glass = new THREE.Mesh(new THREE.LatheGeometry(V([[0, 0], [.86, 0], [.965, .035], [1, .15], [1, 1.92], [.985, 2.08], [.92, 2.24], [.76, 2.37], [.54, 2.46], [.42, 2.5], [.39, 2.56], [.39, 2.86], [.3, 2.88]]), 96), glassMat);
+  bottle.add(glass);
+  const liqMat = new THREE.MeshPhysicalMaterial({ color: LIQ[0].clone(), roughness: .18, clearcoat: .7, emissive: LIQ[0].clone(), emissiveIntensity: .22 });
+  const liquid = new THREE.Mesh(new THREE.LatheGeometry(V([[0, .09], [.84, .09], [.92, .16], [.935, .3], [.935, 1.74], [.6, 1.745], [0, 1.745]]), 72), liqMat);
+  bottle.add(liquid);
+  const tubeMat = new THREE.MeshStandardMaterial({ color: '#F2EEEA', roughness: .12 });
+  const tube = new THREE.Mesh(new THREE.CylinderGeometry(.075, .07, 2.3, 24), tubeMat); tube.position.y = 1.75; bottle.add(tube);
+  const tubeLiq = new THREE.Mesh(new THREE.CylinderGeometry(.08, .075, .9, 24), liqMat); tubeLiq.position.y = 1.05; bottle.add(tubeLiq);
+  const metal = new THREE.MeshPhysicalMaterial({ color: '#D9BC9F', metalness: 1, roughness: .26, clearcoat: .4 });
+  const collar = new THREE.Mesh(new THREE.CylinderGeometry(.47, .47, .52, 64), metal); collar.position.y = 2.79; bottle.add(collar);
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(.47, .022, 12, 64), metal); ring.rotation.x = Math.PI / 2; ring.position.y = 2.53; bottle.add(ring);
+  const bulbMat = new THREE.MeshPhysicalMaterial({ color: '#2B2A33', roughness: .48, clearcoat: .35, clearcoatRoughness: .4 });
+  const bulb = new THREE.Mesh(new THREE.LatheGeometry(V([[0, 0], [.36, 0], [.38, .06], [.355, .22], [.31, .5], [.315, .78], [.285, .98], [.19, 1.1], [0, 1.14]]), 64), bulbMat); bulb.position.y = 3.05; bottle.add(bulb);
+
+  // label (canvas texture on a curved strip)
+  const lc = document.createElement('canvas'); lc.width = 1024; lc.height = 600;
+  const ltex = new THREE.CanvasTexture(lc); ltex.colorSpace = THREE.SRGBColorSpace; ltex.anisotropy = renderer.capabilities.getMaxAnisotropy();
+  const label = new THREE.Mesh(new THREE.CylinderGeometry(1.012, 1.012, 1.08, 72, 1, true, -1.0, 2.0), new THREE.MeshStandardMaterial({ map: ltex, roughness: .75 }));
+  label.position.y = .98; bottle.add(label);
+  let labelIdx = -1;
+  function drawLabel(i) {
+    if (i === labelIdx) return; labelIdx = i;
+    const g = lc.getContext('2d'), W = lc.width, H = lc.height;
+    g.fillStyle = '#F3ECE6'; g.fillRect(0, 0, W, H);
+    g.strokeStyle = 'rgba(43,42,51,.5)'; g.lineWidth = 2; g.strokeRect(46, 40, W - 92, H - 80);
+    g.fillStyle = '#2B2A33'; g.textAlign = 'center';
+    try { g.letterSpacing = '10px'; } catch (e) {}
+    g.font = '400 34px Jost, sans-serif'; g.fillText('LUMEN & LEAF', W / 2 + 5, 120);
+    try { g.letterSpacing = '0px'; } catch (e) {}
+    g.font = 'italic 500 118px "Cormorant Garamond", Georgia, serif'; g.fillText(LABEL[i][0], W / 2, 268, W - 140);
+    g.font = '400 38px Jost, sans-serif'; g.fillText(LABEL[i][1], W / 2, 330);
+    g.fillStyle = '#' + LIQ[i].getHexString(); g.beginPath(); g.arc(W / 2, 384, 9, 0, Math.PI * 2); g.fill();
+    g.fillStyle = '#4A4651'; g.font = '400 28px Jost, sans-serif'; g.fillText('30 ml · 1 fl oz', W / 2, 452); g.fillText('Batch 0417 · Blended in San Diego', W / 2, 492);
+    ltex.needsUpdate = true;
+  }
+
+  // --- ingredient particles (instanced pearls)
+  const small = innerWidth < 700;
+  const N = small ? 46 : 80;
+  const pMat = new THREE.MeshPhysicalMaterial({ color: '#F2C48C', roughness: .12, clearcoat: 1, emissive: '#000', sheen: .4 });
+  const parts = new THREE.InstancedMesh(new THREE.SphereGeometry(1, 16, 12), pMat, N);
+  const P = [];
+  for (let i = 0; i < N; i++) {
+    const ga = i * 2.39996, rr = 1.05 + Math.sqrt((i + .5) / N) * 1.05;
+    P.push({ r: 1.55 + Math.random() * 1.5, a: Math.random() * 6.283, sp: (.12 + Math.random() * .22) * (Math.random() < .5 ? 1 : -1), y: -1.6 + Math.random() * 3.8, tilt: (Math.random() - .5) * .7, s: .022 + Math.random() * .042, bob: Math.random() * 6.28,
+      tx: Math.cos(ga) * rr, tz: Math.sin(ga) * rr });
+  }
+  scene.add(parts);
+  const dummy = new THREE.Object3D();
+
+  // --- sizing
+  let W = 1, H = 1, baseDist = 12, mobile = false;
+  function size() {
+    const r = stage.getBoundingClientRect(); W = Math.max(1, r.width); H = Math.max(1, r.height);
+    renderer.setSize(W, H, false); cam.aspect = W / H;
+    mobile = W < 900;
+    const t = Math.tan(THREE.MathUtils.degToRad(cam.fov / 2));
+    baseDist = Math.max(14.2, 7.4 / (2 * t * cam.aspect));
+    if (mobile) baseDist = Math.max(baseDist, 11.2 / (2 * t)); // keep the bottle inside the gap between texts
+    cam.updateProjectionMatrix();
+  }
+  new ResizeObserver(size).observe(stage); size();
+
+  // --- scroll progress (GSAP ScrollTrigger drives it; manual fallback)
+  let target = 0, prog = 0;
+  const manual = () => { const r = launch.getBoundingClientRect(); return Math.min(1, Math.max(0, -r.top / Math.max(1, r.height - innerHeight))); };
+  if (!reduce && window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.create({ trigger: launch, start: 'top top', end: 'bottom bottom', scrub: true, onUpdate: s => { target = s.progress; } });
+  } else if (!reduce) addEventListener('scroll', () => { target = manual(); }, { passive: true });
+  document.querySelectorAll('.rail button').forEach(b => b.addEventListener('click', () => {
+    const top = launch.getBoundingClientRect().top + scrollY, len = launch.offsetHeight - innerHeight;
+    scrollTo({ top: top + len * +b.dataset.go, behavior: 'smooth' });
+  }));
+
+  const chaps = [...document.querySelectorAll('.chap')], rails = [...document.querySelectorAll('.rail button')];
+  const ss = (a, b, x) => { const t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
+  const winOp = (x, a, b, f = .035) => Math.min(ss(a - f, a + f * .2, x), 1 - ss(b - f * .2, b + f, x));
+  let mx = 0, my = 0, pmx = 0, pmy = 0;
+  addEventListener('pointermove', e => { mx = e.clientX / innerWidth - .5; my = e.clientY / innerHeight - .5; }, { passive: true });
+
+  let visible = true;
+  new IntersectionObserver(([e]) => { visible = e.isIntersecting; }, { rootMargin: '100px' }).observe(stage);
+  const clock = new THREE.Clock();
+  const tmpC = new THREE.Color(), tmpA = new THREE.Color();
+
+  function colourAt(p) {
+    // liquid colour shifts during the two mid-spins
+    const k1 = ss(.385, .445, p), k2 = ss(.635, .695, p);
+    tmpC.copy(LIQ[0]).lerp(LIQ[1], k1).lerp(LIQ[2], k2);
+    const k0 = ss(.12, .2, p), kOut = ss(.88, .95, p);
+    tmpA.copy(ARCH0).lerp(ARCH[0], k0).lerp(ARCH[1], k1).lerp(ARCH[2], k2).lerp(ARCH0, kOut * .6);
+  }
+
+  function frame(t, p) {
+    // label swaps while it faces away (mid-spin)
+    drawLabel(p < .415 ? 0 : p < .665 ? 1 : 2);
+    colourAt(p);
+    liqMat.color.copy(tmpC); liqMat.emissive.copy(tmpC);
+    causticMat.uniforms.uColor.value.copy(tmpC);
+    archMat.color.copy(tmpA);
+    const pc = tmpC.clone().lerp(new THREE.Color('#ffffff'), .35); pMat.color.copy(pc);
+
+    // bottle motion
+    const intro = ss(0, .17, p);
+    const spin = (ss(.37, .46, p) + ss(.62, .71, p)) * Math.PI * 2;
+    const outro = ss(.88, 1, p);
+    const float = reduce ? 0 : Math.sin(t * .9) * .09;
+    pivot.position.y = float + .05 - outro * .15;
+    pivot.rotation.y = -2.5 * (1 - intro) + spin - .32 + outro * .5 + (reduce ? 0 : Math.sin(t * .35) * .06) + pmx * .35;
+    pivot.rotation.z = (1 - intro) * .18 + (reduce ? 0 : Math.sin(t * .5) * .025);
+    pivot.rotation.x = pmy * .08;
+    // shadow + caustic respond to the float height
+    const lift = pivot.position.y + .2;
+    shadow.scale.setScalar(1 + lift * .35); shadowMat.opacity = .75 - lift * .5;
+    causticMat.uniforms.uTime.value = reduce ? 3 : t * .55;
+    causticMat.uniforms.uAmt.value = .65 + intro * .35;
+
+    // camera: dolly in through the chapters, pull back for the outro
+    const chapterIn = ss(.12, .24, p) * (1 - outro);
+    const d = baseDist * (1.04 - chapterIn * .1 + outro * .05);
+    const orbit = (ss(.19, .38, p) - ss(.445, .635, p) * 2 + ss(.695, .87, p)) * .12;
+    cam.position.set(Math.sin(orbit) * d, .55 + chapterIn * .1 + (mobile ? .35 : 0), Math.cos(orbit) * d);
+    cam.lookAt(0, mobile ? -.05 : -.2, 0);
+
+    // particles orbit, then settle onto the pedestal
+    const settle = ss(.86, .98, p), appear = ss(.05, .2, p);
+    for (let i = 0; i < N; i++) {
+      const q = P[i], a = q.a + t * q.sp * (1 - settle * .9) + p * 4 * Math.sign(q.sp);
+      const r = q.r * (1.25 - appear * .25);
+      let x = Math.cos(a) * r, z = Math.sin(a) * r, y = q.y + Math.sin(a) * q.tilt * r * .5 + Math.sin(t * .8 + q.bob) * .06;
+      const tx = q.tx, tz = q.tz, ty = topY + q.s;
+      x += (tx - x) * settle; y += (ty - y) * settle; z += (tz - z) * settle;
+      dummy.position.set(x, y, z); dummy.scale.setScalar(q.s * (.2 + appear * .8)); dummy.updateMatrix(); parts.setMatrixAt(i, dummy.matrix);
+    }
+    parts.instanceMatrix.needsUpdate = true;
+
+    // overlay chapters
+    chaps.forEach(c => {
+      const o = c.classList.contains('intro') && p < .02 ? 1 : winOp(p, +c.dataset.a, +c.dataset.b);
+      c.style.opacity = o; c.style.transform = `translateY(${(1 - o) * 14}px)`; c.classList.toggle('on', o > .5);
+      c.setAttribute('aria-hidden', o < .5);
+    });
+    const seg = [[.17, .41], [.41, .665], [.665, .9]];
+    rails.forEach((b, i) => { const f = ss(seg[i][0], seg[i][1], p); b.style.setProperty('--f', (f * 100).toFixed(1) + '%'); b.classList.toggle('on', p >= seg[i][0] && p < seg[i][1]); });
+  }
+
+  // product photos rendered from the same scene
+  function snapshots() {
+    const pr = renderer.getPixelRatio(), w = 640, h = 800;
+    const sc2 = new THREE.PerspectiveCamera(30, w / h, .1, 100); sc2.position.set(0, .35, 12.6); sc2.lookAt(0, -.7, 0);
+    renderer.setPixelRatio(1); renderer.setSize(w, h, false);
+    parts.visible = false;
+    for (let i = 0; i < 3; i++) {
+      labelIdx = -1; drawLabel(i);
+      liqMat.color.copy(LIQ[i]); liqMat.emissive.copy(LIQ[i]); causticMat.uniforms.uColor.value.copy(LIQ[i]); causticMat.uniforms.uTime.value = 2 + i; causticMat.uniforms.uAmt.value = 1;
+      archMat.color.copy(ARCH[i]); pivot.position.y = .05; pivot.rotation.set(0, -.38, 0); shadow.scale.setScalar(1.08); shadowMat.opacity = .66;
+      renderer.render(scene, sc2);
+      shots[KEYS[i]] = renderer.domElement.toDataURL('image/jpeg', .86);
+    }
+    parts.visible = true; labelIdx = -1;
+    renderer.setPixelRatio(pr); size();
+    KEYS.forEach(k => { const ph = document.querySelector(`[data-ph="${k}"]`); if (!ph) return; const badge = ph.querySelector('.badge'); ph.innerHTML = `<img src="${shots[k]}" alt="${PRODUCTS[k].name} serum in a glass dropper bottle">`; if (badge) ph.appendChild(badge); });
+    renderBag();
+  }
+
+  const start = () => {
+    try { snapshots(); } catch (e) { console.warn(e); }
+    if (reduce) { frame(0, 0); renderer.render(scene, cam); new ResizeObserver(() => { frame(0, 0); renderer.render(scene, cam); }).observe(stage); return; }
+    renderer.setAnimationLoop(() => {
+      if (!visible || document.hidden) return;
+      const dt = Math.min(.1, clock.getDelta()), t = clock.elapsedTime;
+      prog += (target - prog) * (1 - Math.exp(-dt * 7)); pmx += (mx - pmx) * .05; pmy += (my - pmy) * .05;
+      frame(t, prog);
+      renderer.render(scene, cam);
+    });
+  };
+  const fontsReady = document.fonts ? Promise.race([Promise.all([document.fonts.load('italic 500 104px "Cormorant Garamond"'), document.fonts.load('300 30px Jost')]), new Promise(r => setTimeout(r, 2500))]) : Promise.resolve();
+  fontsReady.then(start, start);
+}
+
+// gentle section reveals
+if (!reduce && window.gsap && window.ScrollTrigger) {
+  gsap.registerPlugin(ScrollTrigger);
+  document.querySelectorAll('.sec .head, .prod, .ingr > *, .rt > *, .studio > *, .revs figure, .faq > *, .visit, .band h2').forEach(el => {
+    gsap.from(el, { y: 36, opacity: 0, duration: 1.1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
+  });
+}
+</script>
+</body>
+</html>

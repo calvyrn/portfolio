@@ -106,5 +106,23 @@
   "Compare-carriers promise, a tidy coverage list and a 3-step quote request with validation.",
   "",
   ""
+ ],
+ [
+  "travel-agency-3d",
+  "Travel agency with a 3D flight globe",
+  "High-end 3D",
+  "Travel",
+  "A 3D globe flies from Denver to five destinations as you scroll, with sample itineraries and a working trip planner.",
+  "",
+  ""
+ ],
+ [
+  "boutique-hotel",
+  "Boutique hotel with direct booking",
+  "Medium",
+  "Hospitality",
+  "A 22-room Savannah hotel with direct booking: dates, guests, room rates, a live total and a late-checkout perk.",
+  "",
+  ""
  ]
 ]

@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pine &amp; Ledger CPAs | Tax Prep &amp; Bookkeeping in Raleigh, NC</title>
+<meta name="description" content="Raleigh CPA firm for small businesses and families: tax preparation, monthly bookkeeping, payroll and advisory. Upload documents, message your CPA and e-sign in one secure client portal.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--pine:#0F3D3E;--pine-2:#0A2C2D;--paper:#F4F6F5;--gold:#E3B23C;--ink:#1C2321;--sage:#9DB4AB;--rule:#D3DDD9;--muted:#55625E;--white:#FFFFFF;
+--display:"Libre Caslon Text",Georgia,serif;--body:"IBM Plex Sans",system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16.5px/1.6 var(--body);font-variant-numeric:tabular-nums}
+img{max-width:100%;display:block}a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.num{font-variant-numeric:tabular-nums lining-nums}
+.concept{background:var(--ink);color:#C9D4D0;font-size:13px;text-align:center;padding:7px 16px}.concept a{color:var(--gold)}
+/* header */
+header.top{position:sticky;top:0;z-index:40;background:#F4F6F5f2;backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--pine)}
+.brand svg{width:36px;height:36px;flex:none}
+.brand b{font:700 21px/1 var(--display);letter-spacing:-.01em;display:block}
+.brand small{display:block;font:500 11.5px/1.3 var(--body);color:var(--muted);letter-spacing:.04em;margin-top:3px}
+nav.main{display:flex;gap:28px;font-size:15px;font-weight:500}
+nav.main a{text-decoration:none;padding:6px 0;border-bottom:1px solid transparent}nav.main a:hover{border-color:var(--pine)}
+.hdr{display:flex;align-items:center;gap:18px}
+.tel{font-weight:600;text-decoration:none;font-size:15px;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 15px/1 var(--body);padding:14px 20px;border-radius:4px;text-decoration:none;border:1px solid transparent;cursor:pointer;white-space:nowrap}
+.btn.p{background:var(--pine);color:#fff}.btn.p:hover{background:var(--pine-2)}
+.btn.g{background:var(--gold);color:var(--ink)}.btn.g:hover{background:#d6a32c}
+.btn.o{border-color:var(--pine);color:var(--pine);background:transparent}.btn.o:hover{background:#0F3D3E0d}
+.btn.ol{border-color:#ffffff66;color:#fff;background:transparent}
+.login-link{font-size:15px;font-weight:500;display:inline-flex;align-items:center;gap:6px;text-decoration:none}
+.login-link svg{width:14px;height:14px}
+@media(max-width:1080px){nav.main{display:none}}
+@media(max-width:640px){.tel,.login-link{display:none}.brand small{display:none}.brand b{font-size:18px;white-space:nowrap}header.top .wrap{height:64px}.hdr .btn{padding:11px 14px;font-size:14px}}
+/* hero */
+.hero{border-bottom:1px solid var(--rule)}
+.hero .wrap{display:grid;grid-template-columns:repeat(12,1fr);gap:0 28px;padding-top:72px;padding-bottom:0}
+.hero .copy{grid-column:1/7;padding-bottom:64px}
+.hero .loc{font-size:14px;color:var(--muted);display:flex;gap:14px;align-items:center;margin:0 0 26px}
+.hero .loc i{display:inline-block;width:34px;height:1px;background:var(--pine)}
+.hero h1{font:400 clamp(40px,4.9vw,66px)/1.06 var(--display);letter-spacing:-.022em;margin:0 0 24px;color:var(--pine)}
+.hero h1 em{font-style:italic}
+.hero .lede{font-size:19px;max-width:31em;margin:0 0 32px;color:#33403C}
+.acts{display:flex;gap:12px;flex-wrap:wrap}
+.figs{display:grid;grid-template-columns:repeat(3,1fr);margin-top:52px;border-top:1px solid var(--ink)}
+.figs div{padding:16px 18px 0 0}.figs div+div{padding-left:18px;border-left:1px solid var(--rule)}
+.figs b{display:block;font:400 30px/1.1 var(--display);color:var(--pine)}
+.figs span{font-size:14px;color:var(--muted)}
+.hero .vis{grid-column:7/13;position:relative;min-height:560px}
+.hero .vis img{position:absolute;inset:0 0 0 0;width:100%;height:100%;object-fit:cover}
+.ledger-card{position:absolute;left:-44px;bottom:48px;width:340px;background:#fff;border:1px solid var(--rule);box-shadow:0 24px 48px -24px #0a2c2d66;font-size:14px}
+.ledger-card header{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--rule);font-weight:600}
+.ledger-card header span{font-weight:400;color:var(--muted);font-size:13px}
+.ledger-card table{width:100%;border-collapse:collapse}
+.ledger-card td{padding:9px 16px;border-bottom:1px solid #EEF2F0}
+.ledger-card td:last-child{text-align:right;font-weight:600}
+.ledger-card tr:last-child td{border-bottom:0}
+.pill{display:inline-block;font-size:12px;font-weight:600;padding:3px 8px;border-radius:3px}
+.pill.ok{background:#E2EEE9;color:var(--pine)}.pill.wait{background:#FBF1D8;color:#7A5A0B}
+@media(max-width:960px){.hero .wrap{grid-template-columns:1fr;padding-top:44px}.hero .copy,.hero .vis{grid-column:1}.hero .vis{min-height:380px;margin:0 -28px}.ledger-card{left:20px;bottom:20px;width:300px}.hero .copy{padding-bottom:40px}}
+@media(max-width:480px){.figs b{font-size:21px;white-space:nowrap}.figs span{font-size:12.5px;display:block;line-height:1.35}.figs div{padding-right:10px}.figs div+div{padding-left:12px}.ledger-card{width:auto;right:20px}}
+/* generic band */
+section.band{padding:104px 0;border-bottom:1px solid var(--rule)}
+.head{display:grid;grid-template-columns:repeat(12,1fr);gap:28px;margin-bottom:48px;align-items:end}
+.head h2{grid-column:1/7;font:400 clamp(32px,3.6vw,48px)/1.1 var(--display);letter-spacing:-.018em;margin:0;color:var(--pine)}
+.head p{grid-column:8/13;margin:0;color:var(--muted);font-size:17px}
+@media(max-width:900px){.head{grid-template-columns:1fr;gap:14px}.head h2,.head p{grid-column:1}section.band{padding:72px 0}}
+/* services */
+.svc{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);border-left:1px solid var(--rule)}
+.svc article{border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--paper);display:flex;flex-direction:column}
+.svc img{aspect-ratio:4/3;object-fit:cover;width:100%;filter:saturate(.82)}
+.svc .in{padding:22px 22px 26px;display:flex;flex-direction:column;flex:1}
+.svc .ix{font-size:13px;color:var(--muted);margin-bottom:10px}
+.svc h3{font:400 25px/1.15 var(--display);margin:0 0 10px;color:var(--pine)}
+.svc p{margin:0 0 16px;font-size:15.5px;color:#3C4945}
+.svc ul{list-style:none;margin:auto 0 0;padding:0;font-size:14.5px}
+.svc li{padding:7px 0;border-top:1px dashed var(--rule);display:flex;justify-content:space-between;gap:10px}
+.svc li span{color:var(--muted)}
+@media(max-width:1000px){.svc{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.svc{grid-template-columns:1fr}}
+/* portal */
+.portal{background:var(--pine);color:#DCE7E3;padding:104px 0;position:relative;overflow:hidden;overflow:clip}
+.portal::before{content:"";position:absolute;inset:0;background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:56px 56px;pointer-events:none}
+.portal .wrap{position:relative}
+.portal .intro{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.portal h2{font:400 clamp(34px,3.9vw,52px)/1.08 var(--display);letter-spacing:-.018em;color:#fff;margin:0 0 18px}
+.portal .lede{font-size:18px;margin:0 0 26px;max-width:32em}
+.checks{list-style:none;padding:0;margin:0 0 30px;display:grid;gap:0;border-top:1px solid #ffffff26}
+.checks li{display:grid;grid-template-columns:28px 1fr;padding:12px 0;border-bottom:1px solid #ffffff26}
+.checks li::before{content:"";width:12px;height:7px;border-left:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(-45deg);margin-top:7px}
+.demo-note{display:flex;gap:10px;align-items:flex-start;font-size:14px;background:#0A2C2D;border:1px solid #ffffff1f;border-left:3px solid var(--gold);padding:12px 14px;color:#C9D8D3}
+.demo-note svg{width:16px;height:16px;flex:none;margin-top:2px}
+.login{background:#fff;color:var(--ink);border-radius:6px;box-shadow:0 40px 80px -40px #000c;max-width:460px;margin-left:auto;width:100%}
+.login .bar,.app .bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--rule);font-size:13px;color:var(--muted)}
+.bar i{width:9px;height:9px;border-radius:50%;background:#D3DDD9;display:inline-block}
+.bar .url{margin-left:10px;background:var(--paper);border-radius:3px;padding:4px 10px;flex:1;display:flex;align-items:center;gap:6px}
+.bar .url svg{width:11px;height:11px}
+.login form{padding:30px 32px 32px}
+.login h3{font:400 26px/1.2 var(--display);color:var(--pine);margin:0 0 6px}
+.login .sub{margin:0 0 22px;color:var(--muted);font-size:15px}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;font-size:14px;font-weight:500}
+.field input,.field select,.field textarea{font:400 16px var(--body);padding:12px 13px;border:1px solid #BFCCC7;border-radius:4px;background:#fff;color:var(--ink)}
+.field input:disabled{background:var(--paper);color:#8C9A95}
+.or{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--muted);margin:16px 0}.or::before,.or::after{content:"";height:1px;background:var(--rule);flex:1}
+.login .w100{width:100%}
+.login .fine{font-size:13px;color:var(--muted);margin:14px 0 0}
+@media(max-width:960px){.portal .intro{grid-template-columns:1fr;gap:40px}.login{margin-left:0}}
+/* app */
+.app{display:none;background:#fff;color:var(--ink);border-radius:6px;box-shadow:0 40px 80px -40px #000c;margin-top:8px}
+.portal.open .app{display:block}.portal.open .intro .login{display:none}
+.portal.open .intro{grid-template-columns:1fr;margin-bottom:28px}
+.portal.open .intro .copy .checks,.portal.open .intro .copy .acts{display:none}
+.app .bar .who{margin-left:auto;display:flex;align-items:center;gap:8px;color:var(--ink);font-weight:500}
+.av{width:28px;height:28px;border-radius:50%;background:var(--pine);color:#fff;display:inline-grid;place-items:center;font-size:12px;font-weight:600;flex:none}
+.av.g{background:var(--gold);color:var(--ink)}
+.app-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;padding:24px 28px;border-bottom:1px solid var(--rule);flex-wrap:wrap}
+.app-head h3{font:400 28px/1.15 var(--display);margin:0;color:var(--pine)}
+.app-head p{margin:4px 0 0;color:var(--muted);font-size:14.5px}
+.logout{appearance:none;border:1px solid var(--rule);background:#fff;font:500 14px var(--body);padding:9px 14px;border-radius:4px;cursor:pointer;color:var(--ink)}
+/* tracker */
+.tracker{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--rule);list-style:none;margin:0;padding:0;counter-reset:t}
+.tracker li{padding:18px 28px;position:relative;counter-increment:t;color:var(--muted);font-size:14px;border-right:1px solid var(--rule)}
+.tracker li:last-child{border-right:0}
+.tracker li b{display:flex;align-items:center;gap:10px;font-size:16px;color:var(--ink);font-weight:600;margin-bottom:2px}
+.tracker li b::before{content:counter(t);width:26px;height:26px;border-radius:50%;border:1.5px solid #BFCCC7;display:grid;place-items:center;font-size:13px;color:var(--muted);flex:none}
+.tracker li::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3px;background:transparent}
+.tracker li.done b::before{content:"";background:var(--pine) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' stroke='%23fff' stroke-width='2' fill='none'/%3E%3C/svg%3E") center/16px no-repeat;border-color:var(--pine)}
+.tracker li.done::after{background:var(--pine)}
+.tracker li.now b::before{border-color:var(--gold);background:var(--gold);color:var(--ink)}
+.tracker li.now::after{background:var(--gold)}
+@media(max-width:700px){.tracker li{padding:14px 12px;font-size:12.5px}.tracker li b{font-size:14px;flex-direction:column;align-items:flex-start;gap:6px}}
+.app-body{display:grid;grid-template-columns:1.35fr 1fr}
+.pane{padding:24px 28px}
+.pane+.pane{border-left:1px solid var(--rule)}
+.pane h4{font:600 16px var(--body);margin:0 0 4px;display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.pane h4 span{font-weight:400;font-size:14px;color:var(--muted)}
+.meter{height:6px;background:#E6ECEA;border-radius:3px;margin:10px 0 6px;overflow:hidden}.meter i{display:block;height:100%;width:0;background:var(--pine);transition:width .4s}
+.docs{list-style:none;margin:12px 0 0;padding:0;border-top:1px solid var(--rule)}
+.doc{display:grid;grid-template-columns:22px 1fr auto;gap:12px;align-items:center;padding:13px 0;border-bottom:1px solid var(--rule)}
+.doc .box{width:20px;height:20px;border:1.5px solid #AFC0BA;border-radius:3px}
+.doc.up .box{background:var(--pine);border-color:var(--pine);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' stroke='%23fff' stroke-width='2' fill='none'/%3E%3C/svg%3E");background-size:16px;background-position:center;background-repeat:no-repeat}
+.doc b{display:block;font-weight:600;font-size:15px}
+.doc small{display:block;color:var(--muted);font-size:13px;line-height:1.4}
+.doc .file{color:var(--pine);font-weight:500;word-break:break-all}
+.doc .opt{font-size:11.5px;font-weight:600;color:var(--muted);border:1px solid var(--rule);padding:1px 6px;border-radius:3px;margin-left:6px;vertical-align:2px}
+.upbtn{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:6px;border:1px solid var(--pine);color:var(--pine);font:600 13.5px var(--body);padding:8px 12px;border-radius:4px;cursor:pointer;background:#fff;white-space:nowrap}
+.upbtn:hover{background:#0F3D3E0d}
+.upbtn input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%}
+.upbtn:focus-within{outline:2px solid var(--gold);outline-offset:2px}
+.upbtn svg{width:14px;height:14px}
+.rm{appearance:none;border:0;background:none;color:var(--muted);font:500 13px var(--body);text-decoration:underline;cursor:pointer;padding:4px}
+.pane-acts{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:18px}
+.linkbtn{appearance:none;border:0;background:none;padding:0;color:var(--pine);font:500 14px var(--body);text-decoration:underline;cursor:pointer}
+.btn:disabled{background:#DCE3E0;color:#8A9894;cursor:not-allowed;border-color:transparent}
+.local{font-size:13px;color:var(--muted);margin:12px 0 0;display:flex;gap:6px;align-items:center}
+.local svg{width:13px;height:13px;flex:none}
+/* thread */
+.thread{display:flex;flex-direction:column;height:100%}
+.msgs{flex:1;min-height:250px;max-height:330px;overflow:auto;padding:4px 2px 8px;display:flex;flex-direction:column;gap:12px;margin-top:12px;border-top:1px solid var(--rule);padding-top:16px}
+.m{display:grid;grid-template-columns:28px 1fr;gap:10px;font-size:14.5px}
+.m .who{font-size:12.5px;color:var(--muted);margin-bottom:2px}.m .who b{color:var(--ink);font-weight:600}
+.m p{margin:0;background:var(--paper);border:1px solid #E3EAE7;padding:10px 12px;border-radius:0 6px 6px 6px}
+.m.me p{background:#E7F0EC;border-color:#D2E2DB}
+.send{display:flex;gap:8px;margin-top:10px}
+.send input{flex:1;min-width:0;font:400 15px var(--body);padding:11px 12px;border:1px solid #BFCCC7;border-radius:4px}
+.send button{flex:none}
+.typing{font-size:13px;color:var(--muted);min-height:18px;margin-top:4px}
+/* esign */
+.esign{border-top:1px solid var(--rule);padding:24px 28px 28px;background:#FAFBFA;border-radius:0 0 6px 6px}
+.esign.locked{opacity:.55}
+.esign .grid{display:grid;grid-template-columns:1.1fr 1fr;gap:32px;align-items:start}
+.esign h4{font:600 16px var(--body);margin:0 0 4px}
+.esign .why{color:var(--muted);font-size:14.5px;margin:0 0 14px}
+.sum{width:100%;border-collapse:collapse;font-size:14.5px;background:#fff;border:1px solid var(--rule)}
+.sum td{padding:9px 14px;border-bottom:1px solid #EEF2F0}.sum td:last-child{text-align:right;font-weight:600}
+.sum tr.tot td{border-top:1px solid var(--ink);border-bottom:0;font-size:16px}
+.sigline{font:italic 400 30px/1.2 var(--display);color:var(--pine);border-bottom:1px solid var(--ink);min-height:50px;padding:6px 2px;margin:4px 0 6px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.sigcap{font-size:12.5px;color:var(--muted);display:flex;justify-content:space-between}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:14px;margin:14px 0}
+.agree input{width:18px;height:18px;margin-top:2px;accent-color:var(--pine)}
+.err{color:#A8321E;font-size:14px;min-height:1.2em;margin:4px 0 8px}
+.signed{display:none;border:1px solid var(--pine);background:#E7F0EC;padding:18px 20px;border-radius:4px}
+.signed h5{font:400 24px/1.2 var(--display);color:var(--pine);margin:0 0 6px}
+.signed p{margin:0;font-size:15px}
+@media(max-width:900px){.app-body,.esign .grid{grid-template-columns:1fr}.pane+.pane{border-left:0;border-top:1px solid var(--rule)}.pane,.esign{padding:20px 18px}.app-head{padding:20px 18px}}
+@media(max-width:520px){.doc{grid-template-columns:20px 1fr;row-gap:8px}.doc .act{grid-column:2}.bar .who .nm,.bar i{display:none}.bar .url{margin-left:0;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;display:block}.bar .url svg{display:inline;vertical-align:-1px;margin-right:4px}}
+/* pricing */
+.price-wrap{overflow-x:auto;border-top:1px solid var(--ink)}
+table.price{width:100%;border-collapse:collapse;min-width:760px;font-size:15.5px}
+.price th,.price td{padding:16px 20px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+.price thead th{vertical-align:bottom;padding-top:26px;padding-bottom:22px}
+.price thead th:first-child{width:30%}
+.price thead .plan{font:400 26px/1.15 var(--display);color:var(--pine);display:block;margin-bottom:8px}
+.price thead .from{font-size:13px;color:var(--muted);font-weight:400;display:block}
+.price thead .amt{font:600 34px/1 var(--body);color:var(--ink);letter-spacing:-.02em}
+.price thead .per{font-size:14px;color:var(--muted);font-weight:400}
+.price thead .for{display:block;font-size:14px;color:var(--muted);font-weight:400;margin-top:8px;max-width:18em}
+.price .hl{background:#fff;position:relative}
+.price thead th.hl{box-shadow:inset 0 3px 0 var(--gold)}
+.price tbody th{font-weight:500;color:#33403C}
+.price td{color:var(--ink)}
+.price .y{display:inline-block;width:14px;height:8px;border-left:2px solid var(--pine);border-bottom:2px solid var(--pine);transform:rotate(-45deg);margin:2px 0 0 2px}
+.price .n{color:#A6B4AF}
+.price tfoot td{border-bottom:0;padding-top:22px}
+.price tbody td:nth-child(3){background:#fff}
+.price th[scope=row],.price thead th:first-child,.price tfoot td:first-child{position:sticky;left:0;background:var(--paper);z-index:1}
+.swipe{display:none;font-size:13px;color:var(--muted);margin:0 0 10px}
+@media(max-width:800px){.swipe{display:block}.price th,.price td{padding:14px 14px}.price thead th:first-child{width:150px}table.price{min-width:700px}.price th[scope=row]{width:150px;box-shadow:1px 0 0 var(--rule)}}
+.price-note{font-size:14px;color:var(--muted);margin:18px 0 0;max-width:60em}
+/* deadlines */
+.dl-grid{display:grid;grid-template-columns:340px 1fr;gap:48px;align-items:start}
+.next{background:var(--pine);color:#DCE7E3;padding:28px;position:sticky;top:100px}
+.next small{font-size:13px;color:var(--sage)}
+.next .d{font:400 82px/1 var(--display);color:#fff;margin:10px 0 0}
+.next .d span{font:500 18px var(--body);color:var(--sage);margin-left:6px}
+.next h3{font:400 22px/1.25 var(--display);color:#fff;margin:14px 0 8px}
+.next p{font-size:15px;margin:0 0 20px}
+table.dl{width:100%;border-collapse:collapse;border-top:1px solid var(--ink);font-size:15.5px}
+.dl th,.dl td{text-align:left;padding:15px 14px;border-bottom:1px solid var(--rule);vertical-align:top}
+.dl thead th{font-size:13px;font-weight:600;color:var(--muted);padding-top:12px;padding-bottom:12px}
+.dl td.date{white-space:nowrap;font-weight:600;color:var(--pine)}
+.dl td.date small{display:block;font-weight:400;color:var(--muted);font-size:13px}
+.dl td.who{color:var(--muted);font-size:14.5px}
+.dl tr.is-next{background:#FBF1D8}
+.dl tr.past td{color:#9AA7A2}
+.dl .tag{display:inline-block;font-size:12px;font-weight:600;background:var(--gold);color:var(--ink);padding:2px 7px;border-radius:3px;margin-left:6px;vertical-align:1px}
+.dl-note{font-size:13.5px;color:var(--muted);margin:16px 0 0}
+@media(max-width:960px){.dl-grid{grid-template-columns:1fr}.next{position:static}}
+@media(max-width:640px){.dl thead{display:none}.dl tr{display:grid;grid-template-columns:1fr;padding:12px 0;border-bottom:1px solid var(--rule)}.dl td{border:0;padding:3px 4px}.dl td.date small{display:inline;margin-left:6px}}
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);list-style:none;margin:0;padding:0;border-top:1px solid var(--ink);counter-reset:s}
+.steps li{padding:26px 24px 8px 0;counter-increment:s}
+.steps li+li{padding-left:24px;border-left:1px solid var(--rule)}
+.steps li::before{content:counter(s,decimal-leading-zero);font:400 44px/1 var(--display);color:var(--gold);display:block;margin-bottom:18px}
+.steps b{display:block;font:400 22px/1.2 var(--display);color:var(--pine);margin-bottom:8px}
+.steps p{margin:0;color:var(--muted);font-size:15.5px}
+.steps .t{display:block;margin-top:12px;font-size:13px;color:var(--pine);font-weight:600}
+@media(max-width:900px){.steps{grid-template-columns:1fr 1fr}.steps li:nth-child(3){padding-left:0;border-left:0}}
+@media(max-width:560px){.steps{grid-template-columns:1fr}.steps li,.steps li+li{padding-left:0;border-left:0;border-bottom:1px solid var(--rule);padding-bottom:22px}}
+/* about split */
+.about{display:grid;grid-template-columns:5fr 7fr;gap:64px;align-items:center}
+.quote{margin:0;border-top:1px solid var(--ink);padding-top:28px}
+.quote blockquote{margin:0 0 20px;font:italic 400 clamp(28px,3.2vw,42px)/1.25 var(--display);color:var(--pine);letter-spacing:-.01em}
+.quote blockquote::before{content:"";display:block;width:56px;height:3px;background:var(--gold);margin-bottom:26px}
+.quote figcaption{font-size:14px;color:var(--muted)}
+.about h2{font:400 clamp(32px,3.6vw,46px)/1.1 var(--display);color:var(--pine);margin:0 0 18px;letter-spacing:-.018em}
+.about p{font-size:17px;color:#33403C;margin:0 0 16px}
+.team{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:28px;border-top:1px solid var(--rule)}
+.team div{display:flex;gap:14px;align-items:center;padding:16px 0;border-bottom:1px solid var(--rule)}
+.team .av{width:46px;height:46px;font-size:15px;color:#fff}.team .av.g{color:var(--ink)}
+.team b{display:block;font-weight:600}.team span{font-size:14px;color:var(--muted)}
+@media(max-width:900px){.about{grid-template-columns:1fr;gap:36px}}
+@media(max-width:520px){.team{grid-template-columns:1fr}}
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink)}
+.revs figure{margin:0;padding:28px 28px 8px 0}
+.revs figure+figure{padding-left:28px;border-left:1px solid var(--rule)}
+.revs blockquote{margin:0 0 16px;font:400 21px/1.45 var(--display);color:var(--pine)}
+.revs figcaption{font-size:14px;color:var(--muted)}
+.revs figcaption b{color:var(--ink);font-weight:600}
+@media(max-width:900px){.revs{grid-template-columns:1fr}.revs figure,.revs figure+figure{padding:24px 0;border-left:0;border-bottom:1px solid var(--rule)}}
+/* faq */
+.faq-grid{display:grid;grid-template-columns:4fr 8fr;gap:56px}
+.faq-grid h2{font:400 clamp(32px,3.6vw,46px)/1.1 var(--display);color:var(--pine);margin:0 0 14px;letter-spacing:-.018em}
+.faq-grid .side p{color:var(--muted)}
+.faq details{border-bottom:1px solid var(--rule)}
+.faq details:first-child{border-top:1px solid var(--ink)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:24px;padding:20px 0;font-weight:600;font-size:17px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";width:12px;height:12px;border-right:1.5px solid var(--pine);border-bottom:1.5px solid var(--pine);transform:rotate(45deg);flex:none;margin-top:4px;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(-135deg);margin-top:10px}
+.faq details p{margin:0 0 22px;color:#3C4945;max-width:44em}
+@media(max-width:900px){.faq-grid{grid-template-columns:1fr;gap:24px}}
+/* visit */
+.visit{display:grid;grid-template-columns:5fr 7fr;gap:0;border:1px solid var(--rule);background:#fff}
+.visit .info{padding:36px}
+.visit h2{font:400 34px/1.15 var(--display);color:var(--pine);margin:0 0 18px}
+.visit dl{display:grid;grid-template-columns:auto 1fr;gap:0;margin:0;font-size:15.5px}
+.visit dt,.visit dd{padding:10px 0;border-top:1px solid #EEF2F0}
+.visit dt{font-weight:600;padding-right:24px}.visit dd{margin:0;color:#3C4945}
+.map{border:0;width:100%;height:100%;min-height:420px;display:block;filter:grayscale(.35);background:#E6ECEA}
+@media(max-width:900px){.visit{grid-template-columns:1fr}.visit .info{padding:26px 20px}.map{min-height:320px}}
+.cta{background:var(--gold)}
+.cta .wrap{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;padding-top:52px;padding-bottom:52px}
+.cta h2{font:400 clamp(28px,3.3vw,42px)/1.12 var(--display);margin:0;color:var(--ink);max-width:22em}
+.cta p{margin:8px 0 0;color:#3A3220}
+@media(max-width:800px){.cta .wrap{grid-template-columns:1fr}}
+footer{background:var(--pine-2);color:#AFC2BB;padding:72px 0 30px;font-size:15px}
+footer .cols{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:36px}
+footer h3{color:#fff;font:600 15px var(--body);margin:0 0 14px}
+footer .fb b{font:400 24px var(--display);color:#fff;display:block;margin-bottom:10px}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+footer a{text-decoration:none}footer a:hover{color:#fff;text-decoration:underline}
+footer .legal{border-top:1px solid #ffffff1f;margin-top:48px;padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px}
+footer .legal a{color:var(--gold)}
+@media(max-width:800px){footer .cols{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){footer .cols{grid-template-columns:1fr}}
+.mbar{display:none}
+@media(max-width:760px){.mbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:10px;right:10px;bottom:10px;z-index:50}.mbar .btn{padding:14px}body{padding-bottom:74px}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="concept">Example concept by <a href="https://calvyrn.com">Calvyrn</a>. Pine &amp; Ledger CPAs is fictional; names, reviews and 555 numbers are placeholders. Photos: Unsplash.</div>
+<header class="top"><div class="wrap">
+  <a class="brand" href="#" aria-label="Pine and Ledger CPAs, home">
+    <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="3" fill="#0F3D3E"/><path d="M20 7l-8 11h4.5L11 26h18l-5.5-8H28z" fill="#F4F6F5"/><rect x="18.6" y="26" width="2.8" height="5" fill="#F4F6F5"/><path d="M8 33.5h24" stroke="#E3B23C" stroke-width="1.6"/><path d="M8 36h24" stroke="#E3B23C" stroke-width=".8"/></svg>
+    <span><b>Pine &amp; Ledger</b><small>Certified Public Accountants · Raleigh</small></span>
+  </a>
+  <nav class="main" aria-label="Main"><a href="#services">Services</a><a href="#portal">Client portal</a><a href="#pricing">Pricing</a><a href="#deadlines">Deadlines</a><a href="#visit">Contact</a></nav>
+  <div class="hdr">
+    <a class="login-link" href="#portal" data-open-login><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5.5 7V5a2.5 2.5 0 015 0v2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Client login</a>
+    <a class="tel num" href="tel:+19195550112">(919) 555-0112</a>
+    <a class="btn p" href="#visit">Book a consultation</a>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <div class="copy">
+    <p class="loc"><i></i>Tax and bookkeeping for Triangle small businesses and families</p>
+    <h1>Books closed by the 10th. Returns filed <em>well before</em> April.</h1>
+    <p class="lede">Pine &amp; Ledger keeps your monthly books, runs payroll and prepares your business and personal returns, with two CPAs reviewing every filing. Send documents, ask questions and e-sign from one secure portal.</p>
+    <div class="acts"><a class="btn p" href="#visit">Book a free 20-minute call</a><a class="btn o" href="#portal" data-open-login>Client login</a></div>
+    <div class="figs">
+      <div><b class="num">10th</b><span>of each month, books closed</span></div>
+      <div><b>Flat fee</b><span>quoted before we start</span></div>
+      <div><b class="num">2 CPAs</b><span>review every return</span></div>
+    </div>
+  </div>
+  <div class="vis">
+    <img src="img/a6.jpg" alt="Tax forms, a calculator and a laptop on a dark green blanket" fetchpriority="high">
+    <div class="ledger-card" aria-hidden="true">
+      <header>Harper Family · 2026 return<span>Today</span></header>
+      <table>
+        <tr><td>W-2 (2 employers)</td><td><span class="pill ok">Received</span></td></tr>
+        <tr><td>1099-INT, 1098</td><td><span class="pill ok">Received</span></td></tr>
+        <tr><td>Childcare receipts</td><td><span class="pill wait">Waiting</span></td></tr>
+        <tr><td>Estimated refund</td><td class="num">$2,418</td></tr>
+      </table>
+    </div>
+  </div>
+</div></section>
+
+<section class="band" id="services"><div class="wrap">
+  <div class="head"><h2>Four services, one team that already knows your numbers</h2><p>Most clients use two or three of these together. When the same people keep your books and prepare your return, tax season is a review, not a rebuild.</p></div>
+  <div class="svc">
+    <article><img src="img/a5.jpg" alt="Accountant reviewing paperwork at her desk" loading="lazy"><div class="in"><span class="ix">Individuals and businesses</span><h3>Tax preparation</h3><p>Federal and North Carolina returns for households, sole proprietors, S corporations and partnerships.</p><ul><li>Form 1040 + NC D-400<span>from $395</span></li><li>1120-S / 1065<span>from $1,150</span></li><li>Prior-year &amp; amended<span>quoted</span></li></ul></div></article>
+    <article><img src="img/a1.jpg" alt="Calculator, printed charts and binders on a desk" loading="lazy"><div class="in"><span class="ix">Monthly</span><h3>Bookkeeping</h3><p>Bank and card reconciliation, categorized transactions and a clean profit-and-loss in your inbox each month.</p><ul><li>Monthly close<span>by the 10th</span></li><li>Catch-up books<span>per month behind</span></li><li>Sales tax filings<span>included</span></li></ul></div></article>
+    <article><img src="img/a4.jpg" alt="Hands typing on a laptop next to a calculator and notepad" loading="lazy"><div class="in"><span class="ix">Weekly, biweekly or monthly</span><h3>Payroll</h3><p>Direct deposit, federal and NC withholding, quarterly 941s and year-end W-2s and 1099s, filed on time.</p><ul><li>Up to 10 employees<span>from $89/mo</span></li><li>Contractor 1099-NEC<span>included</span></li><li>New-hire reporting<span>included</span></li></ul></div></article>
+    <article><img src="img/a2.jpg" alt="Desk with glasses, pencil and printed charts" loading="lazy"><div class="in"><span class="ix">Quarterly or as needed</span><h3>Advisory</h3><p>Entity choice, quarterly estimates, cash-flow planning and a straight answer before big decisions.</p><ul><li>S-corp election review<span>flat fee</span></li><li>Quarterly tax planning<span>in Growth plan</span></li><li>Hourly CPA time<span>$185/hr</span></li></ul></div></article>
+  </div>
+</div></section>
+
+<section class="portal" id="portal" aria-labelledby="portalTitle"><div class="wrap">
+  <div class="intro">
+    <div class="copy">
+      <h2 id="portalTitle">Your tax season, in one secure place</h2>
+      <p class="lede">No emailing tax forms, no shoebox drop-off. Your checklist tells you exactly what we still need, and you can see where your return stands at any hour.</p>
+      <ul class="checks">
+        <li>A personal 2026 document checklist, built from last year's return</li>
+        <li>Live status from received to ready to sign</li>
+        <li>Encrypted messages with your CPA, not a shared inbox</li>
+        <li>Review and e-sign your return from your phone</li>
+      </ul>
+      <div class="demo-note"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="none" stroke="#E3B23C" stroke-width="1.5"/><path d="M8 4.5v4.2M8 10.8v.7" stroke="#E3B23C" stroke-width="1.6"/></svg><span><b style="color:#fff">Demo: files stay in your browser.</b> This is a working preview. Anything you "upload" is only read on your device and is never sent anywhere.</span></div>
+    </div>
+    <div class="login" id="login">
+      <div class="bar"><i></i><i></i><i></i><span class="url"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1" fill="#55625E"/><path d="M5.5 7V5a2.5 2.5 0 015 0v2" fill="none" stroke="#55625E" stroke-width="1.5"/></svg>portal.pineandledger.example</span></div>
+      <form id="loginForm" novalidate>
+        <h3>Client login</h3>
+        <p class="sub">Sign in to upload documents and check your return.</p>
+        <div class="field"><label for="lEmail">Email</label><input id="lEmail" type="email" placeholder="you@example.com" disabled></div>
+        <div class="field"><label for="lPass">Password</label><input id="lPass" type="password" placeholder="••••••••" disabled></div>
+        <button class="btn o w100" type="button" disabled>Sign in</button>
+        <div class="or">this is a concept site</div>
+        <button class="btn g w100" type="button" id="tryDemo">Try the demo portal</button>
+        <p class="fine">No account needed. You'll see the portal as a sample client, the Harper family.</p>
+      </form>
+    </div>
+  </div>
+
+  <div class="app" id="app" role="region" aria-label="Demo client portal">
+    <div class="bar"><i></i><i></i><i></i><span class="url"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1" fill="#55625E"/><path d="M5.5 7V5a2.5 2.5 0 015 0v2" fill="none" stroke="#55625E" stroke-width="1.5"/></svg>portal.pineandledger.example/2026-return</span><span class="who"><span class="av g">JH</span><span class="nm">Jordan Harper</span></span></div>
+    <div class="app-head">
+      <div><h3 tabindex="-1" id="appTitle">2026 tax return</h3><p>Federal 1040 + NC D-400 · Your CPA: Renee Okafor, CPA</p></div>
+      <button class="logout" type="button" id="logout">Sign out of demo</button>
+    </div>
+    <ol class="tracker" id="tracker" aria-label="Return status">
+      <li data-s="0"><b>Received</b>All documents in</li>
+      <li data-s="1"><b>In review</b>CPA preparing return</li>
+      <li data-s="2"><b>Ready to sign</b>Review &amp; e-sign</li>
+    </ol>
+    <p class="sr" id="statusLive" aria-live="polite"></p>
+    <div class="app-body">
+      <div class="pane">
+        <h4>Document checklist <span id="count" class="num">0 of 5 required</span></h4>
+        <div class="meter" aria-hidden="true"><i id="meter"></i></div>
+        <ul class="docs" id="docs"></ul>
+        <div class="pane-acts">
+          <button class="btn p" type="button" id="submitDocs" disabled>Send to my CPA</button>
+          <button class="linkbtn" type="button" id="sample">Fill with sample files</button>
+        </div>
+        <p class="local"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5.5 7V5a2.5 2.5 0 015 0v2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Demo: files stay in your browser. Nothing is uploaded.</p>
+      </div>
+      <div class="pane thread">
+        <h4>Messages <span>End-to-end encrypted in the real portal</span></h4>
+        <div class="msgs" id="msgs" aria-live="polite"></div>
+        <p class="typing" id="typing"></p>
+        <form class="send" id="sendForm"><label class="sr" for="msgIn">Message your CPA</label><input id="msgIn" placeholder="Ask Renee a question" autocomplete="off"><button class="btn p" type="submit">Send</button></form>
+      </div>
+    </div>
+    <div class="esign locked" id="esign">
+      <div class="grid">
+        <div>
+          <h4>Review and e-sign</h4>
+          <p class="why" id="signWhy">Unlocks when your return is ready to sign.</p>
+          <table class="sum" aria-label="Return summary">
+            <tr><td>Adjusted gross income</td><td class="num">$148,260</td></tr>
+            <tr><td>Federal tax after credits</td><td class="num">$14,907</td></tr>
+            <tr><td>Federal withholding</td><td class="num">$17,325</td></tr>
+            <tr class="tot"><td>Estimated federal refund</td><td class="num">$2,418</td></tr>
+          </table>
+        </div>
+        <form id="signForm" novalidate>
+          <div class="sigline" id="sigPreview" aria-hidden="true">&nbsp;</div>
+          <div class="sigcap"><span>Signature</span><span id="sigDate" class="num"></span></div>
+          <div class="field" style="margin-top:14px"><label for="sigName">Type your full legal name</label><input id="sigName" autocomplete="name" disabled></div>
+          <label class="agree"><input type="checkbox" id="sigAgree" disabled> I've reviewed my return and authorize Pine &amp; Ledger to e-file it (Form 8879).</label>
+          <p class="err" id="sigErr" role="alert"></p>
+          <button class="btn g" type="submit" id="sigBtn" disabled>Sign and authorize e-file</button>
+          <div class="signed" id="signed" tabindex="-1"><h5>Signed. Thank you, Jordan.</h5><p id="signedText"></p></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="band" id="pricing"><div class="wrap">
+  <div class="head"><h2>Flat monthly fees, written down before we start</h2><p>Every quote is based on your transaction volume and entity type. These are starting prices for a typical Raleigh client; you'll have your exact number after the first call.</p></div>
+  <p class="swipe">Swipe sideways to compare all three plans.</p>
+  <div class="price-wrap" tabindex="0" aria-label="Plan comparison table">
+  <table class="price">
+    <thead><tr>
+      <th scope="col"><span class="sr">Feature</span></th>
+      <th scope="col"><span class="plan">Household</span><span class="from">from</span><span class="amt num">$395</span> <span class="per">per return</span><span class="for">Families and W-2 earners with investments or rentals</span></th>
+      <th scope="col" class="hl"><span class="plan">Essentials</span><span class="from">from</span><span class="amt num">$249</span> <span class="per">/ month</span><span class="for">Sole proprietors and single-member LLCs</span></th>
+      <th scope="col"><span class="plan">Growth</span><span class="from">from</span><span class="amt num">$529</span> <span class="per">/ month</span><span class="for">S corps and partnerships with staff</span></th>
+    </tr></thead>
+    <tbody>
+      <tr><th scope="row">Federal 1040 and NC D-400</th><td><span class="y" role="img" aria-label="Included"></span></td><td><span class="y" role="img" aria-label="Included"></span></td><td><span class="y" role="img" aria-label="Included"></span></td></tr>
+      <tr><th scope="row">Monthly bookkeeping</th><td class="n">Not included</td><td class="num">Up to 150 transactions</td><td class="num">Up to 500 transactions</td></tr>
+      <tr><th scope="row">Books closed by the 10th</th><td class="n">Not included</td><td><span class="y" role="img" aria-label="Included"></span></td><td><span class="y" role="img" aria-label="Included"></span></td></tr>
+      <tr><th scope="row">Business return (1120-S / 1065)</th><td class="n">Not included</td><td class="n">Add-on</td><td><span class="y" role="img" aria-label="Included"></span></td></tr>
+      <tr><th scope="row">Payroll</th><td class="n">Not included</td><td class="num">Add-on from $89/mo</td><td class="num">Up to 10 employees</td></tr>
+      <tr><th scope="row">Quarterly estimate planning</th><td class="n">Not included</td><td><span class="y" role="img" aria-label="Included"></span></td><td><span class="y" role="img" aria-label="Included"></span></td></tr>
+      <tr><th scope="row">CPA strategy calls</th><td class="num">1 per year</td><td class="num">2 per year</td><td class="num">4 per year</td></tr>
+      <tr><th scope="row">Client portal and e-sign</th><td><span class="y" role="img" aria-label="Included"></span></td><td><span class="y" role="img" aria-label="Included"></span></td><td><span class="y" role="img" aria-label="Included"></span></td></tr>
+    </tbody>
+    <tfoot><tr><td></td><td><a class="btn o" href="#visit">Get a quote</a></td><td class="hl"><a class="btn p" href="#visit">Get a quote</a></td><td><a class="btn o" href="#visit">Get a quote</a></td></tr></tfoot>
+  </table>
+  </div>
+  <p class="price-note">Catch-up bookkeeping is billed per month behind, quoted up front. No hourly surprises: if your scope changes, we tell you the new fee before doing the work.</p>
+</div></section>
+
+<section class="band" id="deadlines" style="background:#fff"><div class="wrap">
+  <div class="head"><h2>2027 filing season deadlines</h2><p>Federal due dates for 2026 tax-year returns and 2027 estimates, already adjusted for weekends. Clients get a reminder two weeks before each one that applies to them.</p></div>
+  <div class="dl-grid">
+    <aside class="next" aria-live="polite">
+      <small>Next federal deadline</small>
+      <p class="d num" id="nextDays">–<span>days</span></p>
+      <h3 id="nextWhat">Loading…</h3>
+      <p id="nextDate" class="num"></p>
+      <a class="btn g" href="#visit">Talk to a CPA before then</a>
+    </aside>
+    <div>
+      <table class="dl" id="dlTable">
+        <thead><tr><th scope="col">Date</th><th scope="col">What's due</th><th scope="col">Who it affects</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <p class="dl-note">Dates follow IRS due-date rules for tax year 2026 (a deadline on a weekend moves to the next business day). North Carolina individual returns (D-400) are also due April 15. Disaster relief can extend deadlines for some counties; we'll tell you if it applies.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <div class="head"><h2>How working with us goes</h2><p>From the first call to your signed return. Most new clients are fully set up within ten business days.</p></div>
+  <ol class="steps">
+    <li><b>A 20-minute call</b><p>Tell us what you file today and what's been painful. We'll say plainly whether we're the right fit.</p><span class="t">Day 1</span></li>
+    <li><b>A written, flat quote</b><p>Scope, monthly fee and what's included, on one page. Sign it online when you're ready.</p><span class="t">Within 2 business days</span></li>
+    <li><b>Portal and books set up</b><p>We connect your bank feeds read-only, build your checklist and clean up anything behind.</p><span class="t">Week 1–2</span></li>
+    <li><b>Monthly close, then tax time</b><p>A P&amp;L by the 10th of every month. When forms arrive, upload, review and e-sign in one place.</p><span class="t">Every month</span></li>
+  </ol>
+</div></section>
+
+<section class="band" id="about"><div class="wrap about">
+  <figure class="quote"><blockquote>"If you can't explain a number on your return, we haven't done our job."</blockquote><figcaption>Renee Okafor, CPA · founder, 2009</figcaption></figure>
+  <div>
+    <h2>A small firm on purpose</h2>
+    <p>Pine &amp; Ledger is a team of six on Glenwood Avenue. We cap the number of clients each CPA serves, so the person who answers your message is the person who knows your file.</p>
+    <p>We work mostly with Triangle contractors, clinics, agencies, restaurants and the families who own them, in English and Spanish.</p>
+    <div class="team">
+      <div><span class="av">RO</span><span><b>Renee Okafor, CPA</b><span>Managing partner · tax</span></span></div>
+      <div><span class="av g">DT</span><span><b>Daniel Tran, CPA</b><span>Partner · small business</span></span></div>
+      <div><span class="av">LM</span><span><b>Lucía Morales, EA</b><span>Individual returns</span></span></div>
+      <div><span class="av g">KB</span><span><b>Kevin Brandt</b><span>Bookkeeping lead</span></span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <div class="head"><h2>What clients tell us</h2><p>Placeholder reviews written for this concept.</p></div>
+  <div class="revs">
+    <figure><blockquote>"For the first time in eight years of running the shop, I knew my tax bill in October instead of April."</blockquote><figcaption><b>Placeholder review</b> · HVAC contractor, Cary</figcaption></figure>
+    <figure><blockquote>"I uploaded our W-2s from my phone during soccer practice. Signed the return two weeks later. That was the whole experience."</blockquote><figcaption><b>Placeholder review</b> · Family client, North Hills</figcaption></figure>
+    <figure><blockquote>"They found two years of payroll filings our old provider missed and fixed them before the penalties grew."</blockquote><figcaption><b>Placeholder review</b> · Dental practice, Durham</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="band" style="background:#fff"><div class="wrap faq-grid">
+  <div class="side"><h2>Questions we hear every January</h2><p>Something else? Call <a href="tel:+19195550112" class="num">(919) 555-0112</a> or send a message from the portal.</p></div>
+  <div class="faq">
+    <details><summary>When should I send my documents?</summary><p>As soon as the last one arrives, usually mid-February. Returns with complete documents by March 15 are finished before the April rush. After that we'll still file on time, or file an extension and tell you why.</p></details>
+    <details><summary>Is the portal actually secure?</summary><p>In the real portal, files are encrypted in transit and at rest, logins use two-factor authentication, and staff access is logged. On this concept site, nothing leaves your browser at all.</p></details>
+    <details><summary>Can you take over books that are months behind?</summary><p>Yes. Catch-up work is quoted per month behind before we start. Most businesses are current within three to six weeks.</p></details>
+    <details><summary>Do you work with clients outside Raleigh?</summary><p>Yes. Most clients never visit the office. We prepare returns for any state where you have income and meet by video.</p></details>
+    <details><summary>What if I get a letter from the IRS?</summary><p>Upload it to the portal. If we prepared the return, responding to notices about it is included in your fee.</p></details>
+    <details><summary>Should my LLC become an S corporation?</summary><p>Sometimes. It depends on your profit, what a reasonable salary looks like in your field and the extra payroll cost. We run the numbers for a flat fee before you file anything.</p></details>
+  </div>
+</div></section>
+
+<section class="band" id="visit"><div class="wrap">
+  <div class="visit">
+    <div class="info">
+      <h2>Visit or call</h2>
+      <dl>
+        <dt>Address</dt><dd>520 Glenwood Ave, Suite 300<br>Raleigh, NC 27603</dd>
+        <dt>Phone</dt><dd><a class="num" href="tel:+19195550112">(919) 555-0112</a></dd>
+        <dt>Mon–Fri</dt><dd class="num">8:30 am – 5:30 pm</dd>
+        <dt>Feb–Apr 15</dt><dd class="num">Also Sat 9 am – 1 pm</dd>
+        <dt>Parking</dt><dd>Free deck behind the building</dd>
+      </dl>
+      <p style="margin:22px 0 0"><a class="btn p" href="tel:+19195550112">Book a free 20-minute call</a></p>
+    </div>
+    <iframe class="map" title="Map of the Pine and Ledger office in Raleigh" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-78.6535%2C35.7795%2C-78.6375%2C35.7885&amp;layer=mapnik&amp;marker=35.784%2C-78.6455"></iframe>
+  </div>
+</div></section>
+
+<div class="cta"><div class="wrap"><div><h2>Start 2027 with your books current and your return planned.</h2><p>A free 20-minute call, a flat quote within two business days.</p></div><a class="btn p" href="tel:+19195550112">Call (919) 555-0112</a></div></div>
+</main>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div class="fb"><b>Pine &amp; Ledger CPAs</b><p>Tax preparation, bookkeeping, payroll and advisory for small businesses and families across the Triangle.</p></div>
+    <div><h3>Services</h3><ul><li><a href="#services">Tax preparation</a></li><li><a href="#services">Bookkeeping</a></li><li><a href="#services">Payroll</a></li><li><a href="#services">Advisory</a></li></ul></div>
+    <div><h3>Clients</h3><ul><li><a href="#portal" data-open-login>Client login</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#deadlines">2027 deadlines</a></li><li><a href="#about">Our team</a></li></ul></div>
+    <div><h3>Contact</h3><ul><li><a href="tel:+19195550112" class="num">(919) 555-0112</a></li><li>520 Glenwood Ave, Suite 300</li><li>Raleigh, NC 27603</li><li>Mon–Fri 8:30–5:30</li></ul></div>
+  </div>
+  <div class="legal"><span>Pine &amp; Ledger CPAs is a fictional firm used to demonstrate a client-portal accounting website. Photos from Unsplash.</span><span>Concept, design and build: <a href="https://calvyrn.com">Calvyrn</a></span></div>
+</div></footer>
+<div class="mbar"><a class="btn g" href="#portal" data-open-login>Client portal</a><a class="btn p" href="tel:+19195550112">Call us</a></div>
+
+<script>
+(() => {
+  const $ = s => document.querySelector(s);
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- deadlines ---------- */
+  const DL = [
+    ['2027-01-15','4th-quarter 2026 estimated tax payment (Form 1040-ES)','Self-employed, landlords, investors'],
+    ['2027-02-01','W-2s and 1099-NEC to workers and to the SSA / IRS (Jan 31 is a Sunday)','Employers and anyone who paid contractors'],
+    ['2027-03-15','S corporation (1120-S) and partnership (1065) returns, or extension (Form 7004)','S corps, partnerships, multi-member LLCs'],
+    ['2027-04-15','Individual returns (Form 1040) or extension (Form 4868); 1st-quarter 2027 estimate; last day for 2026 IRA and HSA contributions','Individuals, families, sole proprietors, C corps'],
+    ['2027-06-15','2nd-quarter 2027 estimated tax payment','Self-employed, landlords, investors'],
+    ['2027-09-15','3rd-quarter 2027 estimate; extended 1120-S and 1065 returns','Estimate payers, extended S corps and partnerships'],
+    ['2027-10-15','Extended individual returns (Form 1040)','Anyone who filed Form 4868']
+  ];
+  const short = ['Q4 2026 estimated tax payment','W-2 and 1099-NEC filing','S corp and partnership returns','Tax Day: individual returns','Q2 2027 estimated tax','Q3 estimate and extended business returns','Extended individual returns'];
+  const today = new Date(); today.setHours(0,0,0,0);
+  const parse = s => { const [y,m,d] = s.split('-').map(Number); return new Date(y, m-1, d); };
+  let nextIdx = DL.findIndex(r => parse(r[0]) >= today);
+  const tb = $('#dlTable tbody');
+  DL.forEach((r, i) => {
+    const d = parse(r[0]); const tr = document.createElement('tr');
+    if (i === nextIdx) tr.className = 'is-next'; else if (d < today) tr.className = 'past';
+    tr.innerHTML = `<td class="date num">${d.toLocaleDateString('en-US',{month:'short',day:'numeric'})}<small>${d.toLocaleDateString('en-US',{weekday:'long'})}, ${d.getFullYear()}</small></td><td>${r[1]}${i===nextIdx?'<span class="tag">Next</span>':''}</td><td class="who">${r[2]}</td>`;
+    tb.appendChild(tr);
+  });
+  if (nextIdx === -1) { $('#nextDays').innerHTML = 'Done<span>for 2027</span>'; $('#nextWhat').textContent = 'The 2027 filing season is complete.'; }
+  else {
+    const d = parse(DL[nextIdx][0]); const days = Math.round((d - today) / 864e5);
+    $('#nextDays').innerHTML = `${days}<span>${days === 1 ? 'day' : 'days'}</span>`;
+    $('#nextWhat').textContent = short[nextIdx];
+    $('#nextDate').textContent = d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+  }
+
+  /* ---------- portal ---------- */
+  const portal = $('#portal');
+  const openApp = () => { portal.classList.add('open'); $('#app').scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'start', inline:'nearest'}); portal.scrollLeft = 0; setTimeout(() => $('#appTitle').focus({preventScroll:true}), reduce ? 0 : 450); };
+  $('#tryDemo').onclick = openApp;
+  document.querySelectorAll('[data-open-login]').forEach(a => a.addEventListener('click', () => { if (!portal.classList.contains('open')) setTimeout(() => $('#tryDemo').focus({preventScroll:true}), 500); }));
+  $('#logout').onclick = () => { portal.classList.remove('open'); $('#tryDemo').focus(); };
+
+  const DOCS = [
+    {id:'w2a', t:'W-2 · Raleigh Health Partners', s:'Jordan, primary employer', req:true},
+    {id:'w2b', t:'W-2 · Oak City Schools', s:'Sam, employer', req:true},
+    {id:'int', t:'1099-INT and 1099-DIV', s:'Bank and brokerage statements', req:true},
+    {id:'mort', t:'1098 Mortgage interest', s:'From your lender, arrives late January', req:true},
+    {id:'care', t:'Childcare provider receipts', s:'Name, address and amount paid in 2026', req:true},
+    {id:'char', t:'Charitable donation receipts', s:'Gifts over $250 need a written receipt', req:false}
+  ];
+  const files = {}; let stage = -1; // -1 collecting, 0 received, 1 review, 2 ready, 3 signed
+  const docsEl = $('#docs');
+  const fmt = b => b < 1024 ? b + ' B' : b < 1048576 ? (b/1024).toFixed(0) + ' KB' : (b/1048576).toFixed(1) + ' MB';
+  const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  function drawDocs() {
+    docsEl.innerHTML = '';
+    DOCS.forEach(d => {
+      const f = files[d.id]; const li = document.createElement('li'); li.className = 'doc' + (f ? ' up' : '');
+      li.innerHTML = `<span class="box" aria-hidden="true"></span><div><b>${d.t}${d.req ? '' : '<span class="opt">Optional</span>'}</b>${f ? `<small class="file">${esc(f.name)} · ${fmt(f.size)} · uploaded</small>` : `<small>${d.s}</small>`}</div><div class="act"></div>`;
+      const act = li.querySelector('.act');
+      if (f) {
+        const rm = document.createElement('button'); rm.type = 'button'; rm.className = 'rm'; rm.textContent = 'Remove'; rm.setAttribute('aria-label', 'Remove file for ' + d.t);
+        rm.disabled = stage >= 0; if (stage >= 0) rm.style.display = 'none';
+        rm.onclick = () => { delete files[d.id]; drawDocs(); };
+        act.appendChild(rm);
+      } else {
+        const lab = document.createElement('label'); lab.className = 'upbtn';
+        lab.innerHTML = `<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 11V3M4.5 6.5L8 3l3.5 3.5M3 13h10" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>Upload<input type="file" accept=".pdf,.jpg,.jpeg,.png,.heic" aria-label="Upload ${d.t}">`;
+        lab.querySelector('input').addEventListener('change', e => { const file = e.target.files[0]; if (!file) return; files[d.id] = {name:file.name, size:file.size}; drawDocs(); });
+        if (stage >= 0) lab.style.display = 'none';
+        act.appendChild(lab);
+      }
+      docsEl.appendChild(li);
+    });
+    const req = DOCS.filter(d => d.req), have = req.filter(d => files[d.id]).length;
+    $('#count').textContent = `${have} of ${req.length} required`;
+    $('#meter').style.width = (have / req.length * 100) + '%';
+    $('#submitDocs').disabled = have < req.length || stage >= 0;
+    $('#submitDocs').textContent = stage >= 0 ? 'Sent to your CPA' : have < req.length ? `Upload ${req.length - have} more to send` : 'Send to my CPA';
+    $('#sample').style.display = stage >= 0 || have === req.length ? 'none' : '';
+  }
+  $('#sample').onclick = () => {
+    const names = {w2a:'W2_RaleighHealth_2026.pdf', w2b:'W2_OakCitySchools_2026.pdf', int:'1099_Composite_2026.pdf', mort:'1098_Mortgage_2026.pdf', care:'Childcare_Receipts_2026.jpg'};
+    Object.entries(names).forEach(([k, n], i) => { if (!files[k]) files[k] = {name:n, size: 84000 + i * 23117}; });
+    drawDocs();
+  };
+
+  const tracker = [...document.querySelectorAll('#tracker li')];
+  const labels = ['Received','In review','Ready to sign'];
+  function setStage(n) {
+    stage = n;
+    tracker.forEach((li, i) => { li.classList.toggle('done', i < n || n === 3); li.classList.toggle('now', i === n && n < 3); if (i === n) li.setAttribute('aria-current', 'step'); else li.removeAttribute('aria-current'); });
+    if (n >= 0 && n < 3) $('#statusLive').textContent = 'Return status: ' + labels[n];
+    drawDocs();
+    if (n === 2) unlockSign();
+  }
+
+  const msgs = $('#msgs');
+  function addMsg(me, text, who) {
+    const t = new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+    const d = document.createElement('div'); d.className = 'm' + (me ? ' me' : '');
+    d.innerHTML = `<span class="av${me ? ' g' : ''}">${me ? 'JH' : 'RO'}</span><div><div class="who"><b>${me ? 'You' : (who || 'Renee Okafor, CPA')}</b> · ${t}</div><p></p></div>`;
+    d.querySelector('p').textContent = text; msgs.appendChild(d); msgs.scrollTop = msgs.scrollHeight;
+  }
+  function cpaSays(text, delay = 1200) {
+    $('#typing').textContent = 'Renee is typing…';
+    return new Promise(r => setTimeout(() => { $('#typing').textContent = ''; addMsg(false, text); r(); }, reduce ? 300 : delay));
+  }
+  addMsg(false, "Hi Jordan and Sam, your 2026 checklist is ready. It's based on last year's return, so if anything changed (new job, new baby, sold stock), tell me here.");
+  addMsg(true, 'Thanks! Sam switched schools in August, so there might be two W-2s for her.');
+  addMsg(false, "Good to know. Upload both when they arrive. Employers have until February 1 to send them this year.");
+
+  $('#submitDocs').onclick = async () => {
+    setStage(0);
+    addMsg(true, 'All five documents are uploaded.');
+    await cpaSays("Got everything, thank you. I'm starting on your return now.", 1400);
+    setStage(1);
+    await cpaSays("Quick note: your childcare receipts qualify for the dependent care credit, which I've applied. Your return is ready for you to review and sign below.", 2400);
+    setStage(2);
+  };
+
+  const replies = [
+    [/refund|when.*money|deposit/i, 'Once you sign, we e-file within one business day. The IRS usually issues e-filed refunds by direct deposit in about three weeks.'],
+    [/extension|late|april/i, "You're well ahead of April 15, so no extension is needed. If something is still missing in late March, I'll file one for you."],
+    [/fee|cost|price|invoice|bill/i, 'Your flat fee for this return is $495, the same as quoted. The invoice will appear in the portal after you sign.'],
+    [/estimate|quarterly/i, "I'll set up 2027 estimated payment reminders once this return is filed, starting with the April 15 payment."]
+  ];
+  $('#sendForm').addEventListener('submit', e => {
+    e.preventDefault(); const v = $('#msgIn').value.trim(); if (!v) return;
+    addMsg(true, v); $('#msgIn').value = '';
+    const hit = replies.find(([re]) => re.test(v));
+    cpaSays(hit ? hit[1] : "Thanks, I've noted that on your file and will reply in detail today. (Demo: messages are not sent anywhere.)", 1300);
+  });
+
+  function unlockSign() {
+    $('#esign').classList.remove('locked');
+    $('#signWhy').textContent = 'Your CPA has finished your return. Check the summary, then sign to authorize e-filing.';
+    ['#sigName', '#sigAgree', '#sigBtn'].forEach(s => $(s).disabled = false);
+    $('#sigDate').textContent = new Date().toLocaleDateString('en-US');
+  }
+  $('#sigName').addEventListener('input', e => { $('#sigPreview').textContent = e.target.value || ' '; });
+  $('#signForm').addEventListener('submit', e => {
+    e.preventDefault(); if (stage !== 2) return;
+    const n = $('#sigName').value.trim();
+    if (n.split(/\s+/).length < 2) { $('#sigErr').textContent = 'Type your first and last name as they appear on your return.'; $('#sigName').focus(); return; }
+    if (!$('#sigAgree').checked) { $('#sigErr').textContent = 'Check the box to authorize e-filing.'; $('#sigAgree').focus(); return; }
+    $('#sigErr').textContent = '';
+    ['#sigName', '#sigAgree'].forEach(s => $(s).disabled = true); $('#sigBtn').style.display = 'none';
+    $('#signedText').textContent = `${n} signed on ${new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})}. We'll e-file your federal and NC returns within one business day and post the IRS acceptance here. (Demo: nothing was signed, sent or filed.)`;
+    $('#signed').style.display = 'block'; $('#signed').focus();
+    setStage(3);
+    cpaSays('Signature received. I\'ll e-file tomorrow morning and message you when the IRS accepts it.', 1000);
+  });
+  drawDocs();
+})();
+</script>
+</body>
+</html>

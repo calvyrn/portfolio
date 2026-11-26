@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Torque &amp; Tread Auto Care | Auto Repair in Midtown Kansas City, MO</title>
+<meta name="description" content="Independent auto repair on Main Street in Kansas City, MO. Brakes, oil changes, check engine light diagnosis, tires and A/C. Book online, approve estimates from your phone, 24-month / 24,000-mile warranty.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700;800&family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--g:#111418;--g2:#2B2F36;--g3:#1A1E23;--paper:#F4F5F7;--red:#E63946;--y:#FFC300;--ink:#111418;--mut:#5F6670;--line:#D9DCE1;--dline:#2B2F36;--disp:"Saira Condensed","Arial Narrow",sans-serif;--body:"Rubik",system-ui,sans-serif;--mono:ui-monospace,"SFMono-Regular","Menlo","Consolas",monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 var(--body)}
+img{max-width:100%;display:block}a{color:inherit}
+:focus-visible{outline:3px solid var(--y);outline-offset:2px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+@media(max-width:560px){.wrap{padding:0 18px}}
+.mono{font-family:var(--mono)}
+.concept{background:#000;color:#B8BEC7;font-size:13px;text-align:center;padding:7px 16px}.concept a{color:var(--y)}
+/* header */
+header.top{position:sticky;top:0;z-index:40;background:#111418f5;backdrop-filter:blur(8px);color:#fff;border-bottom:1px solid var(--dline)}
+header.top .wrap{display:flex;align-items:center;gap:28px;height:70px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;white-space:nowrap}
+.brand svg{width:38px;height:38px;flex:none}
+.brand b{font:800 23px/1 var(--disp);letter-spacing:.02em;text-transform:uppercase}
+.brand small{display:block;font:500 11px/1 var(--mono);color:#8D949E;margin-top:4px;letter-spacing:.06em}
+nav.main{display:flex;gap:24px;margin-left:auto;font-size:15px}
+nav.main a{text-decoration:none;color:#C9CED6}nav.main a:hover{color:#fff}
+.hdr{display:flex;gap:12px;align-items:center}
+.tel{font:600 15px var(--mono);text-decoration:none;color:#fff;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 16px/1 var(--body);padding:14px 20px;border-radius:4px;text-decoration:none;border:0;cursor:pointer;white-space:nowrap}
+.btn.r{background:var(--red);color:#fff}.btn.r:hover{background:#cc2f3b}
+.btn.o{border:1.5px solid #4A505A;color:#fff;background:transparent}.btn.o:hover{border-color:#fff}
+.btn.d{background:var(--g);color:#fff}
+@media(max-width:1080px){nav.main{display:none}.hdr{margin-left:auto}}
+@media(max-width:560px){.tel{display:none}.brand small{display:none}.brand b{font-size:20px}}
+/* hero */
+.hero{background:var(--g);color:#fff;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:64px 64px;pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.08fr .92fr;gap:0;min-height:640px}
+.hero .copy{padding:72px 56px 56px 0;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--dline)}
+.hero h1{font:800 clamp(46px,6.2vw,92px)/.9 var(--disp);letter-spacing:-.005em;margin:0 0 24px;text-transform:uppercase}
+.hero .lede{font-size:19px;color:#C3C8D0;max-width:33em;margin:0 0 32px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.hero .pic{position:relative;min-height:520px}
+.hero .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 40%;filter:saturate(.85) contrast(1.05)}
+.hero .pic::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,#111418d9)}
+.board{position:absolute;left:-60px;right:28px;bottom:32px;z-index:2;background:#0B0D10ee;border:1px solid #3A3F47;border-radius:6px;font:13px/1.2 var(--mono);color:#D7DBE0;backdrop-filter:blur(6px)}
+.board .bh{display:flex;justify-content:space-between;padding:10px 14px;border-bottom:1px solid #2B2F36;color:#8D949E;font-size:12px}
+.board .bh i{font-style:normal;color:var(--y)}
+.board .row{display:grid;grid-template-columns:52px 74px 1fr auto;gap:10px;align-items:center;padding:10px 14px;border-bottom:1px solid #1F2329}
+.board .row:last-child{border-bottom:0}
+.st{display:inline-flex;align-items:center;gap:7px;font-size:12px;white-space:nowrap}
+.st::before{content:"";width:8px;height:8px;border-radius:50%;background:#8D949E}
+.st.wait{color:var(--y)}.st.wait::before{background:var(--y);animation:blink 1.4s infinite}
+.st.prog::before{background:#F4F5F7}.st.ready{color:#fff}.st.ready::before{background:var(--red)}
+@keyframes blink{50%{opacity:.25}}
+.strip{background:var(--g3);color:#fff;border-top:1px solid var(--dline);border-bottom:1px solid var(--dline)}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.strip .wrap>div{padding:20px 22px;border-left:1px solid var(--dline)}.strip .wrap>div:first-child{border-left:0;padding-left:0}
+.strip b{display:block;font:700 26px/1.05 var(--disp);letter-spacing:.01em}
+.strip span{font-size:14px;color:#9AA1AB}
+@media(max-width:960px){.hero .wrap{grid-template-columns:1fr;min-height:0}.hero .copy{border-right:0;padding:48px 0 36px}.hero .pic{min-height:420px;margin:0 -28px}.board{left:16px;right:16px;bottom:16px}.strip .wrap{grid-template-columns:1fr 1fr}.strip .wrap>div:nth-child(3){border-left:0;padding-left:0}.strip .wrap>div:nth-child(n+3){border-top:1px solid var(--dline)}.strip .wrap>div:nth-child(2n){padding-right:0}}
+@media(max-width:560px){.hero .pic{margin:0 -18px}}
+@media(max-width:480px){.board .row{grid-template-columns:44px 1fr auto}.board .row .job{display:none}.hero .pic{min-height:380px}}
+/* sections */
+section.s{padding:96px 0}
+.head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:44px}
+.head h2{font:800 clamp(36px,4.6vw,62px)/.95 var(--disp);margin:0;text-wrap:balance;text-transform:uppercase;letter-spacing:-.005em}
+.head p{margin:0;color:var(--mut);font-size:18px;max-width:34em}
+@media(max-width:860px){.head{grid-template-columns:1fr;gap:14px}}
+/* services */
+.svc{display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.svc article{border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;display:flex;flex-direction:column}
+.svc .big{grid-column:span 2}.svc .wide{grid-column:span 3}
+.svc img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.svc .in{padding:22px 24px 26px;display:flex;flex-direction:column;gap:8px;flex:1}
+.svc h3{font:700 28px/1 var(--disp);margin:0;text-transform:uppercase}
+.svc p{margin:0;color:var(--mut)}
+.svc .price{margin-top:auto;padding-top:12px;font:600 14px var(--mono);color:var(--ink);display:flex;justify-content:space-between;gap:12px;border-top:1px dashed var(--line)}.svc .price span:last-child{white-space:nowrap}
+.svc .wide{flex-direction:row}.svc .wide .ico{flex:none;width:120px;display:grid;place-items:center;background:var(--g);color:var(--y)}
+.svc .wide .ico svg{width:48px;height:48px}
+@media(max-width:960px){.svc{grid-template-columns:1fr 1fr}.svc .big{grid-column:span 1}.svc .wide{grid-column:span 2}}
+@media(max-width:620px){.svc{grid-template-columns:1fr}.svc .big,.svc .wide{grid-column:span 1}.svc .wide .ico{width:84px}}
+/* booking */
+.bookwrap{display:grid;grid-template-columns:1.25fr .75fr;gap:0;border:1px solid var(--line);background:#fff}
+form.book{padding:34px 36px 36px}
+.grp{border:0;margin:0 0 26px;padding:0}
+.grp legend{display:flex;gap:12px;align-items:baseline;font:700 22px/1 var(--disp);text-transform:uppercase;margin-bottom:14px;padding:0}
+.grp legend .n{font:600 13px var(--mono);color:#fff;background:var(--g);padding:4px 7px;border-radius:3px}
+.row3{display:grid;grid-template-columns:110px 1fr 1fr;gap:12px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.f{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500}
+.f input,.f textarea{font:inherit;font-weight:400;font-size:16px;padding:12px 13px;border:1.5px solid var(--line);border-radius:4px;background:var(--paper);color:var(--ink);width:100%}
+.f input:focus,.f textarea:focus{border-color:var(--g);background:#fff;outline:none;box-shadow:0 0 0 3px #FFC30066}
+.f input[aria-invalid="true"]{border-color:var(--red)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{appearance:none;border:1.5px solid var(--line);background:#fff;font:500 15px var(--body);padding:10px 14px;border-radius:4px;cursor:pointer;color:var(--ink);display:inline-flex;gap:8px;align-items:center}
+.chip::before{content:"";width:14px;height:14px;border:1.5px solid #9AA1AB;border-radius:2px}
+.chip[aria-pressed="true"]{background:var(--g);border-color:var(--g);color:#fff}
+.chip[aria-pressed="true"]::before{background:var(--y);border-color:var(--y)}
+.days{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:12px}
+.day,.slot,.opt{appearance:none;border:1.5px solid var(--line);background:#fff;color:var(--ink);border-radius:4px;cursor:pointer;font:inherit}
+.day{padding:10px 4px;line-height:1.15;text-align:center}.day b{display:block;font:700 24px/1 var(--disp)}.day small{font-size:12px;color:var(--mut)}
+.day[aria-pressed="true"],.slot[aria-pressed="true"]{background:var(--g);color:#fff;border-color:var(--g)}.day[aria-pressed="true"] small{color:#C3C8D0}
+.slots{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.slot{padding:10px 4px;font:600 14px var(--mono)}
+.slot:disabled{opacity:.35;text-decoration:line-through;cursor:not-allowed}
+.opts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.opt{padding:14px;text-align:left;font-size:15px}.opt b{display:block;font-weight:600}.opt span{font-size:13px;color:var(--mut)}
+.opt[aria-pressed="true"]{border-color:var(--g);box-shadow:inset 0 0 0 1.5px var(--g);background:#FFF8DD}
+.hint{font-size:14px;color:var(--mut);margin:0}
+.err{color:#C1121F;font-size:14px;font-weight:500;min-height:1.3em;margin:6px 0 0}
+.submit{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+@media(max-width:700px){.row3{grid-template-columns:90px 1fr}.row3 .f:last-child{grid-column:span 2}.row2{grid-template-columns:1fr}.days{grid-template-columns:repeat(3,1fr)}.slots{grid-template-columns:repeat(3,1fr)}.opts{grid-template-columns:1fr}form.book{padding:26px 20px}}
+/* ticket */
+.ticket{background:var(--g);color:#D7DBE0;padding:30px 28px;font:14px/1.5 var(--mono);position:relative}
+.ticket .tk{position:sticky;top:100px}
+.ticket h3{font:700 26px/1 var(--disp);color:#fff;text-transform:uppercase;margin:0 0 4px;letter-spacing:.01em}
+.ticket .sub{color:#8D949E;font-size:12px;margin:0 0 20px}
+.ticket dl{margin:0;display:grid;grid-template-columns:96px 1fr;gap:10px 12px;border-top:1px dashed #3A3F47;padding-top:16px}
+.ticket dt{color:#8D949E}.ticket dd{margin:0;color:#fff;word-break:break-word}
+.ticket dd.empty{color:#5D646E}
+.ticket .foot{margin-top:20px;border-top:1px dashed #3A3F47;padding-top:14px;font-size:12px;color:#8D949E}
+.stamp{display:none;margin-top:18px;border:2px solid var(--y);color:var(--y);padding:12px 14px;border-radius:4px;font-size:13px}
+.stamp b{display:block;font:700 22px/1.1 var(--disp);text-transform:uppercase;margin-bottom:4px}
+.ticket.ok .stamp{display:block}
+.again{appearance:none;background:none;border:0;color:#fff;text-decoration:underline;font:500 14px var(--body);padding:0;margin-top:12px;cursor:pointer}
+form.locked{opacity:.55}
+@media(max-width:960px){.bookwrap{grid-template-columns:1fr}.ticket .tk{position:static}}
+/* tracker */
+.dark{background:var(--g);color:#E6E9ED}
+.dark .head p{color:#9AA1AB}
+.trk{display:grid;grid-template-columns:340px 1fr;border:1px solid var(--dline)}
+.lookup{padding:30px;border-right:1px solid var(--dline);background:var(--g3)}
+.lookup label{display:block;font-weight:500;margin-bottom:8px}
+.ro{display:flex;border:1.5px solid #3A3F47;border-radius:4px;overflow:hidden;background:#0B0D10}
+.ro span{padding:14px 12px;font:600 18px var(--mono);color:#8D949E;border-right:1px solid #2B2F36}
+.ro input{flex:1;min-width:0;background:transparent;border:0;color:#fff;font:600 22px var(--mono);padding:10px 12px;letter-spacing:.08em}
+.ro input:focus{outline:none}.ro:focus-within{border-color:var(--y)}
+.lookup .btn{width:100%;margin-top:12px}
+.try{font-size:14px;color:#9AA1AB;margin:14px 0 0}.try button{background:none;border:0;color:var(--y);font:600 14px var(--mono);cursor:pointer;text-decoration:underline;padding:0}
+.switch{display:flex;align-items:center;gap:12px;margin-top:28px;padding-top:22px;border-top:1px solid var(--dline);cursor:pointer;font-size:15px}
+.switch button{appearance:none;width:48px;height:28px;border-radius:14px;border:0;background:#3A3F47;position:relative;cursor:pointer;flex:none}
+.switch button::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:left .2s}
+.switch button[aria-checked="true"]{background:var(--y)}.switch button[aria-checked="true"]::after{left:23px}
+.sms{margin-top:16px;display:grid;gap:8px}
+.sms p{margin:0;background:#2B2F36;border-radius:12px 12px 12px 3px;padding:10px 12px;font-size:13px;line-height:1.45;color:#E6E9ED}
+.sms small{display:block;color:#8D949E;font:11px var(--mono);margin-bottom:3px}
+.panel{padding:30px 34px;min-height:420px;display:flex;flex-direction:column}.panel>.blank{flex:1}
+.blank{height:100%;display:grid;place-items:center;text-align:center;color:#7C838D;border:1px dashed #2B2F36;border-radius:6px;padding:40px}
+.blank b{display:block;font:700 26px var(--disp);color:#C3C8D0;text-transform:uppercase;margin-bottom:6px}
+.rohead{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:26px}
+.rohead h3{margin:0;font:700 34px/1 var(--disp);color:#fff;text-transform:uppercase}
+.rohead p{margin:4px 0 0;color:#9AA1AB;font-size:14px}
+.rohead .eta{font:13px var(--mono);color:#9AA1AB;text-align:right}.rohead .eta b{display:block;color:#fff;font-size:18px}
+ol.tl{list-style:none;margin:0 0 28px;padding:0;display:grid;grid-template-columns:repeat(5,1fr);position:relative}
+ol.tl li{position:relative;padding-top:30px;font-size:14px;color:#7C838D}
+ol.tl li::before{content:"";position:absolute;top:8px;left:0;right:0;height:3px;background:#2B2F36}
+ol.tl li::after{content:"";position:absolute;top:2px;left:0;width:15px;height:15px;border-radius:50%;background:#111418;border:3px solid #3A3F47}
+ol.tl li b{display:block;color:#9AA1AB;font-weight:500;font-size:15px}
+ol.tl li time{font:12px var(--mono)}
+ol.tl li.done::before{background:#F4F5F7}ol.tl li.done::after{background:#F4F5F7;border-color:#F4F5F7}ol.tl li.done b{color:#fff}
+ol.tl li.now::after{background:var(--y);border-color:var(--y);box-shadow:0 0 0 6px #FFC30033}ol.tl li.now b{color:var(--y)}
+ol.tl li.now::before{background:linear-gradient(90deg,var(--y) 0 15px,#2B2F36 15px)}
+ol.tl li.last.done::after{background:var(--red);border-color:var(--red)}
+.box{border:1px solid var(--dline);border-radius:6px;overflow:hidden}
+.box .bt{padding:14px 18px;background:#1A1E23;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px;color:#9AA1AB}
+.box .bt b{color:#fff;font-weight:600}
+.line{display:grid;grid-template-columns:1fr 100px 190px;gap:16px;align-items:center;padding:14px 18px;border-top:1px solid #1F2329}
+.line h4{margin:0;font-size:16px;font-weight:500;color:#fff}.line p{margin:2px 0 0;font-size:13px;color:#8D949E}
+.line .amt{font:600 16px var(--mono);text-align:right;color:#fff}
+.tag{font:11px var(--mono);padding:2px 6px;border-radius:3px;margin-left:6px;vertical-align:2px}
+.tag.urg{background:var(--red);color:#fff}.tag.soon{background:var(--y);color:#111}.tag.opt{background:#3A3F47;color:#D7DBE0}
+.ad{display:grid;grid-template-columns:1fr 1fr;border:1.5px solid #3A3F47;border-radius:4px;overflow:hidden}
+.ad button{appearance:none;border:0;background:transparent;color:#C3C8D0;font:500 14px var(--body);padding:9px 6px;cursor:pointer}
+.ad button+button{border-left:1.5px solid #3A3F47}
+.ad button[aria-pressed="true"].a{background:#F4F5F7;color:#111}
+.ad button[aria-pressed="true"].d{background:#3A3F47;color:#fff;text-decoration:line-through}
+.tot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:16px 18px;border-top:1px solid var(--dline);background:#0B0D10}
+.tot .sum{font:14px var(--mono);color:#9AA1AB}.tot .sum b{font-size:22px;color:#fff;margin-left:8px}
+.btn.y{background:var(--y);color:#111}.btn.y:disabled{background:#2B2F36;color:#6A717B;cursor:not-allowed}
+.pbar{height:6px;background:#2B2F36;border-radius:3px;overflow:hidden;margin:14px 0 6px}.pbar i{display:block;height:100%;width:0;background:var(--y);transition:width 2.6s linear}
+.note{font-size:13px;color:#7C838D;margin:14px 0 0}
+.terr{color:#FF8A93;font-size:14px;min-height:1.3em;margin:8px 0 0}
+.trk>*{min-width:0}
+@media(max-width:960px){.trk{grid-template-columns:minmax(0,1fr)}.lookup{border-right:0;border-bottom:1px solid var(--dline)}}
+@media(max-width:700px){.panel{padding:24px 18px}ol.tl{grid-template-columns:1fr;gap:0}ol.tl li{padding:0 0 18px 30px}ol.tl li::before{top:0;bottom:0;left:6px;width:3px;height:auto;right:auto}ol.tl li::after{top:2px}ol.tl li.now::before{background:#2B2F36}.line{grid-template-columns:1fr auto}.line .ad{grid-column:span 2}}
+/* why */
+.why{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#fff;border:1px solid var(--line)}
+.why .ph{position:relative;min-height:440px}.why .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.why ul{list-style:none;margin:0;padding:0}
+.why li{display:grid;grid-template-columns:120px 1fr;gap:18px;padding:24px 30px;border-bottom:1px solid var(--line)}.why li:last-child{border-bottom:0}
+.why li .k{font:800 34px/1 var(--disp);color:var(--ink)}.why li .k small{display:block;font:500 12px var(--mono);color:var(--mut);margin-top:6px}
+.why li b{display:block;font-size:17px;font-weight:600;margin-bottom:2px}.why li span{color:var(--mut)}
+@media(max-width:900px){.why{grid-template-columns:1fr}.why .ph{min-height:280px}.why li{grid-template-columns:90px 1fr;padding:20px}}
+/* pricing */
+.prices{background:#fff;border:1px solid var(--line)}
+.pr{display:grid;grid-template-columns:1fr auto;gap:16px;padding:16px 24px;border-bottom:1px solid var(--line);align-items:baseline}
+.pr:last-child{border-bottom:0}
+.pr b{font-weight:600}.pr span{display:block;font-size:14px;color:var(--mut)}
+.pr .p{font:600 18px var(--mono);white-space:nowrap}
+.pcols{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.pcols .prices+.prices{border-left:0}
+.pnote{font-size:14px;color:var(--mut);margin:16px 0 0}
+@media(max-width:860px){.pcols{grid-template-columns:1fr}.pcols .prices+.prices{border-left:1px solid var(--line);border-top:0}}
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.revs figure{margin:0;padding:28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;display:flex;flex-direction:column}
+.revs .stars{color:var(--ink);letter-spacing:3px}
+.revs blockquote{margin:12px 0 18px;font-size:18px;line-height:1.5}
+.revs figcaption{margin-top:auto;font-size:14px;color:var(--mut);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.revs figcaption .mono{font-size:12px}
+@media(max-width:900px){.revs{grid-template-columns:1fr}}
+/* faq */
+.faqgrid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
+.faq details{border-top:1px solid var(--line);padding:18px 0}.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font-size:18px;font-weight:600}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:700 26px/1 var(--disp);color:var(--red)}
+.faq details[open] summary::after{content:"\2212"}
+.faq p{margin:10px 0 0;color:var(--mut);max-width:46em}
+@media(max-width:900px){.faqgrid{grid-template-columns:1fr;gap:10px}}
+/* visit */
+.visit{display:grid;grid-template-columns:.9fr 1.1fr;border:1px solid var(--line);background:#fff}
+.visit .info{padding:34px}
+.hours{width:100%;border-collapse:collapse;font-size:15px;margin:18px 0}
+.hours th,.hours td{text-align:left;padding:9px 0;border-bottom:1px solid var(--line)}.hours th{font-weight:500}
+.hours td{font-family:var(--mono);text-align:right}
+.hours tr.today th,.hours tr.today td{font-weight:700}
+.hours tr.today th::after{content:"Today";font:600 11px var(--mono);background:var(--y);padding:2px 6px;border-radius:3px;margin-left:8px;vertical-align:2px}
+.map{border:0;width:100%;height:100%;min-height:420px;display:block;filter:grayscale(.6) contrast(1.05)}
+@media(max-width:900px){.visit{grid-template-columns:1fr}.visit .info{padding:24px}.map{min-height:300px}}
+.cta{background:var(--red);color:#fff}
+.cta .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-top:48px;padding-bottom:48px}
+.cta h2{font:800 clamp(30px,4vw,52px)/.95 var(--disp);text-transform:uppercase;margin:0;max-width:16em}
+.cta .btn.d{font-size:17px;padding:16px 24px}
+footer{background:var(--g);color:#9AA1AB;padding:64px 0 28px;font-size:15px}
+footer .cols{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px}
+footer h3{color:#fff;font:700 20px var(--disp);text-transform:uppercase;margin:0 0 12px;letter-spacing:.02em}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:7px}
+footer a{text-decoration:none}footer a:hover{color:#fff;text-decoration:underline}
+footer .legal{border-top:1px solid var(--dline);margin-top:44px;padding-top:20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px}
+footer .legal a{color:#fff}
+@media(max-width:860px){footer .cols{grid-template-columns:1fr 1fr}}
+.mbar{display:none}
+@media(max-width:760px){.mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--g);border-top:1px solid var(--dline)}.mbar a{padding:16px;text-align:center;font-weight:600;text-decoration:none;color:#fff}.mbar a:first-child{background:var(--red)}body{padding-bottom:56px}header.top .btn.r{display:none}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+</style>
+</head>
+<body>
+<div class="concept">Example concept by <a href="https://calvyrn.com">Calvyrn</a>. Torque &amp; Tread Auto Care is fictional; names, reviews and 555 numbers are placeholders. Photos: Unsplash.</div>
+<header class="top"><div class="wrap">
+  <a class="brand" href="#" aria-label="Torque and Tread Auto Care, home">
+    <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2.5 35.2 11.25v17.5L20 37.5 4.8 28.75v-17.5z" fill="none" stroke="#F4F5F7" stroke-width="2.4"/><circle cx="20" cy="20" r="7.5" fill="none" stroke="#E63946" stroke-width="3"/><path d="M20 2.5v6M20 31.5v6" stroke="#E63946" stroke-width="2.4"/></svg>
+    <span><b>Torque &amp; Tread</b><small>AUTO CARE · KANSAS CITY</small></span>
+  </a>
+  <nav class="main" aria-label="Main"><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#track">Track my repair</a><a href="#reviews">Reviews</a><a href="#visit">Hours &amp; map</a></nav>
+  <div class="hdr"><a class="tel" href="tel:+18165550181">(816) 555-0181</a><a class="btn r" href="#book">Book service</a></div>
+</div></header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div class="copy">
+      <h1>Know what's wrong, what it costs and when it's ready.</h1>
+      <p class="lede">Independent repair on Main Street in Midtown Kansas City. Every inspection comes with photos, every estimate is itemised for you to approve from your phone, and every repair carries a 24-month / 24,000-mile warranty.</p>
+      <div class="ctas"><a class="btn r" href="#book">Book a drop-off</a><a class="btn o" href="#track">Track my repair</a></div>
+    </div>
+    <div class="pic">
+      <img src="img/tech.jpg" alt="Technician working in the engine bay of a car" fetchpriority="high">
+      <div class="board" aria-label="Example of today's shop board">
+        <div class="bh"><span>SHOP BOARD · MAIN ST</span><i>● LIVE</i></div>
+        <div class="row"><span>BAY 1</span><span>RO 1038</span><span class="job">Pads + rotors</span><span class="st prog">In progress</span></div>
+        <div class="row"><span>BAY 2</span><span>RO 1041</span><span class="job">Check engine</span><span class="st">Diagnosing</span></div>
+        <div class="row"><span>BAY 3</span><span>RO 1042</span><span class="job">Brakes + fluid</span><span class="st wait">Needs approval</span></div>
+        <div class="row"><span>BAY 4</span><span>RO 1036</span><span class="job">A/C recharge</span><span class="st ready">Ready</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="strip"><div class="wrap">
+  <div><b>24 mo / 24k mi</b><span>Parts and labor warranty</span></div>
+  <div><b>Same-day</b><span>Diagnosis on most drop-offs</span></div>
+  <div><b>Free shuttle</b><span>Within 5 miles of the shop</span></div>
+  <div><b>Sat 8–2</b><span>Weekday hours 7:30–6</span></div>
+</div></div>
+
+<section class="s" id="services"><div class="wrap">
+  <div class="head"><h2>The repairs we do every day</h2><p>Most cars, light trucks and SUVs, gas and hybrid. Our ASE-certified technicians check the whole car on every visit and send you photos, so you decide what's urgent and what can wait.</p></div>
+  <div class="svc">
+    <article class="big"><img src="img/oil.jpg" alt="Technician pouring new oil through a funnel into an engine" loading="lazy"><div class="in"><h3>Oil change</h3><p>Full synthetic or conventional, new filter, fluid top-off and a 30-point inspection with photos.</p><div class="price"><span>From</span><span>$49.95</span></div></div></article>
+    <article class="big"><img src="img/brakes.jpg" alt="SUV on a lift with the front wheel off and the brake rotor showing" loading="lazy"><div class="in"><h3>Brakes</h3><p>Pads, rotors, calipers and fluid. We measure pad thickness and send you the numbers before quoting.</p><div class="price"><span>Pads per axle from</span><span>$229</span></div></div></article>
+    <article class="big"><img src="img/lift.jpg" alt="Car raised on a red two-post lift with the front end opened up" loading="lazy"><div class="in"><h3>Check engine light</h3><p>Scan, pinpoint tests and a plain-English report of what failed and why, not just a code.</p><div class="price"><span>Diagnosis</span><span>$129</span></div></div></article>
+    <article class="wide"><div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="24" cy="24" r="19"/><circle cx="24" cy="24" r="8"/><path d="M24 5v6M24 37v6M5 24h6M37 24h6M10.5 10.5l4.3 4.3M33.2 33.2l4.3 4.3M10.5 37.5l4.3-4.3M33.2 14.8l4.3-4.3"/></svg></div><div class="in"><h3>Tires &amp; alignment</h3><p>Mount, balance, rotation, flat repair and four-wheel alignment. We'll quote tires from several makers so you can pick on price.</p><div class="price"><span>Mount &amp; balance, set of 4</span><span>$96</span></div></div></article>
+    <article class="wide"><div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M24 4v40M7 14l34 20M7 34l34-20"/><path d="M19 7l5 5 5-5M19 41l5-5 5 5M6 20l7-1-2-7M42 28l-7 1 2 7M6 28l7 1-2 7M42 20l-7-1 2-7"/></svg></div><div class="in"><h3>A/C repair</h3><p>Leak testing, recharge and compressor work, before Kansas City summer hits. We check the cabin filter too.</p><div class="price"><span>Performance check</span><span>$89 + refrigerant</span></div></div></article>
+  </div>
+</div></section>
+
+<section class="s" id="book" style="padding-top:0"><div class="wrap">
+  <div class="head"><h2>Book a drop-off</h2><p>Pick your services and a drop-off time. A service advisor confirms by text and calls you with a written estimate before any work starts.</p></div>
+  <div class="bookwrap">
+    <form class="book" id="bookForm" novalidate>
+      <fieldset class="grp"><legend><span class="n">01</span>Your vehicle</legend>
+        <div class="row3">
+          <div class="f"><label for="vy">Year</label><input id="vy" inputmode="numeric" maxlength="4" placeholder="2017" autocomplete="off"></div>
+          <div class="f"><label for="vm">Make</label><input id="vm" placeholder="e.g. your car's brand" autocomplete="off"></div>
+          <div class="f"><label for="vmo">Model</label><input id="vmo" placeholder="e.g. sedan, SUV, pickup" autocomplete="off"></div>
+        </div>
+      </fieldset>
+      <fieldset class="grp"><legend><span class="n">02</span>What does it need?</legend>
+        <div class="chips" id="svcChips" role="group" aria-label="Services">
+          <button type="button" class="chip" aria-pressed="false" data-v="Oil change">Oil change</button>
+          <button type="button" class="chip" aria-pressed="false" data-v="Brakes">Brakes</button>
+          <button type="button" class="chip" aria-pressed="false" data-v="Check engine light">Check engine light</button>
+          <button type="button" class="chip" aria-pressed="false" data-v="Tires">Tires</button>
+          <button type="button" class="chip" aria-pressed="false" data-v="A/C">A/C</button>
+        </div>
+        <div class="f" style="margin-top:12px"><label for="notes">Anything we should know? <span style="color:var(--mut);font-weight:400">(optional)</span></label><textarea id="notes" rows="2" placeholder="Grinding noise when braking, light came on after a cold start…"></textarea></div>
+      </fieldset>
+      <fieldset class="grp"><legend><span class="n">03</span>Drop-off</legend>
+        <div class="days" id="days" role="group" aria-label="Drop-off day"></div>
+        <div class="slots" id="slots" role="group" aria-label="Drop-off time"><p class="hint" style="grid-column:1/-1">Choose a day to see drop-off times.</p></div>
+      </fieldset>
+      <fieldset class="grp"><legend><span class="n">04</span>While we work</legend>
+        <div class="opts" id="waitOpts" role="group" aria-label="While we work">
+          <button type="button" class="opt" aria-pressed="false" data-v="Wait in the lounge"><b>Wait in the lounge</b><span>Wi-Fi and coffee, best for oil changes</span></button>
+          <button type="button" class="opt" aria-pressed="false" data-v="Loaner car"><b>Loaner car</b><span>For repairs over 3 hours, by request</span></button>
+          <button type="button" class="opt" aria-pressed="false" data-v="Shuttle ride"><b>Shuttle ride</b><span>Free within 5 miles</span></button>
+        </div>
+      </fieldset>
+      <fieldset class="grp"><legend><span class="n">05</span>Contact</legend>
+        <div class="row2">
+          <div class="f"><label for="nm">Name</label><input id="nm" autocomplete="name"></div>
+          <div class="f"><label for="ph">Mobile</label><input id="ph" type="tel" autocomplete="tel" placeholder="For text updates"></div>
+        </div>
+      </fieldset>
+      <p class="err" id="bErr" role="alert"></p>
+      <div class="submit"><button class="btn r" type="submit">Request this drop-off</button><span class="hint">No payment needed. You approve every repair first.</span></div>
+    </form>
+    <aside class="ticket" id="ticket" aria-live="polite"><div class="tk">
+      <h3>Work order</h3><p class="sub" id="tkNo">DRAFT · not yet booked</p>
+      <dl>
+        <dt>Vehicle</dt><dd id="tVeh" class="empty">—</dd>
+        <dt>Services</dt><dd id="tSvc" class="empty">—</dd>
+        <dt>Drop-off</dt><dd id="tDrop" class="empty">—</dd>
+        <dt>While here</dt><dd id="tWait" class="empty">—</dd>
+        <dt>Contact</dt><dd id="tCon" class="empty">—</dd>
+      </dl>
+      <div class="stamp" id="stamp"><b>Drop-off requested</b><span id="stampTxt"></span><br><button type="button" class="again" id="again" hidden>Book another vehicle</button></div>
+      <p class="foot">Key drop box by the side door for early or after-hours drop-offs.</p>
+    </div></aside>
+  </div>
+</div></section>
+
+<section class="s dark" id="track"><div class="wrap">
+  <div class="head"><h2>Track my repair</h2><p>Your repair order number is on your check-in text. See where your car is, approve or decline each line of the estimate, and get a text when it's ready.</p></div>
+  <div class="trk">
+    <div class="lookup">
+      <form id="trackForm" novalidate>
+        <label for="roIn">Repair order number</label>
+        <div class="ro"><span>RO</span><input id="roIn" inputmode="numeric" maxlength="6" autocomplete="off" placeholder="0000" aria-describedby="tryHint"></div>
+        <p class="terr" id="tErr" role="alert"></p>
+        <button class="btn r" type="submit">Track</button>
+      </form>
+      <p class="try" id="tryHint">Demo: try RO <button type="button" id="tryBtn">1042</button></p>
+      <div class="switch" id="smsWrap"><button type="button" role="switch" aria-checked="false" id="smsT" aria-labelledby="smsL"></button><span id="smsL">Text me each update at (816) •••-••42</span></div>
+      <div class="sms" id="smsLog" aria-live="polite"></div>
+    </div>
+    <div class="panel" id="panel">
+      <div class="blank"><div><b>No repair loaded</b>Enter your RO number to see live status.</div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="s" id="why"><div class="wrap">
+  <div class="head"><h2>Why drivers switch to us</h2><p>We're a neighborhood shop with dealer-level tools. You talk to the person who looked at your car, and you see what they saw.</p></div>
+  <div class="why">
+    <div class="ph"><img src="img/shop.jpg" alt="Bright, clean workshop with cars on lifts" loading="lazy"></div>
+    <ul>
+      <li><div class="k">24/24<small>MONTHS / MILES</small></div><div><b>A warranty you can actually use</b><span>24 months or 24,000 miles on parts and labor, whichever comes first.</span></div></li>
+      <li><div class="k">ASE<small>CERTIFIED TECHS</small></div><div><b>Trained technicians on every car</b><span>Our techs keep their ASE certifications current and train on hybrids every year.</span></div></li>
+      <li><div class="k">Photos<small>EVERY INSPECTION</small></div><div><b>See it before you pay for it</b><span>Worn pads, leaks and cracked belts are photographed and measured, then sent to your phone.</span></div></li>
+      <li><div class="k">$0<small>SURPRISES</small></div><div><b>Nothing extra without a yes</b><span>If we find something new, work stops until you approve the added line.</span></div></li>
+    </ul>
+  </div>
+</div></section>
+
+<section class="s" id="pricing" style="padding-top:0"><div class="wrap">
+  <div class="head"><h2>Example prices</h2><p>Typical prices for most sedans and small SUVs. Your written estimate is exact for your vehicle and is approved by you before work begins.</p></div>
+  <div class="pcols">
+    <div class="prices">
+      <div class="pr"><div><b>Conventional oil change</b><span>Up to 5 quarts, filter, inspection</span></div><div class="p">$49.95</div></div>
+      <div class="pr"><div><b>Full synthetic oil change + rotation</b><span>Up to 5 quarts, tire rotation included</span></div><div class="p">$89.95</div></div>
+      <div class="pr"><div><b>Check engine light diagnosis</b><span>Credited toward the repair if you approve it</span></div><div class="p">$129.00</div></div>
+      <div class="pr"><div><b>A/C performance check</b><span>Pressures, leak test, vent temperature</span></div><div class="p">$89.00</div></div>
+    </div>
+    <div class="prices">
+      <div class="pr"><div><b>Front brake pads</b><span>Per axle, premium ceramic pads</span></div><div class="p">from $229</div></div>
+      <div class="pr"><div><b>Brake pads and rotors</b><span>Per axle, new rotors, hardware kit</span></div><div class="p">from $389</div></div>
+      <div class="pr"><div><b>Mount and balance</b><span>Set of four, new valve stems</span></div><div class="p">$96.00</div></div>
+      <div class="pr"><div><b>Four-wheel alignment</b><span>Printout of before and after angles</span></div><div class="p">$119.95</div></div>
+    </div>
+  </div>
+  <p class="pnote">Prices are examples for this concept. Shop supplies and Missouri sales tax on parts are shown on your estimate.</p>
+</div></section>
+
+<section class="s" id="reviews" style="padding-top:0"><div class="wrap">
+  <div class="head"><h2>What drivers say</h2><p>Placeholder reviews written for this concept, not from real customers.</p></div>
+  <div class="revs">
+    <figure><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>"They texted me a photo of my brake pads next to a ruler. First time a shop has ever shown me instead of just telling me."</blockquote><figcaption><span>Placeholder review · Westport</span><span class="mono">RO 0981</span></figcaption></figure>
+    <figure><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>"I declined two lines on the estimate and nobody pushed. Car was ready at 4 like they said, and the shuttle got me back to the office."</blockquote><figcaption><span>Placeholder review · Crossroads</span><span class="mono">RO 0997</span></figcaption></figure>
+    <figure><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>"Check engine light that two places couldn't find. They found a cracked vacuum hose, showed me, fixed it for less than the diagnosis elsewhere."</blockquote><figcaption><span>Placeholder review · Brookside</span><span class="mono">RO 1013</span></figcaption></figure>
+  </div>
+</div></section>
+
+<section class="s" style="padding-top:0"><div class="wrap faqgrid">
+  <div class="head" style="display:block;margin:0"><h2>Questions before you drop off</h2></div>
+  <div class="faq">
+    <details><summary>Do I need an appointment?</summary><p>For oil changes and tire rotations we take walk-ins before 3 pm if a bay is open. For diagnosis and repairs, booking a drop-off means a technician is ready for your car when you arrive.</p></details>
+    <details><summary>Will servicing my car here affect my factory warranty?</summary><p>No. Federal law lets you have maintenance done at any qualified shop. We use parts that meet your manufacturer's specifications and record every service for you.</p></details>
+    <details><summary>How does approving an estimate work?</summary><p>After the inspection you get a text link with photos and an itemised estimate. Approve or decline each line. We only start the lines you approve, and the price you see is the price you pay.</p></details>
+    <details><summary>What does the 24-month / 24,000-mile warranty cover?</summary><p>Parts and labor on repairs we perform, for 24 months or 24,000 miles, whichever comes first. Bring the car back and we fix it at no charge.</p></details>
+    <details><summary>Can I drop off my car after hours?</summary><p>Yes. Use the key drop box by the side door, fill in the envelope and we'll text you when we start. The lot is lit and on camera.</p></details>
+  </div>
+</div></section>
+
+<section class="s" id="visit" style="padding-top:0"><div class="wrap">
+  <div class="visit">
+    <div class="info">
+      <div class="head" style="display:block;margin:0"><h2>Hours &amp; location</h2></div>
+      <p style="margin:14px 0 0;font-size:17px">4120 Main St, Kansas City, MO 64111<br><span style="color:var(--mut)">Midtown, two blocks south of 39th St. Customer parking on the north side.</span></p>
+      <table class="hours" id="hours"><caption class="sr">Opening hours</caption>
+        <tr data-d="1"><th scope="row">Monday</th><td>7:30 am – 6:00 pm</td></tr>
+        <tr data-d="2"><th scope="row">Tuesday</th><td>7:30 am – 6:00 pm</td></tr>
+        <tr data-d="3"><th scope="row">Wednesday</th><td>7:30 am – 6:00 pm</td></tr>
+        <tr data-d="4"><th scope="row">Thursday</th><td>7:30 am – 6:00 pm</td></tr>
+        <tr data-d="5"><th scope="row">Friday</th><td>7:30 am – 6:00 pm</td></tr>
+        <tr data-d="6"><th scope="row">Saturday</th><td>8:00 am – 2:00 pm</td></tr>
+        <tr data-d="0"><th scope="row">Sunday</th><td>Closed</td></tr>
+      </table>
+      <a class="btn d" href="tel:+18165550181">Call (816) 555-0181</a>
+    </div>
+    <iframe class="map" title="Map showing Torque and Tread Auto Care on Main Street, Kansas City" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-94.6005%2C39.0440%2C-94.5715%2C39.0620&amp;layer=mapnik&amp;marker=39.0530%2C-94.5860"></iframe>
+  </div>
+</div></section>
+
+<div class="cta"><div class="wrap"><h2>Book today, approve from your phone, drive home on time.</h2><a class="btn d" href="#book">Book a drop-off</a></div></div>
+</main>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div><h3>Torque &amp; Tread Auto Care</h3><p style="margin:0 0 12px">Independent auto repair in Midtown Kansas City. Brakes, diagnostics, oil, tires and A/C with a 24-month / 24,000-mile warranty.</p></div>
+    <div><h3>Services</h3><ul><li><a href="#services">Oil change</a></li><li><a href="#services">Brakes</a></li><li><a href="#services">Check engine light</a></li><li><a href="#services">Tires &amp; alignment</a></li><li><a href="#services">A/C repair</a></li></ul></div>
+    <div><h3>Customers</h3><ul><li><a href="#book">Book a drop-off</a></li><li><a href="#track">Track my repair</a></li><li><a href="#pricing">Example prices</a></li><li><a href="#reviews">Reviews</a></li></ul></div>
+    <div><h3>Shop</h3><ul><li><a href="tel:+18165550181">(816) 555-0181</a></li><li>4120 Main St</li><li>Kansas City, MO 64111</li><li>Mon–Fri 7:30–6 · Sat 8–2</li></ul></div>
+  </div>
+  <div class="legal"><span>Fictional business used to demonstrate an auto repair website with booking and repair tracking. Photos from Unsplash.</span><span>Concept, design and build: <a href="https://calvyrn.com">Calvyrn</a></span></div>
+</div></footer>
+<nav class="mbar" aria-label="Quick actions"><a href="#book">Book service</a><a href="tel:+18165550181">Call the shop</a></nav>
+
+<script>
+(() => {
+  const $ = s => document.querySelector(s);
+  const fmtDay = d => d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+  const todayRow = document.querySelector(`#hours tr[data-d="${new Date().getDay()}"]`); if (todayRow) todayRow.classList.add('today');
+
+  /* ---------- Booking ---------- */
+  const B = { svc: new Set(), day: null, time: null, wait: null };
+  const setTxt = (id, v) => { const el = $(id); el.textContent = v || '—'; el.classList.toggle('empty', !v); };
+  function draw() {
+    const veh = [$('#vy').value.trim(), $('#vm').value.trim(), $('#vmo').value.trim()].filter(Boolean).join(' ');
+    setTxt('#tVeh', veh);
+    setTxt('#tSvc', [...B.svc].join(', '));
+    setTxt('#tDrop', B.day ? fmtDay(B.day) + (B.time ? ' · ' + B.time : '') : '');
+    setTxt('#tWait', B.wait);
+    const ph = $('#ph').value.trim(), nm = $('#nm').value.trim();
+    setTxt('#tCon', [nm, ph].filter(Boolean).join(' · '));
+  }
+  ['#vy', '#vm', '#vmo', '#nm', '#ph'].forEach(id => $(id).addEventListener('input', e => { e.target.removeAttribute('aria-invalid'); draw(); }));
+  $('#svcChips').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; const on = b.getAttribute('aria-pressed') !== 'true'; b.setAttribute('aria-pressed', on); on ? B.svc.add(b.dataset.v) : B.svc.delete(b.dataset.v); draw(); });
+  $('#waitOpts').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; $('#waitOpts').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)); B.wait = b.dataset.v; draw(); });
+  const days = []; const d = new Date(); d.setHours(0, 0, 0, 0);
+  while (days.length < 6) { d.setDate(d.getDate() + 1); if (d.getDay() !== 0) days.push(new Date(d)); }
+  days.forEach((x, i) => {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'day'; b.setAttribute('aria-pressed', 'false');
+    b.innerHTML = `<small>${x.toLocaleDateString('en-US', { weekday: 'short' })}</small><b>${x.getDate()}</b><small>${x.toLocaleDateString('en-US', { month: 'short' })}</small>`;
+    b.setAttribute('aria-label', x.toDateString());
+    b.onclick = () => { $('#days').querySelectorAll('button').forEach(y => y.setAttribute('aria-pressed', y === b)); B.day = x; B.time = null; slots(x, i); draw(); };
+    $('#days').appendChild(b);
+  });
+  function slots(x, seed) {
+    const sat = x.getDay() === 6;
+    const list = sat ? ['8:00 am', '8:30 am', '9:00 am', '10:00 am', '11:00 am', '12:00 pm'] : ['7:30 am', '8:00 am', '8:30 am', '10:00 am', '12:30 pm', '2:00 pm'];
+    $('#slots').innerHTML = '';
+    list.forEach((t, j) => {
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'slot'; b.textContent = t; b.setAttribute('aria-pressed', 'false');
+      if ((j + seed) % 4 === 2) { b.disabled = true; b.setAttribute('aria-label', t + ', full'); }
+      b.onclick = () => { $('#slots').querySelectorAll('button').forEach(y => y.setAttribute('aria-pressed', y === b)); B.time = t; draw(); };
+      $('#slots').appendChild(b);
+    });
+  }
+  $('#again').onclick = () => location.reload();
+  $('#bookForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const err = (m, el) => { $('#bErr').textContent = m; if (el) { el.setAttribute('aria-invalid', 'true'); el.focus(); } };
+    const yr = +$('#vy').value.trim();
+    if (!yr || yr < 1980 || yr > new Date().getFullYear() + 1) return err('Add your vehicle year (four digits).', $('#vy'));
+    if (!$('#vm').value.trim()) return err('Add the make of your vehicle.', $('#vm'));
+    if (!$('#vmo').value.trim()) return err('Add the model so we can order the right parts.', $('#vmo'));
+    if (!B.svc.size) return err('Pick at least one service.', $('#svcChips button'));
+    if (!B.day || !B.time) return err('Choose a drop-off day and time.', $('#days button'));
+    if (!B.wait) return err('Tell us if you will wait, need a loaner or want a shuttle ride.', $('#waitOpts button'));
+    if (!$('#nm').value.trim()) return err('Add your name.', $('#nm'));
+    if ($('#ph').value.replace(/\D/g, '').length < 10) return err('Add a 10-digit mobile number for text updates.', $('#ph'));
+    $('#bErr').textContent = '';
+    const no = 'A-' + (2200 + Math.floor(Math.random() * 90));
+    $('#tkNo').textContent = 'REQUEST ' + no + ' · ' + new Date().toLocaleDateString('en-US');
+    $('#stampTxt').textContent = `${$('#nm').value.trim().split(' ')[0]}, see you ${fmtDay(B.day)} at ${B.time}. An advisor will text to confirm and send your RO number at check-in. (Demo: nothing was sent.)`;
+    $('#ticket').classList.add('ok');
+    $('#bookForm').inert = true; $('#bookForm').classList.add('locked');
+    $('#again').hidden = false; $('#again').focus({ preventScroll: true });
+    if (matchMedia('(max-width:960px)').matches) $('#ticket').scrollIntoView({ block: 'start' });
+  });
+
+  /* ---------- Tracker ---------- */
+  const STAGES = [['Checked in', '7:42 am'], ['Diagnosed', '9:15 am'], ['Waiting approval', ''], ['In progress', ''], ['Ready for pickup', '']];
+  const LINES = [
+    { t: 'Front brake pads and rotors', n: 'Pads at 2 mm (min. 3 mm), rotors scored. Parts $214, labor 1.6 h.', p: 389.00, tag: ['urg', 'Safety'] },
+    { t: 'Brake fluid exchange', n: 'Fluid tested at 3.5% moisture. Recommended with brake work.', p: 119.00, tag: ['soon', 'Soon'] },
+    { t: 'Engine air filter', n: 'Dirty, photo sent. Can wait until next oil change.', p: 42.00, tag: ['opt', 'Optional'] },
+    { t: 'Cabin air filter', n: 'Leaves and debris, musty A/C smell.', p: 48.00, tag: ['opt', 'Optional'] }
+  ];
+  let stage = 0, dec = [], sms = false, timer;
+  const money = n => '$' + n.toFixed(2);
+  const smsLog = (m) => { if (!sms) return; const p = document.createElement('p'); p.innerHTML = `<small>Torque &amp; Tread · ${new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })}</small>${m}`; $('#smsLog').prepend(p); };
+  $('#smsT').onclick = () => { sms = $('#smsT').getAttribute('aria-checked') !== 'true'; $('#smsT').setAttribute('aria-checked', sms); if (sms) smsLog('Texts are on for RO 1042. Reply STOP to opt out. (Demo: no text is sent.)'); else $('#smsLog').innerHTML = ''; };
+  $('#smsL').onclick = () => $('#smsT').click();
+  $('#tryBtn').onclick = () => { $('#roIn').value = '1042'; $('#trackForm').requestSubmit(); };
+  $('#trackForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const v = $('#roIn').value.replace(/\D/g, '');
+    if (!v) { $('#tErr').textContent = 'Enter the number from your check-in text.'; $('#roIn').focus(); return; }
+    if (v !== '1042') { $('#tErr').textContent = `We can't find RO ${v}. In this demo, try RO 1042.`; return; }
+    $('#tErr').textContent = ''; clearTimeout(timer); stage = 2; dec = LINES.map(() => null); render();
+    $('#panel').focus();
+  });
+  const approvedTotal = () => LINES.reduce((s, l, i) => s + (dec[i] === 'a' ? l.p : 0), 0);
+  function timeline() {
+    return `<ol class="tl">${STAGES.map((s, i) => `<li class="${i < stage || (i === 4 && stage === 4) ? 'done' : i === stage ? 'now' : ''} ${i === 4 ? 'last' : ''}"><b>${s[0]}</b><time>${s[1] || (i === stage ? 'now' : '—')}</time></li>`).join('')}</ol>`;
+  }
+  function render() {
+    const head = `<div class="rohead"><div><h3><span class="mono">RO 1042</span></h3><p>2017 compact SUV · 2.4L 4-cyl · 61,208 mi · Bay 3</p></div><div class="eta">Promised<b>Today 4:30 pm</b></div></div>`;
+    let body = '';
+    if (stage === 2) {
+      body = `<div class="box"><div class="bt"><span><b>Estimate for approval</b> · Technician notes and photos sent 9:15 am</span><span class="mono">EST-1042-A</span></div>
+        ${LINES.map((l, i) => `<div class="line"><div><h4>${l.t}<span class="tag ${l.tag[0]}">${l.tag[1]}</span></h4><p>${l.n}</p></div><div class="amt">${money(l.p)}</div>
+        <div class="ad" role="group" aria-label="Decision for ${l.t}"><button type="button" class="a" data-i="${i}" data-v="a" aria-pressed="${dec[i] === 'a'}">Approve</button><button type="button" class="d" data-i="${i}" data-v="d" aria-pressed="${dec[i] === 'd'}">Decline</button></div></div>`).join('')}
+        <div class="tot"><span class="sum">Approved<b>${money(approvedTotal())}</b></span><button class="btn y" type="button" id="send" ${dec.includes(null) ? 'disabled' : ''}>${dec.includes(null) ? `Decide ${dec.filter(x => x === null).length} more line${dec.filter(x => x === null).length > 1 ? 's' : ''}` : 'Send my decision'}</button></div></div>
+        <p class="note">Diagnosis ($129) is already approved and is credited when you approve repairs. Demo: nothing is charged or sent.</p>`;
+    } else if (stage === 3) {
+      const n = dec.filter(x => x === 'a').length;
+      body = `<div class="box"><div class="bt"><span><b>In progress</b> · ${n} approved line${n === 1 ? '' : 's'}</span><span class="mono">${money(approvedTotal())}</span></div><div style="padding:16px 18px"><div class="pbar"><i id="bar"></i></div><p class="note" style="margin:6px 0 0">Your technician is working in Bay 3. Demo: time is sped up.</p></div></div>`;
+    } else if (stage === 4) {
+      const ok = LINES.filter((l, i) => dec[i] === 'a');
+      const later = LINES.filter((l, i) => dec[i] === 'd');
+      const sub = approvedTotal(); const diag = ok.length ? 0 : 129;
+      body = `<div class="box"><div class="bt"><span><b>Ready for pickup</b> · Keys at the front desk until 6:00 pm</span><span class="mono">INV-1042</span></div>
+        ${ok.map(l => `<div class="line" style="grid-template-columns:1fr auto"><div><h4>${l.t}</h4><p>Completed · 24 mo / 24k mi warranty</p></div><div class="amt">${money(l.p)}</div></div>`).join('')}
+        ${diag ? `<div class="line" style="grid-template-columns:1fr auto"><div><h4>Diagnosis only</h4><p>No repairs approved. Car is safe to drive home; brakes need attention soon.</p></div><div class="amt">${money(diag)}</div></div>` : ''}
+        ${later.length ? `<div class="line" style="grid-template-columns:1fr"><div><h4 style="color:#9AA1AB">Saved for later</h4><p>${later.map(l => l.t).join(', ')}. We'll remind you at your next visit.</p></div></div>` : ''}
+        <div class="tot"><span class="sum">Due at pickup<b>${money(sub + diag)}</b></span><span style="font-size:13px;color:#9AA1AB">+ tax on parts · pay at the desk or by text link</span></div></div>`;
+    }
+    $('#panel').innerHTML = head + timeline() + body;
+    $('#panel').setAttribute('tabindex', '-1');
+    if (stage === 2) {
+      $('#panel').querySelectorAll('.ad button').forEach(b => b.onclick = () => { dec[+b.dataset.i] = b.dataset.v; const y = window.scrollY; render(); window.scrollTo(0, y); const nb = $('#panel').querySelector(`.ad button[data-i="${b.dataset.i}"][data-v="${b.dataset.v}"]`); nb && nb.focus(); });
+      const s = $('#send'); if (s) s.onclick = () => {
+        const n = dec.filter(x => x === 'a').length;
+        if (n) { STAGES[2][1] = 'approved'; stage = 3; smsLog(`RO 1042: thanks, ${n} line${n > 1 ? 's' : ''} approved (${money(approvedTotal())}). Work has started in Bay 3.`); render();
+          requestAnimationFrame(() => requestAnimationFrame(() => { const bar = $('#bar'); if (bar) bar.style.width = '100%'; }));
+          timer = setTimeout(() => { STAGES[3][1] = 'done'; STAGES[4][1] = '3:58 pm'; stage = 4; smsLog(`RO 1042 is ready for pickup. Total ${money(approvedTotal())} + tax. Open until 6 pm.`); render(); }, 2800);
+        } else { STAGES[2][1] = 'declined'; STAGES[3][1] = 'skipped'; STAGES[4][1] = 'now'; stage = 4; smsLog('RO 1042: no repairs approved. Your car is ready for pickup.'); render(); }
+      };
+    }
+  }
+})();
+</script>
+</body>
+</html>
