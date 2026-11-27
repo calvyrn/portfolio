@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kestrel Auto Works · Car service and repairs, Midrand · Fixed prices, book a bay online</title>
+<meta name="description" content="A six-bay workshop with fixed service prices by car size, same-day brakes and tyres, and online bay booking. Walk the workshop in real 360° photos.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--con:#E4E5E2;--oil:#15171A;--blue:#1F4E9E;--amber:#F2A71B;--mute:#5D6168;--line:#C9CBC7;--card:#F4F4F2;--rv-font:"Archivo"}
+*{box-sizing:border-box;margin:0}
+html.lenis{height:auto}.lenis.lenis-smooth{scroll-behavior:auto}
+body{font:400 17px/1.6 "Archivo",system-ui,sans-serif;color:var(--oil);background:var(--con);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}a{color:inherit}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 32px}
+.b{font-family:"Big Shoulders Display",Impact,sans-serif;font-weight:900;line-height:.9;letter-spacing:.005em;text-transform:uppercase}
+.ico{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+.topbar{background:var(--oil);color:#9aa0a8;font-size:12.5px;text-align:center;padding:6px 14px;position:relative;z-index:30}.topbar a{color:#fff}
+#pre{position:fixed;inset:0;z-index:100;background:var(--oil);color:#fff;display:grid;place-items:center;transition:opacity .8s .2s,visibility .8s .2s}
+#pre.done{opacity:0;visibility:hidden}#pre .b{font-size:60px;text-align:center}#pre p{font-size:14px;color:#9aa0a8;margin-top:8px;text-align:center}
+#pre .bar{width:220px;height:6px;background:#2a2d32;margin:16px auto 0}#pre .bar i{display:block;height:100%;width:0;background:var(--amber);transition:width .3s}
+header{position:fixed;left:0;right:0;top:var(--tb,31px);z-index:40;color:#fff;transition:top .4s,background .4s,color .4s}
+header.solid{top:0;background:rgba(228,229,226,.94);backdrop-filter:blur(12px);color:var(--oil);box-shadow:0 1px 0 var(--line)}
+.nav{display:flex;align-items:center;gap:30px;height:74px}
+.logo{text-decoration:none;font-family:"Big Shoulders Display";font-weight:900;font-size:30px;text-transform:uppercase;white-space:nowrap}
+.logo span{color:var(--amber)}
+.nav ul{display:flex;gap:26px;list-style:none;padding:0;margin-left:auto;font-weight:700;font-size:15px}
+.nav ul a{text-decoration:none}.nav ul a:hover{color:var(--amber)}
+.tel{font-weight:800;text-decoration:none;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;cursor:pointer;background:var(--amber);color:var(--oil);font:800 15px "Archivo";padding:15px 24px;text-decoration:none;transition:background .2s}
+.btn:hover{background:#fff}.btn.dk{background:var(--blue);color:#fff}.btn.dk:hover{background:var(--oil)}
+.btn svg{width:18px;height:18px}header .btn{padding:10px 16px;font-size:14px}
+
+#hero{position:relative;height:440vh;background:#2b2e31}
+.stage{position:sticky;top:0;height:100vh;overflow:hidden}
+.shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(10,12,14,.72),rgba(10,12,14,0) 60%),linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,0) 25%)}
+.htxt{position:absolute;left:0;right:0;bottom:10vh;color:#fff;pointer-events:none}
+.htxt h1{font-size:clamp(4rem,10vw,10.5rem);max-width:9ch}
+.htxt p{max-width:38ch;font-size:18.5px;margin:18px 0 26px;color:#dfe2e6}.htxt .row{display:flex;gap:10px;flex-wrap:wrap;pointer-events:auto}
+.htxt .btn.gh{background:none;color:#fff;box-shadow:inset 0 0 0 2px #fff}.htxt .btn.gh:hover{background:#fff;color:var(--oil)}
+.ticket{position:absolute;right:32px;top:calc(var(--tb,31px) + 100px);width:300px;background:var(--card);padding:16px 18px 18px;opacity:0;transform:translateY(12px);transition:opacity .45s,transform .45s;border-top:6px solid var(--amber)}
+.ticket.on{opacity:1;transform:none}
+.ticket .k{display:flex;justify-content:space-between;font-size:12px;font-weight:800;color:var(--mute)}
+.ticket h3{font-family:"Big Shoulders Display";font-weight:900;font-size:34px;text-transform:uppercase;line-height:1;margin:6px 0}
+.ticket p{font-size:14.5px;color:var(--mute)}
+.ticket ol{list-style:none;padding:0;margin-top:10px;display:grid;gap:4px;font-size:14px}
+.ticket li{display:flex;gap:8px;align-items:center}.ticket li i{width:10px;height:10px;border:2px solid var(--line);flex:0 0 auto}.ticket li.d i{background:var(--blue);border-color:var(--blue)}.ticket li.a i{background:var(--amber);border-color:var(--amber)}
+.hint{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);color:#fff;font-size:13px;opacity:.85;transition:opacity .4s}
+
+section.s{padding:120px 0}
+h2.h{font-size:clamp(3.2rem,7vw,7rem);max-width:12ch}
+.lede{font-size:19px;color:var(--mute);max-width:48ch;margin-top:16px}
+/* promise strip */
+.prom{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--oil);margin-top:40px}
+.prom div{padding:22px 22px 0 0}.prom b{font-family:"Big Shoulders Display";font-weight:900;font-size:56px;line-height:1;display:block}.prom span{color:var(--mute);font-size:15px}
+/* prices */
+.ctype{display:flex;gap:0;margin-top:36px;border:2px solid var(--oil);width:max-content;max-width:100%}
+.ctype button{border:0;background:none;font:800 15px "Archivo";padding:12px 20px;cursor:pointer;color:var(--oil)}
+.ctype button+button{border-left:2px solid var(--oil)}
+.ctype button[aria-pressed=true]{background:var(--oil);color:#fff}
+.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.svc{background:var(--card);padding:24px;display:flex;flex-direction:column;border:2px solid transparent;cursor:pointer;text-align:left;font:inherit;color:inherit}
+.svc[aria-pressed=true]{border-color:var(--blue);box-shadow:inset 0 0 0 1px var(--blue)}
+.svc h3{font-family:"Big Shoulders Display";font-weight:900;font-size:32px;text-transform:uppercase;line-height:1}
+.svc .pr{font-family:"Big Shoulders Display";font-weight:800;font-size:48px;line-height:1;margin:12px 0 4px}
+.svc small{color:var(--mute);font-size:13.5px}
+.svc ul{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:4px;font-size:14.5px;flex:1}
+.svc li::before{content:"";display:inline-block;width:8px;height:8px;background:var(--amber);margin-right:8px;vertical-align:1px}
+.svc .pick{margin-top:16px;font-weight:800;font-size:14px;color:var(--blue)}
+.addons{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.addons label{display:flex;gap:8px;align-items:center;background:var(--card);padding:10px 14px;font-weight:700;font-size:14.5px;cursor:pointer}
+.addons input{accent-color:var(--blue);width:17px;height:17px}
+/* depth sections */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.dbox{position:relative;aspect-ratio:1;overflow:hidden;background:#222}
+.tag3d{position:absolute;left:0;top:0;z-index:2;background:var(--amber);font-size:12px;font-weight:800;padding:6px 10px;pointer-events:none}
+.facts{margin-top:28px;display:grid;gap:0}.facts div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid var(--line);font-size:16px}.facts b{font-weight:800}
+#brakes{position:relative;height:230vh;background:#000}
+#brakes .stg{position:sticky;top:0;height:100vh;overflow:hidden}
+#brakes .ov{position:absolute;inset:0;display:flex;align-items:flex-end;padding-bottom:10vh;color:#fff;pointer-events:none;background:linear-gradient(0deg,rgba(0,0,0,.7),rgba(0,0,0,0) 55%)}
+#brakes h2{font-size:clamp(3.6rem,9vw,9rem);max-width:10ch}
+#brakes .ov p{max-width:40ch;font-size:18px;margin-top:12px;color:#dfe2e6}
+.meter{position:absolute;right:32px;bottom:10vh;color:#fff;text-align:right}.meter b{font-family:"Big Shoulders Display";font-size:clamp(4rem,8vw,7rem);font-weight:900;line-height:.9;display:block}.meter span{font-size:14px;color:#cfd3d8}
+/* tour */
+#tour{background:var(--oil);color:#e9ebee;padding:110px 0 0}
+#tour .lede{color:#9aa0a8}
+.rtabs{display:flex;gap:6px;margin-top:28px;flex-wrap:wrap}
+.rtabs button{border:2px solid #3a3e44;background:none;color:#e9ebee;font:800 15px "Archivo";padding:11px 18px;cursor:pointer}
+.rtabs button[aria-pressed=true]{background:var(--amber);border-color:var(--amber);color:var(--oil)}
+.viewer{position:relative;height:min(80vh,780px);margin-top:14px;overflow:hidden;background:#000}
+.vctl{position:absolute;right:16px;bottom:16px;display:flex;gap:6px;z-index:3}.vctl button{width:46px;height:46px;border:0;background:#fff;cursor:pointer;display:grid;place-items:center}.vctl .ico{width:20px;height:20px}
+[data-load]{background:#111;color:#9aa0a8}
+/* booking */
+#book{background:var(--card)}
+.bk{display:grid;grid-template-columns:1.25fr .75fr;gap:44px;margin-top:36px;align-items:start}
+.days{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px}
+.days button{border:2px solid var(--line);background:#fff;font:800 14px "Archivo";padding:9px 14px;cursor:pointer;white-space:nowrap;color:var(--oil)}
+.days button[aria-pressed=true]{border-color:var(--oil);background:var(--oil);color:#fff}
+.days button:disabled{opacity:.4;cursor:default}
+.grid{margin-top:14px;display:grid;grid-template-columns:70px repeat(4,1fr);gap:4px;font-size:13.5px}
+.grid .hd{font-weight:800;text-align:center;padding:6px 0;color:var(--mute)}
+.grid .tm{font-weight:800;display:flex;align-items:center}
+.slot{border:0;height:42px;background:#fff;cursor:pointer;font:700 13px "Archivo";color:var(--blue)}
+.slot:hover{background:#e6ecf7}.slot.tk{background:repeating-linear-gradient(135deg,#e1e2df 0 6px,#ecedea 6px 12px);color:#9a9da2;cursor:default}
+.slot[aria-pressed=true]{background:var(--blue);color:#fff}
+.legend{display:flex;gap:16px;margin-top:10px;font-size:13px;color:var(--mute)}.legend i{display:inline-block;width:12px;height:12px;vertical-align:-1px;margin-right:6px}
+.fl{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.fl label{font-weight:800;font-size:13px}.fl input,.fl select{display:block;width:100%;margin-top:5px;font:500 16px "Archivo";border:2px solid var(--line);padding:11px;background:#fff;color:var(--oil)}
+.job{background:var(--oil);color:#e9ebee;padding:26px;position:sticky;top:94px;border-top:8px solid var(--amber)}
+.job h3{font-family:"Big Shoulders Display";font-weight:900;font-size:36px;text-transform:uppercase;line-height:1}
+.job dl{display:grid;grid-template-columns:1fr auto;gap:8px;margin:16px 0;padding:14px 0;border-top:1px solid #33373d;border-bottom:1px solid #33373d;font-size:15px}.job dd{margin:0;font-weight:700}
+.job .tot{font-family:"Big Shoulders Display";font-weight:900;font-size:64px;line-height:1}
+.job small{display:block;color:#9aa0a8;font-size:13.5px;margin-top:6px}
+.job .btn{width:100%;margin-top:16px}
+.msg{font-size:14px;margin-top:10px;min-height:1.2em;color:#ffb1a1}.msg.ok{color:#bfe5c8}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}
+.rev{background:var(--card);padding:22px}.rev p{font-size:16.5px}.rev b{display:block;margin-top:12px;font-size:14px}.rev small{color:var(--mute);font-size:12.5px}
+.ph{font-size:11px;font-weight:800;color:var(--mute);margin-top:12px}
+footer{background:var(--oil);color:#9aa0a8;padding:90px 0 34px}
+.fbig{font-size:clamp(4rem,13vw,13rem);color:#fff}.fbig span{color:var(--amber)}
+.fcols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px;margin-top:36px;font-size:15px}.fcols h4{color:#fff;font-size:14px;margin-bottom:10px}.fcols ul{list-style:none;padding:0;display:grid;gap:6px}.fcols a{text-decoration:none}
+.legal{margin-top:50px;font-size:13px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}.reveal.in{opacity:1;transform:none}
+.cols>*{min-width:0}
+@media(max-width:1000px){.nav ul,.tel{display:none}.split,.bk{grid-template-columns:1fr}.menu,.reviews{grid-template-columns:1fr 1fr}.job{position:static}.prom{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){body{font-size:16px}.wrap{padding:0 18px}.topbar{font-size:11px}.nav{height:62px}.logo{font-size:24px}header .btn{padding:9px 12px}
+ .htxt h1{font-size:4rem}.htxt p{font-size:16px}.ticket{left:18px;right:18px;width:auto;top:calc(var(--tb,31px) + 74px);padding:12px 14px}.ticket p,.ticket ol{display:none}.ticket h3{font-size:28px}
+ section.s{padding:84px 0}.menu,.reviews,.prom{grid-template-columns:1fr}.prom b{font-size:46px}.ctype button{padding:11px 12px;font-size:14px}
+ .grid{grid-template-columns:52px repeat(4,1fr);font-size:12px}.slot{height:38px;font-size:11.5px}.fl{grid-template-columns:1fr}.viewer{height:72vh}.fcols{grid-template-columns:1fr}.meter{right:18px;bottom:auto;top:calc(var(--tb,31px) + 80px)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+</style>
+<style id="rvcss"></style>
+</head>
+<body>
+<div id="pre" role="status"><div><div class="b">Kestrel Auto</div><p id="preTxt">Opening the roller doors · 0%</p><div class="bar"><i id="preBar"></i></div></div></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+ <symbol id="i-full" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+ <symbol id="i-zin" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+ <symbol id="i-zout" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+</svg>
+<div class="topbar">Example concept by <a href="https://calvyrn.com">Calvyrn</a>. Kestrel Auto Works is fictional; prices, reviews and 555 numbers are placeholders. 360° photos are real.</div>
+<header id="hdr"><div class="wrap nav">
+ <a class="logo" href="#top">Kestrel<span>/</span>Auto</a>
+ <ul><li><a href="#prices">Prices</a></li><li><a href="#brakes">Brakes and tyres</a></li><li><a href="#tour">The workshop</a></li></ul>
+ <a class="tel" href="tel:+27115550172">011 555 0172</a>
+ <a class="btn" href="#book">Book a bay</a>
+</div></header>
+
+<main id="top">
+<section id="hero" aria-label="Follow a car through the workshop in real 360 degree photos">
+ <div class="stage">
+  <div class="rv-hero" id="hpano" role="img" aria-label="Real 360 degree photos of a large bright workshop with a two-post lift, service bays and cars, then a covered parking garage."></div>
+  <div class="shade"></div>
+  <div class="htxt" id="htxt"><div class="wrap">
+   <h1 class="b">Fixed price. Fixed by five.</h1>
+   <p>Six bays, a price list that doesn't move, and photos of every worn part on your phone before we touch your money.</p>
+   <div class="row"><a class="btn" href="#book">Book a bay<svg><use href="#i-arrow"/></svg></a><a class="btn gh" href="#prices">See prices</a></div>
+  </div></div>
+  <aside class="ticket" id="ticket" aria-live="polite"></aside>
+  <div class="hint" id="hint">Scroll to follow your car</div>
+ </div>
+</section>
+
+<section class="s"><div class="wrap">
+ <h2 class="b h reveal">How a service day goes.</h2>
+ <p class="lede reveal">Drop off by eight, a photo report by eleven, keys back by five. If we find something extra, nothing happens until you say yes.</p>
+ <div class="prom reveal"><div><b>08:00</b><span>Drop off, coffee, shuttle to the Gautrain.</span></div><div><b>11:00</b><span>Photo report on WhatsApp, every part priced.</span></div><div><b>0</b><span>Surprise charges. You approve each extra.</span></div><div><b>17:00</b><span>Car washed, keys back, old parts in the boot.</span></div></div>
+</div></section>
+
+<section class="s" id="prices" style="padding-top:0"><div class="wrap">
+ <h2 class="b h reveal">The price list.</h2>
+ <p class="lede reveal">Pick your car's size. These are the prices you pay, parts and labour included.</p>
+ <div class="ctype" id="ctype" role="group" aria-label="Car size"><button data-c="small" aria-pressed="true">Hatch / sedan</button><button data-c="suv" aria-pressed="false">SUV</button><button data-c="bakkie" aria-pressed="false">Bakkie / 4x4</button></div>
+ <div class="menu" id="menu"></div>
+ <div class="addons" id="addons"></div>
+</div></section>
+
+<section class="s" style="padding-top:20px"><div class="wrap split cols">
+ <div class="dbox reveal"><div class="rv-depth" id="dSpeedo" style="background-image:url(img/speedo-1440.jpg)"></div><span class="tag3d">3D PHOTO · MOVE YOUR MOUSE</span></div>
+ <div>
+  <h2 class="b h reveal" style="font-size:clamp(3rem,6vw,5.6rem)">Your logbook, stamped.</h2>
+  <p class="lede reveal">We use parts to the maker's spec and stamp your book, so your warranty stays whole.</p>
+  <div class="facts reveal"><div><span>Warranty on our work</span><b>12 months / 20,000 km</b></div><div><span>Diagnostic scan</span><b>Free with any service</b></div><div><span>Courtesy car</span><b>R250 a day, book ahead</b></div><div><span>Shuttle radius</span><b>8 km</b></div></div>
+ </div>
+</div></section>
+
+<section id="brakes" data-sticky aria-label="Brakes and tyres">
+ <div class="stg"><div class="rv-depth" id="dDisc" style="background-image:url(img/disc-1440.jpg)"></div>
+  <div class="ov"><div class="wrap"><h2 class="b">Brakes while you wait.</h2><p>Pads in under an hour, discs skimmed or swapped the same day. We measure them first and show you the number.</p></div></div>
+  <div class="meter" id="meter"><b>58 min</b><span>average pad swap, last 30 days</span></div>
+ </div>
+</section>
+
+<section id="tour" aria-label="The workshop in 360 degrees">
+ <div class="wrap">
+  <h2 class="b h reveal" style="color:#fff">Walk the workshop.</h2>
+  <p class="lede reveal">Real 360° photos of the service floor and the covered parking where your car waits. Drag to look around.</p>
+  <div class="rtabs" data-rooms role="group" aria-label="Areas"><button data-r="floor" aria-pressed="true">Service floor</button><button data-r="park" aria-pressed="false">Covered parking</button></div>
+  <div class="viewer rv-viewer" id="viewer"><div data-pano></div><div data-spots></div><div data-load>Lifting the roller door…</div>
+   <div class="vctl"><button data-zin aria-label="Zoom in"><svg class="ico"><use href="#i-zin"/></svg></button><button data-zout aria-label="Zoom out"><svg class="ico"><use href="#i-zout"/></svg></button><button data-fs aria-label="Full screen"><svg class="ico"><use href="#i-full"/></svg></button></div></div>
+ </div>
+</section>
+
+<section class="s" id="book"><div class="wrap">
+ <h2 class="b h reveal">Book a bay.</h2>
+ <p class="lede reveal">Pick a day and a drop-off slot. Striped slots are taken. Sundays we're closed.</p>
+ <div class="bk cols">
+  <div>
+   <div class="days" id="days" role="group" aria-label="Day"></div>
+   <div class="grid" id="grid" role="group" aria-label="Bays and times"></div>
+   <div class="legend"><span><i style="background:#fff;border:1px solid var(--line)"></i>Free</span><span><i style="background:#e1e2df"></i>Taken</span><span><i style="background:var(--blue)"></i>Yours</span></div>
+   <div class="fl"><label>REGISTRATION<input id="reg" placeholder="e.g. KS 55 GP" autocomplete="off"></label><label>MAKE AND MODEL<input id="mm" placeholder="e.g. 2019 hatchback 1.4"></label><label>MOBILE<input id="mob" type="tel" placeholder="082 555 0100" autocomplete="tel"></label><label>KILOMETRES<input id="km" inputmode="numeric" placeholder="e.g. 85 000"></label></div>
+  </div>
+  <aside class="job" aria-live="polite"><h3>Job card</h3><dl id="jobL"></dl><div class="tot" id="jobT"></div><small>Fixed price. Extras only with your yes.</small><button class="btn" id="buy">Confirm booking<svg><use href="#i-arrow"/></svg></button><p class="msg" id="msg" role="alert"></p></aside>
+ </div>
+ <div class="reviews">
+  <div class="rev reveal"><p>Sent me a photo of the pad with a ruler on it. First time a workshop showed me instead of telling me.</p><b>Lindiwe M.</b><small>Placeholder review</small></div>
+  <div class="rev reveal"><p>Price on the site was the price on the invoice. To the rand.</p><b>Pieter v. W.</b><small>Placeholder review</small></div>
+  <div class="rev reveal"><p>Dropped the bakkie at eight, shuttle had me at work by half past.</p><b>Kagiso N.</b><small>Placeholder review</small></div>
+ </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+ <div class="b fbig">Kestrel<span>/</span>Auto</div>
+ <div class="fcols"><div><p>Independent six-bay workshop in Midrand. Weekdays 7:00 to 17:30, Saturdays 7:30 to 13:00.</p></div>
+ <div><h4>Workshop</h4><ul><li><a href="#prices">Prices</a></li><li><a href="#brakes">Brakes and tyres</a></li><li><a href="#book">Book a bay</a></li></ul></div>
+ <div><h4>Contact</h4><ul><li>011 555 0172</li><li>bays@kestrelauto.example</li></ul></div></div>
+ <div class="legal"><span>© 2026 Kestrel Auto Works (fictional). 360° photos: Poly Haven, CC0 (real photographs). Photos: Unsplash. 3D photo effect from depth estimated on the real photo.</span><span>Concept, design and build: <a href="https://calvyrn.com" style="color:#fff">Calvyrn</a></span></div>
+</div></footer>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.164.1/build/three.module.js"}}</script>
+<script type="module">
+import {createPano,scrollDirector,panoCSS,boot,stickyProgress,depthOnScroll,wireTour} from '../../shared/realview.js';
+document.getElementById('rvcss').textContent=panoCSS;
+const K=boot({preLabel:'Opening the roller doors'});const {$,mob}=K;
+const S=n=>({src:`pano/${n}-6k.jpg`,srcMobile:`pano/${n}-3k.jpg`});const F=mob?14:0;const fmt=n=>n.toLocaleString('en-US');
+
+const hero=createPano($('hpano'),{scenes:{floor:{...S('autoshop_01'),yaw:-160},park:{...S('skylit_garage'),yaw:0}},start:'floor',fov:80+F,auto:0,onProgress:(id,p)=>id==='floor'&&K.setPre(p*.95),onReady:K.finish});
+hero.interactive(false);
+const SEGS=[{id:'floor',until:.74,K:[[0,-160,-2,82+F],[.2,-150,-6,64+F],[.4,-90,-4,72+F],[.58,-20,-4,74+F],[.74,40,-6,68+F]]},{id:'park',K:[[.74,0,-6,76+F],[.88,-30,-4,72+F],[1,-60,-2,70+F]]}];
+const director=scrollDirector(hero,SEGS,.08);
+const ST=['Checked in','On the lift','Inspected','Serviced','Parked'];
+const TK=[[.08,.3,1,'Bay 1 · Lift','On the lift','Wheels off, brakes measured, underbody photographed.'],[.3,.5,2,'Bays 2 to 5','Inspected','Oil, filters and plugs to spec. Your photo report goes out now.'],[.5,.74,3,'Front of house','Serviced','Road test, scan cleared, logbook stamped.'],[.76,1.01,4,'Covered parking','Ready for you','Washed, keys at the desk, old parts in the boot.']];
+let lastT=null;
+function onScroll(){const HP=stickyProgress($('hero'));$('hdr').classList.toggle('solid',$('hero').getBoundingClientRect().bottom<90);director(HP);
+ $('htxt').style.opacity=Math.max(0,1-HP*12);$('hint').style.opacity=HP>.02?0:.85;
+ const t=TK.find(x=>HP>=x[0]&&HP<x[1]);if((t&&t[4])!==lastT){lastT=t&&t[4];if(t)$('ticket').innerHTML=`<div class="k"><span>JOB 2611 · ${t[3]}</span><span>Placeholder</span></div><h3>${t[4]}</h3><p>${t[5]}</p><ol>${ST.map((s,i)=>`<li class="${i<t[2]?'d':i===t[2]?'a':''}"><i></i>${s}</li>`).join('')}</ol>`;$('ticket').classList.toggle('on',!!t)}}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+depthOnScroll($('dSpeedo'),{src:mob?'img/speedo-1440.jpg':'img/speedo-2560.jpg',depth:'img/speedo-depth.jpg',strength:.45,overscan:1.2},p=>({z:.05+p*.25}));
+depthOnScroll($('dDisc'),{src:mob?'img/disc-1440.jpg':'img/disc-2560.jpg',depth:'img/disc-depth.jpg',strength:.5,overscan:1.22},p=>({z:p*.55,x:.05-p*.1}),stickyProgress);
+
+wireTour({viewer:$('viewer'),start:'floor',scenes:{
+ floor:{...S('autoshop_01'),yaw:-120,hotspots:[{to:'park',yaw:150,pitch:-2,label:'To covered parking',arrive:0},{yaw:-163,pitch:0,label:'Two-post lift, bay 1'},{yaw:-82,pitch:-4,label:'Bays 2 to 5'},{yaw:52,pitch:-2,label:'Front desk and waiting room'}]},
+ park:{...S('skylit_garage'),yaw:0,hotspots:[{to:'floor',yaw:180,pitch:-4,label:'Back to the service floor',arrive:-120},{yaw:-15,pitch:-14,label:'Drop-off lane'}]}}});
+
+/* prices */
+const SV=[{id:'minor',n:'Minor service',d:'Every 15,000 km',inc:['Oil and oil filter','Air filter check','Brake and tyre check','Diagnostic scan'],p:{small:1650,suv:2150,bakkie:2450}},{id:'major',n:'Major service',d:'Every 30,000 km',inc:['Everything in minor','Air, fuel and cabin filters','Spark plugs','Brake fluid flush'],p:{small:3450,suv:4350,bakkie:4950}},{id:'brakes',n:'Front brakes',d:'Pads, discs skimmed',inc:['Pads to spec','Discs skimmed or measured','Sensor check','Road test'],p:{small:1890,suv:2490,bakkie:2790}}];
+const AD=[['align','Wheel alignment',{small:450,suv:550,bakkie:650}],['aircon','Aircon regas',{small:890,suv:990,bakkie:1090}],['wash','Valet wash',{small:180,suv:220,bakkie:250}],['loan','Courtesy car',{small:250,suv:250,bakkie:250}]];
+let car='small',svc='minor';const add=new Set();
+function renderMenu(){$('menu').innerHTML=SV.map(s=>`<button class="svc" data-s="${s.id}" aria-pressed="${s.id===svc}"><h3>${s.n}</h3><div class="pr">R${fmt(s.p[car])}</div><small>${s.d}</small><ul>${s.inc.map(i=>`<li>${i}</li>`).join('')}</ul><span class="pick">${s.id===svc?'Selected for booking':'Choose this service'}</span></button>`).join('');
+ $('addons').innerHTML=AD.map(a=>`<label><input type="checkbox" data-a="${a[0]}" ${add.has(a[0])?'checked':''}>${a[1]} · R${fmt(a[2][car])}</label>`).join('');job()}
+$('ctype').onclick=e=>{const b=e.target.closest('[data-c]');if(!b)return;car=b.dataset.c;$('ctype').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));renderMenu()};
+$('menu').onclick=e=>{const b=e.target.closest('[data-s]');if(b){svc=b.dataset.s;renderMenu()}};
+$('addons').onchange=e=>{const a=e.target.dataset.a;e.target.checked?add.add(a):add.delete(a);job()};
+
+/* bays */
+const TIMES=['07:30','08:00','08:30','09:00','10:00','11:00'];const BAYS=['Bay 1','Bay 2','Bay 3','Bay 4'];
+const DAYS=[...Array(9)].map((_,i)=>{const d=new Date();d.setDate(d.getDate()+i+1);return d});
+let di=DAYS.findIndex(d=>d.getDay()!==0),slot=null;
+const taken=(d,t,b)=>((d.getDate()*5+t*7+b*11)%10)<(d.getDay()===6?6:4)||(d.getDay()===6&&t>3);
+function renderDays(){$('days').innerHTML=DAYS.map((d,i)=>`<button data-i="${i}" aria-pressed="${i===di}" ${d.getDay()===0?'disabled':''}>${d.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'})}${d.getDay()===0?' · closed':''}</button>`).join('')}
+function renderGrid(){const d=DAYS[di];$('grid').innerHTML='<span></span>'+BAYS.map(b=>`<span class="hd">${b}</span>`).join('')+TIMES.map((t,ti)=>`<span class="tm">${t}</span>`+BAYS.map((b,bi)=>{const k=`${di}|${ti}|${bi}`,tk=taken(d,ti,bi);return `<button class="slot ${tk?'tk':''}" data-k="${k}" aria-pressed="${slot===k}" ${tk?'disabled aria-label="Taken"':`aria-label="${b}, ${t}"`}>${tk?'':slot===k?'Yours':'Free'}</button>`}).join('')).join('')}
+$('days').onclick=e=>{const b=e.target.closest('[data-i]');if(!b||b.disabled)return;di=+b.dataset.i;slot=null;renderDays();renderGrid();job()};
+$('grid').onclick=e=>{const b=e.target.closest('[data-k]');if(!b||b.disabled)return;slot=b.dataset.k;renderGrid();job()};
+function job(){const s=SV.find(x=>x.id===svc);const lines=[[s.n,s.p[car]],...AD.filter(a=>add.has(a[0])).map(a=>[a[1],a[2][car]])];const tot=lines.reduce((a,l)=>a+l[1],0);
+ let when='Pick a slot';if(slot){const [d,t,b]=slot.split('|').map(Number);when=`${DAYS[d].toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'})}, ${TIMES[t]}, ${BAYS[b]}`}
+ $('jobL').innerHTML=`<dt>Car size</dt><dd>${{small:'Hatch / sedan',suv:'SUV',bakkie:'Bakkie / 4x4'}[car]}</dd><dt>Drop-off</dt><dd>${when}</dd>`+lines.map(l=>`<dt>${l[0]}</dt><dd>R${fmt(l[1])}</dd>`).join('');
+ $('jobT').textContent='R'+fmt(tot);return tot}
+renderMenu();renderDays();renderGrid();job();
+$('buy').onclick=()=>{const t=job();$('msg').className='msg';const reg=$('reg').value.trim(),mob=$('mob').value.replace(/\D/g,'');
+ if(!slot){$('msg').textContent='Pick a drop-off slot in the grid.';return}if(reg.length<4){$('msg').textContent='Add your registration so we know which car is yours.';return}if(mob.length<9){$('msg').textContent='Add a mobile number for the photo report.';return}
+ $('msg').className='msg ok';$('msg').textContent=`Booked: ${reg.toUpperCase().replace(/[<>]/g,'')}, R${fmt(t)} fixed. WhatsApp confirmation on its way. Demo: nothing was sent.`};
+</script>
+</body>
+</html>

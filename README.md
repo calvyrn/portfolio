@@ -7,9 +7,12 @@ Website, web app and AI concepts for small businesses, organised by industry. Ev
 | Project | Industry | Tier | Demo |
 |---|---|---|---|
 | [Architecture studio with a scroll-built 3D house](sites/architecture-studio-3d/) | Architecture | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/architecture-studio-3d/) |
+| [Car workshop with fixed prices and bay booking](sites/auto-service-360/) | Auto repair | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/auto-service-360/) |
 | [Paint protection studio with a photoreal 3D car](sites/detailing-studio-3d/) | Automotive | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/detailing-studio-3d/) |
 | [Skincare brand with a 3D glass bottle and shop](sites/skincare-brand-3d/) | Beauty | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/skincare-brand-3d/) |
+| [Natural history museum with timed tickets](sites/natural-history-museum-360/) | Culture | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/natural-history-museum-360/) |
 | [Woodworking school and maker space in real 360°](sites/woodworking-school-360/) | Education | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/woodworking-school-360/) |
+| [Independent cinema with a seat picker](sites/cinema-360/) | Entertainment | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/cinema-360/) |
 | [Expo and convention centre with 360° site visits and a layout planner](sites/event-venue-360/) | Events | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/event-venue-360/) |
 | [Occasion-wear label with a motion hero and scroll lookbook](sites/eastern-wear-motion/) | Fashion | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/eastern-wear-motion/) |
 | [Climbing and strength gym in real 360° with a free-session booking](sites/climbing-gym-360/) | Fitness | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/climbing-gym-360/) |
@@ -19,11 +22,13 @@ Website, web app and AI concepts for small businesses, organised by industry. Ev
 | [Heat pump installer with an exploded 3D unit](sites/heatpump-exploded-3d/) | HVAC | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/heatpump-exploded-3d/) |
 | [Lake lodge with a walk-through 360° room tour](sites/lodge-360-tour/) | Hospitality | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/lodge-360-tour/) |
 | [Seaview rental suite you walk through in real 360°](sites/seaview-suite-360/) | Hospitality | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/seaview-suite-360/) |
+| [Country house hotel with direct booking](sites/country-house-hotel-360/) | Hospitality | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/country-house-hotel-360/) |
 | [Engagement ring designer in real-time 3D](sites/ring-builder-3d/) | Jewelry | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/ring-builder-3d/) |
 | [Freight forwarder with a live 3D shipment globe](sites/freight-globe-3d/) | Logistics | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/freight-globe-3d/) |
 | [Photo studio hire with a light meter that follows the 360° view](sites/photo-studio-360/) | Photography | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/photo-studio-360/) |
 | [Grill house you can see by day and by night in 360°](sites/grill-house-360/) | Restaurant | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/grill-house-360/) |
 | [Yarn shop where the 360° shelves are shoppable](sites/yarn-shop-360/) | Retail | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/yarn-shop-360/) |
+| [Bathhouse and yoga studio with class booking](sites/spa-pool-360/) | Salon & spa | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/spa-pool-360/) |
 | [Security installer with a 3D camera coverage planner](sites/security-viewshed-3d/) | Security | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/security-viewshed-3d/) |
 | [Travel agency with a 3D flight globe](sites/travel-agency-3d/) | Travel | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/travel-agency-3d/) |
 | [Farm wedding venue: walk the whole day in 360°](sites/wedding-farm-360/) | Weddings | High-end 3D | [Live demo](https://calvyrn.github.io/portfolio/sites/wedding-farm-360/) |

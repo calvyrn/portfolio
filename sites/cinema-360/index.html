@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Lantern Picture House · Independent cinema · Pick your seat in 360°</title>
+<meta name="description" content="A 1930s picture house with 92 velvet seats and a piano for silent nights. See the screen from your row in 360°, check showtimes and book seats.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#0F2B2F;--teal2:#16393E;--velvet:#C2263B;--corn:#F6D365;--cream:#EFE7DA;--mute:#9DB3B3;--line:rgba(239,231,218,.14);--rv-font:"DM Sans"}
+*{box-sizing:border-box;margin:0}
+html.lenis{height:auto}.lenis.lenis-smooth{scroll-behavior:auto}
+body{font:400 17px/1.6 "DM Sans",system-ui,sans-serif;color:var(--cream);background:var(--teal);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}a{color:inherit}
+:focus-visible{outline:2px solid var(--corn);outline-offset:3px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 32px}
+.dd{font-family:"DM Serif Display",Georgia,serif;font-weight:400;letter-spacing:-.01em;line-height:.98}
+.ico{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+.topbar{background:#081a1c;color:var(--mute);font-size:12.5px;text-align:center;padding:6px 14px;position:relative;z-index:30}.topbar a{color:#fff}
+#pre{position:fixed;inset:0;z-index:100;background:var(--teal);display:grid;place-items:center;transition:opacity .9s .2s,visibility .9s .2s}
+#pre.done{opacity:0;visibility:hidden}#pre .dd{font-size:46px;text-align:center}#pre p{font-size:14px;color:var(--mute);margin-top:6px;text-align:center}
+#pre .bar{width:200px;height:2px;background:var(--line);margin:16px auto 0}#pre .bar i{display:block;height:100%;width:0;background:var(--corn);transition:width .3s}
+header{position:fixed;left:0;right:0;top:var(--tb,31px);z-index:40;transition:top .4s,background .4s}
+header.solid{top:0;background:rgba(15,43,47,.9);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.nav{display:flex;align-items:center;gap:30px;height:72px}
+.logo{display:flex;gap:10px;align-items:center;text-decoration:none;font-family:"DM Serif Display";font-size:23px;white-space:nowrap}.logo svg{width:28px;height:28px;color:var(--corn)}
+.nav ul{display:flex;gap:26px;list-style:none;padding:0;margin-left:auto;font-weight:600;font-size:15px}
+.nav ul a{text-decoration:none;color:#d6dcd6}.nav ul a:hover{color:var(--corn)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;cursor:pointer;background:var(--velvet);color:#fff;font:700 15.5px "DM Sans";padding:14px 22px;border-radius:999px;text-decoration:none;transition:transform .2s,background .3s}
+.btn:hover{transform:translateY(-2px);background:#d72f45}.btn.c{background:var(--corn);color:#2a1d05}
+.btn svg{width:18px;height:18px}header .btn{padding:10px 16px;font-size:14.5px}
+
+#hero{position:relative;height:400vh;background:#000}
+.stage{position:sticky;top:0;height:100vh;overflow:hidden}
+.shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(6,18,20,.7),rgba(6,18,20,0) 55%),linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,0) 25%,rgba(0,0,0,0) 60%,rgba(0,0,0,.6))}
+.htxt{position:absolute;left:0;right:0;bottom:10vh;pointer-events:none}
+.htxt h1{font-size:clamp(3.4rem,7.6vw,7.8rem);max-width:10ch}
+.htxt p{max-width:36ch;font-size:18.5px;margin:20px 0 26px;color:#e2ddd2}.htxt .btn{pointer-events:auto}
+.ticket{position:absolute;right:34px;bottom:10vh;width:300px;background:var(--cream);color:#1b1b1b;padding:18px 20px;border-radius:8px;transition:opacity .5s;-webkit-mask:radial-gradient(circle 10px at 0 62%,transparent 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 10px at 100% 62%,transparent 98%,#000) right/51% 100% no-repeat;mask:radial-gradient(circle 10px at 0 62%,transparent 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 10px at 100% 62%,transparent 98%,#000) right/51% 100% no-repeat}
+.ticket .t{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--velvet)}
+.ticket h3{font-family:"DM Serif Display";font-weight:400;font-size:26px;margin:2px 0}
+.ticket .rw{display:flex;justify-content:space-between;margin-top:14px;padding-top:12px;border-top:1.5px dashed #c9bfae;font-size:14px}.ticket .rw b{display:block;font-size:20px}
+.cap{position:absolute;left:0;right:0;bottom:10vh;pointer-events:none}
+.cap .in{max-width:520px;opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s cubic-bezier(.2,.7,.2,1)}.cap.on .in{opacity:1;transform:none}
+.cap h2{font-size:clamp(2.8rem,6vw,6rem)}.cap p{font-size:18px;margin-top:12px;max-width:34ch;color:#e2ddd2}
+.hint{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);color:#fff;font-size:13px;opacity:.85;transition:opacity .4s}
+
+section.s{padding:130px 0}
+.kick{font-weight:700;color:var(--corn);font-size:14px;letter-spacing:.08em;display:block;margin-bottom:14px}
+h2.h{font-size:clamp(2.8rem,6vw,6rem);max-width:14ch}
+.lede{font-size:20px;color:#cbd3cd;max-width:46ch;margin-top:18px}
+/* films */
+.days{display:flex;gap:6px;flex-wrap:wrap;margin-top:34px}
+.days button{border:1px solid var(--line);background:none;color:var(--cream);font:700 14.5px "DM Sans";padding:9px 16px;border-radius:999px;cursor:pointer}
+.days button[aria-pressed=true]{background:var(--cream);color:var(--teal)}
+.films{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:26px}
+.film{display:flex;flex-direction:column}
+.poster{aspect-ratio:2/3;border-radius:8px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.poster:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.35));pointer-events:none}
+.poster .r{font-size:12px;font-weight:700;letter-spacing:.08em;position:relative;z-index:1}
+.poster h3{font-family:"DM Serif Display";font-weight:400;font-size:34px;line-height:.95;position:relative;z-index:1}
+.film .meta{font-size:14px;color:var(--mute);margin:12px 0 8px}
+.times{display:flex;flex-wrap:wrap;gap:6px}
+.times button{border:1px solid var(--line);background:none;color:var(--cream);font:700 14px "DM Sans";padding:7px 12px;border-radius:6px;cursor:pointer}
+.times button:hover{border-color:var(--corn)}.times button[aria-pressed=true]{background:var(--corn);color:#2a1d05;border-color:var(--corn)}
+.times button:disabled{opacity:.35;text-decoration:line-through;cursor:not-allowed}
+/* seats */
+#seats{background:var(--teal2)}
+.sg{display:grid;grid-template-columns:1.3fr .7fr;gap:50px;margin-top:40px;align-items:start}
+.map{background:#0a2124;border-radius:16px;padding:28px}
+.screen{height:10px;border-radius:50%/100%;background:linear-gradient(90deg,transparent,var(--cream),transparent);margin:0 8% 6px;opacity:.85}
+.screenl{text-align:center;font-size:12px;letter-spacing:.2em;color:var(--mute);margin-bottom:24px}
+.rows{display:grid;gap:7px}
+.row{display:flex;justify-content:center;gap:6px;align-items:center}
+.row .rl{width:20px;font-size:12px;color:var(--mute);font-weight:700;text-align:center}
+.seat{width:30px;height:28px;border:0;border-radius:8px 8px 4px 4px;background:#2d5a5e;cursor:pointer;color:transparent;font-size:10px}
+.seat:hover:not(:disabled){background:#4a7f84}
+.seat:disabled{background:#3b2a2d;cursor:not-allowed}.seat.idle{background:#2d5a5e;opacity:.45}.seat.sofa.idle{background:#5a4a2d}
+.seat[aria-pressed=true]{background:var(--velvet);color:#fff}
+.seat.sofa{width:44px;background:#5a4a2d}.seat.sofa[aria-pressed=true]{background:var(--corn);color:#2a1d05}
+.gap{width:20px}
+.legend{display:flex;gap:18px;justify-content:center;margin-top:20px;font-size:13px;color:var(--mute)}.legend i{display:inline-block;width:14px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.sum{background:var(--cream);color:#1b1b1b;border-radius:16px;padding:26px;position:sticky;top:96px}
+.sum h3{font-family:"DM Serif Display";font-weight:400;font-size:28px;line-height:1}
+.sum .sub{color:#6a6a6a;font-size:14.5px;margin-top:4px}
+.sum dl{display:grid;grid-template-columns:1fr auto;gap:8px;margin:16px 0;padding:14px 0;border-top:1.5px dashed #c9bfae;border-bottom:1.5px dashed #c9bfae;font-size:15px}.sum dd{margin:0}
+.snacks{display:grid;gap:8px;margin-bottom:12px}
+.snacks label{display:flex;gap:10px;align-items:center;font-size:15px;cursor:pointer}.snacks input{width:18px;height:18px;accent-color:var(--velvet)}.snacks small{margin-left:auto;color:#6a6a6a}
+.sum .tot{display:flex;justify-content:space-between;align-items:baseline;font-family:"DM Serif Display";font-size:36px}
+.sum .btn{width:100%;margin-top:12px}
+.msg{font-size:14px;margin-top:10px;min-height:1.2em;color:#a1222f}.msg.ok{color:#1f6b45}
+/* depth bands */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.dbox{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:16px;background:#000}
+.tag3d{position:absolute;left:12px;top:12px;z-index:2;background:rgba(0,0,0,.6);font-size:12.5px;font-weight:700;padding:6px 10px;border-radius:999px;pointer-events:none}
+#proj{position:relative;height:220vh}
+#proj .stg{position:sticky;top:0;height:100vh;overflow:hidden;background:#000}
+#proj .ov{position:absolute;inset:0;display:flex;align-items:flex-end;padding-bottom:10vh;pointer-events:none;background:linear-gradient(0deg,rgba(0,0,0,.72),rgba(0,0,0,0) 55%)}
+#proj h2{font-size:clamp(3rem,7vw,7rem);max-width:12ch}
+/* tour */
+#tour{padding:120px 0 0}
+.rooms{display:flex;gap:6px;margin-top:30px}
+.rooms button{border:1px solid var(--line);background:none;color:var(--cream);font:700 15px "DM Sans";padding:11px 18px;border-radius:999px;cursor:pointer}
+.rooms button[aria-pressed=true]{background:var(--velvet);border-color:var(--velvet)}
+.viewer{position:relative;height:min(80vh,780px);margin-top:16px;overflow:hidden;border-radius:16px 16px 0 0;background:#000}
+.vctl{position:absolute;right:16px;bottom:16px;display:flex;gap:6px;z-index:3}.vctl button{width:46px;height:46px;border:0;border-radius:50%;background:var(--cream);cursor:pointer;display:grid;place-items:center}.vctl .ico{width:20px;height:20px}
+[data-load]{background:#000;color:#999}
+footer{background:#081a1c;color:var(--mute);padding:90px 0 36px}
+.fbig{font-size:clamp(3.4rem,11vw,11rem);color:var(--cream)}
+.fcols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px;margin-top:40px;font-size:15px}.fcols h4{color:#fff;font-size:14px;margin-bottom:10px}.fcols ul{list-style:none;padding:0;display:grid;gap:6px}.fcols a{text-decoration:none}
+.legal{margin-top:50px;font-size:13px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(36px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}.reveal.in{opacity:1;transform:none}
+@media(max-width:1060px){.nav ul{display:none}.films{grid-template-columns:repeat(2,1fr)}.sg,.split{grid-template-columns:1fr}.sum{position:static}}
+@media(max-width:680px){body{font-size:16px}.wrap{padding:0 18px}.topbar{font-size:11px}.nav{height:62px}.logo{font-size:19px}header .btn{padding:9px 12px}
+ .htxt h1{font-size:3.2rem}.htxt p{font-size:16px}.ticket{display:none}.cap h2{font-size:2.8rem}section.s{padding:90px 0}.films{gap:10px}.poster h3{font-size:24px}.poster{padding:14px}
+ .map{padding:14px 6px;overflow-x:auto}.seat{width:22px;height:22px}.seat.sofa{width:32px}.row{gap:3px}.gap{width:8px}.viewer{height:72vh}.fcols{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+</style>
+<style id="rvcss"></style>
+</head>
+<body>
+<div id="pre" role="status"><div><div class="dd">The Lantern</div><p id="preTxt">Dimming the lights · 0%</p><div class="bar"><i id="preBar"></i></div></div></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="i-logo" viewBox="0 0 32 32"><path d="M11 6h10l-1 4h-8zM9 10h14v14a3 3 0 0 1-3 3h-8a3 3 0 0 1-3-3z"/><path d="M16 14c2 2 2 5 0 7-2-2-2-5 0-7z" fill="currentColor"/><path d="M16 2v4"/></symbol>
+ <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+ <symbol id="i-full" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+ <symbol id="i-zin" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+ <symbol id="i-zout" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+</svg>
+<div class="topbar">Example concept by <a href="https://calvyrn.com">Calvyrn</a>. The Lantern and its films are fictional; times, prices and 555 numbers are placeholders. 360° photos are real.</div>
+<header id="hdr"><div class="wrap nav">
+ <a class="logo" href="#top"><svg class="ico"><use href="#i-logo"/></svg>The Lantern</a>
+ <ul><li><a href="#films">Showtimes</a></li><li><a href="#seats">Seats</a></li><li><a href="#tour">360° cinema</a></li></ul>
+ <a class="btn" href="#films">Book seats</a>
+</div></header>
+
+<main id="top">
+<section id="hero" aria-label="Scroll from the foyer into the cinema in real 360 degree photos">
+ <div class="stage">
+  <div class="rv-hero" id="hpano" role="img" aria-label="Real 360 degree photos of a long cinema foyer with palms and teal benches, and a small picture house with red velvet seats, a stage and a piano."></div>
+  <div class="shade"></div>
+  <div class="htxt" id="htxt"><div class="wrap">
+   <h1 class="dd">Ninety-two seats. One very big screen.</h1>
+   <p>An independent picture house from 1934, with a foyer bar and a piano for silent-film nights. Scroll to walk in; these are real 360° photos.</p>
+   <a class="btn c" href="#films">See tonight's films<svg><use href="#i-arrow"/></svg></a>
+  </div></div>
+  <div class="ticket" id="ticket"><span class="t">ADMIT ONE · TONIGHT</span><h3>The Salt Road</h3><span style="font-size:14px;color:#555">Screen 1 · 19:30</span><div class="rw"><span>Row<b>F</b></span><span>Seat<b>7</b></span><span>Price<b>R95</b></span></div></div>
+  <div class="cap" data-c="1"><div class="wrap"><div class="in"><h2 class="dd">Drinks in the foyer.</h2><p>The bar opens an hour before every film. Take your glass in with you.</p></div></div></div>
+  <div class="cap" data-c="2"><div class="wrap"><div class="in"><h2 class="dd">Then find your row.</h2><p>Velvet seats, a proper stage and a piano for our silent-film nights with live score.</p></div></div></div>
+  <div class="hint" id="hint">Scroll to walk in</div>
+ </div>
+</section>
+
+<section class="s" id="films"><div class="wrap">
+ <span class="kick reveal">SHOWTIMES</span>
+ <h2 class="dd h reveal">What's on this week.</h2>
+ <div class="days" id="days" role="group" aria-label="Day"></div>
+ <div class="films" id="filmList"></div>
+</div></section>
+
+<section class="s" id="seats"><div class="wrap">
+ <span class="kick reveal">YOUR SEATS</span>
+ <h2 class="dd h reveal" id="seatH">Pick where you sit.</h2>
+ <div class="sg">
+  <div class="map" id="map" role="group" aria-label="Seat map"><div class="screen"></div><div class="screenl">SCREEN</div><div class="rows" id="rows"></div>
+   <div class="legend"><span><i style="background:#2d5a5e"></i>Free</span><span><i style="background:#5a4a2d"></i>Love seat</span><span><i style="background:var(--velvet)"></i>Yours</span><span><i style="background:#3b2a2d"></i>Taken</span></div></div>
+  <aside class="sum" aria-live="polite"><h3 id="sFilm">Pick a showtime</h3><div class="sub" id="sWhen">Choose a film and time above.</div><dl id="sLines"><dt>No seats yet</dt><dd></dd></dl>
+   <div class="snacks"><label><input type="checkbox" value="45" data-n="Popcorn, sweet and salty"> Popcorn, sweet and salty<small>R45</small></label><label><input type="checkbox" value="60" data-n="Glass of red"> Glass of red<small>R60</small></label><label><input type="checkbox" value="30" data-n="Ginger beer"> Ginger beer<small>R30</small></label></div>
+   <div class="tot"><span style="font:700 15px 'DM Sans'">Total</span><span id="sTot">R0</span></div><button class="btn" id="buy">Book these seats<svg><use href="#i-arrow"/></svg></button><p class="msg" id="msg" role="alert"></p></aside>
+ </div>
+</div></section>
+
+<section class="s"><div class="wrap split">
+ <div class="dbox reveal"><div class="rv-depth" id="dCorn" style="background-image:url(img/popcorn-1440.jpg)"></div><span class="tag3d">3D photo · move your mouse</span></div>
+ <div><span class="kick reveal">THE FOYER BAR</span><h2 class="dd h reveal">Popped every hour, buttered properly.</h2><p class="lede reveal">Real butter, sea salt or burnt sugar. Plus local wine, ginger beer from down the road, and ice cream in tubs.</p></div>
+</div></section>
+
+<section id="proj" data-sticky aria-label="35mm projection">
+ <div class="stg"><div class="rv-depth" id="dProj" style="background-image:url(img/projector-1440.jpg)"></div>
+  <div class="ov"><div class="wrap"><h2 class="dd">Some nights, it's still film.</h2><p style="max-width:40ch;font-size:18px;margin-top:14px;color:#e2ddd2">Once a month we thread a 35mm print through the old projector. Sit near the back and you'll hear it.</p></div></div>
+ </div>
+</section>
+
+<section id="tour" aria-label="360 degree cinema tour">
+ <div class="wrap">
+  <span class="kick reveal">360° CINEMA</span>
+  <h2 class="dd h reveal">See the screen from your row.</h2>
+  <p class="lede reveal">Real 360° photos of the foyer and Screen 1. Drag to look around.</p>
+  <div class="rooms" data-rooms role="group" aria-label="Rooms"><button data-r="screen" aria-pressed="true">Screen 1</button><button data-r="foyer" aria-pressed="false">Foyer</button></div>
+  <div class="viewer rv-viewer" id="viewer"><div data-pano></div><div data-spots></div><div data-load>Lights down…</div>
+   <div class="vctl"><button data-zin aria-label="Zoom in"><svg class="ico"><use href="#i-zin"/></svg></button><button data-zout aria-label="Zoom out"><svg class="ico"><use href="#i-zout"/></svg></button><button data-fs aria-label="Full screen"><svg class="ico"><use href="#i-full"/></svg></button></div></div>
+ </div>
+</section>
+</main>
+
+<footer><div class="wrap">
+ <div class="dd fbig">The Lantern</div>
+ <div class="fcols"><div><p>Independent picture house since 1934. Foyer bar from 17:00.</p></div>
+ <div><h4>Cinema</h4><ul><li><a href="#films">Showtimes</a></li><li><a href="#seats">Seats</a></li><li><a href="#tour">360° cinema</a></li></ul></div>
+ <div><h4>Box office</h4><ul><li>+27 (0)21 555 0134</li><li>tickets@lantern.example</li></ul></div></div>
+ <div class="legal"><span>© 2026 The Lantern (fictional; all film titles invented). 360° photos: Poly Haven, CC0 (real photographs). Photos: Unsplash. 3D photo effect from depth estimated on the real photo.</span><span>Concept, design and build: <a href="https://calvyrn.com" style="color:#fff">Calvyrn</a></span></div>
+</div></footer>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.164.1/build/three.module.js"}}</script>
+<script type="module">
+import {createPano,scrollDirector,panoCSS,boot,stickyProgress,depthOnScroll,wireTour} from '../../shared/realview.js';
+document.getElementById('rvcss').textContent=panoCSS;
+const K=boot({preLabel:'Dimming the lights'});const {$,mob}=K;
+const S=n=>({src:`pano/${n}-6k.jpg`,srcMobile:`pano/${n}-3k.jpg`});const F=mob?14:0;const fmt=n=>n.toLocaleString('en-US');
+
+const hero=createPano($('hpano'),{scenes:{foyer:{...S('cinema_lobby'),yaw:-120},screen:{...S('pretville_cinema'),yaw:-150}},start:'foyer',fov:78+F,auto:0,onProgress:(id,p)=>id==='foyer'&&K.setPre(p*.95),onReady:K.finish});
+hero.interactive(false);
+const SEGS=[{id:'foyer',until:.45,K:[[0,-125,-4,80+F],[.22,-40,-2,74+F],[.45,40,-2,70+F]]},{id:'screen',K:[[.45,-150,-4,78+F],[.7,-40,-6,72+F],[1,85,2,58+F]]}];
+const director=scrollDirector(hero,SEGS,.08);const caps=[...document.querySelectorAll('.cap')];
+function onScroll(){const HP=stickyProgress($('hero'));$('hdr').classList.toggle('solid',$('hero').getBoundingClientRect().bottom<90);director(HP);
+ const c=HP<.08?0:HP<.45?1:2;caps.forEach(x=>x.classList.toggle('on',+x.dataset.c===c));$('htxt').style.opacity=Math.max(0,1-HP*12);$('ticket').style.opacity=Math.max(0,1-HP*12);$('hint').style.opacity=HP>.02?0:.85}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+depthOnScroll($('dCorn'),{src:mob?'img/popcorn-1440.jpg':'img/popcorn-2560.jpg',depth:'img/popcorn-depth.jpg',strength:.42},p=>({z:.05+p*.22,x:.05-p*.1}));
+depthOnScroll($('dProj'),{src:mob?'img/projector-1440.jpg':'img/projector-2560.jpg',depth:'img/projector-depth.jpg',strength:.5,overscan:1.22},p=>({z:p*.5,x:-.1+p*.2}),stickyProgress);
+
+wireTour({viewer:$('viewer'),start:'screen',scenes:{
+ screen:{...S('pretville_cinema'),yaw:85,hotspots:[{to:'foyer',yaw:-30,pitch:-2,label:'Out to the foyer',arrive:40},{yaw:85,pitch:8,label:'The screen, 7 m wide'},{yaw:130,pitch:-6,label:'Piano for silent nights'},{yaw:-150,pitch:-14,label:'Row F, the sweet spot'}]},
+ foyer:{...S('cinema_lobby'),yaw:40,hotspots:[{to:'screen',yaw:-160,pitch:-4,label:'Into Screen 1',arrive:85},{yaw:-110,pitch:6,label:'Original 1934 mural'},{yaw:90,pitch:-6,label:'Foyer bar'}]}}});
+
+/* films (all invented), showtimes, seat map */
+const FILMS=[['The Salt Road','Drama · 2h 04m · 13','#2E6F73','#0b1f22',['14:00','17:15','19:30']],['Paper Moons','Animation · 1h 38m · PG','#E7A64A','#5a2a0f',['11:00','13:30','16:00']],['Night Ferry','Thriller · 1h 52m · 16','#3B3F7A','#0d0e23',['18:00','20:45']],['Silent Night: The Harbour (1926)','Silent, live piano · 1h 20m','#C2263B','#2a0a10',['20:00']]];
+const dl=[];for(let i=0;i<7;i++){const d=new Date();d.setDate(d.getDate()+i);dl.push(d)}
+let day=new Date().getHours()>=20?1:0,show=null,mine=new Set();
+$('days').innerHTML=dl.map((d,i)=>`<button data-d="${i}" aria-pressed="${i===day}">${i===0?'Today':d.toLocaleDateString('en-GB',{weekday:'short',day:'numeric'})}</button>`).join('');
+function films(){const now=new Date();$('filmList').innerHTML=FILMS.map((f,i)=>`<div class="film reveal in"><div class="poster" style="background:radial-gradient(circle at 70% 30%,${f[2]},${f[3]} 75%)"><span class="r">THE LANTERN PRESENTS</span><h3>${f[0]}</h3></div><div class="meta">${f[1]}</div><div class="times">${f[4].filter((t,k)=>!(i===3&&day%3)).map(t=>{const [h,m]=t.split(':').map(Number);const past=day===0&&h*60+m<now.getHours()*60+now.getMinutes();const id=`${day}-${i}-${t}`;return `<button data-s="${id}" ${past?'disabled':''} aria-pressed="${show===id}">${t}</button>`}).join('')||'<span style="color:var(--mute);font-size:14px">Not showing today</span>'}</div></div>`).join('')}
+$('days').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;day=+b.dataset.d;document.querySelectorAll('#days button').forEach(x=>x.setAttribute('aria-pressed',x===b));films()});
+$('filmList').addEventListener('click',e=>{const b=e.target.closest('[data-s]');if(!b)return;show=b.dataset.s;mine.clear();films();seats();sum();K.scrollTo('#seats')});
+const ROWS='ABCDEFGH'.split('');
+function taken(r,c){if(!show)return false;let h=0;for(const ch of show+r+c)h=(h*31+ch.charCodeAt(0))|0;return Math.abs(h)%10<4}
+function seats(){$('rows').innerHTML=ROWS.map((r,ri)=>{const sofa=r==='H';const n=sofa?6:12;let h=`<div class="row"><span class="rl">${r}</span>`;for(let c=1;c<=n;c++){if(!sofa&&c===7)h+='<span class="gap"></span>';const k=r+c;const t=taken(r,c);h+=`<button class="seat ${sofa?'sofa':''} ${!show?'idle':''}" data-k="${k}" ${t||!show?'disabled':''} aria-pressed="${mine.has(k)}" aria-label="Row ${r} seat ${c}${sofa?', love seat for two':''}${t?', taken':''}">${mine.has(k)?c:''}</button>`}return h+`<span class="rl">${r}</span></div>`}).join('')}
+$('rows').addEventListener('click',e=>{const b=e.target.closest('.seat');if(!b)return;const k=b.dataset.k;mine.has(k)?mine.delete(k):mine.size<10&&mine.add(k);seats();sum()});
+document.querySelector('.snacks').addEventListener('change',sum);
+function sum(){if(!show){return}const [d,i,t]=show.split('-');const f=FILMS[+i];$('sFilm').textContent=f[0];$('sWhen').textContent=`${dl[+d].toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'short'})} · ${t} · Screen 1`;
+ const list=[...mine];const std=list.filter(k=>k[0]!=='H'),sofa=list.filter(k=>k[0]==='H');const price=+t.split(':')[0]<17?75:95;
+ const sn=[...document.querySelectorAll('.snacks input:checked')];
+ const lines=[];if(std.length)lines.push([`${std.length} × seat (${std.join(', ')})`,std.length*price]);if(sofa.length)lines.push([`${sofa.length} × love seat for two (${sofa.join(', ')})`,sofa.length*220]);sn.forEach(s=>lines.push([s.dataset.n,+s.value]));
+ $('sLines').innerHTML=lines.length?lines.map(l=>`<dt>${l[0]}</dt><dd>R${l[1]}</dd>`).join(''):'<dt>Tap seats on the map</dt><dd></dd>';$('sTot').textContent='R'+fmt(lines.reduce((a,l)=>a+l[1],0))}
+$('buy').onclick=()=>{$('msg').className='msg';if(!show){$('msg').textContent='Pick a film and time first.';return}if(!mine.size){$('msg').textContent='Tap at least one seat.';return}$('msg').className='msg ok';$('msg').textContent=`Booked: ${$('sFilm').textContent}, ${[...mine].join(', ')}. Show the QR at the door. Demo: nothing was charged.`};
+films();seats();
+</script>
+</body>
+</html>

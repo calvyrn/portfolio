@@ -9,7 +9,7 @@ S.sort(key=lambda r: (ORDER.get(r[2], 9), r[3]))
 GROUPS = {
  'home': ('Home services', {'HVAC','Plumbing','Home services','Home cleaning','Landscaping','Solar','Security','Auto repair','Automotive'}),
  'health': ('Health & beauty', {'Dental','Med spa','Physical therapy','Veterinary','Salon & spa','Beauty','Fitness'}),
- 'food': ('Food & travel', {'Restaurant','Food & drink','Hospitality','Travel'}),
+ 'food': ('Food, travel & leisure', {'Restaurant','Food & drink','Hospitality','Travel','Culture','Entertainment'}),
  'pro': ('Professional', {'Accounting','Legal','Insurance','Real estate','Architecture','Logistics','Events','Weddings','Education'}),
  'shops': ('Shops & brands', {'Fashion','Jewelry','Photography','Beauty','Furniture','Retail'}),
 }

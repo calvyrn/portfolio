@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mistbelt House · Country house hotel in the Midlands · See every room in 360°</title>
+<meta name="description" content="A twelve-room country house hotel with fires, gardens and long breakfasts. Walk every room in real 360° photos and book direct for the best rate.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--mist:#E6EBEC;--ink:#1F2A30;--brass:#9C7429;--moss:#4A5D4F;--mute:#5F6C72;--line:#CBD4D6;--card:#F6F8F8;--rv-font:"Mulish"}
+*{box-sizing:border-box;margin:0}
+html.lenis{height:auto}.lenis.lenis-smooth{scroll-behavior:auto}
+body{font:400 17px/1.65 "Mulish",system-ui,sans-serif;color:var(--ink);background:var(--mist);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}a{color:inherit}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+.wrap{max-width:1260px;margin:0 auto;padding:0 34px}
+.g{font-family:"EB Garamond",Georgia,serif;font-weight:400;letter-spacing:-.01em;line-height:1}
+.ico{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+.topbar{background:var(--ink);color:#b4c0c4;font-size:12.5px;text-align:center;padding:6px 14px;position:relative;z-index:30}.topbar a{color:#fff}
+#pre{position:fixed;inset:0;z-index:100;background:var(--mist);display:grid;place-items:center;transition:opacity .9s .2s,visibility .9s .2s}
+#pre.done{opacity:0;visibility:hidden}#pre .g{font-size:48px;text-align:center}#pre p{font-size:14px;color:var(--mute);margin-top:6px;text-align:center}
+#pre .bar{width:200px;height:1px;background:var(--line);margin:16px auto 0}#pre .bar i{display:block;height:100%;width:0;background:var(--brass);transition:width .3s}
+header{position:fixed;left:0;right:0;top:var(--tb,31px);z-index:40;color:#fff;transition:top .4s,background .4s,color .4s}
+header.solid{top:0;background:rgba(230,235,236,.92);backdrop-filter:blur(14px);color:var(--ink);box-shadow:0 1px 0 var(--line)}
+.nav{display:flex;align-items:center;gap:30px;height:76px}
+.logo{text-decoration:none;font-family:"EB Garamond";font-size:27px;white-space:nowrap}
+.nav ul{display:flex;gap:28px;list-style:none;padding:0;margin-left:auto;font-weight:600;font-size:15px}
+.nav ul a{text-decoration:none}.nav ul a:hover{color:var(--brass)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;cursor:pointer;background:var(--ink);color:#fff;font:700 15px "Mulish";padding:15px 24px;border-radius:2px;text-decoration:none;transition:background .3s;letter-spacing:.02em}
+.btn:hover{background:var(--moss)}.btn.br{background:var(--brass)}.btn.br:hover{background:#86631f}
+.btn svg{width:18px;height:18px}header .btn{padding:10px 16px;font-size:14px}header:not(.solid) .btn{background:#fff;color:var(--ink)}
+
+#hero{position:relative;height:440vh;background:#3a3a30}
+.stage{position:sticky;top:0;height:100vh;overflow:hidden}
+.shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(20,26,22,.6),rgba(20,26,22,0) 55%),linear-gradient(180deg,rgba(0,0,0,.4),rgba(0,0,0,0) 25%,rgba(0,0,0,0) 60%,rgba(0,0,0,.5))}
+.htxt{position:absolute;left:0;right:0;bottom:10vh;color:#fff;pointer-events:none}
+.htxt h1{font-size:clamp(3.6rem,8vw,8.4rem);max-width:10ch}
+.htxt p{max-width:36ch;font-size:18.5px;margin:18px 0 26px}.htxt .btn{pointer-events:auto}
+.roomcard{position:absolute;right:34px;bottom:10vh;width:300px;background:var(--card);padding:18px 20px;box-shadow:0 20px 40px -20px rgba(0,0,0,.5);opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s}
+.roomcard.on{opacity:1;transform:none}
+.roomcard .k{font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--brass)}
+.roomcard h3{font-family:"EB Garamond";font-weight:400;font-size:28px;margin:4px 0}
+.roomcard p{font-size:14.5px;color:var(--mute)}
+.roomcard .r{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-weight:800}
+.hint{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);color:#fff;font-size:13px;opacity:.85;transition:opacity .4s}
+
+section.s{padding:130px 0}
+.kick{font-weight:800;color:var(--brass);font-size:13px;letter-spacing:.1em;display:block;margin-bottom:14px}
+h2.h{font-size:clamp(2.8rem,6vw,6rem);max-width:14ch}
+.lede{font-size:20px;color:var(--mute);max-width:46ch;margin-top:18px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.dbox{position:relative;aspect-ratio:4/5;overflow:hidden;background:#333}
+.tag3d{position:absolute;left:12px;top:12px;z-index:2;background:var(--card);font-size:12px;font-weight:800;padding:5px 10px;pointer-events:none;letter-spacing:.04em}
+.incl{display:grid;grid-template-columns:1fr 1fr;gap:18px 30px;margin-top:34px}
+.incl div{display:flex;gap:14px;align-items:flex-start}.incl .ico{color:var(--moss);width:30px;height:30px}.incl b{display:block}.incl span{color:var(--mute);font-size:15px}
+/* rooms */
+.rooms3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.rm{background:var(--card);display:flex;flex-direction:column}
+.rm .pic{position:relative;aspect-ratio:4/3;overflow:hidden;background:#333}
+.rm .pic img{width:100%;height:100%;object-fit:cover;transition:transform 1s}.rm:hover .pic img{transform:scale(1.05)}
+.rm .pic button{position:absolute;left:12px;bottom:12px;border:0;background:rgba(255,255,255,.92);font:800 13px "Mulish";padding:8px 12px;cursor:pointer;display:flex;gap:6px;align-items:center}
+.rm .pic button .ico{width:16px;height:16px}
+.rm .bd{padding:22px;flex:1;display:flex;flex-direction:column}
+.rm h3{font-family:"EB Garamond";font-weight:400;font-size:30px}
+.rm p{color:var(--mute);font-size:15.5px;margin:6px 0 14px;flex:1}
+.rm .ft{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:14px}
+.rm .ft b{font-family:"EB Garamond";font-size:28px;font-weight:400}.rm .ft small{color:var(--mute);font-size:13px}
+.rm label{display:flex;gap:8px;align-items:center;font-weight:800;font-size:14px;cursor:pointer}.rm input{width:18px;height:18px;accent-color:var(--brass)}
+/* tour */
+#tour{background:var(--ink);color:#e6ebec;padding:120px 0 0}
+#tour .lede{color:#b4c0c4}
+.rtabs{display:flex;gap:6px;margin-top:30px;flex-wrap:wrap}
+.rtabs button{border:1px solid #3c4a52;background:none;color:#e6ebec;font:700 14.5px "Mulish";padding:11px 18px;cursor:pointer}
+.rtabs button[aria-pressed=true]{background:#e6ebec;color:var(--ink)}
+.viewer{position:relative;height:min(80vh,780px);margin-top:16px;overflow:hidden;background:#000}
+.vctl{position:absolute;right:16px;bottom:16px;display:flex;gap:6px;z-index:3}.vctl button{width:46px;height:46px;border:0;background:#fff;cursor:pointer;display:grid;place-items:center}.vctl .ico{width:20px;height:20px}
+[data-load]{background:#111;color:#aaa}
+/* garden band */
+#garden{position:relative;height:220vh}
+#garden .stg{position:sticky;top:0;height:100vh;overflow:hidden;background:#000}
+#garden .ov{position:absolute;inset:0;display:flex;align-items:flex-end;padding-bottom:10vh;color:#fff;pointer-events:none;background:linear-gradient(0deg,rgba(0,0,0,.6),rgba(0,0,0,0) 55%)}
+#garden h2{font-size:clamp(3rem,7vw,7rem);max-width:11ch}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:40px}.strip img{width:100%;aspect-ratio:3/4;object-fit:cover}
+/* booking */
+#book{background:var(--card)}
+.bk{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;margin-top:40px;align-items:start}
+.fl{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fl label{display:block;font-weight:800;font-size:13px;letter-spacing:.04em}
+.fl input,.fl select{display:block;width:100%;margin-top:6px;font:500 16px "Mulish";border:1px solid var(--line);padding:12px;background:#fff;color:var(--ink)}
+.plans{display:grid;gap:8px;margin-top:22px}
+.plans label{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);padding:14px;cursor:pointer}
+.plans input{accent-color:var(--brass);width:18px;height:18px}.plans b{display:block}.plans small{color:var(--mute)}.plans em{margin-left:auto;font-style:normal;font-weight:800}
+.sum{background:var(--ink);color:#e6ebec;padding:30px;position:sticky;top:96px}
+.sum h3{font-family:"EB Garamond";font-weight:400;font-size:30px}
+.sum dl{display:grid;grid-template-columns:1fr auto;gap:8px;margin:16px 0;padding:14px 0;border-top:1px solid #3c4a52;border-bottom:1px solid #3c4a52;font-size:15px}.sum dd{margin:0}
+.sum .tot{font-family:"EB Garamond";font-size:52px;line-height:1}
+.sum .save{color:#d9c08a;font-size:14px;margin-top:6px}
+.sum input{width:100%;margin-top:14px;font:500 16px "Mulish";padding:12px;border:0}
+.sum .btn{width:100%;margin-top:10px}
+.msg{font-size:14px;margin-top:10px;min-height:1.2em;color:#ffb3a8}.msg.ok{color:#b9e2c4}
+.ph{font-size:11px;font-weight:800;letter-spacing:.05em;color:var(--brass)}
+footer{background:var(--ink);color:#b4c0c4;padding:90px 0 36px}
+.fbig{font-size:clamp(3.4rem,11vw,11rem);color:#e6ebec}
+.fcols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px;margin-top:40px;font-size:15px}.fcols h4{color:#fff;font-size:14px;margin-bottom:10px}.fcols ul{list-style:none;padding:0;display:grid;gap:6px}.fcols a{text-decoration:none}
+.legal{margin-top:50px;font-size:13px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(36px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}.reveal.in{opacity:1;transform:none}
+@media(max-width:1000px){.nav ul{display:none}.split,.bk{grid-template-columns:1fr}.rooms3{grid-template-columns:1fr 1fr}.sum{position:static}.strip{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){body{font-size:16px}.wrap{padding:0 18px}.topbar{font-size:11px}.nav{height:62px}.logo{font-size:22px}header .btn{padding:9px 12px}
+ .htxt h1{font-size:3.4rem}.htxt p{font-size:16px}.roomcard{left:18px;right:18px;width:auto;bottom:auto;top:calc(var(--tb,31px) + 76px);padding:14px}.roomcard p{display:none}
+ section.s{padding:90px 0}.rooms3{grid-template-columns:1fr}.incl{grid-template-columns:1fr}.fl{grid-template-columns:1fr}.viewer{height:72vh}.fcols{grid-template-columns:1fr}.dbox{aspect-ratio:4/3}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+</style>
+<style id="rvcss"></style>
+</head>
+<body>
+<div id="pre" role="status"><div><div class="g">Mistbelt House</div><p id="preTxt">Lighting the fires · 0%</p><div class="bar"><i id="preBar"></i></div></div></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="i-fire" viewBox="0 0 32 32"><path d="M16 4c1 5 7 7 7 14a7 7 0 0 1-14 0c0-4 2-6 3-8 0 3 1 4 2.5 4.5C14 11 15 7 16 4z"/><path d="M6 28h20"/></symbol>
+ <symbol id="i-egg" viewBox="0 0 32 32"><path d="M16 4c5 0 9 8 9 14a9 9 0 0 1-18 0c0-6 4-14 9-14z"/></symbol>
+ <symbol id="i-tree" viewBox="0 0 32 32"><path d="M16 28V16M16 4l8 10h-4l5 6H7l5-6H8z"/></symbol>
+ <symbol id="i-dog" viewBox="0 0 32 32"><path d="M7 14l3-7 4 5h6l4-5 3 7v6a8 8 0 0 1-8 8h-4a8 8 0 0 1-8-8z"/><circle cx="13" cy="17" r="1" fill="currentColor"/><circle cx="19" cy="17" r="1" fill="currentColor"/></symbol>
+ <symbol id="i-360" viewBox="0 0 32 32"><ellipse cx="16" cy="16" rx="13" ry="6"/><path d="M22 21l3 1-1 3"/></symbol>
+ <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+ <symbol id="i-full" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+ <symbol id="i-zin" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+ <symbol id="i-zout" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+</svg>
+<div class="topbar">Example concept by <a href="https://calvyrn.com">Calvyrn</a>. Mistbelt House is fictional; rates, reviews and 555 numbers are placeholders. 360° photos are real.</div>
+<header id="hdr"><div class="wrap nav">
+ <a class="logo" href="#top">Mistbelt House</a>
+ <ul><li><a href="#rooms">Rooms</a></li><li><a href="#tour">360° rooms</a></li><li><a href="#garden">The garden</a></li></ul>
+ <a class="btn" href="#book">Book direct</a>
+</div></header>
+
+<main id="top">
+<section id="hero" aria-label="Scroll through the house in real 360 degree photos">
+ <div class="stage">
+  <div class="rv-hero" id="hpano" role="img" aria-label="Real 360 degree photos of a country house lounge with sofas and a stone fireplace, a twin room with a fireplace and garden window, and a modern king room."></div>
+  <div class="shade"></div>
+  <div class="htxt" id="htxt"><div class="wrap">
+   <h1 class="g">Fires lit by four. Breakfast till eleven.</h1>
+   <p>A twelve-room country house in the mist belt, with gardens, dogs and very long breakfasts. Scroll through the house; these are real 360° photos.</p>
+   <a class="btn br" href="#book">Book direct, save 10%<svg><use href="#i-arrow"/></svg></a>
+  </div></div>
+  <aside class="roomcard" id="roomcard" aria-live="polite"></aside>
+  <div class="hint" id="hint">Scroll through the house</div>
+ </div>
+</section>
+
+<section class="s"><div class="wrap split">
+ <div class="dbox reveal"><div class="rv-depth" id="dDoor" style="background-image:url(img/door-1440.jpg)"></div><span class="tag3d">3D PHOTO · MOVE YOUR MOUSE</span></div>
+ <div>
+  <span class="kick reveal">THE HOUSE</span>
+  <h2 class="g h reveal">Open the doors and do nothing.</h2>
+  <p class="lede reveal">The house was built in 1924 for a farming family and still feels like one. No conference rooms, no spa menu, just good beds and a view of the hills.</p>
+  <div class="incl reveal">
+   <div><svg class="ico"><use href="#i-egg"/></svg><p><b>Farm breakfast included</b><span>Eggs from our hens, bread baked at six.</span></p></div>
+   <div><svg class="ico"><use href="#i-fire"/></svg><p><b>A fireplace in every room</b><span>Logs stacked, lit for you at four.</span></p></div>
+   <div><svg class="ico"><use href="#i-tree"/></svg><p><b>Eight acres of garden</b><span>Croquet lawn, trout dam, forest walk.</span></p></div>
+   <div><svg class="ico"><use href="#i-dog"/></svg><p><b>Dogs welcome</b><span>Two garden rooms have their own gate.</span></p></div>
+  </div>
+ </div>
+</div></section>
+
+<section class="s" id="rooms" style="padding-top:0"><div class="wrap">
+ <span class="kick reveal">ROOMS</span>
+ <h2 class="g h reveal">Twelve rooms, three kinds.</h2>
+ <div class="rooms3" id="roomList"></div>
+</div></section>
+
+<section id="tour" aria-label="360 degree rooms">
+ <div class="wrap">
+  <span class="kick reveal" style="color:#d9c08a">360° ROOMS</span>
+  <h2 class="g h reveal" style="color:#fff">Walk the room before you book it.</h2>
+  <p class="lede reveal">Real 360° photos of the lounge and each room type. Drag to look around, tap the circles to move.</p>
+  <div class="rtabs" data-rooms role="group" aria-label="Rooms"><button data-r="lounge" aria-pressed="true">Drawing room</button><button data-r="garden" aria-pressed="false">Garden twin</button><button data-r="wing" aria-pressed="false">New-wing king</button><button data-r="bath" aria-pressed="false">Cottage bathroom</button></div>
+  <div class="viewer rv-viewer" id="viewer"><div data-pano></div><div data-spots></div><div data-load>Opening the door…</div>
+   <div class="vctl"><button data-zin aria-label="Zoom in"><svg class="ico"><use href="#i-zin"/></svg></button><button data-zout aria-label="Zoom out"><svg class="ico"><use href="#i-zout"/></svg></button><button data-fs aria-label="Full screen"><svg class="ico"><use href="#i-full"/></svg></button></div></div>
+ </div>
+</section>
+
+<section id="garden" data-sticky aria-label="The garden">
+ <div class="stg"><div class="rv-depth" id="dGarden" style="background-image:url(img/garden-1440.jpg)"></div>
+  <div class="ov"><div class="wrap"><h2 class="g">Eight acres to get lost in.</h2><p style="max-width:40ch;font-size:18px;margin-top:14px">A path under the old pines to the lookout, tea on the lawn at three, and a croquet set nobody remembers the rules of.</p></div></div>
+ </div>
+</section>
+
+<section class="s" style="padding-bottom:60px"><div class="wrap">
+ <div class="strip">
+  <img class="reveal" src="img/clawfoot-960.jpg" srcset="img/clawfoot-960.jpg 960w, img/clawfoot-1440.jpg 1440w" sizes="25vw" alt="Mint green clawfoot bath by a window" loading="lazy">
+  <img class="reveal" src="img/table-960.jpg" srcset="img/table-960.jpg 960w, img/table-1440.jpg 1440w" sizes="25vw" alt="Wrought iron garden table and chairs on a lawn" loading="lazy">
+  <img class="reveal" src="img/bedroom-960.jpg" srcset="img/bedroom-960.jpg 960w, img/bedroom-1440.jpg 1440w" sizes="25vw" alt="Bedroom with a brass bed under a sloping ceiling" loading="lazy">
+  <img class="reveal" src="img/tub-960.jpg" srcset="img/tub-960.jpg 960w, img/tub-1440.jpg 1440w" sizes="25vw" alt="Freestanding stone bath beside plants" loading="lazy">
+ </div>
+</div></section>
+
+<section class="s" id="book"><div class="wrap">
+ <span class="kick reveal">BOOK DIRECT</span>
+ <h2 class="g h reveal">Ten percent less than anywhere else.</h2>
+ <div class="bk">
+  <form id="bform" onsubmit="return false">
+   <div class="fl"><label>ARRIVE<input type="date" id="cin"></label><label>LEAVE<input type="date" id="cout"></label><label>ROOM<select id="room"></select></label><label>GUESTS<select id="guests"><option value="1">1 adult</option><option value="2" selected>2 adults</option><option value="3">2 adults, 1 child</option></select></label></div>
+   <div class="plans"><label><input type="radio" name="plan" value="bb" checked><span><b>Bed and breakfast</b><small>Farm breakfast, tea and cake at three</small></span><em>Included</em></label>
+    <label><input type="radio" name="plan" value="dbb"><span><b>Dinner, bed and breakfast</b><small>Three courses by the fire</small></span><em>+R650 pp/night</em></label>
+    <label><input type="radio" name="plan" value="flex"><span><b>Flexible</b><small>Cancel free until 24 hours before</small></span><em>+12%</em></label></div>
+  </form>
+  <aside class="sum" aria-live="polite"><h3 id="sumT">Your stay</h3><dl id="sumL"></dl><div class="tot" id="tot"></div><div class="save" id="save"></div>
+   <input id="email" type="email" placeholder="Email for your confirmation" aria-label="Email" autocomplete="email"><button class="btn br" id="buy">Reserve this stay<svg><use href="#i-arrow"/></svg></button><p class="msg" id="msg" role="alert"></p></aside>
+ </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+ <div class="g fbig">Mistbelt House</div>
+ <div class="fcols"><div><p>A country house hotel in the Midlands, South Africa. Twelve rooms, eight acres.</p></div>
+ <div><h4>Stay</h4><ul><li><a href="#rooms">Rooms</a></li><li><a href="#tour">360° rooms</a></li><li><a href="#book">Book direct</a></li></ul></div>
+ <div><h4>Contact</h4><ul><li>+27 (0)33 555 0119</li><li>stay@mistbelt.example</li></ul></div></div>
+ <div class="legal"><span>© 2026 Mistbelt House (fictional). 360° photos: Poly Haven, CC0 (real photographs). Photos: Unsplash. 3D photo effect from depth estimated on the real photo.</span><span>Concept, design and build: <a href="https://calvyrn.com" style="color:#fff">Calvyrn</a></span></div>
+</div></footer>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.164.1/build/three.module.js"}}</script>
+<script type="module">
+import {createPano,scrollDirector,panoCSS,boot,stickyProgress,depthOnScroll,wireTour} from '../../shared/realview.js';
+document.getElementById('rvcss').textContent=panoCSS;
+const K=boot({preLabel:'Lighting the fires'});const {$,mob}=K;
+const S=n=>({src:`pano/${n}-6k.jpg`,srcMobile:`pano/${n}-3k.jpg`});const F=mob?14:0;const fmt=n=>n.toLocaleString('en-US');
+const ROOMS=[{id:'garden',n:'Garden twin',d:'Twin beds, a log fire and a window onto the oak garden. Own gate for dogs.',p:2450,img:'pano/lythwood_room-3k.jpg',pos:'62%'},{id:'wing',n:'New-wing king',d:'Quiet, modern, a big bed and a desk by tall windows. Rain shower.',p:2850,img:'pano/hotel_room-3k.jpg',pos:'58%'},{id:'cottage',n:'Thatched cottage',d:'Our own thatched cottage with a bath under the eaves. Sleeps three.',p:3400,img:'pano/en_suite-3k.jpg',pos:'52%'}];
+
+const hero=createPano($('hpano'),{scenes:{lounge:{...S('lythwood_lounge'),yaw:-160},garden:{...S('lythwood_room'),yaw:40},wing:{...S('hotel_room'),yaw:40}},start:'lounge',fov:78+F,auto:0,onProgress:(id,p)=>id==='lounge'&&K.setPre(p*.95),onReady:K.finish});
+hero.interactive(false);
+const SEGS=[{id:'lounge',until:.36,K:[[0,-165,-4,80+F],[.18,-60,-2,74+F],[.36,40,-2,70+F]]},{id:'garden',until:.7,K:[[.36,40,-4,74+F],[.53,110,-4,72+F],[.7,-170,-6,74+F]]},{id:'wing',K:[[.7,40,-4,74+F],[.85,100,-8,72+F],[1,160,-4,76+F]]}];
+const director=scrollDirector(hero,SEGS,.08);
+const RC=[[.06,.36,'THE DRAWING ROOM','Tea by the fire','Two fireplaces, a piano and the honesty bar.',null],[.38,.7,'ROOM 4 · GARDEN TWIN','Garden twin','Log fire, oak garden window, own gate.',2450],[.72,1.01,'ROOM 11 · NEW WING','New-wing king','Big bed, tall windows, rain shower.',2850]];
+let lastR=null;
+function onScroll(){const HP=stickyProgress($('hero'));$('hdr').classList.toggle('solid',$('hero').getBoundingClientRect().bottom<90);director(HP);
+ $('htxt').style.opacity=Math.max(0,1-HP*12);$('hint').style.opacity=HP>.02?0:.85;
+ const r=RC.find(x=>HP>=x[0]&&HP<x[1]);if((r&&r[3])!==lastR){lastR=r&&r[3];if(r)$('roomcard').innerHTML=`<span class="k">${r[2]}</span><h3>${r[3]}</h3><p>${r[4]}</p>${r[5]?`<div class="r"><span>From R${fmt(r[5])} / night</span><a href="#book" style="color:var(--brass)">Book</a></div>`:''}`;$('roomcard').classList.toggle('on',!!r)}}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+depthOnScroll($('dDoor'),{src:mob?'img/door-1440.jpg':'img/door-2560.jpg',depth:'img/door-depth.jpg',strength:.4,overscan:1.2},p=>({z:.06+p*.25}));
+depthOnScroll($('dGarden'),{src:mob?'img/garden-1440.jpg':'img/garden-2560.jpg',depth:'img/garden-depth.jpg',strength:.5,overscan:1.22},p=>({z:p*.55,x:-.06+p*.12}),stickyProgress);
+
+const T=wireTour({viewer:$('viewer'),start:'lounge',scenes:{
+ lounge:{...S('lythwood_lounge'),yaw:20,hotspots:[{to:'garden',yaw:-75,pitch:-4,label:'Up to the garden twin',arrive:40},{yaw:-165,pitch:-6,label:'Stone fireplace'},{yaw:35,pitch:-2,label:'Doors to the lawn'}]},
+ garden:{...S('lythwood_room'),yaw:40,hotspots:[{to:'lounge',yaw:-80,pitch:-4,label:'Down to the drawing room',arrive:20},{yaw:42,pitch:2,label:'Oak garden view'},{yaw:118,pitch:-4,label:'Log fire'}]},
+ wing:{...S('hotel_room'),yaw:40,hotspots:[{to:'lounge',yaw:-150,pitch:-2,label:'To the main house',arrive:20},{yaw:110,pitch:-10,label:'King bed'},{yaw:40,pitch:2,label:'Tall windows'}]},
+ bath:{...S('en_suite'),yaw:20,hotspots:[{to:'lounge',yaw:12,pitch:-4,label:'Back to the house',arrive:20},{yaw:-60,pitch:-4,label:'Walk-in shower'}]}}});
+
+/* rooms list + booking */
+$('roomList').innerHTML=ROOMS.map(r=>`<article class="rm reveal in"><div class="pic"><img src="${r.img}" alt="${r.n}, real 360 photo" loading="lazy" style="object-position:${r.pos} 50%"><button data-tour="${r.id==='cottage'?'bath':r.id}"><svg class="ico"><use href="#i-360"/></svg>Walk this room</button></div><div class="bd"><h3>${r.n}</h3><p>${r.d}</p><div class="ft"><span><b>R${fmt(r.p)}</b> <small>/ night, B&B</small></span><label><input type="radio" name="pick" value="${r.id}" ${r.id==='garden'?'checked':''}>Choose</label></div></div></article>`).join('');
+$('roomList').addEventListener('click',e=>{const b=e.target.closest('[data-tour]');if(b){K.scrollTo('#tour');setTimeout(()=>T.tour&&T.tour.go(b.dataset.tour),900)}});
+$('roomList').addEventListener('change',e=>{if(e.target.name==='pick'){$('room').value=e.target.value;calc()}});
+$('room').innerHTML=ROOMS.map(r=>`<option value="${r.id}">${r.n}</option>`).join('');
+const iso=d=>d.toISOString().slice(0,10);const a=new Date();a.setDate(a.getDate()+21);const b=new Date(a);b.setDate(b.getDate()+2);$('cin').value=iso(a);$('cout').value=iso(b);$('cin').min=iso(new Date());
+function calc(){const r=ROOMS.find(x=>x.id===$('room').value);const n=Math.round((new Date($('cout').value)-new Date($('cin').value))/864e5);const plan=document.querySelector('input[name=plan]:checked').value;const g=+$('guests').value;
+ if(!(n>0)){$('sumL').innerHTML='<dt>Pick your dates</dt><dd></dd>';$('tot').textContent='';$('save').textContent='';return null}
+ const room=r.p*n,dinner=plan==='dbb'?650*Math.min(g,2)*n:0,flex=plan==='flex'?Math.round(room*.12):0,child=g===3?350*n:0,sub=room+dinner+flex+child,disc=Math.round(sub*.1),tot=sub-disc;
+ $('sumT').textContent=`${r.n}, ${n} night${n>1?'s':''}`;
+ $('sumL').innerHTML=`<dt>R${fmt(r.p)} × ${n} nights</dt><dd>R${fmt(room)}</dd>${dinner?`<dt>Dinner by the fire</dt><dd>R${fmt(dinner)}</dd>`:''}${flex?`<dt>Flexible rate</dt><dd>R${fmt(flex)}</dd>`:''}${child?`<dt>Child, with breakfast</dt><dd>R${fmt(child)}</dd>`:''}<dt>Book-direct saving</dt><dd>−R${fmt(disc)}</dd>`;
+ $('tot').textContent='R'+fmt(tot);$('save').textContent=`You save R${fmt(disc)} against booking sites.`;return {tot,n,r}}
+$('bform').addEventListener('input',calc);calc();
+$('buy').onclick=()=>{const c=calc();const m=$('email').value.trim();$('msg').className='msg';if(!c){$('msg').textContent='Pick dates where you leave after you arrive.';return}if(!/^\S+@\S+\.\S+$/.test(m)){$('msg').textContent='Add an email for your confirmation.';return}
+ $('msg').className='msg ok';$('msg').textContent=`Reserved: ${c.r.n}, ${c.n} nights, R${fmt(c.tot)}. Confirmation to ${m.replace(/[<>]/g,'')}. Demo: nothing was charged.`};
+</script>
+</body>
+</html>
